@@ -1,0 +1,8 @@
+interface:
+  display_name: "SDKWORK Backend flutter Integration"
+  short_description: "Integrate sdkwork-backend-sdk-flutter with staged progressive loading."
+  default_prompt: "Use $sdkwork-backend-flutter-integration to integrate sdkwork-backend-sdk-flutter into my application with staged progressive loading."
+
+policy:
+  allow_implicit_invocation: true
+

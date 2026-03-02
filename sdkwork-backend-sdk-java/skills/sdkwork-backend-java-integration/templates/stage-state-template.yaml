@@ -1,0 +1,26 @@
+skill: sdkwork-backend-java-integration
+domain: backend
+language: java
+package: sdkwork-backend-sdk-java
+current_stage: stage0
+status: in_progress
+stages:
+  stage0:
+    status: pending
+    notes: ""
+  stage1:
+    status: pending
+    notes: ""
+  stage2:
+    status: pending
+    notes: ""
+  stage3:
+    status: pending
+    notes: ""
+  stage4:
+    status: pending
+    notes: ""
+  stage5:
+    status: pending
+    notes: ""
+

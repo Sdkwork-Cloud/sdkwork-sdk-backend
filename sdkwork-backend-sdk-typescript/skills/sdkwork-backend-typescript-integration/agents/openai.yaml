@@ -1,0 +1,8 @@
+interface:
+  display_name: "SDKWORK Backend typescript Integration"
+  short_description: "Integrate sdkwork-backend-sdk-typescript with staged progressive loading."
+  default_prompt: "Use $sdkwork-backend-typescript-integration to integrate sdkwork-backend-sdk-typescript into my application with staged progressive loading."
+
+policy:
+  allow_implicit_invocation: true
+

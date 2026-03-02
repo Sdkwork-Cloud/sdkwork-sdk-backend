@@ -1,0 +1,8 @@
+interface:
+  display_name: "SDKWORK Backend go Integration"
+  short_description: "Integrate sdkwork-backend-sdk-go with staged progressive loading."
+  default_prompt: "Use $sdkwork-backend-go-integration to integrate sdkwork-backend-sdk-go into my application with staged progressive loading."
+
+policy:
+  allow_implicit_invocation: true
+

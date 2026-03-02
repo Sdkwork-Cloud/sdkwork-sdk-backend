@@ -1,0 +1,8 @@
+interface:
+  display_name: "SDKWORK Backend java Integration"
+  short_description: "Integrate sdkwork-backend-sdk-java with staged progressive loading."
+  default_prompt: "Use $sdkwork-backend-java-integration to integrate sdkwork-backend-sdk-java into my application with staged progressive loading."
+
+policy:
+  allow_implicit_invocation: true
+
