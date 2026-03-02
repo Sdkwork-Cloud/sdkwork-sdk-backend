@@ -1,0 +1,31 @@
+package com.sdkwork.backend
+
+data class PlusFileVO(
+    val parentUuid: String? = null,
+    val parentMetadata: PlusTreeParentMetadata? = null,
+    val id: Int? = null,
+    val parentId: Int? = null,
+    val name: String? = null,
+    val path: String? = null,
+    val fullPath: String? = null,
+    val objectKey: String? = null,
+    val size: Int? = null,
+    val contentType: String? = null,
+    val extension: String? = null,
+    val storageClass: String? = null,
+    val versionId: String? = null,
+    val resource: FileMediaResource? = null,
+    val url: String? = null,
+    val uploadTime: String? = null,
+    val lastAccessTime: String? = null,
+    val description: String? = null,
+    val tags: TagsContent? = null,
+    val fileType: String? = null,
+    val fileCategory: String? = null,
+    val permission: FilePermission? = null,
+    val isPublic: Boolean? = null,
+    val pinnedAt: String? = null,
+    val status: String? = null,
+    val content: FileContentObject? = null,
+    val etag: String? = null
+)

@@ -1,0 +1,44 @@
+import type { GetUserInfoResponse } from './get-user-info-response';
+import type { GrantedAuthority } from './granted-authority';
+import type { ImageMediaResource } from './image-media-resource';
+import type { PlusRole } from './plus-role';
+import type { SocialInfoList } from './social-info-list';
+import type { UserMetadata } from './user-metadata';
+import type { VideoMediaResource } from './video-media-resource';
+
+export interface PlusUser {
+  tenantId?: number;
+  organizationId?: number;
+  dataScope?: 'DEFAULT' | 'PRIVATE' | 'SHARED' | 'PUBLIC';
+  id?: number;
+  uuid?: string;
+  createdAt?: string;
+  updatedAt?: string;
+  v?: number;
+  username?: string;
+  nickname?: string;
+  password?: string;
+  platform?: 'UNKNOWN' | 'DEFAULT' | 'H5' | 'H5_WEIXIN' | 'WEB' | 'APP' | 'APP_PLUS' | 'APP_IOS' | 'APP_ANDROID' | 'APP_HARMONY' | 'DESKTOP' | 'DESKTOP_WINDOWS' | 'DESKTOP_MACOS' | 'DESKTOP_LINUX' | 'MP' | 'MP_WEIXIN' | 'MP_ALIPAY' | 'MP_BAIDU' | 'MP_TOUTIAO' | 'MP_LARK' | 'MP_QQ' | 'MP_KUAISHOU' | 'MP_JD' | 'MP_360' | 'MP_DINGTALK' | 'MP_ALI' | 'MP_WEIXIN_GAME' | 'MP_QQ_GAME' | 'MP_BAIDU_GAME' | 'MP_TOUTIAO_GAME' | 'QUICKAPP' | 'QUICKAPP_WEBVIEW' | 'QUICKAPP_WEBVIEW_UNION' | 'QUICKAPP_WEBVIEW_HUAWEI' | 'ADMIN' | 'CLI' | 'API' | 'OTHER';
+  type?: 'DEFAULT' | 'REGULAR' | 'PREMIUM' | 'ADMIN' | 'GUEST' | 'SYSTEM';
+  gender?: 'UNKNOWN' | 'MALE' | 'FEMALE' | 'NEUTRAL';
+  faceImage?: ImageMediaResource;
+  faceVideo?: VideoMediaResource;
+  salt?: string;
+  scene?: string;
+  email?: string;
+  phone?: string;
+  countryCode?: string;
+  provinceCode?: string;
+  cityCode?: string;
+  districtCode?: string;
+  address?: string;
+  bio?: string;
+  birthDate?: string;
+  oauthUserInfo?: GetUserInfoResponse;
+  status?: 'ACTIVE' | 'INACTIVE';
+  roles?: PlusRole[];
+  metadata?: UserMetadata;
+  socialInfoList?: SocialInfoList;
+  roleCodes?: string[];
+  authorities?: GrantedAuthority[];
+}

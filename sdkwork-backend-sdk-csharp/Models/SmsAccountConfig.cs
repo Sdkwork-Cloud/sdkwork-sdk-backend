@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Text.Json.Serialization;
+
+namespace Backend.Models
+{
+    public class SmsAccountConfig
+    {
+        public int? Id { get; set; }
+        public string? Uuid { get; set; }
+        public string? Region { get; set; }
+        public int? Weight { get; set; }
+        public string? Channel { get; set; }
+        public string? Product { get; set; }
+        public List<string>? Functions { get; set; }
+        public AccountConfigMetadata? Metadata { get; set; }
+        public Dictionary<string, object>? Properties { get; set; }
+        public string? BaseUrl { get; set; }
+        public string? AppId { get; set; }
+        public string? AccessKey { get; set; }
+        public string? SecretKey { get; set; }
+        public string? SignName { get; set; }
+        public string? SenderId { get; set; }
+    }
+}

@@ -1,0 +1,1 @@
+export type ChatCompletionAudio = unknown;

@@ -1,0 +1,29 @@
+package com.sdkwork.backend
+
+data class PlusAiModelInfoForm(
+    val objectId: String? = null,
+    val model: String? = null,
+    val name: String? = null,
+    val description: String? = null,
+    val channel: String? = null,
+    val modelVersion: String? = null,
+    val family: String? = null,
+    val apiEndpoint: String? = null,
+    val modelType: String? = null,
+    val createdAt: Int? = null,
+    val ownedBy: String? = null,
+    val tokenLimit: ModelLimitInfo? = null,
+    val priceInfo: ModelPrice? = null,
+    val metadata: ModelMetadata? = null,
+    val supportedVoices: String? = null,
+    val defaultTemperature: Double? = null,
+    val defaultTopP: Double? = null,
+    val defaultFrequencyPenalty: Double? = null,
+    val defaultPresencePenalty: Double? = null,
+    val status: String? = null,
+    val usageCount: Int? = null,
+    val totalTokens: Int? = null,
+    val avgResponseTime: Int? = null,
+    val tags: TagsContent? = null,
+    val configParams: String? = null
+)

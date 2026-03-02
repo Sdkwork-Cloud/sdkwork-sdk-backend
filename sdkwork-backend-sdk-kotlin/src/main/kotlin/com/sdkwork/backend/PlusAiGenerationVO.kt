@@ -1,0 +1,31 @@
+package com.sdkwork.backend
+
+data class PlusAiGenerationVO(
+    val id: Int? = null,
+    val uuid: String? = null,
+    val userId: Int? = null,
+    val title: String? = null,
+    val requestId: String? = null,
+    val type: String? = null,
+    val model: String? = null,
+    val channel: String? = null,
+    val inputParams: GenerationInput? = null,
+    val outputResult: GenerationOutput? = null,
+    val status: String? = null,
+    val progress: Int? = null,
+    val channelTaskId: String? = null,
+    val channelTaskStatus: String? = null,
+    val cost: Double? = null,
+    val errorCode: String? = null,
+    val errorMessage: String? = null,
+    val retryCount: Int? = null,
+    val maxRetry: Int? = null,
+    val startedAt: String? = null,
+    val completedAt: String? = null,
+    val conversationId: Int? = null,
+    val messageId: Int? = null,
+    val parentId: Int? = null,
+    val batchId: String? = null,
+    val createdAt: String? = null,
+    val updatedAt: String? = null
+)

@@ -1,0 +1,32 @@
+package com.sdkwork.backend
+
+data class PlusAiAgentVO(
+    val createdAt: String? = null,
+    val updatedAt: String? = null,
+    val id: Int? = null,
+    val name: String? = null,
+    val faceImage: ImageMediaResource? = null,
+    val faceVideo: VideoMediaResource? = null,
+    val owner: String? = null,
+    val ownerId: Int? = null,
+    val channel: String? = null,
+    val channelId: String? = null,
+    val icon: String? = null,
+    val description: String? = null,
+    val tags: TagsContent? = null,
+    val type: String? = null,
+    val bizType: String? = null,
+    val status: String? = null,
+    val baseConfig: PlusAiAgentConfig? = null,
+    val knowledgeConfig: AgentKnowledgeConfig? = null,
+    val memoryConfig: AgentMemoryConfig? = null,
+    val speechConfig: SpeechConfig? = null,
+    val toolConfig: AgentToolConfig? = null,
+    val members: TeamAgentMembers? = null,
+    val knowledgeBaseId: Int? = null,
+    val promptId: Int? = null,
+    val categoryId: Int? = null,
+    val chatOptions: PlusChatOptions? = null,
+    val config: PlusAiAgentConfig? = null,
+    val usageCount: Int? = null
+)

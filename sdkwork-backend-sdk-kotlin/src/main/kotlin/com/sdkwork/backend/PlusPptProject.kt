@@ -1,0 +1,31 @@
+package com.sdkwork.backend
+
+data class PlusPptProject(
+    val id: String? = null,
+    val uuid: String? = null,
+    val type: String? = null,
+    val screenType: String? = null,
+    val name: String? = null,
+    val title: String? = null,
+    val owner: String? = null,
+    val ownerId: Int? = null,
+    val diskId: Int? = null,
+    val files: List<PlusFileObject>? = null,
+    val author: String? = null,
+    val createdAt: String? = null,
+    val lastModifiedTime: String? = null,
+    val version: String? = null,
+    val prompt: String? = null,
+    val description: String? = null,
+    val tags: TagsContent? = null,
+    val width: Double? = null,
+    val height: Double? = null,
+    val slides: List<PlusPptSlide>? = null,
+    val theme: PlusPptTheme? = null,
+    val context: PlusPptContext? = null,
+    val subtitle: String? = null,
+    val includePageNumbers: Boolean? = null,
+    val includeFooter: Boolean? = null,
+    val footerText: String? = null,
+    val exportFormat: String? = null
+)

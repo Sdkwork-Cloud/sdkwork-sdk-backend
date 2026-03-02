@@ -1,0 +1,30 @@
+package com.sdkwork.backend
+
+data class CharacterGenerationInput(
+    val title: String? = null,
+    val prompt: String? = null,
+    val negativePrompt: String? = null,
+    val referenceAssets: List<AssetMediaResource>? = null,
+    val storyboard: VideoStoryboard? = null,
+    val parameters: Map<String, Any>? = null,
+    val n: Int? = null,
+    val seed: Int? = null,
+    val format: String? = null,
+    val name: String? = null,
+    val description: String? = null,
+    val appearance: String? = null,
+    val personality: String? = null,
+    val background: String? = null,
+    val type: String? = null,
+    val style: String? = null,
+    val pose: String? = null,
+    val expression: String? = null,
+    val gender: String? = null,
+    val age: String? = null,
+    val clothing: String? = null,
+    val width: Int? = null,
+    val height: Int? = null,
+    val hd: Boolean? = null,
+    val multiView: Boolean? = null,
+    val referenceAssetCount: Int? = null
+)

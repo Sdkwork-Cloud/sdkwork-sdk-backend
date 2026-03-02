@@ -1,0 +1,44 @@
+package com.sdkwork.backend.api;
+
+import com.sdkwork.backend.http.HttpClient;
+import com.sdkwork.backend.model.*;
+import java.util.List;
+import java.util.Map;
+
+public class ShareApi {
+    private final HttpClient client;
+    
+    public ShareApi(HttpClient client) {
+        this.client = client;
+    }
+
+    /** 更新分享 */
+    public PlusApiResultPlusShareVO update(PlusShareForm body) throws Exception {
+        return (PlusApiResultPlusShareVO) client.put(ApiPaths.backendPath("/share"), body);
+    }
+
+    /** 创建分享 */
+    public PlusApiResultPlusShareVO create(PlusShareForm body) throws Exception {
+        return (PlusApiResultPlusShareVO) client.post(ApiPaths.backendPath("/share"), body);
+    }
+
+    /** 分页获取分享 */
+    public PlusApiResultPagePlusShareVO listByPage(QueryListForm body, Map<String, Object> params) throws Exception {
+        return (PlusApiResultPagePlusShareVO) client.post(ApiPaths.backendPath("/share/list"), body, params);
+    }
+
+    /** 获取所有分享 */
+    public PlusApiResultListPlusShareVO listAllEntities(QueryListForm body) throws Exception {
+        return (PlusApiResultListPlusShareVO) client.post(ApiPaths.backendPath("/share/list/all"), body);
+    }
+
+    /** 获取分享详情 */
+    public PlusApiResultPlusShareVO getById(String id) throws Exception {
+        return (PlusApiResultPlusShareVO) client.get(ApiPaths.backendPath("/share/" + id + ""));
+    }
+
+    /** 删除分享 */
+    public PlusApiResultBoolean delete(String id) throws Exception {
+        return (PlusApiResultBoolean) client.delete(ApiPaths.backendPath("/share/" + id + ""));
+    }
+}

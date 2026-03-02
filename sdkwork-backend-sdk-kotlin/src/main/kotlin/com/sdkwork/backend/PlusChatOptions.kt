@@ -1,0 +1,32 @@
+package com.sdkwork.backend
+
+data class PlusChatOptions(
+    val streamUsage: Boolean? = null,
+    val model: String? = null,
+    val frequencyPenalty: Double? = null,
+    val logitBias: Map<String, Int>? = null,
+    val logprobs: Boolean? = null,
+    val topLogprobs: Int? = null,
+    val maxTokens: Int? = null,
+    val maxCompletionTokens: Int? = null,
+    val n: Int? = null,
+    val modalities: List<String>? = null,
+    val audio: AudioParameters? = null,
+    val presencePenalty: Double? = null,
+    val responseFormat: ResponseFormat? = null,
+    val streamOptions: StreamOptions? = null,
+    val stream: Boolean? = null,
+    val seed: Int? = null,
+    val stop: List<String>? = null,
+    val temperature: Double? = null,
+    val topP: Double? = null,
+    val tools: List<FunctionTool>? = null,
+    val toolChoice: Any? = null,
+    val user: String? = null,
+    val parallelToolCalls: Boolean? = null,
+    val store: Boolean? = null,
+    val metadata: Map<String, String>? = null,
+    val reasoningEffort: String? = null,
+    val verbosity: String? = null,
+    val webSearchOptions: WebSearchOptions? = null
+)
