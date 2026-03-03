@@ -11,7 +11,7 @@ dotnet add package Backend
 Or add to your `.csproj`:
 
 ```xml
-<PackageReference Include="Backend" Version="1.0.0" />
+<PackageReference Include="Backend" Version="1.0.1" />
 ```
 
 ## Quick Start
@@ -1190,7 +1190,6 @@ catch (HttpRequestException ex)
     Console.WriteLine($"Error: {ex.Message}");
 }
 ```
-
 
 ## Publishing
 

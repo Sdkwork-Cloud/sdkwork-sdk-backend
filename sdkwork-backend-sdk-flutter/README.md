@@ -8,7 +8,7 @@ Add to `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  backend_sdk: ^1.0.0
+  backend_sdk: ^1.0.1
 ```
 
 ## Quick Start
@@ -1184,7 +1184,6 @@ try {
   print('Error: $e');
 }
 ```
-
 
 ## Publishing
 
