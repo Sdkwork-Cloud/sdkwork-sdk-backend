@@ -18,7 +18,7 @@ Integrate `sdkwork-backend-sdk-typescript` into an application using progressive
 
 - Language: `typescript`
 - Build descriptor: `package.json`
-- SDK coordinate: `@sdkwork/backend-sdk@1.0.0`
+- SDK coordinate: `@sdkwork/backend-sdk@1.0.1`
 - Registry integration: `pnpm add @sdkwork/backend-sdk`
 - Local-path integration: `pnpm add file:<path-to-sdkwork-backend-sdk-typescript>`
 
