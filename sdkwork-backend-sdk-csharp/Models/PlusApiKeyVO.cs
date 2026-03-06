@@ -12,6 +12,7 @@ namespace Backend.Models
         public string? Uuid { get; set; }
         public string? Name { get; set; }
         public string? KeyValue { get; set; }
+        public string? MaskedKeyValue { get; set; }
         public string? Type { get; set; }
         public string? Status { get; set; }
         public string? ExpireTime { get; set; }

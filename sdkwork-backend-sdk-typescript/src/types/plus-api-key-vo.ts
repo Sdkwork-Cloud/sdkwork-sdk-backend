@@ -12,6 +12,8 @@ export interface PlusApiKeyVO {
   name?: string;
   /** API密钥值 */
   keyValue?: string;
+  /** 脱敏后的API密钥值 */
+  maskedKeyValue?: string;
   /** API密钥类型 */
   type?: 'DEFAULT' | 'SYSTEM' | 'USER' | 'APPLICATION' | 'INTEGRATION';
   /** API密钥状态 */

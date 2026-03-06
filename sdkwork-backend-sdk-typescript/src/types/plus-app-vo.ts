@@ -1,4 +1,6 @@
 import type { AppConfig } from './app-config';
+import type { AppInstallConfig } from './app-install-config';
+import type { AppInstallSkill } from './app-install-skill';
 import type { AppPlatforms } from './app-platforms';
 import type { AssetMediaResourceList } from './asset-media-resource-list';
 import type { ImageMediaResource } from './image-media-resource';
@@ -35,6 +37,12 @@ export interface PlusAppVO {
   appType?: 'NONE' | 'SDK' | 'PPT' | 'APP_HTML' | 'APP_VUE' | 'APP_FLUTTER' | 'APP_UNIAPP' | 'APP_REACT' | 'APP_UNITY' | 'VIDEO' | 'POSTER';
   /** Supported platforms */
   platforms?: AppPlatforms;
+  /** Supported installation platforms */
+  installPlatforms?: AppPlatforms;
+  /** Installation skill binding */
+  installSkill?: AppInstallSkill;
+  /** Installation config */
+  installConfig?: AppInstallConfig;
   /** Application package name */
   packageName?: string;
   /** Application bundle ID */

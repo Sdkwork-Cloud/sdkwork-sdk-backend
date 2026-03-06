@@ -11,9 +11,9 @@ public class Flow {
     private Integer parentId;
     private String startTime;
     private String endTime;
+    private Node lastNode;
     private Flow parentFlow;
     private List<PlusAgent> allAgents;
-    private Node lastNode;
 
     public String getId() {
         return this.id;
@@ -95,6 +95,14 @@ public class Flow {
         this.endTime = endTime;
     }
 
+    public Node getLastNode() {
+        return this.lastNode;
+    }
+    
+    public void setLastNode(Node lastNode) {
+        this.lastNode = lastNode;
+    }
+
     public Flow getParentFlow() {
         return this.parentFlow;
     }
@@ -109,13 +117,5 @@ public class Flow {
     
     public void setAllAgents(List<PlusAgent> allAgents) {
         this.allAgents = allAgents;
-    }
-
-    public Node getLastNode() {
-        return this.lastNode;
-    }
-    
-    public void setLastNode(Node lastNode) {
-        this.lastNode = lastNode;
     }
 }

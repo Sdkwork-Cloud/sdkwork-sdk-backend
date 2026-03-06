@@ -1,6 +1,6 @@
 package types
 
-// 聊天补全创建请求参数
+// Chat completion create form
 type ChatCompletionCreateForm struct {
 	Model string `json:"model"`
 	Messages []ChatCompletionMessage `json:"messages"`

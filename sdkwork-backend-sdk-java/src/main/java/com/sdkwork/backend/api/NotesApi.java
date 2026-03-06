@@ -22,6 +22,26 @@ public class NotesApi {
         return (PlusApiResultPlusNotesVO) client.post(ApiPaths.backendPath("/notes"), body);
     }
 
+    /** Publish notes directly */
+    public PlusApiResultPlusMediaPublishResultDTO publishNotesToMedia(PlusNotesMediaDraftForm body) throws Exception {
+        return (PlusApiResultPlusMediaPublishResultDTO) client.post(ApiPaths.backendPath("/notes/media/publish"), body);
+    }
+
+    /** Create media draft */
+    public PlusApiResultPlusMediaPublishResultDTO createMediaDraft(PlusNotesMediaDraftForm body) throws Exception {
+        return (PlusApiResultPlusMediaPublishResultDTO) client.post(ApiPaths.backendPath("/notes/media/drafts"), body);
+    }
+
+    /** Publish media draft */
+    public PlusApiResultPlusMediaPublishResultDTO publishMediaDraft(PlusNotesMediaPublishDraftForm body) throws Exception {
+        return (PlusApiResultPlusMediaPublishResultDTO) client.post(ApiPaths.backendPath("/notes/media/drafts/publish"), body);
+    }
+
+    /** Preview media draft */
+    public PlusApiResultPlusMediaPublishResultDTO previewMediaDraft(PlusNotesMediaPreviewForm body) throws Exception {
+        return (PlusApiResultPlusMediaPublishResultDTO) client.post(ApiPaths.backendPath("/notes/media/drafts/preview"), body);
+    }
+
     /** Get note by UUID */
     public PlusApiResultPlusNotesVO getByUuid(String uuid) throws Exception {
         return (PlusApiResultPlusNotesVO) client.get(ApiPaths.backendPath("/notes/" + uuid + ""));
@@ -50,6 +70,11 @@ public class NotesApi {
     /** Get paginated notes */
     public PlusApiResultPagePlusNotesVO listByPage(Map<String, Object> params) throws Exception {
         return (PlusApiResultPagePlusNotesVO) client.get(ApiPaths.backendPath("/notes/page"), params);
+    }
+
+    /** List media publish records */
+    public PlusApiResultPagePlusMediaPublishRecordDTO listMediaPublishRecords(String noteId, Map<String, Object> params) throws Exception {
+        return (PlusApiResultPagePlusMediaPublishRecordDTO) client.get(ApiPaths.backendPath("/notes/media/records/" + noteId + ""), params);
     }
 
     /** List notes by user */

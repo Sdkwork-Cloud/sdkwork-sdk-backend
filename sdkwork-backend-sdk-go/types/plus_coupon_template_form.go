@@ -17,6 +17,6 @@ type PlusCouponTemplateForm struct {
 	ValidityType string `json:"validityType"`
 	ValidityDays int `json:"validityDays"`
 	CanShare bool `json:"canShare"`
-	ScopeType int `json:"scopeType"`
+	ScopeType string `json:"scopeType"`
 	ScopeValue string `json:"scopeValue"`
 }

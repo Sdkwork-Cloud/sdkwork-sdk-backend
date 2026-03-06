@@ -34,6 +34,46 @@ func (a *NotesApi) Create(body sdktypes.PlusNotesForm) (sdktypes.PlusApiResultPl
     return decodeResult[sdktypes.PlusApiResultPlusNotesVO](raw)
 }
 
+// Publish notes directly
+func (a *NotesApi) PublishNotesToMedia(body sdktypes.PlusNotesMediaDraftForm) (sdktypes.PlusApiResultPlusMediaPublishResultDTO, error) {
+    raw, err := a.client.Post(BackendApiPath("/notes/media/publish"), body, nil, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultPlusMediaPublishResultDTO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPlusMediaPublishResultDTO](raw)
+}
+
+// Create media draft
+func (a *NotesApi) CreateMediaDraft(body sdktypes.PlusNotesMediaDraftForm) (sdktypes.PlusApiResultPlusMediaPublishResultDTO, error) {
+    raw, err := a.client.Post(BackendApiPath("/notes/media/drafts"), body, nil, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultPlusMediaPublishResultDTO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPlusMediaPublishResultDTO](raw)
+}
+
+// Publish media draft
+func (a *NotesApi) PublishMediaDraft(body sdktypes.PlusNotesMediaPublishDraftForm) (sdktypes.PlusApiResultPlusMediaPublishResultDTO, error) {
+    raw, err := a.client.Post(BackendApiPath("/notes/media/drafts/publish"), body, nil, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultPlusMediaPublishResultDTO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPlusMediaPublishResultDTO](raw)
+}
+
+// Preview media draft
+func (a *NotesApi) PreviewMediaDraft(body sdktypes.PlusNotesMediaPreviewForm) (sdktypes.PlusApiResultPlusMediaPublishResultDTO, error) {
+    raw, err := a.client.Post(BackendApiPath("/notes/media/drafts/preview"), body, nil, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultPlusMediaPublishResultDTO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPlusMediaPublishResultDTO](raw)
+}
+
 // Get note by UUID
 func (a *NotesApi) GetByUuid(uuid string) (sdktypes.PlusApiResultPlusNotesVO, error) {
     raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/notes/%s", uuid)), nil, nil)
@@ -92,6 +132,16 @@ func (a *NotesApi) ListByPage(query map[string]interface{}) (sdktypes.PlusApiRes
         return zero, err
     }
     return decodeResult[sdktypes.PlusApiResultPagePlusNotesVO](raw)
+}
+
+// List media publish records
+func (a *NotesApi) ListMediaPublishRecords(noteId string, query map[string]interface{}) (sdktypes.PlusApiResultPagePlusMediaPublishRecordDTO, error) {
+    raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/notes/media/records/%s", noteId)), query, nil)
+    if err != nil {
+        var zero sdktypes.PlusApiResultPagePlusMediaPublishRecordDTO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPagePlusMediaPublishRecordDTO](raw)
 }
 
 // List notes by user

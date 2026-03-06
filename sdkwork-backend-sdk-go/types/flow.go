@@ -12,7 +12,7 @@ type Flow struct {
 	ParentId int `json:"parentId"`
 	StartTime string `json:"startTime"`
 	EndTime string `json:"endTime"`
+	LastNode Node `json:"lastNode"`
 	ParentFlow Flow `json:"parentFlow"`
 	AllAgents []PlusAgent `json:"allAgents"`
-	LastNode Node `json:"lastNode"`
 }

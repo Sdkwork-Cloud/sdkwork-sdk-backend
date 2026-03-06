@@ -3,15 +3,15 @@ import type { PlusUserCouponVO } from './plus-user-coupon-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusUserCouponVO {
-  totalPages?: number;
   totalElements?: number;
+  totalPages?: number;
   size?: number;
   content?: PlusUserCouponVO[];
   number?: number;
-  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   numberOfElements?: number;
+  sort?: SortObject;
   pageable?: PageableObject;
   empty?: boolean;
 }

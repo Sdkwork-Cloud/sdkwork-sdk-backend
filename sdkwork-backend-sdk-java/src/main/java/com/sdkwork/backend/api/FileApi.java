@@ -22,12 +22,12 @@ public class FileApi {
         return (PlusApiResultPlusFileVO) client.post(ApiPaths.backendPath("/file"), body);
     }
 
-    /** 获取文件列表 */
+    /** List files */
     public PlusApiResultFileListVO listFiles(Map<String, Object> params) throws Exception {
         return (PlusApiResultFileListVO) client.get(ApiPaths.backendPath("/oss/files"), params);
     }
 
-    /** 上传文件 */
+    /** Upload file */
     public PlusApiResultFileItemVO upload(UploadFileRequest body, Map<String, Object> params) throws Exception {
         return (PlusApiResultFileItemVO) client.post(ApiPaths.backendPath("/oss/files"), body, params, null, "multipart/form-data");
     }
@@ -62,17 +62,17 @@ public class FileApi {
         return (PlusApiResultSetPlusTreeNodePlusFileVO) client.post(ApiPaths.backendPath("/file/get_tree"), body, params);
     }
 
-    /** 获取单个文件信息 */
+    /** Get file */
     public PlusApiResultFileItemVO getFile(String fileId) throws Exception {
         return (PlusApiResultFileItemVO) client.get(ApiPaths.backendPath("/oss/files/" + fileId + ""));
     }
 
-    /** 删除文件 */
+    /** Delete file */
     public PlusApiResultFileItemVO deleteFile(String fileId) throws Exception {
         return (PlusApiResultFileItemVO) client.delete(ApiPaths.backendPath("/oss/files/" + fileId + ""));
     }
 
-    /** 获取文件内容 */
+    /** Get file content */
     public String getFileContent(String fileId) throws Exception {
         return (String) client.get(ApiPaths.backendPath("/oss/files/" + fileId + "/content"));
     }

@@ -3,15 +3,15 @@ import type { PlusSkuVO } from './plus-sku-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusSkuVO {
-  totalPages?: number;
   totalElements?: number;
+  totalPages?: number;
   size?: number;
   content?: PlusSkuVO[];
   number?: number;
-  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   numberOfElements?: number;
+  sort?: SortObject;
   pageable?: PageableObject;
   empty?: boolean;
 }

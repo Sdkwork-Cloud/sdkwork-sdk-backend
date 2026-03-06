@@ -34,7 +34,7 @@ func (a *FileApi) Create(body sdktypes.PlusFileForm) (sdktypes.PlusApiResultPlus
     return decodeResult[sdktypes.PlusApiResultPlusFileVO](raw)
 }
 
-// 获取文件列表
+// List files
 func (a *FileApi) ListFiles(query map[string]interface{}) (sdktypes.PlusApiResultFileListVO, error) {
     raw, err := a.client.Get(BackendApiPath("/oss/files"), query, nil)
     if err != nil {
@@ -44,7 +44,7 @@ func (a *FileApi) ListFiles(query map[string]interface{}) (sdktypes.PlusApiResul
     return decodeResult[sdktypes.PlusApiResultFileListVO](raw)
 }
 
-// 上传文件
+// Upload file
 func (a *FileApi) Upload(body *sdktypes.UploadFileRequest, query map[string]interface{}) (sdktypes.PlusApiResultFileItemVO, error) {
     raw, err := a.client.Post(BackendApiPath("/oss/files"), body, query, nil, "multipart/form-data")
     if err != nil {
@@ -114,7 +114,7 @@ func (a *FileApi) GetTree(body *sdktypes.QueryListForm, query map[string]interfa
     return decodeResult[sdktypes.PlusApiResultSetPlusTreeNodePlusFileVO](raw)
 }
 
-// 获取单个文件信息
+// Get file
 func (a *FileApi) GetFile(fileId string) (sdktypes.PlusApiResultFileItemVO, error) {
     raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/oss/files/%s", fileId)), nil, nil)
     if err != nil {
@@ -124,7 +124,7 @@ func (a *FileApi) GetFile(fileId string) (sdktypes.PlusApiResultFileItemVO, erro
     return decodeResult[sdktypes.PlusApiResultFileItemVO](raw)
 }
 
-// 删除文件
+// Delete file
 func (a *FileApi) DeleteFile(fileId string) (sdktypes.PlusApiResultFileItemVO, error) {
     raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/oss/files/%s", fileId)), nil, nil)
     if err != nil {
@@ -134,7 +134,7 @@ func (a *FileApi) DeleteFile(fileId string) (sdktypes.PlusApiResultFileItemVO, e
     return decodeResult[sdktypes.PlusApiResultFileItemVO](raw)
 }
 
-// 获取文件内容
+// Get file content
 func (a *FileApi) GetFileContent(fileId string) (string, error) {
     raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/oss/files/%s/content", fileId)), nil, nil)
     if err != nil {

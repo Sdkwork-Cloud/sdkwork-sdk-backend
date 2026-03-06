@@ -8,14 +8,14 @@ type PlusProjectObject struct {
 	Owner string `json:"owner"`
 	LastModifiedTime string `json:"lastModifiedTime"`
 	Version string `json:"version"`
-	Files []PlusFileObject `json:"files"`
+	Tags TagsContent `json:"tags"`
+	Description string `json:"description"`
+	Title string `json:"title"`
+	CreatedAt string `json:"createdAt"`
+	OwnerId int `json:"ownerId"`
 	Uuid string `json:"uuid"`
 	DiskId int `json:"diskId"`
 	Author string `json:"author"`
-	OwnerId int `json:"ownerId"`
-	CreatedAt string `json:"createdAt"`
+	Files []PlusFileObject `json:"files"`
 	ScreenType string `json:"screenType"`
-	Description string `json:"description"`
-	Tags TagsContent `json:"tags"`
-	Title string `json:"title"`
 }

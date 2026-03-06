@@ -1,14 +1,30 @@
 package com.sdkwork.backend.model;
 
 public class ChatOptions {
+    private String model;
+    private Double temperature;
     private Double topP;
     private Integer topK;
-    private Double presencePenalty;
     private Integer maxTokens;
     private List<String> stopSequences;
     private Double frequencyPenalty;
-    private String model;
-    private Double temperature;
+    private Double presencePenalty;
+
+    public String getModel() {
+        return this.model;
+    }
+    
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public Double getTemperature() {
+        return this.temperature;
+    }
+    
+    public void setTemperature(Double temperature) {
+        this.temperature = temperature;
+    }
 
     public Double getTopP() {
         return this.topP;
@@ -24,14 +40,6 @@ public class ChatOptions {
     
     public void setTopK(Integer topK) {
         this.topK = topK;
-    }
-
-    public Double getPresencePenalty() {
-        return this.presencePenalty;
-    }
-    
-    public void setPresencePenalty(Double presencePenalty) {
-        this.presencePenalty = presencePenalty;
     }
 
     public Integer getMaxTokens() {
@@ -58,19 +66,11 @@ public class ChatOptions {
         this.frequencyPenalty = frequencyPenalty;
     }
 
-    public String getModel() {
-        return this.model;
+    public Double getPresencePenalty() {
+        return this.presencePenalty;
     }
     
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public Double getTemperature() {
-        return this.temperature;
-    }
-    
-    public void setTemperature(Double temperature) {
-        this.temperature = temperature;
+    public void setPresencePenalty(Double presencePenalty) {
+        this.presencePenalty = presencePenalty;
     }
 }

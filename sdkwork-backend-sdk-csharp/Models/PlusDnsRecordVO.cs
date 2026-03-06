@@ -19,7 +19,7 @@ namespace Backend.Models
         public int? Ttl { get; set; }
         public int? Priority { get; set; }
         public bool? Enabled { get; set; }
-        public string? FirstRecordValue { get; set; }
         public List<string>? RecordValues { get; set; }
+        public string? FirstRecordValue { get; set; }
     }
 }

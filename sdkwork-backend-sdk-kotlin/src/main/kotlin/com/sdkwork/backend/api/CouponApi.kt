@@ -15,6 +15,21 @@ class CouponApi(private val client: HttpClient) {
         return client.post(ApiPaths.backendPath("/coupon"), body) as? PlusApiResultPlusCouponVO
     }
 
+    /** Exchange coupon by points */
+    suspend fun exchangeByPoints(couponId: String, body: CouponPointsExchangeForm): PlusApiResultPlusUserCouponVO? {
+        return client.post(ApiPaths.backendPath("/coupon/$couponId/exchange/points"), body) as? PlusApiResultPlusUserCouponVO
+    }
+
+    /** Redeem coupon */
+    suspend fun redeem(body: CouponRedeemForm): PlusApiResultPlusUserCouponVO? {
+        return client.post(ApiPaths.backendPath("/coupon/redeem"), body) as? PlusApiResultPlusUserCouponVO
+    }
+
+    /** Rollback points exchange coupon */
+    suspend fun rollbackPointsExchange(userCouponId: String, body: CouponRollbackForm? = null): PlusApiResultPlusUserCouponVO? {
+        return client.post(ApiPaths.backendPath("/coupon/my/$userCouponId/rollback"), body) as? PlusApiResultPlusUserCouponVO
+    }
+
     /** Get coupon templates by page */
     suspend fun listByPage(body: QueryListForm? = null, params: Map<String, Any>? = null): PlusApiResultPagePlusCouponVO? {
         return client.post(ApiPaths.backendPath("/coupon/list"), body, params) as? PlusApiResultPagePlusCouponVO

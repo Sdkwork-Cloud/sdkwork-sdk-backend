@@ -54,6 +54,16 @@ func (a *TenantApi) Install(id string, body sdktypes.PlusTenantForm) (sdktypes.P
     return decodeResult[sdktypes.PlusApiResultPlusTenantVO](raw)
 }
 
+// Get tenant audit logs by page
+func (a *TenantApi) ListAuditLogs(id string, query map[string]interface{}) (sdktypes.PlusApiResultPagePlusTenantAuditLogVO, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/tenant/%s/audit_logs/list", id)), nil, query, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultPagePlusTenantAuditLogVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPagePlusTenantAuditLogVO](raw)
+}
+
 // Get tenants by page
 func (a *TenantApi) ListByPage(body *sdktypes.QueryListForm, query map[string]interface{}) (sdktypes.PlusApiResultPagePlusTenantVO, error) {
     raw, err := a.client.Post(BackendApiPath("/tenant/list"), body, query, nil, "")

@@ -8,6 +8,11 @@ type PlusUserCouponVO struct {
 	CouponId int `json:"couponId"`
 	CouponCode string `json:"couponCode"`
 	AcquireTime string `json:"acquireTime"`
+	AcquireRequestNo string `json:"acquireRequestNo"`
+	AcquireType string `json:"acquireType"`
+	PointCost int `json:"pointCost"`
+	PointsRefunded bool `json:"pointsRefunded"`
+	PointsRefundAt string `json:"pointsRefundAt"`
 	UseTime string `json:"useTime"`
 	Status string `json:"status"`
 }

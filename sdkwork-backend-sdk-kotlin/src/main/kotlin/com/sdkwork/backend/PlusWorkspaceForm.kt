@@ -17,7 +17,7 @@ data class PlusWorkspaceForm(
     val currentMembers: Int? = null,
     val maxStorage: Int? = null,
     val usedStorage: Int? = null,
-    val settings: String? = null,
+    val settings: Map<String, Any>? = null,
     val isDeleted: Boolean? = null,
     val isPublic: Boolean? = null,
     val isTemplate: Boolean? = null

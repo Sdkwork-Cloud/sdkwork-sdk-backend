@@ -3,15 +3,15 @@ import type { PlusVipPackGroupVO } from './plus-vip-pack-group-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusVipPackGroupVO {
-  totalPages?: number;
   totalElements?: number;
+  totalPages?: number;
   size?: number;
   content?: PlusVipPackGroupVO[];
   number?: number;
-  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   numberOfElements?: number;
+  sort?: SortObject;
   pageable?: PageableObject;
   empty?: boolean;
 }

@@ -10,14 +10,14 @@ Add to your `pom.xml`:
 <dependency>
     <groupId>com.sdkwork</groupId>
     <artifactId>backend-sdk</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.0</version>
 </dependency>
 ```
 
 Or with Gradle:
 
 ```groovy
-implementation 'com.sdkwork:backend-sdk:1.0.1'
+implementation 'com.sdkwork:backend-sdk:1.0.0'
 ```
 
 ## Quick Start
@@ -98,32 +98,36 @@ client.getHttpClient().setHeader("X-Custom-Header", "value");
 - `client.getUserCoupon()` - user_coupon API
 - `client.getUserCard()` - user_card API
 - `client.getUserAddress()` - user_address API
-- `client.getAiUsageRecord()` - ai_usage_record API
+- `client.getUsageRecord()` - usage_record API
 - `client.getShoppingCart()` - shopping_cart API
 - `client.getShoppingCartItem()` - shopping_cart_item API
 - `client.getRefund()` - refund API
 - `client.getPayment()` - payment API
 - `client.getOrder()` - order API
 - `client.getOrderItem()` - order_item API
-- `client.getAiTool()` - ai_tool API
+- `client.getTool()` - tool API
 - `client.getTenant()` - tenant API
 - `client.getDatabaseTable()` - database_table API
 - `client.getProductSku()` - product_sku API
+- `client.getSkill()` - skill API
+- `client.getSkillPackage()` - skill_package API
 - `client.getShortUrl()` - short_url API
 - `client.getShop()` - shop API
 - `client.getShare()` - share API
 - `client.getShareVisitRecord()` - share_visit_record API
 - `client.getShardingKey()` - sharding_key API
+- `client.getApiSecurityPolicy()` - api_security_policy API
 - `client.getSchema()` - schema API
 - `client.getRbacRole()` - rbac_role API
 - `client.getRolePermission()` - role_permission API
 - `client.getInvocationRecord()` - invocation_record API
 - `client.getRbacUserRole()` - rbac_user_role API
-- `client.getAiPrompt()` - ai_prompt API
+- `client.getPrompt()` - prompt API
 - `client.getProject()` - project API
 - `client.getProduct()` - product API
 - `client.getPptTemplate()` - ppt_template API
 - `client.getPptTemplateSlide()` - ppt_template_slide API
+- `client.getRbacPermission()` - rbac_permission API
 - `client.getPartner()` - partner API
 - `client.getChatParticipant()` - chat_participant API
 - `client.getOssBucket()` - oss_bucket API
@@ -134,11 +138,11 @@ client.getHttpClient().setHeader("X-Custom-Header", "value");
 - `client.getNotification()` - notification API
 - `client.getNotes()` - notes API
 - `client.getNews()` - news API
-- `client.getHost()` - host API
+- `client.getNet()` - net API
 - `client.getDnsRecord()` - dns_record API
 - `client.getMusic()` - music API
-- `client.getAiModelInformation()` - ai_model_information API
-- `client.getAiModelPrice()` - ai_model_price API
+- `client.getModelInformation()` - model_information API
+- `client.getModelPrice()` - model_price API
 - `client.getChatMessage()` - chat_message API
 - `client.getMemberLevel()` - member_level API
 - `client.getMemberCard()` - member_card API
@@ -147,8 +151,8 @@ client.getHttpClient().setHeader("X-Custom-Header", "value");
 - `client.getInvitationCode()` - invitation_code API
 - `client.getImage()` - image API
 - `client.getChatGroup()` - chat_group API
-- `client.getAiGeneration()` - ai_generation API
-- `client.getAiGenerationContent()` - ai_generation_content API
+- `client.getGeneration()` - generation API
+- `client.getGenerationContent()` - generation_content API
 - `client.getFile()` - file API
 - `client.getFilePart()` - file_part API
 - `client.getFileContent()` - file_content API
@@ -162,45 +166,46 @@ client.getHttpClient().setHeader("X-Custom-Header", "value");
 - `client.getDatasource()` - datasource API
 - `client.getCoupon()` - coupon API
 - `client.getCouponTemplate()` - coupon_template API
-- `client.getAiConversation()` - ai_conversation API
+- `client.getConversation()` - conversation API
+- `client.getContentWriting()` - content_writing API
 - `client.getComment()` - comment API
 - `client.getColumn()` - column API
 - `client.getCollection()` - collection API
 - `client.getCollectionItem()` - collection_item API
 - `client.getCharacter()` - character API
+- `client.getChannel()` - channel API
 - `client.getChannelResource()` - channel_resource API
+- `client.getChannelProxy()` - channel_proxy API
 - `client.getChannelAccount()` - channel_account API
-- `client.getAiCategory()` - ai_category API
+- `client.getCategory()` - category API
 - `client.getMembershipCard()` - membership_card API
 - `client.getCardTemplate()` - card_template API
 - `client.getAttribute()` - attribute API
-- `client.getAiArticle()` - ai_article API
-- `client.getApplication()` - application API
+- `client.getArticle()` - article API
+- `client.getApp()` - app API
 - `client.getApiKey()` - api_key API
-- `client.getAiAgent()` - ai_agent API
-- `client.getAiAgentToolRelationship()` - ai_agent_tool_relationship API
+- `client.getAgent()` - agent API
+- `client.getAgentToolRelationship()` - agent_tool_relationship API
 - `client.getAccount()` - account API
 - `client.getAccountHistory()` - account_history API
+- `client.getAccountExchangeConfig()` - account_exchange_config API
+- `client.getInvoice()` - invoice API
 - `client.getSearchChat()` - search_chat API
 - `client.getPptTemplateRendering()` - ppt_template_rendering API
 - `client.getPptTemplateChat()` - ppt_template_chat API
 - `client.getKnowledgeBaseFile()` - knowledge_base_file API
 - `client.getKnowledgeBaseChat()` - knowledge_base_chat API
 - `client.getImMessage()` - im_message API
-- `client.getAiVoiceSpeakerGeneration()` - ai_voice_speaker_generation API
-- `client.getAiVideoGeneration()` - ai_video_generation API
-- `client.getAiMusicGeneration()` - ai_music_generation API
-- `client.getAiImageGeneration()` - ai_image_generation API
-- `client.getAiCharacterGeneration()` - ai_character_generation API
-- `client.getAiAudioGeneration()` - ai_audio_generation API
-- `client.getAiAudioEffectGeneration()` - ai_audio_effect_generation API
-- `client.getAiChat()` - ai_chat API
-- `client.getVerification()` - verification API
-- `client.getOauthAuthentication()` - oauth_authentication API
-- `client.getAuthorization()` - authorization API
-- `client.getAuthentication()` - authentication API
-- `client.getApp()` - app API
-- `client.getAiAgentChat()` - ai_agent_chat API
+- `client.getVoiceSpeakerGeneration()` - voice_speaker_generation API
+- `client.getVideoGeneration()` - video_generation API
+- `client.getMusicGeneration()` - music_generation API
+- `client.getImageGeneration()` - image_generation API
+- `client.getCharacterGeneration()` - character_generation API
+- `client.getAudioGeneration()` - audio_generation API
+- `client.getAudioEffectGeneration()` - audio_effect_generation API
+- `client.getChat()` - chat API
+- `client.getAuth()` - auth API
+- `client.getAgentChat()` - agent_chat API
 
 ## Usage Examples
 
@@ -364,11 +369,11 @@ Object result = client.getUserAddress().update();
 System.out.println(result);
 ```
 
-### ai_usage_record
+### usage_record
 
 ```java
 // Update an existing usage record
-Object result = client.getAiUsageRecord().update();
+Object result = client.getUsageRecord().update();
 System.out.println(result);
 ```
 
@@ -420,11 +425,11 @@ Object result = client.getOrderItem().update();
 System.out.println(result);
 ```
 
-### ai_tool
+### tool
 
 ```java
 // Update an existing AI tool
-Object result = client.getAiTool().update();
+Object result = client.getTool().update();
 System.out.println(result);
 ```
 
@@ -449,6 +454,22 @@ System.out.println(result);
 ```java
 // Update an existing SKU
 Object result = client.getProductSku().update();
+System.out.println(result);
+```
+
+### skill
+
+```java
+// Get one skill detail
+Object result = client.getSkill().getById();
+System.out.println(result);
+```
+
+### skill_package
+
+```java
+// Get skill package detail
+Object result = client.getSkillPackage().getById();
 System.out.println(result);
 ```
 
@@ -492,6 +513,14 @@ Object result = client.getShardingKey().update();
 System.out.println(result);
 ```
 
+### api_security_policy
+
+```java
+// PUT /backend/v3/api/security/policy
+Object result = client.getApiSecurityPolicy().update();
+System.out.println(result);
+```
+
 ### schema
 
 ```java
@@ -532,11 +561,11 @@ Object result = client.getRbacUserRole().update();
 System.out.println(result);
 ```
 
-### ai_prompt
+### prompt
 
 ```java
 // Update an existing AI prompt
-Object result = client.getAiPrompt().update();
+Object result = client.getPrompt().update();
 System.out.println(result);
 ```
 
@@ -569,6 +598,14 @@ System.out.println(result);
 ```java
 // Update an existing PPT template slide
 Object result = client.getPptTemplateSlide().update();
+System.out.println(result);
+```
+
+### rbac_permission
+
+```java
+// PUT /backend/v3/api/permission
+Object result = client.getRbacPermission().update();
 System.out.println(result);
 ```
 
@@ -652,11 +689,11 @@ Object result = client.getNews().update();
 System.out.println(result);
 ```
 
-### host
+### net
 
 ```java
 // 更新域名
-Object result = client.getHost().update();
+Object result = client.getNet().update();
 System.out.println(result);
 ```
 
@@ -676,19 +713,19 @@ Object result = client.getMusic().update();
 System.out.println(result);
 ```
 
-### ai_model_information
+### model_information
 
 ```java
 // Update existing AI model information
-Object result = client.getAiModelInformation().update();
+Object result = client.getModelInformation().update();
 System.out.println(result);
 ```
 
-### ai_model_price
+### model_price
 
 ```java
 // Update an existing AI model price
-Object result = client.getAiModelPrice().update();
+Object result = client.getModelPrice().update();
 System.out.println(result);
 ```
 
@@ -756,19 +793,19 @@ Object result = client.getChatGroup().update();
 System.out.println(result);
 ```
 
-### ai_generation
+### generation
 
 ```java
 // Update an existing AI generation record
-Object result = client.getAiGeneration().update();
+Object result = client.getGeneration().update();
 System.out.println(result);
 ```
 
-### ai_generation_content
+### generation_content
 
 ```java
 // Update AI generated content
-Object result = client.getAiGenerationContent().update();
+Object result = client.getGenerationContent().update();
 System.out.println(result);
 ```
 
@@ -876,11 +913,19 @@ Object result = client.getCouponTemplate().update();
 System.out.println(result);
 ```
 
-### ai_conversation
+### conversation
 
 ```java
 // Update an existing conversation
-Object result = client.getAiConversation().update();
+Object result = client.getConversation().update();
+System.out.println(result);
+```
+
+### content_writing
+
+```java
+// Rename chapter
+Object result = client.getContentWriting().renameChapter();
 System.out.println(result);
 ```
 
@@ -924,11 +969,27 @@ Object result = client.getCharacter().update();
 System.out.println(result);
 ```
 
+### channel
+
+```java
+// Update channel
+Object result = client.getChannel().update();
+System.out.println(result);
+```
+
 ### channel_resource
 
 ```java
 // Update an existing channel resource
 Object result = client.getChannelResource().update();
+System.out.println(result);
+```
+
+### channel_proxy
+
+```java
+// Update channel proxy
+Object result = client.getChannelProxy().update();
 System.out.println(result);
 ```
 
@@ -940,11 +1001,11 @@ Object result = client.getChannelAccount().update();
 System.out.println(result);
 ```
 
-### ai_category
+### category
 
 ```java
 // Update an existing category
-Object result = client.getAiCategory().update();
+Object result = client.getCategory().update();
 System.out.println(result);
 ```
 
@@ -972,19 +1033,19 @@ Object result = client.getAttribute().update();
 System.out.println(result);
 ```
 
-### ai_article
+### article
 
 ```java
 // Update an existing AI article
-Object result = client.getAiArticle().update();
+Object result = client.getArticle().update();
 System.out.println(result);
 ```
 
-### application
+### app
 
 ```java
 // Update application
-Object result = client.getApplication().update();
+Object result = client.getApp().update();
 System.out.println(result);
 ```
 
@@ -996,19 +1057,19 @@ Object result = client.getApiKey().update();
 System.out.println(result);
 ```
 
-### ai_agent
+### agent
 
 ```java
 // Update an existing AI agent
-Object result = client.getAiAgent().update();
+Object result = client.getAgent().update();
 System.out.println(result);
 ```
 
-### ai_agent_tool_relationship
+### agent_tool_relationship
 
 ```java
 // Update an existing agent-tool relationship
-Object result = client.getAiAgentToolRelationship().update();
+Object result = client.getAgentToolRelationship().update();
 System.out.println(result);
 ```
 
@@ -1025,6 +1086,22 @@ System.out.println(result);
 ```java
 // Update an existing account history record
 Object result = client.getAccountHistory().update();
+System.out.println(result);
+```
+
+### account_exchange_config
+
+```java
+// Get points-to-cash rate
+Object result = client.getAccountExchangeConfig().getPointsToCashRate();
+System.out.println(result);
+```
+
+### invoice
+
+```java
+// Apply invoice
+Object result = client.getInvoice().apply();
 System.out.println(result);
 ```
 
@@ -1055,7 +1132,7 @@ System.out.println(result);
 ### knowledge_base_file
 
 ```java
-// 获取文件列表
+// List files
 Object result = client.getKnowledgeBaseFile().listFiles();
 System.out.println(result);
 ```
@@ -1071,120 +1148,88 @@ System.out.println(result);
 ### im_message
 
 ```java
-// Get messages by page
-Object result = client.getImMessage().listByPage();
+// Mark conversation messages as read
+Object result = client.getImMessage().markRead();
 System.out.println(result);
 ```
 
-### ai_voice_speaker_generation
+### voice_speaker_generation
 
 ```java
 // Create voice speaker generation task
-Object result = client.getAiVoiceSpeakerGeneration().create();
+Object result = client.getVoiceSpeakerGeneration().create();
 System.out.println(result);
 ```
 
-### ai_video_generation
+### video_generation
 
 ```java
 // Create video generation task
-Object result = client.getAiVideoGeneration().create();
+Object result = client.getVideoGeneration().create();
 System.out.println(result);
 ```
 
-### ai_music_generation
+### music_generation
 
 ```java
 // Create music generation task
-Object result = client.getAiMusicGeneration().create();
+Object result = client.getMusicGeneration().create();
 System.out.println(result);
 ```
 
-### ai_image_generation
+### image_generation
 
 ```java
 // Create image generation task
-Object result = client.getAiImageGeneration().create();
+Object result = client.getImageGeneration().create();
 System.out.println(result);
 ```
 
-### ai_character_generation
+### character_generation
 
 ```java
 // Create character generation task
-Object result = client.getAiCharacterGeneration().create();
+Object result = client.getCharacterGeneration().create();
 System.out.println(result);
 ```
 
-### ai_audio_generation
+### audio_generation
 
 ```java
 // Create audio generation task
-Object result = client.getAiAudioGeneration().create();
+Object result = client.getAudioGeneration().create();
 System.out.println(result);
 ```
 
-### ai_audio_effect_generation
+### audio_effect_generation
 
 ```java
 // Create audio effect generation task
-Object result = client.getAiAudioEffectGeneration().create();
+Object result = client.getAudioEffectGeneration().create();
 System.out.println(result);
 ```
 
-### ai_chat
+### chat
 
 ```java
 // Stop a chat completion stream
-Object result = client.getAiChat().stop();
+Object result = client.getChat().stop();
 System.out.println(result);
 ```
 
-### verification
+### auth
 
 ```java
 // Verify phone
-Object result = client.getVerification().verifyPhone();
+Object result = client.getAuth().verifyPhone();
 System.out.println(result);
 ```
 
-### oauth_authentication
-
-```java
-// Get OAuth authorization URL
-Object result = client.getOauthAuthentication().getAuthUrl();
-System.out.println(result);
-```
-
-### authorization
-
-```java
-// 检查用户角色
-Object result = client.getAuthorization().hasRole();
-System.out.println(result);
-```
-
-### authentication
-
-```java
-// 重置密码
-Object result = client.getAuthentication().resetPassword();
-System.out.println(result);
-```
-
-### app
-
-```java
-// Get app SDK config
-Object result = client.getApp().getSdkConfig();
-System.out.println(result);
-```
-
-### ai_agent_chat
+### agent_chat
 
 ```java
 // Create a chat completion with agent
-Object result = client.getAiAgentChat().withContext();
+Object result = client.getAgentChat().withContext();
 System.out.println(result);
 ```
 

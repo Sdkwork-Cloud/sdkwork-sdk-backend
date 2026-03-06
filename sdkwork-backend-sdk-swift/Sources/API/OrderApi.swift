@@ -20,7 +20,7 @@ public class OrderApi {
     }
 
     /// Ship an order
-    public func ship(id: String, body: String) async throws -> PlusApiResultOrderShipVO? {
+    public func ship(id: String, body: String? = nil) async throws -> PlusApiResultOrderShipVO? {
         let response = try await client.post(ApiPaths.backendPath("/trade/order/\(id)/ship"), body: body)
         return response as? PlusApiResultOrderShipVO
     }
@@ -89,6 +89,12 @@ public class OrderApi {
     public func createGoods(body: CreateGoodsOrderForm) async throws -> PlusApiResultGoodsOrderVO? {
         let response = try await client.post(ApiPaths.backendPath("/trade/order/goods"), body: body)
         return response as? PlusApiResultGoodsOrderVO
+    }
+
+    /// Create booking order
+    public func createBooking(body: CreateBookingOrderForm) async throws -> PlusApiResultBookingOrderVO? {
+        let response = try await client.post(ApiPaths.backendPath("/trade/order/booking"), body: body)
+        return response as? PlusApiResultBookingOrderVO
     }
 
     /// Get an order by ID

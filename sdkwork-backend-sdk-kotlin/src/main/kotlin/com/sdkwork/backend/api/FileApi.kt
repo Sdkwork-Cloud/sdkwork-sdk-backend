@@ -15,12 +15,12 @@ class FileApi(private val client: HttpClient) {
         return client.post(ApiPaths.backendPath("/file"), body) as? PlusApiResultPlusFileVO
     }
 
-    /** 获取文件列表 */
+    /** List files */
     suspend fun listFiles(params: Map<String, Any>? = null): PlusApiResultFileListVO? {
         return client.get(ApiPaths.backendPath("/oss/files"), params) as? PlusApiResultFileListVO
     }
 
-    /** 上传文件 */
+    /** Upload file */
     suspend fun upload(body: UploadFileRequest? = null, params: Map<String, Any>? = null): PlusApiResultFileItemVO? {
         return client.post(ApiPaths.backendPath("/oss/files"), body, params, null, "multipart/form-data") as? PlusApiResultFileItemVO
     }
@@ -55,17 +55,17 @@ class FileApi(private val client: HttpClient) {
         return client.post(ApiPaths.backendPath("/file/get_tree"), body, params) as? PlusApiResultSetPlusTreeNodePlusFileVO
     }
 
-    /** 获取单个文件信息 */
+    /** Get file */
     suspend fun getFile(fileId: String): PlusApiResultFileItemVO? {
         return client.get(ApiPaths.backendPath("/oss/files/$fileId")) as? PlusApiResultFileItemVO
     }
 
-    /** 删除文件 */
+    /** Delete file */
     suspend fun deleteFile(fileId: String): PlusApiResultFileItemVO? {
         return client.delete(ApiPaths.backendPath("/oss/files/$fileId")) as? PlusApiResultFileItemVO
     }
 
-    /** 获取文件内容 */
+    /** Get file content */
     suspend fun getFileContent(fileId: String): String? {
         return client.get(ApiPaths.backendPath("/oss/files/$fileId/content")) as? String
     }

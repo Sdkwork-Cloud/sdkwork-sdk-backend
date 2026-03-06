@@ -25,12 +25,12 @@ class AgentExecutionContext:
     disk: PlusDiskObject = None
     disk_root_file: PlusFileObject = None
     completed: bool = None
-    expired: bool = None
-    agent_scopes: Dict[str, AgentScope] = None
-    over_steps: bool = None
-    paused: bool = None
     running: bool = None
+    paused: bool = None
+    expired: bool = None
     failed: bool = None
     waiting: bool = None
     init: bool = None
     end: bool = None
+    agent_scopes: Dict[str, AgentScope] = None
+    over_steps: bool = None

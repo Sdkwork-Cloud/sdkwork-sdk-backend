@@ -14,7 +14,7 @@ func NewKnowledgeBaseFileApi(client *sdkhttp.Client) *KnowledgeBaseFileApi {
     return &KnowledgeBaseFileApi{client: client}
 }
 
-// 获取文件列表
+// List files
 func (a *KnowledgeBaseFileApi) ListFiles(query map[string]interface{}) (sdktypes.PlusApiResultFileListVO, error) {
     raw, err := a.client.Get(BackendApiPath("/knowledge_base/files"), query, nil)
     if err != nil {
@@ -24,7 +24,7 @@ func (a *KnowledgeBaseFileApi) ListFiles(query map[string]interface{}) (sdktypes
     return decodeResult[sdktypes.PlusApiResultFileListVO](raw)
 }
 
-// 上传文件
+// Upload file
 func (a *KnowledgeBaseFileApi) UploadFile(body *sdktypes.UploadFilePostRequest, query map[string]interface{}) (sdktypes.PlusApiResultFileItemVO, error) {
     raw, err := a.client.Post(BackendApiPath("/knowledge_base/files"), body, query, nil, "multipart/form-data")
     if err != nil {
@@ -34,7 +34,7 @@ func (a *KnowledgeBaseFileApi) UploadFile(body *sdktypes.UploadFilePostRequest, 
     return decodeResult[sdktypes.PlusApiResultFileItemVO](raw)
 }
 
-// 获取文件列表
+// List files
 func (a *KnowledgeBaseFileApi) GetListFiles(query map[string]interface{}) (sdktypes.PlusApiResultFileListVO, error) {
     raw, err := a.client.Get(BackendApiPath("/disk/files"), query, nil)
     if err != nil {
@@ -44,7 +44,7 @@ func (a *KnowledgeBaseFileApi) GetListFiles(query map[string]interface{}) (sdkty
     return decodeResult[sdktypes.PlusApiResultFileListVO](raw)
 }
 
-// 上传文件
+// Upload file
 func (a *KnowledgeBaseFileApi) CreateUploadFile(body *sdktypes.CreateUploadFileRequest, query map[string]interface{}) (sdktypes.PlusApiResultFileItemVO, error) {
     raw, err := a.client.Post(BackendApiPath("/disk/files"), body, query, nil, "multipart/form-data")
     if err != nil {
@@ -54,7 +54,7 @@ func (a *KnowledgeBaseFileApi) CreateUploadFile(body *sdktypes.CreateUploadFileR
     return decodeResult[sdktypes.PlusApiResultFileItemVO](raw)
 }
 
-// 获取单个文件信息
+// Get file
 func (a *KnowledgeBaseFileApi) GetFile(fileId string) (sdktypes.PlusApiResultFileItemVO, error) {
     raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/knowledge_base/files/%s", fileId)), nil, nil)
     if err != nil {
@@ -64,7 +64,7 @@ func (a *KnowledgeBaseFileApi) GetFile(fileId string) (sdktypes.PlusApiResultFil
     return decodeResult[sdktypes.PlusApiResultFileItemVO](raw)
 }
 
-// 删除文件
+// Delete file
 func (a *KnowledgeBaseFileApi) DeleteFile(fileId string) (sdktypes.PlusApiResultFileItemVO, error) {
     raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/knowledge_base/files/%s", fileId)), nil, nil)
     if err != nil {
@@ -74,7 +74,7 @@ func (a *KnowledgeBaseFileApi) DeleteFile(fileId string) (sdktypes.PlusApiResult
     return decodeResult[sdktypes.PlusApiResultFileItemVO](raw)
 }
 
-// 获取文件内容
+// Get file content
 func (a *KnowledgeBaseFileApi) GetFileContent(fileId string) (string, error) {
     raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/knowledge_base/files/%s/content", fileId)), nil, nil)
     if err != nil {
@@ -84,7 +84,7 @@ func (a *KnowledgeBaseFileApi) GetFileContent(fileId string) (string, error) {
     return decodeResult[string](raw)
 }
 
-// 获取单个文件信息
+// Get file
 func (a *KnowledgeBaseFileApi) GetFileDisk(fileId string) (sdktypes.PlusApiResultFileItemVO, error) {
     raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/disk/files/%s", fileId)), nil, nil)
     if err != nil {
@@ -94,7 +94,7 @@ func (a *KnowledgeBaseFileApi) GetFileDisk(fileId string) (sdktypes.PlusApiResul
     return decodeResult[sdktypes.PlusApiResultFileItemVO](raw)
 }
 
-// 删除文件
+// Delete file
 func (a *KnowledgeBaseFileApi) DeleteFileDisk(fileId string) (sdktypes.PlusApiResultFileItemVO, error) {
     raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/disk/files/%s", fileId)), nil, nil)
     if err != nil {
@@ -104,7 +104,7 @@ func (a *KnowledgeBaseFileApi) DeleteFileDisk(fileId string) (sdktypes.PlusApiRe
     return decodeResult[sdktypes.PlusApiResultFileItemVO](raw)
 }
 
-// 获取文件内容
+// Get file content
 func (a *KnowledgeBaseFileApi) GetFileContentDisk(fileId string) (string, error) {
     raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/disk/files/%s/content", fileId)), nil, nil)
     if err != nil {

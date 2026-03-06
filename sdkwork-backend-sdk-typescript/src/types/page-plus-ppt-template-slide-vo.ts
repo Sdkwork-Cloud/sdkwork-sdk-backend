@@ -3,15 +3,15 @@ import type { PlusPptTemplateSlideVO } from './plus-ppt-template-slide-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusPptTemplateSlideVO {
-  totalPages?: number;
   totalElements?: number;
+  totalPages?: number;
   size?: number;
   content?: PlusPptTemplateSlideVO[];
   number?: number;
-  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   numberOfElements?: number;
+  sort?: SortObject;
   pageable?: PageableObject;
   empty?: boolean;
 }

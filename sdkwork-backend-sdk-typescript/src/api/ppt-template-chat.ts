@@ -11,13 +11,13 @@ export class PptTemplateChatApi {
     this.client = client; 
   }
 
-async stop(headers?: Record<string, string>): Promise<PlusApiResultBoolean> {
-    return this.client.post<PlusApiResultBoolean>(backendApiPath(`/ppt/template/chat/stop`), undefined, undefined, headers);
+async stop(params?: QueryParams, headers?: Record<string, string>): Promise<PlusApiResultBoolean> {
+    return this.client.post<PlusApiResultBoolean>(backendApiPath(`/ppt/template/chat/stop`), undefined, params, headers);
   }
 
 /** Create a chat completion with PPT template */
-  async create(body: ChatCompletionCreateForm, headers?: Record<string, string>): Promise<ChatCompletionChunk> {
-    return this.client.post<ChatCompletionChunk>(backendApiPath(`/ppt/template/chat/completions`), body, undefined, headers);
+  async create(body: ChatCompletionCreateForm, params?: QueryParams, headers?: Record<string, string>): Promise<ChatCompletionChunk> {
+    return this.client.post<ChatCompletionChunk>(backendApiPath(`/ppt/template/chat/completions`), body, params, headers);
   }
 }
 

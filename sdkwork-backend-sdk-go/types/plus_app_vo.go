@@ -17,6 +17,9 @@ type PlusAppVO struct {
 	Status string `json:"status"`
 	AppType string `json:"appType"`
 	Platforms AppPlatforms `json:"platforms"`
+	InstallPlatforms AppPlatforms `json:"installPlatforms"`
+	InstallSkill AppInstallSkill `json:"installSkill"`
+	InstallConfig AppInstallConfig `json:"installConfig"`
 	PackageName string `json:"packageName"`
 	BundleId string `json:"bundleId"`
 	StoreUrl string `json:"storeUrl"`

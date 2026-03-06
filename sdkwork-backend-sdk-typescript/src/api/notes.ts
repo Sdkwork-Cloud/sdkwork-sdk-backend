@@ -1,7 +1,7 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 import type { QueryParams } from '../types/common';
-import type { PlusApiResultBoolean, PlusApiResultListPlusNotesVO, PlusApiResultPagePlusNotesVO, PlusApiResultPlusNotesVO, PlusNotesForm } from '../types';
+import type { PlusApiResultBoolean, PlusApiResultListPlusNotesVO, PlusApiResultPagePlusMediaPublishRecordDTO, PlusApiResultPagePlusNotesVO, PlusApiResultPlusMediaPublishResultDTO, PlusApiResultPlusNotesVO, PlusNotesForm, PlusNotesMediaDraftForm, PlusNotesMediaPreviewForm, PlusNotesMediaPublishDraftForm } from '../types';
 
 
 export class NotesApi {
@@ -19,6 +19,26 @@ export class NotesApi {
 /** Create a note */
   async create(body: PlusNotesForm): Promise<PlusApiResultPlusNotesVO> {
     return this.client.post<PlusApiResultPlusNotesVO>(backendApiPath(`/notes`), body);
+  }
+
+/** Publish notes directly */
+  async publishNotesToMedia(body: PlusNotesMediaDraftForm): Promise<PlusApiResultPlusMediaPublishResultDTO> {
+    return this.client.post<PlusApiResultPlusMediaPublishResultDTO>(backendApiPath(`/notes/media/publish`), body);
+  }
+
+/** Create media draft */
+  async createMediaDraft(body: PlusNotesMediaDraftForm): Promise<PlusApiResultPlusMediaPublishResultDTO> {
+    return this.client.post<PlusApiResultPlusMediaPublishResultDTO>(backendApiPath(`/notes/media/drafts`), body);
+  }
+
+/** Publish media draft */
+  async publishMediaDraft(body: PlusNotesMediaPublishDraftForm): Promise<PlusApiResultPlusMediaPublishResultDTO> {
+    return this.client.post<PlusApiResultPlusMediaPublishResultDTO>(backendApiPath(`/notes/media/drafts/publish`), body);
+  }
+
+/** Preview media draft */
+  async previewMediaDraft(body: PlusNotesMediaPreviewForm): Promise<PlusApiResultPlusMediaPublishResultDTO> {
+    return this.client.post<PlusApiResultPlusMediaPublishResultDTO>(backendApiPath(`/notes/media/drafts/preview`), body);
   }
 
 /** Get note by UUID */
@@ -49,6 +69,11 @@ export class NotesApi {
 /** Get paginated notes */
   async listByPage(params?: QueryParams): Promise<PlusApiResultPagePlusNotesVO> {
     return this.client.get<PlusApiResultPagePlusNotesVO>(backendApiPath(`/notes/page`), params);
+  }
+
+/** List media publish records */
+  async listMediaPublishRecords(noteId: string | number, params?: QueryParams): Promise<PlusApiResultPagePlusMediaPublishRecordDTO> {
+    return this.client.get<PlusApiResultPagePlusMediaPublishRecordDTO>(backendApiPath(`/notes/media/records/${noteId}`), params);
   }
 
 /** List notes by user */

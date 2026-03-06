@@ -3,15 +3,15 @@ import type { PlusNotificationVO } from './plus-notification-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusNotificationVO {
-  totalPages?: number;
   totalElements?: number;
+  totalPages?: number;
   size?: number;
   content?: PlusNotificationVO[];
   number?: number;
-  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   numberOfElements?: number;
+  sort?: SortObject;
   pageable?: PageableObject;
   empty?: boolean;
 }

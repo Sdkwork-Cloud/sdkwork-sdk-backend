@@ -2,6 +2,8 @@ package com.sdkwork.backend.model;
 
 public class PlusCouponForm {
     private String name;
+    private String redeemCode;
+    private Integer pointCost;
     private String type;
     private String description;
     private Integer amount;
@@ -12,6 +14,8 @@ public class PlusCouponForm {
     private Integer total;
     private Integer getLimit;
     private String status;
+    private String scopeType;
+    private String scopeValue;
 
     public String getName() {
         return this.name;
@@ -19,6 +23,22 @@ public class PlusCouponForm {
     
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getRedeemCode() {
+        return this.redeemCode;
+    }
+    
+    public void setRedeemCode(String redeemCode) {
+        this.redeemCode = redeemCode;
+    }
+
+    public Integer getPointCost() {
+        return this.pointCost;
+    }
+    
+    public void setPointCost(Integer pointCost) {
+        this.pointCost = pointCost;
     }
 
     public String getType() {
@@ -99,5 +119,21 @@ public class PlusCouponForm {
     
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getScopeType() {
+        return this.scopeType;
+    }
+    
+    public void setScopeType(String scopeType) {
+        this.scopeType = scopeType;
+    }
+
+    public String getScopeValue() {
+        return this.scopeValue;
+    }
+    
+    public void setScopeValue(String scopeValue) {
+        this.scopeValue = scopeValue;
     }
 }

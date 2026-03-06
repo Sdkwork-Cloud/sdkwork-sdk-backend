@@ -3,15 +3,15 @@ import type { PlusVipPointChangeVO } from './plus-vip-point-change-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusVipPointChangeVO {
-  totalPages?: number;
   totalElements?: number;
+  totalPages?: number;
   size?: number;
   content?: PlusVipPointChangeVO[];
   number?: number;
-  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   numberOfElements?: number;
+  sort?: SortObject;
   pageable?: PageableObject;
   empty?: boolean;
 }

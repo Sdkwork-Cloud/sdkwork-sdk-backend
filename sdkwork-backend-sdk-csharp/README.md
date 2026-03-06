@@ -11,7 +11,7 @@ dotnet add package Backend
 Or add to your `.csproj`:
 
 ```xml
-<PackageReference Include="Backend" Version="1.0.1" />
+<PackageReference Include="Backend" Version="1.0.0" />
 ```
 
 ## Quick Start
@@ -88,32 +88,36 @@ client.SetHeader("X-Custom-Header", "value");
 - `client.UserCoupon` - user_coupon API
 - `client.UserCard` - user_card API
 - `client.UserAddress` - user_address API
-- `client.AiUsageRecord` - ai_usage_record API
+- `client.UsageRecord` - usage_record API
 - `client.ShoppingCart` - shopping_cart API
 - `client.ShoppingCartItem` - shopping_cart_item API
 - `client.Refund` - refund API
 - `client.Payment` - payment API
 - `client.Order` - order API
 - `client.OrderItem` - order_item API
-- `client.AiTool` - ai_tool API
+- `client.Tool` - tool API
 - `client.Tenant` - tenant API
 - `client.DatabaseTable` - database_table API
 - `client.ProductSku` - product_sku API
+- `client.Skill` - skill API
+- `client.SkillPackage` - skill_package API
 - `client.ShortUrl` - short_url API
 - `client.Shop` - shop API
 - `client.Share` - share API
 - `client.ShareVisitRecord` - share_visit_record API
 - `client.ShardingKey` - sharding_key API
+- `client.ApiSecurityPolicy` - api_security_policy API
 - `client.Schema` - schema API
 - `client.RbacRole` - rbac_role API
 - `client.RolePermission` - role_permission API
 - `client.InvocationRecord` - invocation_record API
 - `client.RbacUserRole` - rbac_user_role API
-- `client.AiPrompt` - ai_prompt API
+- `client.Prompt` - prompt API
 - `client.Project` - project API
 - `client.Product` - product API
 - `client.PptTemplate` - ppt_template API
 - `client.PptTemplateSlide` - ppt_template_slide API
+- `client.RbacPermission` - rbac_permission API
 - `client.Partner` - partner API
 - `client.ChatParticipant` - chat_participant API
 - `client.OssBucket` - oss_bucket API
@@ -124,11 +128,11 @@ client.SetHeader("X-Custom-Header", "value");
 - `client.Notification` - notification API
 - `client.Notes` - notes API
 - `client.News` - news API
-- `client.Host` - host API
+- `client.Net` - net API
 - `client.DnsRecord` - dns_record API
 - `client.Music` - music API
-- `client.AiModelInformation` - ai_model_information API
-- `client.AiModelPrice` - ai_model_price API
+- `client.ModelInformation` - model_information API
+- `client.ModelPrice` - model_price API
 - `client.ChatMessage` - chat_message API
 - `client.MemberLevel` - member_level API
 - `client.MemberCard` - member_card API
@@ -137,8 +141,8 @@ client.SetHeader("X-Custom-Header", "value");
 - `client.InvitationCode` - invitation_code API
 - `client.Image` - image API
 - `client.ChatGroup` - chat_group API
-- `client.AiGeneration` - ai_generation API
-- `client.AiGenerationContent` - ai_generation_content API
+- `client.Generation` - generation API
+- `client.GenerationContent` - generation_content API
 - `client.File` - file API
 - `client.FilePart` - file_part API
 - `client.FileContent` - file_content API
@@ -152,45 +156,46 @@ client.SetHeader("X-Custom-Header", "value");
 - `client.Datasource` - datasource API
 - `client.Coupon` - coupon API
 - `client.CouponTemplate` - coupon_template API
-- `client.AiConversation` - ai_conversation API
+- `client.Conversation` - conversation API
+- `client.ContentWriting` - content_writing API
 - `client.Comment` - comment API
 - `client.Column` - column API
 - `client.Collection` - collection API
 - `client.CollectionItem` - collection_item API
 - `client.Character` - character API
+- `client.Channel` - channel API
 - `client.ChannelResource` - channel_resource API
+- `client.ChannelProxy` - channel_proxy API
 - `client.ChannelAccount` - channel_account API
-- `client.AiCategory` - ai_category API
+- `client.Category` - category API
 - `client.MembershipCard` - membership_card API
 - `client.CardTemplate` - card_template API
 - `client.Attribute` - attribute API
-- `client.AiArticle` - ai_article API
-- `client.Application` - application API
+- `client.Article` - article API
+- `client.App` - app API
 - `client.ApiKey` - api_key API
-- `client.AiAgent` - ai_agent API
-- `client.AiAgentToolRelationship` - ai_agent_tool_relationship API
+- `client.Agent` - agent API
+- `client.AgentToolRelationship` - agent_tool_relationship API
 - `client.Account` - account API
 - `client.AccountHistory` - account_history API
+- `client.AccountExchangeConfig` - account_exchange_config API
+- `client.Invoice` - invoice API
 - `client.SearchChat` - search_chat API
 - `client.PptTemplateRendering` - ppt_template_rendering API
 - `client.PptTemplateChat` - ppt_template_chat API
 - `client.KnowledgeBaseFile` - knowledge_base_file API
 - `client.KnowledgeBaseChat` - knowledge_base_chat API
 - `client.ImMessage` - im_message API
-- `client.AiVoiceSpeakerGeneration` - ai_voice_speaker_generation API
-- `client.AiVideoGeneration` - ai_video_generation API
-- `client.AiMusicGeneration` - ai_music_generation API
-- `client.AiImageGeneration` - ai_image_generation API
-- `client.AiCharacterGeneration` - ai_character_generation API
-- `client.AiAudioGeneration` - ai_audio_generation API
-- `client.AiAudioEffectGeneration` - ai_audio_effect_generation API
-- `client.AiChat` - ai_chat API
-- `client.Verification` - verification API
-- `client.OauthAuthentication` - oauth_authentication API
-- `client.Authorization` - authorization API
-- `client.Authentication` - authentication API
-- `client.App` - app API
-- `client.AiAgentChat` - ai_agent_chat API
+- `client.VoiceSpeakerGeneration` - voice_speaker_generation API
+- `client.VideoGeneration` - video_generation API
+- `client.MusicGeneration` - music_generation API
+- `client.ImageGeneration` - image_generation API
+- `client.CharacterGeneration` - character_generation API
+- `client.AudioGeneration` - audio_generation API
+- `client.AudioEffectGeneration` - audio_effect_generation API
+- `client.Chat` - chat API
+- `client.Auth` - auth API
+- `client.AgentChat` - agent_chat API
 
 ## Usage Examples
 
@@ -354,11 +359,11 @@ var result = await client.UserAddress.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### ai_usage_record
+### usage_record
 
 ```csharp
 // Update an existing usage record
-var result = await client.AiUsageRecord.UpdateAsync();
+var result = await client.UsageRecord.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -410,11 +415,11 @@ var result = await client.OrderItem.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### ai_tool
+### tool
 
 ```csharp
 // Update an existing AI tool
-var result = await client.AiTool.UpdateAsync();
+var result = await client.Tool.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -439,6 +444,22 @@ Console.WriteLine(result);
 ```csharp
 // Update an existing SKU
 var result = await client.ProductSku.UpdateAsync();
+Console.WriteLine(result);
+```
+
+### skill
+
+```csharp
+// Get one skill detail
+var result = await client.Skill.GetByIdAsync();
+Console.WriteLine(result);
+```
+
+### skill_package
+
+```csharp
+// Get skill package detail
+var result = await client.SkillPackage.GetByIdAsync();
 Console.WriteLine(result);
 ```
 
@@ -482,6 +503,14 @@ var result = await client.ShardingKey.UpdateAsync();
 Console.WriteLine(result);
 ```
 
+### api_security_policy
+
+```csharp
+// PUT /backend/v3/api/security/policy
+var result = await client.ApiSecurityPolicy.UpdateAsync();
+Console.WriteLine(result);
+```
+
 ### schema
 
 ```csharp
@@ -522,11 +551,11 @@ var result = await client.RbacUserRole.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### ai_prompt
+### prompt
 
 ```csharp
 // Update an existing AI prompt
-var result = await client.AiPrompt.UpdateAsync();
+var result = await client.Prompt.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -559,6 +588,14 @@ Console.WriteLine(result);
 ```csharp
 // Update an existing PPT template slide
 var result = await client.PptTemplateSlide.UpdateAsync();
+Console.WriteLine(result);
+```
+
+### rbac_permission
+
+```csharp
+// PUT /backend/v3/api/permission
+var result = await client.RbacPermission.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -642,11 +679,11 @@ var result = await client.News.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### host
+### net
 
 ```csharp
 // 更新域名
-var result = await client.Host.UpdateAsync();
+var result = await client.Net.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -666,19 +703,19 @@ var result = await client.Music.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### ai_model_information
+### model_information
 
 ```csharp
 // Update existing AI model information
-var result = await client.AiModelInformation.UpdateAsync();
+var result = await client.ModelInformation.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### ai_model_price
+### model_price
 
 ```csharp
 // Update an existing AI model price
-var result = await client.AiModelPrice.UpdateAsync();
+var result = await client.ModelPrice.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -746,19 +783,19 @@ var result = await client.ChatGroup.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### ai_generation
+### generation
 
 ```csharp
 // Update an existing AI generation record
-var result = await client.AiGeneration.UpdateAsync();
+var result = await client.Generation.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### ai_generation_content
+### generation_content
 
 ```csharp
 // Update AI generated content
-var result = await client.AiGenerationContent.UpdateAsync();
+var result = await client.GenerationContent.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -866,11 +903,19 @@ var result = await client.CouponTemplate.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### ai_conversation
+### conversation
 
 ```csharp
 // Update an existing conversation
-var result = await client.AiConversation.UpdateAsync();
+var result = await client.Conversation.UpdateAsync();
+Console.WriteLine(result);
+```
+
+### content_writing
+
+```csharp
+// Rename chapter
+var result = await client.ContentWriting.RenameChapterAsync();
 Console.WriteLine(result);
 ```
 
@@ -914,11 +959,27 @@ var result = await client.Character.UpdateAsync();
 Console.WriteLine(result);
 ```
 
+### channel
+
+```csharp
+// Update channel
+var result = await client.Channel.UpdateAsync();
+Console.WriteLine(result);
+```
+
 ### channel_resource
 
 ```csharp
 // Update an existing channel resource
 var result = await client.ChannelResource.UpdateAsync();
+Console.WriteLine(result);
+```
+
+### channel_proxy
+
+```csharp
+// Update channel proxy
+var result = await client.ChannelProxy.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -930,11 +991,11 @@ var result = await client.ChannelAccount.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### ai_category
+### category
 
 ```csharp
 // Update an existing category
-var result = await client.AiCategory.UpdateAsync();
+var result = await client.Category.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -962,19 +1023,19 @@ var result = await client.Attribute.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### ai_article
+### article
 
 ```csharp
 // Update an existing AI article
-var result = await client.AiArticle.UpdateAsync();
+var result = await client.Article.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### application
+### app
 
 ```csharp
 // Update application
-var result = await client.Application.UpdateAsync();
+var result = await client.App.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -986,19 +1047,19 @@ var result = await client.ApiKey.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### ai_agent
+### agent
 
 ```csharp
 // Update an existing AI agent
-var result = await client.AiAgent.UpdateAsync();
+var result = await client.Agent.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### ai_agent_tool_relationship
+### agent_tool_relationship
 
 ```csharp
 // Update an existing agent-tool relationship
-var result = await client.AiAgentToolRelationship.UpdateAsync();
+var result = await client.AgentToolRelationship.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -1015,6 +1076,22 @@ Console.WriteLine(result);
 ```csharp
 // Update an existing account history record
 var result = await client.AccountHistory.UpdateAsync();
+Console.WriteLine(result);
+```
+
+### account_exchange_config
+
+```csharp
+// Get points-to-cash rate
+var result = await client.AccountExchangeConfig.GetPointsToCashRateAsync();
+Console.WriteLine(result);
+```
+
+### invoice
+
+```csharp
+// Apply invoice
+var result = await client.Invoice.ApplyAsync();
 Console.WriteLine(result);
 ```
 
@@ -1045,7 +1122,7 @@ Console.WriteLine(result);
 ### knowledge_base_file
 
 ```csharp
-// 获取文件列表
+// List files
 var result = await client.KnowledgeBaseFile.ListFilesAsync();
 Console.WriteLine(result);
 ```
@@ -1061,120 +1138,88 @@ Console.WriteLine(result);
 ### im_message
 
 ```csharp
-// Get messages by page
-var result = await client.ImMessage.ListByPageAsync();
+// Mark conversation messages as read
+var result = await client.ImMessage.MarkReadAsync();
 Console.WriteLine(result);
 ```
 
-### ai_voice_speaker_generation
+### voice_speaker_generation
 
 ```csharp
 // Create voice speaker generation task
-var result = await client.AiVoiceSpeakerGeneration.CreateAsync();
+var result = await client.VoiceSpeakerGeneration.CreateAsync();
 Console.WriteLine(result);
 ```
 
-### ai_video_generation
+### video_generation
 
 ```csharp
 // Create video generation task
-var result = await client.AiVideoGeneration.CreateAsync();
+var result = await client.VideoGeneration.CreateAsync();
 Console.WriteLine(result);
 ```
 
-### ai_music_generation
+### music_generation
 
 ```csharp
 // Create music generation task
-var result = await client.AiMusicGeneration.CreateAsync();
+var result = await client.MusicGeneration.CreateAsync();
 Console.WriteLine(result);
 ```
 
-### ai_image_generation
+### image_generation
 
 ```csharp
 // Create image generation task
-var result = await client.AiImageGeneration.CreateAsync();
+var result = await client.ImageGeneration.CreateAsync();
 Console.WriteLine(result);
 ```
 
-### ai_character_generation
+### character_generation
 
 ```csharp
 // Create character generation task
-var result = await client.AiCharacterGeneration.CreateAsync();
+var result = await client.CharacterGeneration.CreateAsync();
 Console.WriteLine(result);
 ```
 
-### ai_audio_generation
+### audio_generation
 
 ```csharp
 // Create audio generation task
-var result = await client.AiAudioGeneration.CreateAsync();
+var result = await client.AudioGeneration.CreateAsync();
 Console.WriteLine(result);
 ```
 
-### ai_audio_effect_generation
+### audio_effect_generation
 
 ```csharp
 // Create audio effect generation task
-var result = await client.AiAudioEffectGeneration.CreateAsync();
+var result = await client.AudioEffectGeneration.CreateAsync();
 Console.WriteLine(result);
 ```
 
-### ai_chat
+### chat
 
 ```csharp
 // Stop a chat completion stream
-var result = await client.AiChat.StopAsync();
+var result = await client.Chat.StopAsync();
 Console.WriteLine(result);
 ```
 
-### verification
+### auth
 
 ```csharp
 // Verify phone
-var result = await client.Verification.VerifyPhoneAsync();
+var result = await client.Auth.VerifyPhoneAsync();
 Console.WriteLine(result);
 ```
 
-### oauth_authentication
-
-```csharp
-// Get OAuth authorization URL
-var result = await client.OauthAuthentication.GetAuthUrlAsync();
-Console.WriteLine(result);
-```
-
-### authorization
-
-```csharp
-// 检查用户角色
-var result = await client.Authorization.HasRoleAsync();
-Console.WriteLine(result);
-```
-
-### authentication
-
-```csharp
-// 重置密码
-var result = await client.Authentication.ResetPasswordAsync();
-Console.WriteLine(result);
-```
-
-### app
-
-```csharp
-// Get app SDK config
-var result = await client.App.GetSdkConfigAsync();
-Console.WriteLine(result);
-```
-
-### ai_agent_chat
+### agent_chat
 
 ```csharp
 // Create a chat completion with agent
-var result = await client.AiAgentChat.WithContextAsync();
+var result = await client.AgentChat.WithContextAsync();
 Console.WriteLine(result);
 ```
 

@@ -12,12 +12,12 @@ public class KnowledgeBaseChatApi {
         this.client = client;
     }
 
-    public PlusApiResultBoolean stop(Map<String, String> headers) throws Exception {
-        return (PlusApiResultBoolean) client.post(ApiPaths.backendPath("/knowledge_base/chat/stop"), null, null, headers);
+    public PlusApiResultBoolean stop(Map<String, Object> params, Map<String, String> headers) throws Exception {
+        return (PlusApiResultBoolean) client.post(ApiPaths.backendPath("/knowledge_base/chat/stop"), null, params, headers);
     }
 
     /** Create a chat completion with Knowledge base */
-    public ChatCompletionChunk create(ChatCompletionCreateForm body, Map<String, String> headers) throws Exception {
-        return (ChatCompletionChunk) client.post(ApiPaths.backendPath("/knowledge_base/chat/completions"), body, null, headers);
+    public ChatCompletionChunk create(ChatCompletionCreateForm body, Map<String, Object> params, Map<String, String> headers) throws Exception {
+        return (ChatCompletionChunk) client.post(ApiPaths.backendPath("/knowledge_base/chat/completions"), body, params, headers);
     }
 }

@@ -1,6 +1,7 @@
 package com.sdkwork.backend
 
 data class PlusNotesForm(
+    val id: Int? = null,
     val title: String? = null,
     val content: String? = null,
     val userId: Int? = null,

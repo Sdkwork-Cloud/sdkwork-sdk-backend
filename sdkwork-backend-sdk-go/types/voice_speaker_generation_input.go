@@ -20,7 +20,7 @@ type VoiceSpeakerGenerationInput struct {
 	Volume int `json:"volume"`
 	Emotion string `json:"emotion"`
 	SaveSpeaker bool `json:"saveSpeaker"`
-	UsingExistingSpeaker bool `json:"usingExistingSpeaker"`
 	VoiceClone bool `json:"voiceClone"`
+	UsingExistingSpeaker bool `json:"usingExistingSpeaker"`
 	ReferenceAssetCount int `json:"referenceAssetCount"`
 }

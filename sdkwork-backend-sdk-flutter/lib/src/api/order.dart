@@ -19,7 +19,7 @@ class OrderApi {
   }
 
   /// Ship an order
-  Future<PlusApiResultOrderShipVO?> ship(String id, String body) async {
+  Future<PlusApiResultOrderShipVO?> ship(String id, String? body) async {
     final response = await _client.post(ApiPaths.backendPath('/trade/order/${id}/ship'), body: body, contentType: 'application/json');
     return response is PlusApiResultOrderShipVO ? response : null;
   }
@@ -88,6 +88,12 @@ class OrderApi {
   Future<PlusApiResultGoodsOrderVO?> createGoods(CreateGoodsOrderForm body) async {
     final response = await _client.post(ApiPaths.backendPath('/trade/order/goods'), body: body, contentType: 'application/json');
     return response is PlusApiResultGoodsOrderVO ? response : null;
+  }
+
+  /// Create booking order
+  Future<PlusApiResultBookingOrderVO?> createBooking(CreateBookingOrderForm body) async {
+    final response = await _client.post(ApiPaths.backendPath('/trade/order/booking'), body: body, contentType: 'application/json');
+    return response is PlusApiResultBookingOrderVO ? response : null;
   }
 
   /// Get an order by ID

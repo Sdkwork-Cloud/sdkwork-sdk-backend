@@ -2,15 +2,15 @@ package types
 
 
 type PagePlusConversationVO struct {
-	TotalPages int `json:"totalPages"`
 	TotalElements int `json:"totalElements"`
+	TotalPages int `json:"totalPages"`
 	Size int `json:"size"`
 	Content []PlusConversationVO `json:"content"`
 	Number int `json:"number"`
-	Sort SortObject `json:"sort"`
 	First bool `json:"first"`
 	Last bool `json:"last"`
 	NumberOfElements int `json:"numberOfElements"`
+	Sort SortObject `json:"sort"`
 	Pageable PageableObject `json:"pageable"`
 	Empty bool `json:"empty"`
 }

@@ -22,32 +22,36 @@ import com.sdkwork.backend.api.UserOauthAccountApi
 import com.sdkwork.backend.api.UserCouponApi
 import com.sdkwork.backend.api.UserCardApi
 import com.sdkwork.backend.api.UserAddressApi
-import com.sdkwork.backend.api.AiUsageRecordApi
+import com.sdkwork.backend.api.UsageRecordApi
 import com.sdkwork.backend.api.ShoppingCartApi
 import com.sdkwork.backend.api.ShoppingCartItemApi
 import com.sdkwork.backend.api.RefundApi
 import com.sdkwork.backend.api.PaymentApi
 import com.sdkwork.backend.api.OrderApi
 import com.sdkwork.backend.api.OrderItemApi
-import com.sdkwork.backend.api.AiToolApi
+import com.sdkwork.backend.api.ToolApi
 import com.sdkwork.backend.api.TenantApi
 import com.sdkwork.backend.api.DatabaseTableApi
 import com.sdkwork.backend.api.ProductSkuApi
+import com.sdkwork.backend.api.SkillApi
+import com.sdkwork.backend.api.SkillPackageApi
 import com.sdkwork.backend.api.ShortUrlApi
 import com.sdkwork.backend.api.ShopApi
 import com.sdkwork.backend.api.ShareApi
 import com.sdkwork.backend.api.ShareVisitRecordApi
 import com.sdkwork.backend.api.ShardingKeyApi
+import com.sdkwork.backend.api.ApiSecurityPolicyApi
 import com.sdkwork.backend.api.SchemaApi
 import com.sdkwork.backend.api.RbacRoleApi
 import com.sdkwork.backend.api.RolePermissionApi
 import com.sdkwork.backend.api.InvocationRecordApi
 import com.sdkwork.backend.api.RbacUserRoleApi
-import com.sdkwork.backend.api.AiPromptApi
+import com.sdkwork.backend.api.PromptApi
 import com.sdkwork.backend.api.ProjectApi
 import com.sdkwork.backend.api.ProductApi
 import com.sdkwork.backend.api.PptTemplateApi
 import com.sdkwork.backend.api.PptTemplateSlideApi
+import com.sdkwork.backend.api.RbacPermissionApi
 import com.sdkwork.backend.api.PartnerApi
 import com.sdkwork.backend.api.ChatParticipantApi
 import com.sdkwork.backend.api.OssBucketApi
@@ -58,11 +62,11 @@ import com.sdkwork.backend.api.OrganizationMemberApi
 import com.sdkwork.backend.api.NotificationApi
 import com.sdkwork.backend.api.NotesApi
 import com.sdkwork.backend.api.NewsApi
-import com.sdkwork.backend.api.HostApi
+import com.sdkwork.backend.api.NetApi
 import com.sdkwork.backend.api.DnsRecordApi
 import com.sdkwork.backend.api.MusicApi
-import com.sdkwork.backend.api.AiModelInformationApi
-import com.sdkwork.backend.api.AiModelPriceApi
+import com.sdkwork.backend.api.ModelInformationApi
+import com.sdkwork.backend.api.ModelPriceApi
 import com.sdkwork.backend.api.ChatMessageApi
 import com.sdkwork.backend.api.MemberLevelApi
 import com.sdkwork.backend.api.MemberCardApi
@@ -71,8 +75,8 @@ import com.sdkwork.backend.api.InvitationRelationApi
 import com.sdkwork.backend.api.InvitationCodeApi
 import com.sdkwork.backend.api.ImageApi
 import com.sdkwork.backend.api.ChatGroupApi
-import com.sdkwork.backend.api.AiGenerationApi
-import com.sdkwork.backend.api.AiGenerationContentApi
+import com.sdkwork.backend.api.GenerationApi
+import com.sdkwork.backend.api.GenerationContentApi
 import com.sdkwork.backend.api.FileApi
 import com.sdkwork.backend.api.FilePartApi
 import com.sdkwork.backend.api.FileContentApi
@@ -86,45 +90,46 @@ import com.sdkwork.backend.api.DepartmentApi
 import com.sdkwork.backend.api.DatasourceApi
 import com.sdkwork.backend.api.CouponApi
 import com.sdkwork.backend.api.CouponTemplateApi
-import com.sdkwork.backend.api.AiConversationApi
+import com.sdkwork.backend.api.ConversationApi
+import com.sdkwork.backend.api.ContentWritingApi
 import com.sdkwork.backend.api.CommentApi
 import com.sdkwork.backend.api.ColumnApi
 import com.sdkwork.backend.api.CollectionApi
 import com.sdkwork.backend.api.CollectionItemApi
 import com.sdkwork.backend.api.CharacterApi
+import com.sdkwork.backend.api.ChannelApi
 import com.sdkwork.backend.api.ChannelResourceApi
+import com.sdkwork.backend.api.ChannelProxyApi
 import com.sdkwork.backend.api.ChannelAccountApi
-import com.sdkwork.backend.api.AiCategoryApi
+import com.sdkwork.backend.api.CategoryApi
 import com.sdkwork.backend.api.MembershipCardApi
 import com.sdkwork.backend.api.CardTemplateApi
 import com.sdkwork.backend.api.AttributeApi
-import com.sdkwork.backend.api.AiArticleApi
-import com.sdkwork.backend.api.ApplicationApi
+import com.sdkwork.backend.api.ArticleApi
+import com.sdkwork.backend.api.AppApi
 import com.sdkwork.backend.api.ApiKeyApi
-import com.sdkwork.backend.api.AiAgentApi
-import com.sdkwork.backend.api.AiAgentToolRelationshipApi
+import com.sdkwork.backend.api.AgentApi
+import com.sdkwork.backend.api.AgentToolRelationshipApi
 import com.sdkwork.backend.api.AccountApi
 import com.sdkwork.backend.api.AccountHistoryApi
+import com.sdkwork.backend.api.AccountExchangeConfigApi
+import com.sdkwork.backend.api.InvoiceApi
 import com.sdkwork.backend.api.SearchChatApi
 import com.sdkwork.backend.api.PptTemplateRenderingApi
 import com.sdkwork.backend.api.PptTemplateChatApi
 import com.sdkwork.backend.api.KnowledgeBaseFileApi
 import com.sdkwork.backend.api.KnowledgeBaseChatApi
 import com.sdkwork.backend.api.ImMessageApi
-import com.sdkwork.backend.api.AiVoiceSpeakerGenerationApi
-import com.sdkwork.backend.api.AiVideoGenerationApi
-import com.sdkwork.backend.api.AiMusicGenerationApi
-import com.sdkwork.backend.api.AiImageGenerationApi
-import com.sdkwork.backend.api.AiCharacterGenerationApi
-import com.sdkwork.backend.api.AiAudioGenerationApi
-import com.sdkwork.backend.api.AiAudioEffectGenerationApi
-import com.sdkwork.backend.api.AiChatApi
-import com.sdkwork.backend.api.VerificationApi
-import com.sdkwork.backend.api.OauthAuthenticationApi
-import com.sdkwork.backend.api.AuthorizationApi
-import com.sdkwork.backend.api.AuthenticationApi
-import com.sdkwork.backend.api.AppApi
-import com.sdkwork.backend.api.AiAgentChatApi
+import com.sdkwork.backend.api.VoiceSpeakerGenerationApi
+import com.sdkwork.backend.api.VideoGenerationApi
+import com.sdkwork.backend.api.MusicGenerationApi
+import com.sdkwork.backend.api.ImageGenerationApi
+import com.sdkwork.backend.api.CharacterGenerationApi
+import com.sdkwork.backend.api.AudioGenerationApi
+import com.sdkwork.backend.api.AudioEffectGenerationApi
+import com.sdkwork.backend.api.ChatApi
+import com.sdkwork.backend.api.AuthApi
+import com.sdkwork.backend.api.AgentChatApi
 
 class SdkworkBackendClient {
     private val httpClient: HttpClient
@@ -149,32 +154,36 @@ class SdkworkBackendClient {
     lateinit var userCoupon: UserCouponApi
     lateinit var userCard: UserCardApi
     lateinit var userAddress: UserAddressApi
-    lateinit var aiUsageRecord: AiUsageRecordApi
+    lateinit var usageRecord: UsageRecordApi
     lateinit var shoppingCart: ShoppingCartApi
     lateinit var shoppingCartItem: ShoppingCartItemApi
     lateinit var refund: RefundApi
     lateinit var payment: PaymentApi
     lateinit var order: OrderApi
     lateinit var orderItem: OrderItemApi
-    lateinit var aiTool: AiToolApi
+    lateinit var tool: ToolApi
     lateinit var tenant: TenantApi
     lateinit var databaseTable: DatabaseTableApi
     lateinit var productSku: ProductSkuApi
+    lateinit var skill: SkillApi
+    lateinit var skillPackage: SkillPackageApi
     lateinit var shortUrl: ShortUrlApi
     lateinit var shop: ShopApi
     lateinit var share: ShareApi
     lateinit var shareVisitRecord: ShareVisitRecordApi
     lateinit var shardingKey: ShardingKeyApi
+    lateinit var apiSecurityPolicy: ApiSecurityPolicyApi
     lateinit var schema: SchemaApi
     lateinit var rbacRole: RbacRoleApi
     lateinit var rolePermission: RolePermissionApi
     lateinit var invocationRecord: InvocationRecordApi
     lateinit var rbacUserRole: RbacUserRoleApi
-    lateinit var aiPrompt: AiPromptApi
+    lateinit var prompt: PromptApi
     lateinit var project: ProjectApi
     lateinit var product: ProductApi
     lateinit var pptTemplate: PptTemplateApi
     lateinit var pptTemplateSlide: PptTemplateSlideApi
+    lateinit var rbacPermission: RbacPermissionApi
     lateinit var partner: PartnerApi
     lateinit var chatParticipant: ChatParticipantApi
     lateinit var ossBucket: OssBucketApi
@@ -185,11 +194,11 @@ class SdkworkBackendClient {
     lateinit var notification: NotificationApi
     lateinit var notes: NotesApi
     lateinit var news: NewsApi
-    lateinit var host: HostApi
+    lateinit var net: NetApi
     lateinit var dnsRecord: DnsRecordApi
     lateinit var music: MusicApi
-    lateinit var aiModelInformation: AiModelInformationApi
-    lateinit var aiModelPrice: AiModelPriceApi
+    lateinit var modelInformation: ModelInformationApi
+    lateinit var modelPrice: ModelPriceApi
     lateinit var chatMessage: ChatMessageApi
     lateinit var memberLevel: MemberLevelApi
     lateinit var memberCard: MemberCardApi
@@ -198,8 +207,8 @@ class SdkworkBackendClient {
     lateinit var invitationCode: InvitationCodeApi
     lateinit var image: ImageApi
     lateinit var chatGroup: ChatGroupApi
-    lateinit var aiGeneration: AiGenerationApi
-    lateinit var aiGenerationContent: AiGenerationContentApi
+    lateinit var generation: GenerationApi
+    lateinit var generationContent: GenerationContentApi
     lateinit var file: FileApi
     lateinit var filePart: FilePartApi
     lateinit var fileContent: FileContentApi
@@ -213,45 +222,46 @@ class SdkworkBackendClient {
     lateinit var datasource: DatasourceApi
     lateinit var coupon: CouponApi
     lateinit var couponTemplate: CouponTemplateApi
-    lateinit var aiConversation: AiConversationApi
+    lateinit var conversation: ConversationApi
+    lateinit var contentWriting: ContentWritingApi
     lateinit var comment: CommentApi
     lateinit var column: ColumnApi
     lateinit var collection: CollectionApi
     lateinit var collectionItem: CollectionItemApi
     lateinit var character: CharacterApi
+    lateinit var channel: ChannelApi
     lateinit var channelResource: ChannelResourceApi
+    lateinit var channelProxy: ChannelProxyApi
     lateinit var channelAccount: ChannelAccountApi
-    lateinit var aiCategory: AiCategoryApi
+    lateinit var category: CategoryApi
     lateinit var membershipCard: MembershipCardApi
     lateinit var cardTemplate: CardTemplateApi
     lateinit var attribute: AttributeApi
-    lateinit var aiArticle: AiArticleApi
-    lateinit var application: ApplicationApi
+    lateinit var article: ArticleApi
+    lateinit var app: AppApi
     lateinit var apiKey: ApiKeyApi
-    lateinit var aiAgent: AiAgentApi
-    lateinit var aiAgentToolRelationship: AiAgentToolRelationshipApi
+    lateinit var agent: AgentApi
+    lateinit var agentToolRelationship: AgentToolRelationshipApi
     lateinit var account: AccountApi
     lateinit var accountHistory: AccountHistoryApi
+    lateinit var accountExchangeConfig: AccountExchangeConfigApi
+    lateinit var invoice: InvoiceApi
     lateinit var searchChat: SearchChatApi
     lateinit var pptTemplateRendering: PptTemplateRenderingApi
     lateinit var pptTemplateChat: PptTemplateChatApi
     lateinit var knowledgeBaseFile: KnowledgeBaseFileApi
     lateinit var knowledgeBaseChat: KnowledgeBaseChatApi
     lateinit var imMessage: ImMessageApi
-    lateinit var aiVoiceSpeakerGeneration: AiVoiceSpeakerGenerationApi
-    lateinit var aiVideoGeneration: AiVideoGenerationApi
-    lateinit var aiMusicGeneration: AiMusicGenerationApi
-    lateinit var aiImageGeneration: AiImageGenerationApi
-    lateinit var aiCharacterGeneration: AiCharacterGenerationApi
-    lateinit var aiAudioGeneration: AiAudioGenerationApi
-    lateinit var aiAudioEffectGeneration: AiAudioEffectGenerationApi
-    lateinit var aiChat: AiChatApi
-    lateinit var verification: VerificationApi
-    lateinit var oauthAuthentication: OauthAuthenticationApi
-    lateinit var authorization: AuthorizationApi
-    lateinit var authentication: AuthenticationApi
-    lateinit var app: AppApi
-    lateinit var aiAgentChat: AiAgentChatApi
+    lateinit var voiceSpeakerGeneration: VoiceSpeakerGenerationApi
+    lateinit var videoGeneration: VideoGenerationApi
+    lateinit var musicGeneration: MusicGenerationApi
+    lateinit var imageGeneration: ImageGenerationApi
+    lateinit var characterGeneration: CharacterGenerationApi
+    lateinit var audioGeneration: AudioGenerationApi
+    lateinit var audioEffectGeneration: AudioEffectGenerationApi
+    lateinit var chat: ChatApi
+    lateinit var auth: AuthApi
+    lateinit var agentChat: AgentChatApi
 
     constructor(baseUrl: String) {
         this.httpClient = HttpClient(baseUrl)
@@ -275,32 +285,36 @@ class SdkworkBackendClient {
         userCoupon = UserCouponApi(httpClient)
         userCard = UserCardApi(httpClient)
         userAddress = UserAddressApi(httpClient)
-        aiUsageRecord = AiUsageRecordApi(httpClient)
+        usageRecord = UsageRecordApi(httpClient)
         shoppingCart = ShoppingCartApi(httpClient)
         shoppingCartItem = ShoppingCartItemApi(httpClient)
         refund = RefundApi(httpClient)
         payment = PaymentApi(httpClient)
         order = OrderApi(httpClient)
         orderItem = OrderItemApi(httpClient)
-        aiTool = AiToolApi(httpClient)
+        tool = ToolApi(httpClient)
         tenant = TenantApi(httpClient)
         databaseTable = DatabaseTableApi(httpClient)
         productSku = ProductSkuApi(httpClient)
+        skill = SkillApi(httpClient)
+        skillPackage = SkillPackageApi(httpClient)
         shortUrl = ShortUrlApi(httpClient)
         shop = ShopApi(httpClient)
         share = ShareApi(httpClient)
         shareVisitRecord = ShareVisitRecordApi(httpClient)
         shardingKey = ShardingKeyApi(httpClient)
+        apiSecurityPolicy = ApiSecurityPolicyApi(httpClient)
         schema = SchemaApi(httpClient)
         rbacRole = RbacRoleApi(httpClient)
         rolePermission = RolePermissionApi(httpClient)
         invocationRecord = InvocationRecordApi(httpClient)
         rbacUserRole = RbacUserRoleApi(httpClient)
-        aiPrompt = AiPromptApi(httpClient)
+        prompt = PromptApi(httpClient)
         project = ProjectApi(httpClient)
         product = ProductApi(httpClient)
         pptTemplate = PptTemplateApi(httpClient)
         pptTemplateSlide = PptTemplateSlideApi(httpClient)
+        rbacPermission = RbacPermissionApi(httpClient)
         partner = PartnerApi(httpClient)
         chatParticipant = ChatParticipantApi(httpClient)
         ossBucket = OssBucketApi(httpClient)
@@ -311,11 +325,11 @@ class SdkworkBackendClient {
         notification = NotificationApi(httpClient)
         notes = NotesApi(httpClient)
         news = NewsApi(httpClient)
-        host = HostApi(httpClient)
+        net = NetApi(httpClient)
         dnsRecord = DnsRecordApi(httpClient)
         music = MusicApi(httpClient)
-        aiModelInformation = AiModelInformationApi(httpClient)
-        aiModelPrice = AiModelPriceApi(httpClient)
+        modelInformation = ModelInformationApi(httpClient)
+        modelPrice = ModelPriceApi(httpClient)
         chatMessage = ChatMessageApi(httpClient)
         memberLevel = MemberLevelApi(httpClient)
         memberCard = MemberCardApi(httpClient)
@@ -324,8 +338,8 @@ class SdkworkBackendClient {
         invitationCode = InvitationCodeApi(httpClient)
         image = ImageApi(httpClient)
         chatGroup = ChatGroupApi(httpClient)
-        aiGeneration = AiGenerationApi(httpClient)
-        aiGenerationContent = AiGenerationContentApi(httpClient)
+        generation = GenerationApi(httpClient)
+        generationContent = GenerationContentApi(httpClient)
         file = FileApi(httpClient)
         filePart = FilePartApi(httpClient)
         fileContent = FileContentApi(httpClient)
@@ -339,45 +353,46 @@ class SdkworkBackendClient {
         datasource = DatasourceApi(httpClient)
         coupon = CouponApi(httpClient)
         couponTemplate = CouponTemplateApi(httpClient)
-        aiConversation = AiConversationApi(httpClient)
+        conversation = ConversationApi(httpClient)
+        contentWriting = ContentWritingApi(httpClient)
         comment = CommentApi(httpClient)
         column = ColumnApi(httpClient)
         collection = CollectionApi(httpClient)
         collectionItem = CollectionItemApi(httpClient)
         character = CharacterApi(httpClient)
+        channel = ChannelApi(httpClient)
         channelResource = ChannelResourceApi(httpClient)
+        channelProxy = ChannelProxyApi(httpClient)
         channelAccount = ChannelAccountApi(httpClient)
-        aiCategory = AiCategoryApi(httpClient)
+        category = CategoryApi(httpClient)
         membershipCard = MembershipCardApi(httpClient)
         cardTemplate = CardTemplateApi(httpClient)
         attribute = AttributeApi(httpClient)
-        aiArticle = AiArticleApi(httpClient)
-        application = ApplicationApi(httpClient)
+        article = ArticleApi(httpClient)
+        app = AppApi(httpClient)
         apiKey = ApiKeyApi(httpClient)
-        aiAgent = AiAgentApi(httpClient)
-        aiAgentToolRelationship = AiAgentToolRelationshipApi(httpClient)
+        agent = AgentApi(httpClient)
+        agentToolRelationship = AgentToolRelationshipApi(httpClient)
         account = AccountApi(httpClient)
         accountHistory = AccountHistoryApi(httpClient)
+        accountExchangeConfig = AccountExchangeConfigApi(httpClient)
+        invoice = InvoiceApi(httpClient)
         searchChat = SearchChatApi(httpClient)
         pptTemplateRendering = PptTemplateRenderingApi(httpClient)
         pptTemplateChat = PptTemplateChatApi(httpClient)
         knowledgeBaseFile = KnowledgeBaseFileApi(httpClient)
         knowledgeBaseChat = KnowledgeBaseChatApi(httpClient)
         imMessage = ImMessageApi(httpClient)
-        aiVoiceSpeakerGeneration = AiVoiceSpeakerGenerationApi(httpClient)
-        aiVideoGeneration = AiVideoGenerationApi(httpClient)
-        aiMusicGeneration = AiMusicGenerationApi(httpClient)
-        aiImageGeneration = AiImageGenerationApi(httpClient)
-        aiCharacterGeneration = AiCharacterGenerationApi(httpClient)
-        aiAudioGeneration = AiAudioGenerationApi(httpClient)
-        aiAudioEffectGeneration = AiAudioEffectGenerationApi(httpClient)
-        aiChat = AiChatApi(httpClient)
-        verification = VerificationApi(httpClient)
-        oauthAuthentication = OauthAuthenticationApi(httpClient)
-        authorization = AuthorizationApi(httpClient)
-        authentication = AuthenticationApi(httpClient)
-        app = AppApi(httpClient)
-        aiAgentChat = AiAgentChatApi(httpClient)
+        voiceSpeakerGeneration = VoiceSpeakerGenerationApi(httpClient)
+        videoGeneration = VideoGenerationApi(httpClient)
+        musicGeneration = MusicGenerationApi(httpClient)
+        imageGeneration = ImageGenerationApi(httpClient)
+        characterGeneration = CharacterGenerationApi(httpClient)
+        audioGeneration = AudioGenerationApi(httpClient)
+        audioEffectGeneration = AudioEffectGenerationApi(httpClient)
+        chat = ChatApi(httpClient)
+        auth = AuthApi(httpClient)
+        agentChat = AgentChatApi(httpClient)
     }
 
     constructor(config: SdkConfig) {
@@ -402,32 +417,36 @@ class SdkworkBackendClient {
         userCoupon = UserCouponApi(httpClient)
         userCard = UserCardApi(httpClient)
         userAddress = UserAddressApi(httpClient)
-        aiUsageRecord = AiUsageRecordApi(httpClient)
+        usageRecord = UsageRecordApi(httpClient)
         shoppingCart = ShoppingCartApi(httpClient)
         shoppingCartItem = ShoppingCartItemApi(httpClient)
         refund = RefundApi(httpClient)
         payment = PaymentApi(httpClient)
         order = OrderApi(httpClient)
         orderItem = OrderItemApi(httpClient)
-        aiTool = AiToolApi(httpClient)
+        tool = ToolApi(httpClient)
         tenant = TenantApi(httpClient)
         databaseTable = DatabaseTableApi(httpClient)
         productSku = ProductSkuApi(httpClient)
+        skill = SkillApi(httpClient)
+        skillPackage = SkillPackageApi(httpClient)
         shortUrl = ShortUrlApi(httpClient)
         shop = ShopApi(httpClient)
         share = ShareApi(httpClient)
         shareVisitRecord = ShareVisitRecordApi(httpClient)
         shardingKey = ShardingKeyApi(httpClient)
+        apiSecurityPolicy = ApiSecurityPolicyApi(httpClient)
         schema = SchemaApi(httpClient)
         rbacRole = RbacRoleApi(httpClient)
         rolePermission = RolePermissionApi(httpClient)
         invocationRecord = InvocationRecordApi(httpClient)
         rbacUserRole = RbacUserRoleApi(httpClient)
-        aiPrompt = AiPromptApi(httpClient)
+        prompt = PromptApi(httpClient)
         project = ProjectApi(httpClient)
         product = ProductApi(httpClient)
         pptTemplate = PptTemplateApi(httpClient)
         pptTemplateSlide = PptTemplateSlideApi(httpClient)
+        rbacPermission = RbacPermissionApi(httpClient)
         partner = PartnerApi(httpClient)
         chatParticipant = ChatParticipantApi(httpClient)
         ossBucket = OssBucketApi(httpClient)
@@ -438,11 +457,11 @@ class SdkworkBackendClient {
         notification = NotificationApi(httpClient)
         notes = NotesApi(httpClient)
         news = NewsApi(httpClient)
-        host = HostApi(httpClient)
+        net = NetApi(httpClient)
         dnsRecord = DnsRecordApi(httpClient)
         music = MusicApi(httpClient)
-        aiModelInformation = AiModelInformationApi(httpClient)
-        aiModelPrice = AiModelPriceApi(httpClient)
+        modelInformation = ModelInformationApi(httpClient)
+        modelPrice = ModelPriceApi(httpClient)
         chatMessage = ChatMessageApi(httpClient)
         memberLevel = MemberLevelApi(httpClient)
         memberCard = MemberCardApi(httpClient)
@@ -451,8 +470,8 @@ class SdkworkBackendClient {
         invitationCode = InvitationCodeApi(httpClient)
         image = ImageApi(httpClient)
         chatGroup = ChatGroupApi(httpClient)
-        aiGeneration = AiGenerationApi(httpClient)
-        aiGenerationContent = AiGenerationContentApi(httpClient)
+        generation = GenerationApi(httpClient)
+        generationContent = GenerationContentApi(httpClient)
         file = FileApi(httpClient)
         filePart = FilePartApi(httpClient)
         fileContent = FileContentApi(httpClient)
@@ -466,45 +485,46 @@ class SdkworkBackendClient {
         datasource = DatasourceApi(httpClient)
         coupon = CouponApi(httpClient)
         couponTemplate = CouponTemplateApi(httpClient)
-        aiConversation = AiConversationApi(httpClient)
+        conversation = ConversationApi(httpClient)
+        contentWriting = ContentWritingApi(httpClient)
         comment = CommentApi(httpClient)
         column = ColumnApi(httpClient)
         collection = CollectionApi(httpClient)
         collectionItem = CollectionItemApi(httpClient)
         character = CharacterApi(httpClient)
+        channel = ChannelApi(httpClient)
         channelResource = ChannelResourceApi(httpClient)
+        channelProxy = ChannelProxyApi(httpClient)
         channelAccount = ChannelAccountApi(httpClient)
-        aiCategory = AiCategoryApi(httpClient)
+        category = CategoryApi(httpClient)
         membershipCard = MembershipCardApi(httpClient)
         cardTemplate = CardTemplateApi(httpClient)
         attribute = AttributeApi(httpClient)
-        aiArticle = AiArticleApi(httpClient)
-        application = ApplicationApi(httpClient)
+        article = ArticleApi(httpClient)
+        app = AppApi(httpClient)
         apiKey = ApiKeyApi(httpClient)
-        aiAgent = AiAgentApi(httpClient)
-        aiAgentToolRelationship = AiAgentToolRelationshipApi(httpClient)
+        agent = AgentApi(httpClient)
+        agentToolRelationship = AgentToolRelationshipApi(httpClient)
         account = AccountApi(httpClient)
         accountHistory = AccountHistoryApi(httpClient)
+        accountExchangeConfig = AccountExchangeConfigApi(httpClient)
+        invoice = InvoiceApi(httpClient)
         searchChat = SearchChatApi(httpClient)
         pptTemplateRendering = PptTemplateRenderingApi(httpClient)
         pptTemplateChat = PptTemplateChatApi(httpClient)
         knowledgeBaseFile = KnowledgeBaseFileApi(httpClient)
         knowledgeBaseChat = KnowledgeBaseChatApi(httpClient)
         imMessage = ImMessageApi(httpClient)
-        aiVoiceSpeakerGeneration = AiVoiceSpeakerGenerationApi(httpClient)
-        aiVideoGeneration = AiVideoGenerationApi(httpClient)
-        aiMusicGeneration = AiMusicGenerationApi(httpClient)
-        aiImageGeneration = AiImageGenerationApi(httpClient)
-        aiCharacterGeneration = AiCharacterGenerationApi(httpClient)
-        aiAudioGeneration = AiAudioGenerationApi(httpClient)
-        aiAudioEffectGeneration = AiAudioEffectGenerationApi(httpClient)
-        aiChat = AiChatApi(httpClient)
-        verification = VerificationApi(httpClient)
-        oauthAuthentication = OauthAuthenticationApi(httpClient)
-        authorization = AuthorizationApi(httpClient)
-        authentication = AuthenticationApi(httpClient)
-        app = AppApi(httpClient)
-        aiAgentChat = AiAgentChatApi(httpClient)
+        voiceSpeakerGeneration = VoiceSpeakerGenerationApi(httpClient)
+        videoGeneration = VideoGenerationApi(httpClient)
+        musicGeneration = MusicGenerationApi(httpClient)
+        imageGeneration = ImageGenerationApi(httpClient)
+        characterGeneration = CharacterGenerationApi(httpClient)
+        audioGeneration = AudioGenerationApi(httpClient)
+        audioEffectGeneration = AudioEffectGenerationApi(httpClient)
+        chat = ChatApi(httpClient)
+        auth = AuthApi(httpClient)
+        agentChat = AgentChatApi(httpClient)
     }
 
     fun setApiKey(apiKey: String): SdkworkBackendClient {

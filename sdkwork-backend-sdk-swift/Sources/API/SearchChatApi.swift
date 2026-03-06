@@ -7,14 +7,14 @@ public class SearchChatApi {
         self.client = client
     }
 
-    public func stop(headers: [String: String]? = nil) async throws -> PlusApiResultBoolean? {
-        let response = try await client.post(ApiPaths.backendPath("/search/chat/stop"), body: nil, params: nil, headers: headers)
+    public func stop(params: [String: Any]? = nil, headers: [String: String]? = nil) async throws -> PlusApiResultBoolean? {
+        let response = try await client.post(ApiPaths.backendPath("/search/chat/stop"), body: nil, params: params, headers: headers)
         return response as? PlusApiResultBoolean
     }
 
     /// Create a chat completion with Search
-    public func create(body: ChatCompletionCreateForm, headers: [String: String]? = nil) async throws -> ChatCompletionChunk? {
-        let response = try await client.post(ApiPaths.backendPath("/search/chat/completions"), body: body, params: nil, headers: headers)
+    public func create(body: ChatCompletionCreateForm, params: [String: Any]? = nil, headers: [String: String]? = nil) async throws -> ChatCompletionChunk? {
+        let response = try await client.post(ApiPaths.backendPath("/search/chat/completions"), body: body, params: params, headers: headers)
         return response as? ChatCompletionChunk
     }
 }

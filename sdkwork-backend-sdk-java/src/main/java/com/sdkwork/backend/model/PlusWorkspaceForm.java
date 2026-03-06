@@ -17,7 +17,7 @@ public class PlusWorkspaceForm {
     private Integer currentMembers;
     private Integer maxStorage;
     private Integer usedStorage;
-    private String settings;
+    private Map<String, Object> settings;
     private Boolean isDeleted;
     private Boolean isPublic;
     private Boolean isTemplate;
@@ -150,11 +150,11 @@ public class PlusWorkspaceForm {
         this.usedStorage = usedStorage;
     }
 
-    public String getSettings() {
+    public Map<String, Object> getSettings() {
         return this.settings;
     }
     
-    public void setSettings(String settings) {
+    public void setSettings(Map<String, Object> settings) {
         this.settings = settings;
     }
 

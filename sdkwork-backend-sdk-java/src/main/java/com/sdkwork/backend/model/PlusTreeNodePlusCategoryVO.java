@@ -7,8 +7,8 @@ public class PlusTreeNodePlusCategoryVO {
     private Integer index;
     private Boolean root;
     private Boolean leaf;
-    private Integer childrenCount;
     private Integer depth;
+    private Integer childrenCount;
 
     public PlusCategoryVO getData() {
         return this.data;
@@ -58,19 +58,19 @@ public class PlusTreeNodePlusCategoryVO {
         this.leaf = leaf;
     }
 
-    public Integer getChildrenCount() {
-        return this.childrenCount;
-    }
-    
-    public void setChildrenCount(Integer childrenCount) {
-        this.childrenCount = childrenCount;
-    }
-
     public Integer getDepth() {
         return this.depth;
     }
     
     public void setDepth(Integer depth) {
         this.depth = depth;
+    }
+
+    public Integer getChildrenCount() {
+        return this.childrenCount;
+    }
+    
+    public void setChildrenCount(Integer childrenCount) {
+        this.childrenCount = childrenCount;
     }
 }

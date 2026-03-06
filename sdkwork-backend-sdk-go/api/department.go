@@ -34,6 +34,46 @@ func (a *DepartmentApi) Create(body sdktypes.PlusDepartmentForm) (sdktypes.PlusA
     return decodeResult[sdktypes.PlusApiResultPlusDepartmentVO](raw)
 }
 
+// Move department
+func (a *DepartmentApi) Move(id string, query map[string]interface{}) (sdktypes.PlusApiResultPlusDepartmentVO, error) {
+    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/department/%s/move", id)), nil, query, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultPlusDepartmentVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPlusDepartmentVO](raw)
+}
+
+// Set primary department
+func (a *DepartmentApi) SetPrimary(id string, memberId string) (sdktypes.PlusApiResultBoolean, error) {
+    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/department/%s/members/%s/primary", id, memberId)), nil, nil, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultBoolean
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultBoolean](raw)
+}
+
+// Add member to department
+func (a *DepartmentApi) AddMemberTo(id string, memberId string, query map[string]interface{}) (sdktypes.PlusApiResultBoolean, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/department/%s/members/%s", id, memberId)), nil, query, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultBoolean
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultBoolean](raw)
+}
+
+// Remove member from department
+func (a *DepartmentApi) RemoveMemberFrom(id string, memberId string) (sdktypes.PlusApiResultBoolean, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/department/%s/members/%s", id, memberId)), nil, nil)
+    if err != nil {
+        var zero sdktypes.PlusApiResultBoolean
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultBoolean](raw)
+}
+
 // Get departments by page
 func (a *DepartmentApi) ListByPage(body *sdktypes.QueryListForm, query map[string]interface{}) (sdktypes.PlusApiResultPagePlusDepartmentVO, error) {
     raw, err := a.client.Post(BackendApiPath("/department/list"), body, query, nil, "")
@@ -72,4 +112,14 @@ func (a *DepartmentApi) Delete(id string) (sdktypes.PlusApiResultBoolean, error)
         return zero, err
     }
     return decodeResult[sdktypes.PlusApiResultBoolean](raw)
+}
+
+// Get department members
+func (a *DepartmentApi) GetDepartmentMembers(id string, query map[string]interface{}) (sdktypes.PlusApiResultListPlusOrganizationMemberVO, error) {
+    raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/department/%s/members", id)), query, nil)
+    if err != nil {
+        var zero sdktypes.PlusApiResultListPlusOrganizationMemberVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultListPlusOrganizationMemberVO](raw)
 }

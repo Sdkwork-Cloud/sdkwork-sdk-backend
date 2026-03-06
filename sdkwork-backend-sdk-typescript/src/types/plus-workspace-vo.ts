@@ -41,7 +41,7 @@ export interface PlusWorkspaceVO {
   /** 已用存储空间(字节) */
   usedStorage?: number;
   /** 工作区设置(JSON格式) */
-  settings?: string;
+  settings?: Record<string, unknown>;
   /** 软删除状态(true:已删除, false:活跃) */
   isDeleted?: boolean;
   /** 公开状态(true:公开, false:私有) */

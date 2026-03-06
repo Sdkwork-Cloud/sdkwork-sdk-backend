@@ -8,6 +8,7 @@ type PlusApiKeyVO struct {
 	Uuid string `json:"uuid"`
 	Name string `json:"name"`
 	KeyValue string `json:"keyValue"`
+	MaskedKeyValue string `json:"maskedKeyValue"`
 	Type string `json:"type"`
 	Status string `json:"status"`
 	ExpireTime string `json:"expireTime"`

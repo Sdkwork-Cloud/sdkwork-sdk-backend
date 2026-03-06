@@ -17,11 +17,11 @@ class FileApi:
         return self._client.post(f"/backend/v3/api/file", json=body)
 
     def list_files(self, params: Optional[Dict[str, Any]] = None) -> PlusApiResultFileListVO:
-        """获取文件列表"""
+        """List files"""
         return self._client.get(f"/backend/v3/api/oss/files", params=params)
 
     def upload(self, body: Optional[UploadFileRequest] = None, params: Optional[Dict[str, Any]] = None) -> PlusApiResultFileItemVO:
-        """上传文件"""
+        """Upload file"""
         return self._client.post(f"/backend/v3/api/oss/files", data=body, params=params)
 
     def get_temp_session(self, body: PlusGetTempSessionForm) -> PlusApiResultPlusTempSessionVO:
@@ -49,15 +49,15 @@ class FileApi:
         return self._client.post(f"/backend/v3/api/file/get_tree", json=body, params=params)
 
     def get_file(self, fileId: str) -> PlusApiResultFileItemVO:
-        """获取单个文件信息"""
+        """Get file"""
         return self._client.get(f"/backend/v3/api/oss/files/{fileId}")
 
     def delete_file(self, fileId: str) -> PlusApiResultFileItemVO:
-        """删除文件"""
+        """Delete file"""
         return self._client.delete(f"/backend/v3/api/oss/files/{fileId}")
 
     def get_file_content(self, fileId: str) -> str:
-        """获取文件内容"""
+        """Get file content"""
         return self._client.get(f"/backend/v3/api/oss/files/{fileId}/content")
 
     def get_by_id(self, id: str) -> PlusApiResultPlusFileVO:

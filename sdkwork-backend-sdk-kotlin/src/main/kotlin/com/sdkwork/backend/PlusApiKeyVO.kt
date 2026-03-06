@@ -7,6 +7,7 @@ data class PlusApiKeyVO(
     val uuid: String? = null,
     val name: String? = null,
     val keyValue: String? = null,
+    val maskedKeyValue: String? = null,
     val type: String? = null,
     val status: String? = null,
     val expireTime: String? = null,

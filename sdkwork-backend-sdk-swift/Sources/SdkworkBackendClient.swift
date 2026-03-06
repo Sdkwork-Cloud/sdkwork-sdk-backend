@@ -23,32 +23,36 @@ public class SdkworkBackendClient {
     public let userCoupon: UserCouponApi
     public let userCard: UserCardApi
     public let userAddress: UserAddressApi
-    public let aiUsageRecord: AiUsageRecordApi
+    public let usageRecord: UsageRecordApi
     public let shoppingCart: ShoppingCartApi
     public let shoppingCartItem: ShoppingCartItemApi
     public let refund: RefundApi
     public let payment: PaymentApi
     public let order: OrderApi
     public let orderItem: OrderItemApi
-    public let aiTool: AiToolApi
+    public let tool: ToolApi
     public let tenant: TenantApi
     public let databaseTable: DatabaseTableApi
     public let productSku: ProductSkuApi
+    public let skill: SkillApi
+    public let skillPackage: SkillPackageApi
     public let shortUrl: ShortUrlApi
     public let shop: ShopApi
     public let share: ShareApi
     public let shareVisitRecord: ShareVisitRecordApi
     public let shardingKey: ShardingKeyApi
+    public let apiSecurityPolicy: ApiSecurityPolicyApi
     public let schema: SchemaApi
     public let rbacRole: RbacRoleApi
     public let rolePermission: RolePermissionApi
     public let invocationRecord: InvocationRecordApi
     public let rbacUserRole: RbacUserRoleApi
-    public let aiPrompt: AiPromptApi
+    public let prompt: PromptApi
     public let project: ProjectApi
     public let product: ProductApi
     public let pptTemplate: PptTemplateApi
     public let pptTemplateSlide: PptTemplateSlideApi
+    public let rbacPermission: RbacPermissionApi
     public let partner: PartnerApi
     public let chatParticipant: ChatParticipantApi
     public let ossBucket: OssBucketApi
@@ -59,11 +63,11 @@ public class SdkworkBackendClient {
     public let notification: NotificationApi
     public let notes: NotesApi
     public let news: NewsApi
-    public let host: HostApi
+    public let net: NetApi
     public let dnsRecord: DnsRecordApi
     public let music: MusicApi
-    public let aiModelInformation: AiModelInformationApi
-    public let aiModelPrice: AiModelPriceApi
+    public let modelInformation: ModelInformationApi
+    public let modelPrice: ModelPriceApi
     public let chatMessage: ChatMessageApi
     public let memberLevel: MemberLevelApi
     public let memberCard: MemberCardApi
@@ -72,8 +76,8 @@ public class SdkworkBackendClient {
     public let invitationCode: InvitationCodeApi
     public let image: ImageApi
     public let chatGroup: ChatGroupApi
-    public let aiGeneration: AiGenerationApi
-    public let aiGenerationContent: AiGenerationContentApi
+    public let generation: GenerationApi
+    public let generationContent: GenerationContentApi
     public let file: FileApi
     public let filePart: FilePartApi
     public let fileContent: FileContentApi
@@ -87,45 +91,46 @@ public class SdkworkBackendClient {
     public let datasource: DatasourceApi
     public let coupon: CouponApi
     public let couponTemplate: CouponTemplateApi
-    public let aiConversation: AiConversationApi
+    public let conversation: ConversationApi
+    public let contentWriting: ContentWritingApi
     public let comment: CommentApi
     public let column: ColumnApi
     public let collection: CollectionApi
     public let collectionItem: CollectionItemApi
     public let character: CharacterApi
+    public let channel: ChannelApi
     public let channelResource: ChannelResourceApi
+    public let channelProxy: ChannelProxyApi
     public let channelAccount: ChannelAccountApi
-    public let aiCategory: AiCategoryApi
+    public let category: CategoryApi
     public let membershipCard: MembershipCardApi
     public let cardTemplate: CardTemplateApi
     public let attribute: AttributeApi
-    public let aiArticle: AiArticleApi
-    public let application: ApplicationApi
+    public let article: ArticleApi
+    public let app: AppApi
     public let apiKey: ApiKeyApi
-    public let aiAgent: AiAgentApi
-    public let aiAgentToolRelationship: AiAgentToolRelationshipApi
+    public let agent: AgentApi
+    public let agentToolRelationship: AgentToolRelationshipApi
     public let account: AccountApi
     public let accountHistory: AccountHistoryApi
+    public let accountExchangeConfig: AccountExchangeConfigApi
+    public let invoice: InvoiceApi
     public let searchChat: SearchChatApi
     public let pptTemplateRendering: PptTemplateRenderingApi
     public let pptTemplateChat: PptTemplateChatApi
     public let knowledgeBaseFile: KnowledgeBaseFileApi
     public let knowledgeBaseChat: KnowledgeBaseChatApi
     public let imMessage: ImMessageApi
-    public let aiVoiceSpeakerGeneration: AiVoiceSpeakerGenerationApi
-    public let aiVideoGeneration: AiVideoGenerationApi
-    public let aiMusicGeneration: AiMusicGenerationApi
-    public let aiImageGeneration: AiImageGenerationApi
-    public let aiCharacterGeneration: AiCharacterGenerationApi
-    public let aiAudioGeneration: AiAudioGenerationApi
-    public let aiAudioEffectGeneration: AiAudioEffectGenerationApi
-    public let aiChat: AiChatApi
-    public let verification: VerificationApi
-    public let oauthAuthentication: OauthAuthenticationApi
-    public let authorization: AuthorizationApi
-    public let authentication: AuthenticationApi
-    public let app: AppApi
-    public let aiAgentChat: AiAgentChatApi
+    public let voiceSpeakerGeneration: VoiceSpeakerGenerationApi
+    public let videoGeneration: VideoGenerationApi
+    public let musicGeneration: MusicGenerationApi
+    public let imageGeneration: ImageGenerationApi
+    public let characterGeneration: CharacterGenerationApi
+    public let audioGeneration: AudioGenerationApi
+    public let audioEffectGeneration: AudioEffectGenerationApi
+    public let chat: ChatApi
+    public let auth: AuthApi
+    public let agentChat: AgentChatApi
 
     public init(baseURL: String) {
         self.httpClient = HttpClient(baseURL: baseURL)
@@ -149,32 +154,36 @@ public class SdkworkBackendClient {
         self.userCoupon = UserCouponApi(client: httpClient)
         self.userCard = UserCardApi(client: httpClient)
         self.userAddress = UserAddressApi(client: httpClient)
-        self.aiUsageRecord = AiUsageRecordApi(client: httpClient)
+        self.usageRecord = UsageRecordApi(client: httpClient)
         self.shoppingCart = ShoppingCartApi(client: httpClient)
         self.shoppingCartItem = ShoppingCartItemApi(client: httpClient)
         self.refund = RefundApi(client: httpClient)
         self.payment = PaymentApi(client: httpClient)
         self.order = OrderApi(client: httpClient)
         self.orderItem = OrderItemApi(client: httpClient)
-        self.aiTool = AiToolApi(client: httpClient)
+        self.tool = ToolApi(client: httpClient)
         self.tenant = TenantApi(client: httpClient)
         self.databaseTable = DatabaseTableApi(client: httpClient)
         self.productSku = ProductSkuApi(client: httpClient)
+        self.skill = SkillApi(client: httpClient)
+        self.skillPackage = SkillPackageApi(client: httpClient)
         self.shortUrl = ShortUrlApi(client: httpClient)
         self.shop = ShopApi(client: httpClient)
         self.share = ShareApi(client: httpClient)
         self.shareVisitRecord = ShareVisitRecordApi(client: httpClient)
         self.shardingKey = ShardingKeyApi(client: httpClient)
+        self.apiSecurityPolicy = ApiSecurityPolicyApi(client: httpClient)
         self.schema = SchemaApi(client: httpClient)
         self.rbacRole = RbacRoleApi(client: httpClient)
         self.rolePermission = RolePermissionApi(client: httpClient)
         self.invocationRecord = InvocationRecordApi(client: httpClient)
         self.rbacUserRole = RbacUserRoleApi(client: httpClient)
-        self.aiPrompt = AiPromptApi(client: httpClient)
+        self.prompt = PromptApi(client: httpClient)
         self.project = ProjectApi(client: httpClient)
         self.product = ProductApi(client: httpClient)
         self.pptTemplate = PptTemplateApi(client: httpClient)
         self.pptTemplateSlide = PptTemplateSlideApi(client: httpClient)
+        self.rbacPermission = RbacPermissionApi(client: httpClient)
         self.partner = PartnerApi(client: httpClient)
         self.chatParticipant = ChatParticipantApi(client: httpClient)
         self.ossBucket = OssBucketApi(client: httpClient)
@@ -185,11 +194,11 @@ public class SdkworkBackendClient {
         self.notification = NotificationApi(client: httpClient)
         self.notes = NotesApi(client: httpClient)
         self.news = NewsApi(client: httpClient)
-        self.host = HostApi(client: httpClient)
+        self.net = NetApi(client: httpClient)
         self.dnsRecord = DnsRecordApi(client: httpClient)
         self.music = MusicApi(client: httpClient)
-        self.aiModelInformation = AiModelInformationApi(client: httpClient)
-        self.aiModelPrice = AiModelPriceApi(client: httpClient)
+        self.modelInformation = ModelInformationApi(client: httpClient)
+        self.modelPrice = ModelPriceApi(client: httpClient)
         self.chatMessage = ChatMessageApi(client: httpClient)
         self.memberLevel = MemberLevelApi(client: httpClient)
         self.memberCard = MemberCardApi(client: httpClient)
@@ -198,8 +207,8 @@ public class SdkworkBackendClient {
         self.invitationCode = InvitationCodeApi(client: httpClient)
         self.image = ImageApi(client: httpClient)
         self.chatGroup = ChatGroupApi(client: httpClient)
-        self.aiGeneration = AiGenerationApi(client: httpClient)
-        self.aiGenerationContent = AiGenerationContentApi(client: httpClient)
+        self.generation = GenerationApi(client: httpClient)
+        self.generationContent = GenerationContentApi(client: httpClient)
         self.file = FileApi(client: httpClient)
         self.filePart = FilePartApi(client: httpClient)
         self.fileContent = FileContentApi(client: httpClient)
@@ -213,45 +222,46 @@ public class SdkworkBackendClient {
         self.datasource = DatasourceApi(client: httpClient)
         self.coupon = CouponApi(client: httpClient)
         self.couponTemplate = CouponTemplateApi(client: httpClient)
-        self.aiConversation = AiConversationApi(client: httpClient)
+        self.conversation = ConversationApi(client: httpClient)
+        self.contentWriting = ContentWritingApi(client: httpClient)
         self.comment = CommentApi(client: httpClient)
         self.column = ColumnApi(client: httpClient)
         self.collection = CollectionApi(client: httpClient)
         self.collectionItem = CollectionItemApi(client: httpClient)
         self.character = CharacterApi(client: httpClient)
+        self.channel = ChannelApi(client: httpClient)
         self.channelResource = ChannelResourceApi(client: httpClient)
+        self.channelProxy = ChannelProxyApi(client: httpClient)
         self.channelAccount = ChannelAccountApi(client: httpClient)
-        self.aiCategory = AiCategoryApi(client: httpClient)
+        self.category = CategoryApi(client: httpClient)
         self.membershipCard = MembershipCardApi(client: httpClient)
         self.cardTemplate = CardTemplateApi(client: httpClient)
         self.attribute = AttributeApi(client: httpClient)
-        self.aiArticle = AiArticleApi(client: httpClient)
-        self.application = ApplicationApi(client: httpClient)
+        self.article = ArticleApi(client: httpClient)
+        self.app = AppApi(client: httpClient)
         self.apiKey = ApiKeyApi(client: httpClient)
-        self.aiAgent = AiAgentApi(client: httpClient)
-        self.aiAgentToolRelationship = AiAgentToolRelationshipApi(client: httpClient)
+        self.agent = AgentApi(client: httpClient)
+        self.agentToolRelationship = AgentToolRelationshipApi(client: httpClient)
         self.account = AccountApi(client: httpClient)
         self.accountHistory = AccountHistoryApi(client: httpClient)
+        self.accountExchangeConfig = AccountExchangeConfigApi(client: httpClient)
+        self.invoice = InvoiceApi(client: httpClient)
         self.searchChat = SearchChatApi(client: httpClient)
         self.pptTemplateRendering = PptTemplateRenderingApi(client: httpClient)
         self.pptTemplateChat = PptTemplateChatApi(client: httpClient)
         self.knowledgeBaseFile = KnowledgeBaseFileApi(client: httpClient)
         self.knowledgeBaseChat = KnowledgeBaseChatApi(client: httpClient)
         self.imMessage = ImMessageApi(client: httpClient)
-        self.aiVoiceSpeakerGeneration = AiVoiceSpeakerGenerationApi(client: httpClient)
-        self.aiVideoGeneration = AiVideoGenerationApi(client: httpClient)
-        self.aiMusicGeneration = AiMusicGenerationApi(client: httpClient)
-        self.aiImageGeneration = AiImageGenerationApi(client: httpClient)
-        self.aiCharacterGeneration = AiCharacterGenerationApi(client: httpClient)
-        self.aiAudioGeneration = AiAudioGenerationApi(client: httpClient)
-        self.aiAudioEffectGeneration = AiAudioEffectGenerationApi(client: httpClient)
-        self.aiChat = AiChatApi(client: httpClient)
-        self.verification = VerificationApi(client: httpClient)
-        self.oauthAuthentication = OauthAuthenticationApi(client: httpClient)
-        self.authorization = AuthorizationApi(client: httpClient)
-        self.authentication = AuthenticationApi(client: httpClient)
-        self.app = AppApi(client: httpClient)
-        self.aiAgentChat = AiAgentChatApi(client: httpClient)
+        self.voiceSpeakerGeneration = VoiceSpeakerGenerationApi(client: httpClient)
+        self.videoGeneration = VideoGenerationApi(client: httpClient)
+        self.musicGeneration = MusicGenerationApi(client: httpClient)
+        self.imageGeneration = ImageGenerationApi(client: httpClient)
+        self.characterGeneration = CharacterGenerationApi(client: httpClient)
+        self.audioGeneration = AudioGenerationApi(client: httpClient)
+        self.audioEffectGeneration = AudioEffectGenerationApi(client: httpClient)
+        self.chat = ChatApi(client: httpClient)
+        self.auth = AuthApi(client: httpClient)
+        self.agentChat = AgentChatApi(client: httpClient)
     }
 
     public init(config: SdkConfig) {
@@ -276,32 +286,36 @@ public class SdkworkBackendClient {
         self.userCoupon = UserCouponApi(client: httpClient)
         self.userCard = UserCardApi(client: httpClient)
         self.userAddress = UserAddressApi(client: httpClient)
-        self.aiUsageRecord = AiUsageRecordApi(client: httpClient)
+        self.usageRecord = UsageRecordApi(client: httpClient)
         self.shoppingCart = ShoppingCartApi(client: httpClient)
         self.shoppingCartItem = ShoppingCartItemApi(client: httpClient)
         self.refund = RefundApi(client: httpClient)
         self.payment = PaymentApi(client: httpClient)
         self.order = OrderApi(client: httpClient)
         self.orderItem = OrderItemApi(client: httpClient)
-        self.aiTool = AiToolApi(client: httpClient)
+        self.tool = ToolApi(client: httpClient)
         self.tenant = TenantApi(client: httpClient)
         self.databaseTable = DatabaseTableApi(client: httpClient)
         self.productSku = ProductSkuApi(client: httpClient)
+        self.skill = SkillApi(client: httpClient)
+        self.skillPackage = SkillPackageApi(client: httpClient)
         self.shortUrl = ShortUrlApi(client: httpClient)
         self.shop = ShopApi(client: httpClient)
         self.share = ShareApi(client: httpClient)
         self.shareVisitRecord = ShareVisitRecordApi(client: httpClient)
         self.shardingKey = ShardingKeyApi(client: httpClient)
+        self.apiSecurityPolicy = ApiSecurityPolicyApi(client: httpClient)
         self.schema = SchemaApi(client: httpClient)
         self.rbacRole = RbacRoleApi(client: httpClient)
         self.rolePermission = RolePermissionApi(client: httpClient)
         self.invocationRecord = InvocationRecordApi(client: httpClient)
         self.rbacUserRole = RbacUserRoleApi(client: httpClient)
-        self.aiPrompt = AiPromptApi(client: httpClient)
+        self.prompt = PromptApi(client: httpClient)
         self.project = ProjectApi(client: httpClient)
         self.product = ProductApi(client: httpClient)
         self.pptTemplate = PptTemplateApi(client: httpClient)
         self.pptTemplateSlide = PptTemplateSlideApi(client: httpClient)
+        self.rbacPermission = RbacPermissionApi(client: httpClient)
         self.partner = PartnerApi(client: httpClient)
         self.chatParticipant = ChatParticipantApi(client: httpClient)
         self.ossBucket = OssBucketApi(client: httpClient)
@@ -312,11 +326,11 @@ public class SdkworkBackendClient {
         self.notification = NotificationApi(client: httpClient)
         self.notes = NotesApi(client: httpClient)
         self.news = NewsApi(client: httpClient)
-        self.host = HostApi(client: httpClient)
+        self.net = NetApi(client: httpClient)
         self.dnsRecord = DnsRecordApi(client: httpClient)
         self.music = MusicApi(client: httpClient)
-        self.aiModelInformation = AiModelInformationApi(client: httpClient)
-        self.aiModelPrice = AiModelPriceApi(client: httpClient)
+        self.modelInformation = ModelInformationApi(client: httpClient)
+        self.modelPrice = ModelPriceApi(client: httpClient)
         self.chatMessage = ChatMessageApi(client: httpClient)
         self.memberLevel = MemberLevelApi(client: httpClient)
         self.memberCard = MemberCardApi(client: httpClient)
@@ -325,8 +339,8 @@ public class SdkworkBackendClient {
         self.invitationCode = InvitationCodeApi(client: httpClient)
         self.image = ImageApi(client: httpClient)
         self.chatGroup = ChatGroupApi(client: httpClient)
-        self.aiGeneration = AiGenerationApi(client: httpClient)
-        self.aiGenerationContent = AiGenerationContentApi(client: httpClient)
+        self.generation = GenerationApi(client: httpClient)
+        self.generationContent = GenerationContentApi(client: httpClient)
         self.file = FileApi(client: httpClient)
         self.filePart = FilePartApi(client: httpClient)
         self.fileContent = FileContentApi(client: httpClient)
@@ -340,45 +354,46 @@ public class SdkworkBackendClient {
         self.datasource = DatasourceApi(client: httpClient)
         self.coupon = CouponApi(client: httpClient)
         self.couponTemplate = CouponTemplateApi(client: httpClient)
-        self.aiConversation = AiConversationApi(client: httpClient)
+        self.conversation = ConversationApi(client: httpClient)
+        self.contentWriting = ContentWritingApi(client: httpClient)
         self.comment = CommentApi(client: httpClient)
         self.column = ColumnApi(client: httpClient)
         self.collection = CollectionApi(client: httpClient)
         self.collectionItem = CollectionItemApi(client: httpClient)
         self.character = CharacterApi(client: httpClient)
+        self.channel = ChannelApi(client: httpClient)
         self.channelResource = ChannelResourceApi(client: httpClient)
+        self.channelProxy = ChannelProxyApi(client: httpClient)
         self.channelAccount = ChannelAccountApi(client: httpClient)
-        self.aiCategory = AiCategoryApi(client: httpClient)
+        self.category = CategoryApi(client: httpClient)
         self.membershipCard = MembershipCardApi(client: httpClient)
         self.cardTemplate = CardTemplateApi(client: httpClient)
         self.attribute = AttributeApi(client: httpClient)
-        self.aiArticle = AiArticleApi(client: httpClient)
-        self.application = ApplicationApi(client: httpClient)
+        self.article = ArticleApi(client: httpClient)
+        self.app = AppApi(client: httpClient)
         self.apiKey = ApiKeyApi(client: httpClient)
-        self.aiAgent = AiAgentApi(client: httpClient)
-        self.aiAgentToolRelationship = AiAgentToolRelationshipApi(client: httpClient)
+        self.agent = AgentApi(client: httpClient)
+        self.agentToolRelationship = AgentToolRelationshipApi(client: httpClient)
         self.account = AccountApi(client: httpClient)
         self.accountHistory = AccountHistoryApi(client: httpClient)
+        self.accountExchangeConfig = AccountExchangeConfigApi(client: httpClient)
+        self.invoice = InvoiceApi(client: httpClient)
         self.searchChat = SearchChatApi(client: httpClient)
         self.pptTemplateRendering = PptTemplateRenderingApi(client: httpClient)
         self.pptTemplateChat = PptTemplateChatApi(client: httpClient)
         self.knowledgeBaseFile = KnowledgeBaseFileApi(client: httpClient)
         self.knowledgeBaseChat = KnowledgeBaseChatApi(client: httpClient)
         self.imMessage = ImMessageApi(client: httpClient)
-        self.aiVoiceSpeakerGeneration = AiVoiceSpeakerGenerationApi(client: httpClient)
-        self.aiVideoGeneration = AiVideoGenerationApi(client: httpClient)
-        self.aiMusicGeneration = AiMusicGenerationApi(client: httpClient)
-        self.aiImageGeneration = AiImageGenerationApi(client: httpClient)
-        self.aiCharacterGeneration = AiCharacterGenerationApi(client: httpClient)
-        self.aiAudioGeneration = AiAudioGenerationApi(client: httpClient)
-        self.aiAudioEffectGeneration = AiAudioEffectGenerationApi(client: httpClient)
-        self.aiChat = AiChatApi(client: httpClient)
-        self.verification = VerificationApi(client: httpClient)
-        self.oauthAuthentication = OauthAuthenticationApi(client: httpClient)
-        self.authorization = AuthorizationApi(client: httpClient)
-        self.authentication = AuthenticationApi(client: httpClient)
-        self.app = AppApi(client: httpClient)
-        self.aiAgentChat = AiAgentChatApi(client: httpClient)
+        self.voiceSpeakerGeneration = VoiceSpeakerGenerationApi(client: httpClient)
+        self.videoGeneration = VideoGenerationApi(client: httpClient)
+        self.musicGeneration = MusicGenerationApi(client: httpClient)
+        self.imageGeneration = ImageGenerationApi(client: httpClient)
+        self.characterGeneration = CharacterGenerationApi(client: httpClient)
+        self.audioGeneration = AudioGenerationApi(client: httpClient)
+        self.audioEffectGeneration = AudioEffectGenerationApi(client: httpClient)
+        self.chat = ChatApi(client: httpClient)
+        self.auth = AuthApi(client: httpClient)
+        self.agentChat = AgentChatApi(client: httpClient)
     }
 
     public func setApiKey(_ apiKey: String) -> SdkworkBackendClient {

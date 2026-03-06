@@ -4,4 +4,6 @@ from typing import Optional, List, Dict, Any
 @dataclass
 class CreatePointsOrderForm:
     """Create points order form"""
-    pass
+    items: List[OrderContentItem] = None
+    points_amount: int = None
+    expire_time: str = None

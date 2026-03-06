@@ -3,15 +3,15 @@ import type { ShortUrlVO } from './short-url-vo';
 import type { SortObject } from './sort-object';
 
 export interface PageShortUrlVO {
-  totalPages?: number;
   totalElements?: number;
+  totalPages?: number;
   size?: number;
   content?: ShortUrlVO[];
   number?: number;
-  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   numberOfElements?: number;
+  sort?: SortObject;
   pageable?: PageableObject;
   empty?: boolean;
 }

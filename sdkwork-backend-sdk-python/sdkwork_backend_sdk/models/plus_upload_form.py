@@ -4,4 +4,8 @@ from typing import Optional, List, Dict, Any
 @dataclass
 class PlusUploadForm:
     """File upload form"""
-    pass
+    provider: str = None
+    name: str = None
+    scene: str = None
+    bucket: BucketObject = None
+    expiration_seconds: int = None

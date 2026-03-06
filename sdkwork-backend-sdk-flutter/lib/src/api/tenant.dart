@@ -30,6 +30,12 @@ class TenantApi {
     return response is PlusApiResultPlusTenantVO ? response : null;
   }
 
+  /// Get tenant audit logs by page
+  Future<PlusApiResultPagePlusTenantAuditLogVO?> listAuditLogs(String id, Map<String, dynamic>? params) async {
+    final response = await _client.post(ApiPaths.backendPath('/tenant/${id}/audit_logs/list'), params: params);
+    return response is PlusApiResultPagePlusTenantAuditLogVO ? response : null;
+  }
+
   /// Get tenants by page
   Future<PlusApiResultPagePlusTenantVO?> listByPage(QueryListForm? body, Map<String, dynamic>? params) async {
     final response = await _client.post(ApiPaths.backendPath('/tenant/list'), body: body, params: params, contentType: 'application/json');

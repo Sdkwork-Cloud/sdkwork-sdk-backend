@@ -3,15 +3,15 @@ import type { PlusConversationVO } from './plus-conversation-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusConversationVO {
-  totalPages?: number;
   totalElements?: number;
+  totalPages?: number;
   size?: number;
   content?: PlusConversationVO[];
   number?: number;
-  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   numberOfElements?: number;
+  sort?: SortObject;
   pageable?: PageableObject;
   empty?: boolean;
 }

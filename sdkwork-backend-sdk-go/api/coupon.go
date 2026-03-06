@@ -34,6 +34,36 @@ func (a *CouponApi) Create(body sdktypes.PlusCouponForm) (sdktypes.PlusApiResult
     return decodeResult[sdktypes.PlusApiResultPlusCouponVO](raw)
 }
 
+// Exchange coupon by points
+func (a *CouponApi) ExchangeByPoints(couponId string, body sdktypes.CouponPointsExchangeForm) (sdktypes.PlusApiResultPlusUserCouponVO, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/coupon/%s/exchange/points", couponId)), body, nil, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultPlusUserCouponVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPlusUserCouponVO](raw)
+}
+
+// Redeem coupon
+func (a *CouponApi) Redeem(body sdktypes.CouponRedeemForm) (sdktypes.PlusApiResultPlusUserCouponVO, error) {
+    raw, err := a.client.Post(BackendApiPath("/coupon/redeem"), body, nil, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultPlusUserCouponVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPlusUserCouponVO](raw)
+}
+
+// Rollback points exchange coupon
+func (a *CouponApi) RollbackPointsExchange(userCouponId string, body *sdktypes.CouponRollbackForm) (sdktypes.PlusApiResultPlusUserCouponVO, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/coupon/my/%s/rollback", userCouponId)), body, nil, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultPlusUserCouponVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPlusUserCouponVO](raw)
+}
+
 // Get coupon templates by page
 func (a *CouponApi) ListByPage(body *sdktypes.QueryListForm, query map[string]interface{}) (sdktypes.PlusApiResultPagePlusCouponVO, error) {
     raw, err := a.client.Post(BackendApiPath("/coupon/list"), body, query, nil, "")

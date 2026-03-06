@@ -17,5 +17,5 @@ class PlusDnsRecordVO:
     ttl: int = None
     priority: int = None
     enabled: bool = None
-    first_record_value: str = None
     record_values: List[str] = None
+    first_record_value: str = None

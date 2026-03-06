@@ -8,5 +8,10 @@ class PlusUserCouponForm:
     coupon_id: int
     coupon_code: str
     acquire_at: str
+    acquire_request_no: str = None
+    acquire_type: str = None
+    point_cost: int = None
+    points_refunded: bool = None
+    points_refund_at: str = None
     use_at: str = None
     status: str

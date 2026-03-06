@@ -11,13 +11,13 @@ export class SearchChatApi {
     this.client = client; 
   }
 
-async stop(headers?: Record<string, string>): Promise<PlusApiResultBoolean> {
-    return this.client.post<PlusApiResultBoolean>(backendApiPath(`/search/chat/stop`), undefined, undefined, headers);
+async stop(params?: QueryParams, headers?: Record<string, string>): Promise<PlusApiResultBoolean> {
+    return this.client.post<PlusApiResultBoolean>(backendApiPath(`/search/chat/stop`), undefined, params, headers);
   }
 
 /** Create a chat completion with Search */
-  async create(body: ChatCompletionCreateForm, headers?: Record<string, string>): Promise<ChatCompletionChunk> {
-    return this.client.post<ChatCompletionChunk>(backendApiPath(`/search/chat/completions`), body, undefined, headers);
+  async create(body: ChatCompletionCreateForm, params?: QueryParams, headers?: Record<string, string>): Promise<ChatCompletionChunk> {
+    return this.client.post<ChatCompletionChunk>(backendApiPath(`/search/chat/completions`), body, params, headers);
   }
 }
 

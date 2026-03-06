@@ -21,8 +21,8 @@ export class DatasourceApi {
     return this.client.post<PlusApiResultPlusDatasourceVO>(backendApiPath(`/datasource`), body);
   }
 
-async stop(headers?: Record<string, string>): Promise<PlusApiResultBoolean> {
-    return this.client.post<PlusApiResultBoolean>(backendApiPath(`/datasource/stop`), undefined, undefined, headers);
+async stop(params?: QueryParams, headers?: Record<string, string>): Promise<PlusApiResultBoolean> {
+    return this.client.post<PlusApiResultBoolean>(backendApiPath(`/datasource/stop`), undefined, params, headers);
   }
 
 /** Get data sources by page */
@@ -36,8 +36,8 @@ async stop(headers?: Record<string, string>): Promise<PlusApiResultBoolean> {
   }
 
 /** Create a chat completion with Datasource */
-  async createCompletions(body: ChatCompletionCreateForm, headers?: Record<string, string>): Promise<ChatCompletionChunk> {
-    return this.client.post<ChatCompletionChunk>(backendApiPath(`/datasource/chat/completions`), body, undefined, headers);
+  async createCompletions(body: ChatCompletionCreateForm, params?: QueryParams, headers?: Record<string, string>): Promise<ChatCompletionChunk> {
+    return this.client.post<ChatCompletionChunk>(backendApiPath(`/datasource/chat/completions`), body, params, headers);
   }
 
 /** Get a data source by ID */

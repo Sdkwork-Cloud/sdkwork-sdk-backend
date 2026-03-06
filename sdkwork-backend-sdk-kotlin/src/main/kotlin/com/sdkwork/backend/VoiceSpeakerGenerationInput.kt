@@ -19,7 +19,7 @@ data class VoiceSpeakerGenerationInput(
     val volume: Int? = null,
     val emotion: String? = null,
     val saveSpeaker: Boolean? = null,
-    val usingExistingSpeaker: Boolean? = null,
     val voiceClone: Boolean? = null,
+    val usingExistingSpeaker: Boolean? = null,
     val referenceAssetCount: Int? = null
 )

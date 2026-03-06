@@ -22,8 +22,8 @@ public class DatasourceApi {
         return (PlusApiResultPlusDatasourceVO) client.post(ApiPaths.backendPath("/datasource"), body);
     }
 
-    public PlusApiResultBoolean stop(Map<String, String> headers) throws Exception {
-        return (PlusApiResultBoolean) client.post(ApiPaths.backendPath("/datasource/stop"), null, null, headers);
+    public PlusApiResultBoolean stop(Map<String, Object> params, Map<String, String> headers) throws Exception {
+        return (PlusApiResultBoolean) client.post(ApiPaths.backendPath("/datasource/stop"), null, params, headers);
     }
 
     /** Get data sources by page */
@@ -37,8 +37,8 @@ public class DatasourceApi {
     }
 
     /** Create a chat completion with Datasource */
-    public ChatCompletionChunk createCompletions(ChatCompletionCreateForm body, Map<String, String> headers) throws Exception {
-        return (ChatCompletionChunk) client.post(ApiPaths.backendPath("/datasource/chat/completions"), body, null, headers);
+    public ChatCompletionChunk createCompletions(ChatCompletionCreateForm body, Map<String, Object> params, Map<String, String> headers) throws Exception {
+        return (ChatCompletionChunk) client.post(ApiPaths.backendPath("/datasource/chat/completions"), body, params, headers);
     }
 
     /** Get a data source by ID */

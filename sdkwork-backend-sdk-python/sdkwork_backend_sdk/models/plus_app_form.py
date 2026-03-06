@@ -16,6 +16,9 @@ class PlusAppForm:
     status: str
     app_type: str
     platforms: AppPlatforms
+    install_platforms: AppPlatforms = None
+    install_skill: AppInstallSkill
+    install_config: AppInstallConfig = None
     package_name: str = None
     bundle_id: str = None
     store_url: str = None

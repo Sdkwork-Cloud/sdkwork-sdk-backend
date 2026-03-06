@@ -34,7 +34,7 @@ namespace Backend.Api
         /// <summary>
         /// Ship an order
         /// </summary>
-        public async Task<PlusApiResultOrderShipVO?> ShipAsync(string id, string body)
+        public async Task<PlusApiResultOrderShipVO?> ShipAsync(string id, string? body = null)
         {
             return await _client.PostAsync<PlusApiResultOrderShipVO>(ApiPaths.BackendPath($"/trade/order/{id}/ship"), body);
         }
@@ -125,6 +125,14 @@ namespace Backend.Api
         public async Task<PlusApiResultGoodsOrderVO?> CreateGoodsAsync(CreateGoodsOrderForm body)
         {
             return await _client.PostAsync<PlusApiResultGoodsOrderVO>(ApiPaths.BackendPath("/trade/order/goods"), body);
+        }
+
+        /// <summary>
+        /// Create booking order
+        /// </summary>
+        public async Task<PlusApiResultBookingOrderVO?> CreateBookingAsync(CreateBookingOrderForm body)
+        {
+            return await _client.PostAsync<PlusApiResultBookingOrderVO>(ApiPaths.BackendPath("/trade/order/booking"), body);
         }
 
         /// <summary>

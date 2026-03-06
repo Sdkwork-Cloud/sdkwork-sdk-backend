@@ -6,6 +6,8 @@ namespace Backend.Models
 {
     public class CreatePointsOrderForm
     {
-
+        public List<OrderContentItem>? Items { get; set; }
+        public int? PointsAmount { get; set; }
+        public string? ExpireTime { get; set; }
     }
 }

@@ -49,4 +49,9 @@ class OrganizationApi(private val client: HttpClient) {
     suspend fun delete(id: String): PlusApiResultBoolean? {
         return client.delete(ApiPaths.backendPath("/organization/$id")) as? PlusApiResultBoolean
     }
+
+    /** Get child organizations */
+    suspend fun getChildren(id: String): PlusApiResultListPlusOrganizationVO? {
+        return client.get(ApiPaths.backendPath("/organization/$id/children")) as? PlusApiResultListPlusOrganizationVO
+    }
 }

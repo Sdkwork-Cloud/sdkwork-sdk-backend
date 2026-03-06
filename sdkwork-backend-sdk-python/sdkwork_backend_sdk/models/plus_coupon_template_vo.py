@@ -22,5 +22,5 @@ class PlusCouponTemplateVO:
     validity_type: str = None
     validity_days: int = None
     can_share: bool = None
-    scope_type: int = None
+    scope_type: str = None
     scope_value: str = None

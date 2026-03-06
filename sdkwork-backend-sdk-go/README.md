@@ -92,32 +92,36 @@ client.SetHeader("X-Custom-Header", "value")
 - `client.UserCoupon` - user_coupon API
 - `client.UserCard` - user_card API
 - `client.UserAddress` - user_address API
-- `client.AiUsageRecord` - ai_usage_record API
+- `client.UsageRecord` - usage_record API
 - `client.ShoppingCart` - shopping_cart API
 - `client.ShoppingCartItem` - shopping_cart_item API
 - `client.Refund` - refund API
 - `client.Payment` - payment API
 - `client.Order` - order API
 - `client.OrderItem` - order_item API
-- `client.AiTool` - ai_tool API
+- `client.Tool` - tool API
 - `client.Tenant` - tenant API
 - `client.DatabaseTable` - database_table API
 - `client.ProductSku` - product_sku API
+- `client.Skill` - skill API
+- `client.SkillPackage` - skill_package API
 - `client.ShortUrl` - short_url API
 - `client.Shop` - shop API
 - `client.Share` - share API
 - `client.ShareVisitRecord` - share_visit_record API
 - `client.ShardingKey` - sharding_key API
+- `client.ApiSecurityPolicy` - api_security_policy API
 - `client.Schema` - schema API
 - `client.RbacRole` - rbac_role API
 - `client.RolePermission` - role_permission API
 - `client.InvocationRecord` - invocation_record API
 - `client.RbacUserRole` - rbac_user_role API
-- `client.AiPrompt` - ai_prompt API
+- `client.Prompt` - prompt API
 - `client.Project` - project API
 - `client.Product` - product API
 - `client.PptTemplate` - ppt_template API
 - `client.PptTemplateSlide` - ppt_template_slide API
+- `client.RbacPermission` - rbac_permission API
 - `client.Partner` - partner API
 - `client.ChatParticipant` - chat_participant API
 - `client.OssBucket` - oss_bucket API
@@ -128,11 +132,11 @@ client.SetHeader("X-Custom-Header", "value")
 - `client.Notification` - notification API
 - `client.Notes` - notes API
 - `client.News` - news API
-- `client.Host` - host API
+- `client.Net` - net API
 - `client.DnsRecord` - dns_record API
 - `client.Music` - music API
-- `client.AiModelInformation` - ai_model_information API
-- `client.AiModelPrice` - ai_model_price API
+- `client.ModelInformation` - model_information API
+- `client.ModelPrice` - model_price API
 - `client.ChatMessage` - chat_message API
 - `client.MemberLevel` - member_level API
 - `client.MemberCard` - member_card API
@@ -141,8 +145,8 @@ client.SetHeader("X-Custom-Header", "value")
 - `client.InvitationCode` - invitation_code API
 - `client.Image` - image API
 - `client.ChatGroup` - chat_group API
-- `client.AiGeneration` - ai_generation API
-- `client.AiGenerationContent` - ai_generation_content API
+- `client.Generation` - generation API
+- `client.GenerationContent` - generation_content API
 - `client.File` - file API
 - `client.FilePart` - file_part API
 - `client.FileContent` - file_content API
@@ -156,45 +160,46 @@ client.SetHeader("X-Custom-Header", "value")
 - `client.Datasource` - datasource API
 - `client.Coupon` - coupon API
 - `client.CouponTemplate` - coupon_template API
-- `client.AiConversation` - ai_conversation API
+- `client.Conversation` - conversation API
+- `client.ContentWriting` - content_writing API
 - `client.Comment` - comment API
 - `client.Column` - column API
 - `client.Collection` - collection API
 - `client.CollectionItem` - collection_item API
 - `client.Character` - character API
+- `client.Channel` - channel API
 - `client.ChannelResource` - channel_resource API
+- `client.ChannelProxy` - channel_proxy API
 - `client.ChannelAccount` - channel_account API
-- `client.AiCategory` - ai_category API
+- `client.Category` - category API
 - `client.MembershipCard` - membership_card API
 - `client.CardTemplate` - card_template API
 - `client.Attribute` - attribute API
-- `client.AiArticle` - ai_article API
-- `client.Application` - application API
+- `client.Article` - article API
+- `client.App` - app API
 - `client.ApiKey` - api_key API
-- `client.AiAgent` - ai_agent API
-- `client.AiAgentToolRelationship` - ai_agent_tool_relationship API
+- `client.Agent` - agent API
+- `client.AgentToolRelationship` - agent_tool_relationship API
 - `client.Account` - account API
 - `client.AccountHistory` - account_history API
+- `client.AccountExchangeConfig` - account_exchange_config API
+- `client.Invoice` - invoice API
 - `client.SearchChat` - search_chat API
 - `client.PptTemplateRendering` - ppt_template_rendering API
 - `client.PptTemplateChat` - ppt_template_chat API
 - `client.KnowledgeBaseFile` - knowledge_base_file API
 - `client.KnowledgeBaseChat` - knowledge_base_chat API
 - `client.ImMessage` - im_message API
-- `client.AiVoiceSpeakerGeneration` - ai_voice_speaker_generation API
-- `client.AiVideoGeneration` - ai_video_generation API
-- `client.AiMusicGeneration` - ai_music_generation API
-- `client.AiImageGeneration` - ai_image_generation API
-- `client.AiCharacterGeneration` - ai_character_generation API
-- `client.AiAudioGeneration` - ai_audio_generation API
-- `client.AiAudioEffectGeneration` - ai_audio_effect_generation API
-- `client.AiChat` - ai_chat API
-- `client.Verification` - verification API
-- `client.OauthAuthentication` - oauth_authentication API
-- `client.Authorization` - authorization API
-- `client.Authentication` - authentication API
-- `client.App` - app API
-- `client.AiAgentChat` - ai_agent_chat API
+- `client.VoiceSpeakerGeneration` - voice_speaker_generation API
+- `client.VideoGeneration` - video_generation API
+- `client.MusicGeneration` - music_generation API
+- `client.ImageGeneration` - image_generation API
+- `client.CharacterGeneration` - character_generation API
+- `client.AudioGeneration` - audio_generation API
+- `client.AudioEffectGeneration` - audio_effect_generation API
+- `client.Chat` - chat API
+- `client.Auth` - auth API
+- `client.AgentChat` - agent_chat API
 
 ## Usage Examples
 
@@ -418,11 +423,11 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### ai_usage_record
+### usage_record
 
 ```go
 // Update an existing usage record
-result, err := client.AiUsageRecord.Update()
+result, err := client.UsageRecord.Update()
 if err != nil {
     panic(err)
 }
@@ -495,11 +500,11 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### ai_tool
+### tool
 
 ```go
 // Update an existing AI tool
-result, err := client.AiTool.Update()
+result, err := client.Tool.Update()
 if err != nil {
     panic(err)
 }
@@ -533,6 +538,28 @@ fmt.Println(result)
 ```go
 // Update an existing SKU
 result, err := client.ProductSku.Update()
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### skill
+
+```go
+// Get one skill detail
+result, err := client.Skill.GetById()
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### skill_package
+
+```go
+// Get skill package detail
+result, err := client.SkillPackage.GetById()
 if err != nil {
     panic(err)
 }
@@ -594,6 +621,17 @@ if err != nil {
 fmt.Println(result)
 ```
 
+### api_security_policy
+
+```go
+// PUT /backend/v3/api/security/policy
+result, err := client.ApiSecurityPolicy.Update()
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
 ### schema
 
 ```go
@@ -649,11 +687,11 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### ai_prompt
+### prompt
 
 ```go
 // Update an existing AI prompt
-result, err := client.AiPrompt.Update()
+result, err := client.Prompt.Update()
 if err != nil {
     panic(err)
 }
@@ -698,6 +736,17 @@ fmt.Println(result)
 ```go
 // Update an existing PPT template slide
 result, err := client.PptTemplateSlide.Update()
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### rbac_permission
+
+```go
+// PUT /backend/v3/api/permission
+result, err := client.RbacPermission.Update()
 if err != nil {
     panic(err)
 }
@@ -814,11 +863,11 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### host
+### net
 
 ```go
 // 更新域名
-result, err := client.Host.Update()
+result, err := client.Net.Update()
 if err != nil {
     panic(err)
 }
@@ -847,22 +896,22 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### ai_model_information
+### model_information
 
 ```go
 // Update existing AI model information
-result, err := client.AiModelInformation.Update()
+result, err := client.ModelInformation.Update()
 if err != nil {
     panic(err)
 }
 fmt.Println(result)
 ```
 
-### ai_model_price
+### model_price
 
 ```go
 // Update an existing AI model price
-result, err := client.AiModelPrice.Update()
+result, err := client.ModelPrice.Update()
 if err != nil {
     panic(err)
 }
@@ -957,22 +1006,22 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### ai_generation
+### generation
 
 ```go
 // Update an existing AI generation record
-result, err := client.AiGeneration.Update()
+result, err := client.Generation.Update()
 if err != nil {
     panic(err)
 }
 fmt.Println(result)
 ```
 
-### ai_generation_content
+### generation_content
 
 ```go
 // Update AI generated content
-result, err := client.AiGenerationContent.Update()
+result, err := client.GenerationContent.Update()
 if err != nil {
     panic(err)
 }
@@ -1122,11 +1171,22 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### ai_conversation
+### conversation
 
 ```go
 // Update an existing conversation
-result, err := client.AiConversation.Update()
+result, err := client.Conversation.Update()
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### content_writing
+
+```go
+// Rename chapter
+result, err := client.ContentWriting.RenameChapter()
 if err != nil {
     panic(err)
 }
@@ -1188,11 +1248,33 @@ if err != nil {
 fmt.Println(result)
 ```
 
+### channel
+
+```go
+// Update channel
+result, err := client.Channel.Update()
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
 ### channel_resource
 
 ```go
 // Update an existing channel resource
 result, err := client.ChannelResource.Update()
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### channel_proxy
+
+```go
+// Update channel proxy
+result, err := client.ChannelProxy.Update()
 if err != nil {
     panic(err)
 }
@@ -1210,11 +1292,11 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### ai_category
+### category
 
 ```go
 // Update an existing category
-result, err := client.AiCategory.Update()
+result, err := client.Category.Update()
 if err != nil {
     panic(err)
 }
@@ -1254,22 +1336,22 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### ai_article
+### article
 
 ```go
 // Update an existing AI article
-result, err := client.AiArticle.Update()
+result, err := client.Article.Update()
 if err != nil {
     panic(err)
 }
 fmt.Println(result)
 ```
 
-### application
+### app
 
 ```go
 // Update application
-result, err := client.Application.Update()
+result, err := client.App.Update()
 if err != nil {
     panic(err)
 }
@@ -1287,22 +1369,22 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### ai_agent
+### agent
 
 ```go
 // Update an existing AI agent
-result, err := client.AiAgent.Update()
+result, err := client.Agent.Update()
 if err != nil {
     panic(err)
 }
 fmt.Println(result)
 ```
 
-### ai_agent_tool_relationship
+### agent_tool_relationship
 
 ```go
 // Update an existing agent-tool relationship
-result, err := client.AiAgentToolRelationship.Update()
+result, err := client.AgentToolRelationship.Update()
 if err != nil {
     panic(err)
 }
@@ -1325,6 +1407,28 @@ fmt.Println(result)
 ```go
 // Update an existing account history record
 result, err := client.AccountHistory.Update()
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### account_exchange_config
+
+```go
+// Get points-to-cash rate
+result, err := client.AccountExchangeConfig.GetPointsToCashRate()
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### invoice
+
+```go
+// Apply invoice
+result, err := client.Invoice.Apply()
 if err != nil {
     panic(err)
 }
@@ -1367,7 +1471,7 @@ fmt.Println(result)
 ### knowledge_base_file
 
 ```go
-// 获取文件列表
+// List files
 result, err := client.KnowledgeBaseFile.ListFiles()
 if err != nil {
     panic(err)
@@ -1389,162 +1493,118 @@ fmt.Println(result)
 ### im_message
 
 ```go
-// Get messages by page
-result, err := client.ImMessage.ListByPage()
+// Mark conversation messages as read
+result, err := client.ImMessage.MarkRead()
 if err != nil {
     panic(err)
 }
 fmt.Println(result)
 ```
 
-### ai_voice_speaker_generation
+### voice_speaker_generation
 
 ```go
 // Create voice speaker generation task
-result, err := client.AiVoiceSpeakerGeneration.Create()
+result, err := client.VoiceSpeakerGeneration.Create()
 if err != nil {
     panic(err)
 }
 fmt.Println(result)
 ```
 
-### ai_video_generation
+### video_generation
 
 ```go
 // Create video generation task
-result, err := client.AiVideoGeneration.Create()
+result, err := client.VideoGeneration.Create()
 if err != nil {
     panic(err)
 }
 fmt.Println(result)
 ```
 
-### ai_music_generation
+### music_generation
 
 ```go
 // Create music generation task
-result, err := client.AiMusicGeneration.Create()
+result, err := client.MusicGeneration.Create()
 if err != nil {
     panic(err)
 }
 fmt.Println(result)
 ```
 
-### ai_image_generation
+### image_generation
 
 ```go
 // Create image generation task
-result, err := client.AiImageGeneration.Create()
+result, err := client.ImageGeneration.Create()
 if err != nil {
     panic(err)
 }
 fmt.Println(result)
 ```
 
-### ai_character_generation
+### character_generation
 
 ```go
 // Create character generation task
-result, err := client.AiCharacterGeneration.Create()
+result, err := client.CharacterGeneration.Create()
 if err != nil {
     panic(err)
 }
 fmt.Println(result)
 ```
 
-### ai_audio_generation
+### audio_generation
 
 ```go
 // Create audio generation task
-result, err := client.AiAudioGeneration.Create()
+result, err := client.AudioGeneration.Create()
 if err != nil {
     panic(err)
 }
 fmt.Println(result)
 ```
 
-### ai_audio_effect_generation
+### audio_effect_generation
 
 ```go
 // Create audio effect generation task
-result, err := client.AiAudioEffectGeneration.Create()
+result, err := client.AudioEffectGeneration.Create()
 if err != nil {
     panic(err)
 }
 fmt.Println(result)
 ```
 
-### ai_chat
+### chat
 
 ```go
 // Stop a chat completion stream
-result, err := client.AiChat.Stop()
+result, err := client.Chat.Stop()
 if err != nil {
     panic(err)
 }
 fmt.Println(result)
 ```
 
-### verification
+### auth
 
 ```go
 // Verify phone
-result, err := client.Verification.VerifyPhone()
+result, err := client.Auth.VerifyPhone()
 if err != nil {
     panic(err)
 }
 fmt.Println(result)
 ```
 
-### oauth_authentication
-
-```go
-// Get OAuth authorization URL
-result, err := client.OauthAuthentication.GetAuthUrl()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### authorization
-
-```go
-// 检查用户角色
-result, err := client.Authorization.HasRole()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### authentication
-
-```go
-// 重置密码
-result, err := client.Authentication.ResetPassword()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### app
-
-```go
-// Get app SDK config
-result, err := client.App.GetSdkConfig()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### ai_agent_chat
+### agent_chat
 
 ```go
 // Create a chat completion with agent
-result, err := client.AiAgentChat.WithContext()
+result, err := client.AgentChat.WithContext()
 if err != nil {
     panic(err)
 }
@@ -1561,7 +1621,6 @@ if err != nil {
     return
 }
 ```
-
 
 ## Publishing
 

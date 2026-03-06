@@ -32,6 +32,30 @@ namespace Backend.Api
         }
 
         /// <summary>
+        /// Exchange coupon by points
+        /// </summary>
+        public async Task<PlusApiResultPlusUserCouponVO?> ExchangeByPointsAsync(string couponId, CouponPointsExchangeForm body)
+        {
+            return await _client.PostAsync<PlusApiResultPlusUserCouponVO>(ApiPaths.BackendPath($"/coupon/{couponId}/exchange/points"), body);
+        }
+
+        /// <summary>
+        /// Redeem coupon
+        /// </summary>
+        public async Task<PlusApiResultPlusUserCouponVO?> RedeemAsync(CouponRedeemForm body)
+        {
+            return await _client.PostAsync<PlusApiResultPlusUserCouponVO>(ApiPaths.BackendPath("/coupon/redeem"), body);
+        }
+
+        /// <summary>
+        /// Rollback points exchange coupon
+        /// </summary>
+        public async Task<PlusApiResultPlusUserCouponVO?> RollbackPointsExchangeAsync(string userCouponId, CouponRollbackForm? body = null)
+        {
+            return await _client.PostAsync<PlusApiResultPlusUserCouponVO>(ApiPaths.BackendPath($"/coupon/my/{userCouponId}/rollback"), body);
+        }
+
+        /// <summary>
         /// Get coupon templates by page
         /// </summary>
         public async Task<PlusApiResultPagePlusCouponVO?> ListByPageAsync(QueryListForm? body = null, Dictionary<string, object>? query = null)

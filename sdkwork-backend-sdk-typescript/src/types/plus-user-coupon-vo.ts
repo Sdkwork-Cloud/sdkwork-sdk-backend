@@ -12,6 +12,16 @@ export interface PlusUserCouponVO {
   couponCode?: string;
   /** 领取时间 */
   acquireTime?: string;
+  /** 领取请求号(幂等键) */
+  acquireRequestNo?: string;
+  /** 领取方式 */
+  acquireType?: 'DEFAULT' | 'RECEIVE' | 'REDEEM_CODE' | 'POINTS_EXCHANGE' | 'ADMIN_GRANT';
+  /** 领取消耗积分 */
+  pointCost?: number;
+  /** 是否已退回积分 */
+  pointsRefunded?: boolean;
+  /** 积分退回时间 */
+  pointsRefundAt?: string;
   /** 使用时间 */
   useTime?: string;
   /** 使用状态：未使用/已使用/已过期等 */

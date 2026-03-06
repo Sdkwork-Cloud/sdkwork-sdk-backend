@@ -12,12 +12,12 @@ public class SearchChatApi {
         this.client = client;
     }
 
-    public PlusApiResultBoolean stop(Map<String, String> headers) throws Exception {
-        return (PlusApiResultBoolean) client.post(ApiPaths.backendPath("/search/chat/stop"), null, null, headers);
+    public PlusApiResultBoolean stop(Map<String, Object> params, Map<String, String> headers) throws Exception {
+        return (PlusApiResultBoolean) client.post(ApiPaths.backendPath("/search/chat/stop"), null, params, headers);
     }
 
     /** Create a chat completion with Search */
-    public ChatCompletionChunk create(ChatCompletionCreateForm body, Map<String, String> headers) throws Exception {
-        return (ChatCompletionChunk) client.post(ApiPaths.backendPath("/search/chat/completions"), body, null, headers);
+    public ChatCompletionChunk create(ChatCompletionCreateForm body, Map<String, Object> params, Map<String, String> headers) throws Exception {
+        return (ChatCompletionChunk) client.post(ApiPaths.backendPath("/search/chat/completions"), body, params, headers);
     }
 }

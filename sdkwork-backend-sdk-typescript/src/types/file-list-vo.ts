@@ -1,9 +1,9 @@
 import type { FileItemVO } from './file-item-vo';
 
-/** 文件列表视图对象 */
+/** File list view object */
 export interface FileListVO {
-  /** 文件列表 */
+  /** File list */
   data?: FileItemVO[];
-  /** 对象类型 */
+  /** Object type */
   object?: string;
 }

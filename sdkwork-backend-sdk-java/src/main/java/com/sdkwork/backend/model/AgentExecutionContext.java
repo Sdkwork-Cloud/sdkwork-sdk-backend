@@ -23,15 +23,15 @@ public class AgentExecutionContext {
     private PlusDiskObject disk;
     private PlusFileObject diskRootFile;
     private Boolean completed;
-    private Boolean expired;
-    private Map<String, AgentScope> agentSCOPES;
-    private Boolean overSteps;
-    private Boolean paused;
     private Boolean running;
+    private Boolean paused;
+    private Boolean expired;
     private Boolean failed;
     private Boolean waiting;
     private Boolean init;
     private Boolean end;
+    private Map<String, AgentScope> agentSCOPES;
+    private Boolean overSteps;
 
     public String getId() {
         return this.id;
@@ -209,28 +209,12 @@ public class AgentExecutionContext {
         this.completed = completed;
     }
 
-    public Boolean getExpired() {
-        return this.expired;
+    public Boolean getRunning() {
+        return this.running;
     }
     
-    public void setExpired(Boolean expired) {
-        this.expired = expired;
-    }
-
-    public Map<String, AgentScope> getAgentSCOPES() {
-        return this.agentSCOPES;
-    }
-    
-    public void setAgentSCOPES(Map<String, AgentScope> agentSCOPES) {
-        this.agentSCOPES = agentSCOPES;
-    }
-
-    public Boolean getOverSteps() {
-        return this.overSteps;
-    }
-    
-    public void setOverSteps(Boolean overSteps) {
-        this.overSteps = overSteps;
+    public void setRunning(Boolean running) {
+        this.running = running;
     }
 
     public Boolean getPaused() {
@@ -241,12 +225,12 @@ public class AgentExecutionContext {
         this.paused = paused;
     }
 
-    public Boolean getRunning() {
-        return this.running;
+    public Boolean getExpired() {
+        return this.expired;
     }
     
-    public void setRunning(Boolean running) {
-        this.running = running;
+    public void setExpired(Boolean expired) {
+        this.expired = expired;
     }
 
     public Boolean getFailed() {
@@ -279,5 +263,21 @@ public class AgentExecutionContext {
     
     public void setEnd(Boolean end) {
         this.end = end;
+    }
+
+    public Map<String, AgentScope> getAgentSCOPES() {
+        return this.agentSCOPES;
+    }
+    
+    public void setAgentSCOPES(Map<String, AgentScope> agentSCOPES) {
+        this.agentSCOPES = agentSCOPES;
+    }
+
+    public Boolean getOverSteps() {
+        return this.overSteps;
+    }
+    
+    public void setOverSteps(Boolean overSteps) {
+        this.overSteps = overSteps;
     }
 }

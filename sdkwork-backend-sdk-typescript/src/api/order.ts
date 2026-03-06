@@ -1,7 +1,7 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 import type { QueryParams } from '../types/common';
-import type { CreateGoodsOrderForm, CreateImGroupOrderForm, CreatePointsOrderForm, CreateVipOrderForm, CreateVirtualOrderForm, PlusApiResultBoolean, PlusApiResultGoodsOrderVO, PlusApiResultImGroupOrderVO, PlusApiResultListPlusOrderVO, PlusApiResultOrderCancelVO, PlusApiResultOrderCloseVO, PlusApiResultOrderCompleteVO, PlusApiResultOrderConfirmVO, PlusApiResultOrderShipVO, PlusApiResultPagePlusOrderVO, PlusApiResultPlusOrderVO, PlusApiResultPointsOrderVO, PlusApiResultVipOrderVO, PlusApiResultVirtualOrderVO, PlusOrderForm, QueryListForm } from '../types';
+import type { CreateBookingOrderForm, CreateGoodsOrderForm, CreateImGroupOrderForm, CreatePointsOrderForm, CreateVipOrderForm, CreateVirtualOrderForm, PlusApiResultBookingOrderVO, PlusApiResultBoolean, PlusApiResultGoodsOrderVO, PlusApiResultImGroupOrderVO, PlusApiResultListPlusOrderVO, PlusApiResultOrderCancelVO, PlusApiResultOrderCloseVO, PlusApiResultOrderCompleteVO, PlusApiResultOrderConfirmVO, PlusApiResultOrderShipVO, PlusApiResultPagePlusOrderVO, PlusApiResultPlusOrderVO, PlusApiResultPointsOrderVO, PlusApiResultVipOrderVO, PlusApiResultVirtualOrderVO, PlusOrderForm, QueryListForm } from '../types';
 
 
 export class OrderApi {
@@ -22,7 +22,7 @@ export class OrderApi {
   }
 
 /** Ship an order */
-  async ship(id: string | number, body: string): Promise<PlusApiResultOrderShipVO> {
+  async ship(id: string | number, body?: string): Promise<PlusApiResultOrderShipVO> {
     return this.client.post<PlusApiResultOrderShipVO>(backendApiPath(`/trade/order/${id}/ship`), body);
   }
 
@@ -79,6 +79,11 @@ export class OrderApi {
 /** Create goods order */
   async createGoods(body: CreateGoodsOrderForm): Promise<PlusApiResultGoodsOrderVO> {
     return this.client.post<PlusApiResultGoodsOrderVO>(backendApiPath(`/trade/order/goods`), body);
+  }
+
+/** Create booking order */
+  async createBooking(body: CreateBookingOrderForm): Promise<PlusApiResultBookingOrderVO> {
+    return this.client.post<PlusApiResultBookingOrderVO>(backendApiPath(`/trade/order/booking`), body);
   }
 
 /** Get an order by ID */

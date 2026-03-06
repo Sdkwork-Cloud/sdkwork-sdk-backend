@@ -27,32 +27,36 @@ type SdkworkBackendClient struct {
     UserCoupon *api.UserCouponApi
     UserCard *api.UserCardApi
     UserAddress *api.UserAddressApi
-    AiUsageRecord *api.AiUsageRecordApi
+    UsageRecord *api.UsageRecordApi
     ShoppingCart *api.ShoppingCartApi
     ShoppingCartItem *api.ShoppingCartItemApi
     Refund *api.RefundApi
     Payment *api.PaymentApi
     Order *api.OrderApi
     OrderItem *api.OrderItemApi
-    AiTool *api.AiToolApi
+    Tool *api.ToolApi
     Tenant *api.TenantApi
     DatabaseTable *api.DatabaseTableApi
     ProductSku *api.ProductSkuApi
+    Skill *api.SkillApi
+    SkillPackage *api.SkillPackageApi
     ShortUrl *api.ShortUrlApi
     Shop *api.ShopApi
     Share *api.ShareApi
     ShareVisitRecord *api.ShareVisitRecordApi
     ShardingKey *api.ShardingKeyApi
+    ApiSecurityPolicy *api.ApiSecurityPolicyApi
     Schema *api.SchemaApi
     RbacRole *api.RbacRoleApi
     RolePermission *api.RolePermissionApi
     InvocationRecord *api.InvocationRecordApi
     RbacUserRole *api.RbacUserRoleApi
-    AiPrompt *api.AiPromptApi
+    Prompt *api.PromptApi
     Project *api.ProjectApi
     Product *api.ProductApi
     PptTemplate *api.PptTemplateApi
     PptTemplateSlide *api.PptTemplateSlideApi
+    RbacPermission *api.RbacPermissionApi
     Partner *api.PartnerApi
     ChatParticipant *api.ChatParticipantApi
     OssBucket *api.OssBucketApi
@@ -63,11 +67,11 @@ type SdkworkBackendClient struct {
     Notification *api.NotificationApi
     Notes *api.NotesApi
     News *api.NewsApi
-    Host *api.HostApi
+    Net *api.NetApi
     DnsRecord *api.DnsRecordApi
     Music *api.MusicApi
-    AiModelInformation *api.AiModelInformationApi
-    AiModelPrice *api.AiModelPriceApi
+    ModelInformation *api.ModelInformationApi
+    ModelPrice *api.ModelPriceApi
     ChatMessage *api.ChatMessageApi
     MemberLevel *api.MemberLevelApi
     MemberCard *api.MemberCardApi
@@ -76,8 +80,8 @@ type SdkworkBackendClient struct {
     InvitationCode *api.InvitationCodeApi
     Image *api.ImageApi
     ChatGroup *api.ChatGroupApi
-    AiGeneration *api.AiGenerationApi
-    AiGenerationContent *api.AiGenerationContentApi
+    Generation *api.GenerationApi
+    GenerationContent *api.GenerationContentApi
     File *api.FileApi
     FilePart *api.FilePartApi
     FileContent *api.FileContentApi
@@ -91,45 +95,46 @@ type SdkworkBackendClient struct {
     Datasource *api.DatasourceApi
     Coupon *api.CouponApi
     CouponTemplate *api.CouponTemplateApi
-    AiConversation *api.AiConversationApi
+    Conversation *api.ConversationApi
+    ContentWriting *api.ContentWritingApi
     Comment *api.CommentApi
     Column *api.ColumnApi
     Collection *api.CollectionApi
     CollectionItem *api.CollectionItemApi
     Character *api.CharacterApi
+    Channel *api.ChannelApi
     ChannelResource *api.ChannelResourceApi
+    ChannelProxy *api.ChannelProxyApi
     ChannelAccount *api.ChannelAccountApi
-    AiCategory *api.AiCategoryApi
+    Category *api.CategoryApi
     MembershipCard *api.MembershipCardApi
     CardTemplate *api.CardTemplateApi
     Attribute *api.AttributeApi
-    AiArticle *api.AiArticleApi
-    Application *api.ApplicationApi
+    Article *api.ArticleApi
+    App *api.AppApi
     ApiKey *api.ApiKeyApi
-    AiAgent *api.AiAgentApi
-    AiAgentToolRelationship *api.AiAgentToolRelationshipApi
+    Agent *api.AgentApi
+    AgentToolRelationship *api.AgentToolRelationshipApi
     Account *api.AccountApi
     AccountHistory *api.AccountHistoryApi
+    AccountExchangeConfig *api.AccountExchangeConfigApi
+    Invoice *api.InvoiceApi
     SearchChat *api.SearchChatApi
     PptTemplateRendering *api.PptTemplateRenderingApi
     PptTemplateChat *api.PptTemplateChatApi
     KnowledgeBaseFile *api.KnowledgeBaseFileApi
     KnowledgeBaseChat *api.KnowledgeBaseChatApi
     ImMessage *api.ImMessageApi
-    AiVoiceSpeakerGeneration *api.AiVoiceSpeakerGenerationApi
-    AiVideoGeneration *api.AiVideoGenerationApi
-    AiMusicGeneration *api.AiMusicGenerationApi
-    AiImageGeneration *api.AiImageGenerationApi
-    AiCharacterGeneration *api.AiCharacterGenerationApi
-    AiAudioGeneration *api.AiAudioGenerationApi
-    AiAudioEffectGeneration *api.AiAudioEffectGenerationApi
-    AiChat *api.AiChatApi
-    Verification *api.VerificationApi
-    OauthAuthentication *api.OauthAuthenticationApi
-    Authorization *api.AuthorizationApi
-    Authentication *api.AuthenticationApi
-    App *api.AppApi
-    AiAgentChat *api.AiAgentChatApi
+    VoiceSpeakerGeneration *api.VoiceSpeakerGenerationApi
+    VideoGeneration *api.VideoGenerationApi
+    MusicGeneration *api.MusicGenerationApi
+    ImageGeneration *api.ImageGenerationApi
+    CharacterGeneration *api.CharacterGenerationApi
+    AudioGeneration *api.AudioGenerationApi
+    AudioEffectGeneration *api.AudioEffectGenerationApi
+    Chat *api.ChatApi
+    Auth *api.AuthApi
+    AgentChat *api.AgentChatApi
 }
 
 func NewSdkworkBackendClient(baseURL string) *SdkworkBackendClient {
@@ -161,32 +166,36 @@ func NewSdkworkBackendClientWithConfig(config sdkhttp.Config) *SdkworkBackendCli
         UserCoupon: api.NewUserCouponApi(client),
         UserCard: api.NewUserCardApi(client),
         UserAddress: api.NewUserAddressApi(client),
-        AiUsageRecord: api.NewAiUsageRecordApi(client),
+        UsageRecord: api.NewUsageRecordApi(client),
         ShoppingCart: api.NewShoppingCartApi(client),
         ShoppingCartItem: api.NewShoppingCartItemApi(client),
         Refund: api.NewRefundApi(client),
         Payment: api.NewPaymentApi(client),
         Order: api.NewOrderApi(client),
         OrderItem: api.NewOrderItemApi(client),
-        AiTool: api.NewAiToolApi(client),
+        Tool: api.NewToolApi(client),
         Tenant: api.NewTenantApi(client),
         DatabaseTable: api.NewDatabaseTableApi(client),
         ProductSku: api.NewProductSkuApi(client),
+        Skill: api.NewSkillApi(client),
+        SkillPackage: api.NewSkillPackageApi(client),
         ShortUrl: api.NewShortUrlApi(client),
         Shop: api.NewShopApi(client),
         Share: api.NewShareApi(client),
         ShareVisitRecord: api.NewShareVisitRecordApi(client),
         ShardingKey: api.NewShardingKeyApi(client),
+        ApiSecurityPolicy: api.NewApiSecurityPolicyApi(client),
         Schema: api.NewSchemaApi(client),
         RbacRole: api.NewRbacRoleApi(client),
         RolePermission: api.NewRolePermissionApi(client),
         InvocationRecord: api.NewInvocationRecordApi(client),
         RbacUserRole: api.NewRbacUserRoleApi(client),
-        AiPrompt: api.NewAiPromptApi(client),
+        Prompt: api.NewPromptApi(client),
         Project: api.NewProjectApi(client),
         Product: api.NewProductApi(client),
         PptTemplate: api.NewPptTemplateApi(client),
         PptTemplateSlide: api.NewPptTemplateSlideApi(client),
+        RbacPermission: api.NewRbacPermissionApi(client),
         Partner: api.NewPartnerApi(client),
         ChatParticipant: api.NewChatParticipantApi(client),
         OssBucket: api.NewOssBucketApi(client),
@@ -197,11 +206,11 @@ func NewSdkworkBackendClientWithConfig(config sdkhttp.Config) *SdkworkBackendCli
         Notification: api.NewNotificationApi(client),
         Notes: api.NewNotesApi(client),
         News: api.NewNewsApi(client),
-        Host: api.NewHostApi(client),
+        Net: api.NewNetApi(client),
         DnsRecord: api.NewDnsRecordApi(client),
         Music: api.NewMusicApi(client),
-        AiModelInformation: api.NewAiModelInformationApi(client),
-        AiModelPrice: api.NewAiModelPriceApi(client),
+        ModelInformation: api.NewModelInformationApi(client),
+        ModelPrice: api.NewModelPriceApi(client),
         ChatMessage: api.NewChatMessageApi(client),
         MemberLevel: api.NewMemberLevelApi(client),
         MemberCard: api.NewMemberCardApi(client),
@@ -210,8 +219,8 @@ func NewSdkworkBackendClientWithConfig(config sdkhttp.Config) *SdkworkBackendCli
         InvitationCode: api.NewInvitationCodeApi(client),
         Image: api.NewImageApi(client),
         ChatGroup: api.NewChatGroupApi(client),
-        AiGeneration: api.NewAiGenerationApi(client),
-        AiGenerationContent: api.NewAiGenerationContentApi(client),
+        Generation: api.NewGenerationApi(client),
+        GenerationContent: api.NewGenerationContentApi(client),
         File: api.NewFileApi(client),
         FilePart: api.NewFilePartApi(client),
         FileContent: api.NewFileContentApi(client),
@@ -225,45 +234,46 @@ func NewSdkworkBackendClientWithConfig(config sdkhttp.Config) *SdkworkBackendCli
         Datasource: api.NewDatasourceApi(client),
         Coupon: api.NewCouponApi(client),
         CouponTemplate: api.NewCouponTemplateApi(client),
-        AiConversation: api.NewAiConversationApi(client),
+        Conversation: api.NewConversationApi(client),
+        ContentWriting: api.NewContentWritingApi(client),
         Comment: api.NewCommentApi(client),
         Column: api.NewColumnApi(client),
         Collection: api.NewCollectionApi(client),
         CollectionItem: api.NewCollectionItemApi(client),
         Character: api.NewCharacterApi(client),
+        Channel: api.NewChannelApi(client),
         ChannelResource: api.NewChannelResourceApi(client),
+        ChannelProxy: api.NewChannelProxyApi(client),
         ChannelAccount: api.NewChannelAccountApi(client),
-        AiCategory: api.NewAiCategoryApi(client),
+        Category: api.NewCategoryApi(client),
         MembershipCard: api.NewMembershipCardApi(client),
         CardTemplate: api.NewCardTemplateApi(client),
         Attribute: api.NewAttributeApi(client),
-        AiArticle: api.NewAiArticleApi(client),
-        Application: api.NewApplicationApi(client),
+        Article: api.NewArticleApi(client),
+        App: api.NewAppApi(client),
         ApiKey: api.NewApiKeyApi(client),
-        AiAgent: api.NewAiAgentApi(client),
-        AiAgentToolRelationship: api.NewAiAgentToolRelationshipApi(client),
+        Agent: api.NewAgentApi(client),
+        AgentToolRelationship: api.NewAgentToolRelationshipApi(client),
         Account: api.NewAccountApi(client),
         AccountHistory: api.NewAccountHistoryApi(client),
+        AccountExchangeConfig: api.NewAccountExchangeConfigApi(client),
+        Invoice: api.NewInvoiceApi(client),
         SearchChat: api.NewSearchChatApi(client),
         PptTemplateRendering: api.NewPptTemplateRenderingApi(client),
         PptTemplateChat: api.NewPptTemplateChatApi(client),
         KnowledgeBaseFile: api.NewKnowledgeBaseFileApi(client),
         KnowledgeBaseChat: api.NewKnowledgeBaseChatApi(client),
         ImMessage: api.NewImMessageApi(client),
-        AiVoiceSpeakerGeneration: api.NewAiVoiceSpeakerGenerationApi(client),
-        AiVideoGeneration: api.NewAiVideoGenerationApi(client),
-        AiMusicGeneration: api.NewAiMusicGenerationApi(client),
-        AiImageGeneration: api.NewAiImageGenerationApi(client),
-        AiCharacterGeneration: api.NewAiCharacterGenerationApi(client),
-        AiAudioGeneration: api.NewAiAudioGenerationApi(client),
-        AiAudioEffectGeneration: api.NewAiAudioEffectGenerationApi(client),
-        AiChat: api.NewAiChatApi(client),
-        Verification: api.NewVerificationApi(client),
-        OauthAuthentication: api.NewOauthAuthenticationApi(client),
-        Authorization: api.NewAuthorizationApi(client),
-        Authentication: api.NewAuthenticationApi(client),
-        App: api.NewAppApi(client),
-        AiAgentChat: api.NewAiAgentChatApi(client),
+        VoiceSpeakerGeneration: api.NewVoiceSpeakerGenerationApi(client),
+        VideoGeneration: api.NewVideoGenerationApi(client),
+        MusicGeneration: api.NewMusicGenerationApi(client),
+        ImageGeneration: api.NewImageGenerationApi(client),
+        CharacterGeneration: api.NewCharacterGenerationApi(client),
+        AudioGeneration: api.NewAudioGenerationApi(client),
+        AudioEffectGeneration: api.NewAudioEffectGenerationApi(client),
+        Chat: api.NewChatApi(client),
+        Auth: api.NewAuthApi(client),
+        AgentChat: api.NewAgentChatApi(client),
     }
 }
 

@@ -5,6 +5,8 @@ from typing import Optional, List, Dict, Any
 class PlusCouponForm:
     """Coupon template creation form"""
     name: str
+    redeem_code: str = None
+    point_cost: int = None
     type: str
     description: str = None
     amount: int = None
@@ -15,3 +17,5 @@ class PlusCouponForm:
     total: int
     get_limit: int
     status: str
+    scope_type: str
+    scope_value: str = None

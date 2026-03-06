@@ -32,7 +32,7 @@ namespace Backend.Api
         }
 
         /// <summary>
-        /// 获取文件列表
+        /// List files
         /// </summary>
         public async Task<PlusApiResultFileListVO?> ListFilesAsync(Dictionary<string, object>? query = null)
         {
@@ -40,7 +40,7 @@ namespace Backend.Api
         }
 
         /// <summary>
-        /// 上传文件
+        /// Upload file
         /// </summary>
         public async Task<PlusApiResultFileItemVO?> UploadAsync(UploadFileRequest? body = null, Dictionary<string, object>? query = null)
         {
@@ -96,7 +96,7 @@ namespace Backend.Api
         }
 
         /// <summary>
-        /// 获取单个文件信息
+        /// Get file
         /// </summary>
         public async Task<PlusApiResultFileItemVO?> GetFileAsync(string fileId)
         {
@@ -104,7 +104,7 @@ namespace Backend.Api
         }
 
         /// <summary>
-        /// 删除文件
+        /// Delete file
         /// </summary>
         public async Task<PlusApiResultFileItemVO?> DeleteFileAsync(string fileId)
         {
@@ -112,7 +112,7 @@ namespace Backend.Api
         }
 
         /// <summary>
-        /// 获取文件内容
+        /// Get file content
         /// </summary>
         public async Task<string?> GetFileContentAsync(string fileId)
         {

@@ -19,13 +19,13 @@ public class FileApi {
         return response as? PlusApiResultPlusFileVO
     }
 
-    /// 获取文件列表
+    /// List files
     public func listFiles(params: [String: Any]? = nil) async throws -> PlusApiResultFileListVO? {
         let response = try await client.get(ApiPaths.backendPath("/oss/files"), params: params)
         return response as? PlusApiResultFileListVO
     }
 
-    /// 上传文件
+    /// Upload file
     public func upload(body: UploadFileRequest? = nil, params: [String: Any]? = nil) async throws -> PlusApiResultFileItemVO? {
         let response = try await client.post(ApiPaths.backendPath("/oss/files"), body: body, params: params, headers: nil, contentType: "multipart/form-data")
         return response as? PlusApiResultFileItemVO
@@ -67,19 +67,19 @@ public class FileApi {
         return response as? PlusApiResultSetPlusTreeNodePlusFileVO
     }
 
-    /// 获取单个文件信息
+    /// Get file
     public func getFile(fileId: String) async throws -> PlusApiResultFileItemVO? {
         let response = try await client.get(ApiPaths.backendPath("/oss/files/\(fileId)"))
         return response as? PlusApiResultFileItemVO
     }
 
-    /// 删除文件
+    /// Delete file
     public func deleteFile(fileId: String) async throws -> PlusApiResultFileItemVO? {
         let response = try await client.delete(ApiPaths.backendPath("/oss/files/\(fileId)"))
         return response as? PlusApiResultFileItemVO
     }
 
-    /// 获取文件内容
+    /// Get file content
     public func getFileContent(fileId: String) async throws -> String? {
         let response = try await client.get(ApiPaths.backendPath("/oss/files/\(fileId)/content"))
         return response as? String

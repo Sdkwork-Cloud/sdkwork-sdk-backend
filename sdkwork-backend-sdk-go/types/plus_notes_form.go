@@ -2,6 +2,7 @@ package types
 
 // Notes form
 type PlusNotesForm struct {
+	Id int `json:"id"`
 	Title string `json:"title"`
 	Content string `json:"content"`
 	UserId int `json:"userId"`

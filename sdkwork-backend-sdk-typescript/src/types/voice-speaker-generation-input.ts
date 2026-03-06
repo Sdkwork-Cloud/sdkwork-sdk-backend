@@ -39,7 +39,7 @@ export interface VoiceSpeakerGenerationInput {
   emotion?: string;
   /** 是否保存说话人 */
   saveSpeaker?: boolean;
-  usingExistingSpeaker?: boolean;
   voiceClone?: boolean;
+  usingExistingSpeaker?: boolean;
   referenceAssetCount?: number;
 }

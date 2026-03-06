@@ -13,6 +13,9 @@ public class PlusAppForm {
     private String status;
     private String appType;
     private AppPlatforms platforms;
+    private AppPlatforms installPlatforms;
+    private AppInstallSkill installSkill;
+    private AppInstallConfig installConfig;
     private String packageName;
     private String bundleId;
     private String storeUrl;
@@ -112,6 +115,30 @@ public class PlusAppForm {
     
     public void setPlatforms(AppPlatforms platforms) {
         this.platforms = platforms;
+    }
+
+    public AppPlatforms getInstallPlatforms() {
+        return this.installPlatforms;
+    }
+    
+    public void setInstallPlatforms(AppPlatforms installPlatforms) {
+        this.installPlatforms = installPlatforms;
+    }
+
+    public AppInstallSkill getInstallSkill() {
+        return this.installSkill;
+    }
+    
+    public void setInstallSkill(AppInstallSkill installSkill) {
+        this.installSkill = installSkill;
+    }
+
+    public AppInstallConfig getInstallConfig() {
+        return this.installConfig;
+    }
+    
+    public void setInstallConfig(AppInstallConfig installConfig) {
+        this.installConfig = installConfig;
     }
 
     public String getPackageName() {

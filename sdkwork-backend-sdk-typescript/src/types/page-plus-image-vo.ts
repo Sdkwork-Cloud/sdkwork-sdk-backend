@@ -3,15 +3,15 @@ import type { PlusImageVO } from './plus-image-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusImageVO {
-  totalPages?: number;
   totalElements?: number;
+  totalPages?: number;
   size?: number;
   content?: PlusImageVO[];
   number?: number;
-  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   numberOfElements?: number;
+  sort?: SortObject;
   pageable?: PageableObject;
   empty?: boolean;
 }

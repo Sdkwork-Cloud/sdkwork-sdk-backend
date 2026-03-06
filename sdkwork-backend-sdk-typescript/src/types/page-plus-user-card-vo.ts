@@ -3,15 +3,15 @@ import type { PlusUserCardVO } from './plus-user-card-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusUserCardVO {
-  totalPages?: number;
   totalElements?: number;
+  totalPages?: number;
   size?: number;
   content?: PlusUserCardVO[];
   number?: number;
-  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   numberOfElements?: number;
+  sort?: SortObject;
   pageable?: PageableObject;
   empty?: boolean;
 }

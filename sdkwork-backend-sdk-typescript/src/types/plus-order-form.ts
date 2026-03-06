@@ -1,7 +1,7 @@
 /** Order creation form */
 export interface PlusOrderForm {
   /** 订单类型，PHYSICAL-实物商品，VIRTUAL-虚拟商品，MEMBER-会员购买，POINTS-积分充值 */
-  orderType: 'DEFAULT' | 'GOODS' | 'VIRTUAL' | 'MEMBER' | 'POINTS' | 'IM_GROUP';
+  orderType: 'DEFAULT' | 'GOODS' | 'VIRTUAL' | 'MEMBER' | 'POINTS' | 'IM_GROUP' | 'BOOKING';
   /** 用户ID */
   userId: number;
   /** 订单编号，系统生成的唯一订单号，用于业务展示 */

@@ -4,4 +4,5 @@ from typing import Optional, List, Dict, Any
 @dataclass
 class CreateImGroupOrderForm:
     """Create IM group order form"""
-    pass
+    items: List[OrderContentItem] = None
+    expire_time: str = None

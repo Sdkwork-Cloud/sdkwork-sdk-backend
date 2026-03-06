@@ -20,6 +20,9 @@ namespace Backend.Models
         public string? Status { get; set; }
         public string? AppType { get; set; }
         public AppPlatforms? Platforms { get; set; }
+        public AppPlatforms? InstallPlatforms { get; set; }
+        public AppInstallSkill? InstallSkill { get; set; }
+        public AppInstallConfig? InstallConfig { get; set; }
         public string? PackageName { get; set; }
         public string? BundleId { get; set; }
         public string? StoreUrl { get; set; }

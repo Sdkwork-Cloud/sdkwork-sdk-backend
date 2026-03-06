@@ -3,15 +3,15 @@ import type { PlusInvokeRecordVO } from './plus-invoke-record-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusInvokeRecordVO {
-  totalPages?: number;
   totalElements?: number;
+  totalPages?: number;
   size?: number;
   content?: PlusInvokeRecordVO[];
   number?: number;
-  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   numberOfElements?: number;
+  sort?: SortObject;
   pageable?: PageableObject;
   empty?: boolean;
 }

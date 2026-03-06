@@ -8,6 +8,6 @@ class MimeType:
     parameters: Dict[str, str] = None
     charset: str = None
     concrete: bool = None
-    wildcard_subtype: bool = None
-    wildcard_type: bool = None
     subtype_suffix: str = None
+    wildcard_type: bool = None
+    wildcard_subtype: bool = None

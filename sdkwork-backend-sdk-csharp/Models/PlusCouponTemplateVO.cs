@@ -24,7 +24,7 @@ namespace Backend.Models
         public string? ValidityType { get; set; }
         public int? ValidityDays { get; set; }
         public bool? CanShare { get; set; }
-        public int? ScopeType { get; set; }
+        public string? ScopeType { get; set; }
         public string? ScopeValue { get; set; }
     }
 }

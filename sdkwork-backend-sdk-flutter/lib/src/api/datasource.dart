@@ -18,8 +18,8 @@ class DatasourceApi {
     return response is PlusApiResultPlusDatasourceVO ? response : null;
   }
 
-  Future<PlusApiResultBoolean?> stop(Map<String, String>? headers) async {
-    final response = await _client.post(ApiPaths.backendPath('/datasource/stop'), headers: headers);
+  Future<PlusApiResultBoolean?> stop(Map<String, dynamic>? params, Map<String, String>? headers) async {
+    final response = await _client.post(ApiPaths.backendPath('/datasource/stop'), params: params, headers: headers);
     return response is PlusApiResultBoolean ? response : null;
   }
 
@@ -36,8 +36,8 @@ class DatasourceApi {
   }
 
   /// Create a chat completion with Datasource
-  Future<ChatCompletionChunk?> createCompletions(ChatCompletionCreateForm body, Map<String, String>? headers) async {
-    final response = await _client.post(ApiPaths.backendPath('/datasource/chat/completions'), body: body, headers: headers, contentType: 'application/json');
+  Future<ChatCompletionChunk?> createCompletions(ChatCompletionCreateForm body, Map<String, dynamic>? params, Map<String, String>? headers) async {
+    final response = await _client.post(ApiPaths.backendPath('/datasource/chat/completions'), body: body, params: params, headers: headers, contentType: 'application/json');
     return response is ChatCompletionChunk ? response : null;
   }
 

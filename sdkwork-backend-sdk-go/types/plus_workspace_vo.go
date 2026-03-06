@@ -22,7 +22,7 @@ type PlusWorkspaceVO struct {
 	CurrentMembers int `json:"currentMembers"`
 	MaxStorage int `json:"maxStorage"`
 	UsedStorage int `json:"usedStorage"`
-	Settings string `json:"settings"`
+	Settings map[string]interface{} `json:"settings"`
 	IsDeleted bool `json:"isDeleted"`
 	IsPublic bool `json:"isPublic"`
 	IsTemplate bool `json:"isTemplate"`

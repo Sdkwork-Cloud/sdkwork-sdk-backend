@@ -1,6 +1,7 @@
 package com.sdkwork.backend.model;
 
 public class PlusNotesForm {
+    private Integer id;
     private String title;
     private String content;
     private Integer userId;
@@ -15,6 +16,14 @@ public class PlusNotesForm {
     private Integer parentId;
     private String type;
     private TagsContent tagsAsTagsContent;
+
+    public Integer getId() {
+        return this.id;
+    }
+    
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return this.title;

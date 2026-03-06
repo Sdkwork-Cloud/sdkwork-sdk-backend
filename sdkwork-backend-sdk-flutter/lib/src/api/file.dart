@@ -18,13 +18,13 @@ class FileApi {
     return response is PlusApiResultPlusFileVO ? response : null;
   }
 
-  /// 获取文件列表
+  /// List files
   Future<PlusApiResultFileListVO?> listFiles(Map<String, dynamic>? params) async {
     final response = await _client.get(ApiPaths.backendPath('/oss/files'), params: params);
     return response is PlusApiResultFileListVO ? response : null;
   }
 
-  /// 上传文件
+  /// Upload file
   Future<PlusApiResultFileItemVO?> upload(UploadFileRequest? body, Map<String, dynamic>? params) async {
     final response = await _client.post(ApiPaths.backendPath('/oss/files'), body: body, params: params, contentType: 'multipart/form-data');
     return response is PlusApiResultFileItemVO ? response : null;
@@ -66,19 +66,19 @@ class FileApi {
     return response is PlusApiResultSetPlusTreeNodePlusFileVO ? response : null;
   }
 
-  /// 获取单个文件信息
+  /// Get file
   Future<PlusApiResultFileItemVO?> getFile(String fileId) async {
     final response = await _client.get(ApiPaths.backendPath('/oss/files/${fileId}'));
     return response is PlusApiResultFileItemVO ? response : null;
   }
 
-  /// 删除文件
+  /// Delete file
   Future<PlusApiResultFileItemVO?> deleteFile(String fileId) async {
     final response = await _client.delete(ApiPaths.backendPath('/oss/files/${fileId}'));
     return response is PlusApiResultFileItemVO ? response : null;
   }
 
-  /// 获取文件内容
+  /// Get file content
   Future<String?> getFileContent(String fileId) async {
     final response = await _client.get(ApiPaths.backendPath('/oss/files/${fileId}/content'));
     return response is String ? response : null;

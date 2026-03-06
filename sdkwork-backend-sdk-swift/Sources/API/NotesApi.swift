@@ -19,6 +19,30 @@ public class NotesApi {
         return response as? PlusApiResultPlusNotesVO
     }
 
+    /// Publish notes directly
+    public func publishNotesToMedia(body: PlusNotesMediaDraftForm) async throws -> PlusApiResultPlusMediaPublishResultDTO? {
+        let response = try await client.post(ApiPaths.backendPath("/notes/media/publish"), body: body)
+        return response as? PlusApiResultPlusMediaPublishResultDTO
+    }
+
+    /// Create media draft
+    public func createMediaDraft(body: PlusNotesMediaDraftForm) async throws -> PlusApiResultPlusMediaPublishResultDTO? {
+        let response = try await client.post(ApiPaths.backendPath("/notes/media/drafts"), body: body)
+        return response as? PlusApiResultPlusMediaPublishResultDTO
+    }
+
+    /// Publish media draft
+    public func publishMediaDraft(body: PlusNotesMediaPublishDraftForm) async throws -> PlusApiResultPlusMediaPublishResultDTO? {
+        let response = try await client.post(ApiPaths.backendPath("/notes/media/drafts/publish"), body: body)
+        return response as? PlusApiResultPlusMediaPublishResultDTO
+    }
+
+    /// Preview media draft
+    public func previewMediaDraft(body: PlusNotesMediaPreviewForm) async throws -> PlusApiResultPlusMediaPublishResultDTO? {
+        let response = try await client.post(ApiPaths.backendPath("/notes/media/drafts/preview"), body: body)
+        return response as? PlusApiResultPlusMediaPublishResultDTO
+    }
+
     /// Get note by UUID
     public func getByUuid(uuid: String) async throws -> PlusApiResultPlusNotesVO? {
         let response = try await client.get(ApiPaths.backendPath("/notes/\(uuid)"))
@@ -53,6 +77,12 @@ public class NotesApi {
     public func listByPage(params: [String: Any]? = nil) async throws -> PlusApiResultPagePlusNotesVO? {
         let response = try await client.get(ApiPaths.backendPath("/notes/page"), params: params)
         return response as? PlusApiResultPagePlusNotesVO
+    }
+
+    /// List media publish records
+    public func listMediaPublishRecords(noteId: String, params: [String: Any]? = nil) async throws -> PlusApiResultPagePlusMediaPublishRecordDTO? {
+        let response = try await client.get(ApiPaths.backendPath("/notes/media/records/\(noteId)"), params: params)
+        return response as? PlusApiResultPagePlusMediaPublishRecordDTO
     }
 
     /// List notes by user

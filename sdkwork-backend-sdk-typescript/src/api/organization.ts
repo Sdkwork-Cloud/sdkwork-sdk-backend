@@ -55,6 +55,11 @@ export class OrganizationApi {
   async delete(id: string | number): Promise<PlusApiResultBoolean> {
     return this.client.delete<PlusApiResultBoolean>(backendApiPath(`/organization/${id}`));
   }
+
+/** Get child organizations */
+  async getChildren(id: string | number): Promise<PlusApiResultListPlusOrganizationVO> {
+    return this.client.get<PlusApiResultListPlusOrganizationVO>(backendApiPath(`/organization/${id}/children`));
+  }
 }
 
 export function createOrganizationApi(client: HttpClient): OrganizationApi {

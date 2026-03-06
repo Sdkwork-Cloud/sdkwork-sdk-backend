@@ -22,6 +22,41 @@ public class OrganizationMemberApi {
         return (PlusApiResultPlusOrganizationMemberVO) client.post(ApiPaths.backendPath("/organization-member"), body);
     }
 
+    /** Transfer member position */
+    public PlusApiResultBoolean transferPosition(String id, Map<String, Object> params) throws Exception {
+        return (PlusApiResultBoolean) client.put(ApiPaths.backendPath("/organization-member/" + id + "/positions/transfer"), null, params);
+    }
+
+    /** Set member primary department */
+    public PlusApiResultBoolean setPrimaryDepartment(String id, String departmentId) throws Exception {
+        return (PlusApiResultBoolean) client.put(ApiPaths.backendPath("/organization-member/" + id + "/departments/" + departmentId + "/primary"), null);
+    }
+
+    /** Transfer member department */
+    public PlusApiResultBoolean transferDepartment(String id, Map<String, Object> params) throws Exception {
+        return (PlusApiResultBoolean) client.put(ApiPaths.backendPath("/organization-member/" + id + "/departments/transfer"), null, params);
+    }
+
+    /** Deactivate member */
+    public PlusApiResultBoolean deactivateMember(String id) throws Exception {
+        return (PlusApiResultBoolean) client.put(ApiPaths.backendPath("/organization-member/" + id + "/deactivate"), null);
+    }
+
+    /** Activate member */
+    public PlusApiResultBoolean activateMember(String id) throws Exception {
+        return (PlusApiResultBoolean) client.put(ApiPaths.backendPath("/organization-member/" + id + "/activate"), null);
+    }
+
+    /** Bind member to department */
+    public PlusApiResultBoolean addToDepartment(String id, String departmentId, Map<String, Object> params) throws Exception {
+        return (PlusApiResultBoolean) client.post(ApiPaths.backendPath("/organization-member/" + id + "/departments/" + departmentId + ""), null, params);
+    }
+
+    /** Unbind member from department */
+    public PlusApiResultBoolean removeFromDepartment(String id, String departmentId) throws Exception {
+        return (PlusApiResultBoolean) client.delete(ApiPaths.backendPath("/organization-member/" + id + "/departments/" + departmentId + ""));
+    }
+
     /** Get organization members by page */
     public PlusApiResultPagePlusOrganizationMemberVO listByPage(QueryListForm body, Map<String, Object> params) throws Exception {
         return (PlusApiResultPagePlusOrganizationMemberVO) client.post(ApiPaths.backendPath("/organization-member/list"), body, params);
@@ -40,5 +75,20 @@ public class OrganizationMemberApi {
     /** Delete organization member */
     public PlusApiResultBoolean delete(String id) throws Exception {
         return (PlusApiResultBoolean) client.delete(ApiPaths.backendPath("/organization-member/" + id + ""));
+    }
+
+    /** Get member role ids */
+    public PlusApiResultListLong getMemberRoleIds(String id) throws Exception {
+        return (PlusApiResultListLong) client.get(ApiPaths.backendPath("/organization-member/" + id + "/roles"));
+    }
+
+    /** Get member positions */
+    public PlusApiResultListPlusPositionVO getMemberPositions(String id) throws Exception {
+        return (PlusApiResultListPlusPositionVO) client.get(ApiPaths.backendPath("/organization-member/" + id + "/positions"));
+    }
+
+    /** Get member departments */
+    public PlusApiResultListPlusDepartmentVO getMemberDepartments(String id) throws Exception {
+        return (PlusApiResultListPlusDepartmentVO) client.get(ApiPaths.backendPath("/organization-member/" + id + "/departments"));
     }
 }

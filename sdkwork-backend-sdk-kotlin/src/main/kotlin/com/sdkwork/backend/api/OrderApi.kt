@@ -16,7 +16,7 @@ class OrderApi(private val client: HttpClient) {
     }
 
     /** Ship an order */
-    suspend fun ship(id: String, body: String): PlusApiResultOrderShipVO? {
+    suspend fun ship(id: String, body: String? = null): PlusApiResultOrderShipVO? {
         return client.post(ApiPaths.backendPath("/trade/order/$id/ship"), body) as? PlusApiResultOrderShipVO
     }
 
@@ -73,6 +73,11 @@ class OrderApi(private val client: HttpClient) {
     /** Create goods order */
     suspend fun createGoods(body: CreateGoodsOrderForm): PlusApiResultGoodsOrderVO? {
         return client.post(ApiPaths.backendPath("/trade/order/goods"), body) as? PlusApiResultGoodsOrderVO
+    }
+
+    /** Create booking order */
+    suspend fun createBooking(body: CreateBookingOrderForm): PlusApiResultBookingOrderVO? {
+        return client.post(ApiPaths.backendPath("/trade/order/booking"), body) as? PlusApiResultBookingOrderVO
     }
 
     /** Get an order by ID */

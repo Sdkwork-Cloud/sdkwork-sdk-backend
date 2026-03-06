@@ -7,6 +7,8 @@ class PlusCouponVO:
     created_at: str = None
     updated_at: str = None
     name: str = None
+    redeem_code: str = None
+    point_cost: int = None
     type: str = None
     description: str = None
     amount: int = None
@@ -17,3 +19,5 @@ class PlusCouponVO:
     total: int = None
     get_limit: int = None
     status: str = None
+    scope_type: str = None
+    scope_value: str = None

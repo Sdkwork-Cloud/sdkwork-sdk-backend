@@ -1,0 +1,31 @@
+package com.sdkwork.backend
+
+data class PlusAgentSkillForm(
+    val userId: Int? = null,
+    val skillKey: String? = null,
+    val name: String? = null,
+    val summary: String? = null,
+    val description: String? = null,
+    val icon: String? = null,
+    val coverImage: String? = null,
+    val categoryId: Int? = null,
+    val packageId: Int? = null,
+    val provider: String? = null,
+    val version: String? = null,
+    val runtime: String? = null,
+    val entrypoint: String? = null,
+    val manifestUrl: String? = null,
+    val repositoryUrl: String? = null,
+    val homepageUrl: String? = null,
+    val documentationUrl: String? = null,
+    val licenseName: String? = null,
+    val sourceType: String? = null,
+    val visibility: String? = null,
+    val enabled: Boolean? = null,
+    val price: Double? = null,
+    val currency: String? = null,
+    val tags: List<String>? = null,
+    val capabilities: List<String>? = null,
+    val configSchema: Map<String, Any>? = null,
+    val defaultConfig: Map<String, Any>? = null
+)

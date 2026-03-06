@@ -25,6 +25,11 @@ class TenantApi(private val client: HttpClient) {
         return client.post(ApiPaths.backendPath("/tenant/$id/install"), body) as? PlusApiResultPlusTenantVO
     }
 
+    /** Get tenant audit logs by page */
+    suspend fun listAuditLogs(id: String, params: Map<String, Any>? = null): PlusApiResultPagePlusTenantAuditLogVO? {
+        return client.post(ApiPaths.backendPath("/tenant/$id/audit_logs/list"), null, params) as? PlusApiResultPagePlusTenantAuditLogVO
+    }
+
     /** Get tenants by page */
     suspend fun listByPage(body: QueryListForm? = null, params: Map<String, Any>? = null): PlusApiResultPagePlusTenantVO? {
         return client.post(ApiPaths.backendPath("/tenant/list"), body, params) as? PlusApiResultPagePlusTenantVO

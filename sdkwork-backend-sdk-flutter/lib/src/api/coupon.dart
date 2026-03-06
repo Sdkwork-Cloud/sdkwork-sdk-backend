@@ -18,6 +18,24 @@ class CouponApi {
     return response is PlusApiResultPlusCouponVO ? response : null;
   }
 
+  /// Exchange coupon by points
+  Future<PlusApiResultPlusUserCouponVO?> exchangeByPoints(String couponId, CouponPointsExchangeForm body) async {
+    final response = await _client.post(ApiPaths.backendPath('/coupon/${couponId}/exchange/points'), body: body, contentType: 'application/json');
+    return response is PlusApiResultPlusUserCouponVO ? response : null;
+  }
+
+  /// Redeem coupon
+  Future<PlusApiResultPlusUserCouponVO?> redeem(CouponRedeemForm body) async {
+    final response = await _client.post(ApiPaths.backendPath('/coupon/redeem'), body: body, contentType: 'application/json');
+    return response is PlusApiResultPlusUserCouponVO ? response : null;
+  }
+
+  /// Rollback points exchange coupon
+  Future<PlusApiResultPlusUserCouponVO?> rollbackPointsExchange(String userCouponId, CouponRollbackForm? body) async {
+    final response = await _client.post(ApiPaths.backendPath('/coupon/my/${userCouponId}/rollback'), body: body, contentType: 'application/json');
+    return response is PlusApiResultPlusUserCouponVO ? response : null;
+  }
+
   /// Get coupon templates by page
   Future<PlusApiResultPagePlusCouponVO?> listByPage(QueryListForm? body, Map<String, dynamic>? params) async {
     final response = await _client.post(ApiPaths.backendPath('/coupon/list'), body: body, params: params, contentType: 'application/json');

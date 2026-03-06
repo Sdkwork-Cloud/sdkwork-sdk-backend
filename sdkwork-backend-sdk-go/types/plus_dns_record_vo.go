@@ -15,6 +15,6 @@ type PlusDnsRecordVO struct {
 	Ttl int `json:"ttl"`
 	Priority int `json:"priority"`
 	Enabled bool `json:"enabled"`
-	FirstRecordValue string `json:"firstRecordValue"`
 	RecordValues []string `json:"recordValues"`
+	FirstRecordValue string `json:"firstRecordValue"`
 }

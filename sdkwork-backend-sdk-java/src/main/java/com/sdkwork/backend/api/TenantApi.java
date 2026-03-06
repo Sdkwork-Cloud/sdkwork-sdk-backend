@@ -32,6 +32,11 @@ public class TenantApi {
         return (PlusApiResultPlusTenantVO) client.post(ApiPaths.backendPath("/tenant/" + id + "/install"), body);
     }
 
+    /** Get tenant audit logs by page */
+    public PlusApiResultPagePlusTenantAuditLogVO listAuditLogs(String id, Map<String, Object> params) throws Exception {
+        return (PlusApiResultPagePlusTenantAuditLogVO) client.post(ApiPaths.backendPath("/tenant/" + id + "/audit_logs/list"), null, params);
+    }
+
     /** Get tenants by page */
     public PlusApiResultPagePlusTenantVO listByPage(QueryListForm body, Map<String, Object> params) throws Exception {
         return (PlusApiResultPagePlusTenantVO) client.post(ApiPaths.backendPath("/tenant/list"), body, params);

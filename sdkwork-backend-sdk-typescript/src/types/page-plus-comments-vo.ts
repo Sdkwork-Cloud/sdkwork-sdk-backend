@@ -3,15 +3,15 @@ import type { PlusCommentsVO } from './plus-comments-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusCommentsVO {
-  totalPages?: number;
   totalElements?: number;
+  totalPages?: number;
   size?: number;
   content?: PlusCommentsVO[];
   number?: number;
-  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   numberOfElements?: number;
+  sort?: SortObject;
   pageable?: PageableObject;
   empty?: boolean;
 }

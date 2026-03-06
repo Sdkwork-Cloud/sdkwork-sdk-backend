@@ -9,5 +9,5 @@ class PlusTreeNodePlusCategoryVO:
     index: int = None
     root: bool = None
     leaf: bool = None
-    children_count: int = None
     depth: int = None
+    children_count: int = None

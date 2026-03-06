@@ -43,3 +43,7 @@ class OrganizationApi:
     def delete(self, id: str) -> PlusApiResultBoolean:
         """Delete an organization"""
         return self._client.delete(f"/backend/v3/api/organization/{id}")
+
+    def get_children(self, id: str) -> PlusApiResultListPlusOrganizationVO:
+        """Get child organizations"""
+        return self._client.get(f"/backend/v3/api/organization/{id}/children")

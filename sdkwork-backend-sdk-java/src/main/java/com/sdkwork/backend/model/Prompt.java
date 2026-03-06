@@ -2,13 +2,13 @@ package com.sdkwork.backend.model;
 
 public class Prompt {
     private String contents;
+    private ChatOptions options;
+    private List<Message> instructions;
     private Message lastUserOrToolResponseMessage;
     private List<SystemMessage> systemMessages;
     private List<UserMessage> userMessages;
     private UserMessage userMessage;
     private SystemMessage systemMessage;
-    private ChatOptions options;
-    private List<Message> instructions;
 
     public String getContents() {
         return this.contents;
@@ -16,6 +16,22 @@ public class Prompt {
     
     public void setContents(String contents) {
         this.contents = contents;
+    }
+
+    public ChatOptions getOptions() {
+        return this.options;
+    }
+    
+    public void setOptions(ChatOptions options) {
+        this.options = options;
+    }
+
+    public List<Message> getInstructions() {
+        return this.instructions;
+    }
+    
+    public void setInstructions(List<Message> instructions) {
+        this.instructions = instructions;
     }
 
     public Message getLastUserOrToolResponseMessage() {
@@ -56,21 +72,5 @@ public class Prompt {
     
     public void setSystemMessage(SystemMessage systemMessage) {
         this.systemMessage = systemMessage;
-    }
-
-    public ChatOptions getOptions() {
-        return this.options;
-    }
-    
-    public void setOptions(ChatOptions options) {
-        this.options = options;
-    }
-
-    public List<Message> getInstructions() {
-        return this.instructions;
-    }
-    
-    public void setInstructions(List<Message> instructions) {
-        this.instructions = instructions;
     }
 }

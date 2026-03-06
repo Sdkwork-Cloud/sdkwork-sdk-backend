@@ -12,23 +12,6 @@ yarn add @sdkwork/backend-sdk
 pnpm add @sdkwork/backend-sdk
 ```
 
-## sdk-common Dependency Source
-
-`@sdkwork/sdk-common` uses npm by default. You can switch between npm and git source:
-
-```bash
-# switch to npm package (default)
-npm run deps:common:npm
-npm install
-
-# switch to git repository
-npm run deps:common:git
-npm install
-
-# check current source
-npm run deps:common:show
-```
-
 ## Quick Start
 
 ```typescript
@@ -107,32 +90,36 @@ const client = new SdkworkBackendClient({
 - `client.userCoupon` - user_coupon API
 - `client.userCard` - user_card API
 - `client.userAddress` - user_address API
-- `client.aiUsageRecord` - ai_usage_record API
+- `client.usageRecord` - usage_record API
 - `client.shoppingCart` - shopping_cart API
 - `client.shoppingCartItem` - shopping_cart_item API
 - `client.refund` - refund API
 - `client.payment` - payment API
 - `client.order` - order API
 - `client.orderItem` - order_item API
-- `client.aiTool` - ai_tool API
+- `client.tool` - tool API
 - `client.tenant` - tenant API
 - `client.databaseTable` - database_table API
 - `client.productSku` - product_sku API
+- `client.skill` - skill API
+- `client.skillPackage` - skill_package API
 - `client.shortUrl` - short_url API
 - `client.shop` - shop API
 - `client.share` - share API
 - `client.shareVisitRecord` - share_visit_record API
 - `client.shardingKey` - sharding_key API
+- `client.apiSecurityPolicy` - api_security_policy API
 - `client.schema` - schema API
 - `client.rbacRole` - rbac_role API
 - `client.rolePermission` - role_permission API
 - `client.invocationRecord` - invocation_record API
 - `client.rbacUserRole` - rbac_user_role API
-- `client.aiPrompt` - ai_prompt API
+- `client.prompt` - prompt API
 - `client.project` - project API
 - `client.product` - product API
 - `client.pptTemplate` - ppt_template API
 - `client.pptTemplateSlide` - ppt_template_slide API
+- `client.rbacPermission` - rbac_permission API
 - `client.partner` - partner API
 - `client.chatParticipant` - chat_participant API
 - `client.ossBucket` - oss_bucket API
@@ -143,11 +130,11 @@ const client = new SdkworkBackendClient({
 - `client.notification` - notification API
 - `client.notes` - notes API
 - `client.news` - news API
-- `client.host` - host API
+- `client.net` - net API
 - `client.dnsRecord` - dns_record API
 - `client.music` - music API
-- `client.aiModelInformation` - ai_model_information API
-- `client.aiModelPrice` - ai_model_price API
+- `client.modelInformation` - model_information API
+- `client.modelPrice` - model_price API
 - `client.chatMessage` - chat_message API
 - `client.memberLevel` - member_level API
 - `client.memberCard` - member_card API
@@ -156,8 +143,8 @@ const client = new SdkworkBackendClient({
 - `client.invitationCode` - invitation_code API
 - `client.image` - image API
 - `client.chatGroup` - chat_group API
-- `client.aiGeneration` - ai_generation API
-- `client.aiGenerationContent` - ai_generation_content API
+- `client.generation` - generation API
+- `client.generationContent` - generation_content API
 - `client.file` - file API
 - `client.filePart` - file_part API
 - `client.fileContent` - file_content API
@@ -171,45 +158,46 @@ const client = new SdkworkBackendClient({
 - `client.datasource` - datasource API
 - `client.coupon` - coupon API
 - `client.couponTemplate` - coupon_template API
-- `client.aiConversation` - ai_conversation API
+- `client.conversation` - conversation API
+- `client.contentWriting` - content_writing API
 - `client.comment` - comment API
 - `client.column` - column API
 - `client.collection` - collection API
 - `client.collectionItem` - collection_item API
 - `client.character` - character API
+- `client.channel` - channel API
 - `client.channelResource` - channel_resource API
+- `client.channelProxy` - channel_proxy API
 - `client.channelAccount` - channel_account API
-- `client.aiCategory` - ai_category API
+- `client.category` - category API
 - `client.membershipCard` - membership_card API
 - `client.cardTemplate` - card_template API
 - `client.attribute` - attribute API
-- `client.aiArticle` - ai_article API
-- `client.application` - application API
+- `client.article` - article API
+- `client.app` - app API
 - `client.apiKey` - api_key API
-- `client.aiAgent` - ai_agent API
-- `client.aiAgentToolRelationship` - ai_agent_tool_relationship API
+- `client.agent` - agent API
+- `client.agentToolRelationship` - agent_tool_relationship API
 - `client.account` - account API
 - `client.accountHistory` - account_history API
+- `client.accountExchangeConfig` - account_exchange_config API
+- `client.invoice` - invoice API
 - `client.searchChat` - search_chat API
 - `client.pptTemplateRendering` - ppt_template_rendering API
 - `client.pptTemplateChat` - ppt_template_chat API
 - `client.knowledgeBaseFile` - knowledge_base_file API
 - `client.knowledgeBaseChat` - knowledge_base_chat API
 - `client.imMessage` - im_message API
-- `client.aiVoiceSpeakerGeneration` - ai_voice_speaker_generation API
-- `client.aiVideoGeneration` - ai_video_generation API
-- `client.aiMusicGeneration` - ai_music_generation API
-- `client.aiImageGeneration` - ai_image_generation API
-- `client.aiCharacterGeneration` - ai_character_generation API
-- `client.aiAudioGeneration` - ai_audio_generation API
-- `client.aiAudioEffectGeneration` - ai_audio_effect_generation API
-- `client.aiChat` - ai_chat API
-- `client.verification` - verification API
-- `client.oauthAuthentication` - oauth_authentication API
-- `client.authorization` - authorization API
-- `client.authentication` - authentication API
-- `client.app` - app API
-- `client.aiAgentChat` - ai_agent_chat API
+- `client.voiceSpeakerGeneration` - voice_speaker_generation API
+- `client.videoGeneration` - video_generation API
+- `client.musicGeneration` - music_generation API
+- `client.imageGeneration` - image_generation API
+- `client.characterGeneration` - character_generation API
+- `client.audioGeneration` - audio_generation API
+- `client.audioEffectGeneration` - audio_effect_generation API
+- `client.chat` - chat API
+- `client.auth` - auth API
+- `client.agentChat` - agent_chat API
 
 ## Usage Examples
 
@@ -371,12 +359,12 @@ const body = {} as any;
 const result = await client.userAddress.listAllEntities(body);
 ```
 
-### ai_usage_record
+### usage_record
 
 ```typescript
 // Get all usage records
 const body = {} as any;
-const result = await client.aiUsageRecord.listAllEntities(body);
+const result = await client.usageRecord.listAllEntities(body);
 ```
 
 ### shopping_cart
@@ -427,12 +415,12 @@ const body = {} as any;
 const result = await client.orderItem.listAllEntities(body);
 ```
 
-### ai_tool
+### tool
 
 ```typescript
 // Get all AI tools
 const body = {} as any;
-const result = await client.aiTool.listAllEntities(body);
+const result = await client.tool.listAllEntities(body);
 ```
 
 ### tenant
@@ -457,6 +445,22 @@ const result = await client.databaseTable.listAllEntities(body);
 // Get all SKUs
 const body = {} as any;
 const result = await client.productSku.listAllEntities(body);
+```
+
+### skill
+
+```typescript
+// Query all skills
+const body = {} as any;
+const result = await client.skill.listAll(body);
+```
+
+### skill_package
+
+```typescript
+// Query all skill packages
+const body = {} as any;
+const result = await client.skillPackage.listAll(body);
 ```
 
 ### short_url
@@ -499,6 +503,14 @@ const body = {} as any;
 const result = await client.shardingKey.listAllEntities(body);
 ```
 
+### api_security_policy
+
+```typescript
+// List all policies
+const body = {} as any;
+const result = await client.apiSecurityPolicy.listAllEntities(body);
+```
+
 ### schema
 
 ```typescript
@@ -539,12 +551,12 @@ const body = {} as any;
 const result = await client.rbacUserRole.listAllEntities(body);
 ```
 
-### ai_prompt
+### prompt
 
 ```typescript
 // Get all AI prompts
 const body = {} as any;
-const result = await client.aiPrompt.listAllEntities(body);
+const result = await client.prompt.listAllEntities(body);
 ```
 
 ### project
@@ -577,6 +589,14 @@ const result = await client.pptTemplate.listAllEntities(body);
 // Get all PPT template slides
 const body = {} as any;
 const result = await client.pptTemplateSlide.listAllEntities(body);
+```
+
+### rbac_permission
+
+```typescript
+// List all permissions
+const body = {} as any;
+const result = await client.rbacPermission.listAllEntities(body);
 ```
 
 ### partner
@@ -658,12 +678,12 @@ const body = {} as any;
 const result = await client.news.listAllEntities(body);
 ```
 
-### host
+### net
 
 ```typescript
 // 获取所有域名
 const body = {} as any;
-const result = await client.host.listAllEntities(body);
+const result = await client.net.listAllEntities(body);
 ```
 
 ### dns_record
@@ -682,20 +702,20 @@ const body = {} as any;
 const result = await client.music.listAllEntities(body);
 ```
 
-### ai_model_information
+### model_information
 
 ```typescript
 // Get all AI model information
 const body = {} as any;
-const result = await client.aiModelInformation.listAllEntities(body);
+const result = await client.modelInformation.listAllEntities(body);
 ```
 
-### ai_model_price
+### model_price
 
 ```typescript
 // Get all AI model prices
 const body = {} as any;
-const result = await client.aiModelPrice.listAllEntities(body);
+const result = await client.modelPrice.listAllEntities(body);
 ```
 
 ### chat_message
@@ -762,26 +782,26 @@ const body = {} as any;
 const result = await client.chatGroup.listAllEntities(body);
 ```
 
-### ai_generation
+### generation
 
 ```typescript
 // Get all AI generation records
 const body = {} as any;
-const result = await client.aiGeneration.listAllEntities(body);
+const result = await client.generation.listAllEntities(body);
 ```
 
-### ai_generation_content
+### generation_content
 
 ```typescript
 // Get all AI generated content
 const body = {} as any;
-const result = await client.aiGenerationContent.listAllEntities(body);
+const result = await client.generationContent.listAllEntities(body);
 ```
 
 ### file
 
 ```typescript
-// 获取文件列表
+// List files
 const params = {} as Record<string, any>;
 const result = await client.file.listFiles(params);
 ```
@@ -882,12 +902,19 @@ const body = {} as any;
 const result = await client.couponTemplate.listAllEntities(body);
 ```
 
-### ai_conversation
+### conversation
 
 ```typescript
 // Get all open conversations
 const body = {} as any;
-const result = await client.aiConversation.open(body);
+const result = await client.conversation.open(body);
+```
+
+### content_writing
+
+```typescript
+// Get all contents
+const result = await client.contentWriting.getAllContents();
 ```
 
 ### comment
@@ -930,12 +957,28 @@ const body = {} as any;
 const result = await client.character.listAllEntities(body);
 ```
 
+### channel
+
+```typescript
+// List all channels
+const body = {} as any;
+const result = await client.channel.listAllEntities(body);
+```
+
 ### channel_resource
 
 ```typescript
 // Get all channel resources
 const body = {} as any;
 const result = await client.channelResource.listAllEntities(body);
+```
+
+### channel_proxy
+
+```typescript
+// List all channel proxies
+const body = {} as any;
+const result = await client.channelProxy.listAllEntities(body);
 ```
 
 ### channel_account
@@ -946,12 +989,12 @@ const body = {} as any;
 const result = await client.channelAccount.listSms(body);
 ```
 
-### ai_category
+### category
 
 ```typescript
 // Get all categories
 const body = {} as any;
-const result = await client.aiCategory.listAllEntities(body);
+const result = await client.category.listAllEntities(body);
 ```
 
 ### membership_card
@@ -978,44 +1021,42 @@ const body = {} as any;
 const result = await client.attribute.listAllEntities(body);
 ```
 
-### ai_article
+### article
 
 ```typescript
 // Get all AI articles
 const body = {} as any;
-const result = await client.aiArticle.listAllEntities(body);
+const result = await client.article.listAllEntities(body);
 ```
 
-### application
+### app
 
 ```typescript
-// Get all applications
-const body = {} as any;
-const result = await client.application.listAllEntities(body);
+// Get app info
+const result = await client.app.getAppInfo();
 ```
 
 ### api_key
 
 ```typescript
-// Get all API keys
-const body = {} as any;
-const result = await client.apiKey.listAllEntities(body);
+// List API keys for current user
+const result = await client.apiKey.listMyApiKeys();
 ```
 
-### ai_agent
+### agent
 
 ```typescript
 // Get all AI agents
 const body = {} as any;
-const result = await client.aiAgent.listAllEntities(body);
+const result = await client.agent.listAllEntities(body);
 ```
 
-### ai_agent_tool_relationship
+### agent_tool_relationship
 
 ```typescript
 // Get all agent-tool relationships
 const body = {} as any;
-const result = await client.aiAgentToolRelationship.listAllEntities(body);
+const result = await client.agentToolRelationship.listAllEntities(body);
 ```
 
 ### account
@@ -1034,12 +1075,28 @@ const body = {} as any;
 const result = await client.accountHistory.listAllEntities(body);
 ```
 
+### account_exchange_config
+
+```typescript
+// Get points-to-cash rate
+const result = await client.accountExchangeConfig.getPointsToCashRate();
+```
+
+### invoice
+
+```typescript
+// Query invoice page
+const params = {} as Record<string, any>;
+const result = await client.invoice.listByPage(params);
+```
+
 ### search_chat
 
 ```typescript
 // POST /backend/v3/api/search/chat/stop
+const params = {} as Record<string, any>;
 const headers = {} as Record<string, string>;
-const result = await client.searchChat.stop(headers);
+const result = await client.searchChat.stop(params, headers);
 ```
 
 ### ppt_template_rendering
@@ -1054,14 +1111,15 @@ const result = await client.pptTemplateRendering.render(body);
 
 ```typescript
 // POST /backend/v3/api/ppt/template/chat/stop
+const params = {} as Record<string, any>;
 const headers = {} as Record<string, string>;
-const result = await client.pptTemplateChat.stop(headers);
+const result = await client.pptTemplateChat.stop(params, headers);
 ```
 
 ### knowledge_base_file
 
 ```typescript
-// 获取文件列表
+// List files
 const params = {} as Record<string, any>;
 const result = await client.knowledgeBaseFile.listFiles(params);
 ```
@@ -1070,126 +1128,98 @@ const result = await client.knowledgeBaseFile.listFiles(params);
 
 ```typescript
 // POST /backend/v3/api/knowledge_base/chat/stop
+const params = {} as Record<string, any>;
 const headers = {} as Record<string, string>;
-const result = await client.knowledgeBaseChat.stop(headers);
+const result = await client.knowledgeBaseChat.stop(params, headers);
 ```
 
 ### im_message
 
 ```typescript
-// Get messages by page
+// Mark conversation messages as read
 const body = {} as any;
-const params = {} as Record<string, any>;
-const result = await client.imMessage.listByPage(body, params);
+const result = await client.imMessage.markRead(body);
 ```
 
-### ai_voice_speaker_generation
+### voice_speaker_generation
 
 ```typescript
 // Create voice speaker generation task
 const body = {} as any;
-const result = await client.aiVoiceSpeakerGeneration.create(body);
+const result = await client.voiceSpeakerGeneration.create(body);
 ```
 
-### ai_video_generation
+### video_generation
 
 ```typescript
 // Create video generation task
 const body = {} as any;
-const result = await client.aiVideoGeneration.create(body);
+const result = await client.videoGeneration.create(body);
 ```
 
-### ai_music_generation
+### music_generation
 
 ```typescript
 // Create music generation task
 const body = {} as any;
-const result = await client.aiMusicGeneration.create(body);
+const result = await client.musicGeneration.create(body);
 ```
 
-### ai_image_generation
+### image_generation
 
 ```typescript
 // Create image generation task
 const body = {} as any;
-const result = await client.aiImageGeneration.create(body);
+const result = await client.imageGeneration.create(body);
 ```
 
-### ai_character_generation
+### character_generation
 
 ```typescript
 // Create character generation task
 const body = {} as any;
-const result = await client.aiCharacterGeneration.create(body);
+const result = await client.characterGeneration.create(body);
 ```
 
-### ai_audio_generation
+### audio_generation
 
 ```typescript
 // Create audio generation task
 const body = {} as any;
-const result = await client.aiAudioGeneration.create(body);
+const result = await client.audioGeneration.create(body);
 ```
 
-### ai_audio_effect_generation
+### audio_effect_generation
 
 ```typescript
 // Create audio effect generation task
 const body = {} as any;
-const result = await client.aiAudioEffectGeneration.create(body);
+const result = await client.audioEffectGeneration.create(body);
 ```
 
-### ai_chat
+### chat
 
 ```typescript
 // Stop a chat completion stream
+const params = {} as Record<string, any>;
 const headers = {} as Record<string, string>;
-const result = await client.aiChat.stop(headers);
+const result = await client.chat.stop(params, headers);
 ```
 
-### verification
+### auth
 
 ```typescript
-// Verify phone
-const body = {} as any;
-const result = await client.verification.verifyPhone(body);
+// Get roles
+const result = await client.auth.getRoles();
 ```
 
-### oauth_authentication
-
-```typescript
-// Get OAuth authorization URL
-const body = {} as any;
-const result = await client.oauthAuthentication.getAuthUrl(body);
-```
-
-### authorization
-
-```typescript
-// 获取用户角色列表
-const result = await client.authorization.getRoles();
-```
-
-### authentication
-
-```typescript
-// 获取当前用户信息
-const result = await client.authentication.getCurrentUser();
-```
-
-### app
-
-```typescript
-// Get app info
-const result = await client.app.getAppInfo();
-```
-
-### ai_agent_chat
+### agent_chat
 
 ```typescript
 // Stop a chat completion stream
+const params = {} as Record<string, any>;
 const headers = {} as Record<string, string>;
-const result = await client.aiAgentChat.stop(headers);
+const result = await client.agentChat.stop(params, headers);
 ```
 
 ## Error Handling
@@ -1211,7 +1241,6 @@ try {
   }
 }
 ```
-
 
 ## Publishing
 

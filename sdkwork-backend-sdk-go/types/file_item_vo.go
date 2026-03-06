@@ -1,6 +1,6 @@
 package types
 
-// 文件视图对象
+// File item view object
 type FileItemVO struct {
 	Id string `json:"id"`
 	Object string `json:"object"`

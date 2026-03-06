@@ -6,6 +6,7 @@ namespace Backend.Models
 {
     public class CreateImGroupOrderForm
     {
-
+        public List<OrderContentItem>? Items { get; set; }
+        public string? ExpireTime { get; set; }
     }
 }

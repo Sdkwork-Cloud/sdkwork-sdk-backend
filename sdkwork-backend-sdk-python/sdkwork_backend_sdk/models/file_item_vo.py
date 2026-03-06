@@ -3,7 +3,7 @@ from typing import Optional, List, Dict, Any
 
 @dataclass
 class FileItemVO:
-    """文件视图对象"""
+    """File item view object"""
     id: str = None
     object: str = None
     bytes: int = None

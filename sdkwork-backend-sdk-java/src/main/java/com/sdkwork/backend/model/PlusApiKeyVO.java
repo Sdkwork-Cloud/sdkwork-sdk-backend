@@ -7,6 +7,7 @@ public class PlusApiKeyVO {
     private String uuid;
     private String name;
     private String keyValue;
+    private String maskedKeyValue;
     private String type;
     private String status;
     private String expireTime;
@@ -59,6 +60,14 @@ public class PlusApiKeyVO {
     
     public void setKeyValue(String keyValue) {
         this.keyValue = keyValue;
+    }
+
+    public String getMaskedKeyValue() {
+        return this.maskedKeyValue;
+    }
+    
+    public void setMaskedKeyValue(String maskedKeyValue) {
+        this.maskedKeyValue = maskedKeyValue;
     }
 
     public String getType() {

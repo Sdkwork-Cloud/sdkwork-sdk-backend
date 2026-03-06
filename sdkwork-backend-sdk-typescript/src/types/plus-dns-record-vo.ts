@@ -28,6 +28,6 @@ export interface PlusDnsRecordVO {
   priority?: number;
   /** 记录状态（启用/禁用） */
   enabled?: boolean;
-  firstRecordValue?: string;
   recordValues?: string[];
+  firstRecordValue?: string;
 }

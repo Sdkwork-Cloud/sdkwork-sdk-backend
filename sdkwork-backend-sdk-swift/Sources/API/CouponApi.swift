@@ -19,6 +19,24 @@ public class CouponApi {
         return response as? PlusApiResultPlusCouponVO
     }
 
+    /// Exchange coupon by points
+    public func exchangeByPoints(couponId: String, body: CouponPointsExchangeForm) async throws -> PlusApiResultPlusUserCouponVO? {
+        let response = try await client.post(ApiPaths.backendPath("/coupon/\(couponId)/exchange/points"), body: body)
+        return response as? PlusApiResultPlusUserCouponVO
+    }
+
+    /// Redeem coupon
+    public func redeem(body: CouponRedeemForm) async throws -> PlusApiResultPlusUserCouponVO? {
+        let response = try await client.post(ApiPaths.backendPath("/coupon/redeem"), body: body)
+        return response as? PlusApiResultPlusUserCouponVO
+    }
+
+    /// Rollback points exchange coupon
+    public func rollbackPointsExchange(userCouponId: String, body: CouponRollbackForm? = nil) async throws -> PlusApiResultPlusUserCouponVO? {
+        let response = try await client.post(ApiPaths.backendPath("/coupon/my/\(userCouponId)/rollback"), body: body)
+        return response as? PlusApiResultPlusUserCouponVO
+    }
+
     /// Get coupon templates by page
     public func listByPage(body: QueryListForm? = nil, params: [String: Any]? = nil) async throws -> PlusApiResultPagePlusCouponVO? {
         let response = try await client.post(ApiPaths.backendPath("/coupon/list"), body: body, params: params)

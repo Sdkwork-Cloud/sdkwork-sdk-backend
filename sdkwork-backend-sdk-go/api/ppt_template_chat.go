@@ -13,8 +13,8 @@ func NewPptTemplateChatApi(client *sdkhttp.Client) *PptTemplateChatApi {
     return &PptTemplateChatApi{client: client}
 }
 
-func (a *PptTemplateChatApi) Stop(headers map[string]string) (sdktypes.PlusApiResultBoolean, error) {
-    raw, err := a.client.Post(BackendApiPath("/ppt/template/chat/stop"), nil, nil, headers, "")
+func (a *PptTemplateChatApi) Stop(query map[string]interface{}, headers map[string]string) (sdktypes.PlusApiResultBoolean, error) {
+    raw, err := a.client.Post(BackendApiPath("/ppt/template/chat/stop"), nil, query, headers, "")
     if err != nil {
         var zero sdktypes.PlusApiResultBoolean
         return zero, err
@@ -23,8 +23,8 @@ func (a *PptTemplateChatApi) Stop(headers map[string]string) (sdktypes.PlusApiRe
 }
 
 // Create a chat completion with PPT template
-func (a *PptTemplateChatApi) Create(body sdktypes.ChatCompletionCreateForm, headers map[string]string) (sdktypes.ChatCompletionChunk, error) {
-    raw, err := a.client.Post(BackendApiPath("/ppt/template/chat/completions"), body, nil, headers, "")
+func (a *PptTemplateChatApi) Create(body sdktypes.ChatCompletionCreateForm, query map[string]interface{}, headers map[string]string) (sdktypes.ChatCompletionChunk, error) {
+    raw, err := a.client.Post(BackendApiPath("/ppt/template/chat/completions"), body, query, headers, "")
     if err != nil {
         var zero sdktypes.ChatCompletionChunk
         return zero, err

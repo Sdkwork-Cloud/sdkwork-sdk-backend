@@ -3,7 +3,7 @@ export interface SendVerificationCodeForm {
   /** 标识符（邮箱或手机号） */
   identifier: string;
   /** 验证方式 */
-  method: 'email' | 'phone';
-  /** 验证类型 */
-  type: 'login' | 'registration' | 'reset' | 'update';
+  method: 'email' | 'phone' | 'sms';
+  /** 验证类型（业务场景） */
+  type: string;
 }

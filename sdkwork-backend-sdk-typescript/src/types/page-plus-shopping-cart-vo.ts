@@ -3,15 +3,15 @@ import type { PlusShoppingCartVO } from './plus-shopping-cart-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusShoppingCartVO {
-  totalPages?: number;
   totalElements?: number;
+  totalPages?: number;
   size?: number;
   content?: PlusShoppingCartVO[];
   number?: number;
-  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   numberOfElements?: number;
+  sort?: SortObject;
   pageable?: PageableObject;
   empty?: boolean;
 }

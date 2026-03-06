@@ -4,6 +4,7 @@ from typing import Optional, List, Dict, Any
 @dataclass
 class PlusNotesForm:
     """Notes form"""
+    id: int = None
     title: str
     content: str = None
     user_id: int

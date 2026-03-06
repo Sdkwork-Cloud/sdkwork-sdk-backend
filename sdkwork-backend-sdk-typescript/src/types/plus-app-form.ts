@@ -1,4 +1,6 @@
 import type { AppConfig } from './app-config';
+import type { AppInstallConfig } from './app-install-config';
+import type { AppInstallSkill } from './app-install-skill';
 import type { AppPlatforms } from './app-platforms';
 import type { AssetMediaResourceList } from './asset-media-resource-list';
 import type { ImageMediaResource } from './image-media-resource';
@@ -29,6 +31,12 @@ export interface PlusAppForm {
   appType: 'NONE' | 'SDK' | 'PPT' | 'APP_HTML' | 'APP_VUE' | 'APP_FLUTTER' | 'APP_UNIAPP' | 'APP_REACT' | 'APP_UNITY' | 'VIDEO' | 'POSTER';
   /** 支持平台 */
   platforms: AppPlatforms;
+  /** 支持安装平台 */
+  installPlatforms?: AppPlatforms;
+  /** 安装技能 */
+  installSkill: AppInstallSkill;
+  /** 安装配置 */
+  installConfig?: AppInstallConfig;
   /** 应用包名 */
   packageName?: string;
   /** 应用Bundle ID */

@@ -86,5 +86,13 @@ namespace Backend.Api
         {
             return await _client.DeleteAsync<PlusApiResultBoolean>(ApiPaths.BackendPath($"/organization/{id}"));
         }
+
+        /// <summary>
+        /// Get child organizations
+        /// </summary>
+        public async Task<PlusApiResultListPlusOrganizationVO?> GetChildrenAsync(string id)
+        {
+            return await _client.GetAsync<PlusApiResultListPlusOrganizationVO>(ApiPaths.BackendPath($"/organization/{id}/children"));
+        }
     }
 }

@@ -60,4 +60,10 @@ public class OrganizationApi {
         let response = try await client.delete(ApiPaths.backendPath("/organization/\(id)"))
         return response as? PlusApiResultBoolean
     }
+
+    /// Get child organizations
+    public func getChildren(id: String) async throws -> PlusApiResultListPlusOrganizationVO? {
+        let response = try await client.get(ApiPaths.backendPath("/organization/\(id)/children"))
+        return response as? PlusApiResultListPlusOrganizationVO
+    }
 }

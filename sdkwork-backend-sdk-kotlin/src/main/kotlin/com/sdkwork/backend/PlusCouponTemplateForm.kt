@@ -16,6 +16,6 @@ data class PlusCouponTemplateForm(
     val validityType: String? = null,
     val validityDays: Int? = null,
     val canShare: Boolean? = null,
-    val scopeType: Int? = null,
+    val scopeType: String? = null,
     val scopeValue: String? = null
 )

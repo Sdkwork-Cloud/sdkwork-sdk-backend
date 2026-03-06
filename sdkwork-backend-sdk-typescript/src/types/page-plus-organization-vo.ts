@@ -3,15 +3,15 @@ import type { PlusOrganizationVO } from './plus-organization-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusOrganizationVO {
-  totalPages?: number;
   totalElements?: number;
+  totalPages?: number;
   size?: number;
   content?: PlusOrganizationVO[];
   number?: number;
-  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   numberOfElements?: number;
+  sort?: SortObject;
   pageable?: PageableObject;
   empty?: boolean;
 }

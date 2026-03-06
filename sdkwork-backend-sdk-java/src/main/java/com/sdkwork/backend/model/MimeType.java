@@ -6,9 +6,9 @@ public class MimeType {
     private Map<String, String> parameters;
     private String charset;
     private Boolean concrete;
-    private Boolean wildcardSubtype;
-    private Boolean wildcardType;
     private String subtypeSuffix;
+    private Boolean wildcardType;
+    private Boolean wildcardSubtype;
 
     public String getType() {
         return this.type;
@@ -50,12 +50,12 @@ public class MimeType {
         this.concrete = concrete;
     }
 
-    public Boolean getWildcardSubtype() {
-        return this.wildcardSubtype;
+    public String getSubtypeSuffix() {
+        return this.subtypeSuffix;
     }
     
-    public void setWildcardSubtype(Boolean wildcardSubtype) {
-        this.wildcardSubtype = wildcardSubtype;
+    public void setSubtypeSuffix(String subtypeSuffix) {
+        this.subtypeSuffix = subtypeSuffix;
     }
 
     public Boolean getWildcardType() {
@@ -66,11 +66,11 @@ public class MimeType {
         this.wildcardType = wildcardType;
     }
 
-    public String getSubtypeSuffix() {
-        return this.subtypeSuffix;
+    public Boolean getWildcardSubtype() {
+        return this.wildcardSubtype;
     }
     
-    public void setSubtypeSuffix(String subtypeSuffix) {
-        this.subtypeSuffix = subtypeSuffix;
+    public void setWildcardSubtype(Boolean wildcardSubtype) {
+        this.wildcardSubtype = wildcardSubtype;
     }
 }

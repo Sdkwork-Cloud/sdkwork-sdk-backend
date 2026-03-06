@@ -7,7 +7,7 @@ type MimeType struct {
 	Parameters map[string]string `json:"parameters"`
 	Charset string `json:"charset"`
 	Concrete bool `json:"concrete"`
-	WildcardSubtype bool `json:"wildcardSubtype"`
-	WildcardType bool `json:"wildcardType"`
 	SubtypeSuffix string `json:"subtypeSuffix"`
+	WildcardType bool `json:"wildcardType"`
+	WildcardSubtype bool `json:"wildcardSubtype"`
 }

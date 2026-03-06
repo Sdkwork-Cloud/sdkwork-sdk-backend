@@ -31,9 +31,9 @@ namespace Backend.Api
             return await _client.PostAsync<PlusApiResultPlusDatasourceVO>(ApiPaths.BackendPath("/datasource"), body);
         }
 
-        public async Task<PlusApiResultBoolean?> StopAsync(Dictionary<string, string>? headers = null)
+        public async Task<PlusApiResultBoolean?> StopAsync(Dictionary<string, object>? query = null, Dictionary<string, string>? headers = null)
         {
-            return await _client.PostAsync<PlusApiResultBoolean>(ApiPaths.BackendPath("/datasource/stop"), null, null, headers);
+            return await _client.PostAsync<PlusApiResultBoolean>(ApiPaths.BackendPath("/datasource/stop"), null, query, headers);
         }
 
         /// <summary>
@@ -55,9 +55,9 @@ namespace Backend.Api
         /// <summary>
         /// Create a chat completion with Datasource
         /// </summary>
-        public async Task<ChatCompletionChunk?> CreateCompletionsAsync(ChatCompletionCreateForm body, Dictionary<string, string>? headers = null)
+        public async Task<ChatCompletionChunk?> CreateCompletionsAsync(ChatCompletionCreateForm body, Dictionary<string, object>? query = null, Dictionary<string, string>? headers = null)
         {
-            return await _client.PostAsync<ChatCompletionChunk>(ApiPaths.BackendPath("/datasource/chat/completions"), body, null, headers);
+            return await _client.PostAsync<ChatCompletionChunk>(ApiPaths.BackendPath("/datasource/chat/completions"), body, query, headers);
         }
 
         /// <summary>

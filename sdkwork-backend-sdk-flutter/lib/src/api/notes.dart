@@ -18,6 +18,30 @@ class NotesApi {
     return response is PlusApiResultPlusNotesVO ? response : null;
   }
 
+  /// Publish notes directly
+  Future<PlusApiResultPlusMediaPublishResultDTO?> publishNotesToMedia(PlusNotesMediaDraftForm body) async {
+    final response = await _client.post(ApiPaths.backendPath('/notes/media/publish'), body: body, contentType: 'application/json');
+    return response is PlusApiResultPlusMediaPublishResultDTO ? response : null;
+  }
+
+  /// Create media draft
+  Future<PlusApiResultPlusMediaPublishResultDTO?> createMediaDraft(PlusNotesMediaDraftForm body) async {
+    final response = await _client.post(ApiPaths.backendPath('/notes/media/drafts'), body: body, contentType: 'application/json');
+    return response is PlusApiResultPlusMediaPublishResultDTO ? response : null;
+  }
+
+  /// Publish media draft
+  Future<PlusApiResultPlusMediaPublishResultDTO?> publishMediaDraft(PlusNotesMediaPublishDraftForm body) async {
+    final response = await _client.post(ApiPaths.backendPath('/notes/media/drafts/publish'), body: body, contentType: 'application/json');
+    return response is PlusApiResultPlusMediaPublishResultDTO ? response : null;
+  }
+
+  /// Preview media draft
+  Future<PlusApiResultPlusMediaPublishResultDTO?> previewMediaDraft(PlusNotesMediaPreviewForm body) async {
+    final response = await _client.post(ApiPaths.backendPath('/notes/media/drafts/preview'), body: body, contentType: 'application/json');
+    return response is PlusApiResultPlusMediaPublishResultDTO ? response : null;
+  }
+
   /// Get note by UUID
   Future<PlusApiResultPlusNotesVO?> getByUuid(String uuid) async {
     final response = await _client.get(ApiPaths.backendPath('/notes/${uuid}'));
@@ -52,6 +76,12 @@ class NotesApi {
   Future<PlusApiResultPagePlusNotesVO?> listByPage(Map<String, dynamic>? params) async {
     final response = await _client.get(ApiPaths.backendPath('/notes/page'), params: params);
     return response is PlusApiResultPagePlusNotesVO ? response : null;
+  }
+
+  /// List media publish records
+  Future<PlusApiResultPagePlusMediaPublishRecordDTO?> listMediaPublishRecords(String noteId, Map<String, dynamic>? params) async {
+    final response = await _client.get(ApiPaths.backendPath('/notes/media/records/${noteId}'), params: params);
+    return response is PlusApiResultPagePlusMediaPublishRecordDTO ? response : null;
   }
 
   /// List notes by user

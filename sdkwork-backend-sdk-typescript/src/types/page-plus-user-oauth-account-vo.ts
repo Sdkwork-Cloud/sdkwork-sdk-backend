@@ -3,15 +3,15 @@ import type { PlusUserOAuthAccountVO } from './plus-user-oauth-account-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusUserOAuthAccountVO {
-  totalPages?: number;
   totalElements?: number;
+  totalPages?: number;
   size?: number;
   content?: PlusUserOAuthAccountVO[];
   number?: number;
-  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   numberOfElements?: number;
+  sort?: SortObject;
   pageable?: PageableObject;
   empty?: boolean;
 }

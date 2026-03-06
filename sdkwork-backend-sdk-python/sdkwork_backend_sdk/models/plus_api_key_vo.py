@@ -10,6 +10,7 @@ class PlusApiKeyVO:
     uuid: str = None
     name: str = None
     key_value: str = None
+    masked_key_value: str = None
     type: str = None
     status: str = None
     expire_time: str = None

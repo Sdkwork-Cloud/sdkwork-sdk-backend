@@ -24,13 +24,13 @@ type AgentExecutionContext struct {
 	Disk PlusDiskObject `json:"disk"`
 	DiskRootFile PlusFileObject `json:"diskRootFile"`
 	Completed bool `json:"completed"`
-	Expired bool `json:"expired"`
-	AgentSCOPES map[string]AgentScope `json:"agent_SCOPES"`
-	OverSteps bool `json:"overSteps"`
-	Paused bool `json:"paused"`
 	Running bool `json:"running"`
+	Paused bool `json:"paused"`
+	Expired bool `json:"expired"`
 	Failed bool `json:"failed"`
 	Waiting bool `json:"waiting"`
 	Init bool `json:"init"`
 	End bool `json:"end"`
+	AgentSCOPES map[string]AgentScope `json:"agent_SCOPES"`
+	OverSteps bool `json:"overSteps"`
 }

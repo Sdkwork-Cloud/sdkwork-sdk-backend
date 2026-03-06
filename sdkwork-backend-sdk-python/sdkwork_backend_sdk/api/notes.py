@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import PlusApiResultBoolean, PlusApiResultListPlusNotesVO, PlusApiResultPagePlusNotesVO, PlusApiResultPlusNotesVO, PlusNotesForm
+from ..models import PlusApiResultBoolean, PlusApiResultListPlusNotesVO, PlusApiResultPagePlusMediaPublishRecordDTO, PlusApiResultPagePlusNotesVO, PlusApiResultPlusMediaPublishResultDTO, PlusApiResultPlusNotesVO, PlusNotesForm, PlusNotesMediaDraftForm, PlusNotesMediaPreviewForm, PlusNotesMediaPublishDraftForm
 
 class NotesApi:
     """notes API client."""
@@ -15,6 +15,22 @@ class NotesApi:
     def create(self, body: PlusNotesForm) -> PlusApiResultPlusNotesVO:
         """Create a note"""
         return self._client.post(f"/backend/v3/api/notes", json=body)
+
+    def publish_notes_to_media(self, body: PlusNotesMediaDraftForm) -> PlusApiResultPlusMediaPublishResultDTO:
+        """Publish notes directly"""
+        return self._client.post(f"/backend/v3/api/notes/media/publish", json=body)
+
+    def create_media_draft(self, body: PlusNotesMediaDraftForm) -> PlusApiResultPlusMediaPublishResultDTO:
+        """Create media draft"""
+        return self._client.post(f"/backend/v3/api/notes/media/drafts", json=body)
+
+    def publish_media_draft(self, body: PlusNotesMediaPublishDraftForm) -> PlusApiResultPlusMediaPublishResultDTO:
+        """Publish media draft"""
+        return self._client.post(f"/backend/v3/api/notes/media/drafts/publish", json=body)
+
+    def preview_media_draft(self, body: PlusNotesMediaPreviewForm) -> PlusApiResultPlusMediaPublishResultDTO:
+        """Preview media draft"""
+        return self._client.post(f"/backend/v3/api/notes/media/drafts/preview", json=body)
 
     def get_by_uuid(self, uuid: str) -> PlusApiResultPlusNotesVO:
         """Get note by UUID"""
@@ -39,6 +55,10 @@ class NotesApi:
     def list_by_page(self, params: Optional[Dict[str, Any]] = None) -> PlusApiResultPagePlusNotesVO:
         """Get paginated notes"""
         return self._client.get(f"/backend/v3/api/notes/page", params=params)
+
+    def list_media_publish_records(self, noteId: str, params: Optional[Dict[str, Any]] = None) -> PlusApiResultPagePlusMediaPublishRecordDTO:
+        """List media publish records"""
+        return self._client.get(f"/backend/v3/api/notes/media/records/{noteId}", params=params)
 
     def list_by_user_id(self, userId: str) -> PlusApiResultListPlusNotesVO:
         """List notes by user"""

@@ -35,7 +35,7 @@ func (a *OrderApi) Create(body sdktypes.PlusOrderForm) (sdktypes.PlusApiResultPl
 }
 
 // Ship an order
-func (a *OrderApi) Ship(id string, body string) (sdktypes.PlusApiResultOrderShipVO, error) {
+func (a *OrderApi) Ship(id string, body *string) (sdktypes.PlusApiResultOrderShipVO, error) {
     raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/trade/order/%s/ship", id)), body, nil, nil, "")
     if err != nil {
         var zero sdktypes.PlusApiResultOrderShipVO
@@ -152,6 +152,16 @@ func (a *OrderApi) CreateGoods(body sdktypes.CreateGoodsOrderForm) (sdktypes.Plu
         return zero, err
     }
     return decodeResult[sdktypes.PlusApiResultGoodsOrderVO](raw)
+}
+
+// Create booking order
+func (a *OrderApi) CreateBooking(body sdktypes.CreateBookingOrderForm) (sdktypes.PlusApiResultBookingOrderVO, error) {
+    raw, err := a.client.Post(BackendApiPath("/trade/order/booking"), body, nil, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultBookingOrderVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultBookingOrderVO](raw)
 }
 
 // Get an order by ID

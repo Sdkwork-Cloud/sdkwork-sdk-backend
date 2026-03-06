@@ -9,6 +9,8 @@ namespace Backend.Models
         public string? CreatedAt { get; set; }
         public string? UpdatedAt { get; set; }
         public string? Name { get; set; }
+        public string? RedeemCode { get; set; }
+        public int? PointCost { get; set; }
         public string? Type { get; set; }
         public string? Description { get; set; }
         public int? Amount { get; set; }
@@ -19,5 +21,7 @@ namespace Backend.Models
         public int? Total { get; set; }
         public int? GetLimit { get; set; }
         public string? Status { get; set; }
+        public string? ScopeType { get; set; }
+        public string? ScopeValue { get; set; }
     }
 }

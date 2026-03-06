@@ -12,8 +12,13 @@ public class ImMessageApi {
         this.client = client;
     }
 
+    /** Mark conversation messages as read */
+    public PlusApiResultBoolean markRead(PlusImMessageMarkReadForm body) throws Exception {
+        return (PlusApiResultBoolean) client.post(ApiPaths.backendPath("/im/message/mark_read"), body);
+    }
+
     /** Get messages by page */
-    public PlusApiResultPagePlusMessage listByPage(QueryListForm body, Map<String, Object> params) throws Exception {
+    public PlusApiResultPagePlusMessage listByPage(PlusImMessageQueryForm body, Map<String, Object> params) throws Exception {
         return (PlusApiResultPagePlusMessage) client.post(ApiPaths.backendPath("/im/message/list"), body, params);
     }
 }

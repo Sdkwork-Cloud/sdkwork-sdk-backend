@@ -13,8 +13,8 @@ func NewKnowledgeBaseChatApi(client *sdkhttp.Client) *KnowledgeBaseChatApi {
     return &KnowledgeBaseChatApi{client: client}
 }
 
-func (a *KnowledgeBaseChatApi) Stop(headers map[string]string) (sdktypes.PlusApiResultBoolean, error) {
-    raw, err := a.client.Post(BackendApiPath("/knowledge_base/chat/stop"), nil, nil, headers, "")
+func (a *KnowledgeBaseChatApi) Stop(query map[string]interface{}, headers map[string]string) (sdktypes.PlusApiResultBoolean, error) {
+    raw, err := a.client.Post(BackendApiPath("/knowledge_base/chat/stop"), nil, query, headers, "")
     if err != nil {
         var zero sdktypes.PlusApiResultBoolean
         return zero, err
@@ -23,8 +23,8 @@ func (a *KnowledgeBaseChatApi) Stop(headers map[string]string) (sdktypes.PlusApi
 }
 
 // Create a chat completion with Knowledge base
-func (a *KnowledgeBaseChatApi) Create(body sdktypes.ChatCompletionCreateForm, headers map[string]string) (sdktypes.ChatCompletionChunk, error) {
-    raw, err := a.client.Post(BackendApiPath("/knowledge_base/chat/completions"), body, nil, headers, "")
+func (a *KnowledgeBaseChatApi) Create(body sdktypes.ChatCompletionCreateForm, query map[string]interface{}, headers map[string]string) (sdktypes.ChatCompletionChunk, error) {
+    raw, err := a.client.Post(BackendApiPath("/knowledge_base/chat/completions"), body, query, headers, "")
     if err != nil {
         var zero sdktypes.ChatCompletionChunk
         return zero, err

@@ -15,6 +15,26 @@ class NotesApi(private val client: HttpClient) {
         return client.post(ApiPaths.backendPath("/notes"), body) as? PlusApiResultPlusNotesVO
     }
 
+    /** Publish notes directly */
+    suspend fun publishNotesToMedia(body: PlusNotesMediaDraftForm): PlusApiResultPlusMediaPublishResultDTO? {
+        return client.post(ApiPaths.backendPath("/notes/media/publish"), body) as? PlusApiResultPlusMediaPublishResultDTO
+    }
+
+    /** Create media draft */
+    suspend fun createMediaDraft(body: PlusNotesMediaDraftForm): PlusApiResultPlusMediaPublishResultDTO? {
+        return client.post(ApiPaths.backendPath("/notes/media/drafts"), body) as? PlusApiResultPlusMediaPublishResultDTO
+    }
+
+    /** Publish media draft */
+    suspend fun publishMediaDraft(body: PlusNotesMediaPublishDraftForm): PlusApiResultPlusMediaPublishResultDTO? {
+        return client.post(ApiPaths.backendPath("/notes/media/drafts/publish"), body) as? PlusApiResultPlusMediaPublishResultDTO
+    }
+
+    /** Preview media draft */
+    suspend fun previewMediaDraft(body: PlusNotesMediaPreviewForm): PlusApiResultPlusMediaPublishResultDTO? {
+        return client.post(ApiPaths.backendPath("/notes/media/drafts/preview"), body) as? PlusApiResultPlusMediaPublishResultDTO
+    }
+
     /** Get note by UUID */
     suspend fun getByUuid(uuid: String): PlusApiResultPlusNotesVO? {
         return client.get(ApiPaths.backendPath("/notes/$uuid")) as? PlusApiResultPlusNotesVO
@@ -43,6 +63,11 @@ class NotesApi(private val client: HttpClient) {
     /** Get paginated notes */
     suspend fun listByPage(params: Map<String, Any>? = null): PlusApiResultPagePlusNotesVO? {
         return client.get(ApiPaths.backendPath("/notes/page"), params) as? PlusApiResultPagePlusNotesVO
+    }
+
+    /** List media publish records */
+    suspend fun listMediaPublishRecords(noteId: String, params: Map<String, Any>? = null): PlusApiResultPagePlusMediaPublishRecordDTO? {
+        return client.get(ApiPaths.backendPath("/notes/media/records/$noteId"), params) as? PlusApiResultPagePlusMediaPublishRecordDTO
     }
 
     /** List notes by user */

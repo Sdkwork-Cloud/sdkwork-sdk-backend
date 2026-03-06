@@ -14,8 +14,8 @@ public class PlusDnsRecordVO {
     private Integer ttl;
     private Integer priority;
     private Boolean enabled;
-    private String firstRecordValue;
     private List<String> recordValues;
+    private String firstRecordValue;
 
     public String getCreatedAt() {
         return this.createdAt;
@@ -121,19 +121,19 @@ public class PlusDnsRecordVO {
         this.enabled = enabled;
     }
 
-    public String getFirstRecordValue() {
-        return this.firstRecordValue;
-    }
-    
-    public void setFirstRecordValue(String firstRecordValue) {
-        this.firstRecordValue = firstRecordValue;
-    }
-
     public List<String> getRecordValues() {
         return this.recordValues;
     }
     
     public void setRecordValues(List<String> recordValues) {
         this.recordValues = recordValues;
+    }
+
+    public String getFirstRecordValue() {
+        return this.firstRecordValue;
+    }
+    
+    public void setFirstRecordValue(String firstRecordValue) {
+        this.firstRecordValue = firstRecordValue;
     }
 }

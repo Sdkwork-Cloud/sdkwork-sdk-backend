@@ -4,3 +4,4 @@ from typing import Optional, List, Dict, Any
 @dataclass
 class AppConfig:
     official_account: OfficialAccountConfig = None
+    publish: AppPublishConfig = None

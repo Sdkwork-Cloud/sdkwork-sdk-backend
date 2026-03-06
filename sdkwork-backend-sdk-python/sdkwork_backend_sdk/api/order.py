@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import CreateGoodsOrderForm, CreateImGroupOrderForm, CreatePointsOrderForm, CreateVipOrderForm, CreateVirtualOrderForm, PlusApiResultBoolean, PlusApiResultGoodsOrderVO, PlusApiResultImGroupOrderVO, PlusApiResultListPlusOrderVO, PlusApiResultOrderCancelVO, PlusApiResultOrderCloseVO, PlusApiResultOrderCompleteVO, PlusApiResultOrderConfirmVO, PlusApiResultOrderShipVO, PlusApiResultPagePlusOrderVO, PlusApiResultPlusOrderVO, PlusApiResultPointsOrderVO, PlusApiResultVipOrderVO, PlusApiResultVirtualOrderVO, PlusOrderForm, QueryListForm
+from ..models import CreateBookingOrderForm, CreateGoodsOrderForm, CreateImGroupOrderForm, CreatePointsOrderForm, CreateVipOrderForm, CreateVirtualOrderForm, PlusApiResultBookingOrderVO, PlusApiResultBoolean, PlusApiResultGoodsOrderVO, PlusApiResultImGroupOrderVO, PlusApiResultListPlusOrderVO, PlusApiResultOrderCancelVO, PlusApiResultOrderCloseVO, PlusApiResultOrderCompleteVO, PlusApiResultOrderConfirmVO, PlusApiResultOrderShipVO, PlusApiResultPagePlusOrderVO, PlusApiResultPlusOrderVO, PlusApiResultPointsOrderVO, PlusApiResultVipOrderVO, PlusApiResultVirtualOrderVO, PlusOrderForm, QueryListForm
 
 class OrderApi:
     """order API client."""
@@ -16,7 +16,7 @@ class OrderApi:
         """Create a new order"""
         return self._client.post(f"/backend/v3/api/trade/order", json=body)
 
-    def ship(self, id: str, body: str) -> PlusApiResultOrderShipVO:
+    def ship(self, id: str, body: Optional[str] = None) -> PlusApiResultOrderShipVO:
         """Ship an order"""
         return self._client.post(f"/backend/v3/api/trade/order/{id}/ship", json=body)
 
@@ -63,6 +63,10 @@ class OrderApi:
     def create_goods(self, body: CreateGoodsOrderForm) -> PlusApiResultGoodsOrderVO:
         """Create goods order"""
         return self._client.post(f"/backend/v3/api/trade/order/goods", json=body)
+
+    def create_booking(self, body: CreateBookingOrderForm) -> PlusApiResultBookingOrderVO:
+        """Create booking order"""
+        return self._client.post(f"/backend/v3/api/trade/order/booking", json=body)
 
     def get_by_id(self, id: str) -> PlusApiResultPlusOrderVO:
         """Get an order by ID"""

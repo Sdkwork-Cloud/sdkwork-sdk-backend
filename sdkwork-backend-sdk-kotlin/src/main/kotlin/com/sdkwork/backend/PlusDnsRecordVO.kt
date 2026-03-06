@@ -14,6 +14,6 @@ data class PlusDnsRecordVO(
     val ttl: Int? = null,
     val priority: Int? = null,
     val enabled: Boolean? = null,
-    val firstRecordValue: String? = null,
-    val recordValues: List<String>? = null
+    val recordValues: List<String>? = null,
+    val firstRecordValue: String? = null
 )

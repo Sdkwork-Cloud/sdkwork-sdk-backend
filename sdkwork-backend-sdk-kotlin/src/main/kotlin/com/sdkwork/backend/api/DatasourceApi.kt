@@ -15,8 +15,8 @@ class DatasourceApi(private val client: HttpClient) {
         return client.post(ApiPaths.backendPath("/datasource"), body) as? PlusApiResultPlusDatasourceVO
     }
 
-    suspend fun stop(headers: Map<String, String>? = null): PlusApiResultBoolean? {
-        return client.post(ApiPaths.backendPath("/datasource/stop"), null, null, headers) as? PlusApiResultBoolean
+    suspend fun stop(params: Map<String, Any>? = null, headers: Map<String, String>? = null): PlusApiResultBoolean? {
+        return client.post(ApiPaths.backendPath("/datasource/stop"), null, params, headers) as? PlusApiResultBoolean
     }
 
     /** Get data sources by page */
@@ -30,8 +30,8 @@ class DatasourceApi(private val client: HttpClient) {
     }
 
     /** Create a chat completion with Datasource */
-    suspend fun createCompletions(body: ChatCompletionCreateForm, headers: Map<String, String>? = null): ChatCompletionChunk? {
-        return client.post(ApiPaths.backendPath("/datasource/chat/completions"), body, null, headers) as? ChatCompletionChunk
+    suspend fun createCompletions(body: ChatCompletionCreateForm, params: Map<String, Any>? = null, headers: Map<String, String>? = null): ChatCompletionChunk? {
+        return client.post(ApiPaths.backendPath("/datasource/chat/completions"), body, params, headers) as? ChatCompletionChunk
     }
 
     /** Get a data source by ID */

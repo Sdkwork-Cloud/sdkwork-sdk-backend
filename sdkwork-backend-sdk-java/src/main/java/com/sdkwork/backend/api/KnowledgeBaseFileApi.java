@@ -12,52 +12,52 @@ public class KnowledgeBaseFileApi {
         this.client = client;
     }
 
-    /** 获取文件列表 */
+    /** List files */
     public PlusApiResultFileListVO listFiles(Map<String, Object> params) throws Exception {
         return (PlusApiResultFileListVO) client.get(ApiPaths.backendPath("/knowledge_base/files"), params);
     }
 
-    /** 上传文件 */
+    /** Upload file */
     public PlusApiResultFileItemVO uploadFile(UploadFilePostRequest body, Map<String, Object> params) throws Exception {
         return (PlusApiResultFileItemVO) client.post(ApiPaths.backendPath("/knowledge_base/files"), body, params, null, "multipart/form-data");
     }
 
-    /** 获取文件列表 */
+    /** List files */
     public PlusApiResultFileListVO getListFiles(Map<String, Object> params) throws Exception {
         return (PlusApiResultFileListVO) client.get(ApiPaths.backendPath("/disk/files"), params);
     }
 
-    /** 上传文件 */
+    /** Upload file */
     public PlusApiResultFileItemVO createUploadFile(CreateUploadFileRequest body, Map<String, Object> params) throws Exception {
         return (PlusApiResultFileItemVO) client.post(ApiPaths.backendPath("/disk/files"), body, params, null, "multipart/form-data");
     }
 
-    /** 获取单个文件信息 */
+    /** Get file */
     public PlusApiResultFileItemVO getFile(String fileId) throws Exception {
         return (PlusApiResultFileItemVO) client.get(ApiPaths.backendPath("/knowledge_base/files/" + fileId + ""));
     }
 
-    /** 删除文件 */
+    /** Delete file */
     public PlusApiResultFileItemVO deleteFile(String fileId) throws Exception {
         return (PlusApiResultFileItemVO) client.delete(ApiPaths.backendPath("/knowledge_base/files/" + fileId + ""));
     }
 
-    /** 获取文件内容 */
+    /** Get file content */
     public String getFileContent(String fileId) throws Exception {
         return (String) client.get(ApiPaths.backendPath("/knowledge_base/files/" + fileId + "/content"));
     }
 
-    /** 获取单个文件信息 */
+    /** Get file */
     public PlusApiResultFileItemVO getFileDisk(String fileId) throws Exception {
         return (PlusApiResultFileItemVO) client.get(ApiPaths.backendPath("/disk/files/" + fileId + ""));
     }
 
-    /** 删除文件 */
+    /** Delete file */
     public PlusApiResultFileItemVO deleteFileDisk(String fileId) throws Exception {
         return (PlusApiResultFileItemVO) client.delete(ApiPaths.backendPath("/disk/files/" + fileId + ""));
     }
 
-    /** 获取文件内容 */
+    /** Get file content */
     public String getFileContentDisk(String fileId) throws Exception {
         return (String) client.get(ApiPaths.backendPath("/disk/files/" + fileId + "/content"));
     }

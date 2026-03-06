@@ -2,8 +2,8 @@ package com.sdkwork.backend.model;
 
 public class PageableObject {
     private Integer offset;
-    private SortObject sort;
     private Boolean paged;
+    private SortObject sort;
     private Integer pageNumber;
     private Integer pageSize;
     private Boolean unpaged;
@@ -16,20 +16,20 @@ public class PageableObject {
         this.offset = offset;
     }
 
-    public SortObject getSort() {
-        return this.sort;
-    }
-    
-    public void setSort(SortObject sort) {
-        this.sort = sort;
-    }
-
     public Boolean getPaged() {
         return this.paged;
     }
     
     public void setPaged(Boolean paged) {
         this.paged = paged;
+    }
+
+    public SortObject getSort() {
+        return this.sort;
+    }
+    
+    public void setSort(SortObject sort) {
+        this.sort = sort;
     }
 
     public Integer getPageNumber() {

@@ -7,13 +7,13 @@ Professional Kotlin SDK for SDKWork API.
 Add to your `build.gradle.kts`:
 
 ```kotlin
-implementation("com.sdkwork:backend-sdk:1.0.1")
+implementation("com.sdkwork:backend-sdk:1.0.0")
 ```
 
 Or with Gradle Groovy:
 
 ```groovy
-implementation 'com.sdkwork:backend-sdk:1.0.1'
+implementation 'com.sdkwork:backend-sdk:1.0.0'
 ```
 
 ## Quick Start
@@ -89,32 +89,36 @@ val client = SdkworkBackendClient(config)
 - `client.userCoupon` - user_coupon API
 - `client.userCard` - user_card API
 - `client.userAddress` - user_address API
-- `client.aiUsageRecord` - ai_usage_record API
+- `client.usageRecord` - usage_record API
 - `client.shoppingCart` - shopping_cart API
 - `client.shoppingCartItem` - shopping_cart_item API
 - `client.refund` - refund API
 - `client.payment` - payment API
 - `client.order` - order API
 - `client.orderItem` - order_item API
-- `client.aiTool` - ai_tool API
+- `client.tool` - tool API
 - `client.tenant` - tenant API
 - `client.databaseTable` - database_table API
 - `client.productSku` - product_sku API
+- `client.skill` - skill API
+- `client.skillPackage` - skill_package API
 - `client.shortUrl` - short_url API
 - `client.shop` - shop API
 - `client.share` - share API
 - `client.shareVisitRecord` - share_visit_record API
 - `client.shardingKey` - sharding_key API
+- `client.apiSecurityPolicy` - api_security_policy API
 - `client.schema` - schema API
 - `client.rbacRole` - rbac_role API
 - `client.rolePermission` - role_permission API
 - `client.invocationRecord` - invocation_record API
 - `client.rbacUserRole` - rbac_user_role API
-- `client.aiPrompt` - ai_prompt API
+- `client.prompt` - prompt API
 - `client.project` - project API
 - `client.product` - product API
 - `client.pptTemplate` - ppt_template API
 - `client.pptTemplateSlide` - ppt_template_slide API
+- `client.rbacPermission` - rbac_permission API
 - `client.partner` - partner API
 - `client.chatParticipant` - chat_participant API
 - `client.ossBucket` - oss_bucket API
@@ -125,11 +129,11 @@ val client = SdkworkBackendClient(config)
 - `client.notification` - notification API
 - `client.notes` - notes API
 - `client.news` - news API
-- `client.host` - host API
+- `client.net` - net API
 - `client.dnsRecord` - dns_record API
 - `client.music` - music API
-- `client.aiModelInformation` - ai_model_information API
-- `client.aiModelPrice` - ai_model_price API
+- `client.modelInformation` - model_information API
+- `client.modelPrice` - model_price API
 - `client.chatMessage` - chat_message API
 - `client.memberLevel` - member_level API
 - `client.memberCard` - member_card API
@@ -138,8 +142,8 @@ val client = SdkworkBackendClient(config)
 - `client.invitationCode` - invitation_code API
 - `client.image` - image API
 - `client.chatGroup` - chat_group API
-- `client.aiGeneration` - ai_generation API
-- `client.aiGenerationContent` - ai_generation_content API
+- `client.generation` - generation API
+- `client.generationContent` - generation_content API
 - `client.file` - file API
 - `client.filePart` - file_part API
 - `client.fileContent` - file_content API
@@ -153,45 +157,46 @@ val client = SdkworkBackendClient(config)
 - `client.datasource` - datasource API
 - `client.coupon` - coupon API
 - `client.couponTemplate` - coupon_template API
-- `client.aiConversation` - ai_conversation API
+- `client.conversation` - conversation API
+- `client.contentWriting` - content_writing API
 - `client.comment` - comment API
 - `client.column` - column API
 - `client.collection` - collection API
 - `client.collectionItem` - collection_item API
 - `client.character` - character API
+- `client.channel` - channel API
 - `client.channelResource` - channel_resource API
+- `client.channelProxy` - channel_proxy API
 - `client.channelAccount` - channel_account API
-- `client.aiCategory` - ai_category API
+- `client.category` - category API
 - `client.membershipCard` - membership_card API
 - `client.cardTemplate` - card_template API
 - `client.attribute` - attribute API
-- `client.aiArticle` - ai_article API
-- `client.application` - application API
+- `client.article` - article API
+- `client.app` - app API
 - `client.apiKey` - api_key API
-- `client.aiAgent` - ai_agent API
-- `client.aiAgentToolRelationship` - ai_agent_tool_relationship API
+- `client.agent` - agent API
+- `client.agentToolRelationship` - agent_tool_relationship API
 - `client.account` - account API
 - `client.accountHistory` - account_history API
+- `client.accountExchangeConfig` - account_exchange_config API
+- `client.invoice` - invoice API
 - `client.searchChat` - search_chat API
 - `client.pptTemplateRendering` - ppt_template_rendering API
 - `client.pptTemplateChat` - ppt_template_chat API
 - `client.knowledgeBaseFile` - knowledge_base_file API
 - `client.knowledgeBaseChat` - knowledge_base_chat API
 - `client.imMessage` - im_message API
-- `client.aiVoiceSpeakerGeneration` - ai_voice_speaker_generation API
-- `client.aiVideoGeneration` - ai_video_generation API
-- `client.aiMusicGeneration` - ai_music_generation API
-- `client.aiImageGeneration` - ai_image_generation API
-- `client.aiCharacterGeneration` - ai_character_generation API
-- `client.aiAudioGeneration` - ai_audio_generation API
-- `client.aiAudioEffectGeneration` - ai_audio_effect_generation API
-- `client.aiChat` - ai_chat API
-- `client.verification` - verification API
-- `client.oauthAuthentication` - oauth_authentication API
-- `client.authorization` - authorization API
-- `client.authentication` - authentication API
-- `client.app` - app API
-- `client.aiAgentChat` - ai_agent_chat API
+- `client.voiceSpeakerGeneration` - voice_speaker_generation API
+- `client.videoGeneration` - video_generation API
+- `client.musicGeneration` - music_generation API
+- `client.imageGeneration` - image_generation API
+- `client.characterGeneration` - character_generation API
+- `client.audioGeneration` - audio_generation API
+- `client.audioEffectGeneration` - audio_effect_generation API
+- `client.chat` - chat API
+- `client.auth` - auth API
+- `client.agentChat` - agent_chat API
 
 ## Usage Examples
 
@@ -355,11 +360,11 @@ val result = client.userAddress.update()
 println(result)
 ```
 
-### ai_usage_record
+### usage_record
 
 ```kotlin
 // Update an existing usage record
-val result = client.aiUsageRecord.update()
+val result = client.usageRecord.update()
 println(result)
 ```
 
@@ -411,11 +416,11 @@ val result = client.orderItem.update()
 println(result)
 ```
 
-### ai_tool
+### tool
 
 ```kotlin
 // Update an existing AI tool
-val result = client.aiTool.update()
+val result = client.tool.update()
 println(result)
 ```
 
@@ -440,6 +445,22 @@ println(result)
 ```kotlin
 // Update an existing SKU
 val result = client.productSku.update()
+println(result)
+```
+
+### skill
+
+```kotlin
+// Get one skill detail
+val result = client.skill.getById()
+println(result)
+```
+
+### skill_package
+
+```kotlin
+// Get skill package detail
+val result = client.skillPackage.getById()
 println(result)
 ```
 
@@ -483,6 +504,14 @@ val result = client.shardingKey.update()
 println(result)
 ```
 
+### api_security_policy
+
+```kotlin
+// PUT /backend/v3/api/security/policy
+val result = client.apiSecurityPolicy.update()
+println(result)
+```
+
 ### schema
 
 ```kotlin
@@ -523,11 +552,11 @@ val result = client.rbacUserRole.update()
 println(result)
 ```
 
-### ai_prompt
+### prompt
 
 ```kotlin
 // Update an existing AI prompt
-val result = client.aiPrompt.update()
+val result = client.prompt.update()
 println(result)
 ```
 
@@ -560,6 +589,14 @@ println(result)
 ```kotlin
 // Update an existing PPT template slide
 val result = client.pptTemplateSlide.update()
+println(result)
+```
+
+### rbac_permission
+
+```kotlin
+// PUT /backend/v3/api/permission
+val result = client.rbacPermission.update()
 println(result)
 ```
 
@@ -643,11 +680,11 @@ val result = client.news.update()
 println(result)
 ```
 
-### host
+### net
 
 ```kotlin
 // 更新域名
-val result = client.host.update()
+val result = client.net.update()
 println(result)
 ```
 
@@ -667,19 +704,19 @@ val result = client.music.update()
 println(result)
 ```
 
-### ai_model_information
+### model_information
 
 ```kotlin
 // Update existing AI model information
-val result = client.aiModelInformation.update()
+val result = client.modelInformation.update()
 println(result)
 ```
 
-### ai_model_price
+### model_price
 
 ```kotlin
 // Update an existing AI model price
-val result = client.aiModelPrice.update()
+val result = client.modelPrice.update()
 println(result)
 ```
 
@@ -747,19 +784,19 @@ val result = client.chatGroup.update()
 println(result)
 ```
 
-### ai_generation
+### generation
 
 ```kotlin
 // Update an existing AI generation record
-val result = client.aiGeneration.update()
+val result = client.generation.update()
 println(result)
 ```
 
-### ai_generation_content
+### generation_content
 
 ```kotlin
 // Update AI generated content
-val result = client.aiGenerationContent.update()
+val result = client.generationContent.update()
 println(result)
 ```
 
@@ -867,11 +904,19 @@ val result = client.couponTemplate.update()
 println(result)
 ```
 
-### ai_conversation
+### conversation
 
 ```kotlin
 // Update an existing conversation
-val result = client.aiConversation.update()
+val result = client.conversation.update()
+println(result)
+```
+
+### content_writing
+
+```kotlin
+// Rename chapter
+val result = client.contentWriting.renameChapter()
 println(result)
 ```
 
@@ -915,11 +960,27 @@ val result = client.character.update()
 println(result)
 ```
 
+### channel
+
+```kotlin
+// Update channel
+val result = client.channel.update()
+println(result)
+```
+
 ### channel_resource
 
 ```kotlin
 // Update an existing channel resource
 val result = client.channelResource.update()
+println(result)
+```
+
+### channel_proxy
+
+```kotlin
+// Update channel proxy
+val result = client.channelProxy.update()
 println(result)
 ```
 
@@ -931,11 +992,11 @@ val result = client.channelAccount.update()
 println(result)
 ```
 
-### ai_category
+### category
 
 ```kotlin
 // Update an existing category
-val result = client.aiCategory.update()
+val result = client.category.update()
 println(result)
 ```
 
@@ -963,19 +1024,19 @@ val result = client.attribute.update()
 println(result)
 ```
 
-### ai_article
+### article
 
 ```kotlin
 // Update an existing AI article
-val result = client.aiArticle.update()
+val result = client.article.update()
 println(result)
 ```
 
-### application
+### app
 
 ```kotlin
 // Update application
-val result = client.application.update()
+val result = client.app.update()
 println(result)
 ```
 
@@ -987,19 +1048,19 @@ val result = client.apiKey.update()
 println(result)
 ```
 
-### ai_agent
+### agent
 
 ```kotlin
 // Update an existing AI agent
-val result = client.aiAgent.update()
+val result = client.agent.update()
 println(result)
 ```
 
-### ai_agent_tool_relationship
+### agent_tool_relationship
 
 ```kotlin
 // Update an existing agent-tool relationship
-val result = client.aiAgentToolRelationship.update()
+val result = client.agentToolRelationship.update()
 println(result)
 ```
 
@@ -1016,6 +1077,22 @@ println(result)
 ```kotlin
 // Update an existing account history record
 val result = client.accountHistory.update()
+println(result)
+```
+
+### account_exchange_config
+
+```kotlin
+// Get points-to-cash rate
+val result = client.accountExchangeConfig.getPointsToCashRate()
+println(result)
+```
+
+### invoice
+
+```kotlin
+// Apply invoice
+val result = client.invoice.apply()
 println(result)
 ```
 
@@ -1046,7 +1123,7 @@ println(result)
 ### knowledge_base_file
 
 ```kotlin
-// 获取文件列表
+// List files
 val result = client.knowledgeBaseFile.listFiles()
 println(result)
 ```
@@ -1062,120 +1139,88 @@ println(result)
 ### im_message
 
 ```kotlin
-// Get messages by page
-val result = client.imMessage.listByPage()
+// Mark conversation messages as read
+val result = client.imMessage.markRead()
 println(result)
 ```
 
-### ai_voice_speaker_generation
+### voice_speaker_generation
 
 ```kotlin
 // Create voice speaker generation task
-val result = client.aiVoiceSpeakerGeneration.create()
+val result = client.voiceSpeakerGeneration.create()
 println(result)
 ```
 
-### ai_video_generation
+### video_generation
 
 ```kotlin
 // Create video generation task
-val result = client.aiVideoGeneration.create()
+val result = client.videoGeneration.create()
 println(result)
 ```
 
-### ai_music_generation
+### music_generation
 
 ```kotlin
 // Create music generation task
-val result = client.aiMusicGeneration.create()
+val result = client.musicGeneration.create()
 println(result)
 ```
 
-### ai_image_generation
+### image_generation
 
 ```kotlin
 // Create image generation task
-val result = client.aiImageGeneration.create()
+val result = client.imageGeneration.create()
 println(result)
 ```
 
-### ai_character_generation
+### character_generation
 
 ```kotlin
 // Create character generation task
-val result = client.aiCharacterGeneration.create()
+val result = client.characterGeneration.create()
 println(result)
 ```
 
-### ai_audio_generation
+### audio_generation
 
 ```kotlin
 // Create audio generation task
-val result = client.aiAudioGeneration.create()
+val result = client.audioGeneration.create()
 println(result)
 ```
 
-### ai_audio_effect_generation
+### audio_effect_generation
 
 ```kotlin
 // Create audio effect generation task
-val result = client.aiAudioEffectGeneration.create()
+val result = client.audioEffectGeneration.create()
 println(result)
 ```
 
-### ai_chat
+### chat
 
 ```kotlin
 // Stop a chat completion stream
-val result = client.aiChat.stop()
+val result = client.chat.stop()
 println(result)
 ```
 
-### verification
+### auth
 
 ```kotlin
 // Verify phone
-val result = client.verification.verifyPhone()
+val result = client.auth.verifyPhone()
 println(result)
 ```
 
-### oauth_authentication
-
-```kotlin
-// Get OAuth authorization URL
-val result = client.oauthAuthentication.getAuthUrl()
-println(result)
-```
-
-### authorization
-
-```kotlin
-// 检查用户角色
-val result = client.authorization.hasRole()
-println(result)
-```
-
-### authentication
-
-```kotlin
-// 重置密码
-val result = client.authentication.resetPassword()
-println(result)
-```
-
-### app
-
-```kotlin
-// Get app SDK config
-val result = client.app.getSdkConfig()
-println(result)
-```
-
-### ai_agent_chat
+### agent_chat
 
 ```kotlin
 // Create a chat completion with agent
-val result = client.aiAgentChat.withContext()
+val result = client.agentChat.withContext()
 println(result)
 ```
 

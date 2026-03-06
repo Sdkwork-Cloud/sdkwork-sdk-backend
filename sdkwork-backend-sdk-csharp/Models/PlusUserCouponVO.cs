@@ -12,6 +12,11 @@ namespace Backend.Models
         public int? CouponId { get; set; }
         public string? CouponCode { get; set; }
         public string? AcquireTime { get; set; }
+        public string? AcquireRequestNo { get; set; }
+        public string? AcquireType { get; set; }
+        public int? PointCost { get; set; }
+        public bool? PointsRefunded { get; set; }
+        public string? PointsRefundAt { get; set; }
         public string? UseTime { get; set; }
         public string? Status { get; set; }
     }

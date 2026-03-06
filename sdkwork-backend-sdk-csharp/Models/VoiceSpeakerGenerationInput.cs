@@ -24,8 +24,8 @@ namespace Backend.Models
         public int? Volume { get; set; }
         public string? Emotion { get; set; }
         public bool? SaveSpeaker { get; set; }
-        public bool? UsingExistingSpeaker { get; set; }
         public bool? VoiceClone { get; set; }
+        public bool? UsingExistingSpeaker { get; set; }
         public int? ReferenceAssetCount { get; set; }
     }
 }

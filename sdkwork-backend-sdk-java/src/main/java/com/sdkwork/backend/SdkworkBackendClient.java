@@ -22,32 +22,36 @@ import com.sdkwork.backend.api.UserOauthAccountApi;
 import com.sdkwork.backend.api.UserCouponApi;
 import com.sdkwork.backend.api.UserCardApi;
 import com.sdkwork.backend.api.UserAddressApi;
-import com.sdkwork.backend.api.AiUsageRecordApi;
+import com.sdkwork.backend.api.UsageRecordApi;
 import com.sdkwork.backend.api.ShoppingCartApi;
 import com.sdkwork.backend.api.ShoppingCartItemApi;
 import com.sdkwork.backend.api.RefundApi;
 import com.sdkwork.backend.api.PaymentApi;
 import com.sdkwork.backend.api.OrderApi;
 import com.sdkwork.backend.api.OrderItemApi;
-import com.sdkwork.backend.api.AiToolApi;
+import com.sdkwork.backend.api.ToolApi;
 import com.sdkwork.backend.api.TenantApi;
 import com.sdkwork.backend.api.DatabaseTableApi;
 import com.sdkwork.backend.api.ProductSkuApi;
+import com.sdkwork.backend.api.SkillApi;
+import com.sdkwork.backend.api.SkillPackageApi;
 import com.sdkwork.backend.api.ShortUrlApi;
 import com.sdkwork.backend.api.ShopApi;
 import com.sdkwork.backend.api.ShareApi;
 import com.sdkwork.backend.api.ShareVisitRecordApi;
 import com.sdkwork.backend.api.ShardingKeyApi;
+import com.sdkwork.backend.api.ApiSecurityPolicyApi;
 import com.sdkwork.backend.api.SchemaApi;
 import com.sdkwork.backend.api.RbacRoleApi;
 import com.sdkwork.backend.api.RolePermissionApi;
 import com.sdkwork.backend.api.InvocationRecordApi;
 import com.sdkwork.backend.api.RbacUserRoleApi;
-import com.sdkwork.backend.api.AiPromptApi;
+import com.sdkwork.backend.api.PromptApi;
 import com.sdkwork.backend.api.ProjectApi;
 import com.sdkwork.backend.api.ProductApi;
 import com.sdkwork.backend.api.PptTemplateApi;
 import com.sdkwork.backend.api.PptTemplateSlideApi;
+import com.sdkwork.backend.api.RbacPermissionApi;
 import com.sdkwork.backend.api.PartnerApi;
 import com.sdkwork.backend.api.ChatParticipantApi;
 import com.sdkwork.backend.api.OssBucketApi;
@@ -58,11 +62,11 @@ import com.sdkwork.backend.api.OrganizationMemberApi;
 import com.sdkwork.backend.api.NotificationApi;
 import com.sdkwork.backend.api.NotesApi;
 import com.sdkwork.backend.api.NewsApi;
-import com.sdkwork.backend.api.HostApi;
+import com.sdkwork.backend.api.NetApi;
 import com.sdkwork.backend.api.DnsRecordApi;
 import com.sdkwork.backend.api.MusicApi;
-import com.sdkwork.backend.api.AiModelInformationApi;
-import com.sdkwork.backend.api.AiModelPriceApi;
+import com.sdkwork.backend.api.ModelInformationApi;
+import com.sdkwork.backend.api.ModelPriceApi;
 import com.sdkwork.backend.api.ChatMessageApi;
 import com.sdkwork.backend.api.MemberLevelApi;
 import com.sdkwork.backend.api.MemberCardApi;
@@ -71,8 +75,8 @@ import com.sdkwork.backend.api.InvitationRelationApi;
 import com.sdkwork.backend.api.InvitationCodeApi;
 import com.sdkwork.backend.api.ImageApi;
 import com.sdkwork.backend.api.ChatGroupApi;
-import com.sdkwork.backend.api.AiGenerationApi;
-import com.sdkwork.backend.api.AiGenerationContentApi;
+import com.sdkwork.backend.api.GenerationApi;
+import com.sdkwork.backend.api.GenerationContentApi;
 import com.sdkwork.backend.api.FileApi;
 import com.sdkwork.backend.api.FilePartApi;
 import com.sdkwork.backend.api.FileContentApi;
@@ -86,45 +90,46 @@ import com.sdkwork.backend.api.DepartmentApi;
 import com.sdkwork.backend.api.DatasourceApi;
 import com.sdkwork.backend.api.CouponApi;
 import com.sdkwork.backend.api.CouponTemplateApi;
-import com.sdkwork.backend.api.AiConversationApi;
+import com.sdkwork.backend.api.ConversationApi;
+import com.sdkwork.backend.api.ContentWritingApi;
 import com.sdkwork.backend.api.CommentApi;
 import com.sdkwork.backend.api.ColumnApi;
 import com.sdkwork.backend.api.CollectionApi;
 import com.sdkwork.backend.api.CollectionItemApi;
 import com.sdkwork.backend.api.CharacterApi;
+import com.sdkwork.backend.api.ChannelApi;
 import com.sdkwork.backend.api.ChannelResourceApi;
+import com.sdkwork.backend.api.ChannelProxyApi;
 import com.sdkwork.backend.api.ChannelAccountApi;
-import com.sdkwork.backend.api.AiCategoryApi;
+import com.sdkwork.backend.api.CategoryApi;
 import com.sdkwork.backend.api.MembershipCardApi;
 import com.sdkwork.backend.api.CardTemplateApi;
 import com.sdkwork.backend.api.AttributeApi;
-import com.sdkwork.backend.api.AiArticleApi;
-import com.sdkwork.backend.api.ApplicationApi;
+import com.sdkwork.backend.api.ArticleApi;
+import com.sdkwork.backend.api.AppApi;
 import com.sdkwork.backend.api.ApiKeyApi;
-import com.sdkwork.backend.api.AiAgentApi;
-import com.sdkwork.backend.api.AiAgentToolRelationshipApi;
+import com.sdkwork.backend.api.AgentApi;
+import com.sdkwork.backend.api.AgentToolRelationshipApi;
 import com.sdkwork.backend.api.AccountApi;
 import com.sdkwork.backend.api.AccountHistoryApi;
+import com.sdkwork.backend.api.AccountExchangeConfigApi;
+import com.sdkwork.backend.api.InvoiceApi;
 import com.sdkwork.backend.api.SearchChatApi;
 import com.sdkwork.backend.api.PptTemplateRenderingApi;
 import com.sdkwork.backend.api.PptTemplateChatApi;
 import com.sdkwork.backend.api.KnowledgeBaseFileApi;
 import com.sdkwork.backend.api.KnowledgeBaseChatApi;
 import com.sdkwork.backend.api.ImMessageApi;
-import com.sdkwork.backend.api.AiVoiceSpeakerGenerationApi;
-import com.sdkwork.backend.api.AiVideoGenerationApi;
-import com.sdkwork.backend.api.AiMusicGenerationApi;
-import com.sdkwork.backend.api.AiImageGenerationApi;
-import com.sdkwork.backend.api.AiCharacterGenerationApi;
-import com.sdkwork.backend.api.AiAudioGenerationApi;
-import com.sdkwork.backend.api.AiAudioEffectGenerationApi;
-import com.sdkwork.backend.api.AiChatApi;
-import com.sdkwork.backend.api.VerificationApi;
-import com.sdkwork.backend.api.OauthAuthenticationApi;
-import com.sdkwork.backend.api.AuthorizationApi;
-import com.sdkwork.backend.api.AuthenticationApi;
-import com.sdkwork.backend.api.AppApi;
-import com.sdkwork.backend.api.AiAgentChatApi;
+import com.sdkwork.backend.api.VoiceSpeakerGenerationApi;
+import com.sdkwork.backend.api.VideoGenerationApi;
+import com.sdkwork.backend.api.MusicGenerationApi;
+import com.sdkwork.backend.api.ImageGenerationApi;
+import com.sdkwork.backend.api.CharacterGenerationApi;
+import com.sdkwork.backend.api.AudioGenerationApi;
+import com.sdkwork.backend.api.AudioEffectGenerationApi;
+import com.sdkwork.backend.api.ChatApi;
+import com.sdkwork.backend.api.AuthApi;
+import com.sdkwork.backend.api.AgentChatApi;
 
 public class SdkworkBackendClient {
     private final HttpClient httpClient;
@@ -148,32 +153,36 @@ public class SdkworkBackendClient {
     private UserCouponApi userCoupon;
     private UserCardApi userCard;
     private UserAddressApi userAddress;
-    private AiUsageRecordApi aiUsageRecord;
+    private UsageRecordApi usageRecord;
     private ShoppingCartApi shoppingCart;
     private ShoppingCartItemApi shoppingCartItem;
     private RefundApi refund;
     private PaymentApi payment;
     private OrderApi order;
     private OrderItemApi orderItem;
-    private AiToolApi aiTool;
+    private ToolApi tool;
     private TenantApi tenant;
     private DatabaseTableApi databaseTable;
     private ProductSkuApi productSku;
+    private SkillApi skill;
+    private SkillPackageApi skillPackage;
     private ShortUrlApi shortUrl;
     private ShopApi shop;
     private ShareApi share;
     private ShareVisitRecordApi shareVisitRecord;
     private ShardingKeyApi shardingKey;
+    private ApiSecurityPolicyApi apiSecurityPolicy;
     private SchemaApi schema;
     private RbacRoleApi rbacRole;
     private RolePermissionApi rolePermission;
     private InvocationRecordApi invocationRecord;
     private RbacUserRoleApi rbacUserRole;
-    private AiPromptApi aiPrompt;
+    private PromptApi prompt;
     private ProjectApi project;
     private ProductApi product;
     private PptTemplateApi pptTemplate;
     private PptTemplateSlideApi pptTemplateSlide;
+    private RbacPermissionApi rbacPermission;
     private PartnerApi partner;
     private ChatParticipantApi chatParticipant;
     private OssBucketApi ossBucket;
@@ -184,11 +193,11 @@ public class SdkworkBackendClient {
     private NotificationApi notification;
     private NotesApi notes;
     private NewsApi news;
-    private HostApi host;
+    private NetApi net;
     private DnsRecordApi dnsRecord;
     private MusicApi music;
-    private AiModelInformationApi aiModelInformation;
-    private AiModelPriceApi aiModelPrice;
+    private ModelInformationApi modelInformation;
+    private ModelPriceApi modelPrice;
     private ChatMessageApi chatMessage;
     private MemberLevelApi memberLevel;
     private MemberCardApi memberCard;
@@ -197,8 +206,8 @@ public class SdkworkBackendClient {
     private InvitationCodeApi invitationCode;
     private ImageApi image;
     private ChatGroupApi chatGroup;
-    private AiGenerationApi aiGeneration;
-    private AiGenerationContentApi aiGenerationContent;
+    private GenerationApi generation;
+    private GenerationContentApi generationContent;
     private FileApi file;
     private FilePartApi filePart;
     private FileContentApi fileContent;
@@ -212,45 +221,46 @@ public class SdkworkBackendClient {
     private DatasourceApi datasource;
     private CouponApi coupon;
     private CouponTemplateApi couponTemplate;
-    private AiConversationApi aiConversation;
+    private ConversationApi conversation;
+    private ContentWritingApi contentWriting;
     private CommentApi comment;
     private ColumnApi column;
     private CollectionApi collection;
     private CollectionItemApi collectionItem;
     private CharacterApi character;
+    private ChannelApi channel;
     private ChannelResourceApi channelResource;
+    private ChannelProxyApi channelProxy;
     private ChannelAccountApi channelAccount;
-    private AiCategoryApi aiCategory;
+    private CategoryApi category;
     private MembershipCardApi membershipCard;
     private CardTemplateApi cardTemplate;
     private AttributeApi attribute;
-    private AiArticleApi aiArticle;
-    private ApplicationApi application;
+    private ArticleApi article;
+    private AppApi app;
     private ApiKeyApi apiKey;
-    private AiAgentApi aiAgent;
-    private AiAgentToolRelationshipApi aiAgentToolRelationship;
+    private AgentApi agent;
+    private AgentToolRelationshipApi agentToolRelationship;
     private AccountApi account;
     private AccountHistoryApi accountHistory;
+    private AccountExchangeConfigApi accountExchangeConfig;
+    private InvoiceApi invoice;
     private SearchChatApi searchChat;
     private PptTemplateRenderingApi pptTemplateRendering;
     private PptTemplateChatApi pptTemplateChat;
     private KnowledgeBaseFileApi knowledgeBaseFile;
     private KnowledgeBaseChatApi knowledgeBaseChat;
     private ImMessageApi imMessage;
-    private AiVoiceSpeakerGenerationApi aiVoiceSpeakerGeneration;
-    private AiVideoGenerationApi aiVideoGeneration;
-    private AiMusicGenerationApi aiMusicGeneration;
-    private AiImageGenerationApi aiImageGeneration;
-    private AiCharacterGenerationApi aiCharacterGeneration;
-    private AiAudioGenerationApi aiAudioGeneration;
-    private AiAudioEffectGenerationApi aiAudioEffectGeneration;
-    private AiChatApi aiChat;
-    private VerificationApi verification;
-    private OauthAuthenticationApi oauthAuthentication;
-    private AuthorizationApi authorization;
-    private AuthenticationApi authentication;
-    private AppApi app;
-    private AiAgentChatApi aiAgentChat;
+    private VoiceSpeakerGenerationApi voiceSpeakerGeneration;
+    private VideoGenerationApi videoGeneration;
+    private MusicGenerationApi musicGeneration;
+    private ImageGenerationApi imageGeneration;
+    private CharacterGenerationApi characterGeneration;
+    private AudioGenerationApi audioGeneration;
+    private AudioEffectGenerationApi audioEffectGeneration;
+    private ChatApi chat;
+    private AuthApi auth;
+    private AgentChatApi agentChat;
 
     public SdkworkBackendClient(String baseUrl) {
         this.httpClient = new HttpClient(baseUrl);
@@ -274,32 +284,36 @@ public class SdkworkBackendClient {
         this.userCoupon = new UserCouponApi(httpClient);
         this.userCard = new UserCardApi(httpClient);
         this.userAddress = new UserAddressApi(httpClient);
-        this.aiUsageRecord = new AiUsageRecordApi(httpClient);
+        this.usageRecord = new UsageRecordApi(httpClient);
         this.shoppingCart = new ShoppingCartApi(httpClient);
         this.shoppingCartItem = new ShoppingCartItemApi(httpClient);
         this.refund = new RefundApi(httpClient);
         this.payment = new PaymentApi(httpClient);
         this.order = new OrderApi(httpClient);
         this.orderItem = new OrderItemApi(httpClient);
-        this.aiTool = new AiToolApi(httpClient);
+        this.tool = new ToolApi(httpClient);
         this.tenant = new TenantApi(httpClient);
         this.databaseTable = new DatabaseTableApi(httpClient);
         this.productSku = new ProductSkuApi(httpClient);
+        this.skill = new SkillApi(httpClient);
+        this.skillPackage = new SkillPackageApi(httpClient);
         this.shortUrl = new ShortUrlApi(httpClient);
         this.shop = new ShopApi(httpClient);
         this.share = new ShareApi(httpClient);
         this.shareVisitRecord = new ShareVisitRecordApi(httpClient);
         this.shardingKey = new ShardingKeyApi(httpClient);
+        this.apiSecurityPolicy = new ApiSecurityPolicyApi(httpClient);
         this.schema = new SchemaApi(httpClient);
         this.rbacRole = new RbacRoleApi(httpClient);
         this.rolePermission = new RolePermissionApi(httpClient);
         this.invocationRecord = new InvocationRecordApi(httpClient);
         this.rbacUserRole = new RbacUserRoleApi(httpClient);
-        this.aiPrompt = new AiPromptApi(httpClient);
+        this.prompt = new PromptApi(httpClient);
         this.project = new ProjectApi(httpClient);
         this.product = new ProductApi(httpClient);
         this.pptTemplate = new PptTemplateApi(httpClient);
         this.pptTemplateSlide = new PptTemplateSlideApi(httpClient);
+        this.rbacPermission = new RbacPermissionApi(httpClient);
         this.partner = new PartnerApi(httpClient);
         this.chatParticipant = new ChatParticipantApi(httpClient);
         this.ossBucket = new OssBucketApi(httpClient);
@@ -310,11 +324,11 @@ public class SdkworkBackendClient {
         this.notification = new NotificationApi(httpClient);
         this.notes = new NotesApi(httpClient);
         this.news = new NewsApi(httpClient);
-        this.host = new HostApi(httpClient);
+        this.net = new NetApi(httpClient);
         this.dnsRecord = new DnsRecordApi(httpClient);
         this.music = new MusicApi(httpClient);
-        this.aiModelInformation = new AiModelInformationApi(httpClient);
-        this.aiModelPrice = new AiModelPriceApi(httpClient);
+        this.modelInformation = new ModelInformationApi(httpClient);
+        this.modelPrice = new ModelPriceApi(httpClient);
         this.chatMessage = new ChatMessageApi(httpClient);
         this.memberLevel = new MemberLevelApi(httpClient);
         this.memberCard = new MemberCardApi(httpClient);
@@ -323,8 +337,8 @@ public class SdkworkBackendClient {
         this.invitationCode = new InvitationCodeApi(httpClient);
         this.image = new ImageApi(httpClient);
         this.chatGroup = new ChatGroupApi(httpClient);
-        this.aiGeneration = new AiGenerationApi(httpClient);
-        this.aiGenerationContent = new AiGenerationContentApi(httpClient);
+        this.generation = new GenerationApi(httpClient);
+        this.generationContent = new GenerationContentApi(httpClient);
         this.file = new FileApi(httpClient);
         this.filePart = new FilePartApi(httpClient);
         this.fileContent = new FileContentApi(httpClient);
@@ -338,45 +352,46 @@ public class SdkworkBackendClient {
         this.datasource = new DatasourceApi(httpClient);
         this.coupon = new CouponApi(httpClient);
         this.couponTemplate = new CouponTemplateApi(httpClient);
-        this.aiConversation = new AiConversationApi(httpClient);
+        this.conversation = new ConversationApi(httpClient);
+        this.contentWriting = new ContentWritingApi(httpClient);
         this.comment = new CommentApi(httpClient);
         this.column = new ColumnApi(httpClient);
         this.collection = new CollectionApi(httpClient);
         this.collectionItem = new CollectionItemApi(httpClient);
         this.character = new CharacterApi(httpClient);
+        this.channel = new ChannelApi(httpClient);
         this.channelResource = new ChannelResourceApi(httpClient);
+        this.channelProxy = new ChannelProxyApi(httpClient);
         this.channelAccount = new ChannelAccountApi(httpClient);
-        this.aiCategory = new AiCategoryApi(httpClient);
+        this.category = new CategoryApi(httpClient);
         this.membershipCard = new MembershipCardApi(httpClient);
         this.cardTemplate = new CardTemplateApi(httpClient);
         this.attribute = new AttributeApi(httpClient);
-        this.aiArticle = new AiArticleApi(httpClient);
-        this.application = new ApplicationApi(httpClient);
+        this.article = new ArticleApi(httpClient);
+        this.app = new AppApi(httpClient);
         this.apiKey = new ApiKeyApi(httpClient);
-        this.aiAgent = new AiAgentApi(httpClient);
-        this.aiAgentToolRelationship = new AiAgentToolRelationshipApi(httpClient);
+        this.agent = new AgentApi(httpClient);
+        this.agentToolRelationship = new AgentToolRelationshipApi(httpClient);
         this.account = new AccountApi(httpClient);
         this.accountHistory = new AccountHistoryApi(httpClient);
+        this.accountExchangeConfig = new AccountExchangeConfigApi(httpClient);
+        this.invoice = new InvoiceApi(httpClient);
         this.searchChat = new SearchChatApi(httpClient);
         this.pptTemplateRendering = new PptTemplateRenderingApi(httpClient);
         this.pptTemplateChat = new PptTemplateChatApi(httpClient);
         this.knowledgeBaseFile = new KnowledgeBaseFileApi(httpClient);
         this.knowledgeBaseChat = new KnowledgeBaseChatApi(httpClient);
         this.imMessage = new ImMessageApi(httpClient);
-        this.aiVoiceSpeakerGeneration = new AiVoiceSpeakerGenerationApi(httpClient);
-        this.aiVideoGeneration = new AiVideoGenerationApi(httpClient);
-        this.aiMusicGeneration = new AiMusicGenerationApi(httpClient);
-        this.aiImageGeneration = new AiImageGenerationApi(httpClient);
-        this.aiCharacterGeneration = new AiCharacterGenerationApi(httpClient);
-        this.aiAudioGeneration = new AiAudioGenerationApi(httpClient);
-        this.aiAudioEffectGeneration = new AiAudioEffectGenerationApi(httpClient);
-        this.aiChat = new AiChatApi(httpClient);
-        this.verification = new VerificationApi(httpClient);
-        this.oauthAuthentication = new OauthAuthenticationApi(httpClient);
-        this.authorization = new AuthorizationApi(httpClient);
-        this.authentication = new AuthenticationApi(httpClient);
-        this.app = new AppApi(httpClient);
-        this.aiAgentChat = new AiAgentChatApi(httpClient);
+        this.voiceSpeakerGeneration = new VoiceSpeakerGenerationApi(httpClient);
+        this.videoGeneration = new VideoGenerationApi(httpClient);
+        this.musicGeneration = new MusicGenerationApi(httpClient);
+        this.imageGeneration = new ImageGenerationApi(httpClient);
+        this.characterGeneration = new CharacterGenerationApi(httpClient);
+        this.audioGeneration = new AudioGenerationApi(httpClient);
+        this.audioEffectGeneration = new AudioEffectGenerationApi(httpClient);
+        this.chat = new ChatApi(httpClient);
+        this.auth = new AuthApi(httpClient);
+        this.agentChat = new AgentChatApi(httpClient);
     }
 
     public SdkworkBackendClient(Types.SdkConfig config) {
@@ -401,32 +416,36 @@ public class SdkworkBackendClient {
         this.userCoupon = new UserCouponApi(httpClient);
         this.userCard = new UserCardApi(httpClient);
         this.userAddress = new UserAddressApi(httpClient);
-        this.aiUsageRecord = new AiUsageRecordApi(httpClient);
+        this.usageRecord = new UsageRecordApi(httpClient);
         this.shoppingCart = new ShoppingCartApi(httpClient);
         this.shoppingCartItem = new ShoppingCartItemApi(httpClient);
         this.refund = new RefundApi(httpClient);
         this.payment = new PaymentApi(httpClient);
         this.order = new OrderApi(httpClient);
         this.orderItem = new OrderItemApi(httpClient);
-        this.aiTool = new AiToolApi(httpClient);
+        this.tool = new ToolApi(httpClient);
         this.tenant = new TenantApi(httpClient);
         this.databaseTable = new DatabaseTableApi(httpClient);
         this.productSku = new ProductSkuApi(httpClient);
+        this.skill = new SkillApi(httpClient);
+        this.skillPackage = new SkillPackageApi(httpClient);
         this.shortUrl = new ShortUrlApi(httpClient);
         this.shop = new ShopApi(httpClient);
         this.share = new ShareApi(httpClient);
         this.shareVisitRecord = new ShareVisitRecordApi(httpClient);
         this.shardingKey = new ShardingKeyApi(httpClient);
+        this.apiSecurityPolicy = new ApiSecurityPolicyApi(httpClient);
         this.schema = new SchemaApi(httpClient);
         this.rbacRole = new RbacRoleApi(httpClient);
         this.rolePermission = new RolePermissionApi(httpClient);
         this.invocationRecord = new InvocationRecordApi(httpClient);
         this.rbacUserRole = new RbacUserRoleApi(httpClient);
-        this.aiPrompt = new AiPromptApi(httpClient);
+        this.prompt = new PromptApi(httpClient);
         this.project = new ProjectApi(httpClient);
         this.product = new ProductApi(httpClient);
         this.pptTemplate = new PptTemplateApi(httpClient);
         this.pptTemplateSlide = new PptTemplateSlideApi(httpClient);
+        this.rbacPermission = new RbacPermissionApi(httpClient);
         this.partner = new PartnerApi(httpClient);
         this.chatParticipant = new ChatParticipantApi(httpClient);
         this.ossBucket = new OssBucketApi(httpClient);
@@ -437,11 +456,11 @@ public class SdkworkBackendClient {
         this.notification = new NotificationApi(httpClient);
         this.notes = new NotesApi(httpClient);
         this.news = new NewsApi(httpClient);
-        this.host = new HostApi(httpClient);
+        this.net = new NetApi(httpClient);
         this.dnsRecord = new DnsRecordApi(httpClient);
         this.music = new MusicApi(httpClient);
-        this.aiModelInformation = new AiModelInformationApi(httpClient);
-        this.aiModelPrice = new AiModelPriceApi(httpClient);
+        this.modelInformation = new ModelInformationApi(httpClient);
+        this.modelPrice = new ModelPriceApi(httpClient);
         this.chatMessage = new ChatMessageApi(httpClient);
         this.memberLevel = new MemberLevelApi(httpClient);
         this.memberCard = new MemberCardApi(httpClient);
@@ -450,8 +469,8 @@ public class SdkworkBackendClient {
         this.invitationCode = new InvitationCodeApi(httpClient);
         this.image = new ImageApi(httpClient);
         this.chatGroup = new ChatGroupApi(httpClient);
-        this.aiGeneration = new AiGenerationApi(httpClient);
-        this.aiGenerationContent = new AiGenerationContentApi(httpClient);
+        this.generation = new GenerationApi(httpClient);
+        this.generationContent = new GenerationContentApi(httpClient);
         this.file = new FileApi(httpClient);
         this.filePart = new FilePartApi(httpClient);
         this.fileContent = new FileContentApi(httpClient);
@@ -465,45 +484,46 @@ public class SdkworkBackendClient {
         this.datasource = new DatasourceApi(httpClient);
         this.coupon = new CouponApi(httpClient);
         this.couponTemplate = new CouponTemplateApi(httpClient);
-        this.aiConversation = new AiConversationApi(httpClient);
+        this.conversation = new ConversationApi(httpClient);
+        this.contentWriting = new ContentWritingApi(httpClient);
         this.comment = new CommentApi(httpClient);
         this.column = new ColumnApi(httpClient);
         this.collection = new CollectionApi(httpClient);
         this.collectionItem = new CollectionItemApi(httpClient);
         this.character = new CharacterApi(httpClient);
+        this.channel = new ChannelApi(httpClient);
         this.channelResource = new ChannelResourceApi(httpClient);
+        this.channelProxy = new ChannelProxyApi(httpClient);
         this.channelAccount = new ChannelAccountApi(httpClient);
-        this.aiCategory = new AiCategoryApi(httpClient);
+        this.category = new CategoryApi(httpClient);
         this.membershipCard = new MembershipCardApi(httpClient);
         this.cardTemplate = new CardTemplateApi(httpClient);
         this.attribute = new AttributeApi(httpClient);
-        this.aiArticle = new AiArticleApi(httpClient);
-        this.application = new ApplicationApi(httpClient);
+        this.article = new ArticleApi(httpClient);
+        this.app = new AppApi(httpClient);
         this.apiKey = new ApiKeyApi(httpClient);
-        this.aiAgent = new AiAgentApi(httpClient);
-        this.aiAgentToolRelationship = new AiAgentToolRelationshipApi(httpClient);
+        this.agent = new AgentApi(httpClient);
+        this.agentToolRelationship = new AgentToolRelationshipApi(httpClient);
         this.account = new AccountApi(httpClient);
         this.accountHistory = new AccountHistoryApi(httpClient);
+        this.accountExchangeConfig = new AccountExchangeConfigApi(httpClient);
+        this.invoice = new InvoiceApi(httpClient);
         this.searchChat = new SearchChatApi(httpClient);
         this.pptTemplateRendering = new PptTemplateRenderingApi(httpClient);
         this.pptTemplateChat = new PptTemplateChatApi(httpClient);
         this.knowledgeBaseFile = new KnowledgeBaseFileApi(httpClient);
         this.knowledgeBaseChat = new KnowledgeBaseChatApi(httpClient);
         this.imMessage = new ImMessageApi(httpClient);
-        this.aiVoiceSpeakerGeneration = new AiVoiceSpeakerGenerationApi(httpClient);
-        this.aiVideoGeneration = new AiVideoGenerationApi(httpClient);
-        this.aiMusicGeneration = new AiMusicGenerationApi(httpClient);
-        this.aiImageGeneration = new AiImageGenerationApi(httpClient);
-        this.aiCharacterGeneration = new AiCharacterGenerationApi(httpClient);
-        this.aiAudioGeneration = new AiAudioGenerationApi(httpClient);
-        this.aiAudioEffectGeneration = new AiAudioEffectGenerationApi(httpClient);
-        this.aiChat = new AiChatApi(httpClient);
-        this.verification = new VerificationApi(httpClient);
-        this.oauthAuthentication = new OauthAuthenticationApi(httpClient);
-        this.authorization = new AuthorizationApi(httpClient);
-        this.authentication = new AuthenticationApi(httpClient);
-        this.app = new AppApi(httpClient);
-        this.aiAgentChat = new AiAgentChatApi(httpClient);
+        this.voiceSpeakerGeneration = new VoiceSpeakerGenerationApi(httpClient);
+        this.videoGeneration = new VideoGenerationApi(httpClient);
+        this.musicGeneration = new MusicGenerationApi(httpClient);
+        this.imageGeneration = new ImageGenerationApi(httpClient);
+        this.characterGeneration = new CharacterGenerationApi(httpClient);
+        this.audioGeneration = new AudioGenerationApi(httpClient);
+        this.audioEffectGeneration = new AudioEffectGenerationApi(httpClient);
+        this.chat = new ChatApi(httpClient);
+        this.auth = new AuthApi(httpClient);
+        this.agentChat = new AgentChatApi(httpClient);
     }
 
     public WorkspaceApi getWorkspace() {
@@ -586,8 +606,8 @@ public class SdkworkBackendClient {
         return this.userAddress;
     }
 
-    public AiUsageRecordApi getAiUsageRecord() {
-        return this.aiUsageRecord;
+    public UsageRecordApi getUsageRecord() {
+        return this.usageRecord;
     }
 
     public ShoppingCartApi getShoppingCart() {
@@ -614,8 +634,8 @@ public class SdkworkBackendClient {
         return this.orderItem;
     }
 
-    public AiToolApi getAiTool() {
-        return this.aiTool;
+    public ToolApi getTool() {
+        return this.tool;
     }
 
     public TenantApi getTenant() {
@@ -628,6 +648,14 @@ public class SdkworkBackendClient {
 
     public ProductSkuApi getProductSku() {
         return this.productSku;
+    }
+
+    public SkillApi getSkill() {
+        return this.skill;
+    }
+
+    public SkillPackageApi getSkillPackage() {
+        return this.skillPackage;
     }
 
     public ShortUrlApi getShortUrl() {
@@ -650,6 +678,10 @@ public class SdkworkBackendClient {
         return this.shardingKey;
     }
 
+    public ApiSecurityPolicyApi getApiSecurityPolicy() {
+        return this.apiSecurityPolicy;
+    }
+
     public SchemaApi getSchema() {
         return this.schema;
     }
@@ -670,8 +702,8 @@ public class SdkworkBackendClient {
         return this.rbacUserRole;
     }
 
-    public AiPromptApi getAiPrompt() {
-        return this.aiPrompt;
+    public PromptApi getPrompt() {
+        return this.prompt;
     }
 
     public ProjectApi getProject() {
@@ -688,6 +720,10 @@ public class SdkworkBackendClient {
 
     public PptTemplateSlideApi getPptTemplateSlide() {
         return this.pptTemplateSlide;
+    }
+
+    public RbacPermissionApi getRbacPermission() {
+        return this.rbacPermission;
     }
 
     public PartnerApi getPartner() {
@@ -730,8 +766,8 @@ public class SdkworkBackendClient {
         return this.news;
     }
 
-    public HostApi getHost() {
-        return this.host;
+    public NetApi getNet() {
+        return this.net;
     }
 
     public DnsRecordApi getDnsRecord() {
@@ -742,12 +778,12 @@ public class SdkworkBackendClient {
         return this.music;
     }
 
-    public AiModelInformationApi getAiModelInformation() {
-        return this.aiModelInformation;
+    public ModelInformationApi getModelInformation() {
+        return this.modelInformation;
     }
 
-    public AiModelPriceApi getAiModelPrice() {
-        return this.aiModelPrice;
+    public ModelPriceApi getModelPrice() {
+        return this.modelPrice;
     }
 
     public ChatMessageApi getChatMessage() {
@@ -782,12 +818,12 @@ public class SdkworkBackendClient {
         return this.chatGroup;
     }
 
-    public AiGenerationApi getAiGeneration() {
-        return this.aiGeneration;
+    public GenerationApi getGeneration() {
+        return this.generation;
     }
 
-    public AiGenerationContentApi getAiGenerationContent() {
-        return this.aiGenerationContent;
+    public GenerationContentApi getGenerationContent() {
+        return this.generationContent;
     }
 
     public FileApi getFile() {
@@ -842,8 +878,12 @@ public class SdkworkBackendClient {
         return this.couponTemplate;
     }
 
-    public AiConversationApi getAiConversation() {
-        return this.aiConversation;
+    public ConversationApi getConversation() {
+        return this.conversation;
+    }
+
+    public ContentWritingApi getContentWriting() {
+        return this.contentWriting;
     }
 
     public CommentApi getComment() {
@@ -866,16 +906,24 @@ public class SdkworkBackendClient {
         return this.character;
     }
 
+    public ChannelApi getChannel() {
+        return this.channel;
+    }
+
     public ChannelResourceApi getChannelResource() {
         return this.channelResource;
+    }
+
+    public ChannelProxyApi getChannelProxy() {
+        return this.channelProxy;
     }
 
     public ChannelAccountApi getChannelAccount() {
         return this.channelAccount;
     }
 
-    public AiCategoryApi getAiCategory() {
-        return this.aiCategory;
+    public CategoryApi getCategory() {
+        return this.category;
     }
 
     public MembershipCardApi getMembershipCard() {
@@ -890,24 +938,24 @@ public class SdkworkBackendClient {
         return this.attribute;
     }
 
-    public AiArticleApi getAiArticle() {
-        return this.aiArticle;
+    public ArticleApi getArticle() {
+        return this.article;
     }
 
-    public ApplicationApi getApplication() {
-        return this.application;
+    public AppApi getApp() {
+        return this.app;
     }
 
     public ApiKeyApi getApiKey() {
         return this.apiKey;
     }
 
-    public AiAgentApi getAiAgent() {
-        return this.aiAgent;
+    public AgentApi getAgent() {
+        return this.agent;
     }
 
-    public AiAgentToolRelationshipApi getAiAgentToolRelationship() {
-        return this.aiAgentToolRelationship;
+    public AgentToolRelationshipApi getAgentToolRelationship() {
+        return this.agentToolRelationship;
     }
 
     public AccountApi getAccount() {
@@ -916,6 +964,14 @@ public class SdkworkBackendClient {
 
     public AccountHistoryApi getAccountHistory() {
         return this.accountHistory;
+    }
+
+    public AccountExchangeConfigApi getAccountExchangeConfig() {
+        return this.accountExchangeConfig;
+    }
+
+    public InvoiceApi getInvoice() {
+        return this.invoice;
     }
 
     public SearchChatApi getSearchChat() {
@@ -942,60 +998,44 @@ public class SdkworkBackendClient {
         return this.imMessage;
     }
 
-    public AiVoiceSpeakerGenerationApi getAiVoiceSpeakerGeneration() {
-        return this.aiVoiceSpeakerGeneration;
+    public VoiceSpeakerGenerationApi getVoiceSpeakerGeneration() {
+        return this.voiceSpeakerGeneration;
     }
 
-    public AiVideoGenerationApi getAiVideoGeneration() {
-        return this.aiVideoGeneration;
+    public VideoGenerationApi getVideoGeneration() {
+        return this.videoGeneration;
     }
 
-    public AiMusicGenerationApi getAiMusicGeneration() {
-        return this.aiMusicGeneration;
+    public MusicGenerationApi getMusicGeneration() {
+        return this.musicGeneration;
     }
 
-    public AiImageGenerationApi getAiImageGeneration() {
-        return this.aiImageGeneration;
+    public ImageGenerationApi getImageGeneration() {
+        return this.imageGeneration;
     }
 
-    public AiCharacterGenerationApi getAiCharacterGeneration() {
-        return this.aiCharacterGeneration;
+    public CharacterGenerationApi getCharacterGeneration() {
+        return this.characterGeneration;
     }
 
-    public AiAudioGenerationApi getAiAudioGeneration() {
-        return this.aiAudioGeneration;
+    public AudioGenerationApi getAudioGeneration() {
+        return this.audioGeneration;
     }
 
-    public AiAudioEffectGenerationApi getAiAudioEffectGeneration() {
-        return this.aiAudioEffectGeneration;
+    public AudioEffectGenerationApi getAudioEffectGeneration() {
+        return this.audioEffectGeneration;
     }
 
-    public AiChatApi getAiChat() {
-        return this.aiChat;
+    public ChatApi getChat() {
+        return this.chat;
     }
 
-    public VerificationApi getVerification() {
-        return this.verification;
+    public AuthApi getAuth() {
+        return this.auth;
     }
 
-    public OauthAuthenticationApi getOauthAuthentication() {
-        return this.oauthAuthentication;
-    }
-
-    public AuthorizationApi getAuthorization() {
-        return this.authorization;
-    }
-
-    public AuthenticationApi getAuthentication() {
-        return this.authentication;
-    }
-
-    public AppApi getApp() {
-        return this.app;
-    }
-
-    public AiAgentChatApi getAiAgentChat() {
-        return this.aiAgentChat;
+    public AgentChatApi getAgentChat() {
+        return this.agentChat;
     }
 
     public SdkworkBackendClient setApiKey(String apiKey) {

@@ -34,8 +34,8 @@ func (a *DatasourceApi) Create(body sdktypes.PlusDatasourceForm) (sdktypes.PlusA
     return decodeResult[sdktypes.PlusApiResultPlusDatasourceVO](raw)
 }
 
-func (a *DatasourceApi) Stop(headers map[string]string) (sdktypes.PlusApiResultBoolean, error) {
-    raw, err := a.client.Post(BackendApiPath("/datasource/stop"), nil, nil, headers, "")
+func (a *DatasourceApi) Stop(query map[string]interface{}, headers map[string]string) (sdktypes.PlusApiResultBoolean, error) {
+    raw, err := a.client.Post(BackendApiPath("/datasource/stop"), nil, query, headers, "")
     if err != nil {
         var zero sdktypes.PlusApiResultBoolean
         return zero, err
@@ -64,8 +64,8 @@ func (a *DatasourceApi) ListAllEntities(body *sdktypes.QueryListForm) (sdktypes.
 }
 
 // Create a chat completion with Datasource
-func (a *DatasourceApi) CreateCompletions(body sdktypes.ChatCompletionCreateForm, headers map[string]string) (sdktypes.ChatCompletionChunk, error) {
-    raw, err := a.client.Post(BackendApiPath("/datasource/chat/completions"), body, nil, headers, "")
+func (a *DatasourceApi) CreateCompletions(body sdktypes.ChatCompletionCreateForm, query map[string]interface{}, headers map[string]string) (sdktypes.ChatCompletionChunk, error) {
+    raw, err := a.client.Post(BackendApiPath("/datasource/chat/completions"), body, query, headers, "")
     if err != nil {
         var zero sdktypes.ChatCompletionChunk
         return zero, err

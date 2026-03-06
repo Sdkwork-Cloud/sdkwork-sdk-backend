@@ -3,15 +3,15 @@ import type { PlusVisitHistoryVO } from './plus-visit-history-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusVisitHistoryVO {
-  totalPages?: number;
   totalElements?: number;
+  totalPages?: number;
   size?: number;
   content?: PlusVisitHistoryVO[];
   number?: number;
-  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   numberOfElements?: number;
+  sort?: SortObject;
   pageable?: PageableObject;
   empty?: boolean;
 }

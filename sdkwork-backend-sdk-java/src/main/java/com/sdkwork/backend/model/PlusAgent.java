@@ -4,23 +4,23 @@ public class PlusAgent {
     private String name;
     private Integer id;
     private AgentDefinition definition;
-    private String uuid;
-    private List<String> nextActions;
-    private IPlusChatMemory chatMemory;
-    private AgentExecutionContext executionContext;
-    private LlmAccountConfig accountConfig;
-    private ToolCallbackProvider toolCallbackProvider;
-    private PromptContextOptimizer promptContextOptimizer;
-    private String promptPath;
     private String description;
     private AgentMetadata metadata;
+    private String uuid;
+    private Prompt systemPrompt;
+    private List<PromptToolDescription> tools;
+    private ChatContext chatContext;
+    private ChatOptions chatOptions;
+    private AgentExecutionContext executionContext;
+    private List<String> instructions;
     private String faceURL;
     private Map<String, Prompt> prompts;
-    private Prompt systemPrompt;
-    private List<String> instructions;
-    private ChatOptions chatOptions;
-    private ChatContext chatContext;
-    private List<PromptToolDescription> tools;
+    private LlmAccountConfig accountConfig;
+    private IPlusChatMemory chatMemory;
+    private ToolCallbackProvider toolCallbackProvider;
+    private String promptPath;
+    private PromptContextOptimizer promptContextOptimizer;
+    private List<String> nextActions;
 
     public String getName() {
         return this.name;
@@ -46,70 +46,6 @@ public class PlusAgent {
         this.definition = definition;
     }
 
-    public String getUuid() {
-        return this.uuid;
-    }
-    
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
-    }
-
-    public List<String> getNextActions() {
-        return this.nextActions;
-    }
-    
-    public void setNextActions(List<String> nextActions) {
-        this.nextActions = nextActions;
-    }
-
-    public IPlusChatMemory getChatMemory() {
-        return this.chatMemory;
-    }
-    
-    public void setChatMemory(IPlusChatMemory chatMemory) {
-        this.chatMemory = chatMemory;
-    }
-
-    public AgentExecutionContext getExecutionContext() {
-        return this.executionContext;
-    }
-    
-    public void setExecutionContext(AgentExecutionContext executionContext) {
-        this.executionContext = executionContext;
-    }
-
-    public LlmAccountConfig getAccountConfig() {
-        return this.accountConfig;
-    }
-    
-    public void setAccountConfig(LlmAccountConfig accountConfig) {
-        this.accountConfig = accountConfig;
-    }
-
-    public ToolCallbackProvider getToolCallbackProvider() {
-        return this.toolCallbackProvider;
-    }
-    
-    public void setToolCallbackProvider(ToolCallbackProvider toolCallbackProvider) {
-        this.toolCallbackProvider = toolCallbackProvider;
-    }
-
-    public PromptContextOptimizer getPromptContextOptimizer() {
-        return this.promptContextOptimizer;
-    }
-    
-    public void setPromptContextOptimizer(PromptContextOptimizer promptContextOptimizer) {
-        this.promptContextOptimizer = promptContextOptimizer;
-    }
-
-    public String getPromptPath() {
-        return this.promptPath;
-    }
-    
-    public void setPromptPath(String promptPath) {
-        this.promptPath = promptPath;
-    }
-
     public String getDescription() {
         return this.description;
     }
@@ -124,6 +60,62 @@ public class PlusAgent {
     
     public void setMetadata(AgentMetadata metadata) {
         this.metadata = metadata;
+    }
+
+    public String getUuid() {
+        return this.uuid;
+    }
+    
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
+    public Prompt getSystemPrompt() {
+        return this.systemPrompt;
+    }
+    
+    public void setSystemPrompt(Prompt systemPrompt) {
+        this.systemPrompt = systemPrompt;
+    }
+
+    public List<PromptToolDescription> getTools() {
+        return this.tools;
+    }
+    
+    public void setTools(List<PromptToolDescription> tools) {
+        this.tools = tools;
+    }
+
+    public ChatContext getChatContext() {
+        return this.chatContext;
+    }
+    
+    public void setChatContext(ChatContext chatContext) {
+        this.chatContext = chatContext;
+    }
+
+    public ChatOptions getChatOptions() {
+        return this.chatOptions;
+    }
+    
+    public void setChatOptions(ChatOptions chatOptions) {
+        this.chatOptions = chatOptions;
+    }
+
+    public AgentExecutionContext getExecutionContext() {
+        return this.executionContext;
+    }
+    
+    public void setExecutionContext(AgentExecutionContext executionContext) {
+        this.executionContext = executionContext;
+    }
+
+    public List<String> getInstructions() {
+        return this.instructions;
+    }
+    
+    public void setInstructions(List<String> instructions) {
+        this.instructions = instructions;
     }
 
     public String getFaceURL() {
@@ -142,43 +134,51 @@ public class PlusAgent {
         this.prompts = prompts;
     }
 
-    public Prompt getSystemPrompt() {
-        return this.systemPrompt;
+    public LlmAccountConfig getAccountConfig() {
+        return this.accountConfig;
     }
     
-    public void setSystemPrompt(Prompt systemPrompt) {
-        this.systemPrompt = systemPrompt;
+    public void setAccountConfig(LlmAccountConfig accountConfig) {
+        this.accountConfig = accountConfig;
     }
 
-    public List<String> getInstructions() {
-        return this.instructions;
+    public IPlusChatMemory getChatMemory() {
+        return this.chatMemory;
     }
     
-    public void setInstructions(List<String> instructions) {
-        this.instructions = instructions;
+    public void setChatMemory(IPlusChatMemory chatMemory) {
+        this.chatMemory = chatMemory;
     }
 
-    public ChatOptions getChatOptions() {
-        return this.chatOptions;
+    public ToolCallbackProvider getToolCallbackProvider() {
+        return this.toolCallbackProvider;
     }
     
-    public void setChatOptions(ChatOptions chatOptions) {
-        this.chatOptions = chatOptions;
+    public void setToolCallbackProvider(ToolCallbackProvider toolCallbackProvider) {
+        this.toolCallbackProvider = toolCallbackProvider;
     }
 
-    public ChatContext getChatContext() {
-        return this.chatContext;
+    public String getPromptPath() {
+        return this.promptPath;
     }
     
-    public void setChatContext(ChatContext chatContext) {
-        this.chatContext = chatContext;
+    public void setPromptPath(String promptPath) {
+        this.promptPath = promptPath;
     }
 
-    public List<PromptToolDescription> getTools() {
-        return this.tools;
+    public PromptContextOptimizer getPromptContextOptimizer() {
+        return this.promptContextOptimizer;
     }
     
-    public void setTools(List<PromptToolDescription> tools) {
-        this.tools = tools;
+    public void setPromptContextOptimizer(PromptContextOptimizer promptContextOptimizer) {
+        this.promptContextOptimizer = promptContextOptimizer;
+    }
+
+    public List<String> getNextActions() {
+        return this.nextActions;
+    }
+    
+    public void setNextActions(List<String> nextActions) {
+        this.nextActions = nextActions;
     }
 }

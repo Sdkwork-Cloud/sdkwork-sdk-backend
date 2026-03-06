@@ -82,6 +82,11 @@ public class OrderApi {
         return (PlusApiResultGoodsOrderVO) client.post(ApiPaths.backendPath("/trade/order/goods"), body);
     }
 
+    /** Create booking order */
+    public PlusApiResultBookingOrderVO createBooking(CreateBookingOrderForm body) throws Exception {
+        return (PlusApiResultBookingOrderVO) client.post(ApiPaths.backendPath("/trade/order/booking"), body);
+    }
+
     /** Get an order by ID */
     public PlusApiResultPlusOrderVO getById(String id) throws Exception {
         return (PlusApiResultPlusOrderVO) client.get(ApiPaths.backendPath("/trade/order/" + id + ""));

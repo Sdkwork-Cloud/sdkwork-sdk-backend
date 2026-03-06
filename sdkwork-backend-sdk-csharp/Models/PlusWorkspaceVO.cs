@@ -26,7 +26,7 @@ namespace Backend.Models
         public int? CurrentMembers { get; set; }
         public int? MaxStorage { get; set; }
         public int? UsedStorage { get; set; }
-        public string? Settings { get; set; }
+        public Dictionary<string, object>? Settings { get; set; }
         public bool? IsDeleted { get; set; }
         public bool? IsPublic { get; set; }
         public bool? IsTemplate { get; set; }

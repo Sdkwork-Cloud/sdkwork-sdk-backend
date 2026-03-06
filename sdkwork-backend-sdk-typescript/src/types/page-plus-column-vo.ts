@@ -3,15 +3,15 @@ import type { PlusColumnVO } from './plus-column-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusColumnVO {
-  totalPages?: number;
   totalElements?: number;
+  totalPages?: number;
   size?: number;
   content?: PlusColumnVO[];
   number?: number;
-  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   numberOfElements?: number;
+  sort?: SortObject;
   pageable?: PageableObject;
   empty?: boolean;
 }

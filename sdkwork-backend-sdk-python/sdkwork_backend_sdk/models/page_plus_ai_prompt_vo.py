@@ -3,14 +3,14 @@ from typing import Optional, List, Dict, Any
 
 @dataclass
 class PagePlusAiPromptVO:
-    total_pages: int = None
     total_elements: int = None
+    total_pages: int = None
     size: int = None
     content: List[PlusAiPromptVO] = None
     number: int = None
-    sort: SortObject = None
     first: bool = None
     last: bool = None
     number_of_elements: int = None
+    sort: SortObject = None
     pageable: PageableObject = None
     empty: bool = None

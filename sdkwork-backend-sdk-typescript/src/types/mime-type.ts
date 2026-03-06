@@ -4,7 +4,7 @@ export interface MimeType {
   parameters?: Record<string, string>;
   charset?: string;
   concrete?: boolean;
-  wildcardSubtype?: boolean;
-  wildcardType?: boolean;
   subtypeSuffix?: string;
+  wildcardType?: boolean;
+  wildcardSubtype?: boolean;
 }

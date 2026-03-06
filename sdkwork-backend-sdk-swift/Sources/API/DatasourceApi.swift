@@ -19,8 +19,8 @@ public class DatasourceApi {
         return response as? PlusApiResultPlusDatasourceVO
     }
 
-    public func stop(headers: [String: String]? = nil) async throws -> PlusApiResultBoolean? {
-        let response = try await client.post(ApiPaths.backendPath("/datasource/stop"), body: nil, params: nil, headers: headers)
+    public func stop(params: [String: Any]? = nil, headers: [String: String]? = nil) async throws -> PlusApiResultBoolean? {
+        let response = try await client.post(ApiPaths.backendPath("/datasource/stop"), body: nil, params: params, headers: headers)
         return response as? PlusApiResultBoolean
     }
 
@@ -37,8 +37,8 @@ public class DatasourceApi {
     }
 
     /// Create a chat completion with Datasource
-    public func createCompletions(body: ChatCompletionCreateForm, headers: [String: String]? = nil) async throws -> ChatCompletionChunk? {
-        let response = try await client.post(ApiPaths.backendPath("/datasource/chat/completions"), body: body, params: nil, headers: headers)
+    public func createCompletions(body: ChatCompletionCreateForm, params: [String: Any]? = nil, headers: [String: String]? = nil) async throws -> ChatCompletionChunk? {
+        let response = try await client.post(ApiPaths.backendPath("/datasource/chat/completions"), body: body, params: params, headers: headers)
         return response as? ChatCompletionChunk
     }
 

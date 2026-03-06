@@ -21,12 +21,12 @@ export class FileApi {
     return this.client.post<PlusApiResultPlusFileVO>(backendApiPath(`/file`), body);
   }
 
-/** 获取文件列表 */
+/** List files */
   async listFiles(params?: QueryParams): Promise<PlusApiResultFileListVO> {
     return this.client.get<PlusApiResultFileListVO>(backendApiPath(`/oss/files`), params);
   }
 
-/** 上传文件 */
+/** Upload file */
   async upload(body?: FormData, params?: QueryParams): Promise<PlusApiResultFileItemVO> {
     return this.client.post<PlusApiResultFileItemVO>(backendApiPath(`/oss/files`), body, params);
   }
@@ -61,17 +61,17 @@ export class FileApi {
     return this.client.post<PlusApiResultSetPlusTreeNodePlusFileVO>(backendApiPath(`/file/get_tree`), body, params);
   }
 
-/** 获取单个文件信息 */
+/** Get file */
   async getFile(fileId: string | number): Promise<PlusApiResultFileItemVO> {
     return this.client.get<PlusApiResultFileItemVO>(backendApiPath(`/oss/files/${fileId}`));
   }
 
-/** 删除文件 */
+/** Delete file */
   async deleteFile(fileId: string | number): Promise<PlusApiResultFileItemVO> {
     return this.client.delete<PlusApiResultFileItemVO>(backendApiPath(`/oss/files/${fileId}`));
   }
 
-/** 获取文件内容 */
+/** Get file content */
   async getFileContent(fileId: string | number): Promise<string> {
     return this.client.get<string>(backendApiPath(`/oss/files/${fileId}/content`));
   }

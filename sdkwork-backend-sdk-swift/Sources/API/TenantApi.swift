@@ -31,6 +31,12 @@ public class TenantApi {
         return response as? PlusApiResultPlusTenantVO
     }
 
+    /// Get tenant audit logs by page
+    public func listAuditLogs(id: String, params: [String: Any]? = nil) async throws -> PlusApiResultPagePlusTenantAuditLogVO? {
+        let response = try await client.post(ApiPaths.backendPath("/tenant/\(id)/audit_logs/list"), body: nil, params: params)
+        return response as? PlusApiResultPagePlusTenantAuditLogVO
+    }
+
     /// Get tenants by page
     public func listByPage(body: QueryListForm? = nil, params: [String: Any]? = nil) async throws -> PlusApiResultPagePlusTenantVO? {
         let response = try await client.post(ApiPaths.backendPath("/tenant/list"), body: body, params: params)

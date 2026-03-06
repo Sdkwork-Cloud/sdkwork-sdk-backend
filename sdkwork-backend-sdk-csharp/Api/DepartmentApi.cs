@@ -32,6 +32,38 @@ namespace Backend.Api
         }
 
         /// <summary>
+        /// Move department
+        /// </summary>
+        public async Task<PlusApiResultPlusDepartmentVO?> MoveAsync(string id, Dictionary<string, object>? query = null)
+        {
+            return await _client.PutAsync<PlusApiResultPlusDepartmentVO>(ApiPaths.BackendPath($"/department/{id}/move"), null, query);
+        }
+
+        /// <summary>
+        /// Set primary department
+        /// </summary>
+        public async Task<PlusApiResultBoolean?> SetPrimaryAsync(string id, string memberId)
+        {
+            return await _client.PutAsync<PlusApiResultBoolean>(ApiPaths.BackendPath($"/department/{id}/members/{memberId}/primary"), null);
+        }
+
+        /// <summary>
+        /// Add member to department
+        /// </summary>
+        public async Task<PlusApiResultBoolean?> AddMemberToAsync(string id, string memberId, Dictionary<string, object>? query = null)
+        {
+            return await _client.PostAsync<PlusApiResultBoolean>(ApiPaths.BackendPath($"/department/{id}/members/{memberId}"), null, query);
+        }
+
+        /// <summary>
+        /// Remove member from department
+        /// </summary>
+        public async Task<PlusApiResultBoolean?> RemoveMemberFromAsync(string id, string memberId)
+        {
+            return await _client.DeleteAsync<PlusApiResultBoolean>(ApiPaths.BackendPath($"/department/{id}/members/{memberId}"));
+        }
+
+        /// <summary>
         /// Get departments by page
         /// </summary>
         public async Task<PlusApiResultPagePlusDepartmentVO?> ListByPageAsync(QueryListForm? body = null, Dictionary<string, object>? query = null)
@@ -61,6 +93,14 @@ namespace Backend.Api
         public async Task<PlusApiResultBoolean?> DeleteAsync(string id)
         {
             return await _client.DeleteAsync<PlusApiResultBoolean>(ApiPaths.BackendPath($"/department/{id}"));
+        }
+
+        /// <summary>
+        /// Get department members
+        /// </summary>
+        public async Task<PlusApiResultListPlusOrganizationMemberVO?> GetDepartmentMembersAsync(string id, Dictionary<string, object>? query = null)
+        {
+            return await _client.GetAsync<PlusApiResultListPlusOrganizationMemberVO>(ApiPaths.BackendPath($"/department/{id}/members"), query);
         }
     }
 }

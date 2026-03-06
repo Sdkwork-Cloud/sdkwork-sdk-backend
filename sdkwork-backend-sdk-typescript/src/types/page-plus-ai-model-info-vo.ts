@@ -3,15 +3,15 @@ import type { PlusAiModelInfoVO } from './plus-ai-model-info-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusAiModelInfoVO {
-  totalPages?: number;
   totalElements?: number;
+  totalPages?: number;
   size?: number;
   content?: PlusAiModelInfoVO[];
   number?: number;
-  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   numberOfElements?: number;
+  sort?: SortObject;
   pageable?: PageableObject;
   empty?: boolean;
 }

@@ -17,7 +17,7 @@ export interface PlusVipPointChangeVO {
   /** 业务来源ID(如充值记录ID、订单ID等) */
   sourceId?: number;
   /** 业务来源类型 */
-  sourceType?: string;
+  sourceType?: 'DEFAULT' | 'PURCHASE' | 'DAILY_REWARD' | 'COUPON_POINTS_EXCHANGE' | 'COUPON_POINTS_ROLLBACK' | 'SYSTEM' | 'OTHER';
   /** 备注信息 */
   remark?: string;
 }

@@ -48,6 +48,14 @@ namespace Backend.Api
         }
 
         /// <summary>
+        /// Get tenant audit logs by page
+        /// </summary>
+        public async Task<PlusApiResultPagePlusTenantAuditLogVO?> ListAuditLogsAsync(string id, Dictionary<string, object>? query = null)
+        {
+            return await _client.PostAsync<PlusApiResultPagePlusTenantAuditLogVO>(ApiPaths.BackendPath($"/tenant/{id}/audit_logs/list"), null, query);
+        }
+
+        /// <summary>
         /// Get tenants by page
         /// </summary>
         public async Task<PlusApiResultPagePlusTenantVO?> ListByPageAsync(QueryListForm? body = null, Dictionary<string, object>? query = null)

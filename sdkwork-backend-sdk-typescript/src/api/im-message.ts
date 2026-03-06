@@ -1,7 +1,7 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 import type { QueryParams } from '../types/common';
-import type { PlusApiResultPagePlusMessage, QueryListForm } from '../types';
+import type { PlusApiResultBoolean, PlusApiResultPagePlusMessage, PlusImMessageMarkReadForm, PlusImMessageQueryForm } from '../types';
 
 
 export class ImMessageApi {
@@ -11,8 +11,13 @@ export class ImMessageApi {
     this.client = client; 
   }
 
+/** Mark conversation messages as read */
+  async markRead(body: PlusImMessageMarkReadForm): Promise<PlusApiResultBoolean> {
+    return this.client.post<PlusApiResultBoolean>(backendApiPath(`/im/message/mark_read`), body);
+  }
+
 /** Get messages by page */
-  async listByPage(body?: QueryListForm, params?: QueryParams): Promise<PlusApiResultPagePlusMessage> {
+  async listByPage(body?: PlusImMessageQueryForm, params?: QueryParams): Promise<PlusApiResultPagePlusMessage> {
     return this.client.post<PlusApiResultPagePlusMessage>(backendApiPath(`/im/message/list`), body, params);
   }
 }

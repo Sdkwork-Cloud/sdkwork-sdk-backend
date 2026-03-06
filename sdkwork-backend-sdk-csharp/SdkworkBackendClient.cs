@@ -124,6 +124,11 @@ using Backend.Api;
 using Backend.Api;
 using Backend.Api;
 using Backend.Api;
+using Backend.Api;
+using Backend.Api;
+using Backend.Api;
+using Backend.Api;
+using Backend.Api;
 
 namespace Backend
 {
@@ -151,32 +156,36 @@ namespace Backend
         public UserCouponApi UserCoupon { get; }
         public UserCardApi UserCard { get; }
         public UserAddressApi UserAddress { get; }
-        public AiUsageRecordApi AiUsageRecord { get; }
+        public UsageRecordApi UsageRecord { get; }
         public ShoppingCartApi ShoppingCart { get; }
         public ShoppingCartItemApi ShoppingCartItem { get; }
         public RefundApi Refund { get; }
         public PaymentApi Payment { get; }
         public OrderApi Order { get; }
         public OrderItemApi OrderItem { get; }
-        public AiToolApi AiTool { get; }
+        public ToolApi Tool { get; }
         public TenantApi Tenant { get; }
         public DatabaseTableApi DatabaseTable { get; }
         public ProductSkuApi ProductSku { get; }
+        public SkillApi Skill { get; }
+        public SkillPackageApi SkillPackage { get; }
         public ShortUrlApi ShortUrl { get; }
         public ShopApi Shop { get; }
         public ShareApi Share { get; }
         public ShareVisitRecordApi ShareVisitRecord { get; }
         public ShardingKeyApi ShardingKey { get; }
+        public ApiSecurityPolicyApi ApiSecurityPolicy { get; }
         public SchemaApi Schema { get; }
         public RbacRoleApi RbacRole { get; }
         public RolePermissionApi RolePermission { get; }
         public InvocationRecordApi InvocationRecord { get; }
         public RbacUserRoleApi RbacUserRole { get; }
-        public AiPromptApi AiPrompt { get; }
+        public PromptApi Prompt { get; }
         public ProjectApi Project { get; }
         public ProductApi Product { get; }
         public PptTemplateApi PptTemplate { get; }
         public PptTemplateSlideApi PptTemplateSlide { get; }
+        public RbacPermissionApi RbacPermission { get; }
         public PartnerApi Partner { get; }
         public ChatParticipantApi ChatParticipant { get; }
         public OssBucketApi OssBucket { get; }
@@ -187,11 +196,11 @@ namespace Backend
         public NotificationApi Notification { get; }
         public NotesApi Notes { get; }
         public NewsApi News { get; }
-        public HostApi Host { get; }
+        public NetApi Net { get; }
         public DnsRecordApi DnsRecord { get; }
         public MusicApi Music { get; }
-        public AiModelInformationApi AiModelInformation { get; }
-        public AiModelPriceApi AiModelPrice { get; }
+        public ModelInformationApi ModelInformation { get; }
+        public ModelPriceApi ModelPrice { get; }
         public ChatMessageApi ChatMessage { get; }
         public MemberLevelApi MemberLevel { get; }
         public MemberCardApi MemberCard { get; }
@@ -200,8 +209,8 @@ namespace Backend
         public InvitationCodeApi InvitationCode { get; }
         public ImageApi Image { get; }
         public ChatGroupApi ChatGroup { get; }
-        public AiGenerationApi AiGeneration { get; }
-        public AiGenerationContentApi AiGenerationContent { get; }
+        public GenerationApi Generation { get; }
+        public GenerationContentApi GenerationContent { get; }
         public FileApi File { get; }
         public FilePartApi FilePart { get; }
         public FileContentApi FileContent { get; }
@@ -215,45 +224,46 @@ namespace Backend
         public DatasourceApi Datasource { get; }
         public CouponApi Coupon { get; }
         public CouponTemplateApi CouponTemplate { get; }
-        public AiConversationApi AiConversation { get; }
+        public ConversationApi Conversation { get; }
+        public ContentWritingApi ContentWriting { get; }
         public CommentApi Comment { get; }
         public ColumnApi Column { get; }
         public CollectionApi Collection { get; }
         public CollectionItemApi CollectionItem { get; }
         public CharacterApi Character { get; }
+        public ChannelApi Channel { get; }
         public ChannelResourceApi ChannelResource { get; }
+        public ChannelProxyApi ChannelProxy { get; }
         public ChannelAccountApi ChannelAccount { get; }
-        public AiCategoryApi AiCategory { get; }
+        public CategoryApi Category { get; }
         public MembershipCardApi MembershipCard { get; }
         public CardTemplateApi CardTemplate { get; }
         public AttributeApi Attribute { get; }
-        public AiArticleApi AiArticle { get; }
-        public ApplicationApi Application { get; }
+        public ArticleApi Article { get; }
+        public AppApi App { get; }
         public ApiKeyApi ApiKey { get; }
-        public AiAgentApi AiAgent { get; }
-        public AiAgentToolRelationshipApi AiAgentToolRelationship { get; }
+        public AgentApi Agent { get; }
+        public AgentToolRelationshipApi AgentToolRelationship { get; }
         public AccountApi Account { get; }
         public AccountHistoryApi AccountHistory { get; }
+        public AccountExchangeConfigApi AccountExchangeConfig { get; }
+        public InvoiceApi Invoice { get; }
         public SearchChatApi SearchChat { get; }
         public PptTemplateRenderingApi PptTemplateRendering { get; }
         public PptTemplateChatApi PptTemplateChat { get; }
         public KnowledgeBaseFileApi KnowledgeBaseFile { get; }
         public KnowledgeBaseChatApi KnowledgeBaseChat { get; }
         public ImMessageApi ImMessage { get; }
-        public AiVoiceSpeakerGenerationApi AiVoiceSpeakerGeneration { get; }
-        public AiVideoGenerationApi AiVideoGeneration { get; }
-        public AiMusicGenerationApi AiMusicGeneration { get; }
-        public AiImageGenerationApi AiImageGeneration { get; }
-        public AiCharacterGenerationApi AiCharacterGeneration { get; }
-        public AiAudioGenerationApi AiAudioGeneration { get; }
-        public AiAudioEffectGenerationApi AiAudioEffectGeneration { get; }
-        public AiChatApi AiChat { get; }
-        public VerificationApi Verification { get; }
-        public OauthAuthenticationApi OauthAuthentication { get; }
-        public AuthorizationApi Authorization { get; }
-        public AuthenticationApi Authentication { get; }
-        public AppApi App { get; }
-        public AiAgentChatApi AiAgentChat { get; }
+        public VoiceSpeakerGenerationApi VoiceSpeakerGeneration { get; }
+        public VideoGenerationApi VideoGeneration { get; }
+        public MusicGenerationApi MusicGeneration { get; }
+        public ImageGenerationApi ImageGeneration { get; }
+        public CharacterGenerationApi CharacterGeneration { get; }
+        public AudioGenerationApi AudioGeneration { get; }
+        public AudioEffectGenerationApi AudioEffectGeneration { get; }
+        public ChatApi Chat { get; }
+        public AuthApi Auth { get; }
+        public AgentChatApi AgentChat { get; }
 
         public SdkworkBackendClient(string baseUrl)
         {
@@ -278,32 +288,36 @@ namespace Backend
             UserCoupon = new UserCouponApi(_httpClient);
             UserCard = new UserCardApi(_httpClient);
             UserAddress = new UserAddressApi(_httpClient);
-            AiUsageRecord = new AiUsageRecordApi(_httpClient);
+            UsageRecord = new UsageRecordApi(_httpClient);
             ShoppingCart = new ShoppingCartApi(_httpClient);
             ShoppingCartItem = new ShoppingCartItemApi(_httpClient);
             Refund = new RefundApi(_httpClient);
             Payment = new PaymentApi(_httpClient);
             Order = new OrderApi(_httpClient);
             OrderItem = new OrderItemApi(_httpClient);
-            AiTool = new AiToolApi(_httpClient);
+            Tool = new ToolApi(_httpClient);
             Tenant = new TenantApi(_httpClient);
             DatabaseTable = new DatabaseTableApi(_httpClient);
             ProductSku = new ProductSkuApi(_httpClient);
+            Skill = new SkillApi(_httpClient);
+            SkillPackage = new SkillPackageApi(_httpClient);
             ShortUrl = new ShortUrlApi(_httpClient);
             Shop = new ShopApi(_httpClient);
             Share = new ShareApi(_httpClient);
             ShareVisitRecord = new ShareVisitRecordApi(_httpClient);
             ShardingKey = new ShardingKeyApi(_httpClient);
+            ApiSecurityPolicy = new ApiSecurityPolicyApi(_httpClient);
             Schema = new SchemaApi(_httpClient);
             RbacRole = new RbacRoleApi(_httpClient);
             RolePermission = new RolePermissionApi(_httpClient);
             InvocationRecord = new InvocationRecordApi(_httpClient);
             RbacUserRole = new RbacUserRoleApi(_httpClient);
-            AiPrompt = new AiPromptApi(_httpClient);
+            Prompt = new PromptApi(_httpClient);
             Project = new ProjectApi(_httpClient);
             Product = new ProductApi(_httpClient);
             PptTemplate = new PptTemplateApi(_httpClient);
             PptTemplateSlide = new PptTemplateSlideApi(_httpClient);
+            RbacPermission = new RbacPermissionApi(_httpClient);
             Partner = new PartnerApi(_httpClient);
             ChatParticipant = new ChatParticipantApi(_httpClient);
             OssBucket = new OssBucketApi(_httpClient);
@@ -314,11 +328,11 @@ namespace Backend
             Notification = new NotificationApi(_httpClient);
             Notes = new NotesApi(_httpClient);
             News = new NewsApi(_httpClient);
-            Host = new HostApi(_httpClient);
+            Net = new NetApi(_httpClient);
             DnsRecord = new DnsRecordApi(_httpClient);
             Music = new MusicApi(_httpClient);
-            AiModelInformation = new AiModelInformationApi(_httpClient);
-            AiModelPrice = new AiModelPriceApi(_httpClient);
+            ModelInformation = new ModelInformationApi(_httpClient);
+            ModelPrice = new ModelPriceApi(_httpClient);
             ChatMessage = new ChatMessageApi(_httpClient);
             MemberLevel = new MemberLevelApi(_httpClient);
             MemberCard = new MemberCardApi(_httpClient);
@@ -327,8 +341,8 @@ namespace Backend
             InvitationCode = new InvitationCodeApi(_httpClient);
             Image = new ImageApi(_httpClient);
             ChatGroup = new ChatGroupApi(_httpClient);
-            AiGeneration = new AiGenerationApi(_httpClient);
-            AiGenerationContent = new AiGenerationContentApi(_httpClient);
+            Generation = new GenerationApi(_httpClient);
+            GenerationContent = new GenerationContentApi(_httpClient);
             File = new FileApi(_httpClient);
             FilePart = new FilePartApi(_httpClient);
             FileContent = new FileContentApi(_httpClient);
@@ -342,45 +356,46 @@ namespace Backend
             Datasource = new DatasourceApi(_httpClient);
             Coupon = new CouponApi(_httpClient);
             CouponTemplate = new CouponTemplateApi(_httpClient);
-            AiConversation = new AiConversationApi(_httpClient);
+            Conversation = new ConversationApi(_httpClient);
+            ContentWriting = new ContentWritingApi(_httpClient);
             Comment = new CommentApi(_httpClient);
             Column = new ColumnApi(_httpClient);
             Collection = new CollectionApi(_httpClient);
             CollectionItem = new CollectionItemApi(_httpClient);
             Character = new CharacterApi(_httpClient);
+            Channel = new ChannelApi(_httpClient);
             ChannelResource = new ChannelResourceApi(_httpClient);
+            ChannelProxy = new ChannelProxyApi(_httpClient);
             ChannelAccount = new ChannelAccountApi(_httpClient);
-            AiCategory = new AiCategoryApi(_httpClient);
+            Category = new CategoryApi(_httpClient);
             MembershipCard = new MembershipCardApi(_httpClient);
             CardTemplate = new CardTemplateApi(_httpClient);
             Attribute = new AttributeApi(_httpClient);
-            AiArticle = new AiArticleApi(_httpClient);
-            Application = new ApplicationApi(_httpClient);
+            Article = new ArticleApi(_httpClient);
+            App = new AppApi(_httpClient);
             ApiKey = new ApiKeyApi(_httpClient);
-            AiAgent = new AiAgentApi(_httpClient);
-            AiAgentToolRelationship = new AiAgentToolRelationshipApi(_httpClient);
+            Agent = new AgentApi(_httpClient);
+            AgentToolRelationship = new AgentToolRelationshipApi(_httpClient);
             Account = new AccountApi(_httpClient);
             AccountHistory = new AccountHistoryApi(_httpClient);
+            AccountExchangeConfig = new AccountExchangeConfigApi(_httpClient);
+            Invoice = new InvoiceApi(_httpClient);
             SearchChat = new SearchChatApi(_httpClient);
             PptTemplateRendering = new PptTemplateRenderingApi(_httpClient);
             PptTemplateChat = new PptTemplateChatApi(_httpClient);
             KnowledgeBaseFile = new KnowledgeBaseFileApi(_httpClient);
             KnowledgeBaseChat = new KnowledgeBaseChatApi(_httpClient);
             ImMessage = new ImMessageApi(_httpClient);
-            AiVoiceSpeakerGeneration = new AiVoiceSpeakerGenerationApi(_httpClient);
-            AiVideoGeneration = new AiVideoGenerationApi(_httpClient);
-            AiMusicGeneration = new AiMusicGenerationApi(_httpClient);
-            AiImageGeneration = new AiImageGenerationApi(_httpClient);
-            AiCharacterGeneration = new AiCharacterGenerationApi(_httpClient);
-            AiAudioGeneration = new AiAudioGenerationApi(_httpClient);
-            AiAudioEffectGeneration = new AiAudioEffectGenerationApi(_httpClient);
-            AiChat = new AiChatApi(_httpClient);
-            Verification = new VerificationApi(_httpClient);
-            OauthAuthentication = new OauthAuthenticationApi(_httpClient);
-            Authorization = new AuthorizationApi(_httpClient);
-            Authentication = new AuthenticationApi(_httpClient);
-            App = new AppApi(_httpClient);
-            AiAgentChat = new AiAgentChatApi(_httpClient);
+            VoiceSpeakerGeneration = new VoiceSpeakerGenerationApi(_httpClient);
+            VideoGeneration = new VideoGenerationApi(_httpClient);
+            MusicGeneration = new MusicGenerationApi(_httpClient);
+            ImageGeneration = new ImageGenerationApi(_httpClient);
+            CharacterGeneration = new CharacterGenerationApi(_httpClient);
+            AudioGeneration = new AudioGenerationApi(_httpClient);
+            AudioEffectGeneration = new AudioEffectGenerationApi(_httpClient);
+            Chat = new ChatApi(_httpClient);
+            Auth = new AuthApi(_httpClient);
+            AgentChat = new AgentChatApi(_httpClient);
         }
 
         public SdkworkBackendClient(SdkConfig config)
@@ -406,32 +421,36 @@ namespace Backend
             UserCoupon = new UserCouponApi(_httpClient);
             UserCard = new UserCardApi(_httpClient);
             UserAddress = new UserAddressApi(_httpClient);
-            AiUsageRecord = new AiUsageRecordApi(_httpClient);
+            UsageRecord = new UsageRecordApi(_httpClient);
             ShoppingCart = new ShoppingCartApi(_httpClient);
             ShoppingCartItem = new ShoppingCartItemApi(_httpClient);
             Refund = new RefundApi(_httpClient);
             Payment = new PaymentApi(_httpClient);
             Order = new OrderApi(_httpClient);
             OrderItem = new OrderItemApi(_httpClient);
-            AiTool = new AiToolApi(_httpClient);
+            Tool = new ToolApi(_httpClient);
             Tenant = new TenantApi(_httpClient);
             DatabaseTable = new DatabaseTableApi(_httpClient);
             ProductSku = new ProductSkuApi(_httpClient);
+            Skill = new SkillApi(_httpClient);
+            SkillPackage = new SkillPackageApi(_httpClient);
             ShortUrl = new ShortUrlApi(_httpClient);
             Shop = new ShopApi(_httpClient);
             Share = new ShareApi(_httpClient);
             ShareVisitRecord = new ShareVisitRecordApi(_httpClient);
             ShardingKey = new ShardingKeyApi(_httpClient);
+            ApiSecurityPolicy = new ApiSecurityPolicyApi(_httpClient);
             Schema = new SchemaApi(_httpClient);
             RbacRole = new RbacRoleApi(_httpClient);
             RolePermission = new RolePermissionApi(_httpClient);
             InvocationRecord = new InvocationRecordApi(_httpClient);
             RbacUserRole = new RbacUserRoleApi(_httpClient);
-            AiPrompt = new AiPromptApi(_httpClient);
+            Prompt = new PromptApi(_httpClient);
             Project = new ProjectApi(_httpClient);
             Product = new ProductApi(_httpClient);
             PptTemplate = new PptTemplateApi(_httpClient);
             PptTemplateSlide = new PptTemplateSlideApi(_httpClient);
+            RbacPermission = new RbacPermissionApi(_httpClient);
             Partner = new PartnerApi(_httpClient);
             ChatParticipant = new ChatParticipantApi(_httpClient);
             OssBucket = new OssBucketApi(_httpClient);
@@ -442,11 +461,11 @@ namespace Backend
             Notification = new NotificationApi(_httpClient);
             Notes = new NotesApi(_httpClient);
             News = new NewsApi(_httpClient);
-            Host = new HostApi(_httpClient);
+            Net = new NetApi(_httpClient);
             DnsRecord = new DnsRecordApi(_httpClient);
             Music = new MusicApi(_httpClient);
-            AiModelInformation = new AiModelInformationApi(_httpClient);
-            AiModelPrice = new AiModelPriceApi(_httpClient);
+            ModelInformation = new ModelInformationApi(_httpClient);
+            ModelPrice = new ModelPriceApi(_httpClient);
             ChatMessage = new ChatMessageApi(_httpClient);
             MemberLevel = new MemberLevelApi(_httpClient);
             MemberCard = new MemberCardApi(_httpClient);
@@ -455,8 +474,8 @@ namespace Backend
             InvitationCode = new InvitationCodeApi(_httpClient);
             Image = new ImageApi(_httpClient);
             ChatGroup = new ChatGroupApi(_httpClient);
-            AiGeneration = new AiGenerationApi(_httpClient);
-            AiGenerationContent = new AiGenerationContentApi(_httpClient);
+            Generation = new GenerationApi(_httpClient);
+            GenerationContent = new GenerationContentApi(_httpClient);
             File = new FileApi(_httpClient);
             FilePart = new FilePartApi(_httpClient);
             FileContent = new FileContentApi(_httpClient);
@@ -470,45 +489,46 @@ namespace Backend
             Datasource = new DatasourceApi(_httpClient);
             Coupon = new CouponApi(_httpClient);
             CouponTemplate = new CouponTemplateApi(_httpClient);
-            AiConversation = new AiConversationApi(_httpClient);
+            Conversation = new ConversationApi(_httpClient);
+            ContentWriting = new ContentWritingApi(_httpClient);
             Comment = new CommentApi(_httpClient);
             Column = new ColumnApi(_httpClient);
             Collection = new CollectionApi(_httpClient);
             CollectionItem = new CollectionItemApi(_httpClient);
             Character = new CharacterApi(_httpClient);
+            Channel = new ChannelApi(_httpClient);
             ChannelResource = new ChannelResourceApi(_httpClient);
+            ChannelProxy = new ChannelProxyApi(_httpClient);
             ChannelAccount = new ChannelAccountApi(_httpClient);
-            AiCategory = new AiCategoryApi(_httpClient);
+            Category = new CategoryApi(_httpClient);
             MembershipCard = new MembershipCardApi(_httpClient);
             CardTemplate = new CardTemplateApi(_httpClient);
             Attribute = new AttributeApi(_httpClient);
-            AiArticle = new AiArticleApi(_httpClient);
-            Application = new ApplicationApi(_httpClient);
+            Article = new ArticleApi(_httpClient);
+            App = new AppApi(_httpClient);
             ApiKey = new ApiKeyApi(_httpClient);
-            AiAgent = new AiAgentApi(_httpClient);
-            AiAgentToolRelationship = new AiAgentToolRelationshipApi(_httpClient);
+            Agent = new AgentApi(_httpClient);
+            AgentToolRelationship = new AgentToolRelationshipApi(_httpClient);
             Account = new AccountApi(_httpClient);
             AccountHistory = new AccountHistoryApi(_httpClient);
+            AccountExchangeConfig = new AccountExchangeConfigApi(_httpClient);
+            Invoice = new InvoiceApi(_httpClient);
             SearchChat = new SearchChatApi(_httpClient);
             PptTemplateRendering = new PptTemplateRenderingApi(_httpClient);
             PptTemplateChat = new PptTemplateChatApi(_httpClient);
             KnowledgeBaseFile = new KnowledgeBaseFileApi(_httpClient);
             KnowledgeBaseChat = new KnowledgeBaseChatApi(_httpClient);
             ImMessage = new ImMessageApi(_httpClient);
-            AiVoiceSpeakerGeneration = new AiVoiceSpeakerGenerationApi(_httpClient);
-            AiVideoGeneration = new AiVideoGenerationApi(_httpClient);
-            AiMusicGeneration = new AiMusicGenerationApi(_httpClient);
-            AiImageGeneration = new AiImageGenerationApi(_httpClient);
-            AiCharacterGeneration = new AiCharacterGenerationApi(_httpClient);
-            AiAudioGeneration = new AiAudioGenerationApi(_httpClient);
-            AiAudioEffectGeneration = new AiAudioEffectGenerationApi(_httpClient);
-            AiChat = new AiChatApi(_httpClient);
-            Verification = new VerificationApi(_httpClient);
-            OauthAuthentication = new OauthAuthenticationApi(_httpClient);
-            Authorization = new AuthorizationApi(_httpClient);
-            Authentication = new AuthenticationApi(_httpClient);
-            App = new AppApi(_httpClient);
-            AiAgentChat = new AiAgentChatApi(_httpClient);
+            VoiceSpeakerGeneration = new VoiceSpeakerGenerationApi(_httpClient);
+            VideoGeneration = new VideoGenerationApi(_httpClient);
+            MusicGeneration = new MusicGenerationApi(_httpClient);
+            ImageGeneration = new ImageGenerationApi(_httpClient);
+            CharacterGeneration = new CharacterGenerationApi(_httpClient);
+            AudioGeneration = new AudioGenerationApi(_httpClient);
+            AudioEffectGeneration = new AudioEffectGenerationApi(_httpClient);
+            Chat = new ChatApi(_httpClient);
+            Auth = new AuthApi(_httpClient);
+            AgentChat = new AgentChatApi(_httpClient);
         }
 
         public SdkworkBackendClient SetApiKey(string apiKey)

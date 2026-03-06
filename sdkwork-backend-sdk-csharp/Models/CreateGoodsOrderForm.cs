@@ -6,6 +6,7 @@ namespace Backend.Models
 {
     public class CreateGoodsOrderForm
     {
-
+        public List<CartItem>? Items { get; set; }
+        public string? ExpireTime { get; set; }
     }
 }

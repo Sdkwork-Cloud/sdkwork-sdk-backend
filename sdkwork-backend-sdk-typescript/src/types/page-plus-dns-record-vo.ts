@@ -3,15 +3,15 @@ import type { PlusDnsRecordVO } from './plus-dns-record-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusDnsRecordVO {
-  totalPages?: number;
   totalElements?: number;
+  totalPages?: number;
   size?: number;
   content?: PlusDnsRecordVO[];
   number?: number;
-  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   numberOfElements?: number;
+  sort?: SortObject;
   pageable?: PageableObject;
   empty?: boolean;
 }

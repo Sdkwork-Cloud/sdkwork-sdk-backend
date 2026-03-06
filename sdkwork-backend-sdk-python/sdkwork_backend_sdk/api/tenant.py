@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import GetAccessTokenForm, PlusApiResultBoolean, PlusApiResultListPlusTenantVO, PlusApiResultListTokenResult, PlusApiResultPagePlusTenantVO, PlusApiResultPlusTenantVO, PlusTenantForm, QueryListForm
+from ..models import GetAccessTokenForm, PlusApiResultBoolean, PlusApiResultListPlusTenantVO, PlusApiResultListTokenResult, PlusApiResultPagePlusTenantAuditLogVO, PlusApiResultPagePlusTenantVO, PlusApiResultPlusTenantVO, PlusTenantForm, QueryListForm
 
 class TenantApi:
     """tenant API client."""
@@ -23,6 +23,10 @@ class TenantApi:
     def install(self, id: str, body: PlusTenantForm) -> PlusApiResultPlusTenantVO:
         """Install app for tenant"""
         return self._client.post(f"/backend/v3/api/tenant/{id}/install", json=body)
+
+    def list_audit_logs(self, id: str, params: Optional[Dict[str, Any]] = None) -> PlusApiResultPagePlusTenantAuditLogVO:
+        """Get tenant audit logs by page"""
+        return self._client.post(f"/backend/v3/api/tenant/{id}/audit_logs/list", params=params)
 
     def list_by_page(self, body: Optional[QueryListForm] = None, params: Optional[Dict[str, Any]] = None) -> PlusApiResultPagePlusTenantVO:
         """Get tenants by page"""

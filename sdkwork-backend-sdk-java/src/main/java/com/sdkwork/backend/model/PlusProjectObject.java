@@ -7,16 +7,16 @@ public class PlusProjectObject {
     private String owner;
     private String lastModifiedTime;
     private String version;
-    private List<PlusFileObject> files;
+    private TagsContent tags;
+    private String description;
+    private String title;
+    private String createdAt;
+    private Integer ownerId;
     private String uuid;
     private Integer diskId;
     private String author;
-    private Integer ownerId;
-    private String createdAt;
+    private List<PlusFileObject> files;
     private String screenType;
-    private String description;
-    private TagsContent tags;
-    private String title;
 
     public String getName() {
         return this.name;
@@ -66,12 +66,44 @@ public class PlusProjectObject {
         this.version = version;
     }
 
-    public List<PlusFileObject> getFiles() {
-        return this.files;
+    public TagsContent getTags() {
+        return this.tags;
     }
     
-    public void setFiles(List<PlusFileObject> files) {
-        this.files = files;
+    public void setTags(TagsContent tags) {
+        this.tags = tags;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+    
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
+    
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getCreatedAt() {
+        return this.createdAt;
+    }
+    
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Integer getOwnerId() {
+        return this.ownerId;
+    }
+    
+    public void setOwnerId(Integer ownerId) {
+        this.ownerId = ownerId;
     }
 
     public String getUuid() {
@@ -98,20 +130,12 @@ public class PlusProjectObject {
         this.author = author;
     }
 
-    public Integer getOwnerId() {
-        return this.ownerId;
+    public List<PlusFileObject> getFiles() {
+        return this.files;
     }
     
-    public void setOwnerId(Integer ownerId) {
-        this.ownerId = ownerId;
-    }
-
-    public String getCreatedAt() {
-        return this.createdAt;
-    }
-    
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
+    public void setFiles(List<PlusFileObject> files) {
+        this.files = files;
     }
 
     public String getScreenType() {
@@ -120,29 +144,5 @@ public class PlusProjectObject {
     
     public void setScreenType(String screenType) {
         this.screenType = screenType;
-    }
-
-    public String getDescription() {
-        return this.description;
-    }
-    
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public TagsContent getTags() {
-        return this.tags;
-    }
-    
-    public void setTags(TagsContent tags) {
-        this.tags = tags;
-    }
-
-    public String getTitle() {
-        return this.title;
-    }
-    
-    public void setTitle(String title) {
-        this.title = title;
     }
 }

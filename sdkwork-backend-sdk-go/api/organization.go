@@ -103,3 +103,13 @@ func (a *OrganizationApi) Delete(id string) (sdktypes.PlusApiResultBoolean, erro
     }
     return decodeResult[sdktypes.PlusApiResultBoolean](raw)
 }
+
+// Get child organizations
+func (a *OrganizationApi) GetChildren(id string) (sdktypes.PlusApiResultListPlusOrganizationVO, error) {
+    raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/organization/%s/children", id)), nil, nil)
+    if err != nil {
+        var zero sdktypes.PlusApiResultListPlusOrganizationVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultListPlusOrganizationVO](raw)
+}

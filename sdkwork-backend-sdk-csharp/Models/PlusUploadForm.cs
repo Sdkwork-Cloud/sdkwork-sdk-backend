@@ -6,6 +6,10 @@ namespace Backend.Models
 {
     public class PlusUploadForm
     {
-
+        public string? Provider { get; set; }
+        public string? Name { get; set; }
+        public string? Scene { get; set; }
+        public BucketObject? Bucket { get; set; }
+        public int? ExpirationSeconds { get; set; }
     }
 }

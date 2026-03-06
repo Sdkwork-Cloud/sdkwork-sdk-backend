@@ -6,7 +6,7 @@ data class MimeType(
     val parameters: Map<String, String>? = null,
     val charset: String? = null,
     val concrete: Boolean? = null,
-    val wildcardSubtype: Boolean? = null,
+    val subtypeSuffix: String? = null,
     val wildcardType: Boolean? = null,
-    val subtypeSuffix: String? = null
+    val wildcardSubtype: Boolean? = null
 )

@@ -1,7 +1,7 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 import type { QueryParams } from '../types/common';
-import type { GetAccessTokenForm, PlusApiResultBoolean, PlusApiResultListPlusTenantVO, PlusApiResultListTokenResult, PlusApiResultPagePlusTenantVO, PlusApiResultPlusTenantVO, PlusTenantForm, QueryListForm } from '../types';
+import type { GetAccessTokenForm, PlusApiResultBoolean, PlusApiResultListPlusTenantVO, PlusApiResultListTokenResult, PlusApiResultPagePlusTenantAuditLogVO, PlusApiResultPagePlusTenantVO, PlusApiResultPlusTenantVO, PlusTenantForm, QueryListForm } from '../types';
 
 
 export class TenantApi {
@@ -29,6 +29,11 @@ export class TenantApi {
 /** Install app for tenant */
   async install(id: string | number, body: PlusTenantForm): Promise<PlusApiResultPlusTenantVO> {
     return this.client.post<PlusApiResultPlusTenantVO>(backendApiPath(`/tenant/${id}/install`), body);
+  }
+
+/** Get tenant audit logs by page */
+  async listAuditLogs(id: string | number, params?: QueryParams): Promise<PlusApiResultPagePlusTenantAuditLogVO> {
+    return this.client.post<PlusApiResultPagePlusTenantAuditLogVO>(backendApiPath(`/tenant/${id}/audit_logs/list`), undefined, params);
   }
 
 /** Get tenants by page */

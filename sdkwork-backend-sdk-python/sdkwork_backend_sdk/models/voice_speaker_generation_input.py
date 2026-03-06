@@ -22,6 +22,6 @@ class VoiceSpeakerGenerationInput:
     volume: int = None
     emotion: str = None
     save_speaker: bool = None
-    using_existing_speaker: bool = None
     voice_clone: bool = None
+    using_existing_speaker: bool = None
     reference_asset_count: int = None

@@ -11,8 +11,8 @@ namespace Backend.Models
         public Dictionary<string, string>? Parameters { get; set; }
         public string? Charset { get; set; }
         public bool? Concrete { get; set; }
-        public bool? WildcardSubtype { get; set; }
-        public bool? WildcardType { get; set; }
         public string? SubtypeSuffix { get; set; }
+        public bool? WildcardType { get; set; }
+        public bool? WildcardSubtype { get; set; }
     }
 }

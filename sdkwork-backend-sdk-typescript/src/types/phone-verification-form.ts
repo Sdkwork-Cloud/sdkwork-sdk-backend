@@ -4,6 +4,6 @@ export interface PhoneVerificationForm {
   phone: string;
   /** 验证码 */
   code: string;
-  /** 验证类型 */
-  type: 'registration' | 'reset' | 'update';
+  /** 验证类型（业务场景） */
+  type: string;
 }

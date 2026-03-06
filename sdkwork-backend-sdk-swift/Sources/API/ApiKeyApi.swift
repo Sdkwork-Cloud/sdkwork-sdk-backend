@@ -19,6 +19,48 @@ public class ApiKeyApi {
         return response as? PlusApiResultPlusApiKeyVO
     }
 
+    /// Get API key detail for current user
+    public func getMy(id: String) async throws -> PlusApiResultPlusApiKeyVO? {
+        let response = try await client.get(ApiPaths.backendPath("/apikey/my/\(id)"))
+        return response as? PlusApiResultPlusApiKeyVO
+    }
+
+    /// Update API key for current user
+    public func updateMy(id: String, body: PlusApiKeySelfUpdateForm) async throws -> PlusApiResultPlusApiKeyVO? {
+        let response = try await client.put(ApiPaths.backendPath("/apikey/my/\(id)"), body: body)
+        return response as? PlusApiResultPlusApiKeyVO
+    }
+
+    /// Delete API key for current user
+    public func deleteMy(id: String) async throws -> PlusApiResultBoolean? {
+        let response = try await client.delete(ApiPaths.backendPath("/apikey/my/\(id)"))
+        return response as? PlusApiResultBoolean
+    }
+
+    /// Create API key for current user
+    public func createMy(body: PlusApiKeySelfCreateForm) async throws -> PlusApiResultPlusApiKeyVO? {
+        let response = try await client.post(ApiPaths.backendPath("/apikey/my"), body: body)
+        return response as? PlusApiResultPlusApiKeyVO
+    }
+
+    /// Rotate API key for current user
+    public func rotateMy(id: String) async throws -> PlusApiResultPlusApiKeyVO? {
+        let response = try await client.post(ApiPaths.backendPath("/apikey/my/\(id)/rotate"), body: nil)
+        return response as? PlusApiResultPlusApiKeyVO
+    }
+
+    /// Enable API key for current user
+    public func enableMy(id: String) async throws -> PlusApiResultPlusApiKeyVO? {
+        let response = try await client.post(ApiPaths.backendPath("/apikey/my/\(id)/enable"), body: nil)
+        return response as? PlusApiResultPlusApiKeyVO
+    }
+
+    /// Disable API key for current user
+    public func disableMy(id: String) async throws -> PlusApiResultPlusApiKeyVO? {
+        let response = try await client.post(ApiPaths.backendPath("/apikey/my/\(id)/disable"), body: nil)
+        return response as? PlusApiResultPlusApiKeyVO
+    }
+
     /// Get API keys by page
     public func listByPage(body: QueryListForm? = nil, params: [String: Any]? = nil) async throws -> PlusApiResultPagePlusApiKeyVO? {
         let response = try await client.post(ApiPaths.backendPath("/apikey/list"), body: body, params: params)
@@ -41,5 +83,11 @@ public class ApiKeyApi {
     public func delete(id: String) async throws -> PlusApiResultBoolean? {
         let response = try await client.delete(ApiPaths.backendPath("/apikey/\(id)"))
         return response as? PlusApiResultBoolean
+    }
+
+    /// List API keys for current user
+    public func listMyApiKeys() async throws -> PlusApiResultListPlusApiKeyVO? {
+        let response = try await client.get(ApiPaths.backendPath("/apikey/my/list"))
+        return response as? PlusApiResultListPlusApiKeyVO
     }
 }

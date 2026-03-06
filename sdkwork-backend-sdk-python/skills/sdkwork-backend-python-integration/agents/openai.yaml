@@ -1,8 +1,0 @@
-interface:
-  display_name: "SDKWORK Backend python Integration"
-  short_description: "Integrate sdkwork-backend-sdk-python with staged progressive loading."
-  default_prompt: "Use $sdkwork-backend-python-integration to integrate sdkwork-backend-sdk-python into my application with staged progressive loading."
-
-policy:
-  allow_implicit_invocation: true
-

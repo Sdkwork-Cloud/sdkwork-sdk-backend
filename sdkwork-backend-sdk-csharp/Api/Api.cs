@@ -25,32 +25,36 @@ namespace Backend.Api
         public static UserCouponApi UserCoupon { get; set; }
         public static UserCardApi UserCard { get; set; }
         public static UserAddressApi UserAddress { get; set; }
-        public static AiUsageRecordApi AiUsageRecord { get; set; }
+        public static UsageRecordApi UsageRecord { get; set; }
         public static ShoppingCartApi ShoppingCart { get; set; }
         public static ShoppingCartItemApi ShoppingCartItem { get; set; }
         public static RefundApi Refund { get; set; }
         public static PaymentApi Payment { get; set; }
         public static OrderApi Order { get; set; }
         public static OrderItemApi OrderItem { get; set; }
-        public static AiToolApi AiTool { get; set; }
+        public static ToolApi Tool { get; set; }
         public static TenantApi Tenant { get; set; }
         public static DatabaseTableApi DatabaseTable { get; set; }
         public static ProductSkuApi ProductSku { get; set; }
+        public static SkillApi Skill { get; set; }
+        public static SkillPackageApi SkillPackage { get; set; }
         public static ShortUrlApi ShortUrl { get; set; }
         public static ShopApi Shop { get; set; }
         public static ShareApi Share { get; set; }
         public static ShareVisitRecordApi ShareVisitRecord { get; set; }
         public static ShardingKeyApi ShardingKey { get; set; }
+        public static ApiSecurityPolicyApi ApiSecurityPolicy { get; set; }
         public static SchemaApi Schema { get; set; }
         public static RbacRoleApi RbacRole { get; set; }
         public static RolePermissionApi RolePermission { get; set; }
         public static InvocationRecordApi InvocationRecord { get; set; }
         public static RbacUserRoleApi RbacUserRole { get; set; }
-        public static AiPromptApi AiPrompt { get; set; }
+        public static PromptApi Prompt { get; set; }
         public static ProjectApi Project { get; set; }
         public static ProductApi Product { get; set; }
         public static PptTemplateApi PptTemplate { get; set; }
         public static PptTemplateSlideApi PptTemplateSlide { get; set; }
+        public static RbacPermissionApi RbacPermission { get; set; }
         public static PartnerApi Partner { get; set; }
         public static ChatParticipantApi ChatParticipant { get; set; }
         public static OssBucketApi OssBucket { get; set; }
@@ -61,11 +65,11 @@ namespace Backend.Api
         public static NotificationApi Notification { get; set; }
         public static NotesApi Notes { get; set; }
         public static NewsApi News { get; set; }
-        public static HostApi Host { get; set; }
+        public static NetApi Net { get; set; }
         public static DnsRecordApi DnsRecord { get; set; }
         public static MusicApi Music { get; set; }
-        public static AiModelInformationApi AiModelInformation { get; set; }
-        public static AiModelPriceApi AiModelPrice { get; set; }
+        public static ModelInformationApi ModelInformation { get; set; }
+        public static ModelPriceApi ModelPrice { get; set; }
         public static ChatMessageApi ChatMessage { get; set; }
         public static MemberLevelApi MemberLevel { get; set; }
         public static MemberCardApi MemberCard { get; set; }
@@ -74,8 +78,8 @@ namespace Backend.Api
         public static InvitationCodeApi InvitationCode { get; set; }
         public static ImageApi Image { get; set; }
         public static ChatGroupApi ChatGroup { get; set; }
-        public static AiGenerationApi AiGeneration { get; set; }
-        public static AiGenerationContentApi AiGenerationContent { get; set; }
+        public static GenerationApi Generation { get; set; }
+        public static GenerationContentApi GenerationContent { get; set; }
         public static FileApi File { get; set; }
         public static FilePartApi FilePart { get; set; }
         public static FileContentApi FileContent { get; set; }
@@ -89,44 +93,45 @@ namespace Backend.Api
         public static DatasourceApi Datasource { get; set; }
         public static CouponApi Coupon { get; set; }
         public static CouponTemplateApi CouponTemplate { get; set; }
-        public static AiConversationApi AiConversation { get; set; }
+        public static ConversationApi Conversation { get; set; }
+        public static ContentWritingApi ContentWriting { get; set; }
         public static CommentApi Comment { get; set; }
         public static ColumnApi Column { get; set; }
         public static CollectionApi Collection { get; set; }
         public static CollectionItemApi CollectionItem { get; set; }
         public static CharacterApi Character { get; set; }
+        public static ChannelApi Channel { get; set; }
         public static ChannelResourceApi ChannelResource { get; set; }
+        public static ChannelProxyApi ChannelProxy { get; set; }
         public static ChannelAccountApi ChannelAccount { get; set; }
-        public static AiCategoryApi AiCategory { get; set; }
+        public static CategoryApi Category { get; set; }
         public static MembershipCardApi MembershipCard { get; set; }
         public static CardTemplateApi CardTemplate { get; set; }
         public static AttributeApi Attribute { get; set; }
-        public static AiArticleApi AiArticle { get; set; }
-        public static ApplicationApi Application { get; set; }
+        public static ArticleApi Article { get; set; }
+        public static AppApi App { get; set; }
         public static ApiKeyApi ApiKey { get; set; }
-        public static AiAgentApi AiAgent { get; set; }
-        public static AiAgentToolRelationshipApi AiAgentToolRelationship { get; set; }
+        public static AgentApi Agent { get; set; }
+        public static AgentToolRelationshipApi AgentToolRelationship { get; set; }
         public static AccountApi Account { get; set; }
         public static AccountHistoryApi AccountHistory { get; set; }
+        public static AccountExchangeConfigApi AccountExchangeConfig { get; set; }
+        public static InvoiceApi Invoice { get; set; }
         public static SearchChatApi SearchChat { get; set; }
         public static PptTemplateRenderingApi PptTemplateRendering { get; set; }
         public static PptTemplateChatApi PptTemplateChat { get; set; }
         public static KnowledgeBaseFileApi KnowledgeBaseFile { get; set; }
         public static KnowledgeBaseChatApi KnowledgeBaseChat { get; set; }
         public static ImMessageApi ImMessage { get; set; }
-        public static AiVoiceSpeakerGenerationApi AiVoiceSpeakerGeneration { get; set; }
-        public static AiVideoGenerationApi AiVideoGeneration { get; set; }
-        public static AiMusicGenerationApi AiMusicGeneration { get; set; }
-        public static AiImageGenerationApi AiImageGeneration { get; set; }
-        public static AiCharacterGenerationApi AiCharacterGeneration { get; set; }
-        public static AiAudioGenerationApi AiAudioGeneration { get; set; }
-        public static AiAudioEffectGenerationApi AiAudioEffectGeneration { get; set; }
-        public static AiChatApi AiChat { get; set; }
-        public static VerificationApi Verification { get; set; }
-        public static OauthAuthenticationApi OauthAuthentication { get; set; }
-        public static AuthorizationApi Authorization { get; set; }
-        public static AuthenticationApi Authentication { get; set; }
-        public static AppApi App { get; set; }
-        public static AiAgentChatApi AiAgentChat { get; set; }
+        public static VoiceSpeakerGenerationApi VoiceSpeakerGeneration { get; set; }
+        public static VideoGenerationApi VideoGeneration { get; set; }
+        public static MusicGenerationApi MusicGeneration { get; set; }
+        public static ImageGenerationApi ImageGeneration { get; set; }
+        public static CharacterGenerationApi CharacterGeneration { get; set; }
+        public static AudioGenerationApi AudioGeneration { get; set; }
+        public static AudioEffectGenerationApi AudioEffectGeneration { get; set; }
+        public static ChatApi Chat { get; set; }
+        public static AuthApi Auth { get; set; }
+        public static AgentChatApi AgentChat { get; set; }
     }
 }

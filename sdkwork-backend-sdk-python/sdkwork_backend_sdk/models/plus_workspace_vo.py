@@ -24,7 +24,7 @@ class PlusWorkspaceVO:
     current_members: int = None
     max_storage: int = None
     used_storage: int = None
-    settings: str = None
+    settings: Dict[str, Any] = None
     is_deleted: bool = None
     is_public: bool = None
     is_template: bool = None

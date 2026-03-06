@@ -15,7 +15,7 @@ class PlusWorkspaceForm {
   final int? currentMembers;
   final int? maxStorage;
   final int? usedStorage;
-  final String? settings;
+  final Map<String, dynamic>? settings;
   final bool? isDeleted;
   final bool? isPublic;
   final bool? isTemplate;
@@ -85,7 +85,7 @@ class PlusWorkspaceVO {
   final int? currentMembers;
   final int? maxStorage;
   final int? usedStorage;
-  final String? settings;
+  final Map<String, dynamic>? settings;
   final bool? isDeleted;
   final bool? isPublic;
   final bool? isTemplate;
@@ -1605,6 +1605,11 @@ class PlusUserCouponForm {
   final int? couponId;
   final String? couponCode;
   final String? acquireAt;
+  final String? acquireRequestNo;
+  final String? acquireType;
+  final int? pointCost;
+  final bool? pointsRefunded;
+  final String? pointsRefundAt;
   final String? useAt;
   final String? status;
 
@@ -1613,6 +1618,11 @@ class PlusUserCouponForm {
     this.couponId,
     this.couponCode,
     this.acquireAt,
+    this.acquireRequestNo,
+    this.acquireType,
+    this.pointCost,
+    this.pointsRefunded,
+    this.pointsRefundAt,
     this.useAt,
     this.status
   });
@@ -1645,6 +1655,11 @@ class PlusUserCouponVO {
   final int? couponId;
   final String? couponCode;
   final String? acquireTime;
+  final String? acquireRequestNo;
+  final String? acquireType;
+  final int? pointCost;
+  final bool? pointsRefunded;
+  final String? pointsRefundAt;
   final String? useTime;
   final String? status;
 
@@ -1655,6 +1670,11 @@ class PlusUserCouponVO {
     this.couponId,
     this.couponCode,
     this.acquireTime,
+    this.acquireRequestNo,
+    this.acquireType,
+    this.pointCost,
+    this.pointsRefunded,
+    this.pointsRefundAt,
     this.useTime,
     this.status
   });
@@ -3322,6 +3342,284 @@ class PlusSkuVO {
   });
 }
 
+class PlusAgentSkillForm {
+  final int? userId;
+  final String? skillKey;
+  final String? name;
+  final String? summary;
+  final String? description;
+  final String? icon;
+  final String? coverImage;
+  final int? categoryId;
+  final int? packageId;
+  final String? provider;
+  final String? version;
+  final String? runtime;
+  final String? entrypoint;
+  final String? manifestUrl;
+  final String? repositoryUrl;
+  final String? homepageUrl;
+  final String? documentationUrl;
+  final String? licenseName;
+  final String? sourceType;
+  final String? visibility;
+  final bool? enabled;
+  final double? price;
+  final String? currency;
+  final List<String>? tags;
+  final List<String>? capabilities;
+  final Map<String, dynamic>? configSchema;
+  final Map<String, dynamic>? defaultConfig;
+
+  PlusAgentSkillForm({
+    this.userId,
+    this.skillKey,
+    this.name,
+    this.summary,
+    this.description,
+    this.icon,
+    this.coverImage,
+    this.categoryId,
+    this.packageId,
+    this.provider,
+    this.version,
+    this.runtime,
+    this.entrypoint,
+    this.manifestUrl,
+    this.repositoryUrl,
+    this.homepageUrl,
+    this.documentationUrl,
+    this.licenseName,
+    this.sourceType,
+    this.visibility,
+    this.enabled,
+    this.price,
+    this.currency,
+    this.tags,
+    this.capabilities,
+    this.configSchema,
+    this.defaultConfig
+  });
+}
+
+class PlusAgentSkillVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? id;
+  final String? uuid;
+  final int? tenantId;
+  final int? organizationId;
+  final int? userId;
+  final String? skillKey;
+  final String? name;
+  final String? summary;
+  final String? description;
+  final String? icon;
+  final String? coverImage;
+  final int? categoryId;
+  final String? categoryName;
+  final int? packageId;
+  final String? packageName;
+  final String? provider;
+  final String? version;
+  final String? runtime;
+  final String? entrypoint;
+  final String? manifestUrl;
+  final String? repositoryUrl;
+  final String? homepageUrl;
+  final String? documentationUrl;
+  final String? licenseName;
+  final String? sourceType;
+  final String? marketStatus;
+  final String? visibility;
+  final String? reviewStatus;
+  final String? reviewComment;
+  final int? reviewedBy;
+  final String? reviewedAt;
+  final bool? builtin;
+  final bool? enabled;
+  final bool? featured;
+  final int? recommendWeight;
+  final double? price;
+  final String? currency;
+  final int? installCount;
+  final double? ratingAvg;
+  final int? ratingCount;
+  final List<String>? tags;
+  final List<String>? capabilities;
+  final Map<String, dynamic>? configSchema;
+  final Map<String, dynamic>? defaultConfig;
+  final String? latestPublishedAt;
+
+  PlusAgentSkillVO({
+    this.createdAt,
+    this.updatedAt,
+    this.id,
+    this.uuid,
+    this.tenantId,
+    this.organizationId,
+    this.userId,
+    this.skillKey,
+    this.name,
+    this.summary,
+    this.description,
+    this.icon,
+    this.coverImage,
+    this.categoryId,
+    this.categoryName,
+    this.packageId,
+    this.packageName,
+    this.provider,
+    this.version,
+    this.runtime,
+    this.entrypoint,
+    this.manifestUrl,
+    this.repositoryUrl,
+    this.homepageUrl,
+    this.documentationUrl,
+    this.licenseName,
+    this.sourceType,
+    this.marketStatus,
+    this.visibility,
+    this.reviewStatus,
+    this.reviewComment,
+    this.reviewedBy,
+    this.reviewedAt,
+    this.builtin,
+    this.enabled,
+    this.featured,
+    this.recommendWeight,
+    this.price,
+    this.currency,
+    this.installCount,
+    this.ratingAvg,
+    this.ratingCount,
+    this.tags,
+    this.capabilities,
+    this.configSchema,
+    this.defaultConfig,
+    this.latestPublishedAt
+  });
+}
+
+class PlusApiResultPlusAgentSkillVO {
+  final PlusAgentSkillVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPlusAgentSkillVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusAgentSkillPackageForm {
+  final int? userId;
+  final String? packageKey;
+  final String? name;
+  final String? summary;
+  final String? description;
+  final String? icon;
+  final String? coverImage;
+  final int? categoryId;
+  final bool? enabled;
+  final bool? featured;
+  final int? sortWeight;
+  final List<String>? tags;
+
+  PlusAgentSkillPackageForm({
+    this.userId,
+    this.packageKey,
+    this.name,
+    this.summary,
+    this.description,
+    this.icon,
+    this.coverImage,
+    this.categoryId,
+    this.enabled,
+    this.featured,
+    this.sortWeight,
+    this.tags
+  });
+}
+
+class PlusAgentSkillPackageVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? id;
+  final String? uuid;
+  final int? tenantId;
+  final int? organizationId;
+  final int? userId;
+  final String? packageKey;
+  final String? name;
+  final String? summary;
+  final String? description;
+  final String? icon;
+  final String? coverImage;
+  final int? categoryId;
+  final String? categoryName;
+  final List<String>? tags;
+  final bool? enabled;
+  final bool? featured;
+  final int? sortWeight;
+  final int? skillCount;
+  final String? latestPublishedAt;
+
+  PlusAgentSkillPackageVO({
+    this.createdAt,
+    this.updatedAt,
+    this.id,
+    this.uuid,
+    this.tenantId,
+    this.organizationId,
+    this.userId,
+    this.packageKey,
+    this.name,
+    this.summary,
+    this.description,
+    this.icon,
+    this.coverImage,
+    this.categoryId,
+    this.categoryName,
+    this.tags,
+    this.enabled,
+    this.featured,
+    this.sortWeight,
+    this.skillCount,
+    this.latestPublishedAt
+  });
+}
+
+class PlusApiResultPlusAgentSkillPackageVO {
+  final PlusAgentSkillPackageVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPlusAgentSkillPackageVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
 class ShortUrlForm {
   final String? originalUrl;
   final String? shortCode;
@@ -3718,6 +4016,94 @@ class PlusShardingKeyVO {
     this.owner,
     this.ownerId,
     this.status,
+    this.description
+  });
+}
+
+class PlusApiSecurityPolicyForm {
+  final String? policyCode;
+  final String? apiType;
+  final String? pathPattern;
+  final String? httpMethod;
+  final String? matchMode;
+  final String? authMode;
+  final bool? allowAnonymous;
+  final String? requiredRoles;
+  final String? requiredPermissions;
+  final int? priority;
+  final bool? enabled;
+  final String? description;
+
+  PlusApiSecurityPolicyForm({
+    this.policyCode,
+    this.apiType,
+    this.pathPattern,
+    this.httpMethod,
+    this.matchMode,
+    this.authMode,
+    this.allowAnonymous,
+    this.requiredRoles,
+    this.requiredPermissions,
+    this.priority,
+    this.enabled,
+    this.description
+  });
+}
+
+class PlusApiResultPlusApiSecurityPolicyVO {
+  final PlusApiSecurityPolicyVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPlusApiSecurityPolicyVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusApiSecurityPolicyVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? id;
+  final String? uuid;
+  final String? policyCode;
+  final String? apiType;
+  final String? pathPattern;
+  final String? httpMethod;
+  final String? matchMode;
+  final String? authMode;
+  final bool? allowAnonymous;
+  final String? requiredRoles;
+  final String? requiredPermissions;
+  final int? priority;
+  final bool? enabled;
+  final String? description;
+
+  PlusApiSecurityPolicyVO({
+    this.createdAt,
+    this.updatedAt,
+    this.id,
+    this.uuid,
+    this.policyCode,
+    this.apiType,
+    this.pathPattern,
+    this.httpMethod,
+    this.matchMode,
+    this.authMode,
+    this.allowAnonymous,
+    this.requiredRoles,
+    this.requiredPermissions,
+    this.priority,
+    this.enabled,
     this.description
   });
 }
@@ -5046,6 +5432,74 @@ class PlusApiResultPlusPptTemplateSlideVO {
   });
 }
 
+class PlusPermissionForm {
+  final String? name;
+  final String? code;
+  final String? description;
+  final String? status;
+  final int? sortOrder;
+  final String? resourceUrl;
+  final String? httpMethod;
+
+  PlusPermissionForm({
+    this.name,
+    this.code,
+    this.description,
+    this.status,
+    this.sortOrder,
+    this.resourceUrl,
+    this.httpMethod
+  });
+}
+
+class PlusApiResultPlusPermissionVO {
+  final PlusPermissionVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPlusPermissionVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusPermissionVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? id;
+  final String? uuid;
+  final String? name;
+  final String? code;
+  final String? description;
+  final String? status;
+  final int? sortOrder;
+  final String? resourceUrl;
+  final String? httpMethod;
+
+  PlusPermissionVO({
+    this.createdAt,
+    this.updatedAt,
+    this.id,
+    this.uuid,
+    this.name,
+    this.code,
+    this.description,
+    this.status,
+    this.sortOrder,
+    this.resourceUrl,
+    this.httpMethod
+  });
+}
+
 class PlusPartnerForm {
   final String? name;
   final String? level;
@@ -5686,6 +6140,26 @@ class PlusOrganizationMemberVO {
   });
 }
 
+class PlusApiResultBoolean {
+  final bool? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultBoolean({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
 class Participant {
   final int? id;
   final String? uuid;
@@ -5835,6 +6309,7 @@ class PlusNotificationVO {
 }
 
 class PlusNotesForm {
+  final int? id;
   final String? title;
   final String? content;
   final int? userId;
@@ -5851,6 +6326,7 @@ class PlusNotesForm {
   final TagsContent? tagsAsTagsContent;
 
   PlusNotesForm({
+    this.id,
     this.title,
     this.content,
     this.userId,
@@ -6104,8 +6580,8 @@ class PlusDnsRecordVO {
   final int? ttl;
   final int? priority;
   final bool? enabled;
-  final String? firstRecordValue;
   final List<String>? recordValues;
+  final String? firstRecordValue;
 
   PlusDnsRecordVO({
     this.createdAt,
@@ -6121,8 +6597,8 @@ class PlusDnsRecordVO {
     this.ttl,
     this.priority,
     this.enabled,
-    this.firstRecordValue,
-    this.recordValues
+    this.recordValues,
+    this.firstRecordValue
   });
 }
 
@@ -6673,15 +7149,15 @@ class AgentExecutionContext {
   final PlusDiskObject? disk;
   final PlusFileObject? diskRootFile;
   final bool? completed;
-  final bool? expired;
-  final Map<String, AgentScope>? agentSCOPES;
-  final bool? overSteps;
-  final bool? paused;
   final bool? running;
+  final bool? paused;
+  final bool? expired;
   final bool? failed;
   final bool? waiting;
   final bool? init;
   final bool? end;
+  final Map<String, AgentScope>? agentSCOPES;
+  final bool? overSteps;
 
   AgentExecutionContext({
     this.id,
@@ -6706,15 +7182,15 @@ class AgentExecutionContext {
     this.disk,
     this.diskRootFile,
     this.completed,
-    this.expired,
-    this.agentSCOPES,
-    this.overSteps,
-    this.paused,
     this.running,
+    this.paused,
+    this.expired,
     this.failed,
     this.waiting,
     this.init,
-    this.end
+    this.end,
+    this.agentSCOPES,
+    this.overSteps
   });
 }
 
@@ -7003,24 +7479,24 @@ class ChatMessageListener {
 }
 
 class ChatOptions {
+  final String? model;
+  final double? temperature;
   final double? topP;
   final int? topK;
-  final double? presencePenalty;
   final int? maxTokens;
   final List<String>? stopSequences;
   final double? frequencyPenalty;
-  final String? model;
-  final double? temperature;
+  final double? presencePenalty;
 
   ChatOptions({
+    this.model,
+    this.temperature,
     this.topP,
     this.topK,
-    this.presencePenalty,
     this.maxTokens,
     this.stopSequences,
     this.frequencyPenalty,
-    this.model,
-    this.temperature
+    this.presencePenalty
   });
 }
 
@@ -7109,9 +7585,9 @@ class Flow {
   final int? parentId;
   final String? startTime;
   final String? endTime;
+  final Node? lastNode;
   final Flow? parentFlow;
   final List<PlusAgent>? allAgents;
-  final Node? lastNode;
 
   Flow({
     this.id,
@@ -7124,9 +7600,9 @@ class Flow {
     this.parentId,
     this.startTime,
     this.endTime,
+    this.lastNode,
     this.parentFlow,
-    this.allAgents,
-    this.lastNode
+    this.allAgents
   });
 }
 
@@ -7332,9 +7808,9 @@ class MimeType {
   final Map<String, String>? parameters;
   final String? charset;
   final bool? concrete;
-  final bool? wildcardSubtype;
-  final bool? wildcardType;
   final String? subtypeSuffix;
+  final bool? wildcardType;
+  final bool? wildcardSubtype;
 
   MimeType({
     this.type,
@@ -7342,9 +7818,9 @@ class MimeType {
     this.parameters,
     this.charset,
     this.concrete,
-    this.wildcardSubtype,
+    this.subtypeSuffix,
     this.wildcardType,
-    this.subtypeSuffix
+    this.wildcardSubtype
   });
 }
 
@@ -7476,45 +7952,45 @@ class PlusAgent {
   final String? name;
   final int? id;
   final AgentDefinition? definition;
-  final String? uuid;
-  final List<String>? nextActions;
-  final IPlusChatMemory? chatMemory;
-  final AgentExecutionContext? executionContext;
-  final LlmAccountConfig? accountConfig;
-  final ToolCallbackProvider? toolCallbackProvider;
-  final PromptContextOptimizer? promptContextOptimizer;
-  final String? promptPath;
   final String? description;
   final AgentMetadata? metadata;
+  final String? uuid;
+  final Prompt? systemPrompt;
+  final List<PromptToolDescription>? tools;
+  final ChatContext? chatContext;
+  final ChatOptions? chatOptions;
+  final AgentExecutionContext? executionContext;
+  final List<String>? instructions;
   final String? faceURL;
   final Map<String, Prompt>? prompts;
-  final Prompt? systemPrompt;
-  final List<String>? instructions;
-  final ChatOptions? chatOptions;
-  final ChatContext? chatContext;
-  final List<PromptToolDescription>? tools;
+  final LlmAccountConfig? accountConfig;
+  final IPlusChatMemory? chatMemory;
+  final ToolCallbackProvider? toolCallbackProvider;
+  final String? promptPath;
+  final PromptContextOptimizer? promptContextOptimizer;
+  final List<String>? nextActions;
 
   PlusAgent({
     this.name,
     this.id,
     this.definition,
-    this.uuid,
-    this.nextActions,
-    this.chatMemory,
-    this.executionContext,
-    this.accountConfig,
-    this.toolCallbackProvider,
-    this.promptContextOptimizer,
-    this.promptPath,
     this.description,
     this.metadata,
+    this.uuid,
+    this.systemPrompt,
+    this.tools,
+    this.chatContext,
+    this.chatOptions,
+    this.executionContext,
+    this.instructions,
     this.faceURL,
     this.prompts,
-    this.systemPrompt,
-    this.instructions,
-    this.chatOptions,
-    this.chatContext,
-    this.tools
+    this.accountConfig,
+    this.chatMemory,
+    this.toolCallbackProvider,
+    this.promptPath,
+    this.promptContextOptimizer,
+    this.nextActions
   });
 }
 
@@ -7713,16 +8189,16 @@ class PlusProjectObject {
   final String? owner;
   final String? lastModifiedTime;
   final String? version;
-  final List<PlusFileObject>? files;
+  final TagsContent? tags;
+  final String? description;
+  final String? title;
+  final String? createdAt;
+  final int? ownerId;
   final String? uuid;
   final int? diskId;
   final String? author;
-  final int? ownerId;
-  final String? createdAt;
+  final List<PlusFileObject>? files;
   final String? screenType;
-  final String? description;
-  final TagsContent? tags;
-  final String? title;
 
   PlusProjectObject({
     this.name,
@@ -7731,16 +8207,16 @@ class PlusProjectObject {
     this.owner,
     this.lastModifiedTime,
     this.version,
-    this.files,
+    this.tags,
+    this.description,
+    this.title,
+    this.createdAt,
+    this.ownerId,
     this.uuid,
     this.diskId,
     this.author,
-    this.ownerId,
-    this.createdAt,
-    this.screenType,
-    this.description,
-    this.tags,
-    this.title
+    this.files,
+    this.screenType
   });
 }
 
@@ -7766,23 +8242,23 @@ class ProfileItem {
 
 class Prompt {
   final String? contents;
+  final ChatOptions? options;
+  final List<Message>? instructions;
   final Message? lastUserOrToolResponseMessage;
   final List<SystemMessage>? systemMessages;
   final List<UserMessage>? userMessages;
   final UserMessage? userMessage;
   final SystemMessage? systemMessage;
-  final ChatOptions? options;
-  final List<Message>? instructions;
 
   Prompt({
     this.contents,
+    this.options,
+    this.instructions,
     this.lastUserOrToolResponseMessage,
     this.systemMessages,
     this.userMessages,
     this.userMessage,
-    this.systemMessage,
-    this.options,
-    this.instructions
+    this.systemMessage
   });
 }
 
@@ -9275,8 +9751,8 @@ class VoiceSpeakerGenerationInput {
   final int? volume;
   final String? emotion;
   final bool? saveSpeaker;
-  final bool? usingExistingSpeaker;
   final bool? voiceClone;
+  final bool? usingExistingSpeaker;
   final int? referenceAssetCount;
 
   VoiceSpeakerGenerationInput({
@@ -9298,8 +9774,8 @@ class VoiceSpeakerGenerationInput {
     this.volume,
     this.emotion,
     this.saveSpeaker,
-    this.usingExistingSpeaker,
     this.voiceClone,
+    this.usingExistingSpeaker,
     this.referenceAssetCount
   });
 }
@@ -10330,6 +10806,8 @@ class PlusDatasourceVO {
 
 class PlusCouponForm {
   final String? name;
+  final String? redeemCode;
+  final int? pointCost;
   final String? type;
   final String? description;
   final int? amount;
@@ -10340,9 +10818,13 @@ class PlusCouponForm {
   final int? total;
   final int? getLimit;
   final String? status;
+  final String? scopeType;
+  final String? scopeValue;
 
   PlusCouponForm({
     this.name,
+    this.redeemCode,
+    this.pointCost,
     this.type,
     this.description,
     this.amount,
@@ -10352,7 +10834,9 @@ class PlusCouponForm {
     this.endTime,
     this.total,
     this.getLimit,
-    this.status
+    this.status,
+    this.scopeType,
+    this.scopeValue
   });
 }
 
@@ -10380,6 +10864,8 @@ class PlusCouponVO {
   final String? createdAt;
   final String? updatedAt;
   final String? name;
+  final String? redeemCode;
+  final int? pointCost;
   final String? type;
   final String? description;
   final int? amount;
@@ -10390,11 +10876,15 @@ class PlusCouponVO {
   final int? total;
   final int? getLimit;
   final String? status;
+  final String? scopeType;
+  final String? scopeValue;
 
   PlusCouponVO({
     this.createdAt,
     this.updatedAt,
     this.name,
+    this.redeemCode,
+    this.pointCost,
     this.type,
     this.description,
     this.amount,
@@ -10404,7 +10894,9 @@ class PlusCouponVO {
     this.endTime,
     this.total,
     this.getLimit,
-    this.status
+    this.status,
+    this.scopeType,
+    this.scopeValue
   });
 }
 
@@ -10424,7 +10916,7 @@ class PlusCouponTemplateForm {
   final String? validityType;
   final int? validityDays;
   final bool? canShare;
-  final int? scopeType;
+  final String? scopeType;
   final String? scopeValue;
 
   PlusCouponTemplateForm({
@@ -10487,7 +10979,7 @@ class PlusCouponTemplateVO {
   final String? validityType;
   final int? validityDays;
   final bool? canShare;
-  final int? scopeType;
+  final String? scopeType;
   final String? scopeValue;
 
   PlusCouponTemplateVO({
@@ -10639,6 +11131,44 @@ class PlusConversationVO {
     this.chatOptions,
     this.pinned,
     this.sortOrder
+  });
+}
+
+class FileTreeNodeVO {
+  final int? id;
+  final String? uuid;
+  final String? name;
+  final String? type;
+  final bool? isDirectory;
+  final String? path;
+  final String? relativePath;
+  final int? size;
+  final String? content;
+  final int? parentId;
+  final List<FileTreeNodeVO>? children;
+  final String? createdAt;
+  final String? updatedAt;
+  final String? extension;
+  final String? description;
+  final bool? readOnly;
+
+  FileTreeNodeVO({
+    this.id,
+    this.uuid,
+    this.name,
+    this.type,
+    this.isDirectory,
+    this.path,
+    this.relativePath,
+    this.size,
+    this.content,
+    this.parentId,
+    this.children,
+    this.createdAt,
+    this.updatedAt,
+    this.extension,
+    this.description,
+    this.readOnly
   });
 }
 
@@ -11208,6 +11738,72 @@ class PlusCharacterVO {
   });
 }
 
+class PlusChannelForm {
+  final String? name;
+  final String? channel;
+  final List<String>? types;
+  final List<String>? supportResources;
+  final String? status;
+  final String? description;
+
+  PlusChannelForm({
+    this.name,
+    this.channel,
+    this.types,
+    this.supportResources,
+    this.status,
+    this.description
+  });
+}
+
+class PlusApiResultPlusChannelVO {
+  final PlusChannelVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPlusChannelVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusChannelVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? id;
+  final String? uuid;
+  final int? userId;
+  final String? name;
+  final String? channel;
+  final List<String>? types;
+  final List<String>? supportResources;
+  final String? status;
+  final String? description;
+
+  PlusChannelVO({
+    this.createdAt,
+    this.updatedAt,
+    this.id,
+    this.uuid,
+    this.userId,
+    this.name,
+    this.channel,
+    this.types,
+    this.supportResources,
+    this.status,
+    this.description
+  });
+}
+
 class PlusChannelResourceForm {
   final String? resource;
   final String? channel;
@@ -11257,6 +11853,72 @@ class PlusChannelResourceVO {
     this.resource,
     this.channel,
     this.channelAccountId
+  });
+}
+
+class PlusChannelProxyForm {
+  final String? name;
+  final String? channel;
+  final String? proxy;
+  final String? defaultModel;
+  final String? status;
+  final String? description;
+
+  PlusChannelProxyForm({
+    this.name,
+    this.channel,
+    this.proxy,
+    this.defaultModel,
+    this.status,
+    this.description
+  });
+}
+
+class PlusApiResultPlusChannelProxyVO {
+  final PlusChannelProxyVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPlusChannelProxyVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusChannelProxyVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? id;
+  final String? uuid;
+  final int? userId;
+  final String? name;
+  final String? channel;
+  final String? proxy;
+  final String? defaultModel;
+  final String? status;
+  final String? description;
+
+  PlusChannelProxyVO({
+    this.createdAt,
+    this.updatedAt,
+    this.id,
+    this.uuid,
+    this.userId,
+    this.name,
+    this.channel,
+    this.proxy,
+    this.defaultModel,
+    this.status,
+    this.description
   });
 }
 
@@ -13014,9 +13676,75 @@ class PlusArticleVO {
 
 class AppConfig {
   final OfficialAccountConfig? officialAccount;
+  final AppPublishConfig? publish;
 
   AppConfig({
-    this.officialAccount
+    this.officialAccount,
+    this.publish
+  });
+}
+
+class AppInstallConfig {
+  final List<AppInstallPackage>? packages;
+  final String? defaultPackageId;
+  final String? installCommand;
+  final String? launchCommand;
+  final String? uninstallCommand;
+  final Map<String, dynamic>? metadata;
+
+  AppInstallConfig({
+    this.packages,
+    this.defaultPackageId,
+    this.installCommand,
+    this.launchCommand,
+    this.uninstallCommand,
+    this.metadata
+  });
+}
+
+class AppInstallPackage {
+  final String? id;
+  final String? name;
+  final String? sourceType;
+  final String? packageFormat;
+  final String? platform;
+  final String? url;
+  final String? repositoryUrl;
+  final String? branch;
+  final String? tag;
+  final String? commitId;
+  final String? checksumAlgorithm;
+  final String? checksum;
+  final String? architecture;
+  final int? sizeBytes;
+  final bool? enabled;
+
+  AppInstallPackage({
+    this.id,
+    this.name,
+    this.sourceType,
+    this.packageFormat,
+    this.platform,
+    this.url,
+    this.repositoryUrl,
+    this.branch,
+    this.tag,
+    this.commitId,
+    this.checksumAlgorithm,
+    this.checksum,
+    this.architecture,
+    this.sizeBytes,
+    this.enabled
+  });
+}
+
+class AppInstallSkill {
+  final int? id;
+  final String? name;
+
+  AppInstallSkill({
+    this.id,
+    this.name
   });
 }
 
@@ -13025,6 +13753,52 @@ class AppPlatforms {
 
   AppPlatforms({
     this.platforms
+  });
+}
+
+class AppPublishConfig {
+  final List<AppStoreListingConfig>? stores;
+
+  AppPublishConfig({
+    this.stores
+  });
+}
+
+class AppStoreListingConfig {
+  final String? platform;
+  final String? storeAppId;
+  final String? packageName;
+  final String? bundleId;
+  final String? releaseTrack;
+  final String? privacyPolicyUrl;
+  final String? termsOfServiceUrl;
+  final String? supportUrl;
+  final String? supportEmail;
+  final String? marketingUrl;
+  final String? category;
+  final String? subcategory;
+  final String? contentRating;
+  final List<String>? languages;
+  final List<String>? countries;
+  final List<String>? screenshotUrls;
+
+  AppStoreListingConfig({
+    this.platform,
+    this.storeAppId,
+    this.packageName,
+    this.bundleId,
+    this.releaseTrack,
+    this.privacyPolicyUrl,
+    this.termsOfServiceUrl,
+    this.supportUrl,
+    this.supportEmail,
+    this.marketingUrl,
+    this.category,
+    this.subcategory,
+    this.contentRating,
+    this.languages,
+    this.countries,
+    this.screenshotUrls
   });
 }
 
@@ -13041,6 +13815,9 @@ class PlusAppForm {
   final String? status;
   final String? appType;
   final AppPlatforms? platforms;
+  final AppPlatforms? installPlatforms;
+  final AppInstallSkill? installSkill;
+  final AppInstallConfig? installConfig;
   final String? packageName;
   final String? bundleId;
   final String? storeUrl;
@@ -13059,6 +13836,9 @@ class PlusAppForm {
     this.status,
     this.appType,
     this.platforms,
+    this.installPlatforms,
+    this.installSkill,
+    this.installConfig,
     this.packageName,
     this.bundleId,
     this.storeUrl,
@@ -13102,6 +13882,9 @@ class PlusAppVO {
   final String? status;
   final String? appType;
   final AppPlatforms? platforms;
+  final AppPlatforms? installPlatforms;
+  final AppInstallSkill? installSkill;
+  final AppInstallConfig? installConfig;
   final String? packageName;
   final String? bundleId;
   final String? storeUrl;
@@ -13123,6 +13906,9 @@ class PlusAppVO {
     this.status,
     this.appType,
     this.platforms,
+    this.installPlatforms,
+    this.installSkill,
+    this.installConfig,
     this.packageName,
     this.bundleId,
     this.storeUrl,
@@ -13157,6 +13943,7 @@ class PlusApiKeyVO {
   final String? uuid;
   final String? name;
   final String? keyValue;
+  final String? maskedKeyValue;
   final String? type;
   final String? status;
   final String? expireTime;
@@ -13170,6 +13957,7 @@ class PlusApiKeyVO {
     this.uuid,
     this.name,
     this.keyValue,
+    this.maskedKeyValue,
     this.type,
     this.status,
     this.expireTime,
@@ -13195,6 +13983,20 @@ class PlusApiResultPlusApiKeyVO {
     this.ip,
     this.hostname,
     this.errorName
+  });
+}
+
+class PlusApiKeySelfUpdateForm {
+  final String? name;
+  final String? expireTime;
+  final bool? clearExpireTime;
+  final String? description;
+
+  PlusApiKeySelfUpdateForm({
+    this.name,
+    this.expireTime,
+    this.clearExpireTime,
+    this.description
   });
 }
 
@@ -13564,6 +14366,52 @@ class PlusApiResultPlusAccountHistoryVO {
   });
 }
 
+class AccountExchangeRateUpdateForm {
+  final double? pointsToCashRate;
+  final String? remarks;
+
+  AccountExchangeRateUpdateForm({
+    this.pointsToCashRate,
+    this.remarks
+  });
+}
+
+class AccountExchangeRateVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final String? configKey;
+  final double? pointsToCashRate;
+  final String? remarks;
+
+  AccountExchangeRateVO({
+    this.createdAt,
+    this.updatedAt,
+    this.configKey,
+    this.pointsToCashRate,
+    this.remarks
+  });
+}
+
+class PlusApiResultAccountExchangeRateVO {
+  final AccountExchangeRateVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultAccountExchangeRateVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
 class QueryListForm {
   final int? id;
   final String? createdAtFrom;
@@ -13589,28 +14437,28 @@ class Pageable {
 }
 
 class PagePlusWorkspaceVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusWorkspaceVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusWorkspaceVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -13618,16 +14466,16 @@ class PagePlusWorkspaceVO {
 
 class PageableObject {
   final int? offset;
-  final SortObject? sort;
   final bool? paged;
+  final SortObject? sort;
   final int? pageNumber;
   final int? pageSize;
   final bool? unpaged;
 
   PageableObject({
     this.offset,
-    this.sort,
     this.paged,
+    this.sort,
     this.pageNumber,
     this.pageSize,
     this.unpaged
@@ -13687,28 +14535,28 @@ class PlusApiResultListPlusWorkspaceVO {
 }
 
 class PageContentVoteVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<ContentVoteVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PageContentVoteVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -13775,28 +14623,28 @@ class PlusVoiceSpeakerQueryForm {
 }
 
 class PagePlusVoiceSpeakerVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusVoiceSpeakerVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusVoiceSpeakerVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -13843,28 +14691,28 @@ class PlusApiResultListPlusVoiceSpeakerVO {
 }
 
 class PagePlusVisitHistoryVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusVisitHistoryVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusVisitHistoryVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -13911,28 +14759,28 @@ class PlusApiResultListPlusVisitHistoryVO {
 }
 
 class PagePlusVipUserVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusVipUserVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusVipUserVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -13979,28 +14827,28 @@ class PlusApiResultListPlusVipUserVO {
 }
 
 class PagePlusVipRechargePackVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusVipRechargePackVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusVipRechargePackVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -14047,28 +14895,28 @@ class PlusApiResultListPlusVipRechargePackVO {
 }
 
 class PagePlusVipRechargeVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusVipRechargeVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusVipRechargeVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -14115,28 +14963,28 @@ class PlusApiResultListPlusVipRechargeVO {
 }
 
 class PagePlusVipPointChangeVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusVipPointChangeVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusVipPointChangeVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -14199,28 +15047,28 @@ class PlusVipPackGroupQueryForm {
 }
 
 class PagePlusVipPackGroupVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusVipPackGroupVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusVipPackGroupVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -14267,28 +15115,28 @@ class PlusApiResultListPlusVipPackGroupVO {
 }
 
 class PagePlusVipPackVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusVipPackVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusVipPackVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -14335,28 +15183,28 @@ class PlusApiResultListPlusVipPackVO {
 }
 
 class PagePlusVipLevelVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusVipLevelVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusVipLevelVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -14403,28 +15251,28 @@ class PlusApiResultListPlusVipLevelVO {
 }
 
 class PagePlusVipLevelBenefitVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusVipLevelBenefitVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusVipLevelBenefitVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -14471,28 +15319,28 @@ class PlusApiResultListPlusVipLevelBenefitVO {
 }
 
 class PagePlusVipBenefitUsageVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusVipBenefitUsageVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusVipBenefitUsageVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -14539,28 +15387,28 @@ class PlusApiResultListPlusVipBenefitUsageVO {
 }
 
 class PagePlusVipBenefitVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusVipBenefitVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusVipBenefitVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -14607,28 +15455,28 @@ class PlusApiResultListPlusVipBenefitVO {
 }
 
 class PagePlusVideoVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusVideoVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusVideoVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -14675,28 +15523,28 @@ class PlusApiResultListPlusVideoVO {
 }
 
 class PagePlusUserOAuthAccountVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusUserOAuthAccountVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusUserOAuthAccountVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -14743,28 +15591,28 @@ class PlusApiResultListPlusUserOAuthAccountVO {
 }
 
 class PagePlusUserVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusUserVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusUserVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -14811,28 +15659,28 @@ class PlusApiResultListPlusUserVO {
 }
 
 class PagePlusUserCouponVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusUserCouponVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusUserCouponVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -14879,28 +15727,28 @@ class PlusApiResultListPlusUserCouponVO {
 }
 
 class PagePlusUserCardVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusUserCardVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusUserCardVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -14947,28 +15795,28 @@ class PlusApiResultListPlusUserCardVO {
 }
 
 class PagePlusUserAddressVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusUserAddressVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusUserAddressVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -15015,28 +15863,28 @@ class PlusApiResultListPlusUserAddressVO {
 }
 
 class PageUsageRecordVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<UsageRecordVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PageUsageRecordVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -15083,28 +15931,28 @@ class PlusApiResultListUsageRecordVO {
 }
 
 class PagePlusShoppingCartVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusShoppingCartVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusShoppingCartVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -15151,28 +15999,28 @@ class PlusApiResultListPlusShoppingCartVO {
 }
 
 class PagePlusShoppingCartItemVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusShoppingCartItemVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusShoppingCartItemVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -15219,28 +16067,28 @@ class PlusApiResultListPlusShoppingCartItemVO {
 }
 
 class PagePlusRefundVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusRefundVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusRefundVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -15298,49 +16146,29 @@ class PlusPaymentStatusQueryForm {
   });
 }
 
-class PlusApiResultBoolean {
-  final bool? data;
-  final String? code;
-  final String? msg;
-  final String? requestId;
-  final String? ip;
-  final String? hostname;
-  final String? errorName;
-
-  PlusApiResultBoolean({
-    this.data,
-    this.code,
-    this.msg,
-    this.requestId,
-    this.ip,
-    this.hostname,
-    this.errorName
-  });
-}
-
 class PagePlusPaymentVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusPaymentVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusPaymentVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -15623,10 +16451,34 @@ class PlusApiResultOrderCancelVO {
 }
 
 class CreateVirtualOrderForm {
-
+  final List<OrderContentItem>? items;
+  final String? expireTime;
 
   CreateVirtualOrderForm({
+    this.items,
+    this.expireTime
+  });
+}
 
+class OrderContentItem {
+  final int? id;
+  final int? productId;
+  final int? skuId;
+  final String? name;
+  final String? type;
+  final int? quantity;
+  final double? unitPrice;
+  final double? totalPrice;
+
+  OrderContentItem({
+    this.id,
+    this.productId,
+    this.skuId,
+    this.name,
+    this.type,
+    this.quantity,
+    this.unitPrice,
+    this.totalPrice
   });
 }
 
@@ -15669,10 +16521,12 @@ class VirtualOrderVO {
 }
 
 class CreateVipOrderForm {
-
+  final List<OrderContentItem>? items;
+  final String? expireTime;
 
   CreateVipOrderForm({
-
+    this.items,
+    this.expireTime
   });
 }
 
@@ -15715,10 +16569,14 @@ class VipOrderVO {
 }
 
 class CreatePointsOrderForm {
-
+  final List<OrderContentItem>? items;
+  final int? pointsAmount;
+  final String? expireTime;
 
   CreatePointsOrderForm({
-
+    this.items,
+    this.pointsAmount,
+    this.expireTime
   });
 }
 
@@ -15761,28 +16619,28 @@ class PointsOrderVO {
 }
 
 class PagePlusOrderVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusOrderVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusOrderVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -15829,28 +16687,28 @@ class PlusApiResultListPlusOrderVO {
 }
 
 class PagePlusOrderItemVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusOrderItemVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusOrderItemVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -15897,10 +16755,12 @@ class PlusApiResultListPlusOrderItemVO {
 }
 
 class CreateImGroupOrderForm {
-
+  final List<OrderContentItem>? items;
+  final String? expireTime;
 
   CreateImGroupOrderForm({
-
+    this.items,
+    this.expireTime
   });
 }
 
@@ -15943,10 +16803,12 @@ class PlusApiResultImGroupOrderVO {
 }
 
 class CreateGoodsOrderForm {
-
+  final List<CartItem>? items;
+  final String? expireTime;
 
   CreateGoodsOrderForm({
-
+    this.items,
+    this.expireTime
   });
 }
 
@@ -15988,29 +16850,77 @@ class PlusApiResultGoodsOrderVO {
   });
 }
 
+class CreateBookingOrderForm {
+  final List<OrderContentItem>? items;
+  final String? expireTime;
+
+  CreateBookingOrderForm({
+    this.items,
+    this.expireTime
+  });
+}
+
+class BookingOrderVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? orderId;
+  final String? orderSn;
+  final bool? success;
+  final String? message;
+
+  BookingOrderVO({
+    this.createdAt,
+    this.updatedAt,
+    this.orderId,
+    this.orderSn,
+    this.success,
+    this.message
+  });
+}
+
+class PlusApiResultBookingOrderVO {
+  final BookingOrderVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultBookingOrderVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
 class PagePlusAiToolVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusAiToolVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusAiToolVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -16056,29 +16966,105 @@ class PlusApiResultListPlusAiToolVO {
   });
 }
 
-class PagePlusTenantVO {
-  final int? totalPages;
+class PagePlusTenantAuditLogVO {
   final int? totalElements;
+  final int? totalPages;
   final int? size;
-  final List<PlusTenantVO>? content;
+  final List<PlusTenantAuditLogVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
+  final PageableObject? pageable;
+  final bool? empty;
+
+  PagePlusTenantAuditLogVO({
+    this.totalElements,
+    this.totalPages,
+    this.size,
+    this.content,
+    this.number,
+    this.first,
+    this.last,
+    this.numberOfElements,
+    this.sort,
+    this.pageable,
+    this.empty
+  });
+}
+
+class PlusApiResultPagePlusTenantAuditLogVO {
+  final PagePlusTenantAuditLogVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPagePlusTenantAuditLogVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusTenantAuditLogVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? id;
+  final int? tenantId;
+  final String? action;
+  final String? module;
+  final String? operator;
+  final String? description;
+  final String? result;
+  final String? createTime;
+  final String? ip;
+
+  PlusTenantAuditLogVO({
+    this.createdAt,
+    this.updatedAt,
+    this.id,
+    this.tenantId,
+    this.action,
+    this.module,
+    this.operator,
+    this.description,
+    this.result,
+    this.createTime,
+    this.ip
+  });
+}
+
+class PagePlusTenantVO {
+  final int? totalElements;
+  final int? totalPages;
+  final int? size;
+  final List<PlusTenantVO>? content;
+  final int? number;
+  final bool? first;
+  final bool? last;
+  final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusTenantVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -16169,28 +17155,28 @@ class TokenResult {
 }
 
 class PagePlusTableVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusTableVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusTableVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -16236,29 +17222,101 @@ class PlusApiResultListPlusTableVO {
   });
 }
 
+class PlusSystemInvoiceApplyForm {
+  final String? title;
+  final String? taxId;
+  final String? type;
+  final double? amount;
+  final String? content;
+  final String? email;
+  final String? address;
+
+  PlusSystemInvoiceApplyForm({
+    this.title,
+    this.taxId,
+    this.type,
+    this.amount,
+    this.content,
+    this.email,
+    this.address
+  });
+}
+
+class PlusApiResultPlusSystemInvoiceVO {
+  final PlusSystemInvoiceVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPlusSystemInvoiceVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusSystemInvoiceVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? id;
+  final String? uuid;
+  final String? title;
+  final String? taxId;
+  final String? type;
+  final double? amount;
+  final String? status;
+  final String? content;
+  final String? email;
+  final String? address;
+  final String? createTime;
+
+  PlusSystemInvoiceVO({
+    this.createdAt,
+    this.updatedAt,
+    this.id,
+    this.uuid,
+    this.title,
+    this.taxId,
+    this.type,
+    this.amount,
+    this.status,
+    this.content,
+    this.email,
+    this.address,
+    this.createTime
+  });
+}
+
 class PagePlusSkuVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusSkuVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusSkuVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -16304,29 +17362,249 @@ class PlusApiResultListPlusSkuVO {
   });
 }
 
-class PageShortUrlVO {
-  final int? totalPages;
+class PlusAgentSkillReviewForm {
+  final String? comment;
+
+  PlusAgentSkillReviewForm({
+    this.comment
+  });
+}
+
+class PlusAgentSkillFeatureForm {
+  final bool? featured;
+  final int? recommendWeight;
+
+  PlusAgentSkillFeatureForm({
+    this.featured,
+    this.recommendWeight
+  });
+}
+
+class PlusAgentSkillQueryListForm {
+  final int? id;
+  final String? createdAtFrom;
+  final String? createdAtTo;
+  final String? keyword;
+  final int? userId;
+  final int? categoryId;
+  final int? packageId;
+  final String? marketStatus;
+  final String? visibility;
+  final String? sourceType;
+  final String? reviewStatus;
+  final bool? builtin;
+  final bool? enabled;
+  final bool? featured;
+
+  PlusAgentSkillQueryListForm({
+    this.id,
+    this.createdAtFrom,
+    this.createdAtTo,
+    this.keyword,
+    this.userId,
+    this.categoryId,
+    this.packageId,
+    this.marketStatus,
+    this.visibility,
+    this.sourceType,
+    this.reviewStatus,
+    this.builtin,
+    this.enabled,
+    this.featured
+  });
+}
+
+class PagePlusAgentSkillVO {
   final int? totalElements;
+  final int? totalPages;
   final int? size;
-  final List<ShortUrlVO>? content;
+  final List<PlusAgentSkillVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
+  final PageableObject? pageable;
+  final bool? empty;
+
+  PagePlusAgentSkillVO({
+    this.totalElements,
+    this.totalPages,
+    this.size,
+    this.content,
+    this.number,
+    this.first,
+    this.last,
+    this.numberOfElements,
+    this.sort,
+    this.pageable,
+    this.empty
+  });
+}
+
+class PlusApiResultPagePlusAgentSkillVO {
+  final PagePlusAgentSkillVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPagePlusAgentSkillVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusAgentSkillBatchReviewForm {
+  final List<int>? skillIds;
+  final String? comment;
+
+  PlusAgentSkillBatchReviewForm({
+    this.skillIds,
+    this.comment
+  });
+}
+
+class PlusApiResultListPlusAgentSkillVO {
+  final List<PlusAgentSkillVO>? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultListPlusAgentSkillVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusAgentSkillPackageQueryListForm {
+  final int? id;
+  final String? createdAtFrom;
+  final String? createdAtTo;
+  final String? keyword;
+  final int? userId;
+  final int? categoryId;
+  final bool? enabled;
+  final bool? featured;
+
+  PlusAgentSkillPackageQueryListForm({
+    this.id,
+    this.createdAtFrom,
+    this.createdAtTo,
+    this.keyword,
+    this.userId,
+    this.categoryId,
+    this.enabled,
+    this.featured
+  });
+}
+
+class PagePlusAgentSkillPackageVO {
+  final int? totalElements;
+  final int? totalPages;
+  final int? size;
+  final List<PlusAgentSkillPackageVO>? content;
+  final int? number;
+  final bool? first;
+  final bool? last;
+  final int? numberOfElements;
+  final SortObject? sort;
+  final PageableObject? pageable;
+  final bool? empty;
+
+  PagePlusAgentSkillPackageVO({
+    this.totalElements,
+    this.totalPages,
+    this.size,
+    this.content,
+    this.number,
+    this.first,
+    this.last,
+    this.numberOfElements,
+    this.sort,
+    this.pageable,
+    this.empty
+  });
+}
+
+class PlusApiResultPagePlusAgentSkillPackageVO {
+  final PagePlusAgentSkillPackageVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPagePlusAgentSkillPackageVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusApiResultListPlusAgentSkillPackageVO {
+  final List<PlusAgentSkillPackageVO>? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultListPlusAgentSkillPackageVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PageShortUrlVO {
+  final int? totalElements;
+  final int? totalPages;
+  final int? size;
+  final List<ShortUrlVO>? content;
+  final int? number;
+  final bool? first;
+  final bool? last;
+  final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PageShortUrlVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -16373,28 +17651,28 @@ class PlusApiResultListShortUrlVO {
 }
 
 class PagePlusShopVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusShopVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusShopVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -16441,28 +17719,28 @@ class PlusApiResultListPlusShopVO {
 }
 
 class PagePlusShareVisitRecordVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusShareVisitRecordVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusShareVisitRecordVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -16509,28 +17787,28 @@ class PlusApiResultListPlusShareVisitRecordVO {
 }
 
 class PagePlusShareVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusShareVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusShareVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -16577,28 +17855,28 @@ class PlusApiResultListPlusShareVO {
 }
 
 class PagePlusShardingKeyVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusShardingKeyVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusShardingKeyVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -16634,6 +17912,74 @@ class PlusApiResultListPlusShardingKeyVO {
   final String? errorName;
 
   PlusApiResultListPlusShardingKeyVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PagePlusApiSecurityPolicyVO {
+  final int? totalElements;
+  final int? totalPages;
+  final int? size;
+  final List<PlusApiSecurityPolicyVO>? content;
+  final int? number;
+  final bool? first;
+  final bool? last;
+  final int? numberOfElements;
+  final SortObject? sort;
+  final PageableObject? pageable;
+  final bool? empty;
+
+  PagePlusApiSecurityPolicyVO({
+    this.totalElements,
+    this.totalPages,
+    this.size,
+    this.content,
+    this.number,
+    this.first,
+    this.last,
+    this.numberOfElements,
+    this.sort,
+    this.pageable,
+    this.empty
+  });
+}
+
+class PlusApiResultPagePlusApiSecurityPolicyVO {
+  final PagePlusApiSecurityPolicyVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPagePlusApiSecurityPolicyVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusApiResultListPlusApiSecurityPolicyVO {
+  final List<PlusApiSecurityPolicyVO>? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultListPlusApiSecurityPolicyVO({
     this.data,
     this.code,
     this.msg,
@@ -16703,28 +18049,28 @@ class ChatCompletionCreateForm {
 }
 
 class PagePlusSchemaVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusSchemaVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusSchemaVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -16771,28 +18117,28 @@ class PlusApiResultListPlusSchemaVO {
 }
 
 class PagePlusRolePermissionVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusRolePermissionVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusRolePermissionVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -16839,28 +18185,28 @@ class PlusApiResultListPlusRolePermissionVO {
 }
 
 class PagePlusRoleVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusRoleVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusRoleVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -16907,28 +18253,28 @@ class PlusApiResultListPlusRoleVO {
 }
 
 class PagePlusInvokeRecordVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusInvokeRecordVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusInvokeRecordVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -16975,28 +18321,28 @@ class PlusApiResultListPlusInvokeRecordVO {
 }
 
 class PagePlusUserRoleVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusUserRoleVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusUserRoleVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -17043,28 +18389,28 @@ class PlusApiResultListPlusUserRoleVO {
 }
 
 class PagePlusAiPromptVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusAiPromptVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusAiPromptVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -17111,28 +18457,28 @@ class PlusApiResultListPlusAiPromptVO {
 }
 
 class PagePlusProjectVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusProjectVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusProjectVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -17223,28 +18569,28 @@ class PlusMallHomeVO {
 }
 
 class PagePlusProductVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusProductVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusProductVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -17291,28 +18637,28 @@ class PlusApiResultListPlusProductVO {
 }
 
 class PagePlusPptTemplateSlideVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusPptTemplateSlideVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusPptTemplateSlideVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -17507,28 +18853,28 @@ class PlusPptThemeShadow {
 }
 
 class PagePlusPptTemplateVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusPptTemplateVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusPptTemplateVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -17574,29 +18920,97 @@ class PlusApiResultListPlusPptTemplateVO {
   });
 }
 
-class PagePlusPartnerVO {
-  final int? totalPages;
+class PagePlusPermissionVO {
   final int? totalElements;
+  final int? totalPages;
   final int? size;
-  final List<PlusPartnerVO>? content;
+  final List<PlusPermissionVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
+  final PageableObject? pageable;
+  final bool? empty;
+
+  PagePlusPermissionVO({
+    this.totalElements,
+    this.totalPages,
+    this.size,
+    this.content,
+    this.number,
+    this.first,
+    this.last,
+    this.numberOfElements,
+    this.sort,
+    this.pageable,
+    this.empty
+  });
+}
+
+class PlusApiResultPagePlusPermissionVO {
+  final PagePlusPermissionVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPagePlusPermissionVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusApiResultListPlusPermissionVO {
+  final List<PlusPermissionVO>? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultListPlusPermissionVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PagePlusPartnerVO {
+  final int? totalElements;
+  final int? totalPages;
+  final int? size;
+  final List<PlusPartnerVO>? content;
+  final int? number;
+  final bool? first;
+  final bool? last;
+  final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusPartnerVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -17643,28 +19057,28 @@ class PlusApiResultListPlusPartnerVO {
 }
 
 class PagePlusParticipantVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusParticipantVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusParticipantVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -17795,10 +19209,26 @@ class PlusApiResultPlusTempSessionVO {
 }
 
 class PlusTempSessionVO {
-
+  final int? fileId;
+  final String? tmpAccessKeyId;
+  final String? tmpAccessKeySecret;
+  final String? sessionToken;
+  final int? expirationSeconds;
+  final String? uploadUrl;
+  final String? objectKey;
+  final BucketObject? bucket;
+  final String? createTime;
 
   PlusTempSessionVO({
-
+    this.fileId,
+    this.tmpAccessKeyId,
+    this.tmpAccessKeySecret,
+    this.sessionToken,
+    this.expirationSeconds,
+    this.uploadUrl,
+    this.objectKey,
+    this.bucket,
+    this.createTime
   });
 }
 
@@ -17853,36 +19283,44 @@ class PlusApiResultGetUrlResult {
 }
 
 class PlusUploadForm {
-
+  final String? provider;
+  final String? name;
+  final String? scene;
+  final BucketObject? bucket;
+  final int? expirationSeconds;
 
   PlusUploadForm({
-
+    this.provider,
+    this.name,
+    this.scene,
+    this.bucket,
+    this.expirationSeconds
   });
 }
 
 class PagePlusOssBucketVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusOssBucketVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusOssBucketVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -17929,28 +19367,28 @@ class PlusApiResultListPlusOssBucketVO {
 }
 
 class PagePlusPositionVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusPositionVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusPositionVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -17997,28 +19435,28 @@ class PlusApiResultListPlusPositionVO {
 }
 
 class PagePlusMemberRelationsVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusMemberRelationsVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusMemberRelationsVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -18065,28 +19503,28 @@ class PlusApiResultListPlusMemberRelationsVO {
 }
 
 class PagePlusOrganizationVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusOrganizationVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusOrganizationVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -18133,28 +19571,28 @@ class PlusApiResultListPlusOrganizationVO {
 }
 
 class PagePlusOrganizationMemberVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusOrganizationMemberVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusOrganizationMemberVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -18201,28 +19639,28 @@ class PlusApiResultListPlusOrganizationMemberVO {
 }
 
 class PagePlusNotificationVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusNotificationVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusNotificationVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -18268,29 +19706,175 @@ class PlusApiResultListPlusNotificationVO {
   });
 }
 
+class PlusNotesMediaDraftForm {
+  final int? userId;
+  final String? platform;
+  final String? product;
+  final List<PlusNotesPublishArticleForm>? articles;
+
+  PlusNotesMediaDraftForm({
+    this.userId,
+    this.platform,
+    this.product,
+    this.articles
+  });
+}
+
+class PlusNotesPublishArticleForm {
+  final int? noteId;
+  final String? noteUuid;
+  final String? title;
+  final String? content;
+  final String? digest;
+  final String? author;
+  final String? thumbMediaId;
+  final String? contentSourceUrl;
+  final int? showCoverPic;
+  final int? needOpenComment;
+  final int? onlyFansCanComment;
+
+  PlusNotesPublishArticleForm({
+    this.noteId,
+    this.noteUuid,
+    this.title,
+    this.content,
+    this.digest,
+    this.author,
+    this.thumbMediaId,
+    this.contentSourceUrl,
+    this.showCoverPic,
+    this.needOpenComment,
+    this.onlyFansCanComment
+  });
+}
+
+class PlusApiResultPlusMediaPublishResultDTO {
+  final PlusMediaPublishResultDTO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPlusMediaPublishResultDTO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusMediaPublishItemResultDTO {
+  final int? recordId;
+  final int? noteId;
+  final String? noteUuid;
+  final String? title;
+  final int? articleIndex;
+  final bool? success;
+  final int? errcode;
+  final String? errmsg;
+  final String? draftMediaId;
+  final String? publishId;
+  final String? articleId;
+
+  PlusMediaPublishItemResultDTO({
+    this.recordId,
+    this.noteId,
+    this.noteUuid,
+    this.title,
+    this.articleIndex,
+    this.success,
+    this.errcode,
+    this.errmsg,
+    this.draftMediaId,
+    this.publishId,
+    this.articleId
+  });
+}
+
+class PlusMediaPublishResultDTO {
+  final String? batchId;
+  final String? platform;
+  final String? action;
+  final bool? success;
+  final int? errcode;
+  final String? errmsg;
+  final String? draftMediaId;
+  final String? publishId;
+  final String? articleId;
+  final dynamic? previewData;
+  final List<PlusMediaPublishItemResultDTO>? items;
+
+  PlusMediaPublishResultDTO({
+    this.batchId,
+    this.platform,
+    this.action,
+    this.success,
+    this.errcode,
+    this.errmsg,
+    this.draftMediaId,
+    this.publishId,
+    this.articleId,
+    this.previewData,
+    this.items
+  });
+}
+
+class PlusNotesMediaPublishDraftForm {
+  final int? userId;
+  final String? platform;
+  final String? product;
+  final String? draftMediaId;
+
+  PlusNotesMediaPublishDraftForm({
+    this.userId,
+    this.platform,
+    this.product,
+    this.draftMediaId
+  });
+}
+
+class PlusNotesMediaPreviewForm {
+  final int? userId;
+  final String? platform;
+  final String? product;
+  final String? draftMediaId;
+
+  PlusNotesMediaPreviewForm({
+    this.userId,
+    this.platform,
+    this.product,
+    this.draftMediaId
+  });
+}
+
 class PagePlusNewsVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusNewsVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusNewsVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -18337,28 +19921,28 @@ class PlusApiResultListPlusNewsVO {
 }
 
 class PagePlusHostDomainVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusHostDomainVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusHostDomainVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -18405,28 +19989,28 @@ class PlusApiResultListPlusHostDomainVO {
 }
 
 class PagePlusDnsRecordVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusDnsRecordVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusDnsRecordVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -18473,28 +20057,28 @@ class PlusApiResultListPlusDnsRecordVO {
 }
 
 class PagePlusMusicVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusMusicVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusMusicVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -18541,28 +20125,28 @@ class PlusApiResultListPlusMusicVO {
 }
 
 class PagePlusAiModelPriceVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusAiModelPriceVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusAiModelPriceVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -18608,29 +20192,53 @@ class PlusApiResultListPlusAiModelPriceVO {
   });
 }
 
+class PlusAiModelInfoQueryListForm {
+  final int? id;
+  final String? createdAtFrom;
+  final String? createdAtTo;
+  final String? keyword;
+  final String? channel;
+  final String? modelType;
+  final String? status;
+  final String? family;
+  final bool? openSource;
+
+  PlusAiModelInfoQueryListForm({
+    this.id,
+    this.createdAtFrom,
+    this.createdAtTo,
+    this.keyword,
+    this.channel,
+    this.modelType,
+    this.status,
+    this.family,
+    this.openSource
+  });
+}
+
 class PagePlusAiModelInfoVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusAiModelInfoVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusAiModelInfoVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -18677,28 +20285,28 @@ class PlusApiResultListPlusAiModelInfoVO {
 }
 
 class PagePlusChatMessageContentVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusChatMessageContentVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusChatMessageContentVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -18745,28 +20353,28 @@ class PlusApiResultListPlusChatMessageContentVO {
 }
 
 class PagePlusMemberLevelVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusMemberLevelVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusMemberLevelVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -18813,28 +20421,28 @@ class PlusApiResultListPlusMemberLevelVO {
 }
 
 class PagePlusMemberCardVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusMemberCardVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusMemberCardVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -18881,28 +20489,28 @@ class PlusApiResultListPlusMemberCardVO {
 }
 
 class PagePlusKnowledgeBaseVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusKnowledgeBaseVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusKnowledgeBaseVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -18949,28 +20557,28 @@ class PlusApiResultListPlusKnowledgeBaseVO {
 }
 
 class PageInvitationRelationVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<InvitationRelationVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PageInvitationRelationVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -19017,28 +20625,28 @@ class PlusApiResultListInvitationRelationVO {
 }
 
 class PageInvitationCodeVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<InvitationCodeVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PageInvitationCodeVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -19085,28 +20693,28 @@ class PlusApiResultListInvitationCodeVO {
 }
 
 class PagePlusImageVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusImageVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusImageVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -19152,29 +20760,59 @@ class PlusApiResultListPlusImageVO {
   });
 }
 
+class PlusImMessageMarkReadForm {
+  final int? conversationId;
+
+  PlusImMessageMarkReadForm({
+    this.conversationId
+  });
+}
+
+class PlusImMessageQueryForm {
+  final int? id;
+  final String? createdAtFrom;
+  final String? createdAtTo;
+  final int? conversationId;
+  final int? senderId;
+  final int? receiverId;
+  final int? groupId;
+  final String? type;
+
+  PlusImMessageQueryForm({
+    this.id,
+    this.createdAtFrom,
+    this.createdAtTo,
+    this.conversationId,
+    this.senderId,
+    this.receiverId,
+    this.groupId,
+    this.type
+  });
+}
+
 class PagePlusMessage {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusMessage>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusMessage({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -19237,28 +20875,28 @@ class PlusMessage {
 }
 
 class PagePlusImGroupVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusImGroupVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusImGroupVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -19525,28 +21163,28 @@ class PlusApiResultGenerateMusicVO {
 }
 
 class PagePlusAiGenerationVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusAiGenerationVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusAiGenerationVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -19655,28 +21293,28 @@ class PlusApiResultGenerateImageVO {
 }
 
 class PagePlusAiGenerationContentVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusAiGenerationContentVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusAiGenerationContentVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -19919,28 +21557,28 @@ class PlusApiResultGenerateAudioEffectVO {
 }
 
 class PagePlusFilePartVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusFilePartVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusFilePartVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -19987,28 +21625,28 @@ class PlusApiResultListPlusFilePartVO {
 }
 
 class PagePlusFileVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusFileVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusFileVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -20081,8 +21719,8 @@ class PlusTreeNodePlusFileVO {
   final int? index;
   final bool? root;
   final bool? leaf;
-  final int? childrenCount;
   final int? depth;
+  final int? childrenCount;
 
   PlusTreeNodePlusFileVO({
     this.data,
@@ -20091,34 +21729,34 @@ class PlusTreeNodePlusFileVO {
     this.index,
     this.root,
     this.leaf,
-    this.childrenCount,
-    this.depth
+    this.depth,
+    this.childrenCount
   });
 }
 
 class PagePlusFileContentVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusFileContentVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusFileContentVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -20165,28 +21803,28 @@ class PlusApiResultListPlusFileContentVO {
 }
 
 class PagePlusFeedsVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusFeedsVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusFeedsVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -20233,28 +21871,28 @@ class PlusApiResultListPlusFeedsVO {
 }
 
 class PagePlusFeedbackVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusFeedbackVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusFeedbackVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -20301,28 +21939,28 @@ class PlusApiResultListPlusFeedbackVO {
 }
 
 class PagePlusFavoriteVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusFavoriteVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusFavoriteVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -20369,28 +22007,28 @@ class PlusApiResultListPlusFavoriteVO {
 }
 
 class PagePlusDiskMemberVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusDiskMemberVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusDiskMemberVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -20437,28 +22075,28 @@ class PlusApiResultListPlusDiskMemberVO {
 }
 
 class PagePlusDiskVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusDiskVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusDiskVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -20505,28 +22143,28 @@ class PlusApiResultListPlusDiskVO {
 }
 
 class PagePlusDetailVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusDetailVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusDetailVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -20573,28 +22211,28 @@ class PlusApiResultListPlusDetailVO {
 }
 
 class PagePlusDepartmentVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusDepartmentVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusDepartmentVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -20641,28 +22279,28 @@ class PlusApiResultListPlusDepartmentVO {
 }
 
 class PagePlusDatasourceVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusDatasourceVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusDatasourceVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -20708,29 +22346,37 @@ class PlusApiResultListPlusDatasourceVO {
   });
 }
 
+class CouponPointsExchangeForm {
+  final String? requestNo;
+
+  CouponPointsExchangeForm({
+    this.requestNo
+  });
+}
+
 class PagePlusCouponTemplateVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusCouponTemplateVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusCouponTemplateVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -20776,29 +22422,47 @@ class PlusApiResultListPlusCouponTemplateVO {
   });
 }
 
+class CouponRedeemForm {
+  final String? redeemCode;
+  final String? channel;
+
+  CouponRedeemForm({
+    this.redeemCode,
+    this.channel
+  });
+}
+
+class CouponRollbackForm {
+  final String? reason;
+
+  CouponRollbackForm({
+    this.reason
+  });
+}
+
 class PagePlusCouponVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusCouponVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusCouponVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -20893,28 +22557,28 @@ class PlusConversationQueryListForm {
 }
 
 class PagePlusConversationVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusConversationVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusConversationVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -20960,6 +22624,62 @@ class PlusApiResultListPlusConversationVO {
   });
 }
 
+class CreateChapterForm {
+  final int? contentWorkId;
+  final int? parentDirectoryId;
+  final String? fileName;
+  final bool? isDirectory;
+  final String? content;
+
+  CreateChapterForm({
+    this.contentWorkId,
+    this.parentDirectoryId,
+    this.fileName,
+    this.isDirectory,
+    this.content
+  });
+}
+
+class CreateContentForm {
+  final String? title;
+  final String? type;
+  final String? description;
+  final String? coverUrl;
+
+  CreateContentForm({
+    this.title,
+    this.type,
+    this.description,
+    this.coverUrl
+  });
+}
+
+class ContentWorkVO {
+  final int? id;
+  final String? uuid;
+  final String? title;
+  final String? type;
+  final String? typeDesc;
+  final String? description;
+  final String? coverUrl;
+  final String? path;
+  final String? createdAt;
+  final String? updatedAt;
+
+  ContentWorkVO({
+    this.id,
+    this.uuid,
+    this.title,
+    this.type,
+    this.typeDesc,
+    this.description,
+    this.coverUrl,
+    this.path,
+    this.createdAt,
+    this.updatedAt
+  });
+}
+
 class PlusCommentsReplyForm {
   final String? content;
   final int? userId;
@@ -20971,28 +22691,28 @@ class PlusCommentsReplyForm {
 }
 
 class PagePlusCommentsVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusCommentsVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusCommentsVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -21039,28 +22759,28 @@ class PlusApiResultListPlusCommentsVO {
 }
 
 class PagePlusColumnVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusColumnVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusColumnVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -21107,28 +22827,28 @@ class PlusApiResultListPlusColumnVO {
 }
 
 class PagePlusCollectionVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusCollectionVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusCollectionVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -21175,28 +22895,28 @@ class PlusApiResultListPlusCollectionVO {
 }
 
 class PagePlusCollectionItemVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusCollectionItemVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusCollectionItemVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -21261,28 +22981,28 @@ class ChatMessageQueryListForm {
 }
 
 class PagePlusChatMessageVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusChatMessageVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusChatMessageVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -21329,28 +23049,28 @@ class PlusApiResultListPlusChatMessageVO {
 }
 
 class PagePlusCharacterVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusCharacterVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusCharacterVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -21397,28 +23117,28 @@ class PlusApiResultListPlusCharacterVO {
 }
 
 class PagePlusChannelResourceVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusChannelResourceVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusChannelResourceVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -21454,6 +23174,142 @@ class PlusApiResultListPlusChannelResourceVO {
   final String? errorName;
 
   PlusApiResultListPlusChannelResourceVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PagePlusChannelProxyVO {
+  final int? totalElements;
+  final int? totalPages;
+  final int? size;
+  final List<PlusChannelProxyVO>? content;
+  final int? number;
+  final bool? first;
+  final bool? last;
+  final int? numberOfElements;
+  final SortObject? sort;
+  final PageableObject? pageable;
+  final bool? empty;
+
+  PagePlusChannelProxyVO({
+    this.totalElements,
+    this.totalPages,
+    this.size,
+    this.content,
+    this.number,
+    this.first,
+    this.last,
+    this.numberOfElements,
+    this.sort,
+    this.pageable,
+    this.empty
+  });
+}
+
+class PlusApiResultPagePlusChannelProxyVO {
+  final PagePlusChannelProxyVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPagePlusChannelProxyVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusApiResultListPlusChannelProxyVO {
+  final List<PlusChannelProxyVO>? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultListPlusChannelProxyVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PagePlusChannelVO {
+  final int? totalElements;
+  final int? totalPages;
+  final int? size;
+  final List<PlusChannelVO>? content;
+  final int? number;
+  final bool? first;
+  final bool? last;
+  final int? numberOfElements;
+  final SortObject? sort;
+  final PageableObject? pageable;
+  final bool? empty;
+
+  PagePlusChannelVO({
+    this.totalElements,
+    this.totalPages,
+    this.size,
+    this.content,
+    this.number,
+    this.first,
+    this.last,
+    this.numberOfElements,
+    this.sort,
+    this.pageable,
+    this.empty
+  });
+}
+
+class PlusApiResultPagePlusChannelVO {
+  final PagePlusChannelVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPagePlusChannelVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusApiResultListPlusChannelVO {
+  final List<PlusChannelVO>? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultListPlusChannelVO({
     this.data,
     this.code,
     this.msg,
@@ -21505,28 +23361,28 @@ class PlusApiResultListPlusChannelAccountVO {
 }
 
 class PagePlusChannelAccountVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusChannelAccountVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusChannelAccountVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -21553,28 +23409,28 @@ class PlusApiResultPagePlusChannelAccountVO {
 }
 
 class PagePlusCategoryVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusCategoryVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusCategoryVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -21647,8 +23503,8 @@ class PlusTreeNodePlusCategoryVO {
   final int? index;
   final bool? root;
   final bool? leaf;
-  final int? childrenCount;
   final int? depth;
+  final int? childrenCount;
 
   PlusTreeNodePlusCategoryVO({
     this.data,
@@ -21657,34 +23513,34 @@ class PlusTreeNodePlusCategoryVO {
     this.index,
     this.root,
     this.leaf,
-    this.childrenCount,
-    this.depth
+    this.depth,
+    this.childrenCount
   });
 }
 
 class PagePlusCardTemplateVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusCardTemplateVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusCardTemplateVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -21731,28 +23587,28 @@ class PlusApiResultListPlusCardTemplateVO {
 }
 
 class PagePlusCardVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusCardVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusCardVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -21870,6 +23726,74 @@ class SendVerificationCodeForm {
   });
 }
 
+class PlusApiResultQrCodeVO {
+  final QrCodeVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultQrCodeVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class QrCodeVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final String? qrKey;
+  final String? qrUrl;
+  final String? qrContent;
+  final int? expireTime;
+
+  QrCodeVO({
+    this.createdAt,
+    this.updatedAt,
+    this.qrKey,
+    this.qrUrl,
+    this.qrContent,
+    this.expireTime
+  });
+}
+
+class QrCodeConfirmForm {
+  final String? qrKey;
+  final String? token;
+
+  QrCodeConfirmForm({
+    this.qrKey,
+    this.token
+  });
+}
+
+class PlusApiResultVoid {
+  final dynamic? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultVoid({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
 class OAuthLoginRequestForm {
   final String? provider;
   final String? redirectUri;
@@ -21884,17 +23808,43 @@ class OAuthLoginRequestForm {
   });
 }
 
-class OAuthLoginResponse {
+class OAuthLoginResponseVO {
+  final String? createdAt;
+  final String? updatedAt;
   final String? provider;
   final String? authUrl;
-  final String? state;
+  final String? qrCodeUrl;
+  final String? qrCodeContent;
   final int? expiresIn;
 
-  OAuthLoginResponse({
+  OAuthLoginResponseVO({
+    this.createdAt,
+    this.updatedAt,
     this.provider,
     this.authUrl,
-    this.state,
+    this.qrCodeUrl,
+    this.qrCodeContent,
     this.expiresIn
+  });
+}
+
+class PlusApiResultOAuthLoginResponseVO {
+  final OAuthLoginResponseVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultOAuthLoginResponseVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
   });
 }
 
@@ -21910,21 +23860,63 @@ class OAuthCallbackForm {
   });
 }
 
-class TokenDTO {
+class LoginResultVO {
+  final String? createdAt;
+  final String? updatedAt;
   final String? token;
   final String? refreshToken;
   final int? expiresIn;
   final int? refreshExpiresIn;
   final int? userId;
-  final Map<String, dynamic>? im;
+  final UserVO? user;
 
-  TokenDTO({
+  LoginResultVO({
+    this.createdAt,
+    this.updatedAt,
     this.token,
     this.refreshToken,
     this.expiresIn,
     this.refreshExpiresIn,
     this.userId,
-    this.im
+    this.user
+  });
+}
+
+class PlusApiResultLoginResultVO {
+  final LoginResultVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultLoginResultVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class UserVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? id;
+  final String? username;
+  final String? email;
+  final String? phone;
+
+  UserVO({
+    this.createdAt,
+    this.updatedAt,
+    this.id,
+    this.username,
+    this.email,
+    this.phone
   });
 }
 
@@ -22058,91 +24050,11 @@ class RegisterResultVO {
   });
 }
 
-class UserVO {
-  final String? createdAt;
-  final String? updatedAt;
-  final int? id;
-  final String? username;
-  final String? email;
-  final String? phone;
-
-  UserVO({
-    this.createdAt,
-    this.updatedAt,
-    this.id,
-    this.username,
-    this.email,
-    this.phone
-  });
-}
-
 class RefreshTokenForm {
   final String? refreshToken;
 
   RefreshTokenForm({
     this.refreshToken
-  });
-}
-
-class LoginResultVO {
-  final String? createdAt;
-  final String? updatedAt;
-  final String? token;
-  final String? refreshToken;
-  final int? expiresIn;
-  final int? refreshExpiresIn;
-  final int? userId;
-  final UserVO? user;
-
-  LoginResultVO({
-    this.createdAt,
-    this.updatedAt,
-    this.token,
-    this.refreshToken,
-    this.expiresIn,
-    this.refreshExpiresIn,
-    this.userId,
-    this.user
-  });
-}
-
-class PlusApiResultLoginResultVO {
-  final LoginResultVO? data;
-  final String? code;
-  final String? msg;
-  final String? requestId;
-  final String? ip;
-  final String? hostname;
-  final String? errorName;
-
-  PlusApiResultLoginResultVO({
-    this.data,
-    this.code,
-    this.msg,
-    this.requestId,
-    this.ip,
-    this.hostname,
-    this.errorName
-  });
-}
-
-class PlusApiResultVoid {
-  final dynamic? data;
-  final String? code;
-  final String? msg;
-  final String? requestId;
-  final String? ip;
-  final String? hostname;
-  final String? errorName;
-
-  PlusApiResultVoid({
-    this.data,
-    this.code,
-    this.msg,
-    this.requestId,
-    this.ip,
-    this.hostname,
-    this.errorName
   });
 }
 
@@ -22186,29 +24098,83 @@ class ChangePasswordForm {
   });
 }
 
+class GetCurrentAccessTokenForm {
+  final int? appId;
+  final String? platform;
+
+  GetCurrentAccessTokenForm({
+    this.appId,
+    this.platform
+  });
+}
+
+class CurrentAccessTokenVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? appId;
+  final String? appName;
+  final String? platform;
+  final int? tenantId;
+  final int? organizationId;
+  final TokenResult? tenantAccessToken;
+  final TokenResult? organizationAccessToken;
+
+  CurrentAccessTokenVO({
+    this.createdAt,
+    this.updatedAt,
+    this.appId,
+    this.appName,
+    this.platform,
+    this.tenantId,
+    this.organizationId,
+    this.tenantAccessToken,
+    this.organizationAccessToken
+  });
+}
+
+class PlusApiResultCurrentAccessTokenVO {
+  final CurrentAccessTokenVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultCurrentAccessTokenVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
 class PagePlusAttributeVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusAttributeVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusAttributeVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -22255,28 +24221,28 @@ class PlusApiResultListPlusAttributeVO {
 }
 
 class PagePlusArticleVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusArticleVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusArticleVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -22323,28 +24289,28 @@ class PlusApiResultListPlusArticleVO {
 }
 
 class PagePlusAppVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusAppVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusAppVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -22484,29 +24450,43 @@ class PlusApiResultAppSdkConfigVO {
   });
 }
 
+class PlusApiKeySelfCreateForm {
+  final String? name;
+  final String? type;
+  final String? expireTime;
+  final String? description;
+
+  PlusApiKeySelfCreateForm({
+    this.name,
+    this.type,
+    this.expireTime,
+    this.description
+  });
+}
+
 class PagePlusApiKeyVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusApiKeyVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusApiKeyVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -22553,28 +24533,28 @@ class PlusApiResultListPlusApiKeyVO {
 }
 
 class PagePlusAiAgentToolVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusAiAgentToolVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusAiAgentToolVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -22641,28 +24621,28 @@ class PlusAiAgentQueryListForm {
 }
 
 class PagePlusAiAgentVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusAiAgentVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusAiAgentVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -22709,28 +24689,28 @@ class PlusApiResultListPlusAiAgentVO {
 }
 
 class PagePlusAccountVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusAccountVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusAccountVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -22777,28 +24757,28 @@ class PlusApiResultListPlusAccountVO {
 }
 
 class PagePlusAccountHistoryVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusAccountHistoryVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusAccountHistoryVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -22918,6 +24898,54 @@ class PlusUserProfileVO {
   });
 }
 
+class PagePlusSystemInvoiceVO {
+  final int? totalElements;
+  final int? totalPages;
+  final int? size;
+  final List<PlusSystemInvoiceVO>? content;
+  final int? number;
+  final bool? first;
+  final bool? last;
+  final int? numberOfElements;
+  final SortObject? sort;
+  final PageableObject? pageable;
+  final bool? empty;
+
+  PagePlusSystemInvoiceVO({
+    this.totalElements,
+    this.totalPages,
+    this.size,
+    this.content,
+    this.number,
+    this.first,
+    this.last,
+    this.numberOfElements,
+    this.sort,
+    this.pageable,
+    this.empty
+  });
+}
+
+class PlusApiResultPagePlusSystemInvoiceVO {
+  final PagePlusSystemInvoiceVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPagePlusSystemInvoiceVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
 class UserRoleKey {
   final int? userId;
   final int? roleId;
@@ -22958,29 +24986,49 @@ class PlusApiResultFileListVO {
   });
 }
 
+class PlusApiResultListLong {
+  final List<int>? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultListLong({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
 class PagePlusNotesVO {
-  final int? totalPages;
   final int? totalElements;
+  final int? totalPages;
   final int? size;
   final List<PlusNotesVO>? content;
   final int? number;
-  final SortObject? sort;
   final bool? first;
   final bool? last;
   final int? numberOfElements;
+  final SortObject? sort;
   final PageableObject? pageable;
   final bool? empty;
 
   PagePlusNotesVO({
-    this.totalPages,
     this.totalElements,
+    this.totalPages,
     this.size,
     this.content,
     this.number,
-    this.sort,
     this.first,
     this.last,
     this.numberOfElements,
+    this.sort,
     this.pageable,
     this.empty
   });
@@ -23006,6 +25054,106 @@ class PlusApiResultPagePlusNotesVO {
   });
 }
 
+class PagePlusMediaPublishRecordDTO {
+  final int? totalElements;
+  final int? totalPages;
+  final int? size;
+  final List<PlusMediaPublishRecordDTO>? content;
+  final int? number;
+  final bool? first;
+  final bool? last;
+  final int? numberOfElements;
+  final SortObject? sort;
+  final PageableObject? pageable;
+  final bool? empty;
+
+  PagePlusMediaPublishRecordDTO({
+    this.totalElements,
+    this.totalPages,
+    this.size,
+    this.content,
+    this.number,
+    this.first,
+    this.last,
+    this.numberOfElements,
+    this.sort,
+    this.pageable,
+    this.empty
+  });
+}
+
+class PlusApiResultPagePlusMediaPublishRecordDTO {
+  final PagePlusMediaPublishRecordDTO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPagePlusMediaPublishRecordDTO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusMediaPublishRecordDTO {
+  final int? id;
+  final String? uuid;
+  final String? createdAt;
+  final String? updatedAt;
+  final int? version;
+  final String? batchId;
+  final int? userId;
+  final int? noteId;
+  final String? noteUuid;
+  final String? noteTitle;
+  final String? platform;
+  final String? action;
+  final String? status;
+  final String? draftMediaId;
+  final String? publishId;
+  final String? articleId;
+  final int? articleIndex;
+  final int? errcode;
+  final String? errmsg;
+  final Map<String, dynamic>? requestPayload;
+  final Map<String, dynamic>? responsePayload;
+  final String? startedAt;
+  final String? finishedAt;
+
+  PlusMediaPublishRecordDTO({
+    this.id,
+    this.uuid,
+    this.createdAt,
+    this.updatedAt,
+    this.version,
+    this.batchId,
+    this.userId,
+    this.noteId,
+    this.noteUuid,
+    this.noteTitle,
+    this.platform,
+    this.action,
+    this.status,
+    this.draftMediaId,
+    this.publishId,
+    this.articleId,
+    this.articleIndex,
+    this.errcode,
+    this.errmsg,
+    this.requestPayload,
+    this.responsePayload,
+    this.startedAt,
+    this.finishedAt
+  });
+}
+
 class PlusApiResultListPlusNotesVO {
   final List<PlusNotesVO>? data;
   final String? code;
@@ -23023,6 +25171,54 @@ class PlusApiResultListPlusNotesVO {
     this.ip,
     this.hostname,
     this.errorName
+  });
+}
+
+class ContentStatsVO {
+  final int? wordCount;
+  final int? chapterCount;
+  final int? fileSize;
+
+  ContentStatsVO({
+    this.wordCount,
+    this.chapterCount,
+    this.fileSize
+  });
+}
+
+class PlusApiResultQrCodeStatusVO {
+  final QrCodeStatusVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultQrCodeStatusVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class QrCodeStatusVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final String? status;
+  final UserVO? userInfo;
+  final LoginResultVO? token;
+
+  QrCodeStatusVO({
+    this.createdAt,
+    this.updatedAt,
+    this.status,
+    this.userInfo,
+    this.token
   });
 }
 
@@ -23081,6 +25277,9 @@ class AppInfoVO {
   final String? status;
   final String? appType;
   final AppPlatforms? platforms;
+  final AppPlatforms? installPlatforms;
+  final AppInstallSkill? installSkill;
+  final AppInstallConfig? installConfig;
   final String? packageName;
   final String? bundleId;
   final String? storeUrl;
@@ -23104,6 +25303,9 @@ class AppInfoVO {
     this.status,
     this.appType,
     this.platforms,
+    this.installPlatforms,
+    this.installSkill,
+    this.installConfig,
     this.packageName,
     this.bundleId,
     this.storeUrl,
@@ -23155,5 +25357,45 @@ class CreateUploadFileRequest {
 
   CreateUploadFileRequest({
     this.file
+  });
+}
+
+class GetAllContentsResponse {
+
+
+  GetAllContentsResponse({
+
+  });
+}
+
+class GetAllScriptsResponse {
+
+
+  GetAllScriptsResponse({
+
+  });
+}
+
+class GetAllProseResponse {
+
+
+  GetAllProseResponse({
+
+  });
+}
+
+class GetAllNovelsResponse {
+
+
+  GetAllNovelsResponse({
+
+  });
+}
+
+class GetAllArticlesResponse {
+
+
+  GetAllArticlesResponse({
+
   });
 }

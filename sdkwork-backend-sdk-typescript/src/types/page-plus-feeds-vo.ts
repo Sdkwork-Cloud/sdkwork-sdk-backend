@@ -3,15 +3,15 @@ import type { PlusFeedsVO } from './plus-feeds-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusFeedsVO {
-  totalPages?: number;
   totalElements?: number;
+  totalPages?: number;
   size?: number;
   content?: PlusFeedsVO[];
   number?: number;
-  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   numberOfElements?: number;
+  sort?: SortObject;
   pageable?: PageableObject;
   empty?: boolean;
 }

@@ -19,8 +19,8 @@ public class VoiceSpeakerGenerationInput {
     private Integer volume;
     private String emotion;
     private Boolean saveSpeaker;
-    private Boolean usingExistingSpeaker;
     private Boolean voiceClone;
+    private Boolean usingExistingSpeaker;
     private Integer referenceAssetCount;
 
     public String getTitle() {
@@ -167,20 +167,20 @@ public class VoiceSpeakerGenerationInput {
         this.saveSpeaker = saveSpeaker;
     }
 
-    public Boolean getUsingExistingSpeaker() {
-        return this.usingExistingSpeaker;
-    }
-    
-    public void setUsingExistingSpeaker(Boolean usingExistingSpeaker) {
-        this.usingExistingSpeaker = usingExistingSpeaker;
-    }
-
     public Boolean getVoiceClone() {
         return this.voiceClone;
     }
     
     public void setVoiceClone(Boolean voiceClone) {
         this.voiceClone = voiceClone;
+    }
+
+    public Boolean getUsingExistingSpeaker() {
+        return this.usingExistingSpeaker;
+    }
+    
+    public void setUsingExistingSpeaker(Boolean usingExistingSpeaker) {
+        this.usingExistingSpeaker = usingExistingSpeaker;
     }
 
     public Integer getReferenceAssetCount() {

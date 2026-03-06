@@ -5,21 +5,21 @@ type PlusAgent struct {
 	Name string `json:"name"`
 	Id int `json:"id"`
 	Definition AgentDefinition `json:"definition"`
-	Uuid string `json:"uuid"`
-	NextActions []string `json:"nextActions"`
-	ChatMemory IPlusChatMemory `json:"chatMemory"`
-	ExecutionContext AgentExecutionContext `json:"executionContext"`
-	AccountConfig LlmAccountConfig `json:"accountConfig"`
-	ToolCallbackProvider ToolCallbackProvider `json:"toolCallbackProvider"`
-	PromptContextOptimizer PromptContextOptimizer `json:"promptContextOptimizer"`
-	PromptPath string `json:"promptPath"`
 	Description string `json:"description"`
 	Metadata AgentMetadata `json:"metadata"`
+	Uuid string `json:"uuid"`
+	SystemPrompt Prompt `json:"systemPrompt"`
+	Tools []PromptToolDescription `json:"tools"`
+	ChatContext ChatContext `json:"chatContext"`
+	ChatOptions ChatOptions `json:"chatOptions"`
+	ExecutionContext AgentExecutionContext `json:"executionContext"`
+	Instructions []string `json:"instructions"`
 	FaceURL string `json:"faceURL"`
 	Prompts map[string]Prompt `json:"prompts"`
-	SystemPrompt Prompt `json:"systemPrompt"`
-	Instructions []string `json:"instructions"`
-	ChatOptions ChatOptions `json:"chatOptions"`
-	ChatContext ChatContext `json:"chatContext"`
-	Tools []PromptToolDescription `json:"tools"`
+	AccountConfig LlmAccountConfig `json:"accountConfig"`
+	ChatMemory IPlusChatMemory `json:"chatMemory"`
+	ToolCallbackProvider ToolCallbackProvider `json:"toolCallbackProvider"`
+	PromptPath string `json:"promptPath"`
+	PromptContextOptimizer PromptContextOptimizer `json:"promptContextOptimizer"`
+	NextActions []string `json:"nextActions"`
 }

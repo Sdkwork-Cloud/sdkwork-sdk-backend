@@ -28,14 +28,14 @@ namespace Backend.Models
         public PlusDiskObject? Disk { get; set; }
         public PlusFileObject? DiskRootFile { get; set; }
         public bool? Completed { get; set; }
-        public bool? Expired { get; set; }
-        public Dictionary<string, AgentScope>? AgentSCOPES { get; set; }
-        public bool? OverSteps { get; set; }
-        public bool? Paused { get; set; }
         public bool? Running { get; set; }
+        public bool? Paused { get; set; }
+        public bool? Expired { get; set; }
         public bool? Failed { get; set; }
         public bool? Waiting { get; set; }
         public bool? Init { get; set; }
         public bool? End { get; set; }
+        public Dictionary<string, AgentScope>? AgentSCOPES { get; set; }
+        public bool? OverSteps { get; set; }
     }
 }

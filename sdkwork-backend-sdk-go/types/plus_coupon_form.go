@@ -3,6 +3,8 @@ package types
 // Coupon template creation form
 type PlusCouponForm struct {
 	Name string `json:"name"`
+	RedeemCode string `json:"redeemCode"`
+	PointCost int `json:"pointCost"`
 	Type string `json:"type"`
 	Description string `json:"description"`
 	Amount int `json:"amount"`
@@ -13,4 +15,6 @@ type PlusCouponForm struct {
 	Total int `json:"total"`
 	GetLimit int `json:"getLimit"`
 	Status string `json:"status"`
+	ScopeType string `json:"scopeType"`
+	ScopeValue string `json:"scopeValue"`
 }

@@ -59,4 +59,10 @@ class OrganizationApi {
     final response = await _client.delete(ApiPaths.backendPath('/organization/${id}'));
     return response is PlusApiResultBoolean ? response : null;
   }
+
+  /// Get child organizations
+  Future<PlusApiResultListPlusOrganizationVO?> getChildren(String id) async {
+    final response = await _client.get(ApiPaths.backendPath('/organization/${id}/children'));
+    return response is PlusApiResultListPlusOrganizationVO ? response : null;
+  }
 }

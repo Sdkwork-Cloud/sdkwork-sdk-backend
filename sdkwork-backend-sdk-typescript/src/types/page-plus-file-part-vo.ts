@@ -3,15 +3,15 @@ import type { PlusFilePartVO } from './plus-file-part-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusFilePartVO {
-  totalPages?: number;
   totalElements?: number;
+  totalPages?: number;
   size?: number;
   content?: PlusFilePartVO[];
   number?: number;
-  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   numberOfElements?: number;
+  sort?: SortObject;
   pageable?: PageableObject;
   empty?: boolean;
 }

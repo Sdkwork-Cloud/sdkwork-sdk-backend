@@ -32,6 +32,38 @@ namespace Backend.Api
         }
 
         /// <summary>
+        /// Publish notes directly
+        /// </summary>
+        public async Task<PlusApiResultPlusMediaPublishResultDTO?> PublishNotesToMediaAsync(PlusNotesMediaDraftForm body)
+        {
+            return await _client.PostAsync<PlusApiResultPlusMediaPublishResultDTO>(ApiPaths.BackendPath("/notes/media/publish"), body);
+        }
+
+        /// <summary>
+        /// Create media draft
+        /// </summary>
+        public async Task<PlusApiResultPlusMediaPublishResultDTO?> CreateMediaDraftAsync(PlusNotesMediaDraftForm body)
+        {
+            return await _client.PostAsync<PlusApiResultPlusMediaPublishResultDTO>(ApiPaths.BackendPath("/notes/media/drafts"), body);
+        }
+
+        /// <summary>
+        /// Publish media draft
+        /// </summary>
+        public async Task<PlusApiResultPlusMediaPublishResultDTO?> PublishMediaDraftAsync(PlusNotesMediaPublishDraftForm body)
+        {
+            return await _client.PostAsync<PlusApiResultPlusMediaPublishResultDTO>(ApiPaths.BackendPath("/notes/media/drafts/publish"), body);
+        }
+
+        /// <summary>
+        /// Preview media draft
+        /// </summary>
+        public async Task<PlusApiResultPlusMediaPublishResultDTO?> PreviewMediaDraftAsync(PlusNotesMediaPreviewForm body)
+        {
+            return await _client.PostAsync<PlusApiResultPlusMediaPublishResultDTO>(ApiPaths.BackendPath("/notes/media/drafts/preview"), body);
+        }
+
+        /// <summary>
         /// Get note by UUID
         /// </summary>
         public async Task<PlusApiResultPlusNotesVO?> GetByUuidAsync(string uuid)
@@ -77,6 +109,14 @@ namespace Backend.Api
         public async Task<PlusApiResultPagePlusNotesVO?> ListByPageAsync(Dictionary<string, object>? query = null)
         {
             return await _client.GetAsync<PlusApiResultPagePlusNotesVO>(ApiPaths.BackendPath("/notes/page"), query);
+        }
+
+        /// <summary>
+        /// List media publish records
+        /// </summary>
+        public async Task<PlusApiResultPagePlusMediaPublishRecordDTO?> ListMediaPublishRecordsAsync(string noteId, Dictionary<string, object>? query = null)
+        {
+            return await _client.GetAsync<PlusApiResultPagePlusMediaPublishRecordDTO>(ApiPaths.BackendPath($"/notes/media/records/{noteId}"), query);
         }
 
         /// <summary>

@@ -56,4 +56,9 @@ public class OrganizationApi {
     public PlusApiResultBoolean delete(String id) throws Exception {
         return (PlusApiResultBoolean) client.delete(ApiPaths.backendPath("/organization/" + id + ""));
     }
+
+    /** Get child organizations */
+    public PlusApiResultListPlusOrganizationVO getChildren(String id) throws Exception {
+        return (PlusApiResultListPlusOrganizationVO) client.get(ApiPaths.backendPath("/organization/" + id + "/children"));
+    }
 }

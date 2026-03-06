@@ -20,7 +20,7 @@ class PlusWorkspaceForm:
     current_members: int = None
     max_storage: int = None
     used_storage: int = None
-    settings: str = None
+    settings: Dict[str, Any] = None
     is_deleted: bool
     is_public: bool
     is_template: bool

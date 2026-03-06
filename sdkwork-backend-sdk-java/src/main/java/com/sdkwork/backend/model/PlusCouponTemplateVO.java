@@ -19,7 +19,7 @@ public class PlusCouponTemplateVO {
     private String validityType;
     private Integer validityDays;
     private Boolean canShare;
-    private Integer scopeType;
+    private String scopeType;
     private String scopeValue;
 
     public String getCreatedAt() {
@@ -166,11 +166,11 @@ public class PlusCouponTemplateVO {
         this.canShare = canShare;
     }
 
-    public Integer getScopeType() {
+    public String getScopeType() {
         return this.scopeType;
     }
     
-    public void setScopeType(Integer scopeType) {
+    public void setScopeType(String scopeType) {
         this.scopeType = scopeType;
     }
 

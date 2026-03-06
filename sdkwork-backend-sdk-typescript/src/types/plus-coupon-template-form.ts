@@ -5,7 +5,7 @@ export interface PlusCouponTemplateForm {
   /** Template code */
   templateCode?: string;
   /** Coupon type (enum) */
-  type: 'DEFAULT' | 'CASH' | 'DISCOUNT' | 'GIFT' | 'GROUPON' | 'NORMAL';
+  type: 'DEFAULT' | 'CASH' | 'DISCOUNT' | 'GIFT' | 'GROUPON' | 'NORMAL' | 'POINTS_EXCHANGE';
   /** Description */
   description?: string;
   /** Discount amount (in cents) */
@@ -31,7 +31,7 @@ export interface PlusCouponTemplateForm {
   /** Can share */
   canShare?: boolean;
   /** Scope type */
-  scopeType?: number;
+  scopeType: 'DEFAULT' | 'ALL' | 'VIP_ONLY' | 'CUSTOM';
   /** Scope value */
   scopeValue?: string;
 }

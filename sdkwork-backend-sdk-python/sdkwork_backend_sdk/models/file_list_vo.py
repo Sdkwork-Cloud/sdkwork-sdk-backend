@@ -3,6 +3,6 @@ from typing import Optional, List, Dict, Any
 
 @dataclass
 class FileListVO:
-    """文件列表视图对象"""
+    """File list view object"""
     data: List[FileItemVO] = None
     object: str = None

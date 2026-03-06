@@ -3,15 +3,15 @@ import type { PlusKnowledgeBaseVO } from './plus-knowledge-base-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusKnowledgeBaseVO {
-  totalPages?: number;
   totalElements?: number;
+  totalPages?: number;
   size?: number;
   content?: PlusKnowledgeBaseVO[];
   number?: number;
-  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   numberOfElements?: number;
+  sort?: SortObject;
   pageable?: PageableObject;
   empty?: boolean;
 }

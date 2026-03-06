@@ -10,5 +10,10 @@ class PlusUserCouponVO:
     coupon_id: int = None
     coupon_code: str = None
     acquire_time: str = None
+    acquire_request_no: str = None
+    acquire_type: str = None
+    point_cost: int = None
+    points_refunded: bool = None
+    points_refund_at: str = None
     use_time: str = None
     status: str = None

@@ -22,6 +22,21 @@ public class CouponApi {
         return (PlusApiResultPlusCouponVO) client.post(ApiPaths.backendPath("/coupon"), body);
     }
 
+    /** Exchange coupon by points */
+    public PlusApiResultPlusUserCouponVO exchangeByPoints(String couponId, CouponPointsExchangeForm body) throws Exception {
+        return (PlusApiResultPlusUserCouponVO) client.post(ApiPaths.backendPath("/coupon/" + couponId + "/exchange/points"), body);
+    }
+
+    /** Redeem coupon */
+    public PlusApiResultPlusUserCouponVO redeem(CouponRedeemForm body) throws Exception {
+        return (PlusApiResultPlusUserCouponVO) client.post(ApiPaths.backendPath("/coupon/redeem"), body);
+    }
+
+    /** Rollback points exchange coupon */
+    public PlusApiResultPlusUserCouponVO rollbackPointsExchange(String userCouponId, CouponRollbackForm body) throws Exception {
+        return (PlusApiResultPlusUserCouponVO) client.post(ApiPaths.backendPath("/coupon/my/" + userCouponId + "/rollback"), body);
+    }
+
     /** Get coupon templates by page */
     public PlusApiResultPagePlusCouponVO listByPage(QueryListForm body, Map<String, Object> params) throws Exception {
         return (PlusApiResultPagePlusCouponVO) client.post(ApiPaths.backendPath("/coupon/list"), body, params);

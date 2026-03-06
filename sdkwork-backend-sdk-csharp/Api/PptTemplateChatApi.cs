@@ -15,17 +15,17 @@ namespace Backend.Api
             _client = client;
         }
 
-        public async Task<PlusApiResultBoolean?> StopAsync(Dictionary<string, string>? headers = null)
+        public async Task<PlusApiResultBoolean?> StopAsync(Dictionary<string, object>? query = null, Dictionary<string, string>? headers = null)
         {
-            return await _client.PostAsync<PlusApiResultBoolean>(ApiPaths.BackendPath("/ppt/template/chat/stop"), null, null, headers);
+            return await _client.PostAsync<PlusApiResultBoolean>(ApiPaths.BackendPath("/ppt/template/chat/stop"), null, query, headers);
         }
 
         /// <summary>
         /// Create a chat completion with PPT template
         /// </summary>
-        public async Task<ChatCompletionChunk?> CreateAsync(ChatCompletionCreateForm body, Dictionary<string, string>? headers = null)
+        public async Task<ChatCompletionChunk?> CreateAsync(ChatCompletionCreateForm body, Dictionary<string, object>? query = null, Dictionary<string, string>? headers = null)
         {
-            return await _client.PostAsync<ChatCompletionChunk>(ApiPaths.BackendPath("/ppt/template/chat/completions"), body, null, headers);
+            return await _client.PostAsync<ChatCompletionChunk>(ApiPaths.BackendPath("/ppt/template/chat/completions"), body, query, headers);
         }
     }
 }
