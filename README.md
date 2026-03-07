@@ -35,8 +35,8 @@ Run from repository root:
 
 ```bash
 node sdk/sdkwork-sdk-generator/bin/sdkgen.js generate \
-  -i spring-ai-plus-business-api/sdkwork-sdk-backend/backend-openapi-8080.json \
-  -o spring-ai-plus-business-api/sdkwork-sdk-backend/sdkwork-backend-sdk-<language> \
+  -i spring-ai-plus-backend-api/sdkwork-sdk-backend/backend-openapi-8080.json \
+  -o spring-ai-plus-backend-api/sdkwork-sdk-backend/sdkwork-backend-sdk-<language> \
   -n sdkwork-backend-sdk \
   -t backend \
   -l <language> \
@@ -60,7 +60,7 @@ node sdk/sdkwork-sdk-generator/bin/sdkgen.js generate \
 If you want to regenerate from the latest running service schema:
 
 ```bash
-curl http://localhost:8080/v3/api-docs/backend -o spring-ai-plus-business-api/sdkwork-sdk-backend/backend-openapi-8080.json
+curl http://localhost:8080/v3/api-docs/backend -o spring-ai-plus-backend-api/sdkwork-sdk-backend/backend-openapi-8080.json
 ```
 
 ## Authentication Modes (Mutually Exclusive)
@@ -87,13 +87,13 @@ Every language SDK directory now includes:
 Example:
 
 ```bash
-cd spring-ai-plus-business-api/sdkwork-sdk-backend/sdkwork-backend-sdk-typescript
+cd spring-ai-plus-backend-api/sdkwork-sdk-backend/sdkwork-backend-sdk-typescript
 ./bin/publish.sh --action check
 ./bin/publish.sh --action publish --channel release
 ```
 
 ```powershell
-cd spring-ai-plus-business-api/sdkwork-sdk-backend/sdkwork-backend-sdk-java
+cd spring-ai-plus-backend-api/sdkwork-sdk-backend/sdkwork-backend-sdk-java
 .\bin\publish.ps1 --action publish --channel test --dry-run
 ```
 
