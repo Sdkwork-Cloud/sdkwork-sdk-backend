@@ -3,7 +3,7 @@ from typing import Optional, List, Dict, Any
 
 @dataclass
 class LoginForm:
-    """登录请求表单"""
+    """鐧诲綍璇锋眰琛ㄥ崟"""
     type: str = None
     email: str = None
     phone: str = None

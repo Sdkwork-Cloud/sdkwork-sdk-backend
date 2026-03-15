@@ -1,17 +1,17 @@
 import type { CartGroup } from './cart-group';
 import type { CartItem } from './cart-item';
 
-/** 购物车分组列表 */
+/** Shopping cart group list */
 export interface CartGroupList {
-  /** 购物车分组列表 */
+  /** Grouped cart items */
   groups?: CartGroup[];
-  /** 购物车商品总数量 */
+  /** Total quantity of all items */
   totalQuantity?: number;
-  /** 购物车商品总价格 */
+  /** Total price of all items */
   totalPrice?: number;
-  /** 选中商品总数量 */
+  /** Selected item quantity */
   selectedQuantity?: number;
-  /** 选中商品总价格 */
+  /** Selected item total price */
   selectedPrice?: number;
   allItems?: CartItem[];
 }

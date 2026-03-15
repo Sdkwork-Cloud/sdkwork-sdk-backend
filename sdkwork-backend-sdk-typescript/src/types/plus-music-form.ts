@@ -1,29 +1,25 @@
 /** Music creation form */
 export interface PlusMusicForm {
-  /** 音乐标题 */
-  title?: string;
-  /** 音乐描述信息 */
+  /** Music title */
+  title: string;
+  /** Music description */
   description?: string;
-  /** 音乐存储URL */
+  /** Music content URL */
   contentUrl: string;
-  /** 音乐格式 */
-  format: string;
-  /** 音乐时长（秒） */
+  /** Music format */
+  format?: string;
+  /** Duration in seconds */
   duration: number;
-  /** 音乐文件大小 */
+  /** File size in bytes */
   fileSize?: number;
-  /** 音乐缩略图URL */
+  /** Thumbnail URL */
   thumbnailUrl?: string;
-  /** 艺术家名称 */
+  /** Artist name */
   artist?: string;
-  /** 音乐流派 */
+  /** Music genre */
   genre?: string;
-  /** 音频比特率 */
+  /** Bitrate in kbps */
   bitrate?: number;
-  /** 音乐状态 */
+  /** Music status */
   status: 'DEFAULT' | 'PROCESSING' | 'COMPLETED' | 'FAILED' | 'DELETED';
-  /** 创建时间 */
-  createdAt?: string;
-  /** 最后更新时间 */
-  updatedAt?: string;
 }

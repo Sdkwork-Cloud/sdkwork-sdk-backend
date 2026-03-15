@@ -3,7 +3,7 @@ from typing import Optional, List, Dict, Any
 
 @dataclass
 class PlusProductVO:
-    """Product Value Object - Represents a product in the system with basic information, pricing, inventory, and relationships"""
+    """Product view object"""
     created_at: str = None
     updated_at: str = None
     id: int = None

@@ -34,6 +34,46 @@ func (a *OrganizationApi) Create(body sdktypes.PlusOrganizationForm) (sdktypes.P
     return decodeResult[sdktypes.PlusApiResultPlusOrganizationVO](raw)
 }
 
+// Update an existing position
+func (a *OrganizationApi) UpdatePosition(body sdktypes.PlusPositionForm) (sdktypes.PlusApiResultPlusPositionVO, error) {
+    raw, err := a.client.Put(BackendApiPath("/organization/position"), body, nil, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultPlusPositionVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPlusPositionVO](raw)
+}
+
+// Create a new position
+func (a *OrganizationApi) CreatePosition(body sdktypes.PlusPositionForm) (sdktypes.PlusApiResultPlusPositionVO, error) {
+    raw, err := a.client.Post(BackendApiPath("/organization/position"), body, nil, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultPlusPositionVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPlusPositionVO](raw)
+}
+
+// Update member relation
+func (a *OrganizationApi) UpdateMemberRelations(body sdktypes.PlusMemberRelationsForm) (sdktypes.PlusApiResultPlusMemberRelationsVO, error) {
+    raw, err := a.client.Put(BackendApiPath("/organization/member-relations"), body, nil, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultPlusMemberRelationsVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPlusMemberRelationsVO](raw)
+}
+
+// Create member relation
+func (a *OrganizationApi) CreateMemberRelations(body sdktypes.PlusMemberRelationsForm) (sdktypes.PlusApiResultPlusMemberRelationsVO, error) {
+    raw, err := a.client.Post(BackendApiPath("/organization/member-relations"), body, nil, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultPlusMemberRelationsVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPlusMemberRelationsVO](raw)
+}
+
 // Uninstall app from organization
 func (a *OrganizationApi) Uninstall(id string, body sdktypes.PlusOrganizationForm) (sdktypes.PlusApiResultPlusOrganizationVO, error) {
     raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/organization/%s/uninstall", id)), body, nil, nil, "")
@@ -54,8 +94,48 @@ func (a *OrganizationApi) Install(id string, body sdktypes.PlusOrganizationForm)
     return decodeResult[sdktypes.PlusApiResultPlusOrganizationVO](raw)
 }
 
+// Get positions by page
+func (a *OrganizationApi) CreateListByPage(body *sdktypes.QueryListForm, query map[string]interface{}) (sdktypes.PlusApiResultPagePlusPositionVO, error) {
+    raw, err := a.client.Post(BackendApiPath("/organization/position/list"), body, query, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultPagePlusPositionVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPagePlusPositionVO](raw)
+}
+
+// Get all positions
+func (a *OrganizationApi) CreateListAllEntities(body *sdktypes.QueryListForm) (sdktypes.PlusApiResultListPlusPositionVO, error) {
+    raw, err := a.client.Post(BackendApiPath("/organization/position/list/all"), body, nil, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultListPlusPositionVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultListPlusPositionVO](raw)
+}
+
+// Get member relations by page
+func (a *OrganizationApi) CreateListByPageMemberRelations(body *sdktypes.QueryListForm, query map[string]interface{}) (sdktypes.PlusApiResultPagePlusMemberRelationsVO, error) {
+    raw, err := a.client.Post(BackendApiPath("/organization/member-relations/list"), body, query, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultPagePlusMemberRelationsVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPagePlusMemberRelationsVO](raw)
+}
+
+// Get all member relations
+func (a *OrganizationApi) CreateListAllEntitiesMemberRelations(body *sdktypes.QueryListForm) (sdktypes.PlusApiResultListPlusMemberRelationsVO, error) {
+    raw, err := a.client.Post(BackendApiPath("/organization/member-relations/list/all"), body, nil, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultListPlusMemberRelationsVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultListPlusMemberRelationsVO](raw)
+}
+
 // Get organizations by page
-func (a *OrganizationApi) ListByPage(body *sdktypes.QueryListForm, query map[string]interface{}) (sdktypes.PlusApiResultPagePlusOrganizationVO, error) {
+func (a *OrganizationApi) CreateListByPageOrganization(body *sdktypes.QueryListForm, query map[string]interface{}) (sdktypes.PlusApiResultPagePlusOrganizationVO, error) {
     raw, err := a.client.Post(BackendApiPath("/organization/list"), body, query, nil, "")
     if err != nil {
         var zero sdktypes.PlusApiResultPagePlusOrganizationVO
@@ -65,7 +145,7 @@ func (a *OrganizationApi) ListByPage(body *sdktypes.QueryListForm, query map[str
 }
 
 // Get all organizations
-func (a *OrganizationApi) ListAllEntities(body *sdktypes.QueryListForm) (sdktypes.PlusApiResultListPlusOrganizationVO, error) {
+func (a *OrganizationApi) CreateListAllEntitiesOrganization(body *sdktypes.QueryListForm) (sdktypes.PlusApiResultListPlusOrganizationVO, error) {
     raw, err := a.client.Post(BackendApiPath("/organization/list/all"), body, nil, nil, "")
     if err != nil {
         var zero sdktypes.PlusApiResultListPlusOrganizationVO
@@ -112,4 +192,44 @@ func (a *OrganizationApi) GetChildren(id string) (sdktypes.PlusApiResultListPlus
         return zero, err
     }
     return decodeResult[sdktypes.PlusApiResultListPlusOrganizationVO](raw)
+}
+
+// Get a position by ID
+func (a *OrganizationApi) GetByIdPosition(id string) (sdktypes.PlusApiResultPlusPositionVO, error) {
+    raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/organization/position/%s", id)), nil, nil)
+    if err != nil {
+        var zero sdktypes.PlusApiResultPlusPositionVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPlusPositionVO](raw)
+}
+
+// Delete a position
+func (a *OrganizationApi) DeletePosition(id string) (sdktypes.PlusApiResultBoolean, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/organization/position/%s", id)), nil, nil)
+    if err != nil {
+        var zero sdktypes.PlusApiResultBoolean
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultBoolean](raw)
+}
+
+// Get member relation by ID
+func (a *OrganizationApi) GetByIdMemberRelations(id string) (sdktypes.PlusApiResultPlusMemberRelationsVO, error) {
+    raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/organization/member-relations/%s", id)), nil, nil)
+    if err != nil {
+        var zero sdktypes.PlusApiResultPlusMemberRelationsVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPlusMemberRelationsVO](raw)
+}
+
+// Delete member relation
+func (a *OrganizationApi) DeleteMemberRelations(id string) (sdktypes.PlusApiResultBoolean, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/organization/member-relations/%s", id)), nil, nil)
+    if err != nil {
+        var zero sdktypes.PlusApiResultBoolean
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultBoolean](raw)
 }

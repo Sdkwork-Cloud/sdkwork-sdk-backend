@@ -32,6 +32,30 @@ namespace Backend.Api
         }
 
         /// <summary>
+        /// Get skill package detail
+        /// </summary>
+        public async Task<PlusApiResultPlusAgentSkillPackageVO?> GetByIdPackageAsync(string id)
+        {
+            return await _client.GetAsync<PlusApiResultPlusAgentSkillPackageVO>(ApiPaths.BackendPath($"/skill/package/{id}"));
+        }
+
+        /// <summary>
+        /// Update skill package
+        /// </summary>
+        public async Task<PlusApiResultPlusAgentSkillPackageVO?> UpdatePackageAsync(string id, PlusAgentSkillPackageForm body)
+        {
+            return await _client.PutAsync<PlusApiResultPlusAgentSkillPackageVO>(ApiPaths.BackendPath($"/skill/package/{id}"), body);
+        }
+
+        /// <summary>
+        /// Delete skill package
+        /// </summary>
+        public async Task<PlusApiResultBoolean?> DeleteAsync(string id)
+        {
+            return await _client.DeleteAsync<PlusApiResultBoolean>(ApiPaths.BackendPath($"/skill/package/{id}"));
+        }
+
+        /// <summary>
         /// Create skill
         /// </summary>
         public async Task<PlusApiResultPlusAgentSkillVO?> CreateAsync(PlusAgentSkillForm body)
@@ -90,7 +114,7 @@ namespace Backend.Api
         /// <summary>
         /// Enable skill
         /// </summary>
-        public async Task<PlusApiResultPlusAgentSkillVO?> EnableAsync(string id)
+        public async Task<PlusApiResultPlusAgentSkillVO?> CreateEnableAsync(string id)
         {
             return await _client.PostAsync<PlusApiResultPlusAgentSkillVO>(ApiPaths.BackendPath($"/skill/{id}/enable"), null);
         }
@@ -98,7 +122,7 @@ namespace Backend.Api
         /// <summary>
         /// Disable skill
         /// </summary>
-        public async Task<PlusApiResultPlusAgentSkillVO?> DisableAsync(string id)
+        public async Task<PlusApiResultPlusAgentSkillVO?> CreateDisableAsync(string id)
         {
             return await _client.PostAsync<PlusApiResultPlusAgentSkillVO>(ApiPaths.BackendPath($"/skill/{id}/disable"), null);
         }
@@ -128,9 +152,49 @@ namespace Backend.Api
         }
 
         /// <summary>
+        /// Create skill package
+        /// </summary>
+        public async Task<PlusApiResultPlusAgentSkillPackageVO?> CreatePackageAsync(PlusAgentSkillPackageForm body)
+        {
+            return await _client.PostAsync<PlusApiResultPlusAgentSkillPackageVO>(ApiPaths.BackendPath("/skill/package"), body);
+        }
+
+        /// <summary>
+        /// Enable skill package
+        /// </summary>
+        public async Task<PlusApiResultPlusAgentSkillPackageVO?> CreateEnablePackageAsync(string id)
+        {
+            return await _client.PostAsync<PlusApiResultPlusAgentSkillPackageVO>(ApiPaths.BackendPath($"/skill/package/{id}/enable"), null);
+        }
+
+        /// <summary>
+        /// Disable skill package
+        /// </summary>
+        public async Task<PlusApiResultPlusAgentSkillPackageVO?> CreateDisablePackageAsync(string id)
+        {
+            return await _client.PostAsync<PlusApiResultPlusAgentSkillPackageVO>(ApiPaths.BackendPath($"/skill/package/{id}/disable"), null);
+        }
+
+        /// <summary>
+        /// Query skill package list by page
+        /// </summary>
+        public async Task<PlusApiResultPagePlusAgentSkillPackageVO?> CreateListByPageAsync(PlusAgentSkillPackageQueryListForm? body = null, Dictionary<string, object>? query = null)
+        {
+            return await _client.PostAsync<PlusApiResultPagePlusAgentSkillPackageVO>(ApiPaths.BackendPath("/skill/package/list"), body, query);
+        }
+
+        /// <summary>
+        /// Query all skill packages
+        /// </summary>
+        public async Task<PlusApiResultListPlusAgentSkillPackageVO?> CreateListAllAsync(PlusAgentSkillPackageQueryListForm? body = null)
+        {
+            return await _client.PostAsync<PlusApiResultListPlusAgentSkillPackageVO>(ApiPaths.BackendPath("/skill/package/list/all"), body);
+        }
+
+        /// <summary>
         /// Query skill list by page
         /// </summary>
-        public async Task<PlusApiResultPagePlusAgentSkillVO?> ListByPageAsync(PlusAgentSkillQueryListForm? body = null, Dictionary<string, object>? query = null)
+        public async Task<PlusApiResultPagePlusAgentSkillVO?> CreateListByPageSkillAsync(PlusAgentSkillQueryListForm? body = null, Dictionary<string, object>? query = null)
         {
             return await _client.PostAsync<PlusApiResultPagePlusAgentSkillVO>(ApiPaths.BackendPath("/skill/list"), body, query);
         }
@@ -138,7 +202,7 @@ namespace Backend.Api
         /// <summary>
         /// Query all skills
         /// </summary>
-        public async Task<PlusApiResultListPlusAgentSkillVO?> ListAllAsync(PlusAgentSkillQueryListForm? body = null)
+        public async Task<PlusApiResultListPlusAgentSkillVO?> CreateListAllSkillAsync(PlusAgentSkillQueryListForm? body = null)
         {
             return await _client.PostAsync<PlusApiResultListPlusAgentSkillVO>(ApiPaths.BackendPath("/skill/list/all"), body);
         }

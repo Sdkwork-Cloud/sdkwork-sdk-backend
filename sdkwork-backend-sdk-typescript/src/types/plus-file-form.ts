@@ -3,41 +3,37 @@ import type { TagsContent } from './tags-content';
 
 /** File creation form */
 export interface PlusFileForm {
-  /** 文件名称 */
+  /** Parent file ID */
+  parentId?: number;
+  /** File name */
   name: string;
-  /** 文件路径 */
+  /** File path */
   path?: string;
-  /** 存储键（对象存储中的唯一标识符） */
+  /** Object storage key */
   objectKey?: string;
-  /** 文件大小（字节） */
+  /** File size in bytes */
   size?: number;
-  /** 文件内容类型 */
+  /** File content type */
   contentType?: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM';
-  /** 文件扩展名 */
-  extension?: string;
-  /** 文件的存储类别 */
+  /** Storage class */
   storageClass?: 'STANDARD' | 'REDUCED_REDUNDANCY' | 'STANDARD_IA' | 'ONEZONE_IA' | 'INTELLIGENT_TIERING' | 'GLACIER' | 'DEEP_ARCHIVE';
-  /** 文件的版本ID */
+  /** Version ID */
   versionId?: string;
   /** File resource */
   resource?: FileMediaResource;
-  /** 文件上传时间 */
+  /** Upload time */
   uploadTime?: string;
-  /** 文件最后访问时间 */
+  /** Last access time */
   lastAccessTime?: string;
-  /** 文件描述 */
+  /** File description */
   description?: string;
-  /** 文件标签 */
+  /** Tags */
   tags?: TagsContent;
-  /** 文件类型 */
+  /** File type */
   fileType: 'DEFAULT' | 'FILE' | 'DIRECTORY';
-  /** 文件分类 */
+  /** File category */
   fileCategory?: 'UNKNOWN' | 'DOCUMENT' | 'IMAGE' | 'VIDEO' | 'AUDIO' | 'ARCHIVE' | 'CODE' | 'DATA' | 'PROJECT' | 'OTHER';
-  /** 是否为公开访问 */
-  isPublic: boolean;
-  /** 文件状态 */
-  status: 'NORMAL' | 'DELETED' | 'ARCHIVED';
-  /** 父节点ID */
-  parentId?: number;
+  /** File status */
+  status?: 'NORMAL' | 'DELETED' | 'ARCHIVED';
   etag?: string;
 }

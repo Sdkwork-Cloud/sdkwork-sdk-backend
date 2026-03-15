@@ -8,6 +8,7 @@ namespace Backend.Models
     {
         public string? OrderType { get; set; }
         public int? UserId { get; set; }
+        public string? Subject { get; set; }
         public string? OrderSn { get; set; }
         public string? TransactionId { get; set; }
         public string? OutTradeNo { get; set; }
@@ -19,5 +20,14 @@ namespace Backend.Models
         public string? ExpireTime { get; set; }
         public string? ContentType { get; set; }
         public int? ContentId { get; set; }
+        public string? TaskCode { get; set; }
+        public string? DispatchMode { get; set; }
+        public string? DispatchStatus { get; set; }
+        public int? WorkerUserId { get; set; }
+        public int? DispatcherUserId { get; set; }
+        public string? AcceptedTime { get; set; }
+        public string? ServiceStartTime { get; set; }
+        public string? DispatchExpireTime { get; set; }
+        public Dictionary<string, object>? TaskPayload { get; set; }
     }
 }

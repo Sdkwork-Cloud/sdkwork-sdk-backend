@@ -1,5 +1,5 @@
-/** IM消息已读请求参数 */
+/** IM娑堟伅宸茶璇锋眰鍙傛暟 */
 export interface PlusImMessageMarkReadForm {
-  /** 会话ID */
+  /** 浼氳瘽ID */
   conversationId: number;
 }

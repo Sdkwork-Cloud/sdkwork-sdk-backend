@@ -1,6 +1,6 @@
 package types
 
-// 角色检查请求表单
+// R ol eC he ck Fo rm
 type RoleCheckForm struct {
 	Role string `json:"role"`
 }

@@ -3,5 +3,5 @@ from typing import Optional, List, Dict, Any
 
 @dataclass
 class CouponRollbackForm:
-    """优惠券回滚请求"""
+    """Coupon rollback request"""
     reason: str = None

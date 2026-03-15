@@ -1,15 +1,15 @@
 /** Sharding key creation form */
 export interface PlusShardingKeyForm {
-  /** 分片Key */
+  /** Sharding key */
   shardingKey: string;
-  /** 租户ID */
+  /** Tenant ID */
   tenantId: number;
-  /** 数据拥有者 */
+  /** Owner type */
   owner: 'DEFAULT' | 'TENANT' | 'ORGANIZATION';
-  /** 数据拥有者ID */
+  /** Owner ID */
   ownerId: number;
-  /** 数据状态 */
+  /** Status */
   status: 'DEFAULT' | 'ACTIVE' | 'INACTIVE' | 'SUSPENDED' | 'DELETED';
-  /** 描述 */
+  /** Description */
   description?: string;
 }

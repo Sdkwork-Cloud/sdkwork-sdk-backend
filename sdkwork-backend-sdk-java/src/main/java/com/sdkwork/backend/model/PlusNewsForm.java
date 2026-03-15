@@ -7,6 +7,7 @@ public class PlusNewsForm {
     private String summary;
     private String publishTime;
     private TagsContent tags;
+    private Integer categoryId;
     private Integer userId;
 
     public String getTitle() {
@@ -55,6 +56,14 @@ public class PlusNewsForm {
     
     public void setTags(TagsContent tags) {
         this.tags = tags;
+    }
+
+    public Integer getCategoryId() {
+        return this.categoryId;
+    }
+    
+    public void setCategoryId(Integer categoryId) {
+        this.categoryId = categoryId;
     }
 
     public Integer getUserId() {

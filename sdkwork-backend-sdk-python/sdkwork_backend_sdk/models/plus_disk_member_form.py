@@ -8,4 +8,4 @@ class PlusDiskMemberForm:
     user_id: int
     permission: DiskPermission
     remark: str = None
-    is_owner: bool
+    is_owner: bool = None

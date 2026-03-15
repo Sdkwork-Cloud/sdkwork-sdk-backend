@@ -3,7 +3,6 @@ package com.sdkwork.backend.model;
 public class PlusFavoriteForm {
     private String contentType;
     private Integer contentId;
-    private String folderName;
     private String remark;
     private Integer sortWeight;
     private String title;
@@ -25,14 +24,6 @@ public class PlusFavoriteForm {
     
     public void setContentId(Integer contentId) {
         this.contentId = contentId;
-    }
-
-    public String getFolderName() {
-        return this.folderName;
-    }
-    
-    public void setFolderName(String folderName) {
-        this.folderName = folderName;
     }
 
     public String getRemark() {

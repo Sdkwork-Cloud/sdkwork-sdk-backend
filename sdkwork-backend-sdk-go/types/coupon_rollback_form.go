@@ -1,6 +1,6 @@
 package types
 
-// 优惠券回滚请求
+// Coupon rollback request
 type CouponRollbackForm struct {
 	Reason string `json:"reason"`
 }

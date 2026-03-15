@@ -22,14 +22,34 @@ public class NetApi {
         return (PlusApiResultPlusHostDomainVO) client.post(ApiPaths.backendPath("/net/host/domain"), body);
     }
 
+    /** Update an existing DNS record */
+    public PlusApiResultPlusDnsRecordVO updateRecord(PlusDnsRecordForm body) throws Exception {
+        return (PlusApiResultPlusDnsRecordVO) client.put(ApiPaths.backendPath("/net/dns/record"), body);
+    }
+
+    /** Create a new DNS record */
+    public PlusApiResultPlusDnsRecordVO createRecord(PlusDnsRecordForm body) throws Exception {
+        return (PlusApiResultPlusDnsRecordVO) client.post(ApiPaths.backendPath("/net/dns/record"), body);
+    }
+
     /** 分页获取域名 */
-    public PlusApiResultPagePlusHostDomainVO listByPage(QueryListForm body, Map<String, Object> params) throws Exception {
+    public PlusApiResultPagePlusHostDomainVO createListByPage(QueryListForm body, Map<String, Object> params) throws Exception {
         return (PlusApiResultPagePlusHostDomainVO) client.post(ApiPaths.backendPath("/net/host/domain/list"), body, params);
     }
 
     /** 获取所有域名 */
-    public PlusApiResultListPlusHostDomainVO listAllEntities(QueryListForm body) throws Exception {
+    public PlusApiResultListPlusHostDomainVO createListAllEntities(QueryListForm body) throws Exception {
         return (PlusApiResultListPlusHostDomainVO) client.post(ApiPaths.backendPath("/net/host/domain/list/all"), body);
+    }
+
+    /** Get DNS records by page */
+    public PlusApiResultPagePlusDnsRecordVO createListByPageRecord(QueryListForm body, Map<String, Object> params) throws Exception {
+        return (PlusApiResultPagePlusDnsRecordVO) client.post(ApiPaths.backendPath("/net/dns/record/list"), body, params);
+    }
+
+    /** Get all DNS records */
+    public PlusApiResultListPlusDnsRecordVO createListAllEntitiesRecord(QueryListForm body) throws Exception {
+        return (PlusApiResultListPlusDnsRecordVO) client.post(ApiPaths.backendPath("/net/dns/record/list/all"), body);
     }
 
     /** 获取域名详情 */
@@ -40,5 +60,15 @@ public class NetApi {
     /** 删除域名 */
     public PlusApiResultBoolean delete(String id) throws Exception {
         return (PlusApiResultBoolean) client.delete(ApiPaths.backendPath("/net/host/domain/" + id + ""));
+    }
+
+    /** Get a DNS record by ID */
+    public PlusApiResultPlusDnsRecordVO getByIdRecord(String id) throws Exception {
+        return (PlusApiResultPlusDnsRecordVO) client.get(ApiPaths.backendPath("/net/dns/record/" + id + ""));
+    }
+
+    /** Delete a DNS record */
+    public PlusApiResultBoolean deleteRecord(String id) throws Exception {
+        return (PlusApiResultBoolean) client.delete(ApiPaths.backendPath("/net/dns/record/" + id + ""));
     }
 }

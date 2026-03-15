@@ -5,7 +5,6 @@ data class PlusCommentsForm(
     val contentType: String? = null,
     val contentId: Int? = null,
     val status: String? = null,
-    val rating: Int? = null,
     val likes: Int? = null,
     val replyCount: Int? = null,
     val isTop: Boolean? = null,

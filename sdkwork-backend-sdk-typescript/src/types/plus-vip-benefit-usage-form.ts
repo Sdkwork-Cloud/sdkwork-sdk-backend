@@ -1,19 +1,19 @@
 /** VIP benefit usage creation form */
 export interface PlusVipBenefitUsageForm {
-  /** 用户ID，关联plus_user表 */
+  /** User ID */
   userId: number;
-  /** 权益类型 */
+  /** Benefit type */
   benefitType: 'DEFAULT' | 'MONTHLY_FREE_POINTS' | 'DEDICATED_SUPPORT' | 'PURCHASE_DISCOUNT' | 'EXCLUSIVE_CONTENT' | 'PRIORITY_SERVICE' | 'BIRTHDAY_GIFT';
-  /** 使用时间 */
+  /** Usage time */
   usageTime: string;
-  /** 使用数量 */
+  /** Usage count */
   usageCount: number;
-  /** 状态(1-成功 2-失败) */
+  /** Usage status: 1-active, 2-revoked */
   status: number;
-  /** 业务来源ID(如订单ID等) */
+  /** Source record ID */
   sourceId?: number;
-  /** 业务来源类型 */
+  /** Source type */
   sourceType?: string;
-  /** 备注信息 */
+  /** Remark */
   remark?: string;
 }

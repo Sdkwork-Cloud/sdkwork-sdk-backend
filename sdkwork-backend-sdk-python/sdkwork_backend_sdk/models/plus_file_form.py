@@ -4,12 +4,12 @@ from typing import Optional, List, Dict, Any
 @dataclass
 class PlusFileForm:
     """File creation form"""
+    parent_id: int = None
     name: str
     path: str = None
     object_key: str = None
     size: int = None
     content_type: str = None
-    extension: str = None
     storage_class: str = None
     version_id: str = None
     resource: FileMediaResource = None
@@ -19,7 +19,5 @@ class PlusFileForm:
     tags: TagsContent = None
     file_type: str
     file_category: str = None
-    is_public: bool
-    status: str
-    parent_id: int = None
+    status: str = None
     etag: str = None

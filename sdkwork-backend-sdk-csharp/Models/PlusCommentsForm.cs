@@ -10,7 +10,6 @@ namespace Backend.Models
         public string? ContentType { get; set; }
         public int? ContentId { get; set; }
         public string? Status { get; set; }
-        public int? Rating { get; set; }
         public int? Likes { get; set; }
         public int? ReplyCount { get; set; }
         public bool? IsTop { get; set; }

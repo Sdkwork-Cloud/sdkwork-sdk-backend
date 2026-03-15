@@ -1,7 +1,7 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 import type { QueryParams } from '../types/common';
-import type { PlusAgentSkillBatchReviewForm, PlusAgentSkillFeatureForm, PlusAgentSkillForm, PlusAgentSkillQueryListForm, PlusAgentSkillReviewForm, PlusApiResultListPlusAgentSkillVO, PlusApiResultPagePlusAgentSkillVO, PlusApiResultPlusAgentSkillVO } from '../types';
+import type { PlusAgentSkillBatchReviewForm, PlusAgentSkillFeatureForm, PlusAgentSkillForm, PlusAgentSkillPackageForm, PlusAgentSkillPackageQueryListForm, PlusAgentSkillQueryListForm, PlusAgentSkillReviewForm, PlusApiResultBoolean, PlusApiResultListPlusAgentSkillPackageVO, PlusApiResultListPlusAgentSkillVO, PlusApiResultPagePlusAgentSkillPackageVO, PlusApiResultPagePlusAgentSkillVO, PlusApiResultPlusAgentSkillPackageVO, PlusApiResultPlusAgentSkillVO } from '../types';
 
 
 export class SkillApi {
@@ -19,6 +19,21 @@ export class SkillApi {
 /** Update skill */
   async update(id: string | number, body: PlusAgentSkillForm): Promise<PlusApiResultPlusAgentSkillVO> {
     return this.client.put<PlusApiResultPlusAgentSkillVO>(backendApiPath(`/skill/${id}`), body);
+  }
+
+/** Get skill package detail */
+  async getByIdPackage(id: string | number): Promise<PlusApiResultPlusAgentSkillPackageVO> {
+    return this.client.get<PlusApiResultPlusAgentSkillPackageVO>(backendApiPath(`/skill/package/${id}`));
+  }
+
+/** Update skill package */
+  async updatePackage(id: string | number, body: PlusAgentSkillPackageForm): Promise<PlusApiResultPlusAgentSkillPackageVO> {
+    return this.client.put<PlusApiResultPlusAgentSkillPackageVO>(backendApiPath(`/skill/package/${id}`), body);
+  }
+
+/** Delete skill package */
+  async delete(id: string | number): Promise<PlusApiResultBoolean> {
+    return this.client.delete<PlusApiResultBoolean>(backendApiPath(`/skill/package/${id}`));
   }
 
 /** Create skill */
@@ -57,12 +72,12 @@ export class SkillApi {
   }
 
 /** Enable skill */
-  async enable(id: string | number): Promise<PlusApiResultPlusAgentSkillVO> {
+  async createEnable(id: string | number): Promise<PlusApiResultPlusAgentSkillVO> {
     return this.client.post<PlusApiResultPlusAgentSkillVO>(backendApiPath(`/skill/${id}/enable`));
   }
 
 /** Disable skill */
-  async disable(id: string | number): Promise<PlusApiResultPlusAgentSkillVO> {
+  async createDisable(id: string | number): Promise<PlusApiResultPlusAgentSkillVO> {
     return this.client.post<PlusApiResultPlusAgentSkillVO>(backendApiPath(`/skill/${id}/disable`));
   }
 
@@ -81,13 +96,38 @@ export class SkillApi {
     return this.client.post<PlusApiResultListPlusAgentSkillVO>(backendApiPath(`/skill/review/batch/approve`), body);
   }
 
+/** Create skill package */
+  async createPackage(body: PlusAgentSkillPackageForm): Promise<PlusApiResultPlusAgentSkillPackageVO> {
+    return this.client.post<PlusApiResultPlusAgentSkillPackageVO>(backendApiPath(`/skill/package`), body);
+  }
+
+/** Enable skill package */
+  async createEnablePackage(id: string | number): Promise<PlusApiResultPlusAgentSkillPackageVO> {
+    return this.client.post<PlusApiResultPlusAgentSkillPackageVO>(backendApiPath(`/skill/package/${id}/enable`));
+  }
+
+/** Disable skill package */
+  async createDisablePackage(id: string | number): Promise<PlusApiResultPlusAgentSkillPackageVO> {
+    return this.client.post<PlusApiResultPlusAgentSkillPackageVO>(backendApiPath(`/skill/package/${id}/disable`));
+  }
+
+/** Query skill package list by page */
+  async createListByPage(body?: PlusAgentSkillPackageQueryListForm, params?: QueryParams): Promise<PlusApiResultPagePlusAgentSkillPackageVO> {
+    return this.client.post<PlusApiResultPagePlusAgentSkillPackageVO>(backendApiPath(`/skill/package/list`), body, params);
+  }
+
+/** Query all skill packages */
+  async createListAll(body?: PlusAgentSkillPackageQueryListForm): Promise<PlusApiResultListPlusAgentSkillPackageVO> {
+    return this.client.post<PlusApiResultListPlusAgentSkillPackageVO>(backendApiPath(`/skill/package/list/all`), body);
+  }
+
 /** Query skill list by page */
-  async listByPage(body?: PlusAgentSkillQueryListForm, params?: QueryParams): Promise<PlusApiResultPagePlusAgentSkillVO> {
+  async createListByPageSkill(body?: PlusAgentSkillQueryListForm, params?: QueryParams): Promise<PlusApiResultPagePlusAgentSkillVO> {
     return this.client.post<PlusApiResultPagePlusAgentSkillVO>(backendApiPath(`/skill/list`), body, params);
   }
 
 /** Query all skills */
-  async listAll(body?: PlusAgentSkillQueryListForm): Promise<PlusApiResultListPlusAgentSkillVO> {
+  async createListAllSkill(body?: PlusAgentSkillQueryListForm): Promise<PlusApiResultListPlusAgentSkillVO> {
     return this.client.post<PlusApiResultListPlusAgentSkillVO>(backendApiPath(`/skill/list/all`), body);
   }
 }

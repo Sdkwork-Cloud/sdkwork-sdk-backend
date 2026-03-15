@@ -13,12 +13,12 @@ class PlusAppForm:
     icon_url: str = None
     access_url: str = None
     config: AppConfig = None
-    status: str
+    status: str = None
     app_type: str
     platforms: AppPlatforms
     install_platforms: AppPlatforms = None
     install_skill: AppInstallSkill
-    install_config: AppInstallConfig = None
+    install_config: AppInstallConfig
     package_name: str = None
     bundle_id: str = None
     store_url: str = None

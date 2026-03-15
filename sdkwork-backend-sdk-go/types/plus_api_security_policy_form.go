@@ -1,6 +1,6 @@
 package types
 
-// API安全策略表单
+// API瀹夊叏绛栫暐琛ㄥ崟
 type PlusApiSecurityPolicyForm struct {
 	PolicyCode string `json:"policyCode"`
 	ApiType string `json:"apiType"`

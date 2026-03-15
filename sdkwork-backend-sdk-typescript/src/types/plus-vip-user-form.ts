@@ -1,21 +1,21 @@
 /** VIP user creation form */
 export interface PlusVipUserForm {
-  /** 用户ID，关联plus_user表 */
+  /** User ID */
   userId: number;
-  /** 当前VIP等级ID */
+  /** VIP level ID */
   vipLevelId?: number;
-  /** 会员状态 */
+  /** VIP status */
   status: 'DEFAULT' | 'ACTIVE' | 'EXPIRED' | 'FROZEN' | 'CANCELLED';
-  /** 当前灵点(积分)余额 */
+  /** Point balance */
   pointBalance: number;
-  /** 累计充值灵点(积分) */
+  /** Total recharged points */
   totalRechargedPoints: number;
-  /** 会员有效期开始时间 */
+  /** Valid from */
   validFrom?: string;
-  /** 会员有效期结束时间 */
+  /** Valid to */
   validTo?: string;
-  /** 最后活跃时间 */
+  /** Last active time */
   lastActiveTime?: string;
-  /** 备注信息 */
+  /** Remark */
   remark?: string;
 }

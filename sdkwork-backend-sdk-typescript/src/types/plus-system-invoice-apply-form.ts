@@ -1,17 +1,17 @@
-/** 系统发票申请表单 */
+/** System invoice application form */
 export interface PlusSystemInvoiceApplyForm {
-  /** 发票抬头 */
+  /** Invoice title */
   title: string;
-  /** 纳税人识别号 */
+  /** Taxpayer identification number */
   taxId?: string;
-  /** 发票类型：electronic|paper */
+  /** Invoice type */
   type: string;
-  /** 开票金额 */
+  /** Invoice amount */
   amount: number;
-  /** 开票内容 */
+  /** Invoice content */
   content: string;
-  /** 电子发票接收邮箱 */
+  /** Recipient email for electronic invoices */
   email?: string;
-  /** 纸质发票邮寄地址 */
+  /** Recipient address for paper invoices */
   address?: string;
 }

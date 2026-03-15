@@ -1,25 +1,24 @@
-/** 登录请求表单 */
+/** 鐧诲綍璇锋眰琛ㄥ崟 */
 export interface LoginForm {
-  /** 登录类型 */
+  /** 鐧诲綍绫诲瀷 */
   type?: 'MOBILE' | 'EMAIL' | 'OAUTH' | 'USERNAME';
-  /** 邮箱 */
+  /** 閭 */
   email?: string;
-  /** 手机号 */
+  /** P ho ne */
   phone?: string;
-  /** 用户名 */
   username: string;
-  /** 密码 */
+  /** 瀵嗙爜 */
   password: string;
-  /** 平台 */
+  /** 骞冲彴 */
   owner?: 'DEFAULT' | 'TENANT' | 'ORGANIZATION';
-  /** 验证码 */
+  /** C ap tc ha */
   captcha?: string;
-  /** 验证码ID */
+  /** 楠岃瘉鐮両D */
   captchaId?: string;
-  /** 记住我 */
+  /** R em em be rM e */
   rememberMe?: boolean;
-  /** 验证码 */
+  /** V er if ic at io nC od e */
   verificationCode?: string;
-  /** 邀请码 */
+  /** 閭€璇风爜 */
   invitationCode?: string;
 }

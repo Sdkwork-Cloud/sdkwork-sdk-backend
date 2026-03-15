@@ -10,12 +10,12 @@ export interface PlusProjectObject {
   version?: string;
   tags?: TagsContent;
   description?: string;
-  title?: string;
-  createdAt?: string;
-  ownerId?: number;
-  uuid?: string;
-  diskId?: number;
   author?: string;
+  diskId?: number;
+  title?: string;
+  uuid?: string;
+  ownerId?: number;
+  createdAt?: string;
   files?: PlusFileObject[];
   screenType?: 'PHONE' | 'TABLET' | 'LAPTOP' | 'DESKTOP' | 'TV';
 }

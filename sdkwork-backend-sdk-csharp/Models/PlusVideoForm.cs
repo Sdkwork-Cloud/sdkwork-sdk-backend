@@ -6,7 +6,6 @@ namespace Backend.Models
 {
     public class PlusVideoForm
     {
-        public int? Id { get; set; }
         public string? Title { get; set; }
         public string? Description { get; set; }
         public string? ContentUrl { get; set; }
@@ -19,8 +18,5 @@ namespace Backend.Models
         public string? Format { get; set; }
         public string? ThumbnailUrl { get; set; }
         public string? Status { get; set; }
-        public string? Uuid { get; set; }
-        public string? CreatedAt { get; set; }
-        public string? UpdatedAt { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 package types
 
-// 角色生成表单，用于传递角色生成的业务参数
+// 瑙掕壊鐢熸垚琛ㄥ崟锛岀敤浜庝紶閫掕鑹茬敓鎴愮殑涓氬姟鍙傛暟
 type GenerateCharacterForm struct {
 	Name string `json:"name"`
 	Description string `json:"description"`

@@ -3,7 +3,17 @@ package com.sdkwork.backend
 data class PlusAiModelPriceForm(
     val objectId: String? = null,
     val model: String? = null,
+    val modelId: Int? = null,
+    val channel: String? = null,
+    val modelKey: String? = null,
+    val productCode: String? = null,
+    val featureCode: String? = null,
+    val billingType: String? = null,
+    val priceItemType: String? = null,
+    val tierName: String? = null,
+    val rulePriority: Int? = null,
     val unit: String? = null,
+    val unitSize: Double? = null,
     val price: Double? = null,
     val inputPrice: Double? = null,
     val batchInputPrice: Double? = null,
@@ -11,5 +21,12 @@ data class PlusAiModelPriceForm(
     val batchCachedInputPrice: Double? = null,
     val outputPrice: Double? = null,
     val batchOutputPrice: Double? = null,
-    val currency: String? = null
+    val currency: String? = null,
+    val minUsage: Double? = null,
+    val maxUsage: Double? = null,
+    val effectiveFrom: String? = null,
+    val effectiveTo: String? = null,
+    val defaultRule: Boolean? = null,
+    val status: String? = null,
+    val metadata: Map<String, Any>? = null
 )

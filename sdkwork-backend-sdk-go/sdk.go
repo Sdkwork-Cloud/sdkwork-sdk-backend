@@ -8,133 +8,81 @@ import (
 type SdkworkBackendClient struct {
     http *sdkhttp.Client
     Workspace *api.WorkspaceApi
-    ContentVote *api.ContentVoteApi
-    VoiceSpeaker *api.VoiceSpeakerApi
+    Vote *api.VoteApi
+    Voice *api.VoiceApi
     VisitHistory *api.VisitHistoryApi
-    VipUser *api.VipUserApi
-    VipRecharge *api.VipRechargeApi
-    VipRechargePackage *api.VipRechargePackageApi
-    VipPointChange *api.VipPointChangeApi
-    VipPackageGroup *api.VipPackageGroupApi
-    VipPackage *api.VipPackageApi
-    VipLevel *api.VipLevelApi
-    VipLevelBenefit *api.VipLevelBenefitApi
-    VipBenefit *api.VipBenefitApi
-    VipBenefitUsage *api.VipBenefitUsageApi
+    Vip *api.VipApi
     Video *api.VideoApi
     User *api.UserApi
-    UserOauthAccount *api.UserOauthAccountApi
-    UserCoupon *api.UserCouponApi
-    UserCard *api.UserCardApi
-    UserAddress *api.UserAddressApi
-    UsageRecord *api.UsageRecordApi
-    ShoppingCart *api.ShoppingCartApi
-    ShoppingCartItem *api.ShoppingCartItemApi
-    Refund *api.RefundApi
-    Payment *api.PaymentApi
-    Order *api.OrderApi
-    OrderItem *api.OrderItemApi
+    Usage *api.UsageApi
+    Trade *api.TradeApi
     Tool *api.ToolApi
     Tenant *api.TenantApi
-    DatabaseTable *api.DatabaseTableApi
-    ProductSku *api.ProductSkuApi
+    Table *api.TableApi
+    Sku *api.SkuApi
     Skill *api.SkillApi
-    SkillPackage *api.SkillPackageApi
     ShortUrl *api.ShortUrlApi
     Shop *api.ShopApi
     Share *api.ShareApi
-    ShareVisitRecord *api.ShareVisitRecordApi
-    ShardingKey *api.ShardingKeyApi
-    ApiSecurityPolicy *api.ApiSecurityPolicyApi
+    Sharding *api.ShardingApi
+    Security *api.SecurityApi
     Schema *api.SchemaApi
-    RbacRole *api.RbacRoleApi
-    RolePermission *api.RolePermissionApi
-    InvocationRecord *api.InvocationRecordApi
-    RbacUserRole *api.RbacUserRoleApi
+    Role *api.RoleApi
+    Record *api.RecordApi
+    Rbac *api.RbacApi
     Prompt *api.PromptApi
     Project *api.ProjectApi
     Product *api.ProductApi
-    PptTemplate *api.PptTemplateApi
-    PptTemplateSlide *api.PptTemplateSlideApi
-    RbacPermission *api.RbacPermissionApi
+    Ppt *api.PptApi
+    Permission *api.PermissionApi
     Partner *api.PartnerApi
-    ChatParticipant *api.ChatParticipantApi
-    OssBucket *api.OssBucketApi
+    Participant *api.ParticipantApi
+    Oss *api.OssApi
     Organization *api.OrganizationApi
-    Position *api.PositionApi
-    MemberRelations *api.MemberRelationsApi
     OrganizationMember *api.OrganizationMemberApi
     Notification *api.NotificationApi
-    Notes *api.NotesApi
+    Note *api.NoteApi
     News *api.NewsApi
     Net *api.NetApi
-    DnsRecord *api.DnsRecordApi
     Music *api.MusicApi
-    ModelInformation *api.ModelInformationApi
-    ModelPrice *api.ModelPriceApi
-    ChatMessage *api.ChatMessageApi
-    MemberLevel *api.MemberLevelApi
-    MemberCard *api.MemberCardApi
+    Model *api.ModelApi
+    Message *api.MessageApi
+    Member *api.MemberApi
     KnowledgeBase *api.KnowledgeBaseApi
-    InvitationRelation *api.InvitationRelationApi
-    InvitationCode *api.InvitationCodeApi
+    Invitation *api.InvitationApi
     Image *api.ImageApi
-    ChatGroup *api.ChatGroupApi
+    Im *api.ImApi
     Generation *api.GenerationApi
-    GenerationContent *api.GenerationContentApi
+    Game *api.GameApi
     File *api.FileApi
-    FilePart *api.FilePartApi
-    FileContent *api.FileContentApi
-    Feeds *api.FeedsApi
+    Feed *api.FeedApi
     Feedback *api.FeedbackApi
     Favorite *api.FavoriteApi
-    FileDisk *api.FileDiskApi
-    DiskMember *api.DiskMemberApi
+    Disk *api.DiskApi
     Detail *api.DetailApi
     Department *api.DepartmentApi
     Datasource *api.DatasourceApi
     Coupon *api.CouponApi
-    CouponTemplate *api.CouponTemplateApi
     Conversation *api.ConversationApi
     ContentWriting *api.ContentWritingApi
     Comment *api.CommentApi
     Column *api.ColumnApi
     Collection *api.CollectionApi
     CollectionItem *api.CollectionItemApi
+    Chat *api.ChatApi
     Character *api.CharacterApi
     Channel *api.ChannelApi
-    ChannelResource *api.ChannelResourceApi
-    ChannelProxy *api.ChannelProxyApi
-    ChannelAccount *api.ChannelAccountApi
     Category *api.CategoryApi
-    MembershipCard *api.MembershipCardApi
-    CardTemplate *api.CardTemplateApi
+    Card *api.CardApi
     Attribute *api.AttributeApi
     Article *api.ArticleApi
     App *api.AppApi
-    ApiKey *api.ApiKeyApi
+    Apikey *api.ApikeyApi
     Agent *api.AgentApi
-    AgentToolRelationship *api.AgentToolRelationshipApi
     Account *api.AccountApi
-    AccountHistory *api.AccountHistoryApi
-    AccountExchangeConfig *api.AccountExchangeConfigApi
-    Invoice *api.InvoiceApi
-    SearchChat *api.SearchChatApi
-    PptTemplateRendering *api.PptTemplateRenderingApi
-    PptTemplateChat *api.PptTemplateChatApi
-    KnowledgeBaseFile *api.KnowledgeBaseFileApi
-    KnowledgeBaseChat *api.KnowledgeBaseChatApi
-    ImMessage *api.ImMessageApi
-    VoiceSpeakerGeneration *api.VoiceSpeakerGenerationApi
-    VideoGeneration *api.VideoGenerationApi
-    MusicGeneration *api.MusicGenerationApi
-    ImageGeneration *api.ImageGenerationApi
-    CharacterGeneration *api.CharacterGenerationApi
-    AudioGeneration *api.AudioGenerationApi
-    AudioEffectGeneration *api.AudioEffectGenerationApi
-    Chat *api.ChatApi
+    System *api.SystemApi
+    Search *api.SearchApi
     Auth *api.AuthApi
-    AgentChat *api.AgentChatApi
 }
 
 func NewSdkworkBackendClient(baseURL string) *SdkworkBackendClient {
@@ -147,133 +95,81 @@ func NewSdkworkBackendClientWithConfig(config sdkhttp.Config) *SdkworkBackendCli
     return &SdkworkBackendClient{
         http: client,
         Workspace: api.NewWorkspaceApi(client),
-        ContentVote: api.NewContentVoteApi(client),
-        VoiceSpeaker: api.NewVoiceSpeakerApi(client),
+        Vote: api.NewVoteApi(client),
+        Voice: api.NewVoiceApi(client),
         VisitHistory: api.NewVisitHistoryApi(client),
-        VipUser: api.NewVipUserApi(client),
-        VipRecharge: api.NewVipRechargeApi(client),
-        VipRechargePackage: api.NewVipRechargePackageApi(client),
-        VipPointChange: api.NewVipPointChangeApi(client),
-        VipPackageGroup: api.NewVipPackageGroupApi(client),
-        VipPackage: api.NewVipPackageApi(client),
-        VipLevel: api.NewVipLevelApi(client),
-        VipLevelBenefit: api.NewVipLevelBenefitApi(client),
-        VipBenefit: api.NewVipBenefitApi(client),
-        VipBenefitUsage: api.NewVipBenefitUsageApi(client),
+        Vip: api.NewVipApi(client),
         Video: api.NewVideoApi(client),
         User: api.NewUserApi(client),
-        UserOauthAccount: api.NewUserOauthAccountApi(client),
-        UserCoupon: api.NewUserCouponApi(client),
-        UserCard: api.NewUserCardApi(client),
-        UserAddress: api.NewUserAddressApi(client),
-        UsageRecord: api.NewUsageRecordApi(client),
-        ShoppingCart: api.NewShoppingCartApi(client),
-        ShoppingCartItem: api.NewShoppingCartItemApi(client),
-        Refund: api.NewRefundApi(client),
-        Payment: api.NewPaymentApi(client),
-        Order: api.NewOrderApi(client),
-        OrderItem: api.NewOrderItemApi(client),
+        Usage: api.NewUsageApi(client),
+        Trade: api.NewTradeApi(client),
         Tool: api.NewToolApi(client),
         Tenant: api.NewTenantApi(client),
-        DatabaseTable: api.NewDatabaseTableApi(client),
-        ProductSku: api.NewProductSkuApi(client),
+        Table: api.NewTableApi(client),
+        Sku: api.NewSkuApi(client),
         Skill: api.NewSkillApi(client),
-        SkillPackage: api.NewSkillPackageApi(client),
         ShortUrl: api.NewShortUrlApi(client),
         Shop: api.NewShopApi(client),
         Share: api.NewShareApi(client),
-        ShareVisitRecord: api.NewShareVisitRecordApi(client),
-        ShardingKey: api.NewShardingKeyApi(client),
-        ApiSecurityPolicy: api.NewApiSecurityPolicyApi(client),
+        Sharding: api.NewShardingApi(client),
+        Security: api.NewSecurityApi(client),
         Schema: api.NewSchemaApi(client),
-        RbacRole: api.NewRbacRoleApi(client),
-        RolePermission: api.NewRolePermissionApi(client),
-        InvocationRecord: api.NewInvocationRecordApi(client),
-        RbacUserRole: api.NewRbacUserRoleApi(client),
+        Role: api.NewRoleApi(client),
+        Record: api.NewRecordApi(client),
+        Rbac: api.NewRbacApi(client),
         Prompt: api.NewPromptApi(client),
         Project: api.NewProjectApi(client),
         Product: api.NewProductApi(client),
-        PptTemplate: api.NewPptTemplateApi(client),
-        PptTemplateSlide: api.NewPptTemplateSlideApi(client),
-        RbacPermission: api.NewRbacPermissionApi(client),
+        Ppt: api.NewPptApi(client),
+        Permission: api.NewPermissionApi(client),
         Partner: api.NewPartnerApi(client),
-        ChatParticipant: api.NewChatParticipantApi(client),
-        OssBucket: api.NewOssBucketApi(client),
+        Participant: api.NewParticipantApi(client),
+        Oss: api.NewOssApi(client),
         Organization: api.NewOrganizationApi(client),
-        Position: api.NewPositionApi(client),
-        MemberRelations: api.NewMemberRelationsApi(client),
         OrganizationMember: api.NewOrganizationMemberApi(client),
         Notification: api.NewNotificationApi(client),
-        Notes: api.NewNotesApi(client),
+        Note: api.NewNoteApi(client),
         News: api.NewNewsApi(client),
         Net: api.NewNetApi(client),
-        DnsRecord: api.NewDnsRecordApi(client),
         Music: api.NewMusicApi(client),
-        ModelInformation: api.NewModelInformationApi(client),
-        ModelPrice: api.NewModelPriceApi(client),
-        ChatMessage: api.NewChatMessageApi(client),
-        MemberLevel: api.NewMemberLevelApi(client),
-        MemberCard: api.NewMemberCardApi(client),
+        Model: api.NewModelApi(client),
+        Message: api.NewMessageApi(client),
+        Member: api.NewMemberApi(client),
         KnowledgeBase: api.NewKnowledgeBaseApi(client),
-        InvitationRelation: api.NewInvitationRelationApi(client),
-        InvitationCode: api.NewInvitationCodeApi(client),
+        Invitation: api.NewInvitationApi(client),
         Image: api.NewImageApi(client),
-        ChatGroup: api.NewChatGroupApi(client),
+        Im: api.NewImApi(client),
         Generation: api.NewGenerationApi(client),
-        GenerationContent: api.NewGenerationContentApi(client),
+        Game: api.NewGameApi(client),
         File: api.NewFileApi(client),
-        FilePart: api.NewFilePartApi(client),
-        FileContent: api.NewFileContentApi(client),
-        Feeds: api.NewFeedsApi(client),
+        Feed: api.NewFeedApi(client),
         Feedback: api.NewFeedbackApi(client),
         Favorite: api.NewFavoriteApi(client),
-        FileDisk: api.NewFileDiskApi(client),
-        DiskMember: api.NewDiskMemberApi(client),
+        Disk: api.NewDiskApi(client),
         Detail: api.NewDetailApi(client),
         Department: api.NewDepartmentApi(client),
         Datasource: api.NewDatasourceApi(client),
         Coupon: api.NewCouponApi(client),
-        CouponTemplate: api.NewCouponTemplateApi(client),
         Conversation: api.NewConversationApi(client),
         ContentWriting: api.NewContentWritingApi(client),
         Comment: api.NewCommentApi(client),
         Column: api.NewColumnApi(client),
         Collection: api.NewCollectionApi(client),
         CollectionItem: api.NewCollectionItemApi(client),
+        Chat: api.NewChatApi(client),
         Character: api.NewCharacterApi(client),
         Channel: api.NewChannelApi(client),
-        ChannelResource: api.NewChannelResourceApi(client),
-        ChannelProxy: api.NewChannelProxyApi(client),
-        ChannelAccount: api.NewChannelAccountApi(client),
         Category: api.NewCategoryApi(client),
-        MembershipCard: api.NewMembershipCardApi(client),
-        CardTemplate: api.NewCardTemplateApi(client),
+        Card: api.NewCardApi(client),
         Attribute: api.NewAttributeApi(client),
         Article: api.NewArticleApi(client),
         App: api.NewAppApi(client),
-        ApiKey: api.NewApiKeyApi(client),
+        Apikey: api.NewApikeyApi(client),
         Agent: api.NewAgentApi(client),
-        AgentToolRelationship: api.NewAgentToolRelationshipApi(client),
         Account: api.NewAccountApi(client),
-        AccountHistory: api.NewAccountHistoryApi(client),
-        AccountExchangeConfig: api.NewAccountExchangeConfigApi(client),
-        Invoice: api.NewInvoiceApi(client),
-        SearchChat: api.NewSearchChatApi(client),
-        PptTemplateRendering: api.NewPptTemplateRenderingApi(client),
-        PptTemplateChat: api.NewPptTemplateChatApi(client),
-        KnowledgeBaseFile: api.NewKnowledgeBaseFileApi(client),
-        KnowledgeBaseChat: api.NewKnowledgeBaseChatApi(client),
-        ImMessage: api.NewImMessageApi(client),
-        VoiceSpeakerGeneration: api.NewVoiceSpeakerGenerationApi(client),
-        VideoGeneration: api.NewVideoGenerationApi(client),
-        MusicGeneration: api.NewMusicGenerationApi(client),
-        ImageGeneration: api.NewImageGenerationApi(client),
-        CharacterGeneration: api.NewCharacterGenerationApi(client),
-        AudioGeneration: api.NewAudioGenerationApi(client),
-        AudioEffectGeneration: api.NewAudioEffectGenerationApi(client),
-        Chat: api.NewChatApi(client),
+        System: api.NewSystemApi(client),
+        Search: api.NewSearchApi(client),
         Auth: api.NewAuthApi(client),
-        AgentChat: api.NewAgentChatApi(client),
     }
 }
 

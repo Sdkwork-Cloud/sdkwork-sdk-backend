@@ -15,9 +15,29 @@ class CouponApi(private val client: HttpClient) {
         return client.post(ApiPaths.backendPath("/coupon"), body) as? PlusApiResultPlusCouponVO
     }
 
+    /** Update an existing coupon template */
+    suspend fun updateTemplate(body: PlusCouponTemplateForm): PlusApiResultPlusCouponTemplateVO? {
+        return client.put(ApiPaths.backendPath("/coupon/template"), body) as? PlusApiResultPlusCouponTemplateVO
+    }
+
+    /** Create a new coupon template */
+    suspend fun createTemplate(body: PlusCouponTemplateForm): PlusApiResultPlusCouponTemplateVO? {
+        return client.post(ApiPaths.backendPath("/coupon/template"), body) as? PlusApiResultPlusCouponTemplateVO
+    }
+
     /** Exchange coupon by points */
     suspend fun exchangeByPoints(couponId: String, body: CouponPointsExchangeForm): PlusApiResultPlusUserCouponVO? {
         return client.post(ApiPaths.backendPath("/coupon/$couponId/exchange/points"), body) as? PlusApiResultPlusUserCouponVO
+    }
+
+    /** Get coupon templates by page */
+    suspend fun createListByPage(body: QueryListForm? = null, params: Map<String, Any>? = null): PlusApiResultPagePlusCouponTemplateVO? {
+        return client.post(ApiPaths.backendPath("/coupon/template/list"), body, params) as? PlusApiResultPagePlusCouponTemplateVO
+    }
+
+    /** Get all coupon templates */
+    suspend fun createListAllEntities(body: QueryListForm? = null): PlusApiResultListPlusCouponTemplateVO? {
+        return client.post(ApiPaths.backendPath("/coupon/template/list/all"), body) as? PlusApiResultListPlusCouponTemplateVO
     }
 
     /** Redeem coupon */
@@ -31,12 +51,12 @@ class CouponApi(private val client: HttpClient) {
     }
 
     /** Get coupon templates by page */
-    suspend fun listByPage(body: QueryListForm? = null, params: Map<String, Any>? = null): PlusApiResultPagePlusCouponVO? {
+    suspend fun createListByPageCoupon(body: QueryListForm? = null, params: Map<String, Any>? = null): PlusApiResultPagePlusCouponVO? {
         return client.post(ApiPaths.backendPath("/coupon/list"), body, params) as? PlusApiResultPagePlusCouponVO
     }
 
     /** Get all coupon templates */
-    suspend fun listAllEntities(body: QueryListForm? = null): PlusApiResultListPlusCouponVO? {
+    suspend fun createListAllEntitiesCoupon(body: QueryListForm? = null): PlusApiResultListPlusCouponVO? {
         return client.post(ApiPaths.backendPath("/coupon/list/all"), body) as? PlusApiResultListPlusCouponVO
     }
 
@@ -48,5 +68,15 @@ class CouponApi(private val client: HttpClient) {
     /** Delete a coupon template */
     suspend fun delete(id: String): PlusApiResultBoolean? {
         return client.delete(ApiPaths.backendPath("/coupon/$id")) as? PlusApiResultBoolean
+    }
+
+    /** Get a coupon template by ID */
+    suspend fun getByIdTemplate(id: String): PlusApiResultPlusCouponTemplateVO? {
+        return client.get(ApiPaths.backendPath("/coupon/template/$id")) as? PlusApiResultPlusCouponTemplateVO
+    }
+
+    /** Delete a coupon template */
+    suspend fun deleteTemplate(id: String): PlusApiResultBoolean? {
+        return client.delete(ApiPaths.backendPath("/coupon/template/$id")) as? PlusApiResultBoolean
     }
 }

@@ -32,9 +32,41 @@ namespace Backend.Api
         }
 
         /// <summary>
+        /// Update visit record
+        /// </summary>
+        public async Task<PlusApiResultPlusShareVisitRecordVO?> UpdateVisitRecordAsync(PlusShareVisitRecordForm body)
+        {
+            return await _client.PutAsync<PlusApiResultPlusShareVisitRecordVO>(ApiPaths.BackendPath("/share/visit_record"), body);
+        }
+
+        /// <summary>
+        /// Create visit record
+        /// </summary>
+        public async Task<PlusApiResultPlusShareVisitRecordVO?> CreateVisitRecordAsync(PlusShareVisitRecordForm body)
+        {
+            return await _client.PostAsync<PlusApiResultPlusShareVisitRecordVO>(ApiPaths.BackendPath("/share/visit_record"), body);
+        }
+
+        /// <summary>
+        /// Get visit records by page
+        /// </summary>
+        public async Task<PlusApiResultPagePlusShareVisitRecordVO?> CreateListByPageAsync(QueryListForm? body = null, Dictionary<string, object>? query = null)
+        {
+            return await _client.PostAsync<PlusApiResultPagePlusShareVisitRecordVO>(ApiPaths.BackendPath("/share/visit_record/list"), body, query);
+        }
+
+        /// <summary>
+        /// Get all visit records
+        /// </summary>
+        public async Task<PlusApiResultListPlusShareVisitRecordVO?> CreateListAllEntitiesAsync(QueryListForm? body = null)
+        {
+            return await _client.PostAsync<PlusApiResultListPlusShareVisitRecordVO>(ApiPaths.BackendPath("/share/visit_record/list/all"), body);
+        }
+
+        /// <summary>
         /// 分页获取分享
         /// </summary>
-        public async Task<PlusApiResultPagePlusShareVO?> ListByPageAsync(QueryListForm? body = null, Dictionary<string, object>? query = null)
+        public async Task<PlusApiResultPagePlusShareVO?> CreateListByPageShareAsync(QueryListForm? body = null, Dictionary<string, object>? query = null)
         {
             return await _client.PostAsync<PlusApiResultPagePlusShareVO>(ApiPaths.BackendPath("/share/list"), body, query);
         }
@@ -42,7 +74,7 @@ namespace Backend.Api
         /// <summary>
         /// 获取所有分享
         /// </summary>
-        public async Task<PlusApiResultListPlusShareVO?> ListAllEntitiesAsync(QueryListForm? body = null)
+        public async Task<PlusApiResultListPlusShareVO?> CreateListAllEntitiesShareAsync(QueryListForm? body = null)
         {
             return await _client.PostAsync<PlusApiResultListPlusShareVO>(ApiPaths.BackendPath("/share/list/all"), body);
         }
@@ -61,6 +93,22 @@ namespace Backend.Api
         public async Task<PlusApiResultBoolean?> DeleteAsync(string id)
         {
             return await _client.DeleteAsync<PlusApiResultBoolean>(ApiPaths.BackendPath($"/share/{id}"));
+        }
+
+        /// <summary>
+        /// Get visit record by ID
+        /// </summary>
+        public async Task<PlusApiResultPlusShareVisitRecordVO?> GetByIdVisitRecordAsync(string id)
+        {
+            return await _client.GetAsync<PlusApiResultPlusShareVisitRecordVO>(ApiPaths.BackendPath($"/share/visit_record/{id}"));
+        }
+
+        /// <summary>
+        /// Delete visit record
+        /// </summary>
+        public async Task<PlusApiResultBoolean?> DeleteVisitRecordAsync(string id)
+        {
+            return await _client.DeleteAsync<PlusApiResultBoolean>(ApiPaths.BackendPath($"/share/visit_record/{id}"));
         }
     }
 }

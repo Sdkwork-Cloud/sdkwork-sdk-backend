@@ -1,21 +1,21 @@
 /** Image creation form */
 export interface PlusImageForm {
-  /** 图片标题 */
+  /** Image title */
   title?: string;
-  /** 图片描述信息 */
+  /** Image description */
   description?: string;
-  /** 图片存储URL */
+  /** Image URL */
   url: string;
-  /** 图片比例 */
-  aspectRatio: string;
-  /** 图片宽度（像素） */
+  /** Aspect ratio */
+  aspectRatio?: string;
+  /** Image width in pixels */
   width?: number;
-  /** 图片高度（像素） */
+  /** Image height in pixels */
   height?: number;
-  /** 图片文件大小 */
+  /** File size in bytes */
   fileSize?: number;
-  /** 图片格式 */
+  /** Image format */
   format?: string;
-  /** 图片状态 */
+  /** Image status */
   status: 'DEFAULT' | 'PROCESSING' | 'COMPLETED' | 'FAILED' | 'DELETED';
 }

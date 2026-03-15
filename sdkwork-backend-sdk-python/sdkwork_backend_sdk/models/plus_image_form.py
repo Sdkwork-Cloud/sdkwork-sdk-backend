@@ -7,7 +7,7 @@ class PlusImageForm:
     title: str = None
     description: str = None
     url: str
-    aspect_ratio: str
+    aspect_ratio: str = None
     width: int = None
     height: int = None
     file_size: int = None

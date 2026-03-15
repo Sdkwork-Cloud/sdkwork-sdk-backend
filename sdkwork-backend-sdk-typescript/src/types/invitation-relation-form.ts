@@ -1,19 +1,19 @@
 /** Invitation relation creation form */
 export interface InvitationRelationForm {
-  /** 邀请人ID */
+  /** Inviter user ID */
   inviterUserId: number;
-  /** 被邀请人ID */
+  /** Invitee user ID */
   inviteeUserId: number;
-  /** 邀请码 */
+  /** Invite code */
   inviteCode: string;
-  /** 使用时间 */
-  usedTime: string;
-  /** 关系级别（1=直接，2=二级等） */
+  /** Used time */
+  usedTime?: string;
+  /** Relation level */
   relationLevel: number;
-  /** 奖励状态 */
+  /** Reward status */
   rewardStatus?: 'PENDING' | 'SUCCESS' | 'FAILED' | 'CANCELED';
-  /** 奖励金额 */
+  /** Reward amount */
   rewardAmount?: number;
-  /** 奖励类型 */
+  /** Reward type */
   rewardType?: 'POINTS' | 'CASH' | 'COUPON' | 'VIP_DAYS' | 'DISCOUNT' | 'FREE_SHIPPING' | 'UPGRADE' | 'GIFT' | 'LOTTERY_CHANCE' | 'STORAGE' | 'FEATURE_UNLOCK' | 'CREDIT' | 'CONTENT' | 'MIXED';
 }

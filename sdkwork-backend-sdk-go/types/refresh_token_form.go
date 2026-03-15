@@ -1,6 +1,6 @@
 package types
 
-// 刷新令牌请求表单
+// 鍒锋柊浠ょ墝璇锋眰琛ㄥ崟
 type RefreshTokenForm struct {
 	RefreshToken string `json:"refreshToken"`
 }

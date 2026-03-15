@@ -34,8 +34,48 @@ func (a *ShareApi) Create(body sdktypes.PlusShareForm) (sdktypes.PlusApiResultPl
     return decodeResult[sdktypes.PlusApiResultPlusShareVO](raw)
 }
 
+// Update visit record
+func (a *ShareApi) UpdateVisitRecord(body sdktypes.PlusShareVisitRecordForm) (sdktypes.PlusApiResultPlusShareVisitRecordVO, error) {
+    raw, err := a.client.Put(BackendApiPath("/share/visit_record"), body, nil, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultPlusShareVisitRecordVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPlusShareVisitRecordVO](raw)
+}
+
+// Create visit record
+func (a *ShareApi) CreateVisitRecord(body sdktypes.PlusShareVisitRecordForm) (sdktypes.PlusApiResultPlusShareVisitRecordVO, error) {
+    raw, err := a.client.Post(BackendApiPath("/share/visit_record"), body, nil, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultPlusShareVisitRecordVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPlusShareVisitRecordVO](raw)
+}
+
+// Get visit records by page
+func (a *ShareApi) CreateListByPage(body *sdktypes.QueryListForm, query map[string]interface{}) (sdktypes.PlusApiResultPagePlusShareVisitRecordVO, error) {
+    raw, err := a.client.Post(BackendApiPath("/share/visit_record/list"), body, query, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultPagePlusShareVisitRecordVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPagePlusShareVisitRecordVO](raw)
+}
+
+// Get all visit records
+func (a *ShareApi) CreateListAllEntities(body *sdktypes.QueryListForm) (sdktypes.PlusApiResultListPlusShareVisitRecordVO, error) {
+    raw, err := a.client.Post(BackendApiPath("/share/visit_record/list/all"), body, nil, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultListPlusShareVisitRecordVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultListPlusShareVisitRecordVO](raw)
+}
+
 // 分页获取分享
-func (a *ShareApi) ListByPage(body *sdktypes.QueryListForm, query map[string]interface{}) (sdktypes.PlusApiResultPagePlusShareVO, error) {
+func (a *ShareApi) CreateListByPageShare(body *sdktypes.QueryListForm, query map[string]interface{}) (sdktypes.PlusApiResultPagePlusShareVO, error) {
     raw, err := a.client.Post(BackendApiPath("/share/list"), body, query, nil, "")
     if err != nil {
         var zero sdktypes.PlusApiResultPagePlusShareVO
@@ -45,7 +85,7 @@ func (a *ShareApi) ListByPage(body *sdktypes.QueryListForm, query map[string]int
 }
 
 // 获取所有分享
-func (a *ShareApi) ListAllEntities(body *sdktypes.QueryListForm) (sdktypes.PlusApiResultListPlusShareVO, error) {
+func (a *ShareApi) CreateListAllEntitiesShare(body *sdktypes.QueryListForm) (sdktypes.PlusApiResultListPlusShareVO, error) {
     raw, err := a.client.Post(BackendApiPath("/share/list/all"), body, nil, nil, "")
     if err != nil {
         var zero sdktypes.PlusApiResultListPlusShareVO
@@ -67,6 +107,26 @@ func (a *ShareApi) GetById(id string) (sdktypes.PlusApiResultPlusShareVO, error)
 // 删除分享
 func (a *ShareApi) Delete(id string) (sdktypes.PlusApiResultBoolean, error) {
     raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/share/%s", id)), nil, nil)
+    if err != nil {
+        var zero sdktypes.PlusApiResultBoolean
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultBoolean](raw)
+}
+
+// Get visit record by ID
+func (a *ShareApi) GetByIdVisitRecord(id string) (sdktypes.PlusApiResultPlusShareVisitRecordVO, error) {
+    raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/share/visit_record/%s", id)), nil, nil)
+    if err != nil {
+        var zero sdktypes.PlusApiResultPlusShareVisitRecordVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPlusShareVisitRecordVO](raw)
+}
+
+// Delete visit record
+func (a *ShareApi) DeleteVisitRecord(id string) (sdktypes.PlusApiResultBoolean, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/share/visit_record/%s", id)), nil, nil)
     if err != nil {
         var zero sdktypes.PlusApiResultBoolean
         return zero, err

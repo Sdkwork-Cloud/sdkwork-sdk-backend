@@ -2,10 +2,12 @@ package types
 
 // Account history creation form
 type PlusAccountHistoryForm struct {
+	AccountType string `json:"accountType"`
 	AssetType string `json:"assetType"`
 	AccountId int `json:"accountId"`
 	TransactionId string `json:"transactionId"`
 	TransactionType string `json:"transactionType"`
+	Status string `json:"status"`
 	Amount float64 `json:"amount"`
 	BalanceBefore float64 `json:"balanceBefore"`
 	BalanceAfter float64 `json:"balanceAfter"`
@@ -16,6 +18,5 @@ type PlusAccountHistoryForm struct {
 	SourceType string `json:"sourceType"`
 	SourceId string `json:"sourceId"`
 	ExpiredAt string `json:"expiredAt"`
-	Status string `json:"status"`
 	Remarks string `json:"remarks"`
 }

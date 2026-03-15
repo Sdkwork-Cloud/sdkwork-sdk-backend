@@ -1,17 +1,17 @@
 /** User OAuth account creation form */
 export interface PlusUserOAuthAccountForm {
-  /** 用户ID */
+  /** 鐢ㄦ埛ID */
   userId: number;
-  /** OAuth平台类型 */
+  /** OAuth骞冲彴绫诲瀷 */
   oauthProvider: 'WECHAT' | 'QQ' | 'WEIBO' | 'GITHUB' | 'GOOGLE' | 'FACEBOOK' | 'TWITTER' | 'LINKEDIN' | 'MICROSOFT' | 'APPLE' | 'ALIPAY' | 'DINGTALK' | 'GITEE';
-  /** 开放平台ID */
+  /** 寮€鏀惧钩鍙癐D */
   openId: string;
-  /** 统一ID */
+  /** 缁熶竴ID */
   unionId?: string;
-  /** 应用ID */
+  /** 搴旂敤ID */
   appId?: string;
-  /** 渠道账户ID */
+  /** 娓犻亾璐︽埛ID */
   channelAccountId?: number;
-  /** 访问令牌过期时间 */
+  /** 璁块棶浠ょ墝杩囨湡鏃堕棿 */
   accessTokenExpiresAt?: string;
 }

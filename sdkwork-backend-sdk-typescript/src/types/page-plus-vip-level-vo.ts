@@ -8,10 +8,10 @@ export interface PagePlusVipLevelVO {
   size?: number;
   content?: PlusVipLevelVO[];
   number?: number;
-  first?: boolean;
-  last?: boolean;
   numberOfElements?: number;
   sort?: SortObject;
   pageable?: PageableObject;
+  first?: boolean;
+  last?: boolean;
   empty?: boolean;
 }

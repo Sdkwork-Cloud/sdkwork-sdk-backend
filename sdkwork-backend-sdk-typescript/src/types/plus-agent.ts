@@ -18,17 +18,17 @@ export interface PlusAgent {
   metadata?: AgentMetadata;
   uuid?: string;
   systemPrompt?: Prompt;
+  accountConfig?: LlmAccountConfig;
   tools?: PromptToolDescription[];
+  executionContext?: AgentExecutionContext;
   chatContext?: ChatContext;
   chatOptions?: ChatOptions;
-  executionContext?: AgentExecutionContext;
   instructions?: string[];
   faceURL?: string;
   prompts?: Record<string, Prompt>;
-  accountConfig?: LlmAccountConfig;
-  chatMemory?: IPlusChatMemory;
   toolCallbackProvider?: ToolCallbackProvider;
   promptPath?: string;
   promptContextOptimizer?: PromptContextOptimizer;
   nextActions?: string[];
+  chatMemory?: IPlusChatMemory;
 }

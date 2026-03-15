@@ -8,10 +8,10 @@ export interface PagePlusArticleVO {
   size?: number;
   content?: PlusArticleVO[];
   number?: number;
-  first?: boolean;
-  last?: boolean;
   numberOfElements?: number;
   sort?: SortObject;
   pageable?: PageableObject;
+  first?: boolean;
+  last?: boolean;
   empty?: boolean;
 }

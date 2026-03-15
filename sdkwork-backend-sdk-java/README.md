@@ -10,14 +10,14 @@ Add to your `pom.xml`:
 <dependency>
     <groupId>com.sdkwork</groupId>
     <artifactId>backend-sdk</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.9</version>
 </dependency>
 ```
 
 Or with Gradle:
 
 ```groovy
-implementation 'com.sdkwork:backend-sdk:1.0.0'
+implementation 'com.sdkwork:backend-sdk:1.0.9'
 ```
 
 ## Quick Start
@@ -79,133 +79,81 @@ client.getHttpClient().setHeader("X-Custom-Header", "value");
 ## API Modules
 
 - `client.getWorkspace()` - workspace API
-- `client.getContentVote()` - content_vote API
-- `client.getVoiceSpeaker()` - voice_speaker API
+- `client.getVote()` - vote API
+- `client.getVoice()` - voice API
 - `client.getVisitHistory()` - visit_history API
-- `client.getVipUser()` - vip_user API
-- `client.getVipRecharge()` - vip_recharge API
-- `client.getVipRechargePackage()` - vip_recharge_package API
-- `client.getVipPointChange()` - vip_point_change API
-- `client.getVipPackageGroup()` - vip_package_group API
-- `client.getVipPackage()` - vip_package API
-- `client.getVipLevel()` - vip_level API
-- `client.getVipLevelBenefit()` - vip_level_benefit API
-- `client.getVipBenefit()` - vip_benefit API
-- `client.getVipBenefitUsage()` - vip_benefit_usage API
+- `client.getVip()` - vip API
 - `client.getVideo()` - video API
 - `client.getUser()` - user API
-- `client.getUserOauthAccount()` - user_oauth_account API
-- `client.getUserCoupon()` - user_coupon API
-- `client.getUserCard()` - user_card API
-- `client.getUserAddress()` - user_address API
-- `client.getUsageRecord()` - usage_record API
-- `client.getShoppingCart()` - shopping_cart API
-- `client.getShoppingCartItem()` - shopping_cart_item API
-- `client.getRefund()` - refund API
-- `client.getPayment()` - payment API
-- `client.getOrder()` - order API
-- `client.getOrderItem()` - order_item API
+- `client.getUsage()` - usage API
+- `client.getTrade()` - trade API
 - `client.getTool()` - tool API
 - `client.getTenant()` - tenant API
-- `client.getDatabaseTable()` - database_table API
-- `client.getProductSku()` - product_sku API
+- `client.getTable()` - table API
+- `client.getSku()` - sku API
 - `client.getSkill()` - skill API
-- `client.getSkillPackage()` - skill_package API
 - `client.getShortUrl()` - short_url API
 - `client.getShop()` - shop API
 - `client.getShare()` - share API
-- `client.getShareVisitRecord()` - share_visit_record API
-- `client.getShardingKey()` - sharding_key API
-- `client.getApiSecurityPolicy()` - api_security_policy API
+- `client.getSharding()` - sharding API
+- `client.getSecurity()` - security API
 - `client.getSchema()` - schema API
-- `client.getRbacRole()` - rbac_role API
-- `client.getRolePermission()` - role_permission API
-- `client.getInvocationRecord()` - invocation_record API
-- `client.getRbacUserRole()` - rbac_user_role API
+- `client.getRole()` - role API
+- `client.getRecord()` - record API
+- `client.getRbac()` - rbac API
 - `client.getPrompt()` - prompt API
 - `client.getProject()` - project API
 - `client.getProduct()` - product API
-- `client.getPptTemplate()` - ppt_template API
-- `client.getPptTemplateSlide()` - ppt_template_slide API
-- `client.getRbacPermission()` - rbac_permission API
+- `client.getPpt()` - ppt API
+- `client.getPermission()` - permission API
 - `client.getPartner()` - partner API
-- `client.getChatParticipant()` - chat_participant API
-- `client.getOssBucket()` - oss_bucket API
+- `client.getParticipant()` - participant API
+- `client.getOss()` - oss API
 - `client.getOrganization()` - organization API
-- `client.getPosition()` - position API
-- `client.getMemberRelations()` - member_relations API
 - `client.getOrganizationMember()` - organization_member API
 - `client.getNotification()` - notification API
-- `client.getNotes()` - notes API
+- `client.getNote()` - note API
 - `client.getNews()` - news API
 - `client.getNet()` - net API
-- `client.getDnsRecord()` - dns_record API
 - `client.getMusic()` - music API
-- `client.getModelInformation()` - model_information API
-- `client.getModelPrice()` - model_price API
-- `client.getChatMessage()` - chat_message API
-- `client.getMemberLevel()` - member_level API
-- `client.getMemberCard()` - member_card API
+- `client.getModel()` - model API
+- `client.getMessage()` - message API
+- `client.getMember()` - member API
 - `client.getKnowledgeBase()` - knowledge_base API
-- `client.getInvitationRelation()` - invitation_relation API
-- `client.getInvitationCode()` - invitation_code API
+- `client.getInvitation()` - invitation API
 - `client.getImage()` - image API
-- `client.getChatGroup()` - chat_group API
+- `client.getIm()` - im API
 - `client.getGeneration()` - generation API
-- `client.getGenerationContent()` - generation_content API
+- `client.getGame()` - game API
 - `client.getFile()` - file API
-- `client.getFilePart()` - file_part API
-- `client.getFileContent()` - file_content API
-- `client.getFeeds()` - feeds API
+- `client.getFeed()` - feed API
 - `client.getFeedback()` - feedback API
 - `client.getFavorite()` - favorite API
-- `client.getFileDisk()` - file_disk API
-- `client.getDiskMember()` - disk_member API
+- `client.getDisk()` - disk API
 - `client.getDetail()` - detail API
 - `client.getDepartment()` - department API
 - `client.getDatasource()` - datasource API
 - `client.getCoupon()` - coupon API
-- `client.getCouponTemplate()` - coupon_template API
 - `client.getConversation()` - conversation API
 - `client.getContentWriting()` - content_writing API
 - `client.getComment()` - comment API
 - `client.getColumn()` - column API
 - `client.getCollection()` - collection API
 - `client.getCollectionItem()` - collection_item API
+- `client.getChat()` - chat API
 - `client.getCharacter()` - character API
 - `client.getChannel()` - channel API
-- `client.getChannelResource()` - channel_resource API
-- `client.getChannelProxy()` - channel_proxy API
-- `client.getChannelAccount()` - channel_account API
 - `client.getCategory()` - category API
-- `client.getMembershipCard()` - membership_card API
-- `client.getCardTemplate()` - card_template API
+- `client.getCard()` - card API
 - `client.getAttribute()` - attribute API
 - `client.getArticle()` - article API
 - `client.getApp()` - app API
-- `client.getApiKey()` - api_key API
+- `client.getApikey()` - apikey API
 - `client.getAgent()` - agent API
-- `client.getAgentToolRelationship()` - agent_tool_relationship API
 - `client.getAccount()` - account API
-- `client.getAccountHistory()` - account_history API
-- `client.getAccountExchangeConfig()` - account_exchange_config API
-- `client.getInvoice()` - invoice API
-- `client.getSearchChat()` - search_chat API
-- `client.getPptTemplateRendering()` - ppt_template_rendering API
-- `client.getPptTemplateChat()` - ppt_template_chat API
-- `client.getKnowledgeBaseFile()` - knowledge_base_file API
-- `client.getKnowledgeBaseChat()` - knowledge_base_chat API
-- `client.getImMessage()` - im_message API
-- `client.getVoiceSpeakerGeneration()` - voice_speaker_generation API
-- `client.getVideoGeneration()` - video_generation API
-- `client.getMusicGeneration()` - music_generation API
-- `client.getImageGeneration()` - image_generation API
-- `client.getCharacterGeneration()` - character_generation API
-- `client.getAudioGeneration()` - audio_generation API
-- `client.getAudioEffectGeneration()` - audio_effect_generation API
-- `client.getChat()` - chat API
+- `client.getSystem()` - system API
+- `client.getSearch()` - search API
 - `client.getAuth()` - auth API
-- `client.getAgentChat()` - agent_chat API
 
 ## Usage Examples
 
@@ -217,19 +165,19 @@ Object result = client.getWorkspace().update();
 System.out.println(result);
 ```
 
-### content_vote
+### vote
 
 ```java
 // Update an existing content vote
-Object result = client.getContentVote().update();
+Object result = client.getVote().update();
 System.out.println(result);
 ```
 
-### voice_speaker
+### voice
 
 ```java
 // Update an existing voice speaker
-Object result = client.getVoiceSpeaker().update();
+Object result = client.getVoice().update();
 System.out.println(result);
 ```
 
@@ -241,83 +189,11 @@ Object result = client.getVisitHistory().update();
 System.out.println(result);
 ```
 
-### vip_user
+### vip
 
 ```java
 // Update an existing VIP user
-Object result = client.getVipUser().update();
-System.out.println(result);
-```
-
-### vip_recharge
-
-```java
-// Update an existing VIP recharge record
-Object result = client.getVipRecharge().update();
-System.out.println(result);
-```
-
-### vip_recharge_package
-
-```java
-// Update an existing VIP recharge package
-Object result = client.getVipRechargePackage().update();
-System.out.println(result);
-```
-
-### vip_point_change
-
-```java
-// Update an existing VIP point change record
-Object result = client.getVipPointChange().update();
-System.out.println(result);
-```
-
-### vip_package_group
-
-```java
-// Update an existing VIP package group
-Object result = client.getVipPackageGroup().update();
-System.out.println(result);
-```
-
-### vip_package
-
-```java
-// Update VIP Package
-Object result = client.getVipPackage().update();
-System.out.println(result);
-```
-
-### vip_level
-
-```java
-// Update an existing VIP level
-Object result = client.getVipLevel().update();
-System.out.println(result);
-```
-
-### vip_level_benefit
-
-```java
-// Update an existing VIP level benefit
-Object result = client.getVipLevelBenefit().update();
-System.out.println(result);
-```
-
-### vip_benefit
-
-```java
-// Update an existing VIP benefit
-Object result = client.getVipBenefit().update();
-System.out.println(result);
-```
-
-### vip_benefit_usage
-
-```java
-// Update an existing VIP benefit usage record
-Object result = client.getVipBenefitUsage().update();
+Object result = client.getVip().update();
 System.out.println(result);
 ```
 
@@ -337,91 +213,19 @@ Object result = client.getUser().update();
 System.out.println(result);
 ```
 
-### user_oauth_account
-
-```java
-// Update user OAuth account
-Object result = client.getUserOauthAccount().update();
-System.out.println(result);
-```
-
-### user_coupon
-
-```java
-// Update an existing user coupon
-Object result = client.getUserCoupon().update();
-System.out.println(result);
-```
-
-### user_card
-
-```java
-// Update user-card binding
-Object result = client.getUserCard().update();
-System.out.println(result);
-```
-
-### user_address
-
-```java
-// Update an existing user address
-Object result = client.getUserAddress().update();
-System.out.println(result);
-```
-
-### usage_record
+### usage
 
 ```java
 // Update an existing usage record
-Object result = client.getUsageRecord().update();
+Object result = client.getUsage().update();
 System.out.println(result);
 ```
 
-### shopping_cart
+### trade
 
 ```java
 // Update shopping cart
-Object result = client.getShoppingCart().update();
-System.out.println(result);
-```
-
-### shopping_cart_item
-
-```java
-// Update an existing shopping cart item
-Object result = client.getShoppingCartItem().update();
-System.out.println(result);
-```
-
-### refund
-
-```java
-// Update an existing refund record
-Object result = client.getRefund().update();
-System.out.println(result);
-```
-
-### payment
-
-```java
-// Update an existing payment record
-Object result = client.getPayment().update();
-System.out.println(result);
-```
-
-### order
-
-```java
-// Update an existing order
-Object result = client.getOrder().update();
-System.out.println(result);
-```
-
-### order_item
-
-```java
-// Update an existing order item
-Object result = client.getOrderItem().update();
+Object result = client.getTrade().update();
 System.out.println(result);
 ```
 
@@ -441,19 +245,19 @@ Object result = client.getTenant().update();
 System.out.println(result);
 ```
 
-### database_table
+### table
 
 ```java
 // Update an existing database table
-Object result = client.getDatabaseTable().update();
+Object result = client.getTable().update();
 System.out.println(result);
 ```
 
-### product_sku
+### sku
 
 ```java
 // Update an existing SKU
-Object result = client.getProductSku().update();
+Object result = client.getSku().update();
 System.out.println(result);
 ```
 
@@ -462,14 +266,6 @@ System.out.println(result);
 ```java
 // Get one skill detail
 Object result = client.getSkill().getById();
-System.out.println(result);
-```
-
-### skill_package
-
-```java
-// Get skill package detail
-Object result = client.getSkillPackage().getById();
 System.out.println(result);
 ```
 
@@ -497,27 +293,19 @@ Object result = client.getShare().update();
 System.out.println(result);
 ```
 
-### share_visit_record
-
-```java
-// Update visit record
-Object result = client.getShareVisitRecord().update();
-System.out.println(result);
-```
-
-### sharding_key
+### sharding
 
 ```java
 // Update Sharding Key
-Object result = client.getShardingKey().update();
+Object result = client.getSharding().update();
 System.out.println(result);
 ```
 
-### api_security_policy
+### security
 
 ```java
 // PUT /backend/v3/api/security/policy
-Object result = client.getApiSecurityPolicy().update();
+Object result = client.getSecurity().update();
 System.out.println(result);
 ```
 
@@ -529,35 +317,27 @@ Object result = client.getSchema().update();
 System.out.println(result);
 ```
 
-### rbac_role
+### role
 
 ```java
 // Update an existing system role
-Object result = client.getRbacRole().update();
+Object result = client.getRole().update();
 System.out.println(result);
 ```
 
-### role_permission
-
-```java
-// Update role-permission association
-Object result = client.getRolePermission().update();
-System.out.println(result);
-```
-
-### invocation_record
+### record
 
 ```java
 // Update an existing invocation record
-Object result = client.getInvocationRecord().update();
+Object result = client.getRecord().update();
 System.out.println(result);
 ```
 
-### rbac_user_role
+### rbac
 
 ```java
 // Update user-role relationship
-Object result = client.getRbacUserRole().update();
+Object result = client.getRbac().update();
 System.out.println(result);
 ```
 
@@ -585,27 +365,19 @@ Object result = client.getProduct().update();
 System.out.println(result);
 ```
 
-### ppt_template
+### ppt
 
 ```java
 // Update an existing PPT template
-Object result = client.getPptTemplate().update();
+Object result = client.getPpt().update();
 System.out.println(result);
 ```
 
-### ppt_template_slide
-
-```java
-// Update an existing PPT template slide
-Object result = client.getPptTemplateSlide().update();
-System.out.println(result);
-```
-
-### rbac_permission
+### permission
 
 ```java
 // PUT /backend/v3/api/permission
-Object result = client.getRbacPermission().update();
+Object result = client.getPermission().update();
 System.out.println(result);
 ```
 
@@ -617,19 +389,19 @@ Object result = client.getPartner().update();
 System.out.println(result);
 ```
 
-### chat_participant
+### participant
 
 ```java
 // Update an existing chat participant
-Object result = client.getChatParticipant().update();
+Object result = client.getParticipant().update();
 System.out.println(result);
 ```
 
-### oss_bucket
+### oss
 
 ```java
 // Update an existing OSS bucket
-Object result = client.getOssBucket().update();
+Object result = client.getOss().update();
 System.out.println(result);
 ```
 
@@ -638,22 +410,6 @@ System.out.println(result);
 ```java
 // Update an existing organization
 Object result = client.getOrganization().update();
-System.out.println(result);
-```
-
-### position
-
-```java
-// Update an existing position
-Object result = client.getPosition().update();
-System.out.println(result);
-```
-
-### member_relations
-
-```java
-// Update member relation
-Object result = client.getMemberRelations().update();
 System.out.println(result);
 ```
 
@@ -673,11 +429,11 @@ Object result = client.getNotification().update();
 System.out.println(result);
 ```
 
-### notes
+### note
 
 ```java
 // Update a note
-Object result = client.getNotes().update();
+Object result = client.getNote().update();
 System.out.println(result);
 ```
 
@@ -697,14 +453,6 @@ Object result = client.getNet().update();
 System.out.println(result);
 ```
 
-### dns_record
-
-```java
-// Update an existing DNS record
-Object result = client.getDnsRecord().update();
-System.out.println(result);
-```
-
 ### music
 
 ```java
@@ -713,43 +461,27 @@ Object result = client.getMusic().update();
 System.out.println(result);
 ```
 
-### model_information
+### model
 
 ```java
 // Update existing AI model information
-Object result = client.getModelInformation().update();
+Object result = client.getModel().update();
 System.out.println(result);
 ```
 
-### model_price
-
-```java
-// Update an existing AI model price
-Object result = client.getModelPrice().update();
-System.out.println(result);
-```
-
-### chat_message
+### message
 
 ```java
 // Update an existing chat message
-Object result = client.getChatMessage().update();
+Object result = client.getMessage().update();
 System.out.println(result);
 ```
 
-### member_level
+### member
 
 ```java
 // Update an existing member level
-Object result = client.getMemberLevel().update();
-System.out.println(result);
-```
-
-### member_card
-
-```java
-// Update an existing member card
-Object result = client.getMemberCard().update();
+Object result = client.getMember().update();
 System.out.println(result);
 ```
 
@@ -761,19 +493,11 @@ Object result = client.getKnowledgeBase().update();
 System.out.println(result);
 ```
 
-### invitation_relation
+### invitation
 
 ```java
 // Update an invitation relation
-Object result = client.getInvitationRelation().update();
-System.out.println(result);
-```
-
-### invitation_code
-
-```java
-// Update an existing invitation code
-Object result = client.getInvitationCode().update();
+Object result = client.getInvitation().update();
 System.out.println(result);
 ```
 
@@ -785,11 +509,11 @@ Object result = client.getImage().update();
 System.out.println(result);
 ```
 
-### chat_group
+### im
 
 ```java
 // Update an existing chat group
-Object result = client.getChatGroup().update();
+Object result = client.getIm().update();
 System.out.println(result);
 ```
 
@@ -801,11 +525,11 @@ Object result = client.getGeneration().update();
 System.out.println(result);
 ```
 
-### generation_content
+### game
 
 ```java
-// Update AI generated content
-Object result = client.getGenerationContent().update();
+// Update game definition
+Object result = client.getGame().update();
 System.out.println(result);
 ```
 
@@ -817,27 +541,11 @@ Object result = client.getFile().update();
 System.out.println(result);
 ```
 
-### file_part
-
-```java
-// Update an existing file part
-Object result = client.getFilePart().update();
-System.out.println(result);
-```
-
-### file_content
-
-```java
-// Update file content
-Object result = client.getFileContent().update();
-System.out.println(result);
-```
-
-### feeds
+### feed
 
 ```java
 // Update an existing feeds entry
-Object result = client.getFeeds().update();
+Object result = client.getFeed().update();
 System.out.println(result);
 ```
 
@@ -857,19 +565,11 @@ Object result = client.getFavorite().update();
 System.out.println(result);
 ```
 
-### file_disk
+### disk
 
 ```java
 // Update an existing file disk
-Object result = client.getFileDisk().update();
-System.out.println(result);
-```
-
-### disk_member
-
-```java
-// Update an existing disk member
-Object result = client.getDiskMember().update();
+Object result = client.getDisk().update();
 System.out.println(result);
 ```
 
@@ -902,14 +602,6 @@ System.out.println(result);
 ```java
 // Update an existing coupon template
 Object result = client.getCoupon().update();
-System.out.println(result);
-```
-
-### coupon_template
-
-```java
-// Update an existing coupon template
-Object result = client.getCouponTemplate().update();
 System.out.println(result);
 ```
 
@@ -961,6 +653,14 @@ Object result = client.getCollectionItem().update();
 System.out.println(result);
 ```
 
+### chat
+
+```java
+// Update an existing chat message
+Object result = client.getChat().updateMessage();
+System.out.println(result);
+```
+
 ### character
 
 ```java
@@ -977,30 +677,6 @@ Object result = client.getChannel().update();
 System.out.println(result);
 ```
 
-### channel_resource
-
-```java
-// Update an existing channel resource
-Object result = client.getChannelResource().update();
-System.out.println(result);
-```
-
-### channel_proxy
-
-```java
-// Update channel proxy
-Object result = client.getChannelProxy().update();
-System.out.println(result);
-```
-
-### channel_account
-
-```java
-// Update channel account
-Object result = client.getChannelAccount().update();
-System.out.println(result);
-```
-
 ### category
 
 ```java
@@ -1009,19 +685,11 @@ Object result = client.getCategory().update();
 System.out.println(result);
 ```
 
-### membership_card
+### card
 
 ```java
 // Update an existing membership card
-Object result = client.getMembershipCard().update();
-System.out.println(result);
-```
-
-### card_template
-
-```java
-// Update an existing card template
-Object result = client.getCardTemplate().update();
+Object result = client.getCard().update();
 System.out.println(result);
 ```
 
@@ -1049,11 +717,11 @@ Object result = client.getApp().update();
 System.out.println(result);
 ```
 
-### api_key
+### apikey
 
 ```java
 // Update an existing API key
-Object result = client.getApiKey().update();
+Object result = client.getApikey().update();
 System.out.println(result);
 ```
 
@@ -1065,14 +733,6 @@ Object result = client.getAgent().update();
 System.out.println(result);
 ```
 
-### agent_tool_relationship
-
-```java
-// Update an existing agent-tool relationship
-Object result = client.getAgentToolRelationship().update();
-System.out.println(result);
-```
-
 ### account
 
 ```java
@@ -1081,139 +741,19 @@ Object result = client.getAccount().update();
 System.out.println(result);
 ```
 
-### account_history
-
-```java
-// Update an existing account history record
-Object result = client.getAccountHistory().update();
-System.out.println(result);
-```
-
-### account_exchange_config
-
-```java
-// Get points-to-cash rate
-Object result = client.getAccountExchangeConfig().getPointsToCashRate();
-System.out.println(result);
-```
-
-### invoice
+### system
 
 ```java
 // Apply invoice
-Object result = client.getInvoice().apply();
+Object result = client.getSystem().apply();
 System.out.println(result);
 ```
 
-### search_chat
+### search
 
 ```java
 // POST /backend/v3/api/search/chat/stop
-Object result = client.getSearchChat().stop();
-System.out.println(result);
-```
-
-### ppt_template_rendering
-
-```java
-// Render PPT template
-Object result = client.getPptTemplateRendering().render();
-System.out.println(result);
-```
-
-### ppt_template_chat
-
-```java
-// POST /backend/v3/api/ppt/template/chat/stop
-Object result = client.getPptTemplateChat().stop();
-System.out.println(result);
-```
-
-### knowledge_base_file
-
-```java
-// List files
-Object result = client.getKnowledgeBaseFile().listFiles();
-System.out.println(result);
-```
-
-### knowledge_base_chat
-
-```java
-// POST /backend/v3/api/knowledge_base/chat/stop
-Object result = client.getKnowledgeBaseChat().stop();
-System.out.println(result);
-```
-
-### im_message
-
-```java
-// Mark conversation messages as read
-Object result = client.getImMessage().markRead();
-System.out.println(result);
-```
-
-### voice_speaker_generation
-
-```java
-// Create voice speaker generation task
-Object result = client.getVoiceSpeakerGeneration().create();
-System.out.println(result);
-```
-
-### video_generation
-
-```java
-// Create video generation task
-Object result = client.getVideoGeneration().create();
-System.out.println(result);
-```
-
-### music_generation
-
-```java
-// Create music generation task
-Object result = client.getMusicGeneration().create();
-System.out.println(result);
-```
-
-### image_generation
-
-```java
-// Create image generation task
-Object result = client.getImageGeneration().create();
-System.out.println(result);
-```
-
-### character_generation
-
-```java
-// Create character generation task
-Object result = client.getCharacterGeneration().create();
-System.out.println(result);
-```
-
-### audio_generation
-
-```java
-// Create audio generation task
-Object result = client.getAudioGeneration().create();
-System.out.println(result);
-```
-
-### audio_effect_generation
-
-```java
-// Create audio effect generation task
-Object result = client.getAudioEffectGeneration().create();
-System.out.println(result);
-```
-
-### chat
-
-```java
-// Stop a chat completion stream
-Object result = client.getChat().stop();
+Object result = client.getSearch().stop();
 System.out.println(result);
 ```
 
@@ -1222,14 +762,6 @@ System.out.println(result);
 ```java
 // Verify phone
 Object result = client.getAuth().verifyPhone();
-System.out.println(result);
-```
-
-### agent_chat
-
-```java
-// Create a chat completion with agent
-Object result = client.getAgentChat().withContext();
 System.out.println(result);
 ```
 

@@ -8,10 +8,10 @@ export interface PagePlusCommentsVO {
   size?: number;
   content?: PlusCommentsVO[];
   number?: number;
-  first?: boolean;
-  last?: boolean;
   numberOfElements?: number;
   sort?: SortObject;
   pageable?: PageableObject;
+  first?: boolean;
+  last?: boolean;
   empty?: boolean;
 }

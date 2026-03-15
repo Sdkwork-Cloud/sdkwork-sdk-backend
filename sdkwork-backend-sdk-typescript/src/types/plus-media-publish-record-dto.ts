@@ -10,7 +10,7 @@ export interface PlusMediaPublishRecordDTO {
   noteUuid?: string;
   noteTitle?: string;
   platform?: 'DEFAULT' | 'WECHAT_OFFICIAL_ACCOUNT' | 'DOUYIN';
-  action?: 'DEFAULT' | 'CREATE_DRAFT' | 'PREVIEW_DRAFT' | 'PUBLISH_DRAFT' | 'DIRECT_PUBLISH';
+  action?: 'DEFAULT' | 'CREATE_DRAFT' | 'PREVIEW_DRAFT' | 'PUBLISH_DRAFT' | 'DIRECT_PUBLISH' | 'QUERY_PUBLISH_STATUS' | 'QUERY_PUBLISHED_ARTICLE';
   status?: 'DEFAULT' | 'RUNNING' | 'SUCCESS' | 'FAILURE';
   draftMediaId?: string;
   publishId?: string;

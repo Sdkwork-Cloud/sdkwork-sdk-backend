@@ -7,6 +7,7 @@ class PlusArticleForm:
     title: str
     subtitle: str = None
     content: str
+    category_id: int
     word_count: int = None
     reading_time: int = None
     cover_images: ImageMediaResourceList = None

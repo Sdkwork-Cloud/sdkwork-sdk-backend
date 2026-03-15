@@ -11,7 +11,7 @@ dotnet add package Backend
 Or add to your `.csproj`:
 
 ```xml
-<PackageReference Include="Backend" Version="1.0.0" />
+<PackageReference Include="Backend" Version="1.0.9" />
 ```
 
 ## Quick Start
@@ -69,133 +69,81 @@ client.SetHeader("X-Custom-Header", "value");
 ## API Modules
 
 - `client.Workspace` - workspace API
-- `client.ContentVote` - content_vote API
-- `client.VoiceSpeaker` - voice_speaker API
+- `client.Vote` - vote API
+- `client.Voice` - voice API
 - `client.VisitHistory` - visit_history API
-- `client.VipUser` - vip_user API
-- `client.VipRecharge` - vip_recharge API
-- `client.VipRechargePackage` - vip_recharge_package API
-- `client.VipPointChange` - vip_point_change API
-- `client.VipPackageGroup` - vip_package_group API
-- `client.VipPackage` - vip_package API
-- `client.VipLevel` - vip_level API
-- `client.VipLevelBenefit` - vip_level_benefit API
-- `client.VipBenefit` - vip_benefit API
-- `client.VipBenefitUsage` - vip_benefit_usage API
+- `client.Vip` - vip API
 - `client.Video` - video API
 - `client.User` - user API
-- `client.UserOauthAccount` - user_oauth_account API
-- `client.UserCoupon` - user_coupon API
-- `client.UserCard` - user_card API
-- `client.UserAddress` - user_address API
-- `client.UsageRecord` - usage_record API
-- `client.ShoppingCart` - shopping_cart API
-- `client.ShoppingCartItem` - shopping_cart_item API
-- `client.Refund` - refund API
-- `client.Payment` - payment API
-- `client.Order` - order API
-- `client.OrderItem` - order_item API
+- `client.Usage` - usage API
+- `client.Trade` - trade API
 - `client.Tool` - tool API
 - `client.Tenant` - tenant API
-- `client.DatabaseTable` - database_table API
-- `client.ProductSku` - product_sku API
+- `client.Table` - table API
+- `client.Sku` - sku API
 - `client.Skill` - skill API
-- `client.SkillPackage` - skill_package API
 - `client.ShortUrl` - short_url API
 - `client.Shop` - shop API
 - `client.Share` - share API
-- `client.ShareVisitRecord` - share_visit_record API
-- `client.ShardingKey` - sharding_key API
-- `client.ApiSecurityPolicy` - api_security_policy API
+- `client.Sharding` - sharding API
+- `client.Security` - security API
 - `client.Schema` - schema API
-- `client.RbacRole` - rbac_role API
-- `client.RolePermission` - role_permission API
-- `client.InvocationRecord` - invocation_record API
-- `client.RbacUserRole` - rbac_user_role API
+- `client.Role` - role API
+- `client.Record` - record API
+- `client.Rbac` - rbac API
 - `client.Prompt` - prompt API
 - `client.Project` - project API
 - `client.Product` - product API
-- `client.PptTemplate` - ppt_template API
-- `client.PptTemplateSlide` - ppt_template_slide API
-- `client.RbacPermission` - rbac_permission API
+- `client.Ppt` - ppt API
+- `client.Permission` - permission API
 - `client.Partner` - partner API
-- `client.ChatParticipant` - chat_participant API
-- `client.OssBucket` - oss_bucket API
+- `client.Participant` - participant API
+- `client.Oss` - oss API
 - `client.Organization` - organization API
-- `client.Position` - position API
-- `client.MemberRelations` - member_relations API
 - `client.OrganizationMember` - organization_member API
 - `client.Notification` - notification API
-- `client.Notes` - notes API
+- `client.Note` - note API
 - `client.News` - news API
 - `client.Net` - net API
-- `client.DnsRecord` - dns_record API
 - `client.Music` - music API
-- `client.ModelInformation` - model_information API
-- `client.ModelPrice` - model_price API
-- `client.ChatMessage` - chat_message API
-- `client.MemberLevel` - member_level API
-- `client.MemberCard` - member_card API
+- `client.Model` - model API
+- `client.Message` - message API
+- `client.Member` - member API
 - `client.KnowledgeBase` - knowledge_base API
-- `client.InvitationRelation` - invitation_relation API
-- `client.InvitationCode` - invitation_code API
+- `client.Invitation` - invitation API
 - `client.Image` - image API
-- `client.ChatGroup` - chat_group API
+- `client.Im` - im API
 - `client.Generation` - generation API
-- `client.GenerationContent` - generation_content API
+- `client.Game` - game API
 - `client.File` - file API
-- `client.FilePart` - file_part API
-- `client.FileContent` - file_content API
-- `client.Feeds` - feeds API
+- `client.Feed` - feed API
 - `client.Feedback` - feedback API
 - `client.Favorite` - favorite API
-- `client.FileDisk` - file_disk API
-- `client.DiskMember` - disk_member API
+- `client.Disk` - disk API
 - `client.Detail` - detail API
 - `client.Department` - department API
 - `client.Datasource` - datasource API
 - `client.Coupon` - coupon API
-- `client.CouponTemplate` - coupon_template API
 - `client.Conversation` - conversation API
 - `client.ContentWriting` - content_writing API
 - `client.Comment` - comment API
 - `client.Column` - column API
 - `client.Collection` - collection API
 - `client.CollectionItem` - collection_item API
+- `client.Chat` - chat API
 - `client.Character` - character API
 - `client.Channel` - channel API
-- `client.ChannelResource` - channel_resource API
-- `client.ChannelProxy` - channel_proxy API
-- `client.ChannelAccount` - channel_account API
 - `client.Category` - category API
-- `client.MembershipCard` - membership_card API
-- `client.CardTemplate` - card_template API
+- `client.Card` - card API
 - `client.Attribute` - attribute API
 - `client.Article` - article API
 - `client.App` - app API
-- `client.ApiKey` - api_key API
+- `client.Apikey` - apikey API
 - `client.Agent` - agent API
-- `client.AgentToolRelationship` - agent_tool_relationship API
 - `client.Account` - account API
-- `client.AccountHistory` - account_history API
-- `client.AccountExchangeConfig` - account_exchange_config API
-- `client.Invoice` - invoice API
-- `client.SearchChat` - search_chat API
-- `client.PptTemplateRendering` - ppt_template_rendering API
-- `client.PptTemplateChat` - ppt_template_chat API
-- `client.KnowledgeBaseFile` - knowledge_base_file API
-- `client.KnowledgeBaseChat` - knowledge_base_chat API
-- `client.ImMessage` - im_message API
-- `client.VoiceSpeakerGeneration` - voice_speaker_generation API
-- `client.VideoGeneration` - video_generation API
-- `client.MusicGeneration` - music_generation API
-- `client.ImageGeneration` - image_generation API
-- `client.CharacterGeneration` - character_generation API
-- `client.AudioGeneration` - audio_generation API
-- `client.AudioEffectGeneration` - audio_effect_generation API
-- `client.Chat` - chat API
+- `client.System` - system API
+- `client.Search` - search API
 - `client.Auth` - auth API
-- `client.AgentChat` - agent_chat API
 
 ## Usage Examples
 
@@ -207,19 +155,19 @@ var result = await client.Workspace.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### content_vote
+### vote
 
 ```csharp
 // Update an existing content vote
-var result = await client.ContentVote.UpdateAsync();
+var result = await client.Vote.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### voice_speaker
+### voice
 
 ```csharp
 // Update an existing voice speaker
-var result = await client.VoiceSpeaker.UpdateAsync();
+var result = await client.Voice.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -231,83 +179,11 @@ var result = await client.VisitHistory.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### vip_user
+### vip
 
 ```csharp
 // Update an existing VIP user
-var result = await client.VipUser.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### vip_recharge
-
-```csharp
-// Update an existing VIP recharge record
-var result = await client.VipRecharge.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### vip_recharge_package
-
-```csharp
-// Update an existing VIP recharge package
-var result = await client.VipRechargePackage.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### vip_point_change
-
-```csharp
-// Update an existing VIP point change record
-var result = await client.VipPointChange.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### vip_package_group
-
-```csharp
-// Update an existing VIP package group
-var result = await client.VipPackageGroup.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### vip_package
-
-```csharp
-// Update VIP Package
-var result = await client.VipPackage.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### vip_level
-
-```csharp
-// Update an existing VIP level
-var result = await client.VipLevel.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### vip_level_benefit
-
-```csharp
-// Update an existing VIP level benefit
-var result = await client.VipLevelBenefit.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### vip_benefit
-
-```csharp
-// Update an existing VIP benefit
-var result = await client.VipBenefit.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### vip_benefit_usage
-
-```csharp
-// Update an existing VIP benefit usage record
-var result = await client.VipBenefitUsage.UpdateAsync();
+var result = await client.Vip.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -327,91 +203,19 @@ var result = await client.User.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### user_oauth_account
-
-```csharp
-// Update user OAuth account
-var result = await client.UserOauthAccount.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### user_coupon
-
-```csharp
-// Update an existing user coupon
-var result = await client.UserCoupon.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### user_card
-
-```csharp
-// Update user-card binding
-var result = await client.UserCard.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### user_address
-
-```csharp
-// Update an existing user address
-var result = await client.UserAddress.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### usage_record
+### usage
 
 ```csharp
 // Update an existing usage record
-var result = await client.UsageRecord.UpdateAsync();
+var result = await client.Usage.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### shopping_cart
+### trade
 
 ```csharp
 // Update shopping cart
-var result = await client.ShoppingCart.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### shopping_cart_item
-
-```csharp
-// Update an existing shopping cart item
-var result = await client.ShoppingCartItem.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### refund
-
-```csharp
-// Update an existing refund record
-var result = await client.Refund.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### payment
-
-```csharp
-// Update an existing payment record
-var result = await client.Payment.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### order
-
-```csharp
-// Update an existing order
-var result = await client.Order.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### order_item
-
-```csharp
-// Update an existing order item
-var result = await client.OrderItem.UpdateAsync();
+var result = await client.Trade.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -431,19 +235,19 @@ var result = await client.Tenant.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### database_table
+### table
 
 ```csharp
 // Update an existing database table
-var result = await client.DatabaseTable.UpdateAsync();
+var result = await client.Table.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### product_sku
+### sku
 
 ```csharp
 // Update an existing SKU
-var result = await client.ProductSku.UpdateAsync();
+var result = await client.Sku.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -452,14 +256,6 @@ Console.WriteLine(result);
 ```csharp
 // Get one skill detail
 var result = await client.Skill.GetByIdAsync();
-Console.WriteLine(result);
-```
-
-### skill_package
-
-```csharp
-// Get skill package detail
-var result = await client.SkillPackage.GetByIdAsync();
 Console.WriteLine(result);
 ```
 
@@ -487,27 +283,19 @@ var result = await client.Share.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### share_visit_record
-
-```csharp
-// Update visit record
-var result = await client.ShareVisitRecord.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### sharding_key
+### sharding
 
 ```csharp
 // Update Sharding Key
-var result = await client.ShardingKey.UpdateAsync();
+var result = await client.Sharding.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### api_security_policy
+### security
 
 ```csharp
 // PUT /backend/v3/api/security/policy
-var result = await client.ApiSecurityPolicy.UpdateAsync();
+var result = await client.Security.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -519,35 +307,27 @@ var result = await client.Schema.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### rbac_role
+### role
 
 ```csharp
 // Update an existing system role
-var result = await client.RbacRole.UpdateAsync();
+var result = await client.Role.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### role_permission
-
-```csharp
-// Update role-permission association
-var result = await client.RolePermission.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### invocation_record
+### record
 
 ```csharp
 // Update an existing invocation record
-var result = await client.InvocationRecord.UpdateAsync();
+var result = await client.Record.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### rbac_user_role
+### rbac
 
 ```csharp
 // Update user-role relationship
-var result = await client.RbacUserRole.UpdateAsync();
+var result = await client.Rbac.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -575,27 +355,19 @@ var result = await client.Product.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### ppt_template
+### ppt
 
 ```csharp
 // Update an existing PPT template
-var result = await client.PptTemplate.UpdateAsync();
+var result = await client.Ppt.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### ppt_template_slide
-
-```csharp
-// Update an existing PPT template slide
-var result = await client.PptTemplateSlide.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### rbac_permission
+### permission
 
 ```csharp
 // PUT /backend/v3/api/permission
-var result = await client.RbacPermission.UpdateAsync();
+var result = await client.Permission.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -607,19 +379,19 @@ var result = await client.Partner.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### chat_participant
+### participant
 
 ```csharp
 // Update an existing chat participant
-var result = await client.ChatParticipant.UpdateAsync();
+var result = await client.Participant.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### oss_bucket
+### oss
 
 ```csharp
 // Update an existing OSS bucket
-var result = await client.OssBucket.UpdateAsync();
+var result = await client.Oss.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -628,22 +400,6 @@ Console.WriteLine(result);
 ```csharp
 // Update an existing organization
 var result = await client.Organization.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### position
-
-```csharp
-// Update an existing position
-var result = await client.Position.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### member_relations
-
-```csharp
-// Update member relation
-var result = await client.MemberRelations.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -663,11 +419,11 @@ var result = await client.Notification.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### notes
+### note
 
 ```csharp
 // Update a note
-var result = await client.Notes.UpdateAsync();
+var result = await client.Note.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -687,14 +443,6 @@ var result = await client.Net.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### dns_record
-
-```csharp
-// Update an existing DNS record
-var result = await client.DnsRecord.UpdateAsync();
-Console.WriteLine(result);
-```
-
 ### music
 
 ```csharp
@@ -703,43 +451,27 @@ var result = await client.Music.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### model_information
+### model
 
 ```csharp
 // Update existing AI model information
-var result = await client.ModelInformation.UpdateAsync();
+var result = await client.Model.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### model_price
-
-```csharp
-// Update an existing AI model price
-var result = await client.ModelPrice.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### chat_message
+### message
 
 ```csharp
 // Update an existing chat message
-var result = await client.ChatMessage.UpdateAsync();
+var result = await client.Message.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### member_level
+### member
 
 ```csharp
 // Update an existing member level
-var result = await client.MemberLevel.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### member_card
-
-```csharp
-// Update an existing member card
-var result = await client.MemberCard.UpdateAsync();
+var result = await client.Member.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -751,19 +483,11 @@ var result = await client.KnowledgeBase.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### invitation_relation
+### invitation
 
 ```csharp
 // Update an invitation relation
-var result = await client.InvitationRelation.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### invitation_code
-
-```csharp
-// Update an existing invitation code
-var result = await client.InvitationCode.UpdateAsync();
+var result = await client.Invitation.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -775,11 +499,11 @@ var result = await client.Image.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### chat_group
+### im
 
 ```csharp
 // Update an existing chat group
-var result = await client.ChatGroup.UpdateAsync();
+var result = await client.Im.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -791,11 +515,11 @@ var result = await client.Generation.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### generation_content
+### game
 
 ```csharp
-// Update AI generated content
-var result = await client.GenerationContent.UpdateAsync();
+// Update game definition
+var result = await client.Game.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -807,27 +531,11 @@ var result = await client.File.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### file_part
-
-```csharp
-// Update an existing file part
-var result = await client.FilePart.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### file_content
-
-```csharp
-// Update file content
-var result = await client.FileContent.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### feeds
+### feed
 
 ```csharp
 // Update an existing feeds entry
-var result = await client.Feeds.UpdateAsync();
+var result = await client.Feed.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -847,19 +555,11 @@ var result = await client.Favorite.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### file_disk
+### disk
 
 ```csharp
 // Update an existing file disk
-var result = await client.FileDisk.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### disk_member
-
-```csharp
-// Update an existing disk member
-var result = await client.DiskMember.UpdateAsync();
+var result = await client.Disk.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -892,14 +592,6 @@ Console.WriteLine(result);
 ```csharp
 // Update an existing coupon template
 var result = await client.Coupon.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### coupon_template
-
-```csharp
-// Update an existing coupon template
-var result = await client.CouponTemplate.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -951,6 +643,14 @@ var result = await client.CollectionItem.UpdateAsync();
 Console.WriteLine(result);
 ```
 
+### chat
+
+```csharp
+// Update an existing chat message
+var result = await client.Chat.UpdateMessageAsync();
+Console.WriteLine(result);
+```
+
 ### character
 
 ```csharp
@@ -967,30 +667,6 @@ var result = await client.Channel.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### channel_resource
-
-```csharp
-// Update an existing channel resource
-var result = await client.ChannelResource.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### channel_proxy
-
-```csharp
-// Update channel proxy
-var result = await client.ChannelProxy.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### channel_account
-
-```csharp
-// Update channel account
-var result = await client.ChannelAccount.UpdateAsync();
-Console.WriteLine(result);
-```
-
 ### category
 
 ```csharp
@@ -999,19 +675,11 @@ var result = await client.Category.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### membership_card
+### card
 
 ```csharp
 // Update an existing membership card
-var result = await client.MembershipCard.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### card_template
-
-```csharp
-// Update an existing card template
-var result = await client.CardTemplate.UpdateAsync();
+var result = await client.Card.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -1039,11 +707,11 @@ var result = await client.App.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### api_key
+### apikey
 
 ```csharp
 // Update an existing API key
-var result = await client.ApiKey.UpdateAsync();
+var result = await client.Apikey.UpdateAsync();
 Console.WriteLine(result);
 ```
 
@@ -1055,14 +723,6 @@ var result = await client.Agent.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### agent_tool_relationship
-
-```csharp
-// Update an existing agent-tool relationship
-var result = await client.AgentToolRelationship.UpdateAsync();
-Console.WriteLine(result);
-```
-
 ### account
 
 ```csharp
@@ -1071,139 +731,19 @@ var result = await client.Account.UpdateAsync();
 Console.WriteLine(result);
 ```
 
-### account_history
-
-```csharp
-// Update an existing account history record
-var result = await client.AccountHistory.UpdateAsync();
-Console.WriteLine(result);
-```
-
-### account_exchange_config
-
-```csharp
-// Get points-to-cash rate
-var result = await client.AccountExchangeConfig.GetPointsToCashRateAsync();
-Console.WriteLine(result);
-```
-
-### invoice
+### system
 
 ```csharp
 // Apply invoice
-var result = await client.Invoice.ApplyAsync();
+var result = await client.System.ApplyAsync();
 Console.WriteLine(result);
 ```
 
-### search_chat
+### search
 
 ```csharp
 // POST /backend/v3/api/search/chat/stop
-var result = await client.SearchChat.StopAsync();
-Console.WriteLine(result);
-```
-
-### ppt_template_rendering
-
-```csharp
-// Render PPT template
-var result = await client.PptTemplateRendering.RenderAsync();
-Console.WriteLine(result);
-```
-
-### ppt_template_chat
-
-```csharp
-// POST /backend/v3/api/ppt/template/chat/stop
-var result = await client.PptTemplateChat.StopAsync();
-Console.WriteLine(result);
-```
-
-### knowledge_base_file
-
-```csharp
-// List files
-var result = await client.KnowledgeBaseFile.ListFilesAsync();
-Console.WriteLine(result);
-```
-
-### knowledge_base_chat
-
-```csharp
-// POST /backend/v3/api/knowledge_base/chat/stop
-var result = await client.KnowledgeBaseChat.StopAsync();
-Console.WriteLine(result);
-```
-
-### im_message
-
-```csharp
-// Mark conversation messages as read
-var result = await client.ImMessage.MarkReadAsync();
-Console.WriteLine(result);
-```
-
-### voice_speaker_generation
-
-```csharp
-// Create voice speaker generation task
-var result = await client.VoiceSpeakerGeneration.CreateAsync();
-Console.WriteLine(result);
-```
-
-### video_generation
-
-```csharp
-// Create video generation task
-var result = await client.VideoGeneration.CreateAsync();
-Console.WriteLine(result);
-```
-
-### music_generation
-
-```csharp
-// Create music generation task
-var result = await client.MusicGeneration.CreateAsync();
-Console.WriteLine(result);
-```
-
-### image_generation
-
-```csharp
-// Create image generation task
-var result = await client.ImageGeneration.CreateAsync();
-Console.WriteLine(result);
-```
-
-### character_generation
-
-```csharp
-// Create character generation task
-var result = await client.CharacterGeneration.CreateAsync();
-Console.WriteLine(result);
-```
-
-### audio_generation
-
-```csharp
-// Create audio generation task
-var result = await client.AudioGeneration.CreateAsync();
-Console.WriteLine(result);
-```
-
-### audio_effect_generation
-
-```csharp
-// Create audio effect generation task
-var result = await client.AudioEffectGeneration.CreateAsync();
-Console.WriteLine(result);
-```
-
-### chat
-
-```csharp
-// Stop a chat completion stream
-var result = await client.Chat.StopAsync();
+var result = await client.Search.StopAsync();
 Console.WriteLine(result);
 ```
 
@@ -1212,14 +752,6 @@ Console.WriteLine(result);
 ```csharp
 // Verify phone
 var result = await client.Auth.VerifyPhoneAsync();
-Console.WriteLine(result);
-```
-
-### agent_chat
-
-```csharp
-// Create a chat completion with agent
-var result = await client.AgentChat.WithContextAsync();
 Console.WriteLine(result);
 ```
 

@@ -2,14 +2,14 @@ import type { DiskPermission } from './disk-permission';
 
 /** Disk member creation form */
 export interface PlusDiskMemberForm {
-  /** 关联的磁盘ID */
+  /** Disk ID */
   diskId: number;
-  /** 用户ID */
+  /** User ID */
   userId: number;
-  /** 成员权限集合（位运算表示） */
+  /** Disk permission */
   permission: DiskPermission;
-  /** 成员备注信息 */
+  /** Remark */
   remark?: string;
-  /** 是否为磁盘所有者 */
-  isOwner: boolean;
+  /** Whether the member is the owner */
+  isOwner?: boolean;
 }

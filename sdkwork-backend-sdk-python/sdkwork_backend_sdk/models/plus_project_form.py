@@ -12,4 +12,4 @@ class PlusProjectForm:
     start_time: str = None
     end_time: str = None
     budget_amount: int = None
-    is_deleted: bool
+    is_deleted: bool = None

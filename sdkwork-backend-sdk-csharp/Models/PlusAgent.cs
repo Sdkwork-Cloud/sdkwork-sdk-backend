@@ -13,18 +13,18 @@ namespace Backend.Models
         public AgentMetadata? Metadata { get; set; }
         public string? Uuid { get; set; }
         public Prompt? SystemPrompt { get; set; }
+        public LlmAccountConfig? AccountConfig { get; set; }
         public List<PromptToolDescription>? Tools { get; set; }
+        public AgentExecutionContext? ExecutionContext { get; set; }
         public ChatContext? ChatContext { get; set; }
         public ChatOptions? ChatOptions { get; set; }
-        public AgentExecutionContext? ExecutionContext { get; set; }
         public List<string>? Instructions { get; set; }
         public string? FaceURL { get; set; }
         public Dictionary<string, Prompt>? Prompts { get; set; }
-        public LlmAccountConfig? AccountConfig { get; set; }
-        public IPlusChatMemory? ChatMemory { get; set; }
         public ToolCallbackProvider? ToolCallbackProvider { get; set; }
         public string? PromptPath { get; set; }
         public PromptContextOptimizer? PromptContextOptimizer { get; set; }
         public List<string>? NextActions { get; set; }
+        public IPlusChatMemory? ChatMemory { get; set; }
     }
 }

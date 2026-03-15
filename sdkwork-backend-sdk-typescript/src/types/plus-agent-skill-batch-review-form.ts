@@ -1,7 +1,7 @@
-/** 技能批量审核参数 */
+/** Skill batch review request */
 export interface PlusAgentSkillBatchReviewForm {
-  /** 技能ID列表 */
+  /** Skill IDs to review */
   skillIds: number[];
-  /** 审核备注/驳回原因 */
+  /** Review comment */
   comment?: string;
 }

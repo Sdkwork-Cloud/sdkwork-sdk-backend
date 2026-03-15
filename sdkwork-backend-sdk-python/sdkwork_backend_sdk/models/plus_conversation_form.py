@@ -5,14 +5,14 @@ from typing import Optional, List, Dict, Any
 class PlusConversationForm:
     """Conversation creation form"""
     uuid: str = None
-    title: str
+    title: str = None
     description: str = None
     user_id: int
-    status: str
-    agent_id: int = None
+    status: str = None
+    agent_id: int
     summary: str = None
     last_message_id: int = None
-    message_count: int
+    message_count: int = None
     tags: TagsContent = None
     system_context: str = None
     user_context: str = None

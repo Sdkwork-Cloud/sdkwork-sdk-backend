@@ -3,34 +3,40 @@ import type { TagsContent } from './tags-content';
 
 /** Data source creation form (includes name, type, connection config) */
 export interface PlusDatasourceForm {
-  /** 数据源名称 */
+  /** Project ID */
+  projectId: number;
+  /** Datasource name */
   name: string;
-  /** 数据源类型(如MySQL, PostgreSQL, MongoDB等) */
+  /** Channel */
+  channel: 'DEFAULT' | 'ALIYUN' | 'AWS' | 'APPLE' | 'AZURE' | 'BAIDU' | 'VOLCENGINE' | 'TENCENT' | 'HUAWEI' | 'GOOGLE' | 'META' | 'WECHAT' | 'ALIPAY' | 'UNION_PAY' | 'UNIONPAY' | 'DOUYIN' | 'MICROSOFT' | 'AMAZON' | 'ANTHROPIC' | 'XAI' | 'DEEPSEEK' | 'GROQ' | 'HUGGING_FACE' | 'KUAISHOU' | 'MINIMAX' | 'MISTRAL' | 'MOONSHOT' | 'NVIDIA' | 'OPENAI' | 'OLLAMA' | 'PERPLEXITY' | 'SDKWORK' | 'SILICONFLOW' | 'STEPFUN' | 'XUNFEI' | 'ZHIPU' | 'RAGFLOW' | 'STABILITY' | 'MINDSDB' | 'MEM0' | 'BOCHA' | 'BING' | 'OPEN_ROUTER' | 'STRIPE' | 'PAYPAL' | 'SUNO' | 'VIDU' | 'RUNWAY' | 'MEITUAN' | 'YUNWU' | 'MIDJOURNEY' | 'IDEOGRAM' | 'FLUX' | 'VECTOR_STORE_AZURE' | 'VECTOR_STORE_CASSANDRA' | 'VECTOR_STORE_CHROMA' | 'VECTOR_STORE_COUCHBASE' | 'VECTOR_STORE_ELASTICSEARCH' | 'VECTOR_STORE_GEMFIRE' | 'VECTOR_STORE_MARIADB' | 'VECTOR_STORE_MILVUS' | 'VECTOR_STORE_MONGODB' | 'VECTOR_STORE_NEO4J' | 'VECTOR_STORE_OPENSEARCH' | 'VECTOR_STORE_ORACLE' | 'VECTOR_STORE_PGVECTOR' | 'VECTOR_STORE_PINECONE' | 'VECTOR_STORE_QDRANT' | 'VECTOR_STORE_REDIS' | 'VECTOR_STORE_TYPESENSE' | 'VECTOR_STORE_WEAVIATE';
+  /** External channel ID */
+  channelId: string;
+  /** Datasource type */
   type: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 99;
-  /** 数据源状态(ACTIVE:活跃,INACTIVE:未激活,ERROR:错误) */
+  /** Datasource status */
   status: 1 | 0 | -1 | -2;
-  /** 数据源描述 */
+  /** Description */
   description?: string;
-  /** 连接配置信息(JSON格式) */
+  /** Connection configuration */
   connectionConfig: DatasourceConfig;
-  /** 数据源URL */
+  /** Datasource URL */
   url?: string;
-  /** 数据源创建者/所有者 */
+  /** Owner */
   owner?: string;
-  /** 最后成功连接时间 */
+  /** Last connected time */
   lastConnectedAt?: string;
-  /** 连接超时时间(秒) */
+  /** Connection timeout in seconds */
   connectionTimeout?: number;
-  /** 标签(逗号分隔) */
+  /** Tags */
   tags?: TagsContent;
-  /** 数据库版本 */
+  /** Database version */
   dbVersion?: string;
-  /** 安全级别(0-低,1-中,2-高) */
+  /** Security level */
   securityLevel?: number;
-  /** 访问计数 */
+  /** Access count */
   accessCount?: number;
-  /** UI显示图标 */
+  /** Icon */
   icon?: string;
-  /** UI显示颜色(HEX) */
+  /** Display color */
   color?: string;
 }

@@ -5,7 +5,7 @@ from typing import Optional, List, Dict, Any
 class PlusVoiceSpeakerForm:
     """Voice speaker creation form"""
     name: str
-    channel_speaker_id: str
+    channel_speaker_id: str = None
     code: str
     channel: str
     gender: str

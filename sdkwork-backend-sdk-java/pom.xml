@@ -6,7 +6,7 @@
 
     <groupId>com.sdkwork</groupId>
     <artifactId>backend-sdk</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.9</version>
     <packaging>jar</packaging>
 
     <name>sdkwork-backend-sdk</name>

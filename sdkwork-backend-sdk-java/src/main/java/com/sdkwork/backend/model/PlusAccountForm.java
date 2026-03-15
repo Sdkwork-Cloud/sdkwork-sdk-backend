@@ -1,12 +1,21 @@
 package com.sdkwork.backend.model;
 
 public class PlusAccountForm {
+    private String accountType;
     private Integer userId;
     private Double availableBalance;
     private Double frozenBalance;
     private Integer availablePoints;
     private Integer frozenPoints;
     private String status;
+
+    public String getAccountType() {
+        return this.accountType;
+    }
+    
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
+    }
 
     public Integer getUserId() {
         return this.userId;

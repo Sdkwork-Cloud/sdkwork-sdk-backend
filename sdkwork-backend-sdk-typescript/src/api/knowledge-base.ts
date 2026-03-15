@@ -1,7 +1,7 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 import type { QueryParams } from '../types/common';
-import type { PlusApiResultBoolean, PlusApiResultListPlusKnowledgeBaseVO, PlusApiResultPagePlusKnowledgeBaseVO, PlusApiResultPlusKnowledgeBaseVO, PlusKnowledgeBaseForm, QueryListForm } from '../types';
+import type { ChatCompletionChunk, ChatCompletionCreateForm, PlusApiResultBoolean, PlusApiResultFileItemVO, PlusApiResultFileListVO, PlusApiResultListPlusKnowledgeBaseVO, PlusApiResultPagePlusKnowledgeBaseVO, PlusApiResultPlusKnowledgeBaseVO, PlusKnowledgeBaseForm, QueryListForm } from '../types';
 
 
 export class KnowledgeBaseApi {
@@ -36,6 +36,25 @@ export class KnowledgeBaseApi {
     return this.client.post<PlusApiResultPlusKnowledgeBaseVO>(backendApiPath(`/knowledge_base/get_detail`), undefined, params);
   }
 
+/** List files */
+  async listFiles(params?: QueryParams): Promise<PlusApiResultFileListVO> {
+    return this.client.get<PlusApiResultFileListVO>(backendApiPath(`/knowledge_base/files`), params);
+  }
+
+/** Upload file */
+  async uploadFile(body?: FormData, params?: QueryParams): Promise<PlusApiResultFileItemVO> {
+    return this.client.post<PlusApiResultFileItemVO>(backendApiPath(`/knowledge_base/files`), body, params);
+  }
+
+async stop(params?: QueryParams, headers?: Record<string, string>): Promise<PlusApiResultBoolean> {
+    return this.client.post<PlusApiResultBoolean>(backendApiPath(`/knowledge_base/chat/stop`), undefined, params, headers);
+  }
+
+/** Create a chat completion with Knowledge base */
+  async createCompletions(body: ChatCompletionCreateForm, params?: QueryParams, headers?: Record<string, string>): Promise<ChatCompletionChunk> {
+    return this.client.post<ChatCompletionChunk>(backendApiPath(`/knowledge_base/chat/completions`), body, params, headers);
+  }
+
 /** Get a knowledge base by ID */
   async getById(id: string | number): Promise<PlusApiResultPlusKnowledgeBaseVO> {
     return this.client.get<PlusApiResultPlusKnowledgeBaseVO>(backendApiPath(`/knowledge_base/${id}`));
@@ -44,6 +63,21 @@ export class KnowledgeBaseApi {
 /** Delete a knowledge base */
   async delete(id: string | number): Promise<PlusApiResultBoolean> {
     return this.client.delete<PlusApiResultBoolean>(backendApiPath(`/knowledge_base/${id}`));
+  }
+
+/** Get file */
+  async getFile(fileId: string | number): Promise<PlusApiResultFileItemVO> {
+    return this.client.get<PlusApiResultFileItemVO>(backendApiPath(`/knowledge_base/files/${fileId}`));
+  }
+
+/** Delete file */
+  async deleteFile(fileId: string | number): Promise<PlusApiResultFileItemVO> {
+    return this.client.delete<PlusApiResultFileItemVO>(backendApiPath(`/knowledge_base/files/${fileId}`));
+  }
+
+/** Get file content */
+  async getFileContent(fileId: string | number): Promise<string> {
+    return this.client.get<string>(backendApiPath(`/knowledge_base/files/${fileId}/content`));
   }
 }
 

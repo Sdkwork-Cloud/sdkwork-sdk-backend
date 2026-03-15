@@ -6,6 +6,7 @@ namespace Backend.Models
 {
     public class PlusAccountForm
     {
+        public string? AccountType { get; set; }
         public int? UserId { get; set; }
         public double? AvailableBalance { get; set; }
         public double? FrozenBalance { get; set; }

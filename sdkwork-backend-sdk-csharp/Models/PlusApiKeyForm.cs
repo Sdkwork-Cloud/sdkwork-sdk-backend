@@ -12,6 +12,5 @@ namespace Backend.Models
         public string? Status { get; set; }
         public string? ExpireTime { get; set; }
         public string? Description { get; set; }
-        public string? LastUsedTime { get; set; }
     }
 }

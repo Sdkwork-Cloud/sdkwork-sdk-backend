@@ -1,6 +1,6 @@
 package types
 
-// 密码重置请求表单
+// 瀵嗙爜閲嶇疆璇锋眰琛ㄥ崟
 type PasswordResetRequestForm struct {
 	Email string `json:"email"`
 }

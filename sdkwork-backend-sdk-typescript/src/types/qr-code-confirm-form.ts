@@ -1,7 +1,7 @@
-/** 二维码确认登录请求 */
+/** QR code confirmation form */
 export interface QrCodeConfirmForm {
-  /** 二维码唯一标识 */
+  /** QR key */
   qrKey: string;
-  /** 用户访问令牌 */
+  /** Access token */
   token: string;
 }

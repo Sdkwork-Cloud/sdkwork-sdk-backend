@@ -12,4 +12,5 @@ type PlusTableForm struct {
 	Engine string `json:"engine"`
 	CreateSql string `json:"createSql"`
 	Comment string `json:"comment"`
+	SchemaId int `json:"schemaId"`
 }

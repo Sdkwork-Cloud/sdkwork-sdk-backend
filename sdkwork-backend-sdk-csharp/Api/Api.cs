@@ -6,132 +6,80 @@ namespace Backend.Api
     public static class Api
     {
         public static WorkspaceApi Workspace { get; set; }
-        public static ContentVoteApi ContentVote { get; set; }
-        public static VoiceSpeakerApi VoiceSpeaker { get; set; }
+        public static VoteApi Vote { get; set; }
+        public static VoiceApi Voice { get; set; }
         public static VisitHistoryApi VisitHistory { get; set; }
-        public static VipUserApi VipUser { get; set; }
-        public static VipRechargeApi VipRecharge { get; set; }
-        public static VipRechargePackageApi VipRechargePackage { get; set; }
-        public static VipPointChangeApi VipPointChange { get; set; }
-        public static VipPackageGroupApi VipPackageGroup { get; set; }
-        public static VipPackageApi VipPackage { get; set; }
-        public static VipLevelApi VipLevel { get; set; }
-        public static VipLevelBenefitApi VipLevelBenefit { get; set; }
-        public static VipBenefitApi VipBenefit { get; set; }
-        public static VipBenefitUsageApi VipBenefitUsage { get; set; }
+        public static VipApi Vip { get; set; }
         public static VideoApi Video { get; set; }
         public static UserApi User { get; set; }
-        public static UserOauthAccountApi UserOauthAccount { get; set; }
-        public static UserCouponApi UserCoupon { get; set; }
-        public static UserCardApi UserCard { get; set; }
-        public static UserAddressApi UserAddress { get; set; }
-        public static UsageRecordApi UsageRecord { get; set; }
-        public static ShoppingCartApi ShoppingCart { get; set; }
-        public static ShoppingCartItemApi ShoppingCartItem { get; set; }
-        public static RefundApi Refund { get; set; }
-        public static PaymentApi Payment { get; set; }
-        public static OrderApi Order { get; set; }
-        public static OrderItemApi OrderItem { get; set; }
+        public static UsageApi Usage { get; set; }
+        public static TradeApi Trade { get; set; }
         public static ToolApi Tool { get; set; }
         public static TenantApi Tenant { get; set; }
-        public static DatabaseTableApi DatabaseTable { get; set; }
-        public static ProductSkuApi ProductSku { get; set; }
+        public static TableApi Table { get; set; }
+        public static SkuApi Sku { get; set; }
         public static SkillApi Skill { get; set; }
-        public static SkillPackageApi SkillPackage { get; set; }
         public static ShortUrlApi ShortUrl { get; set; }
         public static ShopApi Shop { get; set; }
         public static ShareApi Share { get; set; }
-        public static ShareVisitRecordApi ShareVisitRecord { get; set; }
-        public static ShardingKeyApi ShardingKey { get; set; }
-        public static ApiSecurityPolicyApi ApiSecurityPolicy { get; set; }
+        public static ShardingApi Sharding { get; set; }
+        public static SecurityApi Security { get; set; }
         public static SchemaApi Schema { get; set; }
-        public static RbacRoleApi RbacRole { get; set; }
-        public static RolePermissionApi RolePermission { get; set; }
-        public static InvocationRecordApi InvocationRecord { get; set; }
-        public static RbacUserRoleApi RbacUserRole { get; set; }
+        public static RoleApi Role { get; set; }
+        public static RecordApi Record { get; set; }
+        public static RbacApi Rbac { get; set; }
         public static PromptApi Prompt { get; set; }
         public static ProjectApi Project { get; set; }
         public static ProductApi Product { get; set; }
-        public static PptTemplateApi PptTemplate { get; set; }
-        public static PptTemplateSlideApi PptTemplateSlide { get; set; }
-        public static RbacPermissionApi RbacPermission { get; set; }
+        public static PptApi Ppt { get; set; }
+        public static PermissionApi Permission { get; set; }
         public static PartnerApi Partner { get; set; }
-        public static ChatParticipantApi ChatParticipant { get; set; }
-        public static OssBucketApi OssBucket { get; set; }
+        public static ParticipantApi Participant { get; set; }
+        public static OssApi Oss { get; set; }
         public static OrganizationApi Organization { get; set; }
-        public static PositionApi Position { get; set; }
-        public static MemberRelationsApi MemberRelations { get; set; }
         public static OrganizationMemberApi OrganizationMember { get; set; }
         public static NotificationApi Notification { get; set; }
-        public static NotesApi Notes { get; set; }
+        public static NoteApi Note { get; set; }
         public static NewsApi News { get; set; }
         public static NetApi Net { get; set; }
-        public static DnsRecordApi DnsRecord { get; set; }
         public static MusicApi Music { get; set; }
-        public static ModelInformationApi ModelInformation { get; set; }
-        public static ModelPriceApi ModelPrice { get; set; }
-        public static ChatMessageApi ChatMessage { get; set; }
-        public static MemberLevelApi MemberLevel { get; set; }
-        public static MemberCardApi MemberCard { get; set; }
+        public static ModelApi Model { get; set; }
+        public static MessageApi Message { get; set; }
+        public static MemberApi Member { get; set; }
         public static KnowledgeBaseApi KnowledgeBase { get; set; }
-        public static InvitationRelationApi InvitationRelation { get; set; }
-        public static InvitationCodeApi InvitationCode { get; set; }
+        public static InvitationApi Invitation { get; set; }
         public static ImageApi Image { get; set; }
-        public static ChatGroupApi ChatGroup { get; set; }
+        public static ImApi Im { get; set; }
         public static GenerationApi Generation { get; set; }
-        public static GenerationContentApi GenerationContent { get; set; }
+        public static GameApi Game { get; set; }
         public static FileApi File { get; set; }
-        public static FilePartApi FilePart { get; set; }
-        public static FileContentApi FileContent { get; set; }
-        public static FeedsApi Feeds { get; set; }
+        public static FeedApi Feed { get; set; }
         public static FeedbackApi Feedback { get; set; }
         public static FavoriteApi Favorite { get; set; }
-        public static FileDiskApi FileDisk { get; set; }
-        public static DiskMemberApi DiskMember { get; set; }
+        public static DiskApi Disk { get; set; }
         public static DetailApi Detail { get; set; }
         public static DepartmentApi Department { get; set; }
         public static DatasourceApi Datasource { get; set; }
         public static CouponApi Coupon { get; set; }
-        public static CouponTemplateApi CouponTemplate { get; set; }
         public static ConversationApi Conversation { get; set; }
         public static ContentWritingApi ContentWriting { get; set; }
         public static CommentApi Comment { get; set; }
         public static ColumnApi Column { get; set; }
         public static CollectionApi Collection { get; set; }
         public static CollectionItemApi CollectionItem { get; set; }
+        public static ChatApi Chat { get; set; }
         public static CharacterApi Character { get; set; }
         public static ChannelApi Channel { get; set; }
-        public static ChannelResourceApi ChannelResource { get; set; }
-        public static ChannelProxyApi ChannelProxy { get; set; }
-        public static ChannelAccountApi ChannelAccount { get; set; }
         public static CategoryApi Category { get; set; }
-        public static MembershipCardApi MembershipCard { get; set; }
-        public static CardTemplateApi CardTemplate { get; set; }
+        public static CardApi Card { get; set; }
         public static AttributeApi Attribute { get; set; }
         public static ArticleApi Article { get; set; }
         public static AppApi App { get; set; }
-        public static ApiKeyApi ApiKey { get; set; }
+        public static ApikeyApi Apikey { get; set; }
         public static AgentApi Agent { get; set; }
-        public static AgentToolRelationshipApi AgentToolRelationship { get; set; }
         public static AccountApi Account { get; set; }
-        public static AccountHistoryApi AccountHistory { get; set; }
-        public static AccountExchangeConfigApi AccountExchangeConfig { get; set; }
-        public static InvoiceApi Invoice { get; set; }
-        public static SearchChatApi SearchChat { get; set; }
-        public static PptTemplateRenderingApi PptTemplateRendering { get; set; }
-        public static PptTemplateChatApi PptTemplateChat { get; set; }
-        public static KnowledgeBaseFileApi KnowledgeBaseFile { get; set; }
-        public static KnowledgeBaseChatApi KnowledgeBaseChat { get; set; }
-        public static ImMessageApi ImMessage { get; set; }
-        public static VoiceSpeakerGenerationApi VoiceSpeakerGeneration { get; set; }
-        public static VideoGenerationApi VideoGeneration { get; set; }
-        public static MusicGenerationApi MusicGeneration { get; set; }
-        public static ImageGenerationApi ImageGeneration { get; set; }
-        public static CharacterGenerationApi CharacterGeneration { get; set; }
-        public static AudioGenerationApi AudioGeneration { get; set; }
-        public static AudioEffectGenerationApi AudioEffectGeneration { get; set; }
-        public static ChatApi Chat { get; set; }
+        public static SystemApi System { get; set; }
+        public static SearchApi Search { get; set; }
         public static AuthApi Auth { get; set; }
-        public static AgentChatApi AgentChat { get; set; }
     }
 }

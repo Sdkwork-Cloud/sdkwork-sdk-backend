@@ -3,6 +3,7 @@ package com.sdkwork.backend
 data class PlusOrderForm(
     val orderType: String? = null,
     val userId: Int? = null,
+    val subject: String? = null,
     val orderSn: String? = null,
     val transactionId: String? = null,
     val outTradeNo: String? = null,
@@ -13,5 +14,14 @@ data class PlusOrderForm(
     val payTime: String? = null,
     val expireTime: String? = null,
     val contentType: String? = null,
-    val contentId: Int? = null
+    val contentId: Int? = null,
+    val taskCode: String? = null,
+    val dispatchMode: String? = null,
+    val dispatchStatus: String? = null,
+    val workerUserId: Int? = null,
+    val dispatcherUserId: Int? = null,
+    val acceptedTime: String? = null,
+    val serviceStartTime: String? = null,
+    val dispatchExpireTime: String? = null,
+    val taskPayload: Map<String, Any>? = null
 )

@@ -1,6 +1,6 @@
 package types
 
-// 数据库表定义VO
+// Table view object
 type PlusTableVO struct {
 	CreatedAt string `json:"createdAt"`
 	UpdatedAt string `json:"updatedAt"`

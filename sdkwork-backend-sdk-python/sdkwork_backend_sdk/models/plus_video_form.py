@@ -4,11 +4,10 @@ from typing import Optional, List, Dict, Any
 @dataclass
 class PlusVideoForm:
     """Video creation form"""
-    id: int = None
     title: str = None
     description: str = None
     content_url: str
-    aspect_ratio: str
+    aspect_ratio: str = None
     duration: int = None
     resolution: str = None
     width: int = None
@@ -17,6 +16,3 @@ class PlusVideoForm:
     format: str = None
     thumbnail_url: str = None
     status: str
-    uuid: str = None
-    created_at: str = None
-    updated_at: str = None

@@ -5,7 +5,6 @@ public class PlusCommentsForm {
     private String contentType;
     private Integer contentId;
     private String status;
-    private Integer rating;
     private Integer likes;
     private Integer replyCount;
     private Boolean isTop;
@@ -46,14 +45,6 @@ public class PlusCommentsForm {
     
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    public Integer getRating() {
-        return this.rating;
-    }
-    
-    public void setRating(Integer rating) {
-        this.rating = rating;
     }
 
     public Integer getLikes() {

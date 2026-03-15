@@ -4,8 +4,8 @@ public class PageableObject {
     private Integer offset;
     private Boolean paged;
     private SortObject sort;
-    private Integer pageNumber;
     private Integer pageSize;
+    private Integer pageNumber;
     private Boolean unpaged;
 
     public Integer getOffset() {
@@ -32,20 +32,20 @@ public class PageableObject {
         this.sort = sort;
     }
 
-    public Integer getPageNumber() {
-        return this.pageNumber;
-    }
-    
-    public void setPageNumber(Integer pageNumber) {
-        this.pageNumber = pageNumber;
-    }
-
     public Integer getPageSize() {
         return this.pageSize;
     }
     
     public void setPageSize(Integer pageSize) {
         this.pageSize = pageSize;
+    }
+
+    public Integer getPageNumber() {
+        return this.pageNumber;
+    }
+    
+    public void setPageNumber(Integer pageNumber) {
+        this.pageNumber = pageNumber;
     }
 
     public Boolean getUnpaged() {

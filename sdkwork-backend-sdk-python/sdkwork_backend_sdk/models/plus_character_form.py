@@ -12,9 +12,9 @@ class PlusCharacterForm:
     avatar_video: VideoMediaResource = None
     agent_id: int
     description: str = None
-    status: str
+    status: str = None
     personality: str = None
     background: str = None
     interaction_settings: str = None
     version: str = None
-    user_id: int
+    user_id: int = None

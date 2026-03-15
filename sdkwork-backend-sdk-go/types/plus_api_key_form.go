@@ -8,5 +8,4 @@ type PlusApiKeyForm struct {
 	Status string `json:"status"`
 	ExpireTime string `json:"expireTime"`
 	Description string `json:"description"`
-	LastUsedTime string `json:"lastUsedTime"`
 }

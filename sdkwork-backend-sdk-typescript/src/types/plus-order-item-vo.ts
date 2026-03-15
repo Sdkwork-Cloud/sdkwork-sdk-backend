@@ -7,7 +7,7 @@ export interface PlusOrderItemVO {
   /** 关联的订单ID */
   orderId?: number;
   /** 商品类型：PHYSICAL-实物商品，VIRTUAL-虚拟商品，MEMBER-会员服务 */
-  productType?: 'GOODS' | 'VIRTUAL';
+  productType?: 'GOODS' | 'VIRTUAL' | 'SERVICE';
   /** 商品ID */
   productId?: number;
   /** 商品SKU ID */

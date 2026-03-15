@@ -8,10 +8,10 @@ export interface PagePlusShareVisitRecordVO {
   size?: number;
   content?: PlusShareVisitRecordVO[];
   number?: number;
-  first?: boolean;
-  last?: boolean;
   numberOfElements?: number;
   sort?: SortObject;
   pageable?: PageableObject;
+  first?: boolean;
+  last?: boolean;
   empty?: boolean;
 }

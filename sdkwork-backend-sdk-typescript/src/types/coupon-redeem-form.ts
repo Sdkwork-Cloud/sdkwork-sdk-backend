@@ -1,7 +1,5 @@
-/** 优惠券兑换请求 */
+/** Coupon redeem form */
 export interface CouponRedeemForm {
-  /** 兑换码 */
+  /** Redeem code */
   redeemCode: string;
-  /** 兑换渠道 */
-  channel?: string;
 }

@@ -1,5 +1,5 @@
-/** 刷新令牌请求表单 */
+/** 鍒锋柊浠ょ墝璇锋眰琛ㄥ崟 */
 export interface RefreshTokenForm {
-  /** 刷新令牌 */
+  /** 鍒锋柊浠ょ墝 */
   refreshToken: string;
 }

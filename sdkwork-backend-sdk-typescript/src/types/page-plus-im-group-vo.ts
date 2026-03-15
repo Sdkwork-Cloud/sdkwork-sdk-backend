@@ -8,10 +8,10 @@ export interface PagePlusImGroupVO {
   size?: number;
   content?: PlusImGroupVO[];
   number?: number;
-  first?: boolean;
-  last?: boolean;
   numberOfElements?: number;
   sort?: SortObject;
   pageable?: PageableObject;
+  first?: boolean;
+  last?: boolean;
   empty?: boolean;
 }

@@ -1,0 +1,32 @@
+package com.sdkwork.backend
+
+data class PlusGameReplayVO(
+    val createdAt: String? = null,
+    val updatedAt: String? = null,
+    val replayId: Int? = null,
+    val replayNo: String? = null,
+    val roomId: Int? = null,
+    val matchId: Int? = null,
+    val gameType: String? = null,
+    val roomType: String? = null,
+    val gameModeCode: String? = null,
+    val seasonKey: String? = null,
+    val clubId: Int? = null,
+    val tournamentId: Int? = null,
+    val regionCode: String? = null,
+    val ownerUserId: Int? = null,
+    val title: String? = null,
+    val status: String? = null,
+    val publicVisible: Boolean? = null,
+    val allowShare: Boolean? = null,
+    val durationSeconds: Int? = null,
+    val actionCount: Int? = null,
+    val keyFrameCount: Int? = null,
+    val storageKey: String? = null,
+    val coverUrl: String? = null,
+    val boardSnapshot: Map<String, Any>? = null,
+    val keyFrames: Map<String, Any>? = null,
+    val startedAt: String? = null,
+    val endedAt: String? = null,
+    val expiredAt: String? = null
+)

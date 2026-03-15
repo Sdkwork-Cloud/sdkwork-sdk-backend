@@ -6,7 +6,10 @@ namespace Backend.Models
 {
     public class PlusDatasourceForm
     {
+        public int? ProjectId { get; set; }
         public string? Name { get; set; }
+        public string? Channel { get; set; }
+        public string? ChannelId { get; set; }
         public int? Type { get; set; }
         public int? Status { get; set; }
         public string? Description { get; set; }

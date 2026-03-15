@@ -1,0 +1,33 @@
+package com.sdkwork.backend
+
+data class PlusGameScoreRecordVO(
+    val createdAt: String? = null,
+    val updatedAt: String? = null,
+    val recordId: Int? = null,
+    val userId: Int? = null,
+    val gameType: String? = null,
+    val seasonKey: String? = null,
+    val tournamentId: Int? = null,
+    val roomId: Int? = null,
+    val matchId: Int? = null,
+    val leaderboardId: Int? = null,
+    val changeType: String? = null,
+    val rankingType: String? = null,
+    val periodType: String? = null,
+    val scopeType: String? = null,
+    val bizNo: String? = null,
+    val reason: String? = null,
+    val scoreBefore: Int? = null,
+    val scoreDelta: Int? = null,
+    val scoreAfter: Int? = null,
+    val ratingBefore: Int? = null,
+    val ratingDelta: Int? = null,
+    val ratingAfter: Int? = null,
+    val chipsBefore: Int? = null,
+    val chipsDelta: Int? = null,
+    val chipsAfter: Int? = null,
+    val operatorUserId: Int? = null,
+    val occurredAt: String? = null,
+    val settlementData: Map<String, Any>? = null,
+    val extData: Map<String, Any>? = null
+)

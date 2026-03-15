@@ -1,5 +1,5 @@
-/** 权限检查请求表单 */
+/** P er mi ss io nC he ck Fo rm */
 export interface PermissionCheckForm {
-  /** 权限标识 */
+  /** 鏉冮檺鏍囪瘑 */
   permission: string;
 }

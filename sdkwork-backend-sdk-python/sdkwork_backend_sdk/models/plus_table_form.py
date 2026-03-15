@@ -14,3 +14,4 @@ class PlusTableForm:
     engine: str = None
     create_sql: str = None
     comment: str = None
+    schema_id: int

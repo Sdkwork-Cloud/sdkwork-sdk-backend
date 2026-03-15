@@ -6,8 +6,8 @@ type ChatOptions struct {
 	Temperature float64 `json:"temperature"`
 	TopP float64 `json:"topP"`
 	TopK int `json:"topK"`
-	MaxTokens int `json:"maxTokens"`
-	StopSequences []string `json:"stopSequences"`
 	FrequencyPenalty float64 `json:"frequencyPenalty"`
 	PresencePenalty float64 `json:"presencePenalty"`
+	MaxTokens int `json:"maxTokens"`
+	StopSequences []string `json:"stopSequences"`
 }

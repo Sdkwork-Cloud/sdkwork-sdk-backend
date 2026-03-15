@@ -9,6 +9,7 @@ class PlusPaymentForm:
     transaction_id: str = None
     out_trade_no: str = None
     channel: str = None
+    provider: str = None
     status: str = None
     amount: float
     success_time: str = None
@@ -16,4 +17,3 @@ class PlusPaymentForm:
     content_type: str = None
     content_id: int = None
     product_type: str = None
-    provider: str = None

@@ -1,11 +1,11 @@
-/** 开发者自助创建API Key请求 */
+/** Current user API key creation form */
 export interface PlusApiKeySelfCreateForm {
-  /** API Key名称 */
+  /** API key name */
   name: string;
-  /** API Key类型，默认USER */
-  type?: 'DEFAULT' | 'SYSTEM' | 'USER' | 'APPLICATION' | 'INTEGRATION';
-  /** 过期时间，留空表示不过期 */
+  /** API key type */
+  type: 'DEFAULT' | 'SYSTEM' | 'USER' | 'APPLICATION' | 'INTEGRATION';
+  /** Expiration time */
   expireTime?: string;
-  /** 描述信息 */
+  /** Description */
   description?: string;
 }

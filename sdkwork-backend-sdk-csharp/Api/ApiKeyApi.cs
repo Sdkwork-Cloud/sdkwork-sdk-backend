@@ -6,11 +6,11 @@ using Backend.Models;
 
 namespace Backend.Api
 {
-    public class ApiKeyApi
+    public class ApikeyApi
     {
         private readonly HttpClient _client;
 
-        public ApiKeyApi(HttpClient client)
+        public ApikeyApi(HttpClient client)
         {
             _client = client;
         }
@@ -34,7 +34,7 @@ namespace Backend.Api
         /// <summary>
         /// Get API key detail for current user
         /// </summary>
-        public async Task<PlusApiResultPlusApiKeyVO?> GetMyAsync(string id)
+        public async Task<PlusApiResultPlusApiKeyVO?> GetMyApiKeyAsync(string id)
         {
             return await _client.GetAsync<PlusApiResultPlusApiKeyVO>(ApiPaths.BackendPath($"/apikey/my/{id}"));
         }
@@ -42,7 +42,7 @@ namespace Backend.Api
         /// <summary>
         /// Update API key for current user
         /// </summary>
-        public async Task<PlusApiResultPlusApiKeyVO?> UpdateMyAsync(string id, PlusApiKeySelfUpdateForm body)
+        public async Task<PlusApiResultPlusApiKeyVO?> UpdateMyApiKeyAsync(string id, PlusApiKeySelfUpdateForm body)
         {
             return await _client.PutAsync<PlusApiResultPlusApiKeyVO>(ApiPaths.BackendPath($"/apikey/my/{id}"), body);
         }
@@ -50,7 +50,7 @@ namespace Backend.Api
         /// <summary>
         /// Delete API key for current user
         /// </summary>
-        public async Task<PlusApiResultBoolean?> DeleteMyAsync(string id)
+        public async Task<PlusApiResultBoolean?> DeleteMyApiKeyAsync(string id)
         {
             return await _client.DeleteAsync<PlusApiResultBoolean>(ApiPaths.BackendPath($"/apikey/my/{id}"));
         }
@@ -58,7 +58,7 @@ namespace Backend.Api
         /// <summary>
         /// Create API key for current user
         /// </summary>
-        public async Task<PlusApiResultPlusApiKeyVO?> CreateMyAsync(PlusApiKeySelfCreateForm body)
+        public async Task<PlusApiResultPlusApiKeyVO?> CreateMyApiKeyAsync(PlusApiKeySelfCreateForm body)
         {
             return await _client.PostAsync<PlusApiResultPlusApiKeyVO>(ApiPaths.BackendPath("/apikey/my"), body);
         }
@@ -66,7 +66,7 @@ namespace Backend.Api
         /// <summary>
         /// Rotate API key for current user
         /// </summary>
-        public async Task<PlusApiResultPlusApiKeyVO?> RotateMyAsync(string id)
+        public async Task<PlusApiResultPlusApiKeyVO?> RotateMyApiKeyAsync(string id)
         {
             return await _client.PostAsync<PlusApiResultPlusApiKeyVO>(ApiPaths.BackendPath($"/apikey/my/{id}/rotate"), null);
         }
@@ -74,7 +74,7 @@ namespace Backend.Api
         /// <summary>
         /// Enable API key for current user
         /// </summary>
-        public async Task<PlusApiResultPlusApiKeyVO?> EnableMyAsync(string id)
+        public async Task<PlusApiResultPlusApiKeyVO?> EnableMyApiKeyAsync(string id)
         {
             return await _client.PostAsync<PlusApiResultPlusApiKeyVO>(ApiPaths.BackendPath($"/apikey/my/{id}/enable"), null);
         }
@@ -82,7 +82,7 @@ namespace Backend.Api
         /// <summary>
         /// Disable API key for current user
         /// </summary>
-        public async Task<PlusApiResultPlusApiKeyVO?> DisableMyAsync(string id)
+        public async Task<PlusApiResultPlusApiKeyVO?> DisableMyApiKeyAsync(string id)
         {
             return await _client.PostAsync<PlusApiResultPlusApiKeyVO>(ApiPaths.BackendPath($"/apikey/my/{id}/disable"), null);
         }

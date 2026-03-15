@@ -10,4 +10,4 @@ class PlusAiToolForm:
     status: str
     enabled: bool
     http_api_definition: HttpApiDefinition = None
-    tool_definition: PlusToolDefinition = None
+    tool_definition: PlusToolDefinition

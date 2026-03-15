@@ -1,5 +1,5 @@
-/** 优惠券回滚请求 */
+/** Coupon rollback request */
 export interface CouponRollbackForm {
-  /** 回滚原因 */
+  /** Rollback reason */
   reason?: string;
 }

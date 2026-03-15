@@ -2,28 +2,28 @@ import type { TagsContent } from './tags-content';
 
 /** Prompt creation form */
 export interface PlusAiPromptForm {
-  /** 提示语标题 */
+  /** Prompt title */
   title: string;
-  /** 提示语内容 */
+  /** Prompt content */
   content: string;
-  /** 提示语描述 */
+  /** Prompt description */
   description?: string;
-  /** 关联分类ID */
+  /** Category ID */
   categoryId?: number;
-  /** 是否启用(true:启用,false:禁用) */
+  /** Whether the prompt is enabled */
   enabled: boolean;
-  /** 排序顺序 */
+  /** Sort order */
   sort?: number;
-  /** 参数定义(JSON格式) */
+  /** Prompt parameters */
   parameters?: Record<string, unknown>;
-  /** 创建者 */
+  /** Creator */
   creator?: string;
-  /** 适用的AI模型 */
+  /** Model */
   model?: string;
-  /** 标签(逗号分隔) */
+  /** Tags */
   tags?: TagsContent;
-  /** 使用次数 */
+  /** Usage count */
   usageCount?: number;
-  /** 平均响应时间(毫秒) */
+  /** Average response time */
   avgResponseTime?: number;
 }

@@ -8,8 +8,8 @@ export interface Prompt {
   options?: ChatOptions;
   instructions?: Message[];
   lastUserOrToolResponseMessage?: Message;
-  systemMessages?: SystemMessage[];
   userMessages?: UserMessage[];
   userMessage?: UserMessage;
+  systemMessages?: SystemMessage[];
   systemMessage?: SystemMessage;
 }

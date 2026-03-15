@@ -7,11 +7,8 @@ namespace Backend.Models
     public class PlusPptTemplateSlideForm
     {
         public int? TemplateId { get; set; }
-        public string? SectionTitle { get; set; }
-        public string? SectionContent { get; set; }
         public int? PageNumber { get; set; }
         public string? LayoutType { get; set; }
-        public string? BackgroundImage { get; set; }
         public int? SortOrder { get; set; }
         public bool? IsRequired { get; set; }
         public string? CreatedAt { get; set; }

@@ -16,8 +16,8 @@ namespace Backend.Models
         public int? ParentId { get; set; }
         public string? StartTime { get; set; }
         public string? EndTime { get; set; }
-        public Node? LastNode { get; set; }
         public Flow? ParentFlow { get; set; }
+        public Node? LastNode { get; set; }
         public List<PlusAgent>? AllAgents { get; set; }
     }
 }

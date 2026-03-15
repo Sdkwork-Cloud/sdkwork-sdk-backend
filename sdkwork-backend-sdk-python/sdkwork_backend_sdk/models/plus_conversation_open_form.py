@@ -3,10 +3,9 @@ from typing import Optional, List, Dict, Any
 
 @dataclass
 class PlusConversationOpenForm:
-    """AI Conversation Form - 用于创建或更新用户与AI代理之间的对话会话"""
+    """P lu sC on ve rs at io nO pe nF or m"""
     conversation_id: str = None
     uuid: str = None
-    title: str
     user_id: int
     agent_id: int = None
     knowledge_base_id: int = None

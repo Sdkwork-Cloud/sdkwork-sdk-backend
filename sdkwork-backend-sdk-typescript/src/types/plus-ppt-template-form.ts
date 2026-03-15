@@ -5,24 +5,24 @@ import type { PlusPptTemplateTags } from './plus-ppt-template-tags';
 
 /** PPT template creation form */
 export interface PlusPptTemplateForm {
-  /** 模板名称（唯一标识） */
+  /** Template title */
   title: string;
-  /** 模板描述信息 */
+  /** Template description */
   description?: string;
-  /** 模板封面图URL/路径 */
+  /** Cover images */
   coverImages?: ImageMediaResourceList;
-  /** 模板类型（如商业、教育、汇报等） */
+  /** Template type */
   type: 'DEFAULT' | 'BUSINESS' | 'EDUCATION' | 'REPORT' | 'OTHER';
-  /** 模板状态（启用/禁用/草稿） */
+  /** Template status */
   status: 'DEFAULT' | 'ACTIVE' | 'INACTIVE' | 'DRAFT';
-  /** 模板作者ID（关联用户表） */
+  /** Author ID */
   authorId: number;
-  /** 模板作者名称 */
+  /** Author name */
   authorName?: string;
-  /** PPT tags信息(JSON格式) */
+  /** Template tags */
   tags?: PlusPptTemplateTags;
-  /** PPT meta信息(JSON格式) */
+  /** Template metadata */
   meta?: PlusPptTemplateMeta;
-  /** PPT slides列表 */
+  /** Slides */
   slides?: PlusPptTemplateSlide[];
 }

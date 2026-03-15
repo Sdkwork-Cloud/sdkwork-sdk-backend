@@ -8,10 +8,10 @@ export interface PagePlusUserRoleVO {
   size?: number;
   content?: PlusUserRoleVO[];
   number?: number;
-  first?: boolean;
-  last?: boolean;
   numberOfElements?: number;
   sort?: SortObject;
   pageable?: PageableObject;
+  first?: boolean;
+  last?: boolean;
   empty?: boolean;
 }

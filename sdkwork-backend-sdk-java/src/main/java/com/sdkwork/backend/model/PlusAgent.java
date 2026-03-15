@@ -8,19 +8,19 @@ public class PlusAgent {
     private AgentMetadata metadata;
     private String uuid;
     private Prompt systemPrompt;
+    private LlmAccountConfig accountConfig;
     private List<PromptToolDescription> tools;
+    private AgentExecutionContext executionContext;
     private ChatContext chatContext;
     private ChatOptions chatOptions;
-    private AgentExecutionContext executionContext;
     private List<String> instructions;
     private String faceURL;
     private Map<String, Prompt> prompts;
-    private LlmAccountConfig accountConfig;
-    private IPlusChatMemory chatMemory;
     private ToolCallbackProvider toolCallbackProvider;
     private String promptPath;
     private PromptContextOptimizer promptContextOptimizer;
     private List<String> nextActions;
+    private IPlusChatMemory chatMemory;
 
     public String getName() {
         return this.name;
@@ -78,12 +78,28 @@ public class PlusAgent {
         this.systemPrompt = systemPrompt;
     }
 
+    public LlmAccountConfig getAccountConfig() {
+        return this.accountConfig;
+    }
+    
+    public void setAccountConfig(LlmAccountConfig accountConfig) {
+        this.accountConfig = accountConfig;
+    }
+
     public List<PromptToolDescription> getTools() {
         return this.tools;
     }
     
     public void setTools(List<PromptToolDescription> tools) {
         this.tools = tools;
+    }
+
+    public AgentExecutionContext getExecutionContext() {
+        return this.executionContext;
+    }
+    
+    public void setExecutionContext(AgentExecutionContext executionContext) {
+        this.executionContext = executionContext;
     }
 
     public ChatContext getChatContext() {
@@ -100,14 +116,6 @@ public class PlusAgent {
     
     public void setChatOptions(ChatOptions chatOptions) {
         this.chatOptions = chatOptions;
-    }
-
-    public AgentExecutionContext getExecutionContext() {
-        return this.executionContext;
-    }
-    
-    public void setExecutionContext(AgentExecutionContext executionContext) {
-        this.executionContext = executionContext;
     }
 
     public List<String> getInstructions() {
@@ -132,22 +140,6 @@ public class PlusAgent {
     
     public void setPrompts(Map<String, Prompt> prompts) {
         this.prompts = prompts;
-    }
-
-    public LlmAccountConfig getAccountConfig() {
-        return this.accountConfig;
-    }
-    
-    public void setAccountConfig(LlmAccountConfig accountConfig) {
-        this.accountConfig = accountConfig;
-    }
-
-    public IPlusChatMemory getChatMemory() {
-        return this.chatMemory;
-    }
-    
-    public void setChatMemory(IPlusChatMemory chatMemory) {
-        this.chatMemory = chatMemory;
     }
 
     public ToolCallbackProvider getToolCallbackProvider() {
@@ -180,5 +172,13 @@ public class PlusAgent {
     
     public void setNextActions(List<String> nextActions) {
         this.nextActions = nextActions;
+    }
+
+    public IPlusChatMemory getChatMemory() {
+        return this.chatMemory;
+    }
+    
+    public void setChatMemory(IPlusChatMemory chatMemory) {
+        this.chatMemory = chatMemory;
     }
 }

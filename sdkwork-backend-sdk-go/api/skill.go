@@ -34,6 +34,36 @@ func (a *SkillApi) Update(id string, body sdktypes.PlusAgentSkillForm) (sdktypes
     return decodeResult[sdktypes.PlusApiResultPlusAgentSkillVO](raw)
 }
 
+// Get skill package detail
+func (a *SkillApi) GetByIdPackage(id string) (sdktypes.PlusApiResultPlusAgentSkillPackageVO, error) {
+    raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/skill/package/%s", id)), nil, nil)
+    if err != nil {
+        var zero sdktypes.PlusApiResultPlusAgentSkillPackageVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPlusAgentSkillPackageVO](raw)
+}
+
+// Update skill package
+func (a *SkillApi) UpdatePackage(id string, body sdktypes.PlusAgentSkillPackageForm) (sdktypes.PlusApiResultPlusAgentSkillPackageVO, error) {
+    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/skill/package/%s", id)), body, nil, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultPlusAgentSkillPackageVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPlusAgentSkillPackageVO](raw)
+}
+
+// Delete skill package
+func (a *SkillApi) Delete(id string) (sdktypes.PlusApiResultBoolean, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/skill/package/%s", id)), nil, nil)
+    if err != nil {
+        var zero sdktypes.PlusApiResultBoolean
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultBoolean](raw)
+}
+
 // Create skill
 func (a *SkillApi) Create(body sdktypes.PlusAgentSkillForm) (sdktypes.PlusApiResultPlusAgentSkillVO, error) {
     raw, err := a.client.Post(BackendApiPath("/skill"), body, nil, nil, "")
@@ -105,7 +135,7 @@ func (a *SkillApi) UpdateFeature(id string, body sdktypes.PlusAgentSkillFeatureF
 }
 
 // Enable skill
-func (a *SkillApi) Enable(id string) (sdktypes.PlusApiResultPlusAgentSkillVO, error) {
+func (a *SkillApi) CreateEnable(id string) (sdktypes.PlusApiResultPlusAgentSkillVO, error) {
     raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/skill/%s/enable", id)), nil, nil, nil, "")
     if err != nil {
         var zero sdktypes.PlusApiResultPlusAgentSkillVO
@@ -115,7 +145,7 @@ func (a *SkillApi) Enable(id string) (sdktypes.PlusApiResultPlusAgentSkillVO, er
 }
 
 // Disable skill
-func (a *SkillApi) Disable(id string) (sdktypes.PlusApiResultPlusAgentSkillVO, error) {
+func (a *SkillApi) CreateDisable(id string) (sdktypes.PlusApiResultPlusAgentSkillVO, error) {
     raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/skill/%s/disable", id)), nil, nil, nil, "")
     if err != nil {
         var zero sdktypes.PlusApiResultPlusAgentSkillVO
@@ -154,8 +184,58 @@ func (a *SkillApi) BatchApproveReview(body sdktypes.PlusAgentSkillBatchReviewFor
     return decodeResult[sdktypes.PlusApiResultListPlusAgentSkillVO](raw)
 }
 
+// Create skill package
+func (a *SkillApi) CreatePackage(body sdktypes.PlusAgentSkillPackageForm) (sdktypes.PlusApiResultPlusAgentSkillPackageVO, error) {
+    raw, err := a.client.Post(BackendApiPath("/skill/package"), body, nil, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultPlusAgentSkillPackageVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPlusAgentSkillPackageVO](raw)
+}
+
+// Enable skill package
+func (a *SkillApi) CreateEnablePackage(id string) (sdktypes.PlusApiResultPlusAgentSkillPackageVO, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/skill/package/%s/enable", id)), nil, nil, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultPlusAgentSkillPackageVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPlusAgentSkillPackageVO](raw)
+}
+
+// Disable skill package
+func (a *SkillApi) CreateDisablePackage(id string) (sdktypes.PlusApiResultPlusAgentSkillPackageVO, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/skill/package/%s/disable", id)), nil, nil, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultPlusAgentSkillPackageVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPlusAgentSkillPackageVO](raw)
+}
+
+// Query skill package list by page
+func (a *SkillApi) CreateListByPage(body *sdktypes.PlusAgentSkillPackageQueryListForm, query map[string]interface{}) (sdktypes.PlusApiResultPagePlusAgentSkillPackageVO, error) {
+    raw, err := a.client.Post(BackendApiPath("/skill/package/list"), body, query, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultPagePlusAgentSkillPackageVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPagePlusAgentSkillPackageVO](raw)
+}
+
+// Query all skill packages
+func (a *SkillApi) CreateListAll(body *sdktypes.PlusAgentSkillPackageQueryListForm) (sdktypes.PlusApiResultListPlusAgentSkillPackageVO, error) {
+    raw, err := a.client.Post(BackendApiPath("/skill/package/list/all"), body, nil, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultListPlusAgentSkillPackageVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultListPlusAgentSkillPackageVO](raw)
+}
+
 // Query skill list by page
-func (a *SkillApi) ListByPage(body *sdktypes.PlusAgentSkillQueryListForm, query map[string]interface{}) (sdktypes.PlusApiResultPagePlusAgentSkillVO, error) {
+func (a *SkillApi) CreateListByPageSkill(body *sdktypes.PlusAgentSkillQueryListForm, query map[string]interface{}) (sdktypes.PlusApiResultPagePlusAgentSkillVO, error) {
     raw, err := a.client.Post(BackendApiPath("/skill/list"), body, query, nil, "")
     if err != nil {
         var zero sdktypes.PlusApiResultPagePlusAgentSkillVO
@@ -165,7 +245,7 @@ func (a *SkillApi) ListByPage(body *sdktypes.PlusAgentSkillQueryListForm, query 
 }
 
 // Query all skills
-func (a *SkillApi) ListAll(body *sdktypes.PlusAgentSkillQueryListForm) (sdktypes.PlusApiResultListPlusAgentSkillVO, error) {
+func (a *SkillApi) CreateListAllSkill(body *sdktypes.PlusAgentSkillQueryListForm) (sdktypes.PlusApiResultListPlusAgentSkillVO, error) {
     raw, err := a.client.Post(BackendApiPath("/skill/list/all"), body, nil, nil, "")
     if err != nil {
         var zero sdktypes.PlusApiResultListPlusAgentSkillVO

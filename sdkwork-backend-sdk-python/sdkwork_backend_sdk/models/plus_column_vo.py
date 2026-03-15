@@ -3,7 +3,7 @@ from typing import Optional, List, Dict, Any
 
 @dataclass
 class PlusColumnVO:
-    """数据库列定义VO"""
+    """Column view object"""
     created_at: str = None
     updated_at: str = None
     id: int = None

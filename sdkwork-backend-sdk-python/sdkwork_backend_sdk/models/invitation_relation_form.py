@@ -7,7 +7,7 @@ class InvitationRelationForm:
     inviter_user_id: int
     invitee_user_id: int
     invite_code: str
-    used_time: str
+    used_time: str = None
     relation_level: int
     reward_status: str = None
     reward_amount: float = None

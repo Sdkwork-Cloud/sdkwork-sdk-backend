@@ -1,6 +1,6 @@
 package types
 
-// 购物车分组信息
+// Shopping cart group information
 type CartGroup struct {
 	Uuid string `json:"uuid"`
 	Name string `json:"name"`

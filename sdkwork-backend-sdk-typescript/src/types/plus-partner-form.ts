@@ -2,44 +2,44 @@ import type { PlusTreeParentMetadata } from './plus-tree-parent-metadata';
 
 /** Partner creation form */
 export interface PlusPartnerForm {
-  /** 合作伙伴名称/公司名称 */
+  /** Partner name */
   name: string;
-  /** 合作伙伴等级 */
+  /** Partner level */
   level: 'DEFAULT' | 'NORMAL' | 'SENIOR' | 'STRATEGIC';
-  /** 合作伙伴状态 */
+  /** Partner status */
   status: 'DEFAULT' | 'ACTIVE' | 'SUSPENDED' | 'FROZEN' | 'CLOSED';
-  /** 联系人姓名 */
+  /** Contact name */
   contactName?: string;
-  /** 联系电话 */
+  /** Contact phone */
   contactPhone?: string;
-  /** 联系邮箱 */
+  /** Contact email */
   contactEmail?: string;
-  /** 公司地址 */
+  /** Company address */
   companyAddress?: string;
-  /** 营业执照号码 */
+  /** Business license */
   businessLicense?: string;
-  /** 结算账户 */
+  /** Settlement account */
   settlementAccount?: string;
-  /** 佣金比例 */
+  /** Commission rate */
   commissionRate?: number;
-  /** 累计佣金金额 */
+  /** Total commission */
   totalCommission?: number;
-  /** 可提现佣金金额 */
+  /** Withdrawable commission */
   withdrawableCommission?: number;
-  /** 已提现佣金金额 */
+  /** Withdrawn commission */
   withdrawnCommission?: number;
-  /** 推广码 */
+  /** Promotion code */
   promotionCode?: string;
-  /** 上级合作伙伴ID */
+  /** Parent ID */
   parentId?: number;
-  /** 树节点父级元数据信息 */
+  /** Parent metadata */
   parentMetadata?: PlusTreeParentMetadata;
-  /** Parent file UUID */
+  /** Parent UUID */
   parentUuid?: string;
-  /** 合作开始时间 */
+  /** Cooperation start time */
   cooperationStartTime?: string;
-  /** 合作结束时间 */
+  /** Cooperation end time */
   cooperationEndTime?: string;
-  /** 备注 */
+  /** Remark */
   remark?: string;
 }

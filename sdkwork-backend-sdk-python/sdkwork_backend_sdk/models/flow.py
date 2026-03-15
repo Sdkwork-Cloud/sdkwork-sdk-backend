@@ -13,6 +13,6 @@ class Flow:
     parent_id: int = None
     start_time: str = None
     end_time: str = None
-    last_node: Node = None
     parent_flow: Flow = None
+    last_node: Node = None
     all_agents: List[PlusAgent] = None

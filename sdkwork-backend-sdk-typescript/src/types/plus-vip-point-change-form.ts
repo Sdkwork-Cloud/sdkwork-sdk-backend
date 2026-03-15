@@ -1,19 +1,19 @@
 /** Point change creation form */
 export interface PlusVipPointChangeForm {
-  /** 用户ID，关联plus_user表 */
+  /** User ID */
   userId: number;
-  /** 变动类型 */
+  /** Change type */
   changeType: 'DEFAULT' | 'RECHARGE' | 'CONSUME' | 'REWARD' | 'ADJUST' | 'EXPIRE';
-  /** 变动数量(正数为增加，负数为减少) */
+  /** Change amount */
   changeAmount: number;
-  /** 变动前余额 */
+  /** Balance before change */
   beforeBalance: number;
-  /** 变动后余额 */
+  /** Balance after change */
   afterBalance: number;
-  /** 业务来源ID(如充值记录ID、订单ID等) */
+  /** Source ID */
   sourceId?: number;
-  /** 业务来源类型 */
+  /** Source type */
   sourceType?: 'DEFAULT' | 'PURCHASE' | 'DAILY_REWARD' | 'COUPON_POINTS_EXCHANGE' | 'COUPON_POINTS_ROLLBACK' | 'SYSTEM' | 'OTHER';
-  /** 备注信息 */
+  /** Remark */
   remark?: string;
 }

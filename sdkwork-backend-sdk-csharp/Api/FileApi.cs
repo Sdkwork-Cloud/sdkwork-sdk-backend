@@ -32,49 +32,57 @@ namespace Backend.Api
         }
 
         /// <summary>
-        /// List files
+        /// Update an existing file part
         /// </summary>
-        public async Task<PlusApiResultFileListVO?> ListFilesAsync(Dictionary<string, object>? query = null)
+        public async Task<PlusApiResultPlusFilePartVO?> UpdatePartAsync(PlusFilePartForm body)
         {
-            return await _client.GetAsync<PlusApiResultFileListVO>(ApiPaths.BackendPath("/oss/files"), query);
+            return await _client.PutAsync<PlusApiResultPlusFilePartVO>(ApiPaths.BackendPath("/file/part"), body);
         }
 
         /// <summary>
-        /// Upload file
+        /// Create a new file part
         /// </summary>
-        public async Task<PlusApiResultFileItemVO?> UploadAsync(UploadFileRequest? body = null, Dictionary<string, object>? query = null)
+        public async Task<PlusApiResultPlusFilePartVO?> CreatePartAsync(PlusFilePartForm body)
         {
-            return await _client.PostAsync<PlusApiResultFileItemVO>(ApiPaths.BackendPath("/oss/files"), body, query, null, "multipart/form-data");
+            return await _client.PostAsync<PlusApiResultPlusFilePartVO>(ApiPaths.BackendPath("/file/part"), body);
         }
 
         /// <summary>
-        /// Get upload temporary session
+        /// Update file content
         /// </summary>
-        public async Task<PlusApiResultPlusTempSessionVO?> GetTempSessionAsync(PlusGetTempSessionForm body)
+        public async Task<PlusApiResultPlusFileContentVO?> UpdateContentAsync(PlusFileContentForm body)
         {
-            return await _client.PostAsync<PlusApiResultPlusTempSessionVO>(ApiPaths.BackendPath("/oss/files/temp_session"), body);
+            return await _client.PutAsync<PlusApiResultPlusFileContentVO>(ApiPaths.BackendPath("/file/content"), body);
         }
 
         /// <summary>
-        /// Generate presigned URL
+        /// Create file content
         /// </summary>
-        public async Task<PlusApiResultGetUrlResult?> GetPresignedUrlAsync(PlusGetPresignedUrlForm body)
+        public async Task<PlusApiResultPlusFileContentVO?> CreateContentAsync(PlusFileContentForm body)
         {
-            return await _client.PostAsync<PlusApiResultGetUrlResult>(ApiPaths.BackendPath("/oss/files/get_presigned_url"), body);
+            return await _client.PostAsync<PlusApiResultPlusFileContentVO>(ApiPaths.BackendPath("/file/content"), body);
         }
 
         /// <summary>
-        /// Upload file
+        /// Get file parts by page
         /// </summary>
-        public async Task<PlusApiResultPlusFileVO?> CreateFilesAsync(PlusUploadForm body)
+        public async Task<PlusApiResultPagePlusFilePartVO?> CreateListByPageAsync(QueryListForm? body = null, Dictionary<string, object>? query = null)
         {
-            return await _client.PostAsync<PlusApiResultPlusFileVO>(ApiPaths.BackendPath("/oss/files/create"), body);
+            return await _client.PostAsync<PlusApiResultPagePlusFilePartVO>(ApiPaths.BackendPath("/file/part/list"), body, query);
+        }
+
+        /// <summary>
+        /// Get all file parts
+        /// </summary>
+        public async Task<PlusApiResultListPlusFilePartVO?> CreateListAllEntitiesAsync(QueryListForm? body = null)
+        {
+            return await _client.PostAsync<PlusApiResultListPlusFilePartVO>(ApiPaths.BackendPath("/file/part/list/all"), body);
         }
 
         /// <summary>
         /// Get file metadata by page
         /// </summary>
-        public async Task<PlusApiResultPagePlusFileVO?> ListByPageAsync(QueryListForm? body = null, Dictionary<string, object>? query = null)
+        public async Task<PlusApiResultPagePlusFileVO?> CreateListByPageFileAsync(QueryListForm? body = null, Dictionary<string, object>? query = null)
         {
             return await _client.PostAsync<PlusApiResultPagePlusFileVO>(ApiPaths.BackendPath("/file/list"), body, query);
         }
@@ -82,7 +90,7 @@ namespace Backend.Api
         /// <summary>
         /// Get all file metadata
         /// </summary>
-        public async Task<PlusApiResultListPlusFileVO?> ListAllEntitiesAsync(QueryListForm? body = null)
+        public async Task<PlusApiResultListPlusFileVO?> CreateListAllEntitiesFileAsync(QueryListForm? body = null)
         {
             return await _client.PostAsync<PlusApiResultListPlusFileVO>(ApiPaths.BackendPath("/file/list/all"), body);
         }
@@ -96,27 +104,19 @@ namespace Backend.Api
         }
 
         /// <summary>
-        /// Get file
+        /// Get file contents by page
         /// </summary>
-        public async Task<PlusApiResultFileItemVO?> GetFileAsync(string fileId)
+        public async Task<PlusApiResultPagePlusFileContentVO?> CreateListByPageContentAsync(QueryListForm? body = null, Dictionary<string, object>? query = null)
         {
-            return await _client.GetAsync<PlusApiResultFileItemVO>(ApiPaths.BackendPath($"/oss/files/{fileId}"));
+            return await _client.PostAsync<PlusApiResultPagePlusFileContentVO>(ApiPaths.BackendPath("/file/content/list"), body, query);
         }
 
         /// <summary>
-        /// Delete file
+        /// Get all file contents
         /// </summary>
-        public async Task<PlusApiResultFileItemVO?> DeleteFileAsync(string fileId)
+        public async Task<PlusApiResultListPlusFileContentVO?> CreateListAllEntitiesContentAsync(QueryListForm? body = null)
         {
-            return await _client.DeleteAsync<PlusApiResultFileItemVO>(ApiPaths.BackendPath($"/oss/files/{fileId}"));
-        }
-
-        /// <summary>
-        /// Get file content
-        /// </summary>
-        public async Task<string?> GetFileContentAsync(string fileId)
-        {
-            return await _client.GetAsync<string>(ApiPaths.BackendPath($"/oss/files/{fileId}/content"));
+            return await _client.PostAsync<PlusApiResultListPlusFileContentVO>(ApiPaths.BackendPath("/file/content/list/all"), body);
         }
 
         /// <summary>
@@ -133,6 +133,38 @@ namespace Backend.Api
         public async Task<PlusApiResultBoolean?> DeleteAsync(string id)
         {
             return await _client.DeleteAsync<PlusApiResultBoolean>(ApiPaths.BackendPath($"/file/{id}"));
+        }
+
+        /// <summary>
+        /// Get a file part by ID
+        /// </summary>
+        public async Task<PlusApiResultPlusFilePartVO?> GetByIdPartAsync(string id)
+        {
+            return await _client.GetAsync<PlusApiResultPlusFilePartVO>(ApiPaths.BackendPath($"/file/part/{id}"));
+        }
+
+        /// <summary>
+        /// Delete a file part
+        /// </summary>
+        public async Task<PlusApiResultBoolean?> DeletePartAsync(string id)
+        {
+            return await _client.DeleteAsync<PlusApiResultBoolean>(ApiPaths.BackendPath($"/file/part/{id}"));
+        }
+
+        /// <summary>
+        /// Get file content by ID
+        /// </summary>
+        public async Task<PlusApiResultPlusFileContentVO?> GetByIdContentAsync(string id)
+        {
+            return await _client.GetAsync<PlusApiResultPlusFileContentVO>(ApiPaths.BackendPath($"/file/content/{id}"));
+        }
+
+        /// <summary>
+        /// Delete file content
+        /// </summary>
+        public async Task<PlusApiResultBoolean?> DeleteContentAsync(string id)
+        {
+            return await _client.DeleteAsync<PlusApiResultBoolean>(ApiPaths.BackendPath($"/file/content/{id}"));
         }
     }
 }

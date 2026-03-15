@@ -1,5 +1,5 @@
-/** 创建JSAPI签名表单 */
+/** 鍒涘缓JSAPI绛惧悕琛ㄥ崟 */
 export interface CreateJsapiSignatureForm {
-  /** URL地址 */
+  /** URL鍦板潃 */
   url: string;
 }

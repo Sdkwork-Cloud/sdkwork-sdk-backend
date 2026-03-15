@@ -1,7 +1,7 @@
 /** User-role relationship creation form */
 export interface PlusUserRoleForm {
-  /** 用户ID(复合主键之一) */
+  /** 鐢ㄦ埛ID(澶嶅悎涓婚敭涔嬩竴) */
   userId: number;
-  /** 角色ID(复合主键之一) */
+  /** 瑙掕壊ID(澶嶅悎涓婚敭涔嬩竴) */
   roleId: number;
 }

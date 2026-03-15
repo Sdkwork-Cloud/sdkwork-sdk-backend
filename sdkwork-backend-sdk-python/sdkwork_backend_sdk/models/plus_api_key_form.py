@@ -7,7 +7,6 @@ class PlusApiKeyForm:
     name: str
     key_value: str
     type: str
-    status: str
+    status: str = None
     expire_time: str = None
     description: str = None
-    last_used_time: str = None

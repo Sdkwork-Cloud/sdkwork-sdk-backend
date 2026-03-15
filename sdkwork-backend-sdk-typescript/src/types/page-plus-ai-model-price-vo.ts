@@ -8,10 +8,10 @@ export interface PagePlusAiModelPriceVO {
   size?: number;
   content?: PlusAiModelPriceVO[];
   number?: number;
-  first?: boolean;
-  last?: boolean;
   numberOfElements?: number;
   sort?: SortObject;
   pageable?: PageableObject;
+  first?: boolean;
+  last?: boolean;
   empty?: boolean;
 }

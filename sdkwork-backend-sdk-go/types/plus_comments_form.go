@@ -6,7 +6,6 @@ type PlusCommentsForm struct {
 	ContentType string `json:"contentType"`
 	ContentId int `json:"contentId"`
 	Status string `json:"status"`
-	Rating int `json:"rating"`
 	Likes int `json:"likes"`
 	ReplyCount int `json:"replyCount"`
 	IsTop bool `json:"isTop"`

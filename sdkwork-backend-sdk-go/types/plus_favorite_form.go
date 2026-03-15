@@ -4,7 +4,6 @@ package types
 type PlusFavoriteForm struct {
 	ContentType string `json:"contentType"`
 	ContentId int `json:"contentId"`
-	FolderName string `json:"folderName"`
 	Remark string `json:"remark"`
 	SortWeight int `json:"sortWeight"`
 	Title string `json:"title"`

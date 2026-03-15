@@ -8,5 +8,6 @@ type PlusNewsForm struct {
 	Summary string `json:"summary"`
 	PublishTime string `json:"publishTime"`
 	Tags TagsContent `json:"tags"`
+	CategoryId int `json:"categoryId"`
 	UserId int `json:"userId"`
 }

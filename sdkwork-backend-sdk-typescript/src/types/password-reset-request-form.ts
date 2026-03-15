@@ -1,5 +1,4 @@
-/** 密码重置请求表单 */
+/** 瀵嗙爜閲嶇疆璇锋眰琛ㄥ崟 */
 export interface PasswordResetRequestForm {
-  /** 用户邮箱 */
   email: string;
 }

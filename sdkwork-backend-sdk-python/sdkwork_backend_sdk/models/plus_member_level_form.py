@@ -6,6 +6,6 @@ class PlusMemberLevelForm:
     """Member level creation form"""
     card_id: int
     level_name: str
-    required_points: int
+    required_points: int = None
     description: str = None
     status: str

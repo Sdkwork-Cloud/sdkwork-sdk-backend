@@ -6,7 +6,6 @@ class PlusFavoriteForm:
     """Favorite creation form"""
     content_type: str
     content_id: int
-    folder_name: str = None
     remark: str = None
     sort_weight: int = None
     title: str = None

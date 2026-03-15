@@ -3,7 +3,7 @@ from typing import Optional, List, Dict, Any
 
 @dataclass
 class SendVerificationCodeForm:
-    """发送验证码请求表单"""
+    """鍙戦€侀獙璇佺爜璇锋眰琛ㄥ崟"""
     identifier: str
     method: str
     type: str

@@ -5,8 +5,8 @@ data class Prompt(
     val options: ChatOptions? = null,
     val instructions: List<Message>? = null,
     val lastUserOrToolResponseMessage: Message? = null,
-    val systemMessages: List<SystemMessage>? = null,
     val userMessages: List<UserMessage>? = null,
     val userMessage: UserMessage? = null,
+    val systemMessages: List<SystemMessage>? = null,
     val systemMessage: SystemMessage? = null
 )

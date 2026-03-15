@@ -1,13 +1,13 @@
 /** Visit record creation form */
 export interface PlusShareVisitRecordForm {
-  /** 关联的分享ID */
+  /** 鍏宠仈鐨勫垎浜獻D */
   shareId: number;
-  /** 访问者IP地址 */
+  /** 璁块棶鑰匢P鍦板潃 */
   ipAddress?: string;
-  /** 访问者User-Agent */
+  /** 璁块棶鑰匲ser-Agent */
   userAgent?: string;
-  /** 访问时间 */
+  /** 璁块棶鏃堕棿 */
   accessedAt: string;
-  /** 是否成功访问（输入密码正确等） */
+  /** S uc ce ss */
   success?: boolean;
 }

@@ -15,14 +15,44 @@ class AccountApi(private val client: HttpClient) {
         return client.post(ApiPaths.backendPath("/account"), body) as? PlusApiResultPlusAccountVO
     }
 
+    /** Update an existing account history record */
+    suspend fun updateHistory(body: PlusAccountHistoryForm): PlusApiResultPlusAccountHistoryVO? {
+        return client.put(ApiPaths.backendPath("/account/history"), body) as? PlusApiResultPlusAccountHistoryVO
+    }
+
+    /** Create a new account history record */
+    suspend fun createHistory(body: PlusAccountHistoryForm): PlusApiResultPlusAccountHistoryVO? {
+        return client.post(ApiPaths.backendPath("/account/history"), body) as? PlusApiResultPlusAccountHistoryVO
+    }
+
+    /** Get points-to-cash rate */
+    suspend fun getPointsToCashRate(): PlusApiResultAccountExchangeRateVO? {
+        return client.get(ApiPaths.backendPath("/account/exchange-config/points-cash-rate")) as? PlusApiResultAccountExchangeRateVO
+    }
+
+    /** Update points-to-cash rate */
+    suspend fun updatePointsToCashRate(body: AccountExchangeRateUpdateForm): PlusApiResultAccountExchangeRateVO? {
+        return client.put(ApiPaths.backendPath("/account/exchange-config/points-cash-rate"), body) as? PlusApiResultAccountExchangeRateVO
+    }
+
     /** Get accounts by page */
-    suspend fun listByPage(body: QueryListForm? = null, params: Map<String, Any>? = null): PlusApiResultPagePlusAccountVO? {
+    suspend fun createListByPage(body: QueryListForm? = null, params: Map<String, Any>? = null): PlusApiResultPagePlusAccountVO? {
         return client.post(ApiPaths.backendPath("/account/list"), body, params) as? PlusApiResultPagePlusAccountVO
     }
 
     /** Get all accounts */
-    suspend fun listAllEntities(body: QueryListForm? = null): PlusApiResultListPlusAccountVO? {
+    suspend fun createListAllEntities(body: QueryListForm? = null): PlusApiResultListPlusAccountVO? {
         return client.post(ApiPaths.backendPath("/account/list/all"), body) as? PlusApiResultListPlusAccountVO
+    }
+
+    /** Get account history records by page */
+    suspend fun createListByPageHistory(body: QueryListForm? = null, params: Map<String, Any>? = null): PlusApiResultPagePlusAccountHistoryVO? {
+        return client.post(ApiPaths.backendPath("/account/history/list"), body, params) as? PlusApiResultPagePlusAccountHistoryVO
+    }
+
+    /** Get all account history records */
+    suspend fun createListAllEntitiesHistory(body: QueryListForm? = null): PlusApiResultListPlusAccountHistoryVO? {
+        return client.post(ApiPaths.backendPath("/account/history/list/all"), body) as? PlusApiResultListPlusAccountHistoryVO
     }
 
     /** Get points account */
@@ -43,5 +73,15 @@ class AccountApi(private val client: HttpClient) {
     /** Delete an account */
     suspend fun delete(id: String): PlusApiResultBoolean? {
         return client.delete(ApiPaths.backendPath("/account/$id")) as? PlusApiResultBoolean
+    }
+
+    /** Get an account history record by ID */
+    suspend fun getByIdHistory(id: String): PlusApiResultPlusAccountHistoryVO? {
+        return client.get(ApiPaths.backendPath("/account/history/$id")) as? PlusApiResultPlusAccountHistoryVO
+    }
+
+    /** Delete an account history record */
+    suspend fun deleteHistory(id: String): PlusApiResultBoolean? {
+        return client.delete(ApiPaths.backendPath("/account/history/$id")) as? PlusApiResultBoolean
     }
 }

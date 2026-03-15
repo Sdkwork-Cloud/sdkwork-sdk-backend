@@ -11,6 +11,7 @@ public class PlusTableForm {
     private String engine;
     private String createSql;
     private String comment;
+    private Integer schemaId;
 
     public String getName() {
         return this.name;
@@ -90,5 +91,13 @@ public class PlusTableForm {
     
     public void setComment(String comment) {
         this.comment = comment;
+    }
+
+    public Integer getSchemaId() {
+        return this.schemaId;
+    }
+    
+    public void setSchemaId(Integer schemaId) {
+        this.schemaId = schemaId;
     }
 }

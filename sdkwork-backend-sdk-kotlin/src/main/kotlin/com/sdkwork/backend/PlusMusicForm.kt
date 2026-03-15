@@ -11,7 +11,5 @@ data class PlusMusicForm(
     val artist: String? = null,
     val genre: String? = null,
     val bitrate: Int? = null,
-    val status: String? = null,
-    val createdAt: String? = null,
-    val updatedAt: String? = null
+    val status: String? = null
 )

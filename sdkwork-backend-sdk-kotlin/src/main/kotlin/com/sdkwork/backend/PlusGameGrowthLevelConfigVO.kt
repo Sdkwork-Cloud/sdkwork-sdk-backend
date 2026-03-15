@@ -1,0 +1,30 @@
+package com.sdkwork.backend
+
+data class PlusGameGrowthLevelConfigVO(
+    val createdAt: String? = null,
+    val updatedAt: String? = null,
+    val configId: Int? = null,
+    val accountType: String? = null,
+    val gameType: String? = null,
+    val gameModeCode: String? = null,
+    val seasonKey: String? = null,
+    val levelNo: Int? = null,
+    val levelCode: String? = null,
+    val levelName: String? = null,
+    val title: String? = null,
+    val badgeCode: String? = null,
+    val iconUrl: String? = null,
+    val requiredExp: Int? = null,
+    val expStartValue: Int? = null,
+    val expEndValue: Int? = null,
+    val winExpReward: Int? = null,
+    val loseExpReward: Int? = null,
+    val drawExpReward: Int? = null,
+    val escapeExpPenalty: Int? = null,
+    val status: String? = null,
+    val visible: Boolean? = null,
+    val description: String? = null,
+    val rewardConfig: Map<String, Any>? = null,
+    val benefitConfig: Map<String, Any>? = null,
+    val extData: Map<String, Any>? = null
+)

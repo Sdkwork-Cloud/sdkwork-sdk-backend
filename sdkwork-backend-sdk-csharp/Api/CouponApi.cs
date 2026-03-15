@@ -32,11 +32,43 @@ namespace Backend.Api
         }
 
         /// <summary>
+        /// Update an existing coupon template
+        /// </summary>
+        public async Task<PlusApiResultPlusCouponTemplateVO?> UpdateTemplateAsync(PlusCouponTemplateForm body)
+        {
+            return await _client.PutAsync<PlusApiResultPlusCouponTemplateVO>(ApiPaths.BackendPath("/coupon/template"), body);
+        }
+
+        /// <summary>
+        /// Create a new coupon template
+        /// </summary>
+        public async Task<PlusApiResultPlusCouponTemplateVO?> CreateTemplateAsync(PlusCouponTemplateForm body)
+        {
+            return await _client.PostAsync<PlusApiResultPlusCouponTemplateVO>(ApiPaths.BackendPath("/coupon/template"), body);
+        }
+
+        /// <summary>
         /// Exchange coupon by points
         /// </summary>
         public async Task<PlusApiResultPlusUserCouponVO?> ExchangeByPointsAsync(string couponId, CouponPointsExchangeForm body)
         {
             return await _client.PostAsync<PlusApiResultPlusUserCouponVO>(ApiPaths.BackendPath($"/coupon/{couponId}/exchange/points"), body);
+        }
+
+        /// <summary>
+        /// Get coupon templates by page
+        /// </summary>
+        public async Task<PlusApiResultPagePlusCouponTemplateVO?> CreateListByPageAsync(QueryListForm? body = null, Dictionary<string, object>? query = null)
+        {
+            return await _client.PostAsync<PlusApiResultPagePlusCouponTemplateVO>(ApiPaths.BackendPath("/coupon/template/list"), body, query);
+        }
+
+        /// <summary>
+        /// Get all coupon templates
+        /// </summary>
+        public async Task<PlusApiResultListPlusCouponTemplateVO?> CreateListAllEntitiesAsync(QueryListForm? body = null)
+        {
+            return await _client.PostAsync<PlusApiResultListPlusCouponTemplateVO>(ApiPaths.BackendPath("/coupon/template/list/all"), body);
         }
 
         /// <summary>
@@ -58,7 +90,7 @@ namespace Backend.Api
         /// <summary>
         /// Get coupon templates by page
         /// </summary>
-        public async Task<PlusApiResultPagePlusCouponVO?> ListByPageAsync(QueryListForm? body = null, Dictionary<string, object>? query = null)
+        public async Task<PlusApiResultPagePlusCouponVO?> CreateListByPageCouponAsync(QueryListForm? body = null, Dictionary<string, object>? query = null)
         {
             return await _client.PostAsync<PlusApiResultPagePlusCouponVO>(ApiPaths.BackendPath("/coupon/list"), body, query);
         }
@@ -66,7 +98,7 @@ namespace Backend.Api
         /// <summary>
         /// Get all coupon templates
         /// </summary>
-        public async Task<PlusApiResultListPlusCouponVO?> ListAllEntitiesAsync(QueryListForm? body = null)
+        public async Task<PlusApiResultListPlusCouponVO?> CreateListAllEntitiesCouponAsync(QueryListForm? body = null)
         {
             return await _client.PostAsync<PlusApiResultListPlusCouponVO>(ApiPaths.BackendPath("/coupon/list/all"), body);
         }
@@ -85,6 +117,22 @@ namespace Backend.Api
         public async Task<PlusApiResultBoolean?> DeleteAsync(string id)
         {
             return await _client.DeleteAsync<PlusApiResultBoolean>(ApiPaths.BackendPath($"/coupon/{id}"));
+        }
+
+        /// <summary>
+        /// Get a coupon template by ID
+        /// </summary>
+        public async Task<PlusApiResultPlusCouponTemplateVO?> GetByIdTemplateAsync(string id)
+        {
+            return await _client.GetAsync<PlusApiResultPlusCouponTemplateVO>(ApiPaths.BackendPath($"/coupon/template/{id}"));
+        }
+
+        /// <summary>
+        /// Delete a coupon template
+        /// </summary>
+        public async Task<PlusApiResultBoolean?> DeleteTemplateAsync(string id)
+        {
+            return await _client.DeleteAsync<PlusApiResultBoolean>(ApiPaths.BackendPath($"/coupon/template/{id}"));
         }
     }
 }

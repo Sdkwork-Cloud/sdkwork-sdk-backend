@@ -3,7 +3,6 @@ package com.sdkwork.backend.model;
 public class PlusConversationOpenForm {
     private String conversationId;
     private String uuid;
-    private String title;
     private Integer userId;
     private Integer agentId;
     private Integer knowledgeBaseId;
@@ -24,14 +23,6 @@ public class PlusConversationOpenForm {
     
     public void setUuid(String uuid) {
         this.uuid = uuid;
-    }
-
-    public String getTitle() {
-        return this.title;
-    }
-    
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public Integer getUserId() {

@@ -10,7 +10,7 @@ class PlusVipPackForm:
     vip_level_id: int
     price: float
     point_amount: int
-    vip_duration_days: int = None
+    vip_duration_days: int
     status: str
     sort_weight: int = None
     valid_from: str = None

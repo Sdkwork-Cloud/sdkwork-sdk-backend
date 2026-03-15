@@ -9,6 +9,7 @@ namespace Backend.Models
         public string? Title { get; set; }
         public string? Subtitle { get; set; }
         public string? Content { get; set; }
+        public int? CategoryId { get; set; }
         public int? WordCount { get; set; }
         public int? ReadingTime { get; set; }
         public ImageMediaResourceList? CoverImages { get; set; }

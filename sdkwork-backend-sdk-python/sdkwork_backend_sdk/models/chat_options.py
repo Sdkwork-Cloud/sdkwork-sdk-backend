@@ -7,7 +7,7 @@ class ChatOptions:
     temperature: float = None
     top_p: float = None
     top_k: int = None
-    max_tokens: int = None
-    stop_sequences: List[str] = None
     frequency_penalty: float = None
     presence_penalty: float = None
+    max_tokens: int = None
+    stop_sequences: List[str] = None

@@ -8,10 +8,10 @@ export interface PagePlusDatasourceVO {
   size?: number;
   content?: PlusDatasourceVO[];
   number?: number;
-  first?: boolean;
-  last?: boolean;
   numberOfElements?: number;
   sort?: SortObject;
   pageable?: PageableObject;
+  first?: boolean;
+  last?: boolean;
   empty?: boolean;
 }

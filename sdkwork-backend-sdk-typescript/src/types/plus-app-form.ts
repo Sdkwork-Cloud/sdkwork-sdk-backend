@@ -7,42 +7,42 @@ import type { ImageMediaResource } from './image-media-resource';
 
 /** Application creation form */
 export interface PlusAppForm {
-  /** 应用名称 */
+  /** Application name */
   name: string;
-  /** 应用图标 */
+  /** Application icon */
   icon?: ImageMediaResource;
-  /** 应用资源列表 */
+  /** Application resource list */
   resourceList?: AssetMediaResourceList;
-  /** 项目ID */
+  /** Project ID */
   projectId?: number;
-  /** 应用描述 */
+  /** Application description */
   description?: string;
-  /** 应用版本 */
+  /** Application version */
   version?: string;
-  /** 应用图标URL */
+  /** Application icon URL */
   iconUrl?: string;
-  /** 应用访问URL */
+  /** Application access URL */
   accessUrl?: string;
-  /** 应用配置 */
+  /** Application configuration */
   config?: AppConfig;
-  /** 应用状态 */
-  status: 'DEFAULT' | 'ACTIVE' | 'INACTIVE' | 'SUSPENDED' | 'DELETED';
-  /** 应用类型 */
+  /** Application status */
+  status?: 'DEFAULT' | 'ACTIVE' | 'INACTIVE' | 'SUSPENDED' | 'DELETED';
+  /** Application type */
   appType: 'NONE' | 'SDK' | 'PPT' | 'APP_HTML' | 'APP_VUE' | 'APP_FLUTTER' | 'APP_UNIAPP' | 'APP_REACT' | 'APP_UNITY' | 'VIDEO' | 'POSTER';
-  /** 支持平台 */
+  /** Supported platforms */
   platforms: AppPlatforms;
-  /** 支持安装平台 */
+  /** Supported installation platforms */
   installPlatforms?: AppPlatforms;
-  /** 安装技能 */
+  /** Installation skill */
   installSkill: AppInstallSkill;
-  /** 安装配置 */
-  installConfig?: AppInstallConfig;
-  /** 应用包名 */
+  /** Installation configuration */
+  installConfig: AppInstallConfig;
+  /** Application package name */
   packageName?: string;
-  /** 应用Bundle ID */
+  /** Application bundle ID */
   bundleId?: string;
-  /** 应用商店URL */
+  /** Store URL */
   storeUrl?: string;
-  /** 应用下载URL */
+  /** Download URL */
   downloadUrl?: string;
 }

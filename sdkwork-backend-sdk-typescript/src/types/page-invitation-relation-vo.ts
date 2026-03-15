@@ -8,10 +8,10 @@ export interface PageInvitationRelationVO {
   size?: number;
   content?: InvitationRelationVO[];
   number?: number;
-  first?: boolean;
-  last?: boolean;
   numberOfElements?: number;
   sort?: SortObject;
   pageable?: PageableObject;
+  first?: boolean;
+  last?: boolean;
   empty?: boolean;
 }

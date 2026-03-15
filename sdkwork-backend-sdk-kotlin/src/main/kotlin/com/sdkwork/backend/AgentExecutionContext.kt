@@ -24,12 +24,12 @@ data class AgentExecutionContext(
     val diskRootFile: PlusFileObject? = null,
     val completed: Boolean? = null,
     val running: Boolean? = null,
-    val paused: Boolean? = null,
     val expired: Boolean? = null,
-    val failed: Boolean? = null,
     val waiting: Boolean? = null,
-    val init: Boolean? = null,
+    val failed: Boolean? = null,
+    val paused: Boolean? = null,
     val end: Boolean? = null,
+    val init: Boolean? = null,
     val agentSCOPES: Map<String, AgentScope>? = null,
     val overSteps: Boolean? = null
 )

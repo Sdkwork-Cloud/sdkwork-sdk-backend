@@ -3,32 +3,32 @@ import type { Attributes } from './attributes';
 
 /** Product creation form */
 export interface PlusProductForm {
-  /** 产品名称 */
+  /** Product title */
   title: string;
-  /** 产品编码/SKU */
+  /** Product code */
   code?: string;
-  /** 产品副标题/简短描述 */
+  /** Product subtitle */
   subtitle?: string;
-  /** List of product resources */
+  /** Product resources */
   resources?: AssetMediaResourceList;
-  /** 产品价格 */
+  /** Product price */
   price: number;
-  /** 产品原价(用于显示折扣) */
+  /** Original price */
   originalPrice?: number;
-  /** 产品库存数量 */
-  stock: number;
-  /** 产品销售数量 */
+  /** Stock */
+  stock?: number;
+  /** Sales count */
   salesCount?: number;
-  /** 产品状态(1:在售,2:下架,3:已停产) */
+  /** Product status */
   status: 'DEFAULT' | 'ACTIVE' | 'INACTIVE' | 'DISCONTINUED';
-  /** 产品上架时间 */
+  /** On-sale time */
   onSaleAt?: string;
-  /** 产品描述(支持HTML格式) */
+  /** Product description */
   description?: string;
-  /** 所属分类ID */
+  /** Category ID */
   categoryId: number;
-  /** 产品属性值 */
+  /** Base attributes */
   baseAttributes?: Attributes;
-  /** 规格属性值 */
+  /** Spec attributes */
   specAttributes?: Attributes;
 }

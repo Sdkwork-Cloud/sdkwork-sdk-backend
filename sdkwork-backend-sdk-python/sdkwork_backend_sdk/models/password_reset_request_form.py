@@ -3,5 +3,5 @@ from typing import Optional, List, Dict, Any
 
 @dataclass
 class PasswordResetRequestForm:
-    """密码重置请求表单"""
+    """瀵嗙爜閲嶇疆璇锋眰琛ㄥ崟"""
     email: str

@@ -3,5 +3,5 @@ from typing import Optional, List, Dict, Any
 
 @dataclass
 class CouponPointsExchangeForm:
-    """积分兑换优惠券请求"""
+    """C ou po nP oi nt sE xc ha ng eF or m"""
     request_no: str

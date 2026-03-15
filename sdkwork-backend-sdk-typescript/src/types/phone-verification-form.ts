@@ -1,9 +1,9 @@
-/** 手机验证请求表单 */
+/** Phone verification request form */
 export interface PhoneVerificationForm {
-  /** 手机号 */
+  /** Phone number */
   phone: string;
-  /** 验证码 */
+  /** Verification code */
   code: string;
-  /** 验证类型（业务场景） */
+  /** Verification type */
   type: string;
 }

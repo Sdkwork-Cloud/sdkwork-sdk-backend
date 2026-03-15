@@ -1,23 +1,17 @@
 /** PPT template slide creation form */
 export interface PlusPptTemplateSlideForm {
-  /** 关联的PPT模板ID */
+  /** 鍏宠仈鐨凱PT妯℃澘ID */
   templateId: number;
-  /** 模板section标题（如'封面页'、'目录页'、'内容页1'等） */
-  sectionTitle: string;
-  /** 模板section内容描述（可包含占位符说明，如'此处填写公司名称'） */
-  sectionContent?: string;
-  /** 页码（模板中的页面序号） */
+  /** 妯℃澘section鏍囬锛堝'灏侀潰椤?銆?鐩綍椤?銆?鍐呭椤?'绛夛級 */
   pageNumber: number;
-  /** 页面布局类型（标题页/内容页/标题+内容/分栏内容等） */
+  /** 椤甸潰甯冨眬绫诲瀷锛堟爣棰橀〉/鍐呭椤?鏍囬+鍐呭/鍒嗘爮鍐呭绛夛級 */
   layoutType: 'DEFAULT' | 'TITLE' | 'CONTENT' | 'TITLE_CONTENT' | 'COLUMN_CONTENT';
-  /** 背景图片URL/路径（如'https://example.com/bg/title.jpg'） */
-  backgroundImage?: string;
-  /** 排序序号（用于调整section在模板中的展示顺序） */
+  /** S or tO rd er */
   sortOrder: number;
-  /** 是否为必填section（true-必填，生成PPT时不可删除；false-可选，可删除） */
+  /** 鏄惁涓哄繀濉玸ection锛坱rue-蹇呭～锛岀敓鎴怭PT鏃朵笉鍙垹闄わ紱false-鍙€夛紝鍙垹闄わ級 */
   isRequired: boolean;
-  /** 创建时间 */
+  /** 鍒涘缓鏃堕棿 */
   createdAt?: string;
-  /** 最后更新时间 */
+  /** U pd at ed At */
   updatedAt?: string;
 }

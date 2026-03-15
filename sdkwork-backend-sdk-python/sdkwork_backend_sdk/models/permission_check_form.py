@@ -3,5 +3,5 @@ from typing import Optional, List, Dict, Any
 
 @dataclass
 class PermissionCheckForm:
-    """权限检查请求表单"""
+    """P er mi ss io nC he ck Fo rm"""
     permission: str

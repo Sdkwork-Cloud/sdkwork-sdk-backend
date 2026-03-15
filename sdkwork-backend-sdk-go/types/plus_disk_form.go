@@ -3,6 +3,7 @@ package types
 // File disk creation form
 type PlusDiskForm struct {
 	Name string `json:"name"`
+	Type string `json:"type"`
 	Owner string `json:"owner"`
 	OwnerId int `json:"ownerId"`
 	DiskSize int `json:"diskSize"`

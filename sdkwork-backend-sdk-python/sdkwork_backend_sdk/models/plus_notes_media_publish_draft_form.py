@@ -3,7 +3,7 @@ from typing import Optional, List, Dict, Any
 
 @dataclass
 class PlusNotesMediaPublishDraftForm:
-    """媒体草稿发布表单"""
+    """濯掍綋鑽夌鍙戝竷琛ㄥ崟"""
     user_id: int = None
     platform: str = None
     product: str = None

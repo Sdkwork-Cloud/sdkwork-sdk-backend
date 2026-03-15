@@ -1,19 +1,19 @@
-/** 订单内容项 */
+/** Order content item */
 export interface OrderContentItem {
-  /** 内容ID */
+  /** Content ID */
   id?: number;
-  /** 商品ID */
+  /** Product ID */
   productId?: number;
   /** SKU ID */
   skuId?: number;
-  /** 内容名称 */
+  /** Content name */
   name?: string;
-  /** 内容类型 */
+  /** Content type */
   type?: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM';
-  /** 数量 */
+  /** Quantity */
   quantity?: number;
-  /** 单价 */
+  /** Unit price */
   unitPrice?: number;
-  /** 总价 */
+  /** Total price */
   totalPrice?: number;
 }

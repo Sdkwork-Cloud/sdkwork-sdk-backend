@@ -2,7 +2,10 @@ package types
 
 // Data source creation form (includes name, type, connection config)
 type PlusDatasourceForm struct {
+	ProjectId int `json:"projectId"`
 	Name string `json:"name"`
+	Channel string `json:"channel"`
+	ChannelId string `json:"channelId"`
 	Type int `json:"type"`
 	Status int `json:"status"`
 	Description string `json:"description"`

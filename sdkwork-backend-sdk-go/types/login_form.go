@@ -1,6 +1,6 @@
 package types
 
-// 登录请求表单
+// 鐧诲綍璇锋眰琛ㄥ崟
 type LoginForm struct {
 	Type string `json:"type"`
 	Email string `json:"email"`

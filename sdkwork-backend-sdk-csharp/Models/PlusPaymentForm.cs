@@ -11,6 +11,7 @@ namespace Backend.Models
         public string? TransactionId { get; set; }
         public string? OutTradeNo { get; set; }
         public string? Channel { get; set; }
+        public string? Provider { get; set; }
         public string? Status { get; set; }
         public double? Amount { get; set; }
         public string? SuccessTime { get; set; }
@@ -18,6 +19,5 @@ namespace Backend.Models
         public string? ContentType { get; set; }
         public int? ContentId { get; set; }
         public string? ProductType { get; set; }
-        public string? Provider { get; set; }
     }
 }

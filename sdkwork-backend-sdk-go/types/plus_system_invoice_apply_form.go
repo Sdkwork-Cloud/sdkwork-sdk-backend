@@ -1,6 +1,6 @@
 package types
 
-// 系统发票申请表单
+// System invoice application form
 type PlusSystemInvoiceApplyForm struct {
 	Title string `json:"title"`
 	TaxId string `json:"taxId"`

@@ -1,10 +1,12 @@
 package com.sdkwork.backend.model;
 
 public class PlusAccountHistoryForm {
+    private String accountType;
     private String assetType;
     private Integer accountId;
     private String transactionId;
     private String transactionType;
+    private String status;
     private Double amount;
     private Double balanceBefore;
     private Double balanceAfter;
@@ -15,8 +17,15 @@ public class PlusAccountHistoryForm {
     private String sourceType;
     private String sourceId;
     private String expiredAt;
-    private String status;
     private String remarks;
+
+    public String getAccountType() {
+        return this.accountType;
+    }
+    
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
+    }
 
     public String getAssetType() {
         return this.assetType;
@@ -48,6 +57,14 @@ public class PlusAccountHistoryForm {
     
     public void setTransactionType(String transactionType) {
         this.transactionType = transactionType;
+    }
+
+    public String getStatus() {
+        return this.status;
+    }
+    
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public Double getAmount() {
@@ -128,14 +145,6 @@ public class PlusAccountHistoryForm {
     
     public void setExpiredAt(String expiredAt) {
         this.expiredAt = expiredAt;
-    }
-
-    public String getStatus() {
-        return this.status;
-    }
-    
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public String getRemarks() {

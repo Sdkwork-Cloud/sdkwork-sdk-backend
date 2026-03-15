@@ -1,6 +1,6 @@
 package types
 
-// 用户注册请求表单
+// 鐢ㄦ埛娉ㄥ唽璇锋眰琛ㄥ崟
 type RegisterForm struct {
 	Username string `json:"username"`
 	Password string `json:"password"`

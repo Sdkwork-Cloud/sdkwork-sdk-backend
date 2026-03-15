@@ -2,18 +2,20 @@ import type { TagsContent } from './tags-content';
 
 /** News creation form */
 export interface PlusNewsForm {
-  /** 新闻标题 */
+  /** News title */
   title: string;
-  /** 新闻内容URL */
+  /** News URL */
   url?: string;
-  /** 新闻来源 */
+  /** News source */
   source?: string;
-  /** 新闻摘要 */
+  /** Summary */
   summary?: string;
-  /** 新闻发布时间 */
+  /** Publish time */
   publishTime?: string;
-  /** 新闻标签 */
+  /** Tags */
   tags?: TagsContent;
-  /** 用户ID(外键关联plus_user.id) */
+  /** Category ID */
+  categoryId: number;
+  /** User ID */
   userId?: number;
 }

@@ -3,7 +3,7 @@ from typing import Optional, List, Dict, Any
 
 @dataclass
 class CartItem:
-    """购物车项目信息"""
+    """Shopping cart item information"""
     id: int = None
     sku: PlusSku = None
     quantity: int = None

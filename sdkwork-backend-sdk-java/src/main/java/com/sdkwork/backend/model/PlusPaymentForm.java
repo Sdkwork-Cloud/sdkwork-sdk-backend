@@ -6,6 +6,7 @@ public class PlusPaymentForm {
     private String transactionId;
     private String outTradeNo;
     private String channel;
+    private String provider;
     private String status;
     private Double amount;
     private String successTime;
@@ -13,7 +14,6 @@ public class PlusPaymentForm {
     private String contentType;
     private Integer contentId;
     private String productType;
-    private String provider;
 
     public String getPurpose() {
         return this.purpose;
@@ -53,6 +53,14 @@ public class PlusPaymentForm {
     
     public void setChannel(String channel) {
         this.channel = channel;
+    }
+
+    public String getProvider() {
+        return this.provider;
+    }
+    
+    public void setProvider(String provider) {
+        this.provider = provider;
     }
 
     public String getStatus() {
@@ -109,13 +117,5 @@ public class PlusPaymentForm {
     
     public void setProductType(String productType) {
         this.productType = productType;
-    }
-
-    public String getProvider() {
-        return this.provider;
-    }
-    
-    public void setProvider(String provider) {
-        this.provider = provider;
     }
 }

@@ -10,7 +10,7 @@ class PlusProductForm:
     resources: AssetMediaResourceList = None
     price: float
     original_price: float = None
-    stock: int
+    stock: int = None
     sales_count: int = None
     status: str
     on_sale_at: str = None

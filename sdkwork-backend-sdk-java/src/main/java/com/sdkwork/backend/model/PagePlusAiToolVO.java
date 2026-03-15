@@ -6,11 +6,11 @@ public class PagePlusAiToolVO {
     private Integer size;
     private List<PlusAiToolVO> content;
     private Integer number;
-    private Boolean first;
-    private Boolean last;
     private Integer numberOfElements;
     private SortObject sort;
     private PageableObject pageable;
+    private Boolean first;
+    private Boolean last;
     private Boolean empty;
 
     public Integer getTotalElements() {
@@ -53,22 +53,6 @@ public class PagePlusAiToolVO {
         this.number = number;
     }
 
-    public Boolean getFirst() {
-        return this.first;
-    }
-    
-    public void setFirst(Boolean first) {
-        this.first = first;
-    }
-
-    public Boolean getLast() {
-        return this.last;
-    }
-    
-    public void setLast(Boolean last) {
-        this.last = last;
-    }
-
     public Integer getNumberOfElements() {
         return this.numberOfElements;
     }
@@ -91,6 +75,22 @@ public class PagePlusAiToolVO {
     
     public void setPageable(PageableObject pageable) {
         this.pageable = pageable;
+    }
+
+    public Boolean getFirst() {
+        return this.first;
+    }
+    
+    public void setFirst(Boolean first) {
+        this.first = first;
+    }
+
+    public Boolean getLast() {
+        return this.last;
+    }
+    
+    public void setLast(Boolean last) {
+        this.last = last;
     }
 
     public Boolean getEmpty() {

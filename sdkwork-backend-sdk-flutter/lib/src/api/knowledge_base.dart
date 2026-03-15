@@ -36,6 +36,29 @@ class KnowledgeBaseApi {
     return response is PlusApiResultPlusKnowledgeBaseVO ? response : null;
   }
 
+  /// List files
+  Future<PlusApiResultFileListVO?> listFiles(Map<String, dynamic>? params) async {
+    final response = await _client.get(ApiPaths.backendPath('/knowledge_base/files'), params: params);
+    return response is PlusApiResultFileListVO ? response : null;
+  }
+
+  /// Upload file
+  Future<PlusApiResultFileItemVO?> uploadFile(UploadFilePostRequest? body, Map<String, dynamic>? params) async {
+    final response = await _client.post(ApiPaths.backendPath('/knowledge_base/files'), body: body, params: params, contentType: 'multipart/form-data');
+    return response is PlusApiResultFileItemVO ? response : null;
+  }
+
+  Future<PlusApiResultBoolean?> stop(Map<String, dynamic>? params, Map<String, String>? headers) async {
+    final response = await _client.post(ApiPaths.backendPath('/knowledge_base/chat/stop'), params: params, headers: headers);
+    return response is PlusApiResultBoolean ? response : null;
+  }
+
+  /// Create a chat completion with Knowledge base
+  Future<ChatCompletionChunk?> createCompletions(ChatCompletionCreateForm body, Map<String, dynamic>? params, Map<String, String>? headers) async {
+    final response = await _client.post(ApiPaths.backendPath('/knowledge_base/chat/completions'), body: body, params: params, headers: headers, contentType: 'application/json');
+    return response is ChatCompletionChunk ? response : null;
+  }
+
   /// Get a knowledge base by ID
   Future<PlusApiResultPlusKnowledgeBaseVO?> getById(String id) async {
     final response = await _client.get(ApiPaths.backendPath('/knowledge_base/${id}'));
@@ -46,5 +69,23 @@ class KnowledgeBaseApi {
   Future<PlusApiResultBoolean?> delete(String id) async {
     final response = await _client.delete(ApiPaths.backendPath('/knowledge_base/${id}'));
     return response is PlusApiResultBoolean ? response : null;
+  }
+
+  /// Get file
+  Future<PlusApiResultFileItemVO?> getFile(String fileId) async {
+    final response = await _client.get(ApiPaths.backendPath('/knowledge_base/files/${fileId}'));
+    return response is PlusApiResultFileItemVO ? response : null;
+  }
+
+  /// Delete file
+  Future<PlusApiResultFileItemVO?> deleteFile(String fileId) async {
+    final response = await _client.delete(ApiPaths.backendPath('/knowledge_base/files/${fileId}'));
+    return response is PlusApiResultFileItemVO ? response : null;
+  }
+
+  /// Get file content
+  Future<String?> getFileContent(String fileId) async {
+    final response = await _client.get(ApiPaths.backendPath('/knowledge_base/files/${fileId}/content'));
+    return response is String ? response : null;
   }
 }

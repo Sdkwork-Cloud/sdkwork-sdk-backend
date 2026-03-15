@@ -1,35 +1,35 @@
-/** 数据库列定义VO */
+/** Column view object */
 export interface PlusColumnVO {
   /** 创建时间 */
   createdAt?: string;
   /** 更新时间 */
   updatedAt?: string;
-  /** ID */
+  /** Column ID */
   id?: number;
-  /** 列名称 */
+  /** Column name */
   name?: string;
-  /** 列描述 */
+  /** Column description */
   description?: string;
-  /** 数据类型(VARCHAR, INT等) */
+  /** Data type */
   dataType?: string;
-  /** 列类型(包含长度等信息) */
+  /** Full column type */
   columnType?: string;
-  /** 列在表中的位置顺序 */
+  /** Ordinal position */
   ordinalPosition?: number;
-  /** 是否允许为空 */
+  /** Whether nullable */
   isNullable?: boolean;
-  /** 是否主键 */
+  /** Whether primary key */
   isPrimaryKey?: boolean;
-  /** 是否自增 */
+  /** Whether auto increment */
   isAutoIncrement?: boolean;
-  /** 默认值 */
+  /** Default value */
   defaultValue?: string;
-  /** 列注释 */
+  /** Comment */
   comment?: string;
-  /** 字符集 */
+  /** Character set */
   characterSet?: string;
-  /** 排序规则 */
+  /** Collation rule */
   collationRule?: string;
-  /** 所属表ID */
+  /** Table ID */
   tableId?: number;
 }

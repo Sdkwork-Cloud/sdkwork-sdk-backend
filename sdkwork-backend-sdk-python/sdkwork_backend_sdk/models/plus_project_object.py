@@ -11,11 +11,11 @@ class PlusProjectObject:
     version: str = None
     tags: TagsContent = None
     description: str = None
-    title: str = None
-    created_at: str = None
-    owner_id: int = None
-    uuid: str = None
-    disk_id: int = None
     author: str = None
+    disk_id: int = None
+    title: str = None
+    uuid: str = None
+    owner_id: int = None
+    created_at: str = None
     files: List[PlusFileObject] = None
     screen_type: str = None

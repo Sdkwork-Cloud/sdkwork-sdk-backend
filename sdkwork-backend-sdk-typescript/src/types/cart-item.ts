@@ -1,17 +1,17 @@
 import type { PlusSku } from './plus-sku';
 
-/** 购物车项目信息 */
+/** Shopping cart item information */
 export interface CartItem {
-  /** 购物车项目ID */
+  /** Shopping cart item ID */
   id?: number;
-  /** 关联的SKU信息 */
+  /** Associated SKU information */
   sku?: PlusSku;
-  /** 商品数量 */
+  /** Product quantity */
   quantity?: number;
-  /** 商品单价 */
+  /** Unit price */
   unitPrice?: number;
-  /** 商品总价 */
+  /** Total price */
   totalPrice?: number;
-  /** 是否选中 */
+  /** Whether the item is selected */
   selected?: boolean;
 }

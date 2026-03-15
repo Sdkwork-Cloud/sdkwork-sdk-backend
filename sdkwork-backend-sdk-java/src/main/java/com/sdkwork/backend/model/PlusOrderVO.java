@@ -3,8 +3,10 @@ package com.sdkwork.backend.model;
 public class PlusOrderVO {
     private String createdAt;
     private String updatedAt;
+    private Integer id;
     private String orderType;
     private Integer userId;
+    private String subject;
     private String orderSn;
     private String transactionId;
     private String outTradeNo;
@@ -16,6 +18,15 @@ public class PlusOrderVO {
     private String expireTime;
     private String contentType;
     private Integer contentId;
+    private String taskCode;
+    private String dispatchMode;
+    private String dispatchStatus;
+    private Integer workerUserId;
+    private Integer dispatcherUserId;
+    private String acceptedTime;
+    private String serviceStartTime;
+    private String dispatchExpireTime;
+    private Map<String, Object> taskPayload;
     private ClientPayObjects payObjects;
 
     public String getCreatedAt() {
@@ -34,6 +45,14 @@ public class PlusOrderVO {
         this.updatedAt = updatedAt;
     }
 
+    public Integer getId() {
+        return this.id;
+    }
+    
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public String getOrderType() {
         return this.orderType;
     }
@@ -48,6 +67,14 @@ public class PlusOrderVO {
     
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    public String getSubject() {
+        return this.subject;
+    }
+    
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
     public String getOrderSn() {
@@ -136,6 +163,78 @@ public class PlusOrderVO {
     
     public void setContentId(Integer contentId) {
         this.contentId = contentId;
+    }
+
+    public String getTaskCode() {
+        return this.taskCode;
+    }
+    
+    public void setTaskCode(String taskCode) {
+        this.taskCode = taskCode;
+    }
+
+    public String getDispatchMode() {
+        return this.dispatchMode;
+    }
+    
+    public void setDispatchMode(String dispatchMode) {
+        this.dispatchMode = dispatchMode;
+    }
+
+    public String getDispatchStatus() {
+        return this.dispatchStatus;
+    }
+    
+    public void setDispatchStatus(String dispatchStatus) {
+        this.dispatchStatus = dispatchStatus;
+    }
+
+    public Integer getWorkerUserId() {
+        return this.workerUserId;
+    }
+    
+    public void setWorkerUserId(Integer workerUserId) {
+        this.workerUserId = workerUserId;
+    }
+
+    public Integer getDispatcherUserId() {
+        return this.dispatcherUserId;
+    }
+    
+    public void setDispatcherUserId(Integer dispatcherUserId) {
+        this.dispatcherUserId = dispatcherUserId;
+    }
+
+    public String getAcceptedTime() {
+        return this.acceptedTime;
+    }
+    
+    public void setAcceptedTime(String acceptedTime) {
+        this.acceptedTime = acceptedTime;
+    }
+
+    public String getServiceStartTime() {
+        return this.serviceStartTime;
+    }
+    
+    public void setServiceStartTime(String serviceStartTime) {
+        this.serviceStartTime = serviceStartTime;
+    }
+
+    public String getDispatchExpireTime() {
+        return this.dispatchExpireTime;
+    }
+    
+    public void setDispatchExpireTime(String dispatchExpireTime) {
+        this.dispatchExpireTime = dispatchExpireTime;
+    }
+
+    public Map<String, Object> getTaskPayload() {
+        return this.taskPayload;
+    }
+    
+    public void setTaskPayload(Map<String, Object> taskPayload) {
+        this.taskPayload = taskPayload;
     }
 
     public ClientPayObjects getPayObjects() {

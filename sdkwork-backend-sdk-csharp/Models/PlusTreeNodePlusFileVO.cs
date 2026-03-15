@@ -12,7 +12,7 @@ namespace Backend.Models
         public int? Index { get; set; }
         public bool? Root { get; set; }
         public bool? Leaf { get; set; }
-        public int? Depth { get; set; }
         public int? ChildrenCount { get; set; }
+        public int? Depth { get; set; }
     }
 }

@@ -1,23 +1,25 @@
 /** Table creation form */
 export interface PlusTableForm {
-  /** 表名称 */
+  /** Table name */
   name: string;
-  /** 表描述 */
+  /** Table description */
   description?: string;
-  /** 表类型(TABLE, VIEW等) */
+  /** Table type */
   type?: string;
-  /** 列数量 */
+  /** Column count */
   columnCount?: number;
-  /** 行数量估计 */
+  /** Row count */
   rowCount?: number;
-  /** 最后同步时间 */
+  /** Last sync time */
   lastSyncTime?: string;
-  /** 主键列(逗号分隔) */
+  /** Primary keys */
   primaryKeys?: string;
-  /** 存储引擎(如InnoDB, MyISAM等) */
+  /** Storage engine */
   engine?: string;
-  /** 创建表的SQL语句 */
+  /** Create SQL */
   createSql?: string;
-  /** 表注释 */
+  /** Comment */
   comment?: string;
+  /** Schema ID */
+  schemaId: number;
 }

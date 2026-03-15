@@ -1,17 +1,17 @@
 /** Schema creation form */
 export interface PlusSchemaForm {
-  /** Schema名称 */
+  /** Schema name */
   name: string;
-  /** Schema描述 */
+  /** Schema description */
   description?: string;
-  /** 状态(0-禁用,1-启用) */
+  /** Status */
   status: number;
-  /** 表数量 */
+  /** Table count */
   tableCount?: number;
-  /** 最后同步时间 */
+  /** Last sync time */
   lastSyncTime?: string;
-  /** 是否默认Schema */
+  /** Whether default schema */
   isDefault?: boolean;
-  /** 所属数据源ID */
+  /** Datasource ID */
   datasourceId: number;
 }

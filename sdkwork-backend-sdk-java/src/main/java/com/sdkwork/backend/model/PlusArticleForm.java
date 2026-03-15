@@ -4,6 +4,7 @@ public class PlusArticleForm {
     private String title;
     private String subtitle;
     private String content;
+    private Integer categoryId;
     private Integer wordCount;
     private Integer readingTime;
     private ImageMediaResourceList coverImages;
@@ -35,6 +36,14 @@ public class PlusArticleForm {
     
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public Integer getCategoryId() {
+        return this.categoryId;
+    }
+    
+    public void setCategoryId(Integer categoryId) {
+        this.categoryId = categoryId;
     }
 
     public Integer getWordCount() {

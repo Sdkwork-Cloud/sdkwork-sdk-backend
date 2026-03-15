@@ -56,6 +56,35 @@ namespace Backend.Api
         }
 
         /// <summary>
+        /// List files
+        /// </summary>
+        public async Task<PlusApiResultFileListVO?> ListFilesAsync(Dictionary<string, object>? query = null)
+        {
+            return await _client.GetAsync<PlusApiResultFileListVO>(ApiPaths.BackendPath("/knowledge_base/files"), query);
+        }
+
+        /// <summary>
+        /// Upload file
+        /// </summary>
+        public async Task<PlusApiResultFileItemVO?> UploadFileAsync(UploadFilePostRequest? body = null, Dictionary<string, object>? query = null)
+        {
+            return await _client.PostAsync<PlusApiResultFileItemVO>(ApiPaths.BackendPath("/knowledge_base/files"), body, query, null, "multipart/form-data");
+        }
+
+        public async Task<PlusApiResultBoolean?> StopAsync(Dictionary<string, object>? query = null, Dictionary<string, string>? headers = null)
+        {
+            return await _client.PostAsync<PlusApiResultBoolean>(ApiPaths.BackendPath("/knowledge_base/chat/stop"), null, query, headers);
+        }
+
+        /// <summary>
+        /// Create a chat completion with Knowledge base
+        /// </summary>
+        public async Task<ChatCompletionChunk?> CreateCompletionsAsync(ChatCompletionCreateForm body, Dictionary<string, object>? query = null, Dictionary<string, string>? headers = null)
+        {
+            return await _client.PostAsync<ChatCompletionChunk>(ApiPaths.BackendPath("/knowledge_base/chat/completions"), body, query, headers);
+        }
+
+        /// <summary>
         /// Get a knowledge base by ID
         /// </summary>
         public async Task<PlusApiResultPlusKnowledgeBaseVO?> GetByIdAsync(string id)
@@ -69,6 +98,30 @@ namespace Backend.Api
         public async Task<PlusApiResultBoolean?> DeleteAsync(string id)
         {
             return await _client.DeleteAsync<PlusApiResultBoolean>(ApiPaths.BackendPath($"/knowledge_base/{id}"));
+        }
+
+        /// <summary>
+        /// Get file
+        /// </summary>
+        public async Task<PlusApiResultFileItemVO?> GetFileAsync(string fileId)
+        {
+            return await _client.GetAsync<PlusApiResultFileItemVO>(ApiPaths.BackendPath($"/knowledge_base/files/{fileId}"));
+        }
+
+        /// <summary>
+        /// Delete file
+        /// </summary>
+        public async Task<PlusApiResultFileItemVO?> DeleteFileAsync(string fileId)
+        {
+            return await _client.DeleteAsync<PlusApiResultFileItemVO>(ApiPaths.BackendPath($"/knowledge_base/files/{fileId}"));
+        }
+
+        /// <summary>
+        /// Get file content
+        /// </summary>
+        public async Task<string?> GetFileContentAsync(string fileId)
+        {
+            return await _client.GetAsync<string>(ApiPaths.BackendPath($"/knowledge_base/files/{fileId}/content"));
         }
     }
 }

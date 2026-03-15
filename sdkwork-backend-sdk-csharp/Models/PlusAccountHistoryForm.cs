@@ -6,10 +6,12 @@ namespace Backend.Models
 {
     public class PlusAccountHistoryForm
     {
+        public string? AccountType { get; set; }
         public string? AssetType { get; set; }
         public int? AccountId { get; set; }
         public string? TransactionId { get; set; }
         public string? TransactionType { get; set; }
+        public string? Status { get; set; }
         public double? Amount { get; set; }
         public double? BalanceBefore { get; set; }
         public double? BalanceAfter { get; set; }
@@ -20,7 +22,6 @@ namespace Backend.Models
         public string? SourceType { get; set; }
         public string? SourceId { get; set; }
         public string? ExpiredAt { get; set; }
-        public string? Status { get; set; }
         public string? Remarks { get; set; }
     }
 }

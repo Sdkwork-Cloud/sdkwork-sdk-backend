@@ -9,5 +9,14 @@ data class PlusAiModelInfoQueryListForm(
     val modelType: String? = null,
     val status: String? = null,
     val family: String? = null,
-    val openSource: Boolean? = null
+    val vendor: String? = null,
+    val openSource: Boolean? = null,
+    val pricingType: String? = null,
+    val lifecycleStage: String? = null,
+    val minContextTokens: Int? = null,
+    val supportReasoning: Boolean? = null,
+    val supportMultimodal: Boolean? = null,
+    val supportFunctionCall: Boolean? = null,
+    val supportRealtime: Boolean? = null,
+    val supportFineTuning: Boolean? = null
 )

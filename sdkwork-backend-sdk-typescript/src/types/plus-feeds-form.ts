@@ -3,28 +3,24 @@ import type { TagsContent } from './tags-content';
 
 /** Feeds creation form */
 export interface PlusFeedsForm {
-  /** Feeds标题 */
+  /** Feeds title */
   title: string;
-  /** Feeds内容摘要 */
+  /** Feeds summary */
   summary?: string;
-  /** 关联内容类型 */
+  /** Category ID */
+  categoryId: number;
+  /** Content type */
   contentType: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM';
-  /** 关联内容ID */
+  /** Content ID */
   contentId: number;
-  /** 封面图片列表 */
+  /** Cover images */
   coverImages?: ImageMediaResourceList;
-  /** 内容来源 */
+  /** Source */
   source?: string;
-  /** 发布时间 */
+  /** Publish time */
   publishTime?: string;
-  /** Feeds标签 */
+  /** Tags */
   tags?: TagsContent;
-  /** Feeds状态 */
-  status: 'DEFAULT' | 'DRAFT' | 'PUBLISHED' | 'DELETED';
-  /** 浏览次数 */
-  viewCount?: number;
-  /** 点赞次数 */
-  likeCount?: number;
-  /** 评论次数 */
-  commentCount?: number;
+  /** Feeds status */
+  status?: 'DEFAULT' | 'DRAFT' | 'PUBLISHED' | 'DELETED';
 }

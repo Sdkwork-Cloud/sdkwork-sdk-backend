@@ -1,7 +1,7 @@
-/** 账户兑换比例更新表单 */
+/** Account exchange rate update form */
 export interface AccountExchangeRateUpdateForm {
-  /** 积分兑换现金比例（N积分=1元） */
+  /** Points-to-cash exchange rate */
   pointsToCashRate: number;
-  /** 备注 */
+  /** Remarks */
   remarks?: string;
 }

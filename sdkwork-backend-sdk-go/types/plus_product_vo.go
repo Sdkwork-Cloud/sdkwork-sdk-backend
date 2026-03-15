@@ -1,6 +1,6 @@
 package types
 
-// Product Value Object - Represents a product in the system with basic information, pricing, inventory, and relationships
+// Product view object
 type PlusProductVO struct {
 	CreatedAt string `json:"createdAt"`
 	UpdatedAt string `json:"updatedAt"`

@@ -10,12 +10,12 @@ type PlusProjectObject struct {
 	Version string `json:"version"`
 	Tags TagsContent `json:"tags"`
 	Description string `json:"description"`
-	Title string `json:"title"`
-	CreatedAt string `json:"createdAt"`
-	OwnerId int `json:"ownerId"`
-	Uuid string `json:"uuid"`
-	DiskId int `json:"diskId"`
 	Author string `json:"author"`
+	DiskId int `json:"diskId"`
+	Title string `json:"title"`
+	Uuid string `json:"uuid"`
+	OwnerId int `json:"ownerId"`
+	CreatedAt string `json:"createdAt"`
 	Files []PlusFileObject `json:"files"`
 	ScreenType string `json:"screenType"`
 }

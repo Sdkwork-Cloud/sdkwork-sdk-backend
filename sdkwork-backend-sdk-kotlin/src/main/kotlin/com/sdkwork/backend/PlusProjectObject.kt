@@ -9,12 +9,12 @@ data class PlusProjectObject(
     val version: String? = null,
     val tags: TagsContent? = null,
     val description: String? = null,
-    val title: String? = null,
-    val createdAt: String? = null,
-    val ownerId: Int? = null,
-    val uuid: String? = null,
-    val diskId: Int? = null,
     val author: String? = null,
+    val diskId: Int? = null,
+    val title: String? = null,
+    val uuid: String? = null,
+    val ownerId: Int? = null,
+    val createdAt: String? = null,
     val files: List<PlusFileObject>? = null,
     val screenType: String? = null
 )

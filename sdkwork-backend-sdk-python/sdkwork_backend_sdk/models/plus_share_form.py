@@ -9,7 +9,7 @@ class PlusShareForm:
     type: str
     contents: ShareContents = None
     content_type: str = None
-    status: str
+    status: str = None
     share_url: str = None
     content_ids: List[str] = None
     password: str = None

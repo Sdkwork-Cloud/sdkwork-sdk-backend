@@ -1,7 +1,7 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 import type { QueryParams } from '../types/common';
-import type { PlusApiResultBoolean, PlusApiResultFileItemVO, PlusApiResultFileListVO, PlusApiResultGetUrlResult, PlusApiResultListPlusFileVO, PlusApiResultPagePlusFileVO, PlusApiResultPlusFileVO, PlusApiResultPlusTempSessionVO, PlusApiResultSetPlusTreeNodePlusFileVO, PlusFileForm, PlusGetPresignedUrlForm, PlusGetTempSessionForm, PlusUploadForm, QueryListForm } from '../types';
+import type { PlusApiResultBoolean, PlusApiResultListPlusFileContentVO, PlusApiResultListPlusFilePartVO, PlusApiResultListPlusFileVO, PlusApiResultPagePlusFileContentVO, PlusApiResultPagePlusFilePartVO, PlusApiResultPagePlusFileVO, PlusApiResultPlusFileContentVO, PlusApiResultPlusFilePartVO, PlusApiResultPlusFileVO, PlusApiResultSetPlusTreeNodePlusFileVO, PlusFileContentForm, PlusFileForm, PlusFilePartForm, QueryListForm } from '../types';
 
 
 export class FileApi {
@@ -21,38 +21,43 @@ export class FileApi {
     return this.client.post<PlusApiResultPlusFileVO>(backendApiPath(`/file`), body);
   }
 
-/** List files */
-  async listFiles(params?: QueryParams): Promise<PlusApiResultFileListVO> {
-    return this.client.get<PlusApiResultFileListVO>(backendApiPath(`/oss/files`), params);
+/** Update an existing file part */
+  async updatePart(body: PlusFilePartForm): Promise<PlusApiResultPlusFilePartVO> {
+    return this.client.put<PlusApiResultPlusFilePartVO>(backendApiPath(`/file/part`), body);
   }
 
-/** Upload file */
-  async upload(body?: FormData, params?: QueryParams): Promise<PlusApiResultFileItemVO> {
-    return this.client.post<PlusApiResultFileItemVO>(backendApiPath(`/oss/files`), body, params);
+/** Create a new file part */
+  async createPart(body: PlusFilePartForm): Promise<PlusApiResultPlusFilePartVO> {
+    return this.client.post<PlusApiResultPlusFilePartVO>(backendApiPath(`/file/part`), body);
   }
 
-/** Get upload temporary session */
-  async getTempSession(body: PlusGetTempSessionForm): Promise<PlusApiResultPlusTempSessionVO> {
-    return this.client.post<PlusApiResultPlusTempSessionVO>(backendApiPath(`/oss/files/temp_session`), body);
+/** Update file content */
+  async updateContent(body: PlusFileContentForm): Promise<PlusApiResultPlusFileContentVO> {
+    return this.client.put<PlusApiResultPlusFileContentVO>(backendApiPath(`/file/content`), body);
   }
 
-/** Generate presigned URL */
-  async getPresignedUrl(body: PlusGetPresignedUrlForm): Promise<PlusApiResultGetUrlResult> {
-    return this.client.post<PlusApiResultGetUrlResult>(backendApiPath(`/oss/files/get_presigned_url`), body);
+/** Create file content */
+  async createContent(body: PlusFileContentForm): Promise<PlusApiResultPlusFileContentVO> {
+    return this.client.post<PlusApiResultPlusFileContentVO>(backendApiPath(`/file/content`), body);
   }
 
-/** Upload file */
-  async createFiles(body: PlusUploadForm): Promise<PlusApiResultPlusFileVO> {
-    return this.client.post<PlusApiResultPlusFileVO>(backendApiPath(`/oss/files/create`), body);
+/** Get file parts by page */
+  async createListByPage(body?: QueryListForm, params?: QueryParams): Promise<PlusApiResultPagePlusFilePartVO> {
+    return this.client.post<PlusApiResultPagePlusFilePartVO>(backendApiPath(`/file/part/list`), body, params);
+  }
+
+/** Get all file parts */
+  async createListAllEntities(body?: QueryListForm): Promise<PlusApiResultListPlusFilePartVO> {
+    return this.client.post<PlusApiResultListPlusFilePartVO>(backendApiPath(`/file/part/list/all`), body);
   }
 
 /** Get file metadata by page */
-  async listByPage(body?: QueryListForm, params?: QueryParams): Promise<PlusApiResultPagePlusFileVO> {
+  async createListByPageFile(body?: QueryListForm, params?: QueryParams): Promise<PlusApiResultPagePlusFileVO> {
     return this.client.post<PlusApiResultPagePlusFileVO>(backendApiPath(`/file/list`), body, params);
   }
 
 /** Get all file metadata */
-  async listAllEntities(body?: QueryListForm): Promise<PlusApiResultListPlusFileVO> {
+  async createListAllEntitiesFile(body?: QueryListForm): Promise<PlusApiResultListPlusFileVO> {
     return this.client.post<PlusApiResultListPlusFileVO>(backendApiPath(`/file/list/all`), body);
   }
 
@@ -61,19 +66,14 @@ export class FileApi {
     return this.client.post<PlusApiResultSetPlusTreeNodePlusFileVO>(backendApiPath(`/file/get_tree`), body, params);
   }
 
-/** Get file */
-  async getFile(fileId: string | number): Promise<PlusApiResultFileItemVO> {
-    return this.client.get<PlusApiResultFileItemVO>(backendApiPath(`/oss/files/${fileId}`));
+/** Get file contents by page */
+  async createListByPageContent(body?: QueryListForm, params?: QueryParams): Promise<PlusApiResultPagePlusFileContentVO> {
+    return this.client.post<PlusApiResultPagePlusFileContentVO>(backendApiPath(`/file/content/list`), body, params);
   }
 
-/** Delete file */
-  async deleteFile(fileId: string | number): Promise<PlusApiResultFileItemVO> {
-    return this.client.delete<PlusApiResultFileItemVO>(backendApiPath(`/oss/files/${fileId}`));
-  }
-
-/** Get file content */
-  async getFileContent(fileId: string | number): Promise<string> {
-    return this.client.get<string>(backendApiPath(`/oss/files/${fileId}/content`));
+/** Get all file contents */
+  async createListAllEntitiesContent(body?: QueryListForm): Promise<PlusApiResultListPlusFileContentVO> {
+    return this.client.post<PlusApiResultListPlusFileContentVO>(backendApiPath(`/file/content/list/all`), body);
   }
 
 /** Get file metadata by ID */
@@ -84,6 +84,26 @@ export class FileApi {
 /** Delete file metadata */
   async delete(id: string | number): Promise<PlusApiResultBoolean> {
     return this.client.delete<PlusApiResultBoolean>(backendApiPath(`/file/${id}`));
+  }
+
+/** Get a file part by ID */
+  async getByIdPart(id: string | number): Promise<PlusApiResultPlusFilePartVO> {
+    return this.client.get<PlusApiResultPlusFilePartVO>(backendApiPath(`/file/part/${id}`));
+  }
+
+/** Delete a file part */
+  async deletePart(id: string | number): Promise<PlusApiResultBoolean> {
+    return this.client.delete<PlusApiResultBoolean>(backendApiPath(`/file/part/${id}`));
+  }
+
+/** Get file content by ID */
+  async getByIdContent(id: string | number): Promise<PlusApiResultPlusFileContentVO> {
+    return this.client.get<PlusApiResultPlusFileContentVO>(backendApiPath(`/file/content/${id}`));
+  }
+
+/** Delete file content */
+  async deleteContent(id: string | number): Promise<PlusApiResultBoolean> {
+    return this.client.delete<PlusApiResultBoolean>(backendApiPath(`/file/content/${id}`));
   }
 }
 

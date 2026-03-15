@@ -6,7 +6,5 @@ data class PlusAiGenerationContentForm(
     val contentType: String? = null,
     val contentId: Int? = null,
     val metadata: Map<String, Any>? = null,
-    val contentUrl: String? = null,
-    val fileSize: Int? = null,
     val contentFormat: String? = null
 )

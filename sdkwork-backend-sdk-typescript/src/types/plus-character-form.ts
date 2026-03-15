@@ -3,32 +3,32 @@ import type { VideoMediaResource } from './video-media-resource';
 
 /** Character creation form */
 export interface PlusCharacterForm {
-  /** 角色名称 */
+  /** Character name */
   name: string;
-  /** 角色类型 */
+  /** Character type */
   type: 'HUMAN' | 'PET' | 'ANIMAL' | 'ROBOT' | 'OTHER';
-  /** 角色头像图片（资源路径） */
+  /** Avatar image */
   avatar?: ImageMediaResource;
-  /** 角色三视图（资源路径） */
+  /** Three-view image */
   threeViewImage?: ImageMediaResource;
-  /** 角色GRID分镜图（资源路径） */
+  /** Grid shots image */
   gridShotsImage?: ImageMediaResource;
-  /** 角色头像视频（资源路径） */
+  /** Avatar video */
   avatarVideo?: VideoMediaResource;
-  /** 关联的AI智能体ID */
+  /** Agent ID */
   agentId: number;
-  /** 角色描述（详细功能说明） */
+  /** Description */
   description?: string;
-  /** 角色状态（启用/禁用/删除） */
-  status: 'DEFAULT' | 'ACTIVE' | 'INACTIVE' | 'SUSPENDED' | 'DELETED';
-  /** 角色个性特征（JSON格式，如{"性格":"开朗","爱好":"音乐"}） */
+  /** Status */
+  status?: 'DEFAULT' | 'ACTIVE' | 'INACTIVE' | 'SUSPENDED' | 'DELETED';
+  /** Personality */
   personality?: string;
-  /** 角色背景故事（JSON格式，如{"出生地":"未来城市","经历":"AI工程师"}） */
+  /** Background */
   background?: string;
-  /** 交互设置（JSON格式，如{"语言":"中文","回复速度":"快"}） */
+  /** Interaction settings */
   interactionSettings?: string;
-  /** 角色版本（如v1.0.0） */
+  /** Version */
   version?: string;
-  /** 用户ID */
-  userId: number;
+  /** User ID */
+  userId?: number;
 }

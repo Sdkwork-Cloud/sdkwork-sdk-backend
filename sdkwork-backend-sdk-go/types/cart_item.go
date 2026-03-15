@@ -1,6 +1,6 @@
 package types
 
-// 购物车项目信息
+// Shopping cart item information
 type CartItem struct {
 	Id int `json:"id"`
 	Sku PlusSku `json:"sku"`

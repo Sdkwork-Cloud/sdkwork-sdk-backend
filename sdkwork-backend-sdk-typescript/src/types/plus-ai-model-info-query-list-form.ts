@@ -13,6 +13,24 @@ export interface PlusAiModelInfoQueryListForm {
   status?: 'DEFAULT' | 'ACTIVE' | 'INACTIVE' | 'SUSPENDED' | 'DELETED';
   /** Filter by model family */
   family?: string;
+  /** Filter by model vendor */
+  vendor?: 'OPENAI' | 'ANTHROPIC' | 'GOOGLE' | 'META' | 'MICROSOFT' | 'ALIBABA' | 'BAIDU' | 'TENCENT' | 'HUAWEI_CLOUD' | 'IFLYTEK' | 'XAI' | 'AMAZON' | 'ZERO_ONE_AI' | 'ZHIPU_AI' | 'SENSE_TIME' | 'MOONSHOT_AI' | 'DEEPSEEK' | 'MISTRAL_AI' | 'STABILITY_AI' | 'GROQ' | 'HUGGING_FACE' | 'MINIMAX' | 'NVIDIA' | 'OLLAMA' | 'PERPLEXITY' | 'SILICONFLOW' | 'STEPFUN' | 'KUAISHOU';
   /** Filter by open source flag */
   openSource?: boolean;
+  /** Filter by pricing type */
+  pricingType?: 'FREE' | 'PAID' | 'ENTERPRISE';
+  /** Filter by lifecycle stage */
+  lifecycleStage?: 'PREVIEW' | 'GA' | 'DEPRECATED' | 'EOL';
+  /** Filter by minimum context tokens */
+  minContextTokens?: number;
+  /** Filter by reasoning capability */
+  supportReasoning?: boolean;
+  /** Filter by multimodal capability */
+  supportMultimodal?: boolean;
+  /** Filter by function-call capability */
+  supportFunctionCall?: boolean;
+  /** Filter by realtime capability */
+  supportRealtime?: boolean;
+  /** Filter by fine-tuning capability */
+  supportFineTuning?: boolean;
 }

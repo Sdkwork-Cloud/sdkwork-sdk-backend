@@ -8,10 +8,10 @@ export interface PageShortUrlVO {
   size?: number;
   content?: ShortUrlVO[];
   number?: number;
-  first?: boolean;
-  last?: boolean;
   numberOfElements?: number;
   sort?: SortObject;
   pageable?: PageableObject;
+  first?: boolean;
+  last?: boolean;
   empty?: boolean;
 }

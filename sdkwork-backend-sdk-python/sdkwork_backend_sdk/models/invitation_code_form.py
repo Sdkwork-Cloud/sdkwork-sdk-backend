@@ -6,7 +6,7 @@ class InvitationCodeForm:
     """Invitation code creation form"""
     code: str
     creator_user_id: int
-    status: str
-    expire_time: str = None
+    status: str = None
+    expire_time: str
     usage_limit: int = None
     used_count: int = None

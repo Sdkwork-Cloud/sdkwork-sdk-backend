@@ -1,13 +1,13 @@
 import type { PlusNotesPublishArticleForm } from './plus-notes-publish-article-form';
 
-/** 媒体草稿创建表单 */
+/** 濯掍綋鑽夌鍒涘缓琛ㄥ崟 */
 export interface PlusNotesMediaDraftForm {
-  /** 发布用户ID（管理员可指定） */
+  /** 鍙戝竷鐢ㄦ埛ID锛堢鐞嗗憳鍙寚瀹氾級 */
   userId?: number;
-  /** 发布平台 */
+  /** 鍙戝竷骞冲彴 */
   platform?: 'DEFAULT' | 'WECHAT_OFFICIAL_ACCOUNT' | 'DOUYIN';
-  /** 平台产品标识，默认 default */
+  /** 骞冲彴浜у搧鏍囪瘑锛岄粯璁?default */
   product?: string;
-  /** 待发布文章列表 */
+  /** A rt ic le s */
   articles: PlusNotesPublishArticleForm[];
 }

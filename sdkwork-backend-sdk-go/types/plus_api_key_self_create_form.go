@@ -1,6 +1,6 @@
 package types
 
-// 开发者自助创建API Key请求
+// Current user API key creation form
 type PlusApiKeySelfCreateForm struct {
 	Name string `json:"name"`
 	Type string `json:"type"`

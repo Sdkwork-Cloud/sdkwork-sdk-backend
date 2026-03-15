@@ -1,6 +1,6 @@
 import Foundation
 
-public class ApiKeyApi {
+public class ApikeyApi {
     private let client: HttpClient
     
     public init(client: HttpClient) {
@@ -20,43 +20,43 @@ public class ApiKeyApi {
     }
 
     /// Get API key detail for current user
-    public func getMy(id: String) async throws -> PlusApiResultPlusApiKeyVO? {
+    public func getMyApiKey(id: String) async throws -> PlusApiResultPlusApiKeyVO? {
         let response = try await client.get(ApiPaths.backendPath("/apikey/my/\(id)"))
         return response as? PlusApiResultPlusApiKeyVO
     }
 
     /// Update API key for current user
-    public func updateMy(id: String, body: PlusApiKeySelfUpdateForm) async throws -> PlusApiResultPlusApiKeyVO? {
+    public func updateMyApiKey(id: String, body: PlusApiKeySelfUpdateForm) async throws -> PlusApiResultPlusApiKeyVO? {
         let response = try await client.put(ApiPaths.backendPath("/apikey/my/\(id)"), body: body)
         return response as? PlusApiResultPlusApiKeyVO
     }
 
     /// Delete API key for current user
-    public func deleteMy(id: String) async throws -> PlusApiResultBoolean? {
+    public func deleteMyApiKey(id: String) async throws -> PlusApiResultBoolean? {
         let response = try await client.delete(ApiPaths.backendPath("/apikey/my/\(id)"))
         return response as? PlusApiResultBoolean
     }
 
     /// Create API key for current user
-    public func createMy(body: PlusApiKeySelfCreateForm) async throws -> PlusApiResultPlusApiKeyVO? {
+    public func createMyApiKey(body: PlusApiKeySelfCreateForm) async throws -> PlusApiResultPlusApiKeyVO? {
         let response = try await client.post(ApiPaths.backendPath("/apikey/my"), body: body)
         return response as? PlusApiResultPlusApiKeyVO
     }
 
     /// Rotate API key for current user
-    public func rotateMy(id: String) async throws -> PlusApiResultPlusApiKeyVO? {
+    public func rotateMyApiKey(id: String) async throws -> PlusApiResultPlusApiKeyVO? {
         let response = try await client.post(ApiPaths.backendPath("/apikey/my/\(id)/rotate"), body: nil)
         return response as? PlusApiResultPlusApiKeyVO
     }
 
     /// Enable API key for current user
-    public func enableMy(id: String) async throws -> PlusApiResultPlusApiKeyVO? {
+    public func enableMyApiKey(id: String) async throws -> PlusApiResultPlusApiKeyVO? {
         let response = try await client.post(ApiPaths.backendPath("/apikey/my/\(id)/enable"), body: nil)
         return response as? PlusApiResultPlusApiKeyVO
     }
 
     /// Disable API key for current user
-    public func disableMy(id: String) async throws -> PlusApiResultPlusApiKeyVO? {
+    public func disableMyApiKey(id: String) async throws -> PlusApiResultPlusApiKeyVO? {
         let response = try await client.post(ApiPaths.backendPath("/apikey/my/\(id)/disable"), body: nil)
         return response as? PlusApiResultPlusApiKeyVO
     }

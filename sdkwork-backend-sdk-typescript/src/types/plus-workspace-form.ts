@@ -1,43 +1,43 @@
 /** Workspace creation form */
 export interface PlusWorkspaceForm {
-  /** 工作区名称 */
+  /** Workspace name */
   name: string;
-  /** 工作区业务代码(可读的唯一标识符) */
-  code: string;
-  /** 工作区标题 */
+  /** Workspace code */
+  code?: string;
+  /** Workspace title */
   title: string;
-  /** 工作区详细描述 */
+  /** Workspace description */
   description?: string;
-  /** 工作区图标 */
+  /** Workspace icon */
   icon?: string;
-  /** 工作区主题颜色 */
+  /** Workspace color */
   color?: string;
-  /** 工作区类型(1:个人工作区, 2:团队工作区, 3:组织工作区, 4:项目工作区) */
-  type: 'PERSONAL' | 'TEAM' | 'ORGANIZATION' | 'PROJECT';
-  /** 工作区状态(1:活跃, 2:暂停, 3:已归档, 4:已删除) */
+  /** Workspace type */
+  type?: 'PERSONAL' | 'TEAM' | 'ORGANIZATION' | 'PROJECT';
+  /** Workspace status */
   status: 'ACTIVE' | 'SUSPENDED' | 'ARCHIVED' | 'DELETED';
-  /** 工作区所有者用户ID */
-  ownerId?: number;
-  /** 工作区负责人用户ID */
+  /** Owner user ID */
+  ownerId: number;
+  /** Leader user ID */
   leaderId?: number;
-  /** 工作区计划开始时间 */
+  /** Start time */
   startTime?: string;
-  /** 工作区计划结束时间 */
+  /** End time */
   endTime?: string;
-  /** 最大成员数 */
+  /** Maximum members */
   maxMembers?: number;
-  /** 当前成员数 */
+  /** Current members */
   currentMembers?: number;
-  /** 最大存储空间(字节) */
+  /** Maximum storage in bytes */
   maxStorage?: number;
-  /** 已用存储空间(字节) */
+  /** Used storage in bytes */
   usedStorage?: number;
-  /** 工作区设置(JSON格式) */
+  /** Workspace settings */
   settings?: Record<string, unknown>;
-  /** 软删除状态(true:已删除, false:活跃) */
-  isDeleted: boolean;
-  /** 公开状态(true:公开, false:私有) */
-  isPublic: boolean;
-  /** 模板状态(true:模板工作区, false:普通工作区) */
-  isTemplate: boolean;
+  /** Whether the workspace is deleted */
+  isDeleted?: boolean;
+  /** Whether the workspace is public */
+  isPublic?: boolean;
+  /** Whether the workspace is a template */
+  isTemplate?: boolean;
 }

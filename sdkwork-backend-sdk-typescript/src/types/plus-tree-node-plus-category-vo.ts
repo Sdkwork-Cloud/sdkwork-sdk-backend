@@ -7,6 +7,6 @@ export interface PlusTreeNodePlusCategoryVO {
   index?: number;
   root?: boolean;
   leaf?: boolean;
-  depth?: number;
   childrenCount?: number;
+  depth?: number;
 }

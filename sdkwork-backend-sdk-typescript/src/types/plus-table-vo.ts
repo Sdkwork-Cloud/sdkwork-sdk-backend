@@ -1,37 +1,37 @@
 import type { PlusColumnVO } from './plus-column-vo';
 
-/** 数据库表定义VO */
+/** Table view object */
 export interface PlusTableVO {
   /** 创建时间 */
   createdAt?: string;
   /** 更新时间 */
   updatedAt?: string;
-  /** 表ID */
+  /** Table ID */
   id?: number;
-  /** 表名称 */
+  /** Table name */
   name?: string;
-  /** 表描述 */
+  /** Table description */
   description?: string;
-  /** 表类型(TABLE, VIEW等) */
+  /** Table type */
   type?: string;
-  /** 列数量 */
+  /** Column count */
   columnCount?: number;
-  /** 行数量估计 */
+  /** Row count */
   rowCount?: number;
-  /** 最后同步时间 */
+  /** Last sync time */
   lastSyncTime?: string;
-  /** 主键列(逗号分隔) */
+  /** Primary keys */
   primaryKeys?: string;
-  /** 存储引擎(如InnoDB, MyISAM等) */
+  /** Storage engine */
   engine?: string;
-  /** 创建表的SQL语句 */
+  /** Create SQL */
   createSql?: string;
-  /** 表注释 */
+  /** Comment */
   comment?: string;
-  /** 所属SchemaID */
+  /** Schema ID */
   schemaId?: number;
-  /** 所属Schema名称 */
+  /** Schema name */
   schemaName?: string;
-  /** 表列集合 */
+  /** Columns */
   columns?: PlusColumnVO[];
 }

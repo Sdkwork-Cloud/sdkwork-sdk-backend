@@ -1,7 +1,7 @@
 /** Reply details */
 export interface PlusCommentsReplyForm {
-  /** 回复内容 */
+  /** 鍥炲鍐呭 */
   content: string;
-  /** 用户ID */
+  /** 鐢ㄦ埛ID */
   userId: number;
 }

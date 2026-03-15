@@ -8,9 +8,9 @@ class PagePlusDnsRecordVO:
     size: int = None
     content: List[PlusDnsRecordVO] = None
     number: int = None
-    first: bool = None
-    last: bool = None
     number_of_elements: int = None
     sort: SortObject = None
     pageable: PageableObject = None
+    first: bool = None
+    last: bool = None
     empty: bool = None

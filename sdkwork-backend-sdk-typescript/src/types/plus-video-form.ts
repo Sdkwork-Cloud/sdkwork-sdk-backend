@@ -1,31 +1,27 @@
 /** Video creation form */
 export interface PlusVideoForm {
-  id?: number;
-  /** 视频标题 */
+  /** Video title */
   title?: string;
-  /** 视频描述信息 */
+  /** Video description */
   description?: string;
-  /** 视频存储URL */
+  /** Video content URL */
   contentUrl: string;
-  /** 视频比例 */
-  aspectRatio: string;
-  /** 视频时长（秒） */
+  /** Aspect ratio */
+  aspectRatio?: string;
+  /** Duration in seconds */
   duration?: number;
-  /** 视频分辨率 */
+  /** Resolution */
   resolution?: string;
-  /** 图片宽度（像素） */
+  /** Video width in pixels */
   width?: number;
-  /** 图片高度（像素） */
+  /** Video height in pixels */
   height?: number;
-  /** 视频文件大小 */
+  /** File size in bytes */
   fileSize?: number;
-  /** 视频格式 */
+  /** Video format */
   format?: string;
-  /** 视频缩略图URL */
+  /** Thumbnail URL */
   thumbnailUrl?: string;
-  /** 视频状态 */
+  /** Video status */
   status: 'DEFAULT' | 'PROCESSING' | 'COMPLETED' | 'FAILED' | 'DELETED';
-  uuid?: string;
-  createdAt?: string;
-  updatedAt?: string;
 }

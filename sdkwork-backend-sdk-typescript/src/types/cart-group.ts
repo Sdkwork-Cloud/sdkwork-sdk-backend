@@ -1,15 +1,15 @@
 import type { CartItem } from './cart-item';
 
-/** 购物车分组信息 */
+/** Shopping cart group information */
 export interface CartGroup {
-  /** 分组UUID */
+  /** Group UUID */
   uuid?: string;
-  /** 分组名称 */
+  /** Group name */
   name?: string;
-  /** 购物车项目列表 */
+  /** Shopping cart items in the group */
   items?: CartItem[];
-  /** 分组内商品总数量 */
+  /** Total quantity in the group */
   totalQuantity?: number;
-  /** 分组内商品总价格 */
+  /** Total price in the group */
   totalPrice?: number;
 }

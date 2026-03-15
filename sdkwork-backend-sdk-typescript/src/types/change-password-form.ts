@@ -1,9 +1,9 @@
-/** 修改密码表单 */
+/** Change password form */
 export interface ChangePasswordForm {
-  /** 用户ID（可选，不传则使用当前登录用户） */
+  /** User ID. If omitted, the current logged-in user is used. */
   userId?: string;
-  /** 旧密码 */
+  /** Current password */
   oldPassword: string;
-  /** 新密码 */
+  /** New password */
   newPassword: string;
 }

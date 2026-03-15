@@ -18,6 +18,24 @@ class SkillApi {
     return response is PlusApiResultPlusAgentSkillVO ? response : null;
   }
 
+  /// Get skill package detail
+  Future<PlusApiResultPlusAgentSkillPackageVO?> getByIdPackage(String id) async {
+    final response = await _client.get(ApiPaths.backendPath('/skill/package/${id}'));
+    return response is PlusApiResultPlusAgentSkillPackageVO ? response : null;
+  }
+
+  /// Update skill package
+  Future<PlusApiResultPlusAgentSkillPackageVO?> updatePackage(String id, PlusAgentSkillPackageForm body) async {
+    final response = await _client.put(ApiPaths.backendPath('/skill/package/${id}'), body: body, contentType: 'application/json');
+    return response is PlusApiResultPlusAgentSkillPackageVO ? response : null;
+  }
+
+  /// Delete skill package
+  Future<PlusApiResultBoolean?> delete(String id) async {
+    final response = await _client.delete(ApiPaths.backendPath('/skill/package/${id}'));
+    return response is PlusApiResultBoolean ? response : null;
+  }
+
   /// Create skill
   Future<PlusApiResultPlusAgentSkillVO?> create(PlusAgentSkillForm body) async {
     final response = await _client.post(ApiPaths.backendPath('/skill'), body: body, contentType: 'application/json');
@@ -61,13 +79,13 @@ class SkillApi {
   }
 
   /// Enable skill
-  Future<PlusApiResultPlusAgentSkillVO?> enable(String id) async {
+  Future<PlusApiResultPlusAgentSkillVO?> createEnable(String id) async {
     final response = await _client.post(ApiPaths.backendPath('/skill/${id}/enable'));
     return response is PlusApiResultPlusAgentSkillVO ? response : null;
   }
 
   /// Disable skill
-  Future<PlusApiResultPlusAgentSkillVO?> disable(String id) async {
+  Future<PlusApiResultPlusAgentSkillVO?> createDisable(String id) async {
     final response = await _client.post(ApiPaths.backendPath('/skill/${id}/disable'));
     return response is PlusApiResultPlusAgentSkillVO ? response : null;
   }
@@ -90,14 +108,44 @@ class SkillApi {
     return response is PlusApiResultListPlusAgentSkillVO ? response : null;
   }
 
+  /// Create skill package
+  Future<PlusApiResultPlusAgentSkillPackageVO?> createPackage(PlusAgentSkillPackageForm body) async {
+    final response = await _client.post(ApiPaths.backendPath('/skill/package'), body: body, contentType: 'application/json');
+    return response is PlusApiResultPlusAgentSkillPackageVO ? response : null;
+  }
+
+  /// Enable skill package
+  Future<PlusApiResultPlusAgentSkillPackageVO?> createEnablePackage(String id) async {
+    final response = await _client.post(ApiPaths.backendPath('/skill/package/${id}/enable'));
+    return response is PlusApiResultPlusAgentSkillPackageVO ? response : null;
+  }
+
+  /// Disable skill package
+  Future<PlusApiResultPlusAgentSkillPackageVO?> createDisablePackage(String id) async {
+    final response = await _client.post(ApiPaths.backendPath('/skill/package/${id}/disable'));
+    return response is PlusApiResultPlusAgentSkillPackageVO ? response : null;
+  }
+
+  /// Query skill package list by page
+  Future<PlusApiResultPagePlusAgentSkillPackageVO?> createListByPage(PlusAgentSkillPackageQueryListForm? body, Map<String, dynamic>? params) async {
+    final response = await _client.post(ApiPaths.backendPath('/skill/package/list'), body: body, params: params, contentType: 'application/json');
+    return response is PlusApiResultPagePlusAgentSkillPackageVO ? response : null;
+  }
+
+  /// Query all skill packages
+  Future<PlusApiResultListPlusAgentSkillPackageVO?> createListAll(PlusAgentSkillPackageQueryListForm? body) async {
+    final response = await _client.post(ApiPaths.backendPath('/skill/package/list/all'), body: body, contentType: 'application/json');
+    return response is PlusApiResultListPlusAgentSkillPackageVO ? response : null;
+  }
+
   /// Query skill list by page
-  Future<PlusApiResultPagePlusAgentSkillVO?> listByPage(PlusAgentSkillQueryListForm? body, Map<String, dynamic>? params) async {
+  Future<PlusApiResultPagePlusAgentSkillVO?> createListByPageSkill(PlusAgentSkillQueryListForm? body, Map<String, dynamic>? params) async {
     final response = await _client.post(ApiPaths.backendPath('/skill/list'), body: body, params: params, contentType: 'application/json');
     return response is PlusApiResultPagePlusAgentSkillVO ? response : null;
   }
 
   /// Query all skills
-  Future<PlusApiResultListPlusAgentSkillVO?> listAll(PlusAgentSkillQueryListForm? body) async {
+  Future<PlusApiResultListPlusAgentSkillVO?> createListAllSkill(PlusAgentSkillQueryListForm? body) async {
     final response = await _client.post(ApiPaths.backendPath('/skill/list/all'), body: body, contentType: 'application/json');
     return response is PlusApiResultListPlusAgentSkillVO ? response : null;
   }

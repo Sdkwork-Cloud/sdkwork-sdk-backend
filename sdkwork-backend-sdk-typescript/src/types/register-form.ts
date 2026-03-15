@@ -1,23 +1,21 @@
-/** 用户注册请求表单 */
+/** 鐢ㄦ埛娉ㄥ唽璇锋眰琛ㄥ崟 */
 export interface RegisterForm {
-  /** 用户名 */
+  /** U se rn am e */
   username?: string;
-  /** 密码 */
   password: string;
-  /** 确认密码 */
+  /** 纭瀵嗙爜 */
   confirmPassword?: string;
-  /** 邮箱 */
   email?: string;
-  /** 手机号 */
+  /** P ho ne */
   phone?: string;
-  /** 验证码 */
+  /** C ap tc ha */
   captcha?: string;
-  /** 验证码ID */
+  /** 楠岃瘉鐮両D */
   captchaId?: string;
-  /** 注册类型 */
+  /** 娉ㄥ唽绫诲瀷 */
   type?: 'DEFAULT' | 'EMAIL' | 'PHONE';
-  /** 验证码 */
+  /** V er if ic at io nC od e */
   verificationCode?: string;
-  /** 邀请码 */
+  /** 閭€璇风爜 */
   invitationCode?: string;
 }

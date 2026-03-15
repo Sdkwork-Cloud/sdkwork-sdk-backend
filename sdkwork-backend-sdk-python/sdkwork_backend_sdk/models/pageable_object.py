@@ -6,6 +6,6 @@ class PageableObject:
     offset: int = None
     paged: bool = None
     sort: SortObject = None
-    page_number: int = None
     page_size: int = None
+    page_number: int = None
     unpaged: bool = None

@@ -4,396 +4,240 @@ import SDKworkCommon
 public class SdkworkBackendClient {
     private let httpClient: HttpClient
     public let workspace: WorkspaceApi
-    public let contentVote: ContentVoteApi
-    public let voiceSpeaker: VoiceSpeakerApi
+    public let vote: VoteApi
+    public let voice: VoiceApi
     public let visitHistory: VisitHistoryApi
-    public let vipUser: VipUserApi
-    public let vipRecharge: VipRechargeApi
-    public let vipRechargePackage: VipRechargePackageApi
-    public let vipPointChange: VipPointChangeApi
-    public let vipPackageGroup: VipPackageGroupApi
-    public let vipPackage: VipPackageApi
-    public let vipLevel: VipLevelApi
-    public let vipLevelBenefit: VipLevelBenefitApi
-    public let vipBenefit: VipBenefitApi
-    public let vipBenefitUsage: VipBenefitUsageApi
+    public let vip: VipApi
     public let video: VideoApi
     public let user: UserApi
-    public let userOauthAccount: UserOauthAccountApi
-    public let userCoupon: UserCouponApi
-    public let userCard: UserCardApi
-    public let userAddress: UserAddressApi
-    public let usageRecord: UsageRecordApi
-    public let shoppingCart: ShoppingCartApi
-    public let shoppingCartItem: ShoppingCartItemApi
-    public let refund: RefundApi
-    public let payment: PaymentApi
-    public let order: OrderApi
-    public let orderItem: OrderItemApi
+    public let usage: UsageApi
+    public let trade: TradeApi
     public let tool: ToolApi
     public let tenant: TenantApi
-    public let databaseTable: DatabaseTableApi
-    public let productSku: ProductSkuApi
+    public let table: TableApi
+    public let sku: SkuApi
     public let skill: SkillApi
-    public let skillPackage: SkillPackageApi
     public let shortUrl: ShortUrlApi
     public let shop: ShopApi
     public let share: ShareApi
-    public let shareVisitRecord: ShareVisitRecordApi
-    public let shardingKey: ShardingKeyApi
-    public let apiSecurityPolicy: ApiSecurityPolicyApi
+    public let sharding: ShardingApi
+    public let security: SecurityApi
     public let schema: SchemaApi
-    public let rbacRole: RbacRoleApi
-    public let rolePermission: RolePermissionApi
-    public let invocationRecord: InvocationRecordApi
-    public let rbacUserRole: RbacUserRoleApi
+    public let role: RoleApi
+    public let record: RecordApi
+    public let rbac: RbacApi
     public let prompt: PromptApi
     public let project: ProjectApi
     public let product: ProductApi
-    public let pptTemplate: PptTemplateApi
-    public let pptTemplateSlide: PptTemplateSlideApi
-    public let rbacPermission: RbacPermissionApi
+    public let ppt: PptApi
+    public let permission: PermissionApi
     public let partner: PartnerApi
-    public let chatParticipant: ChatParticipantApi
-    public let ossBucket: OssBucketApi
+    public let participant: ParticipantApi
+    public let oss: OssApi
     public let organization: OrganizationApi
-    public let position: PositionApi
-    public let memberRelations: MemberRelationsApi
     public let organizationMember: OrganizationMemberApi
     public let notification: NotificationApi
-    public let notes: NotesApi
+    public let note: NoteApi
     public let news: NewsApi
     public let net: NetApi
-    public let dnsRecord: DnsRecordApi
     public let music: MusicApi
-    public let modelInformation: ModelInformationApi
-    public let modelPrice: ModelPriceApi
-    public let chatMessage: ChatMessageApi
-    public let memberLevel: MemberLevelApi
-    public let memberCard: MemberCardApi
+    public let model: ModelApi
+    public let message: MessageApi
+    public let member: MemberApi
     public let knowledgeBase: KnowledgeBaseApi
-    public let invitationRelation: InvitationRelationApi
-    public let invitationCode: InvitationCodeApi
+    public let invitation: InvitationApi
     public let image: ImageApi
-    public let chatGroup: ChatGroupApi
+    public let im: ImApi
     public let generation: GenerationApi
-    public let generationContent: GenerationContentApi
+    public let game: GameApi
     public let file: FileApi
-    public let filePart: FilePartApi
-    public let fileContent: FileContentApi
-    public let feeds: FeedsApi
+    public let feed: FeedApi
     public let feedback: FeedbackApi
     public let favorite: FavoriteApi
-    public let fileDisk: FileDiskApi
-    public let diskMember: DiskMemberApi
+    public let disk: DiskApi
     public let detail: DetailApi
     public let department: DepartmentApi
     public let datasource: DatasourceApi
     public let coupon: CouponApi
-    public let couponTemplate: CouponTemplateApi
     public let conversation: ConversationApi
     public let contentWriting: ContentWritingApi
     public let comment: CommentApi
     public let column: ColumnApi
     public let collection: CollectionApi
     public let collectionItem: CollectionItemApi
+    public let chat: ChatApi
     public let character: CharacterApi
     public let channel: ChannelApi
-    public let channelResource: ChannelResourceApi
-    public let channelProxy: ChannelProxyApi
-    public let channelAccount: ChannelAccountApi
     public let category: CategoryApi
-    public let membershipCard: MembershipCardApi
-    public let cardTemplate: CardTemplateApi
+    public let card: CardApi
     public let attribute: AttributeApi
     public let article: ArticleApi
     public let app: AppApi
-    public let apiKey: ApiKeyApi
+    public let apikey: ApikeyApi
     public let agent: AgentApi
-    public let agentToolRelationship: AgentToolRelationshipApi
     public let account: AccountApi
-    public let accountHistory: AccountHistoryApi
-    public let accountExchangeConfig: AccountExchangeConfigApi
-    public let invoice: InvoiceApi
-    public let searchChat: SearchChatApi
-    public let pptTemplateRendering: PptTemplateRenderingApi
-    public let pptTemplateChat: PptTemplateChatApi
-    public let knowledgeBaseFile: KnowledgeBaseFileApi
-    public let knowledgeBaseChat: KnowledgeBaseChatApi
-    public let imMessage: ImMessageApi
-    public let voiceSpeakerGeneration: VoiceSpeakerGenerationApi
-    public let videoGeneration: VideoGenerationApi
-    public let musicGeneration: MusicGenerationApi
-    public let imageGeneration: ImageGenerationApi
-    public let characterGeneration: CharacterGenerationApi
-    public let audioGeneration: AudioGenerationApi
-    public let audioEffectGeneration: AudioEffectGenerationApi
-    public let chat: ChatApi
+    public let system: SystemApi
+    public let search: SearchApi
     public let auth: AuthApi
-    public let agentChat: AgentChatApi
 
     public init(baseURL: String) {
         self.httpClient = HttpClient(baseURL: baseURL)
         self.workspace = WorkspaceApi(client: httpClient)
-        self.contentVote = ContentVoteApi(client: httpClient)
-        self.voiceSpeaker = VoiceSpeakerApi(client: httpClient)
+        self.vote = VoteApi(client: httpClient)
+        self.voice = VoiceApi(client: httpClient)
         self.visitHistory = VisitHistoryApi(client: httpClient)
-        self.vipUser = VipUserApi(client: httpClient)
-        self.vipRecharge = VipRechargeApi(client: httpClient)
-        self.vipRechargePackage = VipRechargePackageApi(client: httpClient)
-        self.vipPointChange = VipPointChangeApi(client: httpClient)
-        self.vipPackageGroup = VipPackageGroupApi(client: httpClient)
-        self.vipPackage = VipPackageApi(client: httpClient)
-        self.vipLevel = VipLevelApi(client: httpClient)
-        self.vipLevelBenefit = VipLevelBenefitApi(client: httpClient)
-        self.vipBenefit = VipBenefitApi(client: httpClient)
-        self.vipBenefitUsage = VipBenefitUsageApi(client: httpClient)
+        self.vip = VipApi(client: httpClient)
         self.video = VideoApi(client: httpClient)
         self.user = UserApi(client: httpClient)
-        self.userOauthAccount = UserOauthAccountApi(client: httpClient)
-        self.userCoupon = UserCouponApi(client: httpClient)
-        self.userCard = UserCardApi(client: httpClient)
-        self.userAddress = UserAddressApi(client: httpClient)
-        self.usageRecord = UsageRecordApi(client: httpClient)
-        self.shoppingCart = ShoppingCartApi(client: httpClient)
-        self.shoppingCartItem = ShoppingCartItemApi(client: httpClient)
-        self.refund = RefundApi(client: httpClient)
-        self.payment = PaymentApi(client: httpClient)
-        self.order = OrderApi(client: httpClient)
-        self.orderItem = OrderItemApi(client: httpClient)
+        self.usage = UsageApi(client: httpClient)
+        self.trade = TradeApi(client: httpClient)
         self.tool = ToolApi(client: httpClient)
         self.tenant = TenantApi(client: httpClient)
-        self.databaseTable = DatabaseTableApi(client: httpClient)
-        self.productSku = ProductSkuApi(client: httpClient)
+        self.table = TableApi(client: httpClient)
+        self.sku = SkuApi(client: httpClient)
         self.skill = SkillApi(client: httpClient)
-        self.skillPackage = SkillPackageApi(client: httpClient)
         self.shortUrl = ShortUrlApi(client: httpClient)
         self.shop = ShopApi(client: httpClient)
         self.share = ShareApi(client: httpClient)
-        self.shareVisitRecord = ShareVisitRecordApi(client: httpClient)
-        self.shardingKey = ShardingKeyApi(client: httpClient)
-        self.apiSecurityPolicy = ApiSecurityPolicyApi(client: httpClient)
+        self.sharding = ShardingApi(client: httpClient)
+        self.security = SecurityApi(client: httpClient)
         self.schema = SchemaApi(client: httpClient)
-        self.rbacRole = RbacRoleApi(client: httpClient)
-        self.rolePermission = RolePermissionApi(client: httpClient)
-        self.invocationRecord = InvocationRecordApi(client: httpClient)
-        self.rbacUserRole = RbacUserRoleApi(client: httpClient)
+        self.role = RoleApi(client: httpClient)
+        self.record = RecordApi(client: httpClient)
+        self.rbac = RbacApi(client: httpClient)
         self.prompt = PromptApi(client: httpClient)
         self.project = ProjectApi(client: httpClient)
         self.product = ProductApi(client: httpClient)
-        self.pptTemplate = PptTemplateApi(client: httpClient)
-        self.pptTemplateSlide = PptTemplateSlideApi(client: httpClient)
-        self.rbacPermission = RbacPermissionApi(client: httpClient)
+        self.ppt = PptApi(client: httpClient)
+        self.permission = PermissionApi(client: httpClient)
         self.partner = PartnerApi(client: httpClient)
-        self.chatParticipant = ChatParticipantApi(client: httpClient)
-        self.ossBucket = OssBucketApi(client: httpClient)
+        self.participant = ParticipantApi(client: httpClient)
+        self.oss = OssApi(client: httpClient)
         self.organization = OrganizationApi(client: httpClient)
-        self.position = PositionApi(client: httpClient)
-        self.memberRelations = MemberRelationsApi(client: httpClient)
         self.organizationMember = OrganizationMemberApi(client: httpClient)
         self.notification = NotificationApi(client: httpClient)
-        self.notes = NotesApi(client: httpClient)
+        self.note = NoteApi(client: httpClient)
         self.news = NewsApi(client: httpClient)
         self.net = NetApi(client: httpClient)
-        self.dnsRecord = DnsRecordApi(client: httpClient)
         self.music = MusicApi(client: httpClient)
-        self.modelInformation = ModelInformationApi(client: httpClient)
-        self.modelPrice = ModelPriceApi(client: httpClient)
-        self.chatMessage = ChatMessageApi(client: httpClient)
-        self.memberLevel = MemberLevelApi(client: httpClient)
-        self.memberCard = MemberCardApi(client: httpClient)
+        self.model = ModelApi(client: httpClient)
+        self.message = MessageApi(client: httpClient)
+        self.member = MemberApi(client: httpClient)
         self.knowledgeBase = KnowledgeBaseApi(client: httpClient)
-        self.invitationRelation = InvitationRelationApi(client: httpClient)
-        self.invitationCode = InvitationCodeApi(client: httpClient)
+        self.invitation = InvitationApi(client: httpClient)
         self.image = ImageApi(client: httpClient)
-        self.chatGroup = ChatGroupApi(client: httpClient)
+        self.im = ImApi(client: httpClient)
         self.generation = GenerationApi(client: httpClient)
-        self.generationContent = GenerationContentApi(client: httpClient)
+        self.game = GameApi(client: httpClient)
         self.file = FileApi(client: httpClient)
-        self.filePart = FilePartApi(client: httpClient)
-        self.fileContent = FileContentApi(client: httpClient)
-        self.feeds = FeedsApi(client: httpClient)
+        self.feed = FeedApi(client: httpClient)
         self.feedback = FeedbackApi(client: httpClient)
         self.favorite = FavoriteApi(client: httpClient)
-        self.fileDisk = FileDiskApi(client: httpClient)
-        self.diskMember = DiskMemberApi(client: httpClient)
+        self.disk = DiskApi(client: httpClient)
         self.detail = DetailApi(client: httpClient)
         self.department = DepartmentApi(client: httpClient)
         self.datasource = DatasourceApi(client: httpClient)
         self.coupon = CouponApi(client: httpClient)
-        self.couponTemplate = CouponTemplateApi(client: httpClient)
         self.conversation = ConversationApi(client: httpClient)
         self.contentWriting = ContentWritingApi(client: httpClient)
         self.comment = CommentApi(client: httpClient)
         self.column = ColumnApi(client: httpClient)
         self.collection = CollectionApi(client: httpClient)
         self.collectionItem = CollectionItemApi(client: httpClient)
+        self.chat = ChatApi(client: httpClient)
         self.character = CharacterApi(client: httpClient)
         self.channel = ChannelApi(client: httpClient)
-        self.channelResource = ChannelResourceApi(client: httpClient)
-        self.channelProxy = ChannelProxyApi(client: httpClient)
-        self.channelAccount = ChannelAccountApi(client: httpClient)
         self.category = CategoryApi(client: httpClient)
-        self.membershipCard = MembershipCardApi(client: httpClient)
-        self.cardTemplate = CardTemplateApi(client: httpClient)
+        self.card = CardApi(client: httpClient)
         self.attribute = AttributeApi(client: httpClient)
         self.article = ArticleApi(client: httpClient)
         self.app = AppApi(client: httpClient)
-        self.apiKey = ApiKeyApi(client: httpClient)
+        self.apikey = ApikeyApi(client: httpClient)
         self.agent = AgentApi(client: httpClient)
-        self.agentToolRelationship = AgentToolRelationshipApi(client: httpClient)
         self.account = AccountApi(client: httpClient)
-        self.accountHistory = AccountHistoryApi(client: httpClient)
-        self.accountExchangeConfig = AccountExchangeConfigApi(client: httpClient)
-        self.invoice = InvoiceApi(client: httpClient)
-        self.searchChat = SearchChatApi(client: httpClient)
-        self.pptTemplateRendering = PptTemplateRenderingApi(client: httpClient)
-        self.pptTemplateChat = PptTemplateChatApi(client: httpClient)
-        self.knowledgeBaseFile = KnowledgeBaseFileApi(client: httpClient)
-        self.knowledgeBaseChat = KnowledgeBaseChatApi(client: httpClient)
-        self.imMessage = ImMessageApi(client: httpClient)
-        self.voiceSpeakerGeneration = VoiceSpeakerGenerationApi(client: httpClient)
-        self.videoGeneration = VideoGenerationApi(client: httpClient)
-        self.musicGeneration = MusicGenerationApi(client: httpClient)
-        self.imageGeneration = ImageGenerationApi(client: httpClient)
-        self.characterGeneration = CharacterGenerationApi(client: httpClient)
-        self.audioGeneration = AudioGenerationApi(client: httpClient)
-        self.audioEffectGeneration = AudioEffectGenerationApi(client: httpClient)
-        self.chat = ChatApi(client: httpClient)
+        self.system = SystemApi(client: httpClient)
+        self.search = SearchApi(client: httpClient)
         self.auth = AuthApi(client: httpClient)
-        self.agentChat = AgentChatApi(client: httpClient)
     }
 
     public init(config: SdkConfig) {
         self.httpClient = HttpClient(config: config)
         self.workspace = WorkspaceApi(client: httpClient)
-        self.contentVote = ContentVoteApi(client: httpClient)
-        self.voiceSpeaker = VoiceSpeakerApi(client: httpClient)
+        self.vote = VoteApi(client: httpClient)
+        self.voice = VoiceApi(client: httpClient)
         self.visitHistory = VisitHistoryApi(client: httpClient)
-        self.vipUser = VipUserApi(client: httpClient)
-        self.vipRecharge = VipRechargeApi(client: httpClient)
-        self.vipRechargePackage = VipRechargePackageApi(client: httpClient)
-        self.vipPointChange = VipPointChangeApi(client: httpClient)
-        self.vipPackageGroup = VipPackageGroupApi(client: httpClient)
-        self.vipPackage = VipPackageApi(client: httpClient)
-        self.vipLevel = VipLevelApi(client: httpClient)
-        self.vipLevelBenefit = VipLevelBenefitApi(client: httpClient)
-        self.vipBenefit = VipBenefitApi(client: httpClient)
-        self.vipBenefitUsage = VipBenefitUsageApi(client: httpClient)
+        self.vip = VipApi(client: httpClient)
         self.video = VideoApi(client: httpClient)
         self.user = UserApi(client: httpClient)
-        self.userOauthAccount = UserOauthAccountApi(client: httpClient)
-        self.userCoupon = UserCouponApi(client: httpClient)
-        self.userCard = UserCardApi(client: httpClient)
-        self.userAddress = UserAddressApi(client: httpClient)
-        self.usageRecord = UsageRecordApi(client: httpClient)
-        self.shoppingCart = ShoppingCartApi(client: httpClient)
-        self.shoppingCartItem = ShoppingCartItemApi(client: httpClient)
-        self.refund = RefundApi(client: httpClient)
-        self.payment = PaymentApi(client: httpClient)
-        self.order = OrderApi(client: httpClient)
-        self.orderItem = OrderItemApi(client: httpClient)
+        self.usage = UsageApi(client: httpClient)
+        self.trade = TradeApi(client: httpClient)
         self.tool = ToolApi(client: httpClient)
         self.tenant = TenantApi(client: httpClient)
-        self.databaseTable = DatabaseTableApi(client: httpClient)
-        self.productSku = ProductSkuApi(client: httpClient)
+        self.table = TableApi(client: httpClient)
+        self.sku = SkuApi(client: httpClient)
         self.skill = SkillApi(client: httpClient)
-        self.skillPackage = SkillPackageApi(client: httpClient)
         self.shortUrl = ShortUrlApi(client: httpClient)
         self.shop = ShopApi(client: httpClient)
         self.share = ShareApi(client: httpClient)
-        self.shareVisitRecord = ShareVisitRecordApi(client: httpClient)
-        self.shardingKey = ShardingKeyApi(client: httpClient)
-        self.apiSecurityPolicy = ApiSecurityPolicyApi(client: httpClient)
+        self.sharding = ShardingApi(client: httpClient)
+        self.security = SecurityApi(client: httpClient)
         self.schema = SchemaApi(client: httpClient)
-        self.rbacRole = RbacRoleApi(client: httpClient)
-        self.rolePermission = RolePermissionApi(client: httpClient)
-        self.invocationRecord = InvocationRecordApi(client: httpClient)
-        self.rbacUserRole = RbacUserRoleApi(client: httpClient)
+        self.role = RoleApi(client: httpClient)
+        self.record = RecordApi(client: httpClient)
+        self.rbac = RbacApi(client: httpClient)
         self.prompt = PromptApi(client: httpClient)
         self.project = ProjectApi(client: httpClient)
         self.product = ProductApi(client: httpClient)
-        self.pptTemplate = PptTemplateApi(client: httpClient)
-        self.pptTemplateSlide = PptTemplateSlideApi(client: httpClient)
-        self.rbacPermission = RbacPermissionApi(client: httpClient)
+        self.ppt = PptApi(client: httpClient)
+        self.permission = PermissionApi(client: httpClient)
         self.partner = PartnerApi(client: httpClient)
-        self.chatParticipant = ChatParticipantApi(client: httpClient)
-        self.ossBucket = OssBucketApi(client: httpClient)
+        self.participant = ParticipantApi(client: httpClient)
+        self.oss = OssApi(client: httpClient)
         self.organization = OrganizationApi(client: httpClient)
-        self.position = PositionApi(client: httpClient)
-        self.memberRelations = MemberRelationsApi(client: httpClient)
         self.organizationMember = OrganizationMemberApi(client: httpClient)
         self.notification = NotificationApi(client: httpClient)
-        self.notes = NotesApi(client: httpClient)
+        self.note = NoteApi(client: httpClient)
         self.news = NewsApi(client: httpClient)
         self.net = NetApi(client: httpClient)
-        self.dnsRecord = DnsRecordApi(client: httpClient)
         self.music = MusicApi(client: httpClient)
-        self.modelInformation = ModelInformationApi(client: httpClient)
-        self.modelPrice = ModelPriceApi(client: httpClient)
-        self.chatMessage = ChatMessageApi(client: httpClient)
-        self.memberLevel = MemberLevelApi(client: httpClient)
-        self.memberCard = MemberCardApi(client: httpClient)
+        self.model = ModelApi(client: httpClient)
+        self.message = MessageApi(client: httpClient)
+        self.member = MemberApi(client: httpClient)
         self.knowledgeBase = KnowledgeBaseApi(client: httpClient)
-        self.invitationRelation = InvitationRelationApi(client: httpClient)
-        self.invitationCode = InvitationCodeApi(client: httpClient)
+        self.invitation = InvitationApi(client: httpClient)
         self.image = ImageApi(client: httpClient)
-        self.chatGroup = ChatGroupApi(client: httpClient)
+        self.im = ImApi(client: httpClient)
         self.generation = GenerationApi(client: httpClient)
-        self.generationContent = GenerationContentApi(client: httpClient)
+        self.game = GameApi(client: httpClient)
         self.file = FileApi(client: httpClient)
-        self.filePart = FilePartApi(client: httpClient)
-        self.fileContent = FileContentApi(client: httpClient)
-        self.feeds = FeedsApi(client: httpClient)
+        self.feed = FeedApi(client: httpClient)
         self.feedback = FeedbackApi(client: httpClient)
         self.favorite = FavoriteApi(client: httpClient)
-        self.fileDisk = FileDiskApi(client: httpClient)
-        self.diskMember = DiskMemberApi(client: httpClient)
+        self.disk = DiskApi(client: httpClient)
         self.detail = DetailApi(client: httpClient)
         self.department = DepartmentApi(client: httpClient)
         self.datasource = DatasourceApi(client: httpClient)
         self.coupon = CouponApi(client: httpClient)
-        self.couponTemplate = CouponTemplateApi(client: httpClient)
         self.conversation = ConversationApi(client: httpClient)
         self.contentWriting = ContentWritingApi(client: httpClient)
         self.comment = CommentApi(client: httpClient)
         self.column = ColumnApi(client: httpClient)
         self.collection = CollectionApi(client: httpClient)
         self.collectionItem = CollectionItemApi(client: httpClient)
+        self.chat = ChatApi(client: httpClient)
         self.character = CharacterApi(client: httpClient)
         self.channel = ChannelApi(client: httpClient)
-        self.channelResource = ChannelResourceApi(client: httpClient)
-        self.channelProxy = ChannelProxyApi(client: httpClient)
-        self.channelAccount = ChannelAccountApi(client: httpClient)
         self.category = CategoryApi(client: httpClient)
-        self.membershipCard = MembershipCardApi(client: httpClient)
-        self.cardTemplate = CardTemplateApi(client: httpClient)
+        self.card = CardApi(client: httpClient)
         self.attribute = AttributeApi(client: httpClient)
         self.article = ArticleApi(client: httpClient)
         self.app = AppApi(client: httpClient)
-        self.apiKey = ApiKeyApi(client: httpClient)
+        self.apikey = ApikeyApi(client: httpClient)
         self.agent = AgentApi(client: httpClient)
-        self.agentToolRelationship = AgentToolRelationshipApi(client: httpClient)
         self.account = AccountApi(client: httpClient)
-        self.accountHistory = AccountHistoryApi(client: httpClient)
-        self.accountExchangeConfig = AccountExchangeConfigApi(client: httpClient)
-        self.invoice = InvoiceApi(client: httpClient)
-        self.searchChat = SearchChatApi(client: httpClient)
-        self.pptTemplateRendering = PptTemplateRenderingApi(client: httpClient)
-        self.pptTemplateChat = PptTemplateChatApi(client: httpClient)
-        self.knowledgeBaseFile = KnowledgeBaseFileApi(client: httpClient)
-        self.knowledgeBaseChat = KnowledgeBaseChatApi(client: httpClient)
-        self.imMessage = ImMessageApi(client: httpClient)
-        self.voiceSpeakerGeneration = VoiceSpeakerGenerationApi(client: httpClient)
-        self.videoGeneration = VideoGenerationApi(client: httpClient)
-        self.musicGeneration = MusicGenerationApi(client: httpClient)
-        self.imageGeneration = ImageGenerationApi(client: httpClient)
-        self.characterGeneration = CharacterGenerationApi(client: httpClient)
-        self.audioGeneration = AudioGenerationApi(client: httpClient)
-        self.audioEffectGeneration = AudioEffectGenerationApi(client: httpClient)
-        self.chat = ChatApi(client: httpClient)
+        self.system = SystemApi(client: httpClient)
+        self.search = SearchApi(client: httpClient)
         self.auth = AuthApi(client: httpClient)
-        self.agentChat = AgentChatApi(client: httpClient)
     }
 
     public func setApiKey(_ apiKey: String) -> SdkworkBackendClient {

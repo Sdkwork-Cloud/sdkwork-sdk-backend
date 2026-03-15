@@ -1,12 +1,12 @@
 package com.sdkwork.backend
 
 data class PlusFileForm(
+    val parentId: Int? = null,
     val name: String? = null,
     val path: String? = null,
     val objectKey: String? = null,
     val size: Int? = null,
     val contentType: String? = null,
-    val extension: String? = null,
     val storageClass: String? = null,
     val versionId: String? = null,
     val resource: FileMediaResource? = null,
@@ -16,8 +16,6 @@ data class PlusFileForm(
     val tags: TagsContent? = null,
     val fileType: String? = null,
     val fileCategory: String? = null,
-    val isPublic: Boolean? = null,
     val status: String? = null,
-    val parentId: Int? = null,
     val etag: String? = null
 )

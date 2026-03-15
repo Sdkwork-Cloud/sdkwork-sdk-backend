@@ -3,6 +3,6 @@ from typing import Optional, List, Dict, Any
 
 @dataclass
 class PasswordResetForm:
-    """密码重置表单"""
+    """Password reset form"""
     token: str
     new_password: str

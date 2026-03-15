@@ -5,9 +5,9 @@ public class Prompt {
     private ChatOptions options;
     private List<Message> instructions;
     private Message lastUserOrToolResponseMessage;
-    private List<SystemMessage> systemMessages;
     private List<UserMessage> userMessages;
     private UserMessage userMessage;
+    private List<SystemMessage> systemMessages;
     private SystemMessage systemMessage;
 
     public String getContents() {
@@ -42,14 +42,6 @@ public class Prompt {
         this.lastUserOrToolResponseMessage = lastUserOrToolResponseMessage;
     }
 
-    public List<SystemMessage> getSystemMessages() {
-        return this.systemMessages;
-    }
-    
-    public void setSystemMessages(List<SystemMessage> systemMessages) {
-        this.systemMessages = systemMessages;
-    }
-
     public List<UserMessage> getUserMessages() {
         return this.userMessages;
     }
@@ -64,6 +56,14 @@ public class Prompt {
     
     public void setUserMessage(UserMessage userMessage) {
         this.userMessage = userMessage;
+    }
+
+    public List<SystemMessage> getSystemMessages() {
+        return this.systemMessages;
+    }
+    
+    public void setSystemMessages(List<SystemMessage> systemMessages) {
+        this.systemMessages = systemMessages;
     }
 
     public SystemMessage getSystemMessage() {

@@ -8,7 +8,6 @@ class PlusCommentsForm:
     content_type: str
     content_id: int
     status: str = None
-    rating: int = None
     likes: int = None
     reply_count: int = None
     is_top: bool = None

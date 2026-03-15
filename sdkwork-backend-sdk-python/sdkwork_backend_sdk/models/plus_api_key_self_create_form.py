@@ -3,8 +3,8 @@ from typing import Optional, List, Dict, Any
 
 @dataclass
 class PlusApiKeySelfCreateForm:
-    """开发者自助创建API Key请求"""
+    """Current user API key creation form"""
     name: str
-    type: str = None
+    type: str
     expire_time: str = None
     description: str = None

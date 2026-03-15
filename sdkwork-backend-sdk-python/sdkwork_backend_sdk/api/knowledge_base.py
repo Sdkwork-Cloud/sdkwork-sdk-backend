@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import PlusApiResultBoolean, PlusApiResultListPlusKnowledgeBaseVO, PlusApiResultPagePlusKnowledgeBaseVO, PlusApiResultPlusKnowledgeBaseVO, PlusKnowledgeBaseForm, QueryListForm
+from ..models import ChatCompletionChunk, ChatCompletionCreateForm, PlusApiResultBoolean, PlusApiResultFileItemVO, PlusApiResultFileListVO, PlusApiResultListPlusKnowledgeBaseVO, PlusApiResultPagePlusKnowledgeBaseVO, PlusApiResultPlusKnowledgeBaseVO, PlusKnowledgeBaseForm, QueryListForm, UploadFilePostRequest
 
 class KnowledgeBaseApi:
     """knowledge_base API client."""
@@ -28,6 +28,21 @@ class KnowledgeBaseApi:
         """Get a knowledge base detail by ID"""
         return self._client.post(f"/backend/v3/api/knowledge_base/get_detail", params=params)
 
+    def list_files(self, params: Optional[Dict[str, Any]] = None) -> PlusApiResultFileListVO:
+        """List files"""
+        return self._client.get(f"/backend/v3/api/knowledge_base/files", params=params)
+
+    def upload_file(self, body: Optional[UploadFilePostRequest] = None, params: Optional[Dict[str, Any]] = None) -> PlusApiResultFileItemVO:
+        """Upload file"""
+        return self._client.post(f"/backend/v3/api/knowledge_base/files", data=body, params=params)
+
+    def stop(self, params: Optional[Dict[str, Any]] = None, headers: Optional[Dict[str, str]] = None) -> PlusApiResultBoolean:
+        return self._client.post(f"/backend/v3/api/knowledge_base/chat/stop", params=params, headers=headers)
+
+    def create_completions(self, body: ChatCompletionCreateForm, params: Optional[Dict[str, Any]] = None, headers: Optional[Dict[str, str]] = None) -> ChatCompletionChunk:
+        """Create a chat completion with Knowledge base"""
+        return self._client.post(f"/backend/v3/api/knowledge_base/chat/completions", json=body, params=params, headers=headers)
+
     def get_by_id(self, id: str) -> PlusApiResultPlusKnowledgeBaseVO:
         """Get a knowledge base by ID"""
         return self._client.get(f"/backend/v3/api/knowledge_base/{id}")
@@ -35,3 +50,15 @@ class KnowledgeBaseApi:
     def delete(self, id: str) -> PlusApiResultBoolean:
         """Delete a knowledge base"""
         return self._client.delete(f"/backend/v3/api/knowledge_base/{id}")
+
+    def get_file(self, fileId: str) -> PlusApiResultFileItemVO:
+        """Get file"""
+        return self._client.get(f"/backend/v3/api/knowledge_base/files/{fileId}")
+
+    def delete_file(self, fileId: str) -> PlusApiResultFileItemVO:
+        """Delete file"""
+        return self._client.delete(f"/backend/v3/api/knowledge_base/files/{fileId}")
+
+    def get_file_content(self, fileId: str) -> str:
+        """Get file content"""
+        return self._client.get(f"/backend/v3/api/knowledge_base/files/{fileId}/content")

@@ -1,7 +1,7 @@
-/** 密码重置表单 */
+/** Password reset form */
 export interface PasswordResetForm {
-  /** 密码重置令牌 */
+  /** Password reset token in account:code format */
   token: string;
-  /** 新密码 */
+  /** New password */
   newPassword: string;
 }

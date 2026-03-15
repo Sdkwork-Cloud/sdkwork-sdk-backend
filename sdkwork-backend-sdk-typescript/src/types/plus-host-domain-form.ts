@@ -2,26 +2,26 @@ import type { DnsServers } from './dns-servers';
 
 /** 域名创建表单 */
 export interface PlusHostDomainForm {
-  /** 域名（例如：example.com） */
+  /** Domain name */
   domainName: string;
-  /** 顶级域名（例如：com、cn、net） */
+  /** Top-level domain */
   tld?: string;
-  /** 域名注册商 */
+  /** Registrar */
   registrar?: string;
-  /** 所属用户ID */
+  /** Owner ID */
   ownerId: number;
-  /** 注册时间 */
+  /** Registered time */
   registeredAt: string;
-  /** 过期时间 */
+  /** Expiration time */
   expiredAt: string;
-  /** 域名状态 */
-  status: 'ACTIVE' | 'EXPIRED' | 'PENDING' | 'SUSPENDED';
-  /** DNS服务器列表（JSON格式） */
+  /** Domain status */
+  status: 'ACTIVE' | 'EXPIRED' | 'PENDING' | 'SUSPENDED' | 'DELETED';
+  /** DNS servers */
   dnsServers: DnsServers;
-  /** 解析状态 */
-  resolutionStatus: 'NORMAL' | 'ABNORMAL';
-  /** 是否自动续费 */
+  /** Resolution status */
+  resolutionStatus: 'NORMAL' | 'ERROR' | 'PAUSED' | 'FAILED';
+  /** Auto renew */
   autoRenew?: boolean;
-  /** 备注信息 */
+  /** Remark */
   remark?: string;
 }

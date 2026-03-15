@@ -7,10 +7,10 @@ type PagePlusVipBenefitUsageVO struct {
 	Size int `json:"size"`
 	Content []PlusVipBenefitUsageVO `json:"content"`
 	Number int `json:"number"`
-	First bool `json:"first"`
-	Last bool `json:"last"`
 	NumberOfElements int `json:"numberOfElements"`
 	Sort SortObject `json:"sort"`
 	Pageable PageableObject `json:"pageable"`
+	First bool `json:"first"`
+	Last bool `json:"last"`
 	Empty bool `json:"empty"`
 }

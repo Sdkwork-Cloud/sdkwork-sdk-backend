@@ -1,11 +1,11 @@
-/** 开发者自助更新API Key请求 */
+/** Current user API key update form */
 export interface PlusApiKeySelfUpdateForm {
-  /** API Key名称 */
+  /** API key name */
   name?: string;
-  /** 新的过期时间 */
+  /** Expiration time */
   expireTime?: string;
-  /** 是否清空过期时间，true时忽略expireTime */
+  /** Whether to clear the expiration time */
   clearExpireTime?: boolean;
-  /** 描述信息 */
+  /** Description */
   description?: string;
 }

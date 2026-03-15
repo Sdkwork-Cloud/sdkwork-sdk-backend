@@ -2,22 +2,20 @@ import type { ImageMediaResource } from './image-media-resource';
 
 /** Favorite creation form */
 export interface PlusFavoriteForm {
-  /** 内容类型 */
+  /** Content type */
   contentType: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM';
-  /** 关联的内容ID */
+  /** Content ID */
   contentId: number;
-  /** 收藏夹名称 */
-  folderName?: string;
-  /** 收藏备注 */
+  /** Remark */
   remark?: string;
-  /** 排序权重 */
+  /** Sort weight */
   sortWeight?: number;
-  /** 收藏内容标题 */
+  /** Favorite title */
   title?: string;
-  /** 封面图片 */
+  /** Favorite image */
   image?: ImageMediaResource;
-  /** 是否私密收藏 */
+  /** Whether the favorite is private */
   isPrivate?: boolean;
-  /** 收藏状态 */
+  /** Favorite status */
   status?: 'DEFAULT' | 'ACTIVE' | 'INACTIVE' | 'SUSPENDED' | 'DELETED';
 }

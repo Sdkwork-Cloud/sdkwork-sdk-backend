@@ -5,10 +5,10 @@ import com.sdkwork.backend.model.*;
 import java.util.List;
 import java.util.Map;
 
-public class ApiKeyApi {
+public class ApikeyApi {
     private final HttpClient client;
     
-    public ApiKeyApi(HttpClient client) {
+    public ApikeyApi(HttpClient client) {
         this.client = client;
     }
 
@@ -23,37 +23,37 @@ public class ApiKeyApi {
     }
 
     /** Get API key detail for current user */
-    public PlusApiResultPlusApiKeyVO getMy(String id) throws Exception {
+    public PlusApiResultPlusApiKeyVO getMyApiKey(String id) throws Exception {
         return (PlusApiResultPlusApiKeyVO) client.get(ApiPaths.backendPath("/apikey/my/" + id + ""));
     }
 
     /** Update API key for current user */
-    public PlusApiResultPlusApiKeyVO updateMy(String id, PlusApiKeySelfUpdateForm body) throws Exception {
+    public PlusApiResultPlusApiKeyVO updateMyApiKey(String id, PlusApiKeySelfUpdateForm body) throws Exception {
         return (PlusApiResultPlusApiKeyVO) client.put(ApiPaths.backendPath("/apikey/my/" + id + ""), body);
     }
 
     /** Delete API key for current user */
-    public PlusApiResultBoolean deleteMy(String id) throws Exception {
+    public PlusApiResultBoolean deleteMyApiKey(String id) throws Exception {
         return (PlusApiResultBoolean) client.delete(ApiPaths.backendPath("/apikey/my/" + id + ""));
     }
 
     /** Create API key for current user */
-    public PlusApiResultPlusApiKeyVO createMy(PlusApiKeySelfCreateForm body) throws Exception {
+    public PlusApiResultPlusApiKeyVO createMyApiKey(PlusApiKeySelfCreateForm body) throws Exception {
         return (PlusApiResultPlusApiKeyVO) client.post(ApiPaths.backendPath("/apikey/my"), body);
     }
 
     /** Rotate API key for current user */
-    public PlusApiResultPlusApiKeyVO rotateMy(String id) throws Exception {
+    public PlusApiResultPlusApiKeyVO rotateMyApiKey(String id) throws Exception {
         return (PlusApiResultPlusApiKeyVO) client.post(ApiPaths.backendPath("/apikey/my/" + id + "/rotate"), null);
     }
 
     /** Enable API key for current user */
-    public PlusApiResultPlusApiKeyVO enableMy(String id) throws Exception {
+    public PlusApiResultPlusApiKeyVO enableMyApiKey(String id) throws Exception {
         return (PlusApiResultPlusApiKeyVO) client.post(ApiPaths.backendPath("/apikey/my/" + id + "/enable"), null);
     }
 
     /** Disable API key for current user */
-    public PlusApiResultPlusApiKeyVO disableMy(String id) throws Exception {
+    public PlusApiResultPlusApiKeyVO disableMyApiKey(String id) throws Exception {
         return (PlusApiResultPlusApiKeyVO) client.post(ApiPaths.backendPath("/apikey/my/" + id + "/disable"), null);
     }
 

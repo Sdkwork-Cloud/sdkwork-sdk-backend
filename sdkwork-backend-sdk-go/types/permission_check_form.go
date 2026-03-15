@@ -1,6 +1,6 @@
 package types
 
-// 权限检查请求表单
+// P er mi ss io nC he ck Fo rm
 type PermissionCheckForm struct {
 	Permission string `json:"permission"`
 }

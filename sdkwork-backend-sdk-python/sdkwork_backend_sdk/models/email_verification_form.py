@@ -3,7 +3,7 @@ from typing import Optional, List, Dict, Any
 
 @dataclass
 class EmailVerificationForm:
-    """邮箱验证请求表单"""
+    """閭楠岃瘉璇锋眰琛ㄥ崟"""
     email: str
     code: str
     type: str

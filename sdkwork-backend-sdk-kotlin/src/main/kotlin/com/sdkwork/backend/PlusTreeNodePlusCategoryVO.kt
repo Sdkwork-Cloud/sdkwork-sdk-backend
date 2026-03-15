@@ -7,6 +7,6 @@ data class PlusTreeNodePlusCategoryVO(
     val index: Int? = null,
     val root: Boolean? = null,
     val leaf: Boolean? = null,
-    val depth: Int? = null,
-    val childrenCount: Int? = null
+    val childrenCount: Int? = null,
+    val depth: Int? = null
 )

@@ -3,7 +3,7 @@ from typing import Optional, List, Dict, Any
 
 @dataclass
 class RegisterForm:
-    """用户注册请求表单"""
+    """鐢ㄦ埛娉ㄥ唽璇锋眰琛ㄥ崟"""
     username: str = None
     password: str
     confirm_password: str = None

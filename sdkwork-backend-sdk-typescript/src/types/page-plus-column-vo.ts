@@ -8,10 +8,10 @@ export interface PagePlusColumnVO {
   size?: number;
   content?: PlusColumnVO[];
   number?: number;
-  first?: boolean;
-  last?: boolean;
   numberOfElements?: number;
   sort?: SortObject;
   pageable?: PageableObject;
+  first?: boolean;
+  last?: boolean;
   empty?: boolean;
 }

@@ -3,6 +3,7 @@ package com.sdkwork.backend.model;
 public class PlusFeedsForm {
     private String title;
     private String summary;
+    private Integer categoryId;
     private String contentType;
     private Integer contentId;
     private ImageMediaResourceList coverImages;
@@ -10,9 +11,6 @@ public class PlusFeedsForm {
     private String publishTime;
     private TagsContent tags;
     private String status;
-    private Integer viewCount;
-    private Integer likeCount;
-    private Integer commentCount;
 
     public String getTitle() {
         return this.title;
@@ -28,6 +26,14 @@ public class PlusFeedsForm {
     
     public void setSummary(String summary) {
         this.summary = summary;
+    }
+
+    public Integer getCategoryId() {
+        return this.categoryId;
+    }
+    
+    public void setCategoryId(Integer categoryId) {
+        this.categoryId = categoryId;
     }
 
     public String getContentType() {
@@ -84,29 +90,5 @@ public class PlusFeedsForm {
     
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    public Integer getViewCount() {
-        return this.viewCount;
-    }
-    
-    public void setViewCount(Integer viewCount) {
-        this.viewCount = viewCount;
-    }
-
-    public Integer getLikeCount() {
-        return this.likeCount;
-    }
-    
-    public void setLikeCount(Integer likeCount) {
-        this.likeCount = likeCount;
-    }
-
-    public Integer getCommentCount() {
-        return this.commentCount;
-    }
-    
-    public void setCommentCount(Integer commentCount) {
-        this.commentCount = commentCount;
     }
 }

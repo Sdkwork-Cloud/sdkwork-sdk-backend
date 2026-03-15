@@ -5,6 +5,6 @@ from typing import Optional, List, Dict, Any
 class PlusPaymentCancelForm:
     """Payment cancel form"""
     payment_id: int
-    out_trade_no: str
+    out_trade_no: str = None
     amount: float
     reason: str = None

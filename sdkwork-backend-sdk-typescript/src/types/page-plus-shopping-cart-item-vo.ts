@@ -8,10 +8,10 @@ export interface PagePlusShoppingCartItemVO {
   size?: number;
   content?: PlusShoppingCartItemVO[];
   number?: number;
-  first?: boolean;
-  last?: boolean;
   numberOfElements?: number;
   sort?: SortObject;
   pageable?: PageableObject;
+  first?: boolean;
+  last?: boolean;
   empty?: boolean;
 }

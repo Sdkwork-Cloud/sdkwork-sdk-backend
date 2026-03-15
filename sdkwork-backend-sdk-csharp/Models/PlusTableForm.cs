@@ -16,5 +16,6 @@ namespace Backend.Models
         public string? Engine { get; set; }
         public string? CreateSql { get; set; }
         public string? Comment { get; set; }
+        public int? SchemaId { get; set; }
     }
 }

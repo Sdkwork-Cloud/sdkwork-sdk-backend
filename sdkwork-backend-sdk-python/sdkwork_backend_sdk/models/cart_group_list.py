@@ -3,7 +3,7 @@ from typing import Optional, List, Dict, Any
 
 @dataclass
 class CartGroupList:
-    """购物车分组列表"""
+    """Shopping cart group list"""
     groups: List[CartGroup] = None
     total_quantity: int = None
     total_price: float = None

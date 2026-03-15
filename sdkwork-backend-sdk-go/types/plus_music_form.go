@@ -13,6 +13,4 @@ type PlusMusicForm struct {
 	Genre string `json:"genre"`
 	Bitrate int `json:"bitrate"`
 	Status string `json:"status"`
-	CreatedAt string `json:"createdAt"`
-	UpdatedAt string `json:"updatedAt"`
 }

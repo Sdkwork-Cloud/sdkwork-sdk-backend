@@ -30,6 +30,25 @@ class KnowledgeBaseApi(private val client: HttpClient) {
         return client.post(ApiPaths.backendPath("/knowledge_base/get_detail"), null, params) as? PlusApiResultPlusKnowledgeBaseVO
     }
 
+    /** List files */
+    suspend fun listFiles(params: Map<String, Any>? = null): PlusApiResultFileListVO? {
+        return client.get(ApiPaths.backendPath("/knowledge_base/files"), params) as? PlusApiResultFileListVO
+    }
+
+    /** Upload file */
+    suspend fun uploadFile(body: UploadFilePostRequest? = null, params: Map<String, Any>? = null): PlusApiResultFileItemVO? {
+        return client.post(ApiPaths.backendPath("/knowledge_base/files"), body, params, null, "multipart/form-data") as? PlusApiResultFileItemVO
+    }
+
+    suspend fun stop(params: Map<String, Any>? = null, headers: Map<String, String>? = null): PlusApiResultBoolean? {
+        return client.post(ApiPaths.backendPath("/knowledge_base/chat/stop"), null, params, headers) as? PlusApiResultBoolean
+    }
+
+    /** Create a chat completion with Knowledge base */
+    suspend fun createCompletions(body: ChatCompletionCreateForm, params: Map<String, Any>? = null, headers: Map<String, String>? = null): ChatCompletionChunk? {
+        return client.post(ApiPaths.backendPath("/knowledge_base/chat/completions"), body, params, headers) as? ChatCompletionChunk
+    }
+
     /** Get a knowledge base by ID */
     suspend fun getById(id: String): PlusApiResultPlusKnowledgeBaseVO? {
         return client.get(ApiPaths.backendPath("/knowledge_base/$id")) as? PlusApiResultPlusKnowledgeBaseVO
@@ -38,5 +57,20 @@ class KnowledgeBaseApi(private val client: HttpClient) {
     /** Delete a knowledge base */
     suspend fun delete(id: String): PlusApiResultBoolean? {
         return client.delete(ApiPaths.backendPath("/knowledge_base/$id")) as? PlusApiResultBoolean
+    }
+
+    /** Get file */
+    suspend fun getFile(fileId: String): PlusApiResultFileItemVO? {
+        return client.get(ApiPaths.backendPath("/knowledge_base/files/$fileId")) as? PlusApiResultFileItemVO
+    }
+
+    /** Delete file */
+    suspend fun deleteFile(fileId: String): PlusApiResultFileItemVO? {
+        return client.delete(ApiPaths.backendPath("/knowledge_base/files/$fileId")) as? PlusApiResultFileItemVO
+    }
+
+    /** Get file content */
+    suspend fun getFileContent(fileId: String): String? {
+        return client.get(ApiPaths.backendPath("/knowledge_base/files/$fileId/content")) as? String
     }
 }

@@ -1,12 +1,12 @@
 package com.sdkwork.backend.model;
 
 public class PlusFileForm {
+    private Integer parentId;
     private String name;
     private String path;
     private String objectKey;
     private Integer size;
     private String contentType;
-    private String extension;
     private String storageClass;
     private String versionId;
     private FileMediaResource resource;
@@ -16,10 +16,16 @@ public class PlusFileForm {
     private TagsContent tags;
     private String fileType;
     private String fileCategory;
-    private Boolean isPublic;
     private String status;
-    private Integer parentId;
     private String etag;
+
+    public Integer getParentId() {
+        return this.parentId;
+    }
+    
+    public void setParentId(Integer parentId) {
+        this.parentId = parentId;
+    }
 
     public String getName() {
         return this.name;
@@ -59,14 +65,6 @@ public class PlusFileForm {
     
     public void setContentType(String contentType) {
         this.contentType = contentType;
-    }
-
-    public String getExtension() {
-        return this.extension;
-    }
-    
-    public void setExtension(String extension) {
-        this.extension = extension;
     }
 
     public String getStorageClass() {
@@ -141,28 +139,12 @@ public class PlusFileForm {
         this.fileCategory = fileCategory;
     }
 
-    public Boolean getIsPublic() {
-        return this.isPublic;
-    }
-    
-    public void setIsPublic(Boolean isPublic) {
-        this.isPublic = isPublic;
-    }
-
     public String getStatus() {
         return this.status;
     }
     
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    public Integer getParentId() {
-        return this.parentId;
-    }
-    
-    public void setParentId(Integer parentId) {
-        this.parentId = parentId;
     }
 
     public String getEtag() {

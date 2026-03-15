@@ -24,12 +24,12 @@ public class AgentExecutionContext {
     private PlusFileObject diskRootFile;
     private Boolean completed;
     private Boolean running;
-    private Boolean paused;
     private Boolean expired;
-    private Boolean failed;
     private Boolean waiting;
-    private Boolean init;
+    private Boolean failed;
+    private Boolean paused;
     private Boolean end;
+    private Boolean init;
     private Map<String, AgentScope> agentSCOPES;
     private Boolean overSteps;
 
@@ -217,28 +217,12 @@ public class AgentExecutionContext {
         this.running = running;
     }
 
-    public Boolean getPaused() {
-        return this.paused;
-    }
-    
-    public void setPaused(Boolean paused) {
-        this.paused = paused;
-    }
-
     public Boolean getExpired() {
         return this.expired;
     }
     
     public void setExpired(Boolean expired) {
         this.expired = expired;
-    }
-
-    public Boolean getFailed() {
-        return this.failed;
-    }
-    
-    public void setFailed(Boolean failed) {
-        this.failed = failed;
     }
 
     public Boolean getWaiting() {
@@ -249,12 +233,20 @@ public class AgentExecutionContext {
         this.waiting = waiting;
     }
 
-    public Boolean getInit() {
-        return this.init;
+    public Boolean getFailed() {
+        return this.failed;
     }
     
-    public void setInit(Boolean init) {
-        this.init = init;
+    public void setFailed(Boolean failed) {
+        this.failed = failed;
+    }
+
+    public Boolean getPaused() {
+        return this.paused;
+    }
+    
+    public void setPaused(Boolean paused) {
+        this.paused = paused;
     }
 
     public Boolean getEnd() {
@@ -263,6 +255,14 @@ public class AgentExecutionContext {
     
     public void setEnd(Boolean end) {
         this.end = end;
+    }
+
+    public Boolean getInit() {
+        return this.init;
+    }
+    
+    public void setInit(Boolean init) {
+        this.init = init;
     }
 
     public Map<String, AgentScope> getAgentSCOPES() {

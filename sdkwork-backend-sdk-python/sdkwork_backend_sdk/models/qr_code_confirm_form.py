@@ -3,6 +3,6 @@ from typing import Optional, List, Dict, Any
 
 @dataclass
 class QrCodeConfirmForm:
-    """二维码确认登录请求"""
+    """QR code confirmation form"""
     qr_key: str
     token: str

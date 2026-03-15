@@ -5,7 +5,7 @@ from typing import Optional, List, Dict, Any
 class PlusUserForm:
     """User creation form"""
     username: str
-    password: str
+    password: str = None
     salt: str = None
     email: str = None
     phone: str = None

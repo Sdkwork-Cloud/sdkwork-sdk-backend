@@ -1,15 +1,15 @@
 /** VIP package group creation form */
 export interface PlusVipPackGroupForm {
-  /** 应用ID */
+  /** Application ID */
   appId: number;
-  /** 分组名称 */
+  /** Group name */
   name: string;
-  /** 分组描述 */
+  /** Group description */
   description?: string;
-  /** 排序权重 */
+  /** Sort weight */
   sortWeight?: number;
-  /** 分组状态 */
+  /** Group status */
   status: 'DEFAULT' | 'ENABLED' | 'DISABLED';
-  /** 备注信息 */
+  /** Remark */
   remark?: string;
 }

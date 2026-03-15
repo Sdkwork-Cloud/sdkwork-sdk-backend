@@ -3,7 +3,7 @@ from typing import Optional, List, Dict, Any
 
 @dataclass
 class CartGroup:
-    """购物车分组信息"""
+    """Shopping cart group information"""
     uuid: str = None
     name: str = None
     items: List[CartItem] = None

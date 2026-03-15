@@ -26,11 +26,11 @@ class AgentExecutionContext:
     disk_root_file: PlusFileObject = None
     completed: bool = None
     running: bool = None
-    paused: bool = None
     expired: bool = None
-    failed: bool = None
     waiting: bool = None
-    init: bool = None
+    failed: bool = None
+    paused: bool = None
     end: bool = None
+    init: bool = None
     agent_scopes: Dict[str, AgentScope] = None
     over_steps: bool = None

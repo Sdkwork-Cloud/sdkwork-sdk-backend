@@ -7,7 +7,6 @@ public class PlusApiKeyForm {
     private String status;
     private String expireTime;
     private String description;
-    private String lastUsedTime;
 
     public String getName() {
         return this.name;
@@ -55,13 +54,5 @@ public class PlusApiKeyForm {
     
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getLastUsedTime() {
-        return this.lastUsedTime;
-    }
-    
-    public void setLastUsedTime(String lastUsedTime) {
-        this.lastUsedTime = lastUsedTime;
     }
 }

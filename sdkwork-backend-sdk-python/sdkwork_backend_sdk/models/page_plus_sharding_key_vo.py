@@ -8,9 +8,9 @@ class PagePlusShardingKeyVO:
     size: int = None
     content: List[PlusShardingKeyVO] = None
     number: int = None
-    first: bool = None
-    last: bool = None
     number_of_elements: int = None
     sort: SortObject = None
     pageable: PageableObject = None
+    first: bool = None
+    last: bool = None
     empty: bool = None

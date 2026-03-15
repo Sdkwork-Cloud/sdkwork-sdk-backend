@@ -1,23 +1,23 @@
 /** VIP recharge package creation form */
 export interface PlusVipRechargePackForm {
-  /** 套餐名称 */
+  /** Package name */
   name: string;
-  /** 套餐描述 */
+  /** Package description */
   description?: string;
-  /** 套餐价格(元) */
+  /** Package price */
   price: number;
-  /** 赠送灵点数量 */
+  /** Bonus points */
   pointAmount: number;
-  /** VIP时长(天) */
+  /** VIP duration in days */
   vipDurationDays?: number;
-  /** 套餐状态(1-上架 2-下架) */
+  /** Package status */
   status: number;
-  /** 排序权重 */
+  /** Sort weight */
   sortWeight?: number;
-  /** 套餐有效期开始时间 */
+  /** Validity start time */
   validFrom?: string;
-  /** 套餐有效期结束时间 */
+  /** Validity end time */
   validTo?: string;
-  /** 备注信息 */
+  /** Remarks */
   remark?: string;
 }

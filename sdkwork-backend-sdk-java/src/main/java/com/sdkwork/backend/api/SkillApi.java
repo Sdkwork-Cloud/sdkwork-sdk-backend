@@ -22,6 +22,21 @@ public class SkillApi {
         return (PlusApiResultPlusAgentSkillVO) client.put(ApiPaths.backendPath("/skill/" + id + ""), body);
     }
 
+    /** Get skill package detail */
+    public PlusApiResultPlusAgentSkillPackageVO getByIdPackage(String id) throws Exception {
+        return (PlusApiResultPlusAgentSkillPackageVO) client.get(ApiPaths.backendPath("/skill/package/" + id + ""));
+    }
+
+    /** Update skill package */
+    public PlusApiResultPlusAgentSkillPackageVO updatePackage(String id, PlusAgentSkillPackageForm body) throws Exception {
+        return (PlusApiResultPlusAgentSkillPackageVO) client.put(ApiPaths.backendPath("/skill/package/" + id + ""), body);
+    }
+
+    /** Delete skill package */
+    public PlusApiResultBoolean delete(String id) throws Exception {
+        return (PlusApiResultBoolean) client.delete(ApiPaths.backendPath("/skill/package/" + id + ""));
+    }
+
     /** Create skill */
     public PlusApiResultPlusAgentSkillVO create(PlusAgentSkillForm body) throws Exception {
         return (PlusApiResultPlusAgentSkillVO) client.post(ApiPaths.backendPath("/skill"), body);
@@ -58,12 +73,12 @@ public class SkillApi {
     }
 
     /** Enable skill */
-    public PlusApiResultPlusAgentSkillVO enable(String id) throws Exception {
+    public PlusApiResultPlusAgentSkillVO createEnable(String id) throws Exception {
         return (PlusApiResultPlusAgentSkillVO) client.post(ApiPaths.backendPath("/skill/" + id + "/enable"), null);
     }
 
     /** Disable skill */
-    public PlusApiResultPlusAgentSkillVO disable(String id) throws Exception {
+    public PlusApiResultPlusAgentSkillVO createDisable(String id) throws Exception {
         return (PlusApiResultPlusAgentSkillVO) client.post(ApiPaths.backendPath("/skill/" + id + "/disable"), null);
     }
 
@@ -82,13 +97,38 @@ public class SkillApi {
         return (PlusApiResultListPlusAgentSkillVO) client.post(ApiPaths.backendPath("/skill/review/batch/approve"), body);
     }
 
+    /** Create skill package */
+    public PlusApiResultPlusAgentSkillPackageVO createPackage(PlusAgentSkillPackageForm body) throws Exception {
+        return (PlusApiResultPlusAgentSkillPackageVO) client.post(ApiPaths.backendPath("/skill/package"), body);
+    }
+
+    /** Enable skill package */
+    public PlusApiResultPlusAgentSkillPackageVO createEnablePackage(String id) throws Exception {
+        return (PlusApiResultPlusAgentSkillPackageVO) client.post(ApiPaths.backendPath("/skill/package/" + id + "/enable"), null);
+    }
+
+    /** Disable skill package */
+    public PlusApiResultPlusAgentSkillPackageVO createDisablePackage(String id) throws Exception {
+        return (PlusApiResultPlusAgentSkillPackageVO) client.post(ApiPaths.backendPath("/skill/package/" + id + "/disable"), null);
+    }
+
+    /** Query skill package list by page */
+    public PlusApiResultPagePlusAgentSkillPackageVO createListByPage(PlusAgentSkillPackageQueryListForm body, Map<String, Object> params) throws Exception {
+        return (PlusApiResultPagePlusAgentSkillPackageVO) client.post(ApiPaths.backendPath("/skill/package/list"), body, params);
+    }
+
+    /** Query all skill packages */
+    public PlusApiResultListPlusAgentSkillPackageVO createListAll(PlusAgentSkillPackageQueryListForm body) throws Exception {
+        return (PlusApiResultListPlusAgentSkillPackageVO) client.post(ApiPaths.backendPath("/skill/package/list/all"), body);
+    }
+
     /** Query skill list by page */
-    public PlusApiResultPagePlusAgentSkillVO listByPage(PlusAgentSkillQueryListForm body, Map<String, Object> params) throws Exception {
+    public PlusApiResultPagePlusAgentSkillVO createListByPageSkill(PlusAgentSkillQueryListForm body, Map<String, Object> params) throws Exception {
         return (PlusApiResultPagePlusAgentSkillVO) client.post(ApiPaths.backendPath("/skill/list"), body, params);
     }
 
     /** Query all skills */
-    public PlusApiResultListPlusAgentSkillVO listAll(PlusAgentSkillQueryListForm body) throws Exception {
+    public PlusApiResultListPlusAgentSkillVO createListAllSkill(PlusAgentSkillQueryListForm body) throws Exception {
         return (PlusApiResultListPlusAgentSkillVO) client.post(ApiPaths.backendPath("/skill/list/all"), body);
     }
 }

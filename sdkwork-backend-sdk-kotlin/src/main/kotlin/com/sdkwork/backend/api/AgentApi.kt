@@ -15,19 +15,59 @@ class AgentApi(private val client: HttpClient) {
         return client.post(ApiPaths.backendPath("/agent"), body) as? PlusApiResultPlusAiAgentVO
     }
 
+    /** Update an existing agent-tool relationship */
+    suspend fun updateTool(body: PlusAiAgentToolForm): PlusApiResultPlusAiAgentToolVO? {
+        return client.put(ApiPaths.backendPath("/agent/tool"), body) as? PlusApiResultPlusAiAgentToolVO
+    }
+
+    /** Create a new agent-tool relationship */
+    suspend fun createTool(body: PlusAiAgentToolForm): PlusApiResultPlusAiAgentToolVO? {
+        return client.post(ApiPaths.backendPath("/agent/tool"), body) as? PlusApiResultPlusAiAgentToolVO
+    }
+
+    /** Get agent-tool relationships by page */
+    suspend fun createListByPage(body: QueryListForm? = null, params: Map<String, Any>? = null): PlusApiResultPagePlusAiAgentToolVO? {
+        return client.post(ApiPaths.backendPath("/agent/tool/list"), body, params) as? PlusApiResultPagePlusAiAgentToolVO
+    }
+
+    /** Get all agent-tool relationships */
+    suspend fun createListAllEntities(body: QueryListForm? = null): PlusApiResultListPlusAiAgentToolVO? {
+        return client.post(ApiPaths.backendPath("/agent/tool/list/all"), body) as? PlusApiResultListPlusAiAgentToolVO
+    }
+
     /** Get public AI agents by page */
     suspend fun listPublic(body: PlusAiAgentQueryListForm? = null, params: Map<String, Any>? = null): PlusApiResultPagePlusAiAgentVO? {
         return client.post(ApiPaths.backendPath("/agent/list_public"), body, params) as? PlusApiResultPagePlusAiAgentVO
     }
 
     /** Get AI agents by page */
-    suspend fun listByPage(body: PlusAiAgentQueryListForm? = null, params: Map<String, Any>? = null): PlusApiResultPagePlusAiAgentVO? {
+    suspend fun createListByPageAgent(body: PlusAiAgentQueryListForm? = null, params: Map<String, Any>? = null): PlusApiResultPagePlusAiAgentVO? {
         return client.post(ApiPaths.backendPath("/agent/list"), body, params) as? PlusApiResultPagePlusAiAgentVO
     }
 
     /** Get all AI agents */
-    suspend fun listAllEntities(body: PlusAiAgentQueryListForm? = null): PlusApiResultListPlusAiAgentVO? {
+    suspend fun createListAllEntitiesAgent(body: PlusAiAgentQueryListForm? = null): PlusApiResultListPlusAiAgentVO? {
         return client.post(ApiPaths.backendPath("/agent/list/all"), body) as? PlusApiResultListPlusAiAgentVO
+    }
+
+    /** Create a chat completion with agent */
+    suspend fun withContext(body: ChatCompletionCreateForm, params: Map<String, Any>? = null, headers: Map<String, String>? = null): ChatCompletionChunk? {
+        return client.post(ApiPaths.backendPath("/agent/chat/with_context"), body, params, headers) as? ChatCompletionChunk
+    }
+
+    /** Stop a chat completion stream */
+    suspend fun stop(params: Map<String, Any>? = null, headers: Map<String, String>? = null): PlusApiResult? {
+        return client.post(ApiPaths.backendPath("/agent/chat/stop"), null, params, headers) as? PlusApiResult
+    }
+
+    /** Create a chat completion with agent */
+    suspend fun resumeStream(body: ChatCompletionCreateForm, params: Map<String, Any>? = null, headers: Map<String, String>? = null): ChatCompletionChunk? {
+        return client.post(ApiPaths.backendPath("/agent/chat/resume_stream"), body, params, headers) as? ChatCompletionChunk
+    }
+
+    /** Create a chat completion with agent */
+    suspend fun createCompletions(body: ChatCompletionCreateForm, params: Map<String, Any>? = null, headers: Map<String, String>? = null): ChatCompletionChunk? {
+        return client.post(ApiPaths.backendPath("/agent/chat/completions"), body, params, headers) as? ChatCompletionChunk
     }
 
     /** Get an AI agent by ID */
@@ -38,5 +78,15 @@ class AgentApi(private val client: HttpClient) {
     /** Delete an AI agent */
     suspend fun delete(id: String): PlusApiResultBoolean? {
         return client.delete(ApiPaths.backendPath("/agent/$id")) as? PlusApiResultBoolean
+    }
+
+    /** Get an agent-tool relationship by ID */
+    suspend fun getByIdTool(id: String): PlusApiResultPlusAiAgentToolVO? {
+        return client.get(ApiPaths.backendPath("/agent/tool/$id")) as? PlusApiResultPlusAiAgentToolVO
+    }
+
+    /** Delete an agent-tool relationship */
+    suspend fun deleteTool(id: String): PlusApiResultBoolean? {
+        return client.delete(ApiPaths.backendPath("/agent/tool/$id")) as? PlusApiResultBoolean
     }
 }

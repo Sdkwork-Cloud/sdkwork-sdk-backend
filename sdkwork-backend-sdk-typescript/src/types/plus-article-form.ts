@@ -3,26 +3,28 @@ import type { ImageMediaResourceList } from './image-media-resource-list';
 
 /** Article creation form */
 export interface PlusArticleForm {
-  /** 文章标题 */
+  /** Article title */
   title: string;
-  /** 文章副标题 */
+  /** Article subtitle */
   subtitle?: string;
-  /** 文章正文内容 */
+  /** Article content */
   content: string;
-  /** 文章字数统计 */
+  /** Category ID */
+  categoryId: number;
+  /** Word count */
   wordCount?: number;
-  /** 预计阅读时间 */
+  /** Reading time in minutes */
   readingTime?: number;
-  /** 文章封面图URL */
+  /** Cover images */
   coverImages?: ImageMediaResourceList;
-  /** 文章作者信息 */
+  /** Author */
   author?: AuthorInfo;
-  /** 文章来源 */
+  /** Source */
   source?: string;
-  /** 文章状态 */
+  /** Article status */
   status: 'DEFAULT' | 'DRAFT' | 'PUBLISHED' | 'ARCHIVED' | 'DELETED';
-  /** 文章关键词 */
+  /** Keywords */
   keywords?: string[];
-  /** 文章摘要 */
+  /** Summary */
   summary?: string;
 }

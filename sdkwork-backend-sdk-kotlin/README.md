@@ -7,13 +7,13 @@ Professional Kotlin SDK for SDKWork API.
 Add to your `build.gradle.kts`:
 
 ```kotlin
-implementation("com.sdkwork:backend-sdk:1.0.0")
+implementation("com.sdkwork:backend-sdk:1.0.9")
 ```
 
 Or with Gradle Groovy:
 
 ```groovy
-implementation 'com.sdkwork:backend-sdk:1.0.0'
+implementation 'com.sdkwork:backend-sdk:1.0.9'
 ```
 
 ## Quick Start
@@ -70,133 +70,81 @@ val client = SdkworkBackendClient(config)
 ## API Modules
 
 - `client.workspace` - workspace API
-- `client.contentVote` - content_vote API
-- `client.voiceSpeaker` - voice_speaker API
+- `client.vote` - vote API
+- `client.voice` - voice API
 - `client.visitHistory` - visit_history API
-- `client.vipUser` - vip_user API
-- `client.vipRecharge` - vip_recharge API
-- `client.vipRechargePackage` - vip_recharge_package API
-- `client.vipPointChange` - vip_point_change API
-- `client.vipPackageGroup` - vip_package_group API
-- `client.vipPackage` - vip_package API
-- `client.vipLevel` - vip_level API
-- `client.vipLevelBenefit` - vip_level_benefit API
-- `client.vipBenefit` - vip_benefit API
-- `client.vipBenefitUsage` - vip_benefit_usage API
+- `client.vip` - vip API
 - `client.video` - video API
 - `client.user` - user API
-- `client.userOauthAccount` - user_oauth_account API
-- `client.userCoupon` - user_coupon API
-- `client.userCard` - user_card API
-- `client.userAddress` - user_address API
-- `client.usageRecord` - usage_record API
-- `client.shoppingCart` - shopping_cart API
-- `client.shoppingCartItem` - shopping_cart_item API
-- `client.refund` - refund API
-- `client.payment` - payment API
-- `client.order` - order API
-- `client.orderItem` - order_item API
+- `client.usage` - usage API
+- `client.trade` - trade API
 - `client.tool` - tool API
 - `client.tenant` - tenant API
-- `client.databaseTable` - database_table API
-- `client.productSku` - product_sku API
+- `client.table` - table API
+- `client.sku` - sku API
 - `client.skill` - skill API
-- `client.skillPackage` - skill_package API
 - `client.shortUrl` - short_url API
 - `client.shop` - shop API
 - `client.share` - share API
-- `client.shareVisitRecord` - share_visit_record API
-- `client.shardingKey` - sharding_key API
-- `client.apiSecurityPolicy` - api_security_policy API
+- `client.sharding` - sharding API
+- `client.security` - security API
 - `client.schema` - schema API
-- `client.rbacRole` - rbac_role API
-- `client.rolePermission` - role_permission API
-- `client.invocationRecord` - invocation_record API
-- `client.rbacUserRole` - rbac_user_role API
+- `client.role` - role API
+- `client.record` - record API
+- `client.rbac` - rbac API
 - `client.prompt` - prompt API
 - `client.project` - project API
 - `client.product` - product API
-- `client.pptTemplate` - ppt_template API
-- `client.pptTemplateSlide` - ppt_template_slide API
-- `client.rbacPermission` - rbac_permission API
+- `client.ppt` - ppt API
+- `client.permission` - permission API
 - `client.partner` - partner API
-- `client.chatParticipant` - chat_participant API
-- `client.ossBucket` - oss_bucket API
+- `client.participant` - participant API
+- `client.oss` - oss API
 - `client.organization` - organization API
-- `client.position` - position API
-- `client.memberRelations` - member_relations API
 - `client.organizationMember` - organization_member API
 - `client.notification` - notification API
-- `client.notes` - notes API
+- `client.note` - note API
 - `client.news` - news API
 - `client.net` - net API
-- `client.dnsRecord` - dns_record API
 - `client.music` - music API
-- `client.modelInformation` - model_information API
-- `client.modelPrice` - model_price API
-- `client.chatMessage` - chat_message API
-- `client.memberLevel` - member_level API
-- `client.memberCard` - member_card API
+- `client.model` - model API
+- `client.message` - message API
+- `client.member` - member API
 - `client.knowledgeBase` - knowledge_base API
-- `client.invitationRelation` - invitation_relation API
-- `client.invitationCode` - invitation_code API
+- `client.invitation` - invitation API
 - `client.image` - image API
-- `client.chatGroup` - chat_group API
+- `client.im` - im API
 - `client.generation` - generation API
-- `client.generationContent` - generation_content API
+- `client.game` - game API
 - `client.file` - file API
-- `client.filePart` - file_part API
-- `client.fileContent` - file_content API
-- `client.feeds` - feeds API
+- `client.feed` - feed API
 - `client.feedback` - feedback API
 - `client.favorite` - favorite API
-- `client.fileDisk` - file_disk API
-- `client.diskMember` - disk_member API
+- `client.disk` - disk API
 - `client.detail` - detail API
 - `client.department` - department API
 - `client.datasource` - datasource API
 - `client.coupon` - coupon API
-- `client.couponTemplate` - coupon_template API
 - `client.conversation` - conversation API
 - `client.contentWriting` - content_writing API
 - `client.comment` - comment API
 - `client.column` - column API
 - `client.collection` - collection API
 - `client.collectionItem` - collection_item API
+- `client.chat` - chat API
 - `client.character` - character API
 - `client.channel` - channel API
-- `client.channelResource` - channel_resource API
-- `client.channelProxy` - channel_proxy API
-- `client.channelAccount` - channel_account API
 - `client.category` - category API
-- `client.membershipCard` - membership_card API
-- `client.cardTemplate` - card_template API
+- `client.card` - card API
 - `client.attribute` - attribute API
 - `client.article` - article API
 - `client.app` - app API
-- `client.apiKey` - api_key API
+- `client.apikey` - apikey API
 - `client.agent` - agent API
-- `client.agentToolRelationship` - agent_tool_relationship API
 - `client.account` - account API
-- `client.accountHistory` - account_history API
-- `client.accountExchangeConfig` - account_exchange_config API
-- `client.invoice` - invoice API
-- `client.searchChat` - search_chat API
-- `client.pptTemplateRendering` - ppt_template_rendering API
-- `client.pptTemplateChat` - ppt_template_chat API
-- `client.knowledgeBaseFile` - knowledge_base_file API
-- `client.knowledgeBaseChat` - knowledge_base_chat API
-- `client.imMessage` - im_message API
-- `client.voiceSpeakerGeneration` - voice_speaker_generation API
-- `client.videoGeneration` - video_generation API
-- `client.musicGeneration` - music_generation API
-- `client.imageGeneration` - image_generation API
-- `client.characterGeneration` - character_generation API
-- `client.audioGeneration` - audio_generation API
-- `client.audioEffectGeneration` - audio_effect_generation API
-- `client.chat` - chat API
+- `client.system` - system API
+- `client.search` - search API
 - `client.auth` - auth API
-- `client.agentChat` - agent_chat API
 
 ## Usage Examples
 
@@ -208,19 +156,19 @@ val result = client.workspace.update()
 println(result)
 ```
 
-### content_vote
+### vote
 
 ```kotlin
 // Update an existing content vote
-val result = client.contentVote.update()
+val result = client.vote.update()
 println(result)
 ```
 
-### voice_speaker
+### voice
 
 ```kotlin
 // Update an existing voice speaker
-val result = client.voiceSpeaker.update()
+val result = client.voice.update()
 println(result)
 ```
 
@@ -232,83 +180,11 @@ val result = client.visitHistory.update()
 println(result)
 ```
 
-### vip_user
+### vip
 
 ```kotlin
 // Update an existing VIP user
-val result = client.vipUser.update()
-println(result)
-```
-
-### vip_recharge
-
-```kotlin
-// Update an existing VIP recharge record
-val result = client.vipRecharge.update()
-println(result)
-```
-
-### vip_recharge_package
-
-```kotlin
-// Update an existing VIP recharge package
-val result = client.vipRechargePackage.update()
-println(result)
-```
-
-### vip_point_change
-
-```kotlin
-// Update an existing VIP point change record
-val result = client.vipPointChange.update()
-println(result)
-```
-
-### vip_package_group
-
-```kotlin
-// Update an existing VIP package group
-val result = client.vipPackageGroup.update()
-println(result)
-```
-
-### vip_package
-
-```kotlin
-// Update VIP Package
-val result = client.vipPackage.update()
-println(result)
-```
-
-### vip_level
-
-```kotlin
-// Update an existing VIP level
-val result = client.vipLevel.update()
-println(result)
-```
-
-### vip_level_benefit
-
-```kotlin
-// Update an existing VIP level benefit
-val result = client.vipLevelBenefit.update()
-println(result)
-```
-
-### vip_benefit
-
-```kotlin
-// Update an existing VIP benefit
-val result = client.vipBenefit.update()
-println(result)
-```
-
-### vip_benefit_usage
-
-```kotlin
-// Update an existing VIP benefit usage record
-val result = client.vipBenefitUsage.update()
+val result = client.vip.update()
 println(result)
 ```
 
@@ -328,91 +204,19 @@ val result = client.user.update()
 println(result)
 ```
 
-### user_oauth_account
-
-```kotlin
-// Update user OAuth account
-val result = client.userOauthAccount.update()
-println(result)
-```
-
-### user_coupon
-
-```kotlin
-// Update an existing user coupon
-val result = client.userCoupon.update()
-println(result)
-```
-
-### user_card
-
-```kotlin
-// Update user-card binding
-val result = client.userCard.update()
-println(result)
-```
-
-### user_address
-
-```kotlin
-// Update an existing user address
-val result = client.userAddress.update()
-println(result)
-```
-
-### usage_record
+### usage
 
 ```kotlin
 // Update an existing usage record
-val result = client.usageRecord.update()
+val result = client.usage.update()
 println(result)
 ```
 
-### shopping_cart
+### trade
 
 ```kotlin
 // Update shopping cart
-val result = client.shoppingCart.update()
-println(result)
-```
-
-### shopping_cart_item
-
-```kotlin
-// Update an existing shopping cart item
-val result = client.shoppingCartItem.update()
-println(result)
-```
-
-### refund
-
-```kotlin
-// Update an existing refund record
-val result = client.refund.update()
-println(result)
-```
-
-### payment
-
-```kotlin
-// Update an existing payment record
-val result = client.payment.update()
-println(result)
-```
-
-### order
-
-```kotlin
-// Update an existing order
-val result = client.order.update()
-println(result)
-```
-
-### order_item
-
-```kotlin
-// Update an existing order item
-val result = client.orderItem.update()
+val result = client.trade.update()
 println(result)
 ```
 
@@ -432,19 +236,19 @@ val result = client.tenant.update()
 println(result)
 ```
 
-### database_table
+### table
 
 ```kotlin
 // Update an existing database table
-val result = client.databaseTable.update()
+val result = client.table.update()
 println(result)
 ```
 
-### product_sku
+### sku
 
 ```kotlin
 // Update an existing SKU
-val result = client.productSku.update()
+val result = client.sku.update()
 println(result)
 ```
 
@@ -453,14 +257,6 @@ println(result)
 ```kotlin
 // Get one skill detail
 val result = client.skill.getById()
-println(result)
-```
-
-### skill_package
-
-```kotlin
-// Get skill package detail
-val result = client.skillPackage.getById()
 println(result)
 ```
 
@@ -488,27 +284,19 @@ val result = client.share.update()
 println(result)
 ```
 
-### share_visit_record
-
-```kotlin
-// Update visit record
-val result = client.shareVisitRecord.update()
-println(result)
-```
-
-### sharding_key
+### sharding
 
 ```kotlin
 // Update Sharding Key
-val result = client.shardingKey.update()
+val result = client.sharding.update()
 println(result)
 ```
 
-### api_security_policy
+### security
 
 ```kotlin
 // PUT /backend/v3/api/security/policy
-val result = client.apiSecurityPolicy.update()
+val result = client.security.update()
 println(result)
 ```
 
@@ -520,35 +308,27 @@ val result = client.schema.update()
 println(result)
 ```
 
-### rbac_role
+### role
 
 ```kotlin
 // Update an existing system role
-val result = client.rbacRole.update()
+val result = client.role.update()
 println(result)
 ```
 
-### role_permission
-
-```kotlin
-// Update role-permission association
-val result = client.rolePermission.update()
-println(result)
-```
-
-### invocation_record
+### record
 
 ```kotlin
 // Update an existing invocation record
-val result = client.invocationRecord.update()
+val result = client.record.update()
 println(result)
 ```
 
-### rbac_user_role
+### rbac
 
 ```kotlin
 // Update user-role relationship
-val result = client.rbacUserRole.update()
+val result = client.rbac.update()
 println(result)
 ```
 
@@ -576,27 +356,19 @@ val result = client.product.update()
 println(result)
 ```
 
-### ppt_template
+### ppt
 
 ```kotlin
 // Update an existing PPT template
-val result = client.pptTemplate.update()
+val result = client.ppt.update()
 println(result)
 ```
 
-### ppt_template_slide
-
-```kotlin
-// Update an existing PPT template slide
-val result = client.pptTemplateSlide.update()
-println(result)
-```
-
-### rbac_permission
+### permission
 
 ```kotlin
 // PUT /backend/v3/api/permission
-val result = client.rbacPermission.update()
+val result = client.permission.update()
 println(result)
 ```
 
@@ -608,19 +380,19 @@ val result = client.partner.update()
 println(result)
 ```
 
-### chat_participant
+### participant
 
 ```kotlin
 // Update an existing chat participant
-val result = client.chatParticipant.update()
+val result = client.participant.update()
 println(result)
 ```
 
-### oss_bucket
+### oss
 
 ```kotlin
 // Update an existing OSS bucket
-val result = client.ossBucket.update()
+val result = client.oss.update()
 println(result)
 ```
 
@@ -629,22 +401,6 @@ println(result)
 ```kotlin
 // Update an existing organization
 val result = client.organization.update()
-println(result)
-```
-
-### position
-
-```kotlin
-// Update an existing position
-val result = client.position.update()
-println(result)
-```
-
-### member_relations
-
-```kotlin
-// Update member relation
-val result = client.memberRelations.update()
 println(result)
 ```
 
@@ -664,11 +420,11 @@ val result = client.notification.update()
 println(result)
 ```
 
-### notes
+### note
 
 ```kotlin
 // Update a note
-val result = client.notes.update()
+val result = client.note.update()
 println(result)
 ```
 
@@ -688,14 +444,6 @@ val result = client.net.update()
 println(result)
 ```
 
-### dns_record
-
-```kotlin
-// Update an existing DNS record
-val result = client.dnsRecord.update()
-println(result)
-```
-
 ### music
 
 ```kotlin
@@ -704,43 +452,27 @@ val result = client.music.update()
 println(result)
 ```
 
-### model_information
+### model
 
 ```kotlin
 // Update existing AI model information
-val result = client.modelInformation.update()
+val result = client.model.update()
 println(result)
 ```
 
-### model_price
-
-```kotlin
-// Update an existing AI model price
-val result = client.modelPrice.update()
-println(result)
-```
-
-### chat_message
+### message
 
 ```kotlin
 // Update an existing chat message
-val result = client.chatMessage.update()
+val result = client.message.update()
 println(result)
 ```
 
-### member_level
+### member
 
 ```kotlin
 // Update an existing member level
-val result = client.memberLevel.update()
-println(result)
-```
-
-### member_card
-
-```kotlin
-// Update an existing member card
-val result = client.memberCard.update()
+val result = client.member.update()
 println(result)
 ```
 
@@ -752,19 +484,11 @@ val result = client.knowledgeBase.update()
 println(result)
 ```
 
-### invitation_relation
+### invitation
 
 ```kotlin
 // Update an invitation relation
-val result = client.invitationRelation.update()
-println(result)
-```
-
-### invitation_code
-
-```kotlin
-// Update an existing invitation code
-val result = client.invitationCode.update()
+val result = client.invitation.update()
 println(result)
 ```
 
@@ -776,11 +500,11 @@ val result = client.image.update()
 println(result)
 ```
 
-### chat_group
+### im
 
 ```kotlin
 // Update an existing chat group
-val result = client.chatGroup.update()
+val result = client.im.update()
 println(result)
 ```
 
@@ -792,11 +516,11 @@ val result = client.generation.update()
 println(result)
 ```
 
-### generation_content
+### game
 
 ```kotlin
-// Update AI generated content
-val result = client.generationContent.update()
+// Update game definition
+val result = client.game.update()
 println(result)
 ```
 
@@ -808,27 +532,11 @@ val result = client.file.update()
 println(result)
 ```
 
-### file_part
-
-```kotlin
-// Update an existing file part
-val result = client.filePart.update()
-println(result)
-```
-
-### file_content
-
-```kotlin
-// Update file content
-val result = client.fileContent.update()
-println(result)
-```
-
-### feeds
+### feed
 
 ```kotlin
 // Update an existing feeds entry
-val result = client.feeds.update()
+val result = client.feed.update()
 println(result)
 ```
 
@@ -848,19 +556,11 @@ val result = client.favorite.update()
 println(result)
 ```
 
-### file_disk
+### disk
 
 ```kotlin
 // Update an existing file disk
-val result = client.fileDisk.update()
-println(result)
-```
-
-### disk_member
-
-```kotlin
-// Update an existing disk member
-val result = client.diskMember.update()
+val result = client.disk.update()
 println(result)
 ```
 
@@ -893,14 +593,6 @@ println(result)
 ```kotlin
 // Update an existing coupon template
 val result = client.coupon.update()
-println(result)
-```
-
-### coupon_template
-
-```kotlin
-// Update an existing coupon template
-val result = client.couponTemplate.update()
 println(result)
 ```
 
@@ -952,6 +644,14 @@ val result = client.collectionItem.update()
 println(result)
 ```
 
+### chat
+
+```kotlin
+// Update an existing chat message
+val result = client.chat.updateMessage()
+println(result)
+```
+
 ### character
 
 ```kotlin
@@ -968,30 +668,6 @@ val result = client.channel.update()
 println(result)
 ```
 
-### channel_resource
-
-```kotlin
-// Update an existing channel resource
-val result = client.channelResource.update()
-println(result)
-```
-
-### channel_proxy
-
-```kotlin
-// Update channel proxy
-val result = client.channelProxy.update()
-println(result)
-```
-
-### channel_account
-
-```kotlin
-// Update channel account
-val result = client.channelAccount.update()
-println(result)
-```
-
 ### category
 
 ```kotlin
@@ -1000,19 +676,11 @@ val result = client.category.update()
 println(result)
 ```
 
-### membership_card
+### card
 
 ```kotlin
 // Update an existing membership card
-val result = client.membershipCard.update()
-println(result)
-```
-
-### card_template
-
-```kotlin
-// Update an existing card template
-val result = client.cardTemplate.update()
+val result = client.card.update()
 println(result)
 ```
 
@@ -1040,11 +708,11 @@ val result = client.app.update()
 println(result)
 ```
 
-### api_key
+### apikey
 
 ```kotlin
 // Update an existing API key
-val result = client.apiKey.update()
+val result = client.apikey.update()
 println(result)
 ```
 
@@ -1056,14 +724,6 @@ val result = client.agent.update()
 println(result)
 ```
 
-### agent_tool_relationship
-
-```kotlin
-// Update an existing agent-tool relationship
-val result = client.agentToolRelationship.update()
-println(result)
-```
-
 ### account
 
 ```kotlin
@@ -1072,139 +732,19 @@ val result = client.account.update()
 println(result)
 ```
 
-### account_history
-
-```kotlin
-// Update an existing account history record
-val result = client.accountHistory.update()
-println(result)
-```
-
-### account_exchange_config
-
-```kotlin
-// Get points-to-cash rate
-val result = client.accountExchangeConfig.getPointsToCashRate()
-println(result)
-```
-
-### invoice
+### system
 
 ```kotlin
 // Apply invoice
-val result = client.invoice.apply()
+val result = client.system.apply()
 println(result)
 ```
 
-### search_chat
+### search
 
 ```kotlin
 // POST /backend/v3/api/search/chat/stop
-val result = client.searchChat.stop()
-println(result)
-```
-
-### ppt_template_rendering
-
-```kotlin
-// Render PPT template
-val result = client.pptTemplateRendering.render()
-println(result)
-```
-
-### ppt_template_chat
-
-```kotlin
-// POST /backend/v3/api/ppt/template/chat/stop
-val result = client.pptTemplateChat.stop()
-println(result)
-```
-
-### knowledge_base_file
-
-```kotlin
-// List files
-val result = client.knowledgeBaseFile.listFiles()
-println(result)
-```
-
-### knowledge_base_chat
-
-```kotlin
-// POST /backend/v3/api/knowledge_base/chat/stop
-val result = client.knowledgeBaseChat.stop()
-println(result)
-```
-
-### im_message
-
-```kotlin
-// Mark conversation messages as read
-val result = client.imMessage.markRead()
-println(result)
-```
-
-### voice_speaker_generation
-
-```kotlin
-// Create voice speaker generation task
-val result = client.voiceSpeakerGeneration.create()
-println(result)
-```
-
-### video_generation
-
-```kotlin
-// Create video generation task
-val result = client.videoGeneration.create()
-println(result)
-```
-
-### music_generation
-
-```kotlin
-// Create music generation task
-val result = client.musicGeneration.create()
-println(result)
-```
-
-### image_generation
-
-```kotlin
-// Create image generation task
-val result = client.imageGeneration.create()
-println(result)
-```
-
-### character_generation
-
-```kotlin
-// Create character generation task
-val result = client.characterGeneration.create()
-println(result)
-```
-
-### audio_generation
-
-```kotlin
-// Create audio generation task
-val result = client.audioGeneration.create()
-println(result)
-```
-
-### audio_effect_generation
-
-```kotlin
-// Create audio effect generation task
-val result = client.audioEffectGeneration.create()
-println(result)
-```
-
-### chat
-
-```kotlin
-// Stop a chat completion stream
-val result = client.chat.stop()
+val result = client.search.stop()
 println(result)
 ```
 
@@ -1213,14 +753,6 @@ println(result)
 ```kotlin
 // Verify phone
 val result = client.auth.verifyPhone()
-println(result)
-```
-
-### agent_chat
-
-```kotlin
-// Create a chat completion with agent
-val result = client.agentChat.withContext()
 println(result)
 ```
 

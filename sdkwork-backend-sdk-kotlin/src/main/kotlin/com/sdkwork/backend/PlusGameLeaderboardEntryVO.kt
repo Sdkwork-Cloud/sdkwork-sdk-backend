@@ -1,0 +1,32 @@
+package com.sdkwork.backend
+
+data class PlusGameLeaderboardEntryVO(
+    val createdAt: String? = null,
+    val updatedAt: String? = null,
+    val entryId: Int? = null,
+    val leaderboardId: Int? = null,
+    val userId: Int? = null,
+    val rankingType: String? = null,
+    val periodType: String? = null,
+    val scopeType: String? = null,
+    val scopeOwnerId: Int? = null,
+    val seasonKey: String? = null,
+    val nicknameSnapshot: String? = null,
+    val avatarUrl: String? = null,
+    val rankNo: Int? = null,
+    val previousRankNo: Int? = null,
+    val peakRankNo: Int? = null,
+    val status: String? = null,
+    val scoreValue: Double? = null,
+    val scoreDelta: Double? = null,
+    val tieBreakerValue: Double? = null,
+    val displayValue: String? = null,
+    val totalMatchCount: Int? = null,
+    val winCount: Int? = null,
+    val loseCount: Int? = null,
+    val drawCount: Int? = null,
+    val streakCount: Int? = null,
+    val rewardGranted: Boolean? = null,
+    val rewardIssuedAt: String? = null,
+    val badgeCode: String? = null
+)

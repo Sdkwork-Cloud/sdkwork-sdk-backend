@@ -11,7 +11,7 @@ data class Flow(
     val parentId: Int? = null,
     val startTime: String? = null,
     val endTime: String? = null,
-    val lastNode: Node? = null,
     val parentFlow: Flow? = null,
+    val lastNode: Node? = null,
     val allAgents: List<PlusAgent>? = null
 )

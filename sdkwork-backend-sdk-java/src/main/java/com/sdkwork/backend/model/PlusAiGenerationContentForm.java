@@ -6,8 +6,6 @@ public class PlusAiGenerationContentForm {
     private String contentType;
     private Integer contentId;
     private Map<String, Object> metadata;
-    private String contentUrl;
-    private Integer fileSize;
     private String contentFormat;
 
     public String getTitle() {
@@ -48,22 +46,6 @@ public class PlusAiGenerationContentForm {
     
     public void setMetadata(Map<String, Object> metadata) {
         this.metadata = metadata;
-    }
-
-    public String getContentUrl() {
-        return this.contentUrl;
-    }
-    
-    public void setContentUrl(String contentUrl) {
-        this.contentUrl = contentUrl;
-    }
-
-    public Integer getFileSize() {
-        return this.fileSize;
-    }
-    
-    public void setFileSize(Integer fileSize) {
-        this.fileSize = fileSize;
     }
 
     public String getContentFormat() {

@@ -11,8 +11,6 @@ namespace Backend.Models
         public string? ContentType { get; set; }
         public int? ContentId { get; set; }
         public Dictionary<string, object>? Metadata { get; set; }
-        public string? ContentUrl { get; set; }
-        public int? FileSize { get; set; }
         public string? ContentFormat { get; set; }
     }
 }

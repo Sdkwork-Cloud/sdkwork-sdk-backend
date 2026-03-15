@@ -1,11 +1,11 @@
 /** Role creation form */
 export interface PlusRoleForm {
-  /** 角色编码(唯一) */
+  /** Role code */
   code: string;
-  /** 角色名称 */
+  /** Role name */
   name: string;
-  /** 角色描述 */
+  /** Role description */
   description?: string;
-  /** 角色状态(ACTIVE:活跃,INACTIVE:未激活,LOCKED:锁定) */
+  /** Role status */
   status: 'ACTIVE' | 'INACTIVE';
 }

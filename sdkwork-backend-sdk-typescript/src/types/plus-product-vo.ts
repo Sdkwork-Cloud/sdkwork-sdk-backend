@@ -2,46 +2,46 @@ import type { AssetMediaResourceList } from './asset-media-resource-list';
 import type { Attributes } from './attributes';
 import type { TagsContent } from './tags-content';
 
-/** Product Value Object - Represents a product in the system with basic information, pricing, inventory, and relationships */
+/** Product view object */
 export interface PlusProductVO {
-  /** Creation timestamp */
+  /** Created time */
   createdAt?: string;
-  /** Last update timestamp */
+  /** Updated time */
   updatedAt?: string;
   /** Primary key ID */
   id?: number;
-  /** Universally unique identifier UUID */
+  /** UUID */
   uuid?: string;
-  /** User ID (foreign key关联plus_user.id) */
+  /** User ID */
   userId?: number;
-  /** Product name */
+  /** Product title */
   title?: string;
-  /** Product code/SKU */
+  /** Product code */
   code?: string;
-  /** Product subtitle/brief description */
+  /** Product subtitle */
   subtitle?: string;
-  /** List of product resources, images，videos etc. */
+  /** Product resources */
   resources?: AssetMediaResourceList;
   /** Product tags */
   tags?: TagsContent;
   /** Product price */
   price?: number;
-  /** Product original price (for showing discounts) */
+  /** Original price */
   originalPrice?: number;
-  /** Product stock quantity */
+  /** Stock */
   stock?: number;
-  /** Product sales count */
+  /** Sales count */
   salesCount?: number;
-  /** Product status (1:在售,2:下架,3:已停产) */
+  /** Product status */
   status?: 'DEFAULT' | 'ACTIVE' | 'INACTIVE' | 'DISCONTINUED';
-  /** Product on sale at time */
+  /** On sale time */
   onSaleAt?: string;
-  /** Product description (HTML format supported) */
+  /** Description */
   description?: string;
-  /** 所属分类ID */
+  /** Category ID */
   categoryId?: number;
-  /** 产品属性值 */
+  /** Base attributes */
   baseAttributes?: Attributes;
-  /** 规格属性值 */
+  /** Specification attributes */
   specAttributes?: Attributes;
 }

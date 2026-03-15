@@ -1,6 +1,6 @@
 package types
 
-// 发送验证码请求表单
+// 鍙戦€侀獙璇佺爜璇锋眰琛ㄥ崟
 type SendVerificationCodeForm struct {
 	Identifier string `json:"identifier"`
 	Method string `json:"method"`

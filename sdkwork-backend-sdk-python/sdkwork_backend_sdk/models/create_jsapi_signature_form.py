@@ -3,5 +3,5 @@ from typing import Optional, List, Dict, Any
 
 @dataclass
 class CreateJsapiSignatureForm:
-    """创建JSAPI签名表单"""
+    """鍒涘缓JSAPI绛惧悕琛ㄥ崟"""
     url: str

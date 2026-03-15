@@ -536,7 +536,6 @@ struct PlusVipBenefitUsageVO: Codable {
 }
 
 struct PlusVideoForm: Codable {
-    let id: Int?
     let title: String?
     let description: String?
     let contentUrl: String?
@@ -549,9 +548,6 @@ struct PlusVideoForm: Codable {
     let format: String?
     let thumbnailUrl: String?
     let status: String?
-    let uuid: String?
-    let createdAt: String?
-    let updatedAt: String?
 }
 
 struct AuthorInfo: Codable {
@@ -1143,6 +1139,7 @@ struct PlusPaymentForm: Codable {
     let transactionId: String?
     let outTradeNo: String?
     let channel: String?
+    let provider: String?
     let status: String?
     let amount: Double?
     let successTime: String?
@@ -1150,7 +1147,6 @@ struct PlusPaymentForm: Codable {
     let contentType: String?
     let contentId: Int?
     let productType: String?
-    let provider: String?
 }
 
 struct PlusApiResultPlusPaymentVO: Codable {
@@ -1184,6 +1180,7 @@ struct PlusPaymentVO: Codable {
 struct PlusOrderForm: Codable {
     let orderType: String?
     let userId: Int?
+    let subject: String?
     let orderSn: String?
     let transactionId: String?
     let outTradeNo: String?
@@ -1195,6 +1192,15 @@ struct PlusOrderForm: Codable {
     let expireTime: String?
     let contentType: String?
     let contentId: Int?
+    let taskCode: String?
+    let dispatchMode: String?
+    let dispatchStatus: String?
+    let workerUserId: Int?
+    let dispatcherUserId: Int?
+    let acceptedTime: String?
+    let serviceStartTime: String?
+    let dispatchExpireTime: String?
+    let taskPayload: [String: Any]?
 }
 
 struct AlipayObject: Codable {
@@ -1253,8 +1259,10 @@ struct PlusApiResultPlusOrderVO: Codable {
 struct PlusOrderVO: Codable {
     let createdAt: String?
     let updatedAt: String?
+    let id: Int?
     let orderType: String?
     let userId: Int?
+    let subject: String?
     let orderSn: String?
     let transactionId: String?
     let outTradeNo: String?
@@ -1266,6 +1274,15 @@ struct PlusOrderVO: Codable {
     let expireTime: String?
     let contentType: String?
     let contentId: Int?
+    let taskCode: String?
+    let dispatchMode: String?
+    let dispatchStatus: String?
+    let workerUserId: Int?
+    let dispatcherUserId: Int?
+    let acceptedTime: String?
+    let serviceStartTime: String?
+    let dispatchExpireTime: String?
+    let taskPayload: [String: Any]?
     let payObjects: ClientPayObjects?
 }
 
@@ -1300,6 +1317,40 @@ struct WechatPayObject: Codable {
     let paySign: String?
     let outTradeNo: String?
     let tradeType: String?
+}
+
+struct OrderWorkerDispatchMetadata: Codable {
+    let enabledTaskCodes: [String]?
+    let taskConcurrentOverrides: [String: Int]?
+}
+
+struct PlusOrderWorkerDispatchProfileForm: Codable {
+    let userId: Int?
+    let ratingLevel: String?
+    let enabled: Bool?
+    let globalMaxInProgress: Int?
+    let metadata: OrderWorkerDispatchMetadata?
+}
+
+struct PlusApiResultPlusOrderWorkerDispatchProfileVO: Codable {
+    let data: PlusOrderWorkerDispatchProfileVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusOrderWorkerDispatchProfileVO: Codable {
+    let createdAt: String?
+    let updatedAt: String?
+    let id: Int?
+    let userId: Int?
+    let ratingLevel: String?
+    let enabled: Bool?
+    let globalMaxInProgress: Int?
+    let metadata: OrderWorkerDispatchMetadata?
 }
 
 struct PlusOrderItemForm: Codable {
@@ -1338,6 +1389,44 @@ struct PlusOrderItemVO: Codable {
     let expireTime: String?
     let contentType: String?
     let contentId: Int?
+}
+
+struct OrderDispatchRuleMetadata: Codable {
+    let ratingConcurrentLimits: [String: Int]?
+    let allowedRatingLevels: [String]?
+}
+
+struct PlusOrderDispatchRuleForm: Codable {
+    let taskCode: String?
+    let taskName: String?
+    let enabled: Bool?
+    let allowGrab: Bool?
+    let allowAssign: Bool?
+    let defaultTaskConcurrentLimit: Int?
+    let metadata: OrderDispatchRuleMetadata?
+}
+
+struct PlusApiResultPlusOrderDispatchRuleVO: Codable {
+    let data: PlusOrderDispatchRuleVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusOrderDispatchRuleVO: Codable {
+    let createdAt: String?
+    let updatedAt: String?
+    let id: Int?
+    let taskCode: String?
+    let taskName: String?
+    let enabled: Bool?
+    let allowGrab: Bool?
+    let allowAssign: Bool?
+    let defaultTaskConcurrentLimit: Int?
+    let metadata: OrderDispatchRuleMetadata?
 }
 
 struct HttpApiDefinition: Codable {
@@ -1450,6 +1539,7 @@ struct PlusTableForm: Codable {
     let engine: String?
     let createSql: String?
     let comment: String?
+    let schemaId: Int?
 }
 
 struct PlusApiResultPlusTableVO: Codable {
@@ -2696,11 +2786,8 @@ struct PlusPptTemplateVO: Codable {
 
 struct PlusPptTemplateSlideForm: Codable {
     let templateId: Int?
-    let sectionTitle: String?
-    let sectionContent: String?
     let pageNumber: Int?
     let layoutType: String?
-    let backgroundImage: String?
     let sortOrder: Int?
     let isRequired: Bool?
     let createdAt: String?
@@ -3214,6 +3301,7 @@ struct PlusNewsForm: Codable {
     let summary: String?
     let publishTime: String?
     let tags: TagsContent?
+    let categoryId: Int?
     let userId: Int?
 }
 
@@ -3355,8 +3443,6 @@ struct PlusMusicForm: Codable {
     let genre: String?
     let bitrate: Int?
     let status: String?
-    let createdAt: String?
-    let updatedAt: String?
 }
 
 struct PlusApiResultPlusMusicVO: Codable {
@@ -3398,6 +3484,15 @@ struct AspectRatio: Codable {
     let height: Double?
 }
 
+struct ModelFunctionInfo: Codable {
+    let functions: [ModelFunctionItem]?
+}
+
+struct ModelFunctionItem: Codable {
+    let type: String?
+    let supported: Bool?
+}
+
 struct ModelLimitInfo: Codable {
     let unit: String?
     let items: [ModelLimitItem]?
@@ -3431,18 +3526,39 @@ struct ModelPriceItem: Codable {
 struct PlusAiModelInfoForm: Codable {
     let objectId: String?
     let model: String?
+    let modelId: String?
+    let modelKey: String?
+    let vendorModel: String?
     let name: String?
     let description: String?
     let channel: String?
+    let vendor: String?
     let modelVersion: String?
     let family: String?
+    let openSource: Bool?
     let apiEndpoint: String?
     let modelType: String?
-    let createdAt: Int?
+    let pricingType: String?
+    let lifecycleStage: String?
+    let releaseDate: String?
+    let deprecatedAt: String?
+    let contextTokens: Int?
+    let maxInputTokens: Int?
+    let maxOutputTokens: Int?
+    let supportReasoning: Bool?
+    let supportMultimodal: Bool?
+    let supportFunctionCall: Bool?
+    let supportStructuredOutput: Bool?
+    let supportRealtime: Bool?
+    let supportFineTuning: Bool?
+    let popularityScore: Int?
     let ownedBy: String?
+    let scenes: SceneContent?
     let tokenLimit: ModelLimitInfo?
+    let functionInfo: ModelFunctionInfo?
     let priceInfo: ModelPrice?
     let metadata: ModelMetadata?
+    let productSupportInfo: [String: Any]?
     let supportedVoices: String?
     let defaultTemperature: Double?
     let defaultTopP: Double?
@@ -3456,22 +3572,48 @@ struct PlusAiModelInfoForm: Codable {
     let configParams: String?
 }
 
+struct SceneContent: Codable {
+    let scenes: [String]?
+    let children: [SceneContent]?
+}
+
 struct PlusAiModelInfoVO: Codable {
     let createdAt: String?
     let updatedAt: String?
     let objectId: String?
     let model: String?
+    let modelId: String?
+    let modelKey: String?
+    let vendorModel: String?
     let name: String?
     let description: String?
     let channel: String?
+    let vendor: String?
     let modelVersion: String?
     let family: String?
     let apiEndpoint: String?
     let modelType: String?
+    let pricingType: String?
+    let lifecycleStage: String?
+    let releaseDate: String?
+    let deprecatedAt: String?
+    let contextTokens: Int?
+    let maxInputTokens: Int?
+    let maxOutputTokens: Int?
+    let supportReasoning: Bool?
+    let supportMultimodal: Bool?
+    let supportFunctionCall: Bool?
+    let supportStructuredOutput: Bool?
+    let supportRealtime: Bool?
+    let supportFineTuning: Bool?
+    let popularityScore: Int?
     let ownedBy: String?
+    let scenes: SceneContent?
     let tokenLimit: ModelLimitInfo?
+    let functionInfo: ModelFunctionInfo?
     let priceInfo: ModelPrice?
     let metadata: ModelMetadata?
+    let productSupportInfo: [String: Any]?
     let supportedVoices: String?
     let defaultTemperature: Double?
     let defaultTopP: Double?
@@ -3498,7 +3640,17 @@ struct PlusApiResultPlusAiModelInfoVO: Codable {
 struct PlusAiModelPriceForm: Codable {
     let objectId: String?
     let model: String?
+    let modelId: Int?
+    let channel: String?
+    let modelKey: String?
+    let productCode: String?
+    let featureCode: String?
+    let billingType: String?
+    let priceItemType: String?
+    let tierName: String?
+    let rulePriority: Int?
     let unit: String?
+    let unitSize: Double?
     let price: Double?
     let inputPrice: Double?
     let batchInputPrice: Double?
@@ -3507,6 +3659,13 @@ struct PlusAiModelPriceForm: Codable {
     let outputPrice: Double?
     let batchOutputPrice: Double?
     let currency: String?
+    let minUsage: Double?
+    let maxUsage: Double?
+    let effectiveFrom: String?
+    let effectiveTo: String?
+    let defaultRule: Bool?
+    let status: String?
+    let metadata: [String: Any]?
 }
 
 struct PlusAiModelPriceVO: Codable {
@@ -3514,7 +3673,17 @@ struct PlusAiModelPriceVO: Codable {
     let updatedAt: String?
     let objectId: String?
     let model: String?
+    let modelId: Int?
+    let channel: String?
+    let modelKey: String?
+    let productCode: String?
+    let featureCode: String?
+    let billingType: String?
+    let priceItemType: String?
+    let tierName: String?
+    let rulePriority: Int?
     let unit: String?
+    let unitSize: Double?
     let price: Double?
     let inputPrice: Double?
     let batchInputPrice: Double?
@@ -3523,6 +3692,13 @@ struct PlusAiModelPriceVO: Codable {
     let outputPrice: Double?
     let batchOutputPrice: Double?
     let currency: String?
+    let minUsage: Double?
+    let maxUsage: Double?
+    let effectiveFrom: String?
+    let effectiveTo: String?
+    let defaultRule: Bool?
+    let status: String?
+    let metadata: [String: Any]?
 }
 
 struct PlusApiResultPlusAiModelPriceVO: Codable {
@@ -3588,12 +3764,12 @@ struct AgentExecutionContext: Codable {
     let diskRootFile: PlusFileObject?
     let completed: Bool?
     let running: Bool?
-    let paused: Bool?
     let expired: Bool?
-    let failed: Bool?
     let waiting: Bool?
-    let init: Bool?
+    let failed: Bool?
+    let paused: Bool?
     let end: Bool?
+    let init: Bool?
     let agentSCOPES: [String: AgentScope]?
     let overSteps: Bool?
 }
@@ -3745,10 +3921,10 @@ struct ChatOptions: Codable {
     let temperature: Double?
     let topP: Double?
     let topK: Int?
-    let maxTokens: Int?
-    let stopSequences: [String]?
     let frequencyPenalty: Double?
     let presencePenalty: Double?
+    let maxTokens: Int?
+    let stopSequences: [String]?
 }
 
 struct ChatResponseHandler: Codable {
@@ -3799,8 +3975,8 @@ struct Flow: Codable {
     let parentId: Int?
     let startTime: String?
     let endTime: String?
-    let lastNode: Node?
     let parentFlow: Flow?
+    let lastNode: Node?
     let allAgents: [PlusAgent]?
 }
 
@@ -3983,19 +4159,19 @@ struct PlusAgent: Codable {
     let metadata: AgentMetadata?
     let uuid: String?
     let systemPrompt: Prompt?
+    let accountConfig: LlmAccountConfig?
     let tools: [PromptToolDescription]?
+    let executionContext: AgentExecutionContext?
     let chatContext: ChatContext?
     let chatOptions: ChatOptions?
-    let executionContext: AgentExecutionContext?
     let instructions: [String]?
     let faceURL: String?
     let prompts: [String: Prompt]?
-    let accountConfig: LlmAccountConfig?
-    let chatMemory: IPlusChatMemory?
     let toolCallbackProvider: ToolCallbackProvider?
     let promptPath: String?
     let promptContextOptimizer: PromptContextOptimizer?
     let nextActions: [String]?
+    let chatMemory: IPlusChatMemory?
 }
 
 struct PlusAiAgentConfig: Codable {
@@ -4101,12 +4277,12 @@ struct PlusProjectObject: Codable {
     let version: String?
     let tags: TagsContent?
     let description: String?
-    let title: String?
-    let createdAt: String?
-    let ownerId: Int?
-    let uuid: String?
-    let diskId: Int?
     let author: String?
+    let diskId: Int?
+    let title: String?
+    let uuid: String?
+    let ownerId: Int?
+    let createdAt: String?
     let files: [PlusFileObject]?
     let screenType: String?
 }
@@ -4126,9 +4302,9 @@ struct Prompt: Codable {
     let options: ChatOptions?
     let instructions: [Message]?
     let lastUserOrToolResponseMessage: Message?
-    let systemMessages: [SystemMessage]?
     let userMessages: [UserMessage]?
     let userMessage: UserMessage?
+    let systemMessages: [SystemMessage]?
     let systemMessage: SystemMessage?
 }
 
@@ -4416,6 +4592,10 @@ struct PlusMemberCardVO: Codable {
 
 struct PlusKnowledgeBaseForm: Codable {
     let name: String?
+    let diskId: Int?
+    let channel: String?
+    let channelId: String?
+    let projectId: Int?
     let description: String?
 }
 
@@ -4591,51 +4771,8 @@ struct PlusAiGenerationForm: Codable {
     let model: String?
     let channel: String?
     let type: String?
-    let coverImages: ImageMediaResourceList?
-    let resourceList: AssetMediaResourceList?
-    let storyboard: VideoStoryboard?
-    let author: AuthorInfo?
-    let tags: TagsContent?
-    let promptId: Int?
-    let channelTaskId: String?
-    let channelTaskStatus: String?
-    let taskCreatedTime: String?
-    let taskUpdatedTime: String?
     let cost: Double?
     let status: String?
-    let requestTime: String?
-    let responseTime: String?
-    let usageRecordId: Int?
-    let conversationId: Int?
-    let messageId: Int?
-}
-
-struct VideoShotItem: Codable {
-    let id: String?
-    let uuid: String?
-    let shotPrompt: String?
-    let dialogue: String?
-    let duration: Double?
-    let startFrame: ImageMediaResource?
-    let endFrame: ImageMediaResource?
-    let image: ImageMediaResource?
-    let resourceList: AssetMediaResourceList?
-    let emotion: String?
-    let videoDescription: String?
-    let video: VideoMediaResource?
-}
-
-struct VideoStoryboard: Codable {
-    let shots: [VideoShotItem]?
-    let finalVideo: VideoMediaResource?
-    let finalAudio: AudioMediaResource?
-    let title: String?
-    let description: String?
-    let style: String?
-    let aspectRatio: String?
-    let prompt: String?
-    let duration: Double?
-    let speaker: VoiceSpeakerInfo?
 }
 
 struct AudioEffectGenerationInput: Codable {
@@ -4867,6 +5004,34 @@ struct VideoGenerationInput: Codable {
     let referenceAssetCount: Int?
 }
 
+struct VideoShotItem: Codable {
+    let id: String?
+    let uuid: String?
+    let shotPrompt: String?
+    let dialogue: String?
+    let duration: Double?
+    let startFrame: ImageMediaResource?
+    let endFrame: ImageMediaResource?
+    let image: ImageMediaResource?
+    let resourceList: AssetMediaResourceList?
+    let emotion: String?
+    let videoDescription: String?
+    let video: VideoMediaResource?
+}
+
+struct VideoStoryboard: Codable {
+    let shots: [VideoShotItem]?
+    let finalVideo: VideoMediaResource?
+    let finalAudio: AudioMediaResource?
+    let title: String?
+    let description: String?
+    let style: String?
+    let aspectRatio: String?
+    let prompt: String?
+    let duration: Double?
+    let speaker: VoiceSpeakerInfo?
+}
+
 struct VoiceSpeakerGenerationInput: Codable {
     let title: String?
     let prompt: String?
@@ -4897,8 +5062,6 @@ struct PlusAiGenerationContentForm: Codable {
     let contentType: String?
     let contentId: Int?
     let metadata: [String: Any]?
-    let contentUrl: String?
-    let fileSize: Int?
     let contentFormat: String?
 }
 
@@ -4940,13 +5103,92 @@ struct PlusApiResultPlusAiGenerationContentVO: Codable {
     let errorName: String?
 }
 
+struct PlusGameDefinitionForm: Codable {
+    let code: String?
+    let gameType: String?
+    let category: String?
+    let name: String?
+    let alias: String?
+    let gameModeCode: String?
+    let description: String?
+    let ruleSummary: String?
+    let minPlayers: Int?
+    let maxPlayers: Int?
+    let seatCount: Int?
+    let teamCount: Int?
+    let defaultRoundCount: Int?
+    let turnBased: Bool?
+    let ranked: Bool?
+    let supportsSpectator: Bool?
+    let supportsTrusteeship: Bool?
+    let supportsRobot: Bool?
+    let supportsReplay: Bool?
+    let supportsFriendRoom: Bool?
+    let supportsTournament: Bool?
+    let supportsClub: Bool?
+    let supportsPractice: Bool?
+    let difficultyLevel: Int?
+    let tutorialUrl: String?
+    let rankingType: String?
+    let defaultRuleConfig: [String: Any]?
+    let metadata: [String: Any]?
+    let supportedLeaderboardPeriods: [String]?
+    let enabled: Bool?
+}
+
+struct PlusApiResultPlusGameDefinitionVO: Codable {
+    let data: PlusGameDefinitionVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameDefinitionVO: Codable {
+    let createdAt: String?
+    let updatedAt: String?
+    let definitionId: Int?
+    let code: String?
+    let gameType: String?
+    let category: String?
+    let name: String?
+    let alias: String?
+    let gameModeCode: String?
+    let description: String?
+    let ruleSummary: String?
+    let minPlayers: Int?
+    let maxPlayers: Int?
+    let seatCount: Int?
+    let teamCount: Int?
+    let defaultRoundCount: Int?
+    let turnBased: Bool?
+    let ranked: Bool?
+    let supportsSpectator: Bool?
+    let supportsTrusteeship: Bool?
+    let supportsRobot: Bool?
+    let supportsReplay: Bool?
+    let supportsFriendRoom: Bool?
+    let supportsTournament: Bool?
+    let supportsClub: Bool?
+    let supportsPractice: Bool?
+    let difficultyLevel: Int?
+    let tutorialUrl: String?
+    let rankingType: String?
+    let defaultRuleConfig: [String: Any]?
+    let metadata: [String: Any]?
+    let supportedLeaderboardPeriods: [String]?
+    let enabled: Bool?
+}
+
 struct PlusFileForm: Codable {
+    let parentId: Int?
     let name: String?
     let path: String?
     let objectKey: String?
     let size: Int?
     let contentType: String?
-    let extension: String?
     let storageClass: String?
     let versionId: String?
     let resource: FileMediaResource?
@@ -4956,21 +5198,56 @@ struct PlusFileForm: Codable {
     let tags: TagsContent?
     let fileType: String?
     let fileCategory: String?
-    let isPublic: Bool?
     let status: String?
-    let parentId: Int?
     let etag: String?
 }
 
+struct AssetReference: Codable {
+    let fileId: Int?
+    let fileUuid: String?
+    let filePath: String?
+    let assetType: String?
+    let mimeType: String?
+    let url: String?
+}
+
+struct ContentSegment: Codable {
+    let id: String?
+    let order: Int?
+    let type: String?
+    let text: String?
+    let startMs: Int?
+    let endMs: Int?
+    let metadata: [String: Any]?
+}
+
 struct FileContentObject: Codable {
+    let schemaVersion: String?
+    let source: String?
     let text: String?
     let contents: [String: String]?
+    let metadata: [String: Any]?
+    let generation: GenerationContext?
+    let segments: [ContentSegment]?
+    let references: [AssetReference]?
 }
 
 struct FilePermission: Codable {
     let permissions: [String]?
     let readOnly: Bool?
     let permissionSet: [String]?
+}
+
+struct GenerationContext: Codable {
+    let generationId: Int?
+    let generationType: String?
+    let generationStatus: String?
+    let channel: String?
+    let requestId: String?
+    let channelTaskId: String?
+    let routingStrategy: String?
+    let routingProduct: String?
+    let routingProvider: String?
 }
 
 struct PlusApiResultPlusFileVO: Codable {
@@ -5080,6 +5357,7 @@ struct PlusFileContentVO: Codable {
 struct PlusFeedsForm: Codable {
     let title: String?
     let summary: String?
+    let categoryId: Int?
     let contentType: String?
     let contentId: Int?
     let coverImages: ImageMediaResourceList?
@@ -5087,9 +5365,6 @@ struct PlusFeedsForm: Codable {
     let publishTime: String?
     let tags: TagsContent?
     let status: String?
-    let viewCount: Int?
-    let likeCount: Int?
-    let commentCount: Int?
 }
 
 struct PlusApiResultPlusFeedsVO: Codable {
@@ -5150,7 +5425,6 @@ struct PlusFeedbackVO: Codable {
 struct PlusFavoriteForm: Codable {
     let contentType: String?
     let contentId: Int?
-    let folderName: String?
     let remark: String?
     let sortWeight: Int?
     let title: String?
@@ -5190,6 +5464,7 @@ struct PlusFavoriteVO: Codable {
 
 struct PlusDiskForm: Codable {
     let name: String?
+    let type: String?
     let owner: String?
     let ownerId: Int?
     let diskSize: Int?
@@ -5343,7 +5618,10 @@ struct DatasourceConfig: Codable {
 }
 
 struct PlusDatasourceForm: Codable {
+    let projectId: Int?
     let name: String?
+    let channel: String?
+    let channelId: String?
     let type: Int?
     let status: Int?
     let description: String?
@@ -5592,7 +5870,6 @@ struct PlusCommentsForm: Codable {
     let contentType: String?
     let contentId: Int?
     let status: String?
-    let rating: Int?
     let likes: Int?
     let replyCount: Int?
     let isTop: Bool?
@@ -6800,6 +7077,7 @@ struct PlusArticleForm: Codable {
     let title: String?
     let subtitle: String?
     let content: String?
+    let categoryId: Int?
     let wordCount: Int?
     let readingTime: Int?
     let coverImages: ImageMediaResourceList?
@@ -6966,7 +7244,6 @@ struct PlusApiKeyForm: Codable {
     let status: String?
     let expireTime: String?
     let description: String?
-    let lastUsedTime: String?
 }
 
 struct PlusApiKeyVO: Codable {
@@ -7104,6 +7381,7 @@ struct PlusApiResultPlusAiAgentToolVO: Codable {
 }
 
 struct PlusAccountForm: Codable {
+    let accountType: String?
     let userId: Int?
     let availableBalance: Double?
     let frozenBalance: Double?
@@ -7156,10 +7434,12 @@ struct PlusApiResultPlusAccountVO: Codable {
 }
 
 struct PlusAccountHistoryForm: Codable {
+    let accountType: String?
     let assetType: String?
     let accountId: Int?
     let transactionId: String?
     let transactionType: String?
+    let status: String?
     let amount: Double?
     let balanceBefore: Double?
     let balanceAfter: Double?
@@ -7170,7 +7450,6 @@ struct PlusAccountHistoryForm: Codable {
     let sourceType: String?
     let sourceId: String?
     let expiredAt: String?
-    let status: String?
     let remarks: String?
 }
 
@@ -7225,11 +7504,11 @@ struct PagePlusWorkspaceVO: Codable {
     let size: Int?
     let content: [PlusWorkspaceVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -7237,8 +7516,8 @@ struct PageableObject: Codable {
     let offset: Int?
     let paged: Bool?
     let sort: SortObject?
-    let pageNumber: Int?
     let pageSize: Int?
+    let pageNumber: Int?
     let unpaged: Bool?
 }
 
@@ -7274,11 +7553,11 @@ struct PageContentVoteVO: Codable {
     let size: Int?
     let content: [ContentVoteVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -7318,11 +7597,11 @@ struct PagePlusVoiceSpeakerVO: Codable {
     let size: Int?
     let content: [PlusVoiceSpeakerVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -7352,11 +7631,11 @@ struct PagePlusVisitHistoryVO: Codable {
     let size: Int?
     let content: [PlusVisitHistoryVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -7386,11 +7665,11 @@ struct PagePlusVipUserVO: Codable {
     let size: Int?
     let content: [PlusVipUserVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -7420,11 +7699,11 @@ struct PagePlusVipRechargePackVO: Codable {
     let size: Int?
     let content: [PlusVipRechargePackVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -7454,11 +7733,11 @@ struct PagePlusVipRechargeVO: Codable {
     let size: Int?
     let content: [PlusVipRechargeVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -7488,11 +7767,11 @@ struct PagePlusVipPointChangeVO: Codable {
     let size: Int?
     let content: [PlusVipPointChangeVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -7530,11 +7809,11 @@ struct PagePlusVipPackGroupVO: Codable {
     let size: Int?
     let content: [PlusVipPackGroupVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -7564,11 +7843,11 @@ struct PagePlusVipPackVO: Codable {
     let size: Int?
     let content: [PlusVipPackVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -7598,11 +7877,11 @@ struct PagePlusVipLevelVO: Codable {
     let size: Int?
     let content: [PlusVipLevelVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -7632,11 +7911,11 @@ struct PagePlusVipLevelBenefitVO: Codable {
     let size: Int?
     let content: [PlusVipLevelBenefitVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -7666,11 +7945,11 @@ struct PagePlusVipBenefitUsageVO: Codable {
     let size: Int?
     let content: [PlusVipBenefitUsageVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -7700,11 +7979,11 @@ struct PagePlusVipBenefitVO: Codable {
     let size: Int?
     let content: [PlusVipBenefitVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -7734,11 +8013,11 @@ struct PagePlusVideoVO: Codable {
     let size: Int?
     let content: [PlusVideoVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -7768,11 +8047,11 @@ struct PagePlusUserOAuthAccountVO: Codable {
     let size: Int?
     let content: [PlusUserOAuthAccountVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -7802,11 +8081,11 @@ struct PagePlusUserVO: Codable {
     let size: Int?
     let content: [PlusUserVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -7836,11 +8115,11 @@ struct PagePlusUserCouponVO: Codable {
     let size: Int?
     let content: [PlusUserCouponVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -7870,11 +8149,11 @@ struct PagePlusUserCardVO: Codable {
     let size: Int?
     let content: [PlusUserCardVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -7904,11 +8183,11 @@ struct PagePlusUserAddressVO: Codable {
     let size: Int?
     let content: [PlusUserAddressVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -7938,11 +8217,11 @@ struct PageUsageRecordVO: Codable {
     let size: Int?
     let content: [UsageRecordVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -7972,11 +8251,11 @@ struct PagePlusShoppingCartVO: Codable {
     let size: Int?
     let content: [PlusShoppingCartVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -8006,11 +8285,11 @@ struct PagePlusShoppingCartItemVO: Codable {
     let size: Int?
     let content: [PlusShoppingCartItemVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -8040,11 +8319,11 @@ struct PagePlusRefundVO: Codable {
     let size: Int?
     let content: [PlusRefundVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -8080,11 +8359,11 @@ struct PagePlusPaymentVO: Codable {
     let size: Int?
     let content: [PlusPaymentVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -8136,6 +8415,39 @@ struct PlusApiResultOrderShipVO: Codable {
     let ip: String?
     let hostname: String?
     let errorName: String?
+}
+
+struct OrderDispatchActionForm: Codable {
+    let remark: String?
+}
+
+struct PlusApiResultServiceOrderVO: Codable {
+    let data: ServiceOrderVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct ServiceOrderVO: Codable {
+    let createdAt: String?
+    let updatedAt: String?
+    let orderId: Int?
+    let orderSn: String?
+    let taskCode: String?
+    let dispatchMode: String?
+    let dispatchStatus: String?
+    let workerUserId: Int?
+    let dispatchExpireTime: String?
+    let success: Bool?
+    let message: String?
+}
+
+struct OrderDispatchAssignForm: Codable {
+    let workerUserId: Int?
+    let remark: String?
 }
 
 struct OrderConfirmVO: Codable {
@@ -8226,6 +8538,40 @@ struct PlusApiResultOrderCancelVO: Codable {
     let errorName: String?
 }
 
+struct PagePlusOrderWorkerDispatchProfileVO: Codable {
+    let totalElements: Int?
+    let totalPages: Int?
+    let size: Int?
+    let content: [PlusOrderWorkerDispatchProfileVO]?
+    let number: Int?
+    let numberOfElements: Int?
+    let sort: SortObject?
+    let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
+    let empty: Bool?
+}
+
+struct PlusApiResultPagePlusOrderWorkerDispatchProfileVO: Codable {
+    let data: PagePlusOrderWorkerDispatchProfileVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusApiResultListPlusOrderWorkerDispatchProfileVO: Codable {
+    let data: [PlusOrderWorkerDispatchProfileVO]?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
 struct CreateVirtualOrderForm: Codable {
     let items: [OrderContentItem]?
     let expireTime: String?
@@ -8285,6 +8631,18 @@ struct VipOrderVO: Codable {
     let message: String?
 }
 
+struct CreateServiceOrderForm: Codable {
+    let publisherUserId: Int?
+    let subject: String?
+    let taskCode: String?
+    let dispatchMode: String?
+    let totalAmount: Double?
+    let dispatchExpireTime: String?
+    let expireTime: String?
+    let taskPayload: [String: Any]?
+    let remark: String?
+}
+
 struct CreatePointsOrderForm: Codable {
     let items: [OrderContentItem]?
     let pointsAmount: Int?
@@ -8316,11 +8674,11 @@ struct PagePlusOrderVO: Codable {
     let size: Int?
     let content: [PlusOrderVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -8350,11 +8708,11 @@ struct PagePlusOrderItemVO: Codable {
     let size: Int?
     let content: [PlusOrderItemVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -8426,6 +8784,40 @@ struct PlusApiResultGoodsOrderVO: Codable {
     let errorName: String?
 }
 
+struct PagePlusOrderDispatchRuleVO: Codable {
+    let totalElements: Int?
+    let totalPages: Int?
+    let size: Int?
+    let content: [PlusOrderDispatchRuleVO]?
+    let number: Int?
+    let numberOfElements: Int?
+    let sort: SortObject?
+    let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
+    let empty: Bool?
+}
+
+struct PlusApiResultPagePlusOrderDispatchRuleVO: Codable {
+    let data: PagePlusOrderDispatchRuleVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusApiResultListPlusOrderDispatchRuleVO: Codable {
+    let data: [PlusOrderDispatchRuleVO]?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
 struct CreateBookingOrderForm: Codable {
     let items: [OrderContentItem]?
     let expireTime: String?
@@ -8456,11 +8848,11 @@ struct PagePlusAiToolVO: Codable {
     let size: Int?
     let content: [PlusAiToolVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -8490,11 +8882,11 @@ struct PagePlusTenantAuditLogVO: Codable {
     let size: Int?
     let content: [PlusTenantAuditLogVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -8528,11 +8920,11 @@ struct PagePlusTenantVO: Codable {
     let size: Int?
     let content: [PlusTenantVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -8584,11 +8976,11 @@ struct PagePlusTableVO: Codable {
     let size: Int?
     let content: [PlusTableVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -8654,11 +9046,11 @@ struct PagePlusSkuVO: Codable {
     let size: Int?
     let content: [PlusSkuVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -8714,11 +9106,11 @@ struct PagePlusAgentSkillVO: Codable {
     let size: Int?
     let content: [PlusAgentSkillVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -8764,11 +9156,11 @@ struct PagePlusAgentSkillPackageVO: Codable {
     let size: Int?
     let content: [PlusAgentSkillPackageVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -8798,11 +9190,11 @@ struct PageShortUrlVO: Codable {
     let size: Int?
     let content: [ShortUrlVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -8832,11 +9224,11 @@ struct PagePlusShopVO: Codable {
     let size: Int?
     let content: [PlusShopVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -8866,11 +9258,11 @@ struct PagePlusShareVisitRecordVO: Codable {
     let size: Int?
     let content: [PlusShareVisitRecordVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -8900,11 +9292,11 @@ struct PagePlusShareVO: Codable {
     let size: Int?
     let content: [PlusShareVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -8934,11 +9326,11 @@ struct PagePlusShardingKeyVO: Codable {
     let size: Int?
     let content: [PlusShardingKeyVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -8968,11 +9360,11 @@ struct PagePlusApiSecurityPolicyVO: Codable {
     let size: Int?
     let content: [PlusApiSecurityPolicyVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -9031,11 +9423,11 @@ struct PagePlusSchemaVO: Codable {
     let size: Int?
     let content: [PlusSchemaVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -9065,11 +9457,11 @@ struct PagePlusRolePermissionVO: Codable {
     let size: Int?
     let content: [PlusRolePermissionVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -9099,11 +9491,11 @@ struct PagePlusRoleVO: Codable {
     let size: Int?
     let content: [PlusRoleVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -9133,11 +9525,11 @@ struct PagePlusInvokeRecordVO: Codable {
     let size: Int?
     let content: [PlusInvokeRecordVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -9167,11 +9559,11 @@ struct PagePlusUserRoleVO: Codable {
     let size: Int?
     let content: [PlusUserRoleVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -9201,11 +9593,11 @@ struct PagePlusAiPromptVO: Codable {
     let size: Int?
     let content: [PlusAiPromptVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -9235,11 +9627,11 @@ struct PagePlusProjectVO: Codable {
     let size: Int?
     let content: [PlusProjectVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -9291,11 +9683,11 @@ struct PagePlusProductVO: Codable {
     let size: Int?
     let content: [PlusProductVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -9325,11 +9717,11 @@ struct PagePlusPptTemplateSlideVO: Codable {
     let size: Int?
     let content: [PlusPptTemplateSlideVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -9433,11 +9825,11 @@ struct PagePlusPptTemplateVO: Codable {
     let size: Int?
     let content: [PlusPptTemplateVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -9467,11 +9859,11 @@ struct PagePlusPermissionVO: Codable {
     let size: Int?
     let content: [PlusPermissionVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -9501,11 +9893,11 @@ struct PagePlusPartnerVO: Codable {
     let size: Int?
     let content: [PlusPartnerVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -9535,11 +9927,11 @@ struct PagePlusParticipantVO: Codable {
     let size: Int?
     let content: [PlusParticipantVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -9656,11 +10048,11 @@ struct PagePlusOssBucketVO: Codable {
     let size: Int?
     let content: [PlusOssBucketVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -9690,11 +10082,11 @@ struct PagePlusPositionVO: Codable {
     let size: Int?
     let content: [PlusPositionVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -9724,11 +10116,11 @@ struct PagePlusMemberRelationsVO: Codable {
     let size: Int?
     let content: [PlusMemberRelationsVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -9758,11 +10150,11 @@ struct PagePlusOrganizationVO: Codable {
     let size: Int?
     let content: [PlusOrganizationVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -9792,11 +10184,11 @@ struct PagePlusOrganizationMemberVO: Codable {
     let size: Int?
     let content: [PlusOrganizationMemberVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -9826,11 +10218,11 @@ struct PagePlusNotificationVO: Codable {
     let size: Int?
     let content: [PlusNotificationVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -9913,6 +10305,20 @@ struct PlusMediaPublishResultDTO: Codable {
     let items: [PlusMediaPublishItemResultDTO]?
 }
 
+struct PlusNotesMediaPublishStatusForm: Codable {
+    let userId: Int?
+    let platform: String?
+    let product: String?
+    let publishId: String?
+}
+
+struct PlusNotesMediaPublishedArticleForm: Codable {
+    let userId: Int?
+    let platform: String?
+    let product: String?
+    let articleId: String?
+}
+
 struct PlusNotesMediaPublishDraftForm: Codable {
     let userId: Int?
     let platform: String?
@@ -9933,11 +10339,11 @@ struct PagePlusNewsVO: Codable {
     let size: Int?
     let content: [PlusNewsVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -9967,11 +10373,11 @@ struct PagePlusHostDomainVO: Codable {
     let size: Int?
     let content: [PlusHostDomainVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -10001,11 +10407,11 @@ struct PagePlusDnsRecordVO: Codable {
     let size: Int?
     let content: [PlusDnsRecordVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -10035,11 +10441,11 @@ struct PagePlusMusicVO: Codable {
     let size: Int?
     let content: [PlusMusicVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -10069,11 +10475,11 @@ struct PagePlusAiModelPriceVO: Codable {
     let size: Int?
     let content: [PlusAiModelPriceVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -10106,7 +10512,16 @@ struct PlusAiModelInfoQueryListForm: Codable {
     let modelType: String?
     let status: String?
     let family: String?
+    let vendor: String?
     let openSource: Bool?
+    let pricingType: String?
+    let lifecycleStage: String?
+    let minContextTokens: Int?
+    let supportReasoning: Bool?
+    let supportMultimodal: Bool?
+    let supportFunctionCall: Bool?
+    let supportRealtime: Bool?
+    let supportFineTuning: Bool?
 }
 
 struct PagePlusAiModelInfoVO: Codable {
@@ -10115,11 +10530,11 @@ struct PagePlusAiModelInfoVO: Codable {
     let size: Int?
     let content: [PlusAiModelInfoVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -10149,11 +10564,11 @@ struct PagePlusChatMessageContentVO: Codable {
     let size: Int?
     let content: [PlusChatMessageContentVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -10183,11 +10598,11 @@ struct PagePlusMemberLevelVO: Codable {
     let size: Int?
     let content: [PlusMemberLevelVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -10217,11 +10632,11 @@ struct PagePlusMemberCardVO: Codable {
     let size: Int?
     let content: [PlusMemberCardVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -10251,11 +10666,11 @@ struct PagePlusKnowledgeBaseVO: Codable {
     let size: Int?
     let content: [PlusKnowledgeBaseVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -10285,11 +10700,11 @@ struct PageInvitationRelationVO: Codable {
     let size: Int?
     let content: [InvitationRelationVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -10319,11 +10734,11 @@ struct PageInvitationCodeVO: Codable {
     let size: Int?
     let content: [InvitationCodeVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -10353,11 +10768,11 @@ struct PagePlusImageVO: Codable {
     let size: Int?
     let content: [PlusImageVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -10402,11 +10817,11 @@ struct PagePlusMessage: Codable {
     let size: Int?
     let content: [PlusMessage]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -10444,11 +10859,11 @@ struct PagePlusImGroupVO: Codable {
     let size: Int?
     let content: [PlusImGroupVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -10588,11 +11003,11 @@ struct PagePlusAiGenerationVO: Codable {
     let size: Int?
     let content: [PlusAiGenerationVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -10653,11 +11068,11 @@ struct PagePlusAiGenerationContentVO: Codable {
     let size: Int?
     let content: [PlusAiGenerationContentVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -10779,17 +11194,1590 @@ struct PlusApiResultGenerateAudioEffectVO: Codable {
     let errorName: String?
 }
 
+struct PlusGameTournamentRegistrationForm: Codable {
+    let userId: Int?
+}
+
+struct PlusGameTournamentPlayerManageForm: Codable {
+    let status: String?
+    let seedNo: Int?
+    let rankNo: Int?
+    let teamNo: Int?
+    let scoreValue: Double?
+    let totalMatchCount: Int?
+    let winCount: Int?
+    let loseCount: Int?
+}
+
+struct PlusApiResultPlusGameTournamentPlayerVO: Codable {
+    let data: PlusGameTournamentPlayerVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameTournamentPlayerVO: Codable {
+    let createdAt: String?
+    let updatedAt: String?
+    let playerId: Int?
+    let tournamentId: Int?
+    let userId: Int?
+    let gameType: String?
+    let clubId: Int?
+    let teamNo: Int?
+    let status: String?
+    let seedNo: Int?
+    let rankNo: Int?
+    let nicknameSnapshot: String?
+    let avatarUrl: String?
+    let scoreValue: Double?
+    let totalMatchCount: Int?
+    let winCount: Int?
+    let loseCount: Int?
+    let registeredAt: String?
+    let checkedInAt: String?
+    let finishedAt: String?
+}
+
+struct PlusGameTournamentPlayerQueryForm: Codable {
+    let id: Int?
+    let createdAtFrom: String?
+    let createdAtTo: String?
+    let tournamentId: Int?
+    let userId: Int?
+    let status: String?
+}
+
+struct PagePlusGameTournamentPlayerVO: Codable {
+    let totalElements: Int?
+    let totalPages: Int?
+    let size: Int?
+    let content: [PlusGameTournamentPlayerVO]?
+    let number: Int?
+    let numberOfElements: Int?
+    let sort: SortObject?
+    let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
+    let empty: Bool?
+}
+
+struct PlusApiResultPagePlusGameTournamentPlayerVO: Codable {
+    let data: PagePlusGameTournamentPlayerVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameTournamentBatchStatusForm: Codable {
+    let userIds: [Int]?
+    let playerItems: [PlusGameTournamentBatchStatusPlayerForm]?
+    let status: String?
+    let startRankNo: Int?
+}
+
+struct PlusGameTournamentBatchStatusPlayerForm: Codable {
+    let userId: Int?
+    let status: String?
+    let rankNo: Int?
+    let scoreValue: Double?
+    let totalMatchCount: Int?
+    let winCount: Int?
+    let loseCount: Int?
+}
+
+struct PlusApiResultListPlusGameTournamentPlayerVO: Codable {
+    let data: [PlusGameTournamentPlayerVO]?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameTournamentBatchArrangeForm: Codable {
+    let userIds: [Int]?
+    let arrangePlayers: [PlusGameTournamentBatchArrangePlayerForm]?
+    let seedNoStart: Int?
+    let teamNoStart: Int?
+    let groupSize: Int?
+    let overwriteExistingSeedNo: Bool?
+    let overwriteExistingTeamNo: Bool?
+}
+
+struct PlusGameTournamentBatchArrangePlayerForm: Codable {
+    let userId: Int?
+    let seedNo: Int?
+    let teamNo: Int?
+}
+
+struct PlusGameTournamentManageForm: Codable {
+    let status: String?
+    let signUpStartAt: String?
+    let signUpEndAt: String?
+    let startAt: String?
+    let endAt: String?
+    let winnerUserId: Int?
+    let winnerClubId: Int?
+}
+
+struct PlusApiResultPlusGameTournamentVO: Codable {
+    let data: PlusGameTournamentVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameTournamentVO: Codable {
+    let createdAt: String?
+    let updatedAt: String?
+    let tournamentId: Int?
+    let tournamentNo: String?
+    let name: String?
+    let shortName: String?
+    let description: String?
+    let gameType: String?
+    let gameModeCode: String?
+    let tournamentType: String?
+    let status: String?
+    let organizerUserId: Int?
+    let clubId: Int?
+    let seasonKey: String?
+    let regionCode: String?
+    let minPlayerCount: Int?
+    let maxPlayerCount: Int?
+    let teamSize: Int?
+    let registrationRequired: Bool?
+    let ranked: Bool?
+    let replayEnabled: Bool?
+    let signUpStartAt: String?
+    let signUpEndAt: String?
+    let startAt: String?
+    let endAt: String?
+    let winnerUserId: Int?
+    let winnerClubId: Int?
+    let totalParticipantCount: Int?
+    let totalMatchCount: Int?
+    let registeredCount: Int?
+    let checkedInCount: Int?
+    let playingCount: Int?
+    let advancedCount: Int?
+    let eliminatedCount: Int?
+    let finishedCount: Int?
+    let withdrawnCount: Int?
+}
+
+struct PlusGameTournamentQueryForm: Codable {
+    let id: Int?
+    let createdAtFrom: String?
+    let createdAtTo: String?
+    let gameType: String?
+    let status: String?
+}
+
+struct PagePlusGameTournamentVO: Codable {
+    let totalElements: Int?
+    let totalPages: Int?
+    let size: Int?
+    let content: [PlusGameTournamentVO]?
+    let number: Int?
+    let numberOfElements: Int?
+    let sort: SortObject?
+    let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
+    let empty: Bool?
+}
+
+struct PlusApiResultPagePlusGameTournamentVO: Codable {
+    let data: PagePlusGameTournamentVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameStatsQueryForm: Codable {
+    let userId: Int?
+    let gameType: String?
+    let gameModeCode: String?
+    let seasonKey: String?
+    let scopeType: String?
+    let scopeOwnerId: Int?
+}
+
+struct PlusApiResultPlusGameStatsVO: Codable {
+    let data: PlusGameStatsVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameStatsVO: Codable {
+    let createdAt: String?
+    let updatedAt: String?
+    let statsId: Int?
+    let userId: Int?
+    let gameType: String?
+    let gameModeCode: String?
+    let seasonKey: String?
+    let scopeType: String?
+    let scopeOwnerId: Int?
+    let clubId: Int?
+    let regionCode: String?
+    let nicknameSnapshot: String?
+    let avatarUrl: String?
+    let rankingType: String?
+    let totalMatchCount: Int?
+    let winCount: Int?
+    let loseCount: Int?
+    let drawCount: Int?
+    let escapeCount: Int?
+    let totalRoundCount: Int?
+    let totalActionCount: Int?
+    let totalMoveCount: Int?
+    let totalDurationSeconds: Int?
+    let score: Int?
+    let ratingScore: Int?
+    let chipsBalance: Int?
+    let profitAmount: Int?
+    let winRate: Double?
+    let currentWinStreak: Int?
+    let bestWinStreak: Int?
+    let highestRatingScore: Int?
+    let bestRankNo: Int?
+    let bestDailyRankNo: Int?
+    let bestWeeklyRankNo: Int?
+    let bestMonthlyRankNo: Int?
+    let bestQuarterlyRankNo: Int?
+    let bestYearlyRankNo: Int?
+    let honorCount: Int?
+    let leaderboardPosition: Int?
+    let lastMatchAt: String?
+    let challengeTotalCount: Int?
+    let challengeWinCount: Int?
+    let challengeLoseCount: Int?
+    let arenaAttackWinCount: Int?
+    let arenaDefenseWinCount: Int?
+    let arenaDefenseLoseCount: Int?
+    let arenaBestDefenseStreak: Int?
+}
+
+struct PlusGameScoreRecordQueryForm: Codable {
+    let id: Int?
+    let createdAtFrom: String?
+    let createdAtTo: String?
+    let userId: Int?
+    let gameType: String?
+    let changeType: String?
+    let tournamentId: Int?
+    let roomId: Int?
+    let matchId: Int?
+    let leaderboardId: Int?
+    let bizNo: String?
+    let operatorUserId: Int?
+}
+
+struct PagePlusGameScoreRecordVO: Codable {
+    let totalElements: Int?
+    let totalPages: Int?
+    let size: Int?
+    let content: [PlusGameScoreRecordVO]?
+    let number: Int?
+    let numberOfElements: Int?
+    let sort: SortObject?
+    let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
+    let empty: Bool?
+}
+
+struct PlusApiResultPagePlusGameScoreRecordVO: Codable {
+    let data: PagePlusGameScoreRecordVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameScoreRecordVO: Codable {
+    let createdAt: String?
+    let updatedAt: String?
+    let recordId: Int?
+    let userId: Int?
+    let gameType: String?
+    let seasonKey: String?
+    let tournamentId: Int?
+    let roomId: Int?
+    let matchId: Int?
+    let leaderboardId: Int?
+    let changeType: String?
+    let rankingType: String?
+    let periodType: String?
+    let scopeType: String?
+    let bizNo: String?
+    let reason: String?
+    let scoreBefore: Int?
+    let scoreDelta: Int?
+    let scoreAfter: Int?
+    let ratingBefore: Int?
+    let ratingDelta: Int?
+    let ratingAfter: Int?
+    let chipsBefore: Int?
+    let chipsDelta: Int?
+    let chipsAfter: Int?
+    let operatorUserId: Int?
+    let occurredAt: String?
+    let settlementData: [String: Any]?
+    let extData: [String: Any]?
+}
+
+struct PlusGameRoomSeatManageForm: Codable {
+    let userId: Int?
+    let status: String?
+    let playerType: String?
+    let nicknameSnapshot: String?
+    let avatarUrl: String?
+    let joinSource: String?
+    let teamNo: Int?
+    let ready: Bool?
+    let trusteeship: Bool?
+    let spectator: Bool?
+    let roomScore: Int?
+    let chips: Int?
+    let eliminatedRankNo: Int?
+}
+
+struct PlusApiResultPlusGameRoomSeatVO: Codable {
+    let data: PlusGameRoomSeatVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameRoomSeatVO: Codable {
+    let createdAt: String?
+    let updatedAt: String?
+    let seatId: Int?
+    let roomId: Int?
+    let definitionId: Int?
+    let gameType: String?
+    let userId: Int?
+    let seatNo: Int?
+    let status: String?
+    let playerType: String?
+    let nicknameSnapshot: String?
+    let avatarUrl: String?
+    let joinSource: String?
+    let teamNo: Int?
+    let ready: Bool?
+    let trusteeship: Bool?
+    let spectator: Bool?
+    let roomScore: Int?
+    let chips: Int?
+    let eliminatedRankNo: Int?
+    let joinedAt: String?
+    let eliminatedAt: String?
+    let leftAt: String?
+    let handSnapshot: [String: Any]?
+}
+
+struct PlusGameRoomSeatQueryForm: Codable {
+    let id: Int?
+    let createdAtFrom: String?
+    let createdAtTo: String?
+    let roomId: Int?
+    let userId: Int?
+    let status: String?
+}
+
+struct PagePlusGameRoomSeatVO: Codable {
+    let totalElements: Int?
+    let totalPages: Int?
+    let size: Int?
+    let content: [PlusGameRoomSeatVO]?
+    let number: Int?
+    let numberOfElements: Int?
+    let sort: SortObject?
+    let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
+    let empty: Bool?
+}
+
+struct PlusApiResultPagePlusGameRoomSeatVO: Codable {
+    let data: PagePlusGameRoomSeatVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameDismissRoomForm: Codable {
+    let reason: String?
+}
+
+struct PlusApiResultPlusGameRoomVO: Codable {
+    let data: PlusGameRoomVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameRoomVO: Codable {
+    let createdAt: String?
+    let updatedAt: String?
+    let roomId: Int?
+    let userId: Int?
+    let definitionId: Int?
+    let gameType: String?
+    let gameModeCode: String?
+    let seasonKey: String?
+    let roomNo: String?
+    let name: String?
+    let roomType: String?
+    let status: String?
+    let visibility: String?
+    let seatCount: Int?
+    let currentPlayerCount: Int?
+    let minStartPlayerCount: Int?
+    let hostSeatNo: Int?
+    let clubId: Int?
+    let tournamentId: Int?
+    let regionCode: String?
+    let currentMatchId: Int?
+    let currentRoundNo: Int?
+    let plannedRoundCount: Int?
+    let finishedRoundCount: Int?
+    let ranked: Bool?
+    let allowSpectator: Bool?
+    let allowRobot: Bool?
+    let allowTrusteeship: Bool?
+    let leaderboardEligible: Bool?
+    let replayEnabled: Bool?
+    let spectatorCount: Int?
+    let inviteCode: String?
+    let ruleConfig: [String: Any]?
+    let extData: [String: Any]?
+    let startedAt: String?
+    let endedAt: String?
+    let lastActiveAt: String?
+}
+
+struct PlusGameRoomQueryForm: Codable {
+    let id: Int?
+    let createdAtFrom: String?
+    let createdAtTo: String?
+    let userId: Int?
+    let definitionId: Int?
+    let gameType: String?
+    let gameModeCode: String?
+    let seasonKey: String?
+    let roomNo: String?
+    let roomNoLike: String?
+    let nameLike: String?
+    let roomType: String?
+    let status: String?
+    let visibility: String?
+    let ranked: Bool?
+    let allowSpectator: Bool?
+    let leaderboardEligible: Bool?
+    let replayEnabled: Bool?
+    let clubId: Int?
+    let tournamentId: Int?
+    let regionCode: String?
+    let currentMatchId: Int?
+}
+
+struct PagePlusGameRoomVO: Codable {
+    let totalElements: Int?
+    let totalPages: Int?
+    let size: Int?
+    let content: [PlusGameRoomVO]?
+    let number: Int?
+    let numberOfElements: Int?
+    let sort: SortObject?
+    let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
+    let empty: Bool?
+}
+
+struct PlusApiResultPagePlusGameRoomVO: Codable {
+    let data: PagePlusGameRoomVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameReplayManageForm: Codable {
+    let title: String?
+    let publicVisible: Bool?
+    let allowShare: Bool?
+    let status: String?
+    let coverUrl: String?
+    let expiredAt: String?
+}
+
+struct PlusApiResultPlusGameReplayVO: Codable {
+    let data: PlusGameReplayVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameReplayVO: Codable {
+    let createdAt: String?
+    let updatedAt: String?
+    let replayId: Int?
+    let replayNo: String?
+    let roomId: Int?
+    let matchId: Int?
+    let gameType: String?
+    let roomType: String?
+    let gameModeCode: String?
+    let seasonKey: String?
+    let clubId: Int?
+    let tournamentId: Int?
+    let regionCode: String?
+    let ownerUserId: Int?
+    let title: String?
+    let status: String?
+    let publicVisible: Bool?
+    let allowShare: Bool?
+    let durationSeconds: Int?
+    let actionCount: Int?
+    let keyFrameCount: Int?
+    let storageKey: String?
+    let coverUrl: String?
+    let boardSnapshot: [String: Any]?
+    let keyFrames: [String: Any]?
+    let startedAt: String?
+    let endedAt: String?
+    let expiredAt: String?
+}
+
+struct PlusGameReplayQueryForm: Codable {
+    let id: Int?
+    let createdAtFrom: String?
+    let createdAtTo: String?
+    let roomId: Int?
+    let matchId: Int?
+    let gameType: String?
+    let roomType: String?
+    let gameModeCode: String?
+    let seasonKey: String?
+    let clubId: Int?
+    let tournamentId: Int?
+    let regionCode: String?
+    let ownerUserId: Int?
+    let titleLike: String?
+    let status: String?
+    let publicVisible: Bool?
+    let allowShare: Bool?
+}
+
+struct PagePlusGameReplayVO: Codable {
+    let totalElements: Int?
+    let totalPages: Int?
+    let size: Int?
+    let content: [PlusGameReplayVO]?
+    let number: Int?
+    let numberOfElements: Int?
+    let sort: SortObject?
+    let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
+    let empty: Bool?
+}
+
+struct PlusApiResultPagePlusGameReplayVO: Codable {
+    let data: PagePlusGameReplayVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameRecordQueryForm: Codable {
+    let id: Int?
+    let createdAtFrom: String?
+    let createdAtTo: String?
+    let userId: Int?
+    let roomId: Int?
+    let matchId: Int?
+    let tournamentId: Int?
+    let clubId: Int?
+    let seatNo: Int?
+    let winner: Bool?
+    let escaped: Bool?
+    let gameType: String?
+    let gameModeCode: String?
+    let resultType: String?
+}
+
+struct PagePlusGameRecordVO: Codable {
+    let totalElements: Int?
+    let totalPages: Int?
+    let size: Int?
+    let content: [PlusGameRecordVO]?
+    let number: Int?
+    let numberOfElements: Int?
+    let sort: SortObject?
+    let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
+    let empty: Bool?
+}
+
+struct PlusApiResultPagePlusGameRecordVO: Codable {
+    let data: PagePlusGameRecordVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameRecordVO: Codable {
+    let createdAt: String?
+    let updatedAt: String?
+    let recordId: Int?
+    let roomId: Int?
+    let matchId: Int?
+    let userId: Int?
+    let gameType: String?
+    let gameModeCode: String?
+    let seasonKey: String?
+    let clubId: Int?
+    let tournamentId: Int?
+    let regionCode: String?
+    let seatNo: Int?
+    let teamNo: Int?
+    let resultType: String?
+    let rankNo: Int?
+    let nicknameSnapshot: String?
+    let avatarUrl: String?
+    let winner: Bool?
+    let escaped: Bool?
+    let leaderboardEligible: Bool?
+    let actionCount: Int?
+    let moveCount: Int?
+    let scoreBefore: Int?
+    let scoreDelta: Int?
+    let scoreAfter: Int?
+    let ratingBefore: Int?
+    let ratingDelta: Int?
+    let ratingAfter: Int?
+    let chipsBefore: Int?
+    let chipsDelta: Int?
+    let chipsAfter: Int?
+    let joinedAt: String?
+    let finishedAt: String?
+    let bestRankSnapshot: Int?
+    let settlementData: [String: Any]?
+    let honorSnapshot: [String: Any]?
+}
+
+struct PlusApiResultPlusGameMatchVO: Codable {
+    let data: PlusGameMatchVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameMatchVO: Codable {
+    let createdAt: String?
+    let updatedAt: String?
+    let matchId: Int?
+    let definitionId: Int?
+    let roomId: Int?
+    let gameType: String?
+    let gameModeCode: String?
+    let seasonKey: String?
+    let matchNo: String?
+    let roomType: String?
+    let status: String?
+    let ranked: Bool?
+    let totalPlayerCount: Int?
+    let clubId: Int?
+    let tournamentId: Int?
+    let regionCode: String?
+    let currentRoundNo: Int?
+    let maxRoundCount: Int?
+    let currentTurnSeatNo: Int?
+    let dealerSeatNo: Int?
+    let winnerSeatNo: Int?
+    let winnerUserId: Int?
+    let replayId: Int?
+    let actionCount: Int?
+    let moveCount: Int?
+    let leaderboardEligible: Bool?
+    let validForStats: Bool?
+    let resultConfirmed: Bool?
+    let abnormalFinished: Bool?
+    let invalidReason: String?
+    let startedAt: String?
+    let settledAt: String?
+    let endedAt: String?
+    let durationSeconds: Int?
+}
+
+struct PlusGameMatchManageForm: Codable {
+    let status: String?
+    let currentRoundNo: Int?
+    let maxRoundCount: Int?
+    let currentTurnSeatNo: Int?
+    let dealerSeatNo: Int?
+    let winnerSeatNo: Int?
+    let winnerUserId: Int?
+    let leaderboardEligible: Bool?
+    let validForStats: Bool?
+    let resultConfirmed: Bool?
+    let abnormalFinished: Bool?
+    let invalidReason: String?
+}
+
+struct PlusGameStartMatchForm: Codable {
+    let roomId: Int?
+}
+
+struct PlusGameMatchQueryForm: Codable {
+    let id: Int?
+    let createdAtFrom: String?
+    let createdAtTo: String?
+    let definitionId: Int?
+    let roomId: Int?
+    let gameType: String?
+    let gameModeCode: String?
+    let seasonKey: String?
+    let matchNo: String?
+    let matchNoLike: String?
+    let roomType: String?
+    let status: String?
+    let ranked: Bool?
+    let clubId: Int?
+    let tournamentId: Int?
+    let regionCode: String?
+    let winnerUserId: Int?
+    let replayId: Int?
+    let leaderboardEligible: Bool?
+    let validForStats: Bool?
+    let resultConfirmed: Bool?
+    let abnormalFinished: Bool?
+}
+
+struct PagePlusGameMatchVO: Codable {
+    let totalElements: Int?
+    let totalPages: Int?
+    let size: Int?
+    let content: [PlusGameMatchVO]?
+    let number: Int?
+    let numberOfElements: Int?
+    let sort: SortObject?
+    let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
+    let empty: Bool?
+}
+
+struct PlusApiResultPagePlusGameMatchVO: Codable {
+    let data: PagePlusGameMatchVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PagePlusGameLeaderboardEntryVO: Codable {
+    let totalElements: Int?
+    let totalPages: Int?
+    let size: Int?
+    let content: [PlusGameLeaderboardEntryVO]?
+    let number: Int?
+    let numberOfElements: Int?
+    let sort: SortObject?
+    let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
+    let empty: Bool?
+}
+
+struct PlusApiResultPagePlusGameLeaderboardEntryVO: Codable {
+    let data: PagePlusGameLeaderboardEntryVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameLeaderboardEntryVO: Codable {
+    let createdAt: String?
+    let updatedAt: String?
+    let entryId: Int?
+    let leaderboardId: Int?
+    let userId: Int?
+    let rankingType: String?
+    let periodType: String?
+    let scopeType: String?
+    let scopeOwnerId: Int?
+    let seasonKey: String?
+    let nicknameSnapshot: String?
+    let avatarUrl: String?
+    let rankNo: Int?
+    let previousRankNo: Int?
+    let peakRankNo: Int?
+    let status: String?
+    let scoreValue: Double?
+    let scoreDelta: Double?
+    let tieBreakerValue: Double?
+    let displayValue: String?
+    let totalMatchCount: Int?
+    let winCount: Int?
+    let loseCount: Int?
+    let drawCount: Int?
+    let streakCount: Int?
+    let rewardGranted: Bool?
+    let rewardIssuedAt: String?
+    let badgeCode: String?
+}
+
+struct PlusGameLeaderboardQueryForm: Codable {
+    let id: Int?
+    let createdAtFrom: String?
+    let createdAtTo: String?
+    let gameType: String?
+    let gameModeCode: String?
+    let seasonKey: String?
+    let scopeOwnerId: Int?
+    let rankingType: String?
+    let periodType: String?
+    let scopeType: String?
+}
+
+struct PagePlusGameLeaderboardVO: Codable {
+    let totalElements: Int?
+    let totalPages: Int?
+    let size: Int?
+    let content: [PlusGameLeaderboardVO]?
+    let number: Int?
+    let numberOfElements: Int?
+    let sort: SortObject?
+    let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
+    let empty: Bool?
+}
+
+struct PlusApiResultPagePlusGameLeaderboardVO: Codable {
+    let data: PagePlusGameLeaderboardVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameLeaderboardVO: Codable {
+    let createdAt: String?
+    let updatedAt: String?
+    let leaderboardId: Int?
+    let leaderboardNo: String?
+    let name: String?
+    let shortName: String?
+    let gameType: String?
+    let gameModeCode: String?
+    let rankingType: String?
+    let periodType: String?
+    let scopeType: String?
+    let scopeOwnerId: Int?
+    let scopeName: String?
+    let seasonKey: String?
+    let clubId: Int?
+    let tournamentId: Int?
+    let regionCode: String?
+    let status: String?
+    let rankedOnly: Bool?
+    let includeFriendRoom: Bool?
+    let includeTournamentRoom: Bool?
+    let includeClubRoom: Bool?
+    let minMatchCount: Int?
+    let minWinRateMatchCount: Int?
+    let totalParticipantCount: Int?
+    let periodStartAt: String?
+    let periodEndAt: String?
+    let publishedAt: String?
+    let settledAt: String?
+    let entries: [PlusGameLeaderboardEntryVO]?
+}
+
+struct PlusGameHonorQueryForm: Codable {
+    let userId: Int?
+    let seasonKey: String?
+}
+
+struct PlusApiResultListPlusGameHonorVO: Codable {
+    let data: [PlusGameHonorVO]?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameHonorVO: Codable {
+    let createdAt: String?
+    let updatedAt: String?
+    let honorId: Int?
+    let userId: Int?
+    let gameType: String?
+    let seasonKey: String?
+    let sourceType: String?
+    let sourceId: Int?
+    let leaderboardId: Int?
+    let tournamentId: Int?
+    let periodType: String?
+    let rankingType: String?
+    let status: String?
+    let clubId: Int?
+    let regionCode: String?
+    let title: String?
+    let subtitle: String?
+    let description: String?
+    let badgeCode: String?
+    let iconUrl: String?
+    let rankNo: Int?
+    let scoreValue: Double?
+    let wallVisible: Bool?
+    let grantedAt: String?
+    let expiredAt: String?
+}
+
+struct PlusGameGrowthRewardClaimQueryForm: Codable {
+    let accountId: Int?
+    let userId: Int?
+    let accountType: String?
+    let gameType: String?
+    let gameModeCode: String?
+    let seasonKey: String?
+}
+
+struct PlusApiResultListPlusGameGrowthRewardClaimVO: Codable {
+    let data: [PlusGameGrowthRewardClaimVO]?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameGrowthRewardClaimVO: Codable {
+    let createdAt: String?
+    let updatedAt: String?
+    let accountId: Int?
+    let userId: Int?
+    let accountType: String?
+    let gameType: String?
+    let gameModeCode: String?
+    let seasonKey: String?
+    let currentLevelNo: Int?
+    let levelNo: Int?
+    let levelCode: String?
+    let levelName: String?
+    let title: String?
+    let badgeCode: String?
+    let claimedAt: String?
+    let rewardIssuedAt: String?
+    let operatorUserId: Int?
+    let rewardConfig: [String: Any]?
+    let rewardSummary: [String: Any]?
+}
+
+struct PlusGameGrowthRecordQueryForm: Codable {
+    let id: Int?
+    let createdAtFrom: String?
+    let createdAtTo: String?
+    let userId: Int?
+    let accountType: String?
+    let gameType: String?
+    let gameModeCode: String?
+    let seasonKey: String?
+    let roomId: Int?
+    let matchId: Int?
+    let tournamentId: Int?
+    let sourceType: String?
+}
+
+struct PagePlusGameGrowthRecordVO: Codable {
+    let totalElements: Int?
+    let totalPages: Int?
+    let size: Int?
+    let content: [PlusGameGrowthRecordVO]?
+    let number: Int?
+    let numberOfElements: Int?
+    let sort: SortObject?
+    let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
+    let empty: Bool?
+}
+
+struct PlusApiResultPagePlusGameGrowthRecordVO: Codable {
+    let data: PagePlusGameGrowthRecordVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameGrowthRecordVO: Codable {
+    let createdAt: String?
+    let updatedAt: String?
+    let recordId: Int?
+    let userId: Int?
+    let accountType: String?
+    let gameType: String?
+    let gameModeCode: String?
+    let seasonKey: String?
+    let roomId: Int?
+    let matchId: Int?
+    let tournamentId: Int?
+    let sourceType: String?
+    let bizNo: String?
+    let reason: String?
+    let expBefore: Int?
+    let expDelta: Int?
+    let expAfter: Int?
+    let totalExpBefore: Int?
+    let totalExpDelta: Int?
+    let totalExpAfter: Int?
+    let levelConfigIdBefore: Int?
+    let levelConfigIdAfter: Int?
+    let levelNoBefore: Int?
+    let levelNoAfter: Int?
+    let levelCodeBefore: String?
+    let levelCodeAfter: String?
+    let levelUp: Bool?
+    let operatorUserId: Int?
+    let occurredAt: String?
+    let settlementData: [String: Any]?
+    let extData: [String: Any]?
+}
+
+struct PlusGameGrowthLevelConfigQueryForm: Codable {
+    let id: Int?
+    let createdAtFrom: String?
+    let createdAtTo: String?
+    let accountType: String?
+    let gameType: String?
+    let gameModeCode: String?
+    let seasonKey: String?
+    let status: String?
+}
+
+struct PagePlusGameGrowthLevelConfigVO: Codable {
+    let totalElements: Int?
+    let totalPages: Int?
+    let size: Int?
+    let content: [PlusGameGrowthLevelConfigVO]?
+    let number: Int?
+    let numberOfElements: Int?
+    let sort: SortObject?
+    let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
+    let empty: Bool?
+}
+
+struct PlusApiResultPagePlusGameGrowthLevelConfigVO: Codable {
+    let data: PagePlusGameGrowthLevelConfigVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameGrowthLevelConfigVO: Codable {
+    let createdAt: String?
+    let updatedAt: String?
+    let configId: Int?
+    let accountType: String?
+    let gameType: String?
+    let gameModeCode: String?
+    let seasonKey: String?
+    let levelNo: Int?
+    let levelCode: String?
+    let levelName: String?
+    let title: String?
+    let badgeCode: String?
+    let iconUrl: String?
+    let requiredExp: Int?
+    let expStartValue: Int?
+    let expEndValue: Int?
+    let winExpReward: Int?
+    let loseExpReward: Int?
+    let drawExpReward: Int?
+    let escapeExpPenalty: Int?
+    let status: String?
+    let visible: Bool?
+    let description: String?
+    let rewardConfig: [String: Any]?
+    let benefitConfig: [String: Any]?
+    let extData: [String: Any]?
+}
+
+struct PlusGameGrowthAccountRefreshForm: Codable {
+    let userId: Int?
+    let accountType: String?
+    let gameType: String?
+    let gameModeCode: String?
+    let seasonKey: String?
+}
+
+struct PlusApiResultPlusGameGrowthAccountVO: Codable {
+    let data: PlusGameGrowthAccountVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameGrowthAccountVO: Codable {
+    let createdAt: String?
+    let updatedAt: String?
+    let accountId: Int?
+    let userId: Int?
+    let accountType: String?
+    let gameType: String?
+    let gameModeCode: String?
+    let seasonKey: String?
+    let currentLevelConfigId: Int?
+    let currentLevelNo: Int?
+    let currentLevelCode: String?
+    let currentLevelName: String?
+    let currentTitle: String?
+    let currentBadgeCode: String?
+    let currentExp: Int?
+    let totalExp: Int?
+    let currentLevelStartExp: Int?
+    let nextLevelRequiredExp: Int?
+    let expToNextLevel: Int?
+    let progressPercent: Double?
+    let peakLevelNo: Int?
+    let peakExp: Int?
+    let levelUpCount: Int?
+    let rewardClaimedCount: Int?
+    let lastGainAt: String?
+    let lastLevelUpAt: String?
+    let lastResetAt: String?
+    let active: Bool?
+    let lastClaimedLevelNo: Int?
+    let lastRewardClaimedAt: String?
+    let lastRewardIssuedAt: String?
+    let lastClaimedRewardLevelCode: String?
+    let lastClaimedRewardLevelName: String?
+    let lastClaimedRewardSummary: [String: Any]?
+    let lastClaimedRewardConfig: [String: Any]?
+    let extData: [String: Any]?
+}
+
+struct PlusGameGrowthAccountQueryForm: Codable {
+    let id: Int?
+    let createdAtFrom: String?
+    let createdAtTo: String?
+    let userId: Int?
+    let accountType: String?
+    let gameType: String?
+    let gameModeCode: String?
+    let seasonKey: String?
+    let active: Bool?
+}
+
+struct PagePlusGameGrowthAccountVO: Codable {
+    let totalElements: Int?
+    let totalPages: Int?
+    let size: Int?
+    let content: [PlusGameGrowthAccountVO]?
+    let number: Int?
+    let numberOfElements: Int?
+    let sort: SortObject?
+    let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
+    let empty: Bool?
+}
+
+struct PlusApiResultPagePlusGameGrowthAccountVO: Codable {
+    let data: PagePlusGameGrowthAccountVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameDefinitionQueryForm: Codable {
+    let id: Int?
+    let createdAtFrom: String?
+    let createdAtTo: String?
+    let code: String?
+    let codeLike: String?
+    let nameLike: String?
+    let gameType: String?
+    let category: String?
+    let gameModeCode: String?
+    let enabled: Bool?
+    let ranked: Bool?
+    let supportsReplay: Bool?
+    let supportsTournament: Bool?
+}
+
+struct PagePlusGameDefinitionVO: Codable {
+    let totalElements: Int?
+    let totalPages: Int?
+    let size: Int?
+    let content: [PlusGameDefinitionVO]?
+    let number: Int?
+    let numberOfElements: Int?
+    let sort: SortObject?
+    let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
+    let empty: Bool?
+}
+
+struct PlusApiResultPagePlusGameDefinitionVO: Codable {
+    let data: PagePlusGameDefinitionVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusApiResultListPlusGameDefinitionVO: Codable {
+    let data: [PlusGameDefinitionVO]?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameChallengeManageForm: Codable {
+    let status: String?
+    let winnerUserId: Int?
+    let roomId: Int?
+    let matchId: Int?
+    let reason: String?
+}
+
+struct PlusApiResultPlusGameChallengeVO: Codable {
+    let data: PlusGameChallengeVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameChallengeVO: Codable {
+    let createdAt: String?
+    let updatedAt: String?
+    let challengeId: Int?
+    let challengeNo: String?
+    let arenaId: Int?
+    let sourceType: String?
+    let gameType: String?
+    let gameModeCode: String?
+    let status: String?
+    let challengerUserId: Int?
+    let targetUserId: Int?
+    let winnerUserId: Int?
+    let loserUserId: Int?
+    let stakeScore: Int?
+    let challengerStakeLocked: Int?
+    let targetStakeLocked: Int?
+    let leaderboardId: Int?
+    let roomId: Int?
+    let matchId: Int?
+    let reason: String?
+    let challengedAt: String?
+    let acceptedAt: String?
+    let settledAt: String?
+    let expiredAt: String?
+    let canceledAt: String?
+}
+
+struct PlusGameChallengeQueryForm: Codable {
+    let id: Int?
+    let createdAtFrom: String?
+    let createdAtTo: String?
+    let challengerUserId: Int?
+    let targetUserId: Int?
+    let arenaId: Int?
+    let winnerUserId: Int?
+    let gameType: String?
+    let status: String?
+    let sourceType: String?
+}
+
+struct PagePlusGameChallengeVO: Codable {
+    let totalElements: Int?
+    let totalPages: Int?
+    let size: Int?
+    let content: [PlusGameChallengeVO]?
+    let number: Int?
+    let numberOfElements: Int?
+    let sort: SortObject?
+    let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
+    let empty: Bool?
+}
+
+struct PlusApiResultPagePlusGameChallengeVO: Codable {
+    let data: PagePlusGameChallengeVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameChallengeCreateForm: Codable {
+    let challengerUserId: Int?
+    let targetUserId: Int?
+    let gameType: String?
+    let gameModeCode: String?
+    let stakeScore: Int?
+    let sourceType: String?
+    let arenaId: Int?
+    let leaderboardId: Int?
+    let reason: String?
+}
+
+struct PlusGameArenaManageForm: Codable {
+    let ownerUserId: Int?
+    let currentChampionUserId: Int?
+    let gameType: String?
+    let gameModeCode: String?
+    let status: String?
+    let name: String?
+    let description: String?
+    let stakeScore: Int?
+    let roomId: Int?
+    let matchId: Int?
+    let reason: String?
+}
+
+struct PlusApiResultPlusGameArenaVO: Codable {
+    let data: PlusGameArenaVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameArenaVO: Codable {
+    let createdAt: String?
+    let updatedAt: String?
+    let arenaId: Int?
+    let arenaNo: String?
+    let name: String?
+    let description: String?
+    let gameType: String?
+    let gameModeCode: String?
+    let status: String?
+    let ownerUserId: Int?
+    let currentChampionUserId: Int?
+    let currentChallengeId: Int?
+    let stakeScore: Int?
+    let totalChallengeCount: Int?
+    let successfulDefenseCount: Int?
+    let failedDefenseCount: Int?
+    let currentDefenseStreak: Int?
+    let bestDefenseStreak: Int?
+    let totalRewardScore: Int?
+    let roomId: Int?
+    let matchId: Int?
+    let openedAt: String?
+    let lastChallengeAt: String?
+    let lastSettledAt: String?
+    let closedAt: String?
+}
+
+struct PlusGameArenaQueryForm: Codable {
+    let id: Int?
+    let createdAtFrom: String?
+    let createdAtTo: String?
+    let ownerUserId: Int?
+    let currentChampionUserId: Int?
+    let gameType: String?
+    let gameModeCode: String?
+    let status: String?
+}
+
+struct PagePlusGameArenaVO: Codable {
+    let totalElements: Int?
+    let totalPages: Int?
+    let size: Int?
+    let content: [PlusGameArenaVO]?
+    let number: Int?
+    let numberOfElements: Int?
+    let sort: SortObject?
+    let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
+    let empty: Bool?
+}
+
+struct PlusApiResultPagePlusGameArenaVO: Codable {
+    let data: PagePlusGameArenaVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameActionRecordQueryForm: Codable {
+    let id: Int?
+    let createdAtFrom: String?
+    let createdAtTo: String?
+    let roomId: Int?
+    let matchId: Int?
+    let playerUserId: Int?
+    let actionType: String?
+    let actionCode: String?
+}
+
+struct PagePlusGameActionRecordVO: Codable {
+    let totalElements: Int?
+    let totalPages: Int?
+    let size: Int?
+    let content: [PlusGameActionRecordVO]?
+    let number: Int?
+    let numberOfElements: Int?
+    let sort: SortObject?
+    let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
+    let empty: Bool?
+}
+
+struct PlusApiResultPagePlusGameActionRecordVO: Codable {
+    let data: PagePlusGameActionRecordVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusGameActionRecordVO: Codable {
+    let createdAt: String?
+    let updatedAt: String?
+    let actionId: Int?
+    let roomId: Int?
+    let matchId: Int?
+    let roundId: Int?
+    let gameType: String?
+    let roomType: String?
+    let replayId: Int?
+    let tournamentId: Int?
+    let playerUserId: Int?
+    let seatNo: Int?
+    let playerType: String?
+    let seqNo: Int?
+    let turnNo: Int?
+    let phaseName: String?
+    let actionType: String?
+    let actionCode: String?
+    let notation: String?
+    let targetSeatNo: Int?
+    let sourcePosition: String?
+    let targetPosition: String?
+    let consumeMillis: Int?
+    let validAction: Bool?
+    let systemAction: Bool?
+    let timeoutAction: Bool?
+    let actionAt: String?
+    let actionPayload: [String: Any]?
+    let beforeState: [String: Any]?
+    let afterState: [String: Any]?
+}
+
 struct PagePlusFilePartVO: Codable {
     let totalElements: Int?
     let totalPages: Int?
     let size: Int?
     let content: [PlusFilePartVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -10819,11 +12807,11 @@ struct PagePlusFileVO: Codable {
     let size: Int?
     let content: [PlusFileVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -10864,8 +12852,8 @@ struct PlusTreeNodePlusFileVO: Codable {
     let index: Int?
     let root: Bool?
     let leaf: Bool?
-    let depth: Int?
     let childrenCount: Int?
+    let depth: Int?
 }
 
 struct PagePlusFileContentVO: Codable {
@@ -10874,11 +12862,11 @@ struct PagePlusFileContentVO: Codable {
     let size: Int?
     let content: [PlusFileContentVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -10908,11 +12896,11 @@ struct PagePlusFeedsVO: Codable {
     let size: Int?
     let content: [PlusFeedsVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -10942,11 +12930,11 @@ struct PagePlusFeedbackVO: Codable {
     let size: Int?
     let content: [PlusFeedbackVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -10976,11 +12964,11 @@ struct PagePlusFavoriteVO: Codable {
     let size: Int?
     let content: [PlusFavoriteVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -11010,11 +12998,11 @@ struct PagePlusDiskMemberVO: Codable {
     let size: Int?
     let content: [PlusDiskMemberVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -11044,11 +13032,11 @@ struct PagePlusDiskVO: Codable {
     let size: Int?
     let content: [PlusDiskVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -11078,11 +13066,11 @@ struct PagePlusDetailVO: Codable {
     let size: Int?
     let content: [PlusDetailVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -11112,11 +13100,11 @@ struct PagePlusDepartmentVO: Codable {
     let size: Int?
     let content: [PlusDepartmentVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -11146,11 +13134,11 @@ struct PagePlusDatasourceVO: Codable {
     let size: Int?
     let content: [PlusDatasourceVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -11184,11 +13172,11 @@ struct PagePlusCouponTemplateVO: Codable {
     let size: Int?
     let content: [PlusCouponTemplateVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -11214,7 +13202,6 @@ struct PlusApiResultListPlusCouponTemplateVO: Codable {
 
 struct CouponRedeemForm: Codable {
     let redeemCode: String?
-    let channel: String?
 }
 
 struct CouponRollbackForm: Codable {
@@ -11227,11 +13214,11 @@ struct PagePlusCouponVO: Codable {
     let size: Int?
     let content: [PlusCouponVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -11258,7 +13245,6 @@ struct PlusApiResultListPlusCouponVO: Codable {
 struct PlusConversationOpenForm: Codable {
     let conversationId: String?
     let uuid: String?
-    let title: String?
     let userId: Int?
     let agentId: Int?
     let knowledgeBaseId: Int?
@@ -11285,11 +13271,11 @@ struct PagePlusConversationVO: Codable {
     let size: Int?
     let content: [PlusConversationVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -11352,11 +13338,11 @@ struct PagePlusCommentsVO: Codable {
     let size: Int?
     let content: [PlusCommentsVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -11386,11 +13372,11 @@ struct PagePlusColumnVO: Codable {
     let size: Int?
     let content: [PlusColumnVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -11420,11 +13406,11 @@ struct PagePlusCollectionVO: Codable {
     let size: Int?
     let content: [PlusCollectionVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -11454,11 +13440,11 @@ struct PagePlusCollectionItemVO: Codable {
     let size: Int?
     let content: [PlusCollectionItemVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -11497,11 +13483,11 @@ struct PagePlusChatMessageVO: Codable {
     let size: Int?
     let content: [PlusChatMessageVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -11531,11 +13517,11 @@ struct PagePlusCharacterVO: Codable {
     let size: Int?
     let content: [PlusCharacterVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -11565,11 +13551,11 @@ struct PagePlusChannelResourceVO: Codable {
     let size: Int?
     let content: [PlusChannelResourceVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -11599,11 +13585,11 @@ struct PagePlusChannelProxyVO: Codable {
     let size: Int?
     let content: [PlusChannelProxyVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -11633,11 +13619,11 @@ struct PagePlusChannelVO: Codable {
     let size: Int?
     let content: [PlusChannelVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -11687,11 +13673,11 @@ struct PagePlusChannelAccountVO: Codable {
     let size: Int?
     let content: [PlusChannelAccountVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -11711,11 +13697,11 @@ struct PagePlusCategoryVO: Codable {
     let size: Int?
     let content: [PlusCategoryVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -11756,8 +13742,8 @@ struct PlusTreeNodePlusCategoryVO: Codable {
     let index: Int?
     let root: Bool?
     let leaf: Bool?
-    let depth: Int?
     let childrenCount: Int?
+    let depth: Int?
 }
 
 struct PagePlusCardTemplateVO: Codable {
@@ -11766,11 +13752,11 @@ struct PagePlusCardTemplateVO: Codable {
     let size: Int?
     let content: [PlusCardTemplateVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -11800,11 +13786,11 @@ struct PagePlusCardVO: Codable {
     let size: Int?
     let content: [PlusCardVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -12083,11 +14069,11 @@ struct PagePlusAttributeVO: Codable {
     let size: Int?
     let content: [PlusAttributeVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -12117,11 +14103,11 @@ struct PagePlusArticleVO: Codable {
     let size: Int?
     let content: [PlusArticleVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -12151,11 +14137,11 @@ struct PagePlusAppVO: Codable {
     let size: Int?
     let content: [PlusAppVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -12239,11 +14225,11 @@ struct PagePlusApiKeyVO: Codable {
     let size: Int?
     let content: [PlusApiKeyVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -12273,11 +14259,11 @@ struct PagePlusAiAgentToolVO: Codable {
     let size: Int?
     let content: [PlusAiAgentToolVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -12317,11 +14303,11 @@ struct PagePlusAiAgentVO: Codable {
     let size: Int?
     let content: [PlusAiAgentVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -12351,11 +14337,11 @@ struct PagePlusAccountVO: Codable {
     let size: Int?
     let content: [PlusAccountVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -12385,11 +14371,11 @@ struct PagePlusAccountHistoryVO: Codable {
     let size: Int?
     let content: [PlusAccountHistoryVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -12456,11 +14442,11 @@ struct PagePlusSystemInvoiceVO: Codable {
     let size: Int?
     let content: [PlusSystemInvoiceVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -12510,11 +14496,11 @@ struct PagePlusNotesVO: Codable {
     let size: Int?
     let content: [PlusNotesVO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -12534,11 +14520,11 @@ struct PagePlusMediaPublishRecordDTO: Codable {
     let size: Int?
     let content: [PlusMediaPublishRecordDTO]?
     let number: Int?
-    let first: Bool?
-    let last: Bool?
     let numberOfElements: Int?
     let sort: SortObject?
     let pageable: PageableObject?
+    let first: Bool?
+    let last: Bool?
     let empty: Bool?
 }
 
@@ -12580,6 +14566,76 @@ struct PlusMediaPublishRecordDTO: Codable {
 
 struct PlusApiResultListPlusNotesVO: Codable {
     let data: [PlusNotesVO]?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusApiResultPlusGameScoreRecordVO: Codable {
+    let data: PlusGameScoreRecordVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusApiResultPlusGameRecordVO: Codable {
+    let data: PlusGameRecordVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusApiResultPlusGameLeaderboardVO: Codable {
+    let data: PlusGameLeaderboardVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusApiResultPlusGameLeaderboardEntryVO: Codable {
+    let data: PlusGameLeaderboardEntryVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusApiResultPlusGameGrowthRecordVO: Codable {
+    let data: PlusGameGrowthRecordVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusApiResultPlusGameGrowthLevelConfigVO: Codable {
+    let data: PlusGameGrowthLevelConfigVO?
+    let code: String?
+    let msg: String?
+    let requestId: String?
+    let ip: String?
+    let hostname: String?
+    let errorName: String?
+}
+
+struct PlusApiResultPlusGameActionRecordVO: Codable {
+    let data: PlusGameActionRecordVO?
     let code: String?
     let msg: String?
     let requestId: String?

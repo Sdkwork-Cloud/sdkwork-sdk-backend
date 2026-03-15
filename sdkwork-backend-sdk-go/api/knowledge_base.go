@@ -64,6 +64,45 @@ func (a *KnowledgeBaseApi) GetDetail(query map[string]interface{}) (sdktypes.Plu
     return decodeResult[sdktypes.PlusApiResultPlusKnowledgeBaseVO](raw)
 }
 
+// List files
+func (a *KnowledgeBaseApi) ListFiles(query map[string]interface{}) (sdktypes.PlusApiResultFileListVO, error) {
+    raw, err := a.client.Get(BackendApiPath("/knowledge_base/files"), query, nil)
+    if err != nil {
+        var zero sdktypes.PlusApiResultFileListVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultFileListVO](raw)
+}
+
+// Upload file
+func (a *KnowledgeBaseApi) UploadFile(body *sdktypes.UploadFilePostRequest, query map[string]interface{}) (sdktypes.PlusApiResultFileItemVO, error) {
+    raw, err := a.client.Post(BackendApiPath("/knowledge_base/files"), body, query, nil, "multipart/form-data")
+    if err != nil {
+        var zero sdktypes.PlusApiResultFileItemVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultFileItemVO](raw)
+}
+
+func (a *KnowledgeBaseApi) Stop(query map[string]interface{}, headers map[string]string) (sdktypes.PlusApiResultBoolean, error) {
+    raw, err := a.client.Post(BackendApiPath("/knowledge_base/chat/stop"), nil, query, headers, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultBoolean
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultBoolean](raw)
+}
+
+// Create a chat completion with Knowledge base
+func (a *KnowledgeBaseApi) CreateCompletions(body sdktypes.ChatCompletionCreateForm, query map[string]interface{}, headers map[string]string) (sdktypes.ChatCompletionChunk, error) {
+    raw, err := a.client.Post(BackendApiPath("/knowledge_base/chat/completions"), body, query, headers, "")
+    if err != nil {
+        var zero sdktypes.ChatCompletionChunk
+        return zero, err
+    }
+    return decodeResult[sdktypes.ChatCompletionChunk](raw)
+}
+
 // Get a knowledge base by ID
 func (a *KnowledgeBaseApi) GetById(id string) (sdktypes.PlusApiResultPlusKnowledgeBaseVO, error) {
     raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/knowledge_base/%s", id)), nil, nil)
@@ -82,4 +121,34 @@ func (a *KnowledgeBaseApi) Delete(id string) (sdktypes.PlusApiResultBoolean, err
         return zero, err
     }
     return decodeResult[sdktypes.PlusApiResultBoolean](raw)
+}
+
+// Get file
+func (a *KnowledgeBaseApi) GetFile(fileId string) (sdktypes.PlusApiResultFileItemVO, error) {
+    raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/knowledge_base/files/%s", fileId)), nil, nil)
+    if err != nil {
+        var zero sdktypes.PlusApiResultFileItemVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultFileItemVO](raw)
+}
+
+// Delete file
+func (a *KnowledgeBaseApi) DeleteFile(fileId string) (sdktypes.PlusApiResultFileItemVO, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/knowledge_base/files/%s", fileId)), nil, nil)
+    if err != nil {
+        var zero sdktypes.PlusApiResultFileItemVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultFileItemVO](raw)
+}
+
+// Get file content
+func (a *KnowledgeBaseApi) GetFileContent(fileId string) (string, error) {
+    raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/knowledge_base/files/%s/content", fileId)), nil, nil)
+    if err != nil {
+        var zero string
+        return zero, err
+    }
+    return decodeResult[string](raw)
 }

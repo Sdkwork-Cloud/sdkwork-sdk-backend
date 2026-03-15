@@ -4,10 +4,12 @@ from typing import Optional, List, Dict, Any
 @dataclass
 class PlusAccountHistoryForm:
     """Account history creation form"""
+    account_type: str
     asset_type: str
     account_id: int
     transaction_id: str
     transaction_type: str
+    status: str
     amount: float = None
     balance_before: float = None
     balance_after: float = None
@@ -18,5 +20,4 @@ class PlusAccountHistoryForm:
     source_type: str = None
     source_id: str = None
     expired_at: str = None
-    status: str
     remarks: str = None

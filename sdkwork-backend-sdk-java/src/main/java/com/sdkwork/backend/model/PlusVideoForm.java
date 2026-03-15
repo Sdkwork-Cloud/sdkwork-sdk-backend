@@ -1,7 +1,6 @@
 package com.sdkwork.backend.model;
 
 public class PlusVideoForm {
-    private Integer id;
     private String title;
     private String description;
     private String contentUrl;
@@ -14,17 +13,6 @@ public class PlusVideoForm {
     private String format;
     private String thumbnailUrl;
     private String status;
-    private String uuid;
-    private String createdAt;
-    private String updatedAt;
-
-    public Integer getId() {
-        return this.id;
-    }
-    
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return this.title;
@@ -120,29 +108,5 @@ public class PlusVideoForm {
     
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    public String getUuid() {
-        return this.uuid;
-    }
-    
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
-    }
-
-    public String getCreatedAt() {
-        return this.createdAt;
-    }
-    
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public String getUpdatedAt() {
-        return this.updatedAt;
-    }
-    
-    public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
     }
 }

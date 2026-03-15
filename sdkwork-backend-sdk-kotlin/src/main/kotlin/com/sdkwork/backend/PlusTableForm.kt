@@ -10,5 +10,6 @@ data class PlusTableForm(
     val primaryKeys: String? = null,
     val engine: String? = null,
     val createSql: String? = null,
-    val comment: String? = null
+    val comment: String? = null,
+    val schemaId: Int? = null
 )

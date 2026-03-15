@@ -5,6 +5,7 @@ type PlusArticleForm struct {
 	Title string `json:"title"`
 	Subtitle string `json:"subtitle"`
 	Content string `json:"content"`
+	CategoryId int `json:"categoryId"`
 	WordCount int `json:"wordCount"`
 	ReadingTime int `json:"readingTime"`
 	CoverImages ImageMediaResourceList `json:"coverImages"`

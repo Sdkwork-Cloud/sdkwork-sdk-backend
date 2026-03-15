@@ -2,24 +2,24 @@ import type { TagsContent } from './tags-content';
 
 /** Address creation form data */
 export interface PlusUserAddressForm {
-  /** 收货人姓名 */
+  /** Recipient name */
   name: string;
-  /** 收货人手机号 */
+  /** Phone number */
   phone: string;
-  /** 国家代码 */
+  /** Country code */
   countryCode?: string;
-  /** 省份代码 */
+  /** Province code */
   provinceCode?: string;
-  /** 城市代码 */
+  /** City code */
   cityCode?: string;
-  /** 区县代码 */
+  /** District code */
   districtCode?: string;
-  /** 详细地址 */
+  /** Detailed address */
   addressDetail: string;
-  /** 邮政编码 */
+  /** Postal code */
   postalCode?: string;
-  /** 是否默认地址 */
-  isDefault: 'true' | 'false';
-  /** 地址标签（如：家、公司等） */
+  /** Whether this is the default address */
+  isDefault?: 'true' | 'false';
+  /** Address tags */
   tags?: TagsContent;
 }

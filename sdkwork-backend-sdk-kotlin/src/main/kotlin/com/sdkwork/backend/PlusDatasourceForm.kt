@@ -1,7 +1,10 @@
 package com.sdkwork.backend
 
 data class PlusDatasourceForm(
+    val projectId: Int? = null,
     val name: String? = null,
+    val channel: String? = null,
+    val channelId: String? = null,
     val type: Int? = null,
     val status: Int? = null,
     val description: String? = null,

@@ -13,7 +13,7 @@ export interface Flow {
   parentId?: number;
   startTime?: string;
   endTime?: string;
-  lastNode?: Node;
   parentFlow?: Flow;
+  lastNode?: Node;
   allAgents?: PlusAgent[];
 }

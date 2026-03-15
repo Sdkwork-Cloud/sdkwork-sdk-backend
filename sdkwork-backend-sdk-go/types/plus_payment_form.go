@@ -7,6 +7,7 @@ type PlusPaymentForm struct {
 	TransactionId string `json:"transactionId"`
 	OutTradeNo string `json:"outTradeNo"`
 	Channel string `json:"channel"`
+	Provider string `json:"provider"`
 	Status string `json:"status"`
 	Amount float64 `json:"amount"`
 	SuccessTime string `json:"successTime"`
@@ -14,5 +15,4 @@ type PlusPaymentForm struct {
 	ContentType string `json:"contentType"`
 	ContentId int `json:"contentId"`
 	ProductType string `json:"productType"`
-	Provider string `json:"provider"`
 }

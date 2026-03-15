@@ -7,6 +7,7 @@ namespace Backend.Models
     public class PlusDiskForm
     {
         public string? Name { get; set; }
+        public string? Type { get; set; }
         public string? Owner { get; set; }
         public int? OwnerId { get; set; }
         public int? DiskSize { get; set; }

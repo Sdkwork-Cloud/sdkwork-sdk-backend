@@ -4,6 +4,7 @@ data class PlusArticleForm(
     val title: String? = null,
     val subtitle: String? = null,
     val content: String? = null,
+    val categoryId: Int? = null,
     val wordCount: Int? = null,
     val readingTime: Int? = null,
     val coverImages: ImageMediaResourceList? = null,

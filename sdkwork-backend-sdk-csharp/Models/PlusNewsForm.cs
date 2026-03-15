@@ -12,6 +12,7 @@ namespace Backend.Models
         public string? Summary { get; set; }
         public string? PublishTime { get; set; }
         public TagsContent? Tags { get; set; }
+        public int? CategoryId { get; set; }
         public int? UserId { get; set; }
     }
 }

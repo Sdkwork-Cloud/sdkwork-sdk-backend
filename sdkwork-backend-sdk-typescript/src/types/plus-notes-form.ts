@@ -3,7 +3,7 @@ import type { TagsContent } from './tags-content';
 
 /** Notes form */
 export interface PlusNotesForm {
-  /** ID（更新时必填） */
+  /** I d */
   id?: number;
   /** Title */
   title: string;

@@ -5,8 +5,8 @@ from typing import Optional, List, Dict, Any
 class UsageRecordForm:
     """Usage record creation form"""
     user_id: int = None
-    request_id: str = None
-    model_name: str
+    request_id: str
+    model_name: str = None
     channel: str
     usage_type: str
     billing_type: str

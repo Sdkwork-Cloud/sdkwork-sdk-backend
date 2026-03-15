@@ -8,6 +8,6 @@ type PlusTreeNodePlusCategoryVO struct {
 	Index int `json:"index"`
 	Root bool `json:"root"`
 	Leaf bool `json:"leaf"`
-	Depth int `json:"depth"`
 	ChildrenCount int `json:"childrenCount"`
+	Depth int `json:"depth"`
 }

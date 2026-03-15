@@ -10,4 +10,5 @@ class PlusNewsForm:
     summary: str = None
     publish_time: str = None
     tags: TagsContent = None
+    category_id: int
     user_id: int = None

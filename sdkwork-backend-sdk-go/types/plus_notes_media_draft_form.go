@@ -1,6 +1,6 @@
 package types
 
-// 媒体草稿创建表单
+// 濯掍綋鑽夌鍒涘缓琛ㄥ崟
 type PlusNotesMediaDraftForm struct {
 	UserId int `json:"userId"`
 	Platform string `json:"platform"`

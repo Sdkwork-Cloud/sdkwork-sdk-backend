@@ -6,6 +6,5 @@ data class PlusApiKeyForm(
     val type: String? = null,
     val status: String? = null,
     val expireTime: String? = null,
-    val description: String? = null,
-    val lastUsedTime: String? = null
+    val description: String? = null
 )

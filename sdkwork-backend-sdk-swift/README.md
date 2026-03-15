@@ -8,7 +8,7 @@ Add to `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/sdkwork/backend-sdk-swift", from: "1.0.0")
+    .package(url: "https://github.com/sdkwork/backend-sdk-swift", from: "1.0.9")
 ]
 ```
 
@@ -67,133 +67,81 @@ client.setHeader("X-Custom-Header", value: "value")
 ## API Modules
 
 - `client.workspace` - workspace API
-- `client.contentVote` - content_vote API
-- `client.voiceSpeaker` - voice_speaker API
+- `client.vote` - vote API
+- `client.voice` - voice API
 - `client.visitHistory` - visit_history API
-- `client.vipUser` - vip_user API
-- `client.vipRecharge` - vip_recharge API
-- `client.vipRechargePackage` - vip_recharge_package API
-- `client.vipPointChange` - vip_point_change API
-- `client.vipPackageGroup` - vip_package_group API
-- `client.vipPackage` - vip_package API
-- `client.vipLevel` - vip_level API
-- `client.vipLevelBenefit` - vip_level_benefit API
-- `client.vipBenefit` - vip_benefit API
-- `client.vipBenefitUsage` - vip_benefit_usage API
+- `client.vip` - vip API
 - `client.video` - video API
 - `client.user` - user API
-- `client.userOauthAccount` - user_oauth_account API
-- `client.userCoupon` - user_coupon API
-- `client.userCard` - user_card API
-- `client.userAddress` - user_address API
-- `client.usageRecord` - usage_record API
-- `client.shoppingCart` - shopping_cart API
-- `client.shoppingCartItem` - shopping_cart_item API
-- `client.refund` - refund API
-- `client.payment` - payment API
-- `client.order` - order API
-- `client.orderItem` - order_item API
+- `client.usage` - usage API
+- `client.trade` - trade API
 - `client.tool` - tool API
 - `client.tenant` - tenant API
-- `client.databaseTable` - database_table API
-- `client.productSku` - product_sku API
+- `client.table` - table API
+- `client.sku` - sku API
 - `client.skill` - skill API
-- `client.skillPackage` - skill_package API
 - `client.shortUrl` - short_url API
 - `client.shop` - shop API
 - `client.share` - share API
-- `client.shareVisitRecord` - share_visit_record API
-- `client.shardingKey` - sharding_key API
-- `client.apiSecurityPolicy` - api_security_policy API
+- `client.sharding` - sharding API
+- `client.security` - security API
 - `client.schema` - schema API
-- `client.rbacRole` - rbac_role API
-- `client.rolePermission` - role_permission API
-- `client.invocationRecord` - invocation_record API
-- `client.rbacUserRole` - rbac_user_role API
+- `client.role` - role API
+- `client.record` - record API
+- `client.rbac` - rbac API
 - `client.prompt` - prompt API
 - `client.project` - project API
 - `client.product` - product API
-- `client.pptTemplate` - ppt_template API
-- `client.pptTemplateSlide` - ppt_template_slide API
-- `client.rbacPermission` - rbac_permission API
+- `client.ppt` - ppt API
+- `client.permission` - permission API
 - `client.partner` - partner API
-- `client.chatParticipant` - chat_participant API
-- `client.ossBucket` - oss_bucket API
+- `client.participant` - participant API
+- `client.oss` - oss API
 - `client.organization` - organization API
-- `client.position` - position API
-- `client.memberRelations` - member_relations API
 - `client.organizationMember` - organization_member API
 - `client.notification` - notification API
-- `client.notes` - notes API
+- `client.note` - note API
 - `client.news` - news API
 - `client.net` - net API
-- `client.dnsRecord` - dns_record API
 - `client.music` - music API
-- `client.modelInformation` - model_information API
-- `client.modelPrice` - model_price API
-- `client.chatMessage` - chat_message API
-- `client.memberLevel` - member_level API
-- `client.memberCard` - member_card API
+- `client.model` - model API
+- `client.message` - message API
+- `client.member` - member API
 - `client.knowledgeBase` - knowledge_base API
-- `client.invitationRelation` - invitation_relation API
-- `client.invitationCode` - invitation_code API
+- `client.invitation` - invitation API
 - `client.image` - image API
-- `client.chatGroup` - chat_group API
+- `client.im` - im API
 - `client.generation` - generation API
-- `client.generationContent` - generation_content API
+- `client.game` - game API
 - `client.file` - file API
-- `client.filePart` - file_part API
-- `client.fileContent` - file_content API
-- `client.feeds` - feeds API
+- `client.feed` - feed API
 - `client.feedback` - feedback API
 - `client.favorite` - favorite API
-- `client.fileDisk` - file_disk API
-- `client.diskMember` - disk_member API
+- `client.disk` - disk API
 - `client.detail` - detail API
 - `client.department` - department API
 - `client.datasource` - datasource API
 - `client.coupon` - coupon API
-- `client.couponTemplate` - coupon_template API
 - `client.conversation` - conversation API
 - `client.contentWriting` - content_writing API
 - `client.comment` - comment API
 - `client.column` - column API
 - `client.collection` - collection API
 - `client.collectionItem` - collection_item API
+- `client.chat` - chat API
 - `client.character` - character API
 - `client.channel` - channel API
-- `client.channelResource` - channel_resource API
-- `client.channelProxy` - channel_proxy API
-- `client.channelAccount` - channel_account API
 - `client.category` - category API
-- `client.membershipCard` - membership_card API
-- `client.cardTemplate` - card_template API
+- `client.card` - card API
 - `client.attribute` - attribute API
 - `client.article` - article API
 - `client.app` - app API
-- `client.apiKey` - api_key API
+- `client.apikey` - apikey API
 - `client.agent` - agent API
-- `client.agentToolRelationship` - agent_tool_relationship API
 - `client.account` - account API
-- `client.accountHistory` - account_history API
-- `client.accountExchangeConfig` - account_exchange_config API
-- `client.invoice` - invoice API
-- `client.searchChat` - search_chat API
-- `client.pptTemplateRendering` - ppt_template_rendering API
-- `client.pptTemplateChat` - ppt_template_chat API
-- `client.knowledgeBaseFile` - knowledge_base_file API
-- `client.knowledgeBaseChat` - knowledge_base_chat API
-- `client.imMessage` - im_message API
-- `client.voiceSpeakerGeneration` - voice_speaker_generation API
-- `client.videoGeneration` - video_generation API
-- `client.musicGeneration` - music_generation API
-- `client.imageGeneration` - image_generation API
-- `client.characterGeneration` - character_generation API
-- `client.audioGeneration` - audio_generation API
-- `client.audioEffectGeneration` - audio_effect_generation API
-- `client.chat` - chat API
+- `client.system` - system API
+- `client.search` - search API
 - `client.auth` - auth API
-- `client.agentChat` - agent_chat API
 
 ## Usage Examples
 
@@ -205,19 +153,19 @@ let result = try await client.workspace.update()
 print(result)
 ```
 
-### content_vote
+### vote
 
 ```swift
 // Update an existing content vote
-let result = try await client.contentVote.update()
+let result = try await client.vote.update()
 print(result)
 ```
 
-### voice_speaker
+### voice
 
 ```swift
 // Update an existing voice speaker
-let result = try await client.voiceSpeaker.update()
+let result = try await client.voice.update()
 print(result)
 ```
 
@@ -229,83 +177,11 @@ let result = try await client.visitHistory.update()
 print(result)
 ```
 
-### vip_user
+### vip
 
 ```swift
 // Update an existing VIP user
-let result = try await client.vipUser.update()
-print(result)
-```
-
-### vip_recharge
-
-```swift
-// Update an existing VIP recharge record
-let result = try await client.vipRecharge.update()
-print(result)
-```
-
-### vip_recharge_package
-
-```swift
-// Update an existing VIP recharge package
-let result = try await client.vipRechargePackage.update()
-print(result)
-```
-
-### vip_point_change
-
-```swift
-// Update an existing VIP point change record
-let result = try await client.vipPointChange.update()
-print(result)
-```
-
-### vip_package_group
-
-```swift
-// Update an existing VIP package group
-let result = try await client.vipPackageGroup.update()
-print(result)
-```
-
-### vip_package
-
-```swift
-// Update VIP Package
-let result = try await client.vipPackage.update()
-print(result)
-```
-
-### vip_level
-
-```swift
-// Update an existing VIP level
-let result = try await client.vipLevel.update()
-print(result)
-```
-
-### vip_level_benefit
-
-```swift
-// Update an existing VIP level benefit
-let result = try await client.vipLevelBenefit.update()
-print(result)
-```
-
-### vip_benefit
-
-```swift
-// Update an existing VIP benefit
-let result = try await client.vipBenefit.update()
-print(result)
-```
-
-### vip_benefit_usage
-
-```swift
-// Update an existing VIP benefit usage record
-let result = try await client.vipBenefitUsage.update()
+let result = try await client.vip.update()
 print(result)
 ```
 
@@ -325,91 +201,19 @@ let result = try await client.user.update()
 print(result)
 ```
 
-### user_oauth_account
-
-```swift
-// Update user OAuth account
-let result = try await client.userOauthAccount.update()
-print(result)
-```
-
-### user_coupon
-
-```swift
-// Update an existing user coupon
-let result = try await client.userCoupon.update()
-print(result)
-```
-
-### user_card
-
-```swift
-// Update user-card binding
-let result = try await client.userCard.update()
-print(result)
-```
-
-### user_address
-
-```swift
-// Update an existing user address
-let result = try await client.userAddress.update()
-print(result)
-```
-
-### usage_record
+### usage
 
 ```swift
 // Update an existing usage record
-let result = try await client.usageRecord.update()
+let result = try await client.usage.update()
 print(result)
 ```
 
-### shopping_cart
+### trade
 
 ```swift
 // Update shopping cart
-let result = try await client.shoppingCart.update()
-print(result)
-```
-
-### shopping_cart_item
-
-```swift
-// Update an existing shopping cart item
-let result = try await client.shoppingCartItem.update()
-print(result)
-```
-
-### refund
-
-```swift
-// Update an existing refund record
-let result = try await client.refund.update()
-print(result)
-```
-
-### payment
-
-```swift
-// Update an existing payment record
-let result = try await client.payment.update()
-print(result)
-```
-
-### order
-
-```swift
-// Update an existing order
-let result = try await client.order.update()
-print(result)
-```
-
-### order_item
-
-```swift
-// Update an existing order item
-let result = try await client.orderItem.update()
+let result = try await client.trade.update()
 print(result)
 ```
 
@@ -429,19 +233,19 @@ let result = try await client.tenant.update()
 print(result)
 ```
 
-### database_table
+### table
 
 ```swift
 // Update an existing database table
-let result = try await client.databaseTable.update()
+let result = try await client.table.update()
 print(result)
 ```
 
-### product_sku
+### sku
 
 ```swift
 // Update an existing SKU
-let result = try await client.productSku.update()
+let result = try await client.sku.update()
 print(result)
 ```
 
@@ -450,14 +254,6 @@ print(result)
 ```swift
 // Get one skill detail
 let result = try await client.skill.getById()
-print(result)
-```
-
-### skill_package
-
-```swift
-// Get skill package detail
-let result = try await client.skillPackage.getById()
 print(result)
 ```
 
@@ -485,27 +281,19 @@ let result = try await client.share.update()
 print(result)
 ```
 
-### share_visit_record
-
-```swift
-// Update visit record
-let result = try await client.shareVisitRecord.update()
-print(result)
-```
-
-### sharding_key
+### sharding
 
 ```swift
 // Update Sharding Key
-let result = try await client.shardingKey.update()
+let result = try await client.sharding.update()
 print(result)
 ```
 
-### api_security_policy
+### security
 
 ```swift
 // PUT /backend/v3/api/security/policy
-let result = try await client.apiSecurityPolicy.update()
+let result = try await client.security.update()
 print(result)
 ```
 
@@ -517,35 +305,27 @@ let result = try await client.schema.update()
 print(result)
 ```
 
-### rbac_role
+### role
 
 ```swift
 // Update an existing system role
-let result = try await client.rbacRole.update()
+let result = try await client.role.update()
 print(result)
 ```
 
-### role_permission
-
-```swift
-// Update role-permission association
-let result = try await client.rolePermission.update()
-print(result)
-```
-
-### invocation_record
+### record
 
 ```swift
 // Update an existing invocation record
-let result = try await client.invocationRecord.update()
+let result = try await client.record.update()
 print(result)
 ```
 
-### rbac_user_role
+### rbac
 
 ```swift
 // Update user-role relationship
-let result = try await client.rbacUserRole.update()
+let result = try await client.rbac.update()
 print(result)
 ```
 
@@ -573,27 +353,19 @@ let result = try await client.product.update()
 print(result)
 ```
 
-### ppt_template
+### ppt
 
 ```swift
 // Update an existing PPT template
-let result = try await client.pptTemplate.update()
+let result = try await client.ppt.update()
 print(result)
 ```
 
-### ppt_template_slide
-
-```swift
-// Update an existing PPT template slide
-let result = try await client.pptTemplateSlide.update()
-print(result)
-```
-
-### rbac_permission
+### permission
 
 ```swift
 // PUT /backend/v3/api/permission
-let result = try await client.rbacPermission.update()
+let result = try await client.permission.update()
 print(result)
 ```
 
@@ -605,19 +377,19 @@ let result = try await client.partner.update()
 print(result)
 ```
 
-### chat_participant
+### participant
 
 ```swift
 // Update an existing chat participant
-let result = try await client.chatParticipant.update()
+let result = try await client.participant.update()
 print(result)
 ```
 
-### oss_bucket
+### oss
 
 ```swift
 // Update an existing OSS bucket
-let result = try await client.ossBucket.update()
+let result = try await client.oss.update()
 print(result)
 ```
 
@@ -626,22 +398,6 @@ print(result)
 ```swift
 // Update an existing organization
 let result = try await client.organization.update()
-print(result)
-```
-
-### position
-
-```swift
-// Update an existing position
-let result = try await client.position.update()
-print(result)
-```
-
-### member_relations
-
-```swift
-// Update member relation
-let result = try await client.memberRelations.update()
 print(result)
 ```
 
@@ -661,11 +417,11 @@ let result = try await client.notification.update()
 print(result)
 ```
 
-### notes
+### note
 
 ```swift
 // Update a note
-let result = try await client.notes.update()
+let result = try await client.note.update()
 print(result)
 ```
 
@@ -685,14 +441,6 @@ let result = try await client.net.update()
 print(result)
 ```
 
-### dns_record
-
-```swift
-// Update an existing DNS record
-let result = try await client.dnsRecord.update()
-print(result)
-```
-
 ### music
 
 ```swift
@@ -701,43 +449,27 @@ let result = try await client.music.update()
 print(result)
 ```
 
-### model_information
+### model
 
 ```swift
 // Update existing AI model information
-let result = try await client.modelInformation.update()
+let result = try await client.model.update()
 print(result)
 ```
 
-### model_price
-
-```swift
-// Update an existing AI model price
-let result = try await client.modelPrice.update()
-print(result)
-```
-
-### chat_message
+### message
 
 ```swift
 // Update an existing chat message
-let result = try await client.chatMessage.update()
+let result = try await client.message.update()
 print(result)
 ```
 
-### member_level
+### member
 
 ```swift
 // Update an existing member level
-let result = try await client.memberLevel.update()
-print(result)
-```
-
-### member_card
-
-```swift
-// Update an existing member card
-let result = try await client.memberCard.update()
+let result = try await client.member.update()
 print(result)
 ```
 
@@ -749,19 +481,11 @@ let result = try await client.knowledgeBase.update()
 print(result)
 ```
 
-### invitation_relation
+### invitation
 
 ```swift
 // Update an invitation relation
-let result = try await client.invitationRelation.update()
-print(result)
-```
-
-### invitation_code
-
-```swift
-// Update an existing invitation code
-let result = try await client.invitationCode.update()
+let result = try await client.invitation.update()
 print(result)
 ```
 
@@ -773,11 +497,11 @@ let result = try await client.image.update()
 print(result)
 ```
 
-### chat_group
+### im
 
 ```swift
 // Update an existing chat group
-let result = try await client.chatGroup.update()
+let result = try await client.im.update()
 print(result)
 ```
 
@@ -789,11 +513,11 @@ let result = try await client.generation.update()
 print(result)
 ```
 
-### generation_content
+### game
 
 ```swift
-// Update AI generated content
-let result = try await client.generationContent.update()
+// Update game definition
+let result = try await client.game.update()
 print(result)
 ```
 
@@ -805,27 +529,11 @@ let result = try await client.file.update()
 print(result)
 ```
 
-### file_part
-
-```swift
-// Update an existing file part
-let result = try await client.filePart.update()
-print(result)
-```
-
-### file_content
-
-```swift
-// Update file content
-let result = try await client.fileContent.update()
-print(result)
-```
-
-### feeds
+### feed
 
 ```swift
 // Update an existing feeds entry
-let result = try await client.feeds.update()
+let result = try await client.feed.update()
 print(result)
 ```
 
@@ -845,19 +553,11 @@ let result = try await client.favorite.update()
 print(result)
 ```
 
-### file_disk
+### disk
 
 ```swift
 // Update an existing file disk
-let result = try await client.fileDisk.update()
-print(result)
-```
-
-### disk_member
-
-```swift
-// Update an existing disk member
-let result = try await client.diskMember.update()
+let result = try await client.disk.update()
 print(result)
 ```
 
@@ -890,14 +590,6 @@ print(result)
 ```swift
 // Update an existing coupon template
 let result = try await client.coupon.update()
-print(result)
-```
-
-### coupon_template
-
-```swift
-// Update an existing coupon template
-let result = try await client.couponTemplate.update()
 print(result)
 ```
 
@@ -949,6 +641,14 @@ let result = try await client.collectionItem.update()
 print(result)
 ```
 
+### chat
+
+```swift
+// Update an existing chat message
+let result = try await client.chat.updateMessage()
+print(result)
+```
+
 ### character
 
 ```swift
@@ -965,30 +665,6 @@ let result = try await client.channel.update()
 print(result)
 ```
 
-### channel_resource
-
-```swift
-// Update an existing channel resource
-let result = try await client.channelResource.update()
-print(result)
-```
-
-### channel_proxy
-
-```swift
-// Update channel proxy
-let result = try await client.channelProxy.update()
-print(result)
-```
-
-### channel_account
-
-```swift
-// Update channel account
-let result = try await client.channelAccount.update()
-print(result)
-```
-
 ### category
 
 ```swift
@@ -997,19 +673,11 @@ let result = try await client.category.update()
 print(result)
 ```
 
-### membership_card
+### card
 
 ```swift
 // Update an existing membership card
-let result = try await client.membershipCard.update()
-print(result)
-```
-
-### card_template
-
-```swift
-// Update an existing card template
-let result = try await client.cardTemplate.update()
+let result = try await client.card.update()
 print(result)
 ```
 
@@ -1037,11 +705,11 @@ let result = try await client.app.update()
 print(result)
 ```
 
-### api_key
+### apikey
 
 ```swift
 // Update an existing API key
-let result = try await client.apiKey.update()
+let result = try await client.apikey.update()
 print(result)
 ```
 
@@ -1053,14 +721,6 @@ let result = try await client.agent.update()
 print(result)
 ```
 
-### agent_tool_relationship
-
-```swift
-// Update an existing agent-tool relationship
-let result = try await client.agentToolRelationship.update()
-print(result)
-```
-
 ### account
 
 ```swift
@@ -1069,139 +729,19 @@ let result = try await client.account.update()
 print(result)
 ```
 
-### account_history
-
-```swift
-// Update an existing account history record
-let result = try await client.accountHistory.update()
-print(result)
-```
-
-### account_exchange_config
-
-```swift
-// Get points-to-cash rate
-let result = try await client.accountExchangeConfig.getPointsToCashRate()
-print(result)
-```
-
-### invoice
+### system
 
 ```swift
 // Apply invoice
-let result = try await client.invoice.apply()
+let result = try await client.system.apply()
 print(result)
 ```
 
-### search_chat
+### search
 
 ```swift
 // POST /backend/v3/api/search/chat/stop
-let result = try await client.searchChat.stop()
-print(result)
-```
-
-### ppt_template_rendering
-
-```swift
-// Render PPT template
-let result = try await client.pptTemplateRendering.render()
-print(result)
-```
-
-### ppt_template_chat
-
-```swift
-// POST /backend/v3/api/ppt/template/chat/stop
-let result = try await client.pptTemplateChat.stop()
-print(result)
-```
-
-### knowledge_base_file
-
-```swift
-// List files
-let result = try await client.knowledgeBaseFile.listFiles()
-print(result)
-```
-
-### knowledge_base_chat
-
-```swift
-// POST /backend/v3/api/knowledge_base/chat/stop
-let result = try await client.knowledgeBaseChat.stop()
-print(result)
-```
-
-### im_message
-
-```swift
-// Mark conversation messages as read
-let result = try await client.imMessage.markRead()
-print(result)
-```
-
-### voice_speaker_generation
-
-```swift
-// Create voice speaker generation task
-let result = try await client.voiceSpeakerGeneration.create()
-print(result)
-```
-
-### video_generation
-
-```swift
-// Create video generation task
-let result = try await client.videoGeneration.create()
-print(result)
-```
-
-### music_generation
-
-```swift
-// Create music generation task
-let result = try await client.musicGeneration.create()
-print(result)
-```
-
-### image_generation
-
-```swift
-// Create image generation task
-let result = try await client.imageGeneration.create()
-print(result)
-```
-
-### character_generation
-
-```swift
-// Create character generation task
-let result = try await client.characterGeneration.create()
-print(result)
-```
-
-### audio_generation
-
-```swift
-// Create audio generation task
-let result = try await client.audioGeneration.create()
-print(result)
-```
-
-### audio_effect_generation
-
-```swift
-// Create audio effect generation task
-let result = try await client.audioEffectGeneration.create()
-print(result)
-```
-
-### chat
-
-```swift
-// Stop a chat completion stream
-let result = try await client.chat.stop()
+let result = try await client.search.stop()
 print(result)
 ```
 
@@ -1210,14 +750,6 @@ print(result)
 ```swift
 // Verify phone
 let result = try await client.auth.verifyPhone()
-print(result)
-```
-
-### agent_chat
-
-```swift
-// Create a chat completion with agent
-let result = try await client.agentChat.withContext()
 print(result)
 ```
 

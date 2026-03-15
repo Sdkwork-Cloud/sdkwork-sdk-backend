@@ -5,10 +5,10 @@ public class ChatOptions {
     private Double temperature;
     private Double topP;
     private Integer topK;
-    private Integer maxTokens;
-    private List<String> stopSequences;
     private Double frequencyPenalty;
     private Double presencePenalty;
+    private Integer maxTokens;
+    private List<String> stopSequences;
 
     public String getModel() {
         return this.model;
@@ -42,22 +42,6 @@ public class ChatOptions {
         this.topK = topK;
     }
 
-    public Integer getMaxTokens() {
-        return this.maxTokens;
-    }
-    
-    public void setMaxTokens(Integer maxTokens) {
-        this.maxTokens = maxTokens;
-    }
-
-    public List<String> getStopSequences() {
-        return this.stopSequences;
-    }
-    
-    public void setStopSequences(List<String> stopSequences) {
-        this.stopSequences = stopSequences;
-    }
-
     public Double getFrequencyPenalty() {
         return this.frequencyPenalty;
     }
@@ -72,5 +56,21 @@ public class ChatOptions {
     
     public void setPresencePenalty(Double presencePenalty) {
         this.presencePenalty = presencePenalty;
+    }
+
+    public Integer getMaxTokens() {
+        return this.maxTokens;
+    }
+    
+    public void setMaxTokens(Integer maxTokens) {
+        this.maxTokens = maxTokens;
+    }
+
+    public List<String> getStopSequences() {
+        return this.stopSequences;
+    }
+    
+    public void setStopSequences(List<String> stopSequences) {
+        this.stopSequences = stopSequences;
     }
 }

@@ -3,7 +3,7 @@ from typing import Optional, List, Dict, Any
 
 @dataclass
 class OrderContentItem:
-    """订单内容项"""
+    """Order content item"""
     id: int = None
     product_id: int = None
     sku_id: int = None

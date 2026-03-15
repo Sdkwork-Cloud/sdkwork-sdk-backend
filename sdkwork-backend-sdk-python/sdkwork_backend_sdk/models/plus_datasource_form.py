@@ -4,7 +4,10 @@ from typing import Optional, List, Dict, Any
 @dataclass
 class PlusDatasourceForm:
     """Data source creation form (includes name, type, connection config)"""
+    project_id: int
     name: str
+    channel: str
+    channel_id: str
     type: int
     status: int
     description: str = None

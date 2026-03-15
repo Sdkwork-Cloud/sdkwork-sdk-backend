@@ -2,18 +2,18 @@ import type { InstallAppList } from './install-app-list';
 
 /** Install app list */
 export interface PlusTenantForm {
-  /** 租户名称 */
+  /** Tenant name */
   name: string;
-  /** 租户唯一编码 */
+  /** Tenant code */
   code: string;
-  /** 租户状态 */
+  /** Tenant status */
   status: 'DEFAULT' | 'ACTIVE' | 'INACTIVE' | 'SUSPENDED' | 'DELETED';
-  /** 租户描述 */
+  /** Tenant description */
   description?: string;
-  /** 租户管理员用户ID */
-  adminUserId?: number;
-  /** 租户过期时间 */
+  /** Administrator user ID */
+  adminUserId: number;
+  /** Expiration time */
   expireTime?: string;
-  /** 安装应用列表 */
+  /** Installed applications */
   installAppList?: InstallAppList;
 }

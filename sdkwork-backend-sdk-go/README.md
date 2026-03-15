@@ -73,133 +73,81 @@ client.SetHeader("X-Custom-Header", "value")
 ## API Modules
 
 - `client.Workspace` - workspace API
-- `client.ContentVote` - content_vote API
-- `client.VoiceSpeaker` - voice_speaker API
+- `client.Vote` - vote API
+- `client.Voice` - voice API
 - `client.VisitHistory` - visit_history API
-- `client.VipUser` - vip_user API
-- `client.VipRecharge` - vip_recharge API
-- `client.VipRechargePackage` - vip_recharge_package API
-- `client.VipPointChange` - vip_point_change API
-- `client.VipPackageGroup` - vip_package_group API
-- `client.VipPackage` - vip_package API
-- `client.VipLevel` - vip_level API
-- `client.VipLevelBenefit` - vip_level_benefit API
-- `client.VipBenefit` - vip_benefit API
-- `client.VipBenefitUsage` - vip_benefit_usage API
+- `client.Vip` - vip API
 - `client.Video` - video API
 - `client.User` - user API
-- `client.UserOauthAccount` - user_oauth_account API
-- `client.UserCoupon` - user_coupon API
-- `client.UserCard` - user_card API
-- `client.UserAddress` - user_address API
-- `client.UsageRecord` - usage_record API
-- `client.ShoppingCart` - shopping_cart API
-- `client.ShoppingCartItem` - shopping_cart_item API
-- `client.Refund` - refund API
-- `client.Payment` - payment API
-- `client.Order` - order API
-- `client.OrderItem` - order_item API
+- `client.Usage` - usage API
+- `client.Trade` - trade API
 - `client.Tool` - tool API
 - `client.Tenant` - tenant API
-- `client.DatabaseTable` - database_table API
-- `client.ProductSku` - product_sku API
+- `client.Table` - table API
+- `client.Sku` - sku API
 - `client.Skill` - skill API
-- `client.SkillPackage` - skill_package API
 - `client.ShortUrl` - short_url API
 - `client.Shop` - shop API
 - `client.Share` - share API
-- `client.ShareVisitRecord` - share_visit_record API
-- `client.ShardingKey` - sharding_key API
-- `client.ApiSecurityPolicy` - api_security_policy API
+- `client.Sharding` - sharding API
+- `client.Security` - security API
 - `client.Schema` - schema API
-- `client.RbacRole` - rbac_role API
-- `client.RolePermission` - role_permission API
-- `client.InvocationRecord` - invocation_record API
-- `client.RbacUserRole` - rbac_user_role API
+- `client.Role` - role API
+- `client.Record` - record API
+- `client.Rbac` - rbac API
 - `client.Prompt` - prompt API
 - `client.Project` - project API
 - `client.Product` - product API
-- `client.PptTemplate` - ppt_template API
-- `client.PptTemplateSlide` - ppt_template_slide API
-- `client.RbacPermission` - rbac_permission API
+- `client.Ppt` - ppt API
+- `client.Permission` - permission API
 - `client.Partner` - partner API
-- `client.ChatParticipant` - chat_participant API
-- `client.OssBucket` - oss_bucket API
+- `client.Participant` - participant API
+- `client.Oss` - oss API
 - `client.Organization` - organization API
-- `client.Position` - position API
-- `client.MemberRelations` - member_relations API
 - `client.OrganizationMember` - organization_member API
 - `client.Notification` - notification API
-- `client.Notes` - notes API
+- `client.Note` - note API
 - `client.News` - news API
 - `client.Net` - net API
-- `client.DnsRecord` - dns_record API
 - `client.Music` - music API
-- `client.ModelInformation` - model_information API
-- `client.ModelPrice` - model_price API
-- `client.ChatMessage` - chat_message API
-- `client.MemberLevel` - member_level API
-- `client.MemberCard` - member_card API
+- `client.Model` - model API
+- `client.Message` - message API
+- `client.Member` - member API
 - `client.KnowledgeBase` - knowledge_base API
-- `client.InvitationRelation` - invitation_relation API
-- `client.InvitationCode` - invitation_code API
+- `client.Invitation` - invitation API
 - `client.Image` - image API
-- `client.ChatGroup` - chat_group API
+- `client.Im` - im API
 - `client.Generation` - generation API
-- `client.GenerationContent` - generation_content API
+- `client.Game` - game API
 - `client.File` - file API
-- `client.FilePart` - file_part API
-- `client.FileContent` - file_content API
-- `client.Feeds` - feeds API
+- `client.Feed` - feed API
 - `client.Feedback` - feedback API
 - `client.Favorite` - favorite API
-- `client.FileDisk` - file_disk API
-- `client.DiskMember` - disk_member API
+- `client.Disk` - disk API
 - `client.Detail` - detail API
 - `client.Department` - department API
 - `client.Datasource` - datasource API
 - `client.Coupon` - coupon API
-- `client.CouponTemplate` - coupon_template API
 - `client.Conversation` - conversation API
 - `client.ContentWriting` - content_writing API
 - `client.Comment` - comment API
 - `client.Column` - column API
 - `client.Collection` - collection API
 - `client.CollectionItem` - collection_item API
+- `client.Chat` - chat API
 - `client.Character` - character API
 - `client.Channel` - channel API
-- `client.ChannelResource` - channel_resource API
-- `client.ChannelProxy` - channel_proxy API
-- `client.ChannelAccount` - channel_account API
 - `client.Category` - category API
-- `client.MembershipCard` - membership_card API
-- `client.CardTemplate` - card_template API
+- `client.Card` - card API
 - `client.Attribute` - attribute API
 - `client.Article` - article API
 - `client.App` - app API
-- `client.ApiKey` - api_key API
+- `client.Apikey` - apikey API
 - `client.Agent` - agent API
-- `client.AgentToolRelationship` - agent_tool_relationship API
 - `client.Account` - account API
-- `client.AccountHistory` - account_history API
-- `client.AccountExchangeConfig` - account_exchange_config API
-- `client.Invoice` - invoice API
-- `client.SearchChat` - search_chat API
-- `client.PptTemplateRendering` - ppt_template_rendering API
-- `client.PptTemplateChat` - ppt_template_chat API
-- `client.KnowledgeBaseFile` - knowledge_base_file API
-- `client.KnowledgeBaseChat` - knowledge_base_chat API
-- `client.ImMessage` - im_message API
-- `client.VoiceSpeakerGeneration` - voice_speaker_generation API
-- `client.VideoGeneration` - video_generation API
-- `client.MusicGeneration` - music_generation API
-- `client.ImageGeneration` - image_generation API
-- `client.CharacterGeneration` - character_generation API
-- `client.AudioGeneration` - audio_generation API
-- `client.AudioEffectGeneration` - audio_effect_generation API
-- `client.Chat` - chat API
+- `client.System` - system API
+- `client.Search` - search API
 - `client.Auth` - auth API
-- `client.AgentChat` - agent_chat API
 
 ## Usage Examples
 
@@ -214,22 +162,22 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### content_vote
+### vote
 
 ```go
 // Update an existing content vote
-result, err := client.ContentVote.Update()
+result, err := client.Vote.Update()
 if err != nil {
     panic(err)
 }
 fmt.Println(result)
 ```
 
-### voice_speaker
+### voice
 
 ```go
 // Update an existing voice speaker
-result, err := client.VoiceSpeaker.Update()
+result, err := client.Voice.Update()
 if err != nil {
     panic(err)
 }
@@ -247,110 +195,11 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### vip_user
+### vip
 
 ```go
 // Update an existing VIP user
-result, err := client.VipUser.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### vip_recharge
-
-```go
-// Update an existing VIP recharge record
-result, err := client.VipRecharge.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### vip_recharge_package
-
-```go
-// Update an existing VIP recharge package
-result, err := client.VipRechargePackage.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### vip_point_change
-
-```go
-// Update an existing VIP point change record
-result, err := client.VipPointChange.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### vip_package_group
-
-```go
-// Update an existing VIP package group
-result, err := client.VipPackageGroup.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### vip_package
-
-```go
-// Update VIP Package
-result, err := client.VipPackage.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### vip_level
-
-```go
-// Update an existing VIP level
-result, err := client.VipLevel.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### vip_level_benefit
-
-```go
-// Update an existing VIP level benefit
-result, err := client.VipLevelBenefit.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### vip_benefit
-
-```go
-// Update an existing VIP benefit
-result, err := client.VipBenefit.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### vip_benefit_usage
-
-```go
-// Update an existing VIP benefit usage record
-result, err := client.VipBenefitUsage.Update()
+result, err := client.Vip.Update()
 if err != nil {
     panic(err)
 }
@@ -379,121 +228,22 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### user_oauth_account
-
-```go
-// Update user OAuth account
-result, err := client.UserOauthAccount.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### user_coupon
-
-```go
-// Update an existing user coupon
-result, err := client.UserCoupon.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### user_card
-
-```go
-// Update user-card binding
-result, err := client.UserCard.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### user_address
-
-```go
-// Update an existing user address
-result, err := client.UserAddress.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### usage_record
+### usage
 
 ```go
 // Update an existing usage record
-result, err := client.UsageRecord.Update()
+result, err := client.Usage.Update()
 if err != nil {
     panic(err)
 }
 fmt.Println(result)
 ```
 
-### shopping_cart
+### trade
 
 ```go
 // Update shopping cart
-result, err := client.ShoppingCart.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### shopping_cart_item
-
-```go
-// Update an existing shopping cart item
-result, err := client.ShoppingCartItem.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### refund
-
-```go
-// Update an existing refund record
-result, err := client.Refund.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### payment
-
-```go
-// Update an existing payment record
-result, err := client.Payment.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### order
-
-```go
-// Update an existing order
-result, err := client.Order.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### order_item
-
-```go
-// Update an existing order item
-result, err := client.OrderItem.Update()
+result, err := client.Trade.Update()
 if err != nil {
     panic(err)
 }
@@ -522,22 +272,22 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### database_table
+### table
 
 ```go
 // Update an existing database table
-result, err := client.DatabaseTable.Update()
+result, err := client.Table.Update()
 if err != nil {
     panic(err)
 }
 fmt.Println(result)
 ```
 
-### product_sku
+### sku
 
 ```go
 // Update an existing SKU
-result, err := client.ProductSku.Update()
+result, err := client.Sku.Update()
 if err != nil {
     panic(err)
 }
@@ -549,17 +299,6 @@ fmt.Println(result)
 ```go
 // Get one skill detail
 result, err := client.Skill.GetById()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### skill_package
-
-```go
-// Get skill package detail
-result, err := client.SkillPackage.GetById()
 if err != nil {
     panic(err)
 }
@@ -599,33 +338,22 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### share_visit_record
-
-```go
-// Update visit record
-result, err := client.ShareVisitRecord.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### sharding_key
+### sharding
 
 ```go
 // Update Sharding Key
-result, err := client.ShardingKey.Update()
+result, err := client.Sharding.Update()
 if err != nil {
     panic(err)
 }
 fmt.Println(result)
 ```
 
-### api_security_policy
+### security
 
 ```go
 // PUT /backend/v3/api/security/policy
-result, err := client.ApiSecurityPolicy.Update()
+result, err := client.Security.Update()
 if err != nil {
     panic(err)
 }
@@ -643,44 +371,33 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### rbac_role
+### role
 
 ```go
 // Update an existing system role
-result, err := client.RbacRole.Update()
+result, err := client.Role.Update()
 if err != nil {
     panic(err)
 }
 fmt.Println(result)
 ```
 
-### role_permission
-
-```go
-// Update role-permission association
-result, err := client.RolePermission.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### invocation_record
+### record
 
 ```go
 // Update an existing invocation record
-result, err := client.InvocationRecord.Update()
+result, err := client.Record.Update()
 if err != nil {
     panic(err)
 }
 fmt.Println(result)
 ```
 
-### rbac_user_role
+### rbac
 
 ```go
 // Update user-role relationship
-result, err := client.RbacUserRole.Update()
+result, err := client.Rbac.Update()
 if err != nil {
     panic(err)
 }
@@ -720,33 +437,22 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### ppt_template
+### ppt
 
 ```go
 // Update an existing PPT template
-result, err := client.PptTemplate.Update()
+result, err := client.Ppt.Update()
 if err != nil {
     panic(err)
 }
 fmt.Println(result)
 ```
 
-### ppt_template_slide
-
-```go
-// Update an existing PPT template slide
-result, err := client.PptTemplateSlide.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### rbac_permission
+### permission
 
 ```go
 // PUT /backend/v3/api/permission
-result, err := client.RbacPermission.Update()
+result, err := client.Permission.Update()
 if err != nil {
     panic(err)
 }
@@ -764,22 +470,22 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### chat_participant
+### participant
 
 ```go
 // Update an existing chat participant
-result, err := client.ChatParticipant.Update()
+result, err := client.Participant.Update()
 if err != nil {
     panic(err)
 }
 fmt.Println(result)
 ```
 
-### oss_bucket
+### oss
 
 ```go
 // Update an existing OSS bucket
-result, err := client.OssBucket.Update()
+result, err := client.Oss.Update()
 if err != nil {
     panic(err)
 }
@@ -791,28 +497,6 @@ fmt.Println(result)
 ```go
 // Update an existing organization
 result, err := client.Organization.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### position
-
-```go
-// Update an existing position
-result, err := client.Position.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### member_relations
-
-```go
-// Update member relation
-result, err := client.MemberRelations.Update()
 if err != nil {
     panic(err)
 }
@@ -841,11 +525,11 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### notes
+### note
 
 ```go
 // Update a note
-result, err := client.Notes.Update()
+result, err := client.Note.Update()
 if err != nil {
     panic(err)
 }
@@ -874,17 +558,6 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### dns_record
-
-```go
-// Update an existing DNS record
-result, err := client.DnsRecord.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
 ### music
 
 ```go
@@ -896,55 +569,33 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### model_information
+### model
 
 ```go
 // Update existing AI model information
-result, err := client.ModelInformation.Update()
+result, err := client.Model.Update()
 if err != nil {
     panic(err)
 }
 fmt.Println(result)
 ```
 
-### model_price
-
-```go
-// Update an existing AI model price
-result, err := client.ModelPrice.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### chat_message
+### message
 
 ```go
 // Update an existing chat message
-result, err := client.ChatMessage.Update()
+result, err := client.Message.Update()
 if err != nil {
     panic(err)
 }
 fmt.Println(result)
 ```
 
-### member_level
+### member
 
 ```go
 // Update an existing member level
-result, err := client.MemberLevel.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### member_card
-
-```go
-// Update an existing member card
-result, err := client.MemberCard.Update()
+result, err := client.Member.Update()
 if err != nil {
     panic(err)
 }
@@ -962,22 +613,11 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### invitation_relation
+### invitation
 
 ```go
 // Update an invitation relation
-result, err := client.InvitationRelation.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### invitation_code
-
-```go
-// Update an existing invitation code
-result, err := client.InvitationCode.Update()
+result, err := client.Invitation.Update()
 if err != nil {
     panic(err)
 }
@@ -995,11 +635,11 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### chat_group
+### im
 
 ```go
 // Update an existing chat group
-result, err := client.ChatGroup.Update()
+result, err := client.Im.Update()
 if err != nil {
     panic(err)
 }
@@ -1017,11 +657,11 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### generation_content
+### game
 
 ```go
-// Update AI generated content
-result, err := client.GenerationContent.Update()
+// Update game definition
+result, err := client.Game.Update()
 if err != nil {
     panic(err)
 }
@@ -1039,33 +679,11 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### file_part
-
-```go
-// Update an existing file part
-result, err := client.FilePart.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### file_content
-
-```go
-// Update file content
-result, err := client.FileContent.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### feeds
+### feed
 
 ```go
 // Update an existing feeds entry
-result, err := client.Feeds.Update()
+result, err := client.Feed.Update()
 if err != nil {
     panic(err)
 }
@@ -1094,22 +712,11 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### file_disk
+### disk
 
 ```go
 // Update an existing file disk
-result, err := client.FileDisk.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### disk_member
-
-```go
-// Update an existing disk member
-result, err := client.DiskMember.Update()
+result, err := client.Disk.Update()
 if err != nil {
     panic(err)
 }
@@ -1154,17 +761,6 @@ fmt.Println(result)
 ```go
 // Update an existing coupon template
 result, err := client.Coupon.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### coupon_template
-
-```go
-// Update an existing coupon template
-result, err := client.CouponTemplate.Update()
 if err != nil {
     panic(err)
 }
@@ -1237,6 +833,17 @@ if err != nil {
 fmt.Println(result)
 ```
 
+### chat
+
+```go
+// Update an existing chat message
+result, err := client.Chat.UpdateMessage()
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
 ### character
 
 ```go
@@ -1259,39 +866,6 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### channel_resource
-
-```go
-// Update an existing channel resource
-result, err := client.ChannelResource.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### channel_proxy
-
-```go
-// Update channel proxy
-result, err := client.ChannelProxy.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### channel_account
-
-```go
-// Update channel account
-result, err := client.ChannelAccount.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
 ### category
 
 ```go
@@ -1303,22 +877,11 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### membership_card
+### card
 
 ```go
 // Update an existing membership card
-result, err := client.MembershipCard.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### card_template
-
-```go
-// Update an existing card template
-result, err := client.CardTemplate.Update()
+result, err := client.Card.Update()
 if err != nil {
     panic(err)
 }
@@ -1358,11 +921,11 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### api_key
+### apikey
 
 ```go
 // Update an existing API key
-result, err := client.ApiKey.Update()
+result, err := client.Apikey.Update()
 if err != nil {
     panic(err)
 }
@@ -1380,17 +943,6 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### agent_tool_relationship
-
-```go
-// Update an existing agent-tool relationship
-result, err := client.AgentToolRelationship.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
 ### account
 
 ```go
@@ -1402,187 +954,22 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### account_history
-
-```go
-// Update an existing account history record
-result, err := client.AccountHistory.Update()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### account_exchange_config
-
-```go
-// Get points-to-cash rate
-result, err := client.AccountExchangeConfig.GetPointsToCashRate()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### invoice
+### system
 
 ```go
 // Apply invoice
-result, err := client.Invoice.Apply()
+result, err := client.System.Apply()
 if err != nil {
     panic(err)
 }
 fmt.Println(result)
 ```
 
-### search_chat
+### search
 
 ```go
 // POST /backend/v3/api/search/chat/stop
-result, err := client.SearchChat.Stop()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### ppt_template_rendering
-
-```go
-// Render PPT template
-result, err := client.PptTemplateRendering.Render()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### ppt_template_chat
-
-```go
-// POST /backend/v3/api/ppt/template/chat/stop
-result, err := client.PptTemplateChat.Stop()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### knowledge_base_file
-
-```go
-// List files
-result, err := client.KnowledgeBaseFile.ListFiles()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### knowledge_base_chat
-
-```go
-// POST /backend/v3/api/knowledge_base/chat/stop
-result, err := client.KnowledgeBaseChat.Stop()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### im_message
-
-```go
-// Mark conversation messages as read
-result, err := client.ImMessage.MarkRead()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### voice_speaker_generation
-
-```go
-// Create voice speaker generation task
-result, err := client.VoiceSpeakerGeneration.Create()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### video_generation
-
-```go
-// Create video generation task
-result, err := client.VideoGeneration.Create()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### music_generation
-
-```go
-// Create music generation task
-result, err := client.MusicGeneration.Create()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### image_generation
-
-```go
-// Create image generation task
-result, err := client.ImageGeneration.Create()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### character_generation
-
-```go
-// Create character generation task
-result, err := client.CharacterGeneration.Create()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### audio_generation
-
-```go
-// Create audio generation task
-result, err := client.AudioGeneration.Create()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### audio_effect_generation
-
-```go
-// Create audio effect generation task
-result, err := client.AudioEffectGeneration.Create()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### chat
-
-```go
-// Stop a chat completion stream
-result, err := client.Chat.Stop()
+result, err := client.Search.Stop()
 if err != nil {
     panic(err)
 }
@@ -1594,17 +981,6 @@ fmt.Println(result)
 ```go
 // Verify phone
 result, err := client.Auth.VerifyPhone()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### agent_chat
-
-```go
-// Create a chat completion with agent
-result, err := client.AgentChat.WithContext()
 if err != nil {
     panic(err)
 }

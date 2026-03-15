@@ -8,9 +8,9 @@ class PagePlusOrderVO:
     size: int = None
     content: List[PlusOrderVO] = None
     number: int = None
-    first: bool = None
-    last: bool = None
     number_of_elements: int = None
     sort: SortObject = None
     pageable: PageableObject = None
+    first: bool = None
+    last: bool = None
     empty: bool = None

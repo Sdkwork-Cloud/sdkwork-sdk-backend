@@ -9,8 +9,8 @@ namespace Backend.Models
         public int? Offset { get; set; }
         public bool? Paged { get; set; }
         public SortObject? Sort { get; set; }
-        public int? PageNumber { get; set; }
         public int? PageSize { get; set; }
+        public int? PageNumber { get; set; }
         public bool? Unpaged { get; set; }
     }
 }

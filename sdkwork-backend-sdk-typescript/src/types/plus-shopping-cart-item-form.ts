@@ -1,17 +1,17 @@
 /** Shopping cart item creation form */
 export interface PlusShoppingCartItemForm {
-  /** 购物车ID */
+  /** 璐墿杞D */
   cartId: number;
-  /** 购物车分组UUID */
+  /** 璐墿杞﹀垎缁刄UID */
   cartGroupUuid: string;
-  /** 商品ID */
+  /** 鍟嗗搧ID */
   productId: number;
   /** SKU ID */
   skuId: number;
-  /** 商品数量 */
+  /** 鍟嗗搧鏁伴噺 */
   quantity: number;
-  /** 加入购物车时的价格 */
+  /** P ri ce */
   price: number;
-  /** 是否选中 */
+  /** 鏄惁閫変腑 */
   selected: boolean;
 }

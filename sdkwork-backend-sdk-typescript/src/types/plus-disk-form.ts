@@ -1,15 +1,17 @@
 /** File disk creation form */
 export interface PlusDiskForm {
-  /** 存储盘名称 */
+  /** Disk name */
   name: string;
-  /** 存储盘所有者类型 */
+  /** Disk type */
+  type: 'DEFAULT' | 'LOCAL' | 'CLOUD' | 'DISTRIBUTED' | 'SHARED' | 'UPLOAD' | 'AI' | 'KNOWLEDGE_BASE' | 'RESOURCE' | 'PROJECT' | 'TEMPLATE';
+  /** Owner type */
   owner: 'DEFAULT' | 'USER' | 'PROJECT' | 'TENANT' | 'SYSTEM' | 'ORGANIZATION';
-  /** 所有者ID */
+  /** Owner ID */
   ownerId: number;
-  /** 总容量（字节） */
+  /** Disk size in bytes */
   diskSize: number;
-  /** 已使用容量（字节） */
-  usedSize: number;
-  /** 存储盘描述 */
+  /** Used size in bytes */
+  usedSize?: number;
+  /** Description */
   description?: string;
 }

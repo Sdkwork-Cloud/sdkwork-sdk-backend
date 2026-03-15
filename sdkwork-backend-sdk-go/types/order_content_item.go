@@ -1,6 +1,6 @@
 package types
 
-// 订单内容项
+// Order content item
 type OrderContentItem struct {
 	Id int `json:"id"`
 	ProductId int `json:"productId"`

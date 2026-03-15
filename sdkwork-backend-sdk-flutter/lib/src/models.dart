@@ -1069,7 +1069,6 @@ class PlusVipBenefitUsageVO {
 }
 
 class PlusVideoForm {
-  final int? id;
   final String? title;
   final String? description;
   final String? contentUrl;
@@ -1082,12 +1081,8 @@ class PlusVideoForm {
   final String? format;
   final String? thumbnailUrl;
   final String? status;
-  final String? uuid;
-  final String? createdAt;
-  final String? updatedAt;
 
   PlusVideoForm({
-    this.id,
     this.title,
     this.description,
     this.contentUrl,
@@ -1099,10 +1094,7 @@ class PlusVideoForm {
     this.fileSize,
     this.format,
     this.thumbnailUrl,
-    this.status,
-    this.uuid,
-    this.createdAt,
-    this.updatedAt
+    this.status
   });
 }
 
@@ -2278,6 +2270,7 @@ class PlusPaymentForm {
   final String? transactionId;
   final String? outTradeNo;
   final String? channel;
+  final String? provider;
   final String? status;
   final double? amount;
   final String? successTime;
@@ -2285,7 +2278,6 @@ class PlusPaymentForm {
   final String? contentType;
   final int? contentId;
   final String? productType;
-  final String? provider;
 
   PlusPaymentForm({
     this.purpose,
@@ -2293,14 +2285,14 @@ class PlusPaymentForm {
     this.transactionId,
     this.outTradeNo,
     this.channel,
+    this.provider,
     this.status,
     this.amount,
     this.successTime,
     this.remark,
     this.contentType,
     this.contentId,
-    this.productType,
-    this.provider
+    this.productType
   });
 }
 
@@ -2363,6 +2355,7 @@ class PlusPaymentVO {
 class PlusOrderForm {
   final String? orderType;
   final int? userId;
+  final String? subject;
   final String? orderSn;
   final String? transactionId;
   final String? outTradeNo;
@@ -2374,10 +2367,20 @@ class PlusOrderForm {
   final String? expireTime;
   final String? contentType;
   final int? contentId;
+  final String? taskCode;
+  final String? dispatchMode;
+  final String? dispatchStatus;
+  final int? workerUserId;
+  final int? dispatcherUserId;
+  final String? acceptedTime;
+  final String? serviceStartTime;
+  final String? dispatchExpireTime;
+  final Map<String, dynamic>? taskPayload;
 
   PlusOrderForm({
     this.orderType,
     this.userId,
+    this.subject,
     this.orderSn,
     this.transactionId,
     this.outTradeNo,
@@ -2388,7 +2391,16 @@ class PlusOrderForm {
     this.payTime,
     this.expireTime,
     this.contentType,
-    this.contentId
+    this.contentId,
+    this.taskCode,
+    this.dispatchMode,
+    this.dispatchStatus,
+    this.workerUserId,
+    this.dispatcherUserId,
+    this.acceptedTime,
+    this.serviceStartTime,
+    this.dispatchExpireTime,
+    this.taskPayload
   });
 }
 
@@ -2501,8 +2513,10 @@ class PlusApiResultPlusOrderVO {
 class PlusOrderVO {
   final String? createdAt;
   final String? updatedAt;
+  final int? id;
   final String? orderType;
   final int? userId;
+  final String? subject;
   final String? orderSn;
   final String? transactionId;
   final String? outTradeNo;
@@ -2514,13 +2528,24 @@ class PlusOrderVO {
   final String? expireTime;
   final String? contentType;
   final int? contentId;
+  final String? taskCode;
+  final String? dispatchMode;
+  final String? dispatchStatus;
+  final int? workerUserId;
+  final int? dispatcherUserId;
+  final String? acceptedTime;
+  final String? serviceStartTime;
+  final String? dispatchExpireTime;
+  final Map<String, dynamic>? taskPayload;
   final ClientPayObjects? payObjects;
 
   PlusOrderVO({
     this.createdAt,
     this.updatedAt,
+    this.id,
     this.orderType,
     this.userId,
+    this.subject,
     this.orderSn,
     this.transactionId,
     this.outTradeNo,
@@ -2532,6 +2557,15 @@ class PlusOrderVO {
     this.expireTime,
     this.contentType,
     this.contentId,
+    this.taskCode,
+    this.dispatchMode,
+    this.dispatchStatus,
+    this.workerUserId,
+    this.dispatcherUserId,
+    this.acceptedTime,
+    this.serviceStartTime,
+    this.dispatchExpireTime,
+    this.taskPayload,
     this.payObjects
   });
 }
@@ -2599,6 +2633,74 @@ class WechatPayObject {
     this.paySign,
     this.outTradeNo,
     this.tradeType
+  });
+}
+
+class OrderWorkerDispatchMetadata {
+  final List<String>? enabledTaskCodes;
+  final Map<String, int>? taskConcurrentOverrides;
+
+  OrderWorkerDispatchMetadata({
+    this.enabledTaskCodes,
+    this.taskConcurrentOverrides
+  });
+}
+
+class PlusOrderWorkerDispatchProfileForm {
+  final int? userId;
+  final String? ratingLevel;
+  final bool? enabled;
+  final int? globalMaxInProgress;
+  final OrderWorkerDispatchMetadata? metadata;
+
+  PlusOrderWorkerDispatchProfileForm({
+    this.userId,
+    this.ratingLevel,
+    this.enabled,
+    this.globalMaxInProgress,
+    this.metadata
+  });
+}
+
+class PlusApiResultPlusOrderWorkerDispatchProfileVO {
+  final PlusOrderWorkerDispatchProfileVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPlusOrderWorkerDispatchProfileVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusOrderWorkerDispatchProfileVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? id;
+  final int? userId;
+  final String? ratingLevel;
+  final bool? enabled;
+  final int? globalMaxInProgress;
+  final OrderWorkerDispatchMetadata? metadata;
+
+  PlusOrderWorkerDispatchProfileVO({
+    this.createdAt,
+    this.updatedAt,
+    this.id,
+    this.userId,
+    this.ratingLevel,
+    this.enabled,
+    this.globalMaxInProgress,
+    this.metadata
   });
 }
 
@@ -2675,6 +2777,82 @@ class PlusOrderItemVO {
     this.expireTime,
     this.contentType,
     this.contentId
+  });
+}
+
+class OrderDispatchRuleMetadata {
+  final Map<String, int>? ratingConcurrentLimits;
+  final List<String>? allowedRatingLevels;
+
+  OrderDispatchRuleMetadata({
+    this.ratingConcurrentLimits,
+    this.allowedRatingLevels
+  });
+}
+
+class PlusOrderDispatchRuleForm {
+  final String? taskCode;
+  final String? taskName;
+  final bool? enabled;
+  final bool? allowGrab;
+  final bool? allowAssign;
+  final int? defaultTaskConcurrentLimit;
+  final OrderDispatchRuleMetadata? metadata;
+
+  PlusOrderDispatchRuleForm({
+    this.taskCode,
+    this.taskName,
+    this.enabled,
+    this.allowGrab,
+    this.allowAssign,
+    this.defaultTaskConcurrentLimit,
+    this.metadata
+  });
+}
+
+class PlusApiResultPlusOrderDispatchRuleVO {
+  final PlusOrderDispatchRuleVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPlusOrderDispatchRuleVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusOrderDispatchRuleVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? id;
+  final String? taskCode;
+  final String? taskName;
+  final bool? enabled;
+  final bool? allowGrab;
+  final bool? allowAssign;
+  final int? defaultTaskConcurrentLimit;
+  final OrderDispatchRuleMetadata? metadata;
+
+  PlusOrderDispatchRuleVO({
+    this.createdAt,
+    this.updatedAt,
+    this.id,
+    this.taskCode,
+    this.taskName,
+    this.enabled,
+    this.allowGrab,
+    this.allowAssign,
+    this.defaultTaskConcurrentLimit,
+    this.metadata
   });
 }
 
@@ -2887,6 +3065,7 @@ class PlusTableForm {
   final String? engine;
   final String? createSql;
   final String? comment;
+  final int? schemaId;
 
   PlusTableForm({
     this.name,
@@ -2898,7 +3077,8 @@ class PlusTableForm {
     this.primaryKeys,
     this.engine,
     this.createSql,
-    this.comment
+    this.comment,
+    this.schemaId
   });
 }
 
@@ -5388,11 +5568,8 @@ class PlusPptTemplateVO {
 
 class PlusPptTemplateSlideForm {
   final int? templateId;
-  final String? sectionTitle;
-  final String? sectionContent;
   final int? pageNumber;
   final String? layoutType;
-  final String? backgroundImage;
   final int? sortOrder;
   final bool? isRequired;
   final String? createdAt;
@@ -5400,11 +5577,8 @@ class PlusPptTemplateSlideForm {
 
   PlusPptTemplateSlideForm({
     this.templateId,
-    this.sectionTitle,
-    this.sectionContent,
     this.pageNumber,
     this.layoutType,
-    this.backgroundImage,
     this.sortOrder,
     this.isRequired,
     this.createdAt,
@@ -6419,6 +6593,7 @@ class PlusNewsForm {
   final String? summary;
   final String? publishTime;
   final TagsContent? tags;
+  final int? categoryId;
   final int? userId;
 
   PlusNewsForm({
@@ -6428,6 +6603,7 @@ class PlusNewsForm {
     this.summary,
     this.publishTime,
     this.tags,
+    this.categoryId,
     this.userId
   });
 }
@@ -6696,8 +6872,6 @@ class PlusMusicForm {
   final String? genre;
   final int? bitrate;
   final String? status;
-  final String? createdAt;
-  final String? updatedAt;
 
   PlusMusicForm({
     this.title,
@@ -6710,9 +6884,7 @@ class PlusMusicForm {
     this.artist,
     this.genre,
     this.bitrate,
-    this.status,
-    this.createdAt,
-    this.updatedAt
+    this.status
   });
 }
 
@@ -6794,6 +6966,24 @@ class AspectRatio {
   });
 }
 
+class ModelFunctionInfo {
+  final List<ModelFunctionItem>? functions;
+
+  ModelFunctionInfo({
+    this.functions
+  });
+}
+
+class ModelFunctionItem {
+  final String? type;
+  final bool? supported;
+
+  ModelFunctionItem({
+    this.type,
+    this.supported
+  });
+}
+
 class ModelLimitInfo {
   final String? unit;
   final List<ModelLimitItem>? items;
@@ -6857,18 +7047,39 @@ class ModelPriceItem {
 class PlusAiModelInfoForm {
   final String? objectId;
   final String? model;
+  final String? modelId;
+  final String? modelKey;
+  final String? vendorModel;
   final String? name;
   final String? description;
   final String? channel;
+  final String? vendor;
   final String? modelVersion;
   final String? family;
+  final bool? openSource;
   final String? apiEndpoint;
   final String? modelType;
-  final int? createdAt;
+  final String? pricingType;
+  final String? lifecycleStage;
+  final String? releaseDate;
+  final String? deprecatedAt;
+  final int? contextTokens;
+  final int? maxInputTokens;
+  final int? maxOutputTokens;
+  final bool? supportReasoning;
+  final bool? supportMultimodal;
+  final bool? supportFunctionCall;
+  final bool? supportStructuredOutput;
+  final bool? supportRealtime;
+  final bool? supportFineTuning;
+  final int? popularityScore;
   final String? ownedBy;
+  final SceneContent? scenes;
   final ModelLimitInfo? tokenLimit;
+  final ModelFunctionInfo? functionInfo;
   final ModelPrice? priceInfo;
   final ModelMetadata? metadata;
+  final Map<String, dynamic>? productSupportInfo;
   final String? supportedVoices;
   final double? defaultTemperature;
   final double? defaultTopP;
@@ -6884,18 +7095,39 @@ class PlusAiModelInfoForm {
   PlusAiModelInfoForm({
     this.objectId,
     this.model,
+    this.modelId,
+    this.modelKey,
+    this.vendorModel,
     this.name,
     this.description,
     this.channel,
+    this.vendor,
     this.modelVersion,
     this.family,
+    this.openSource,
     this.apiEndpoint,
     this.modelType,
-    this.createdAt,
+    this.pricingType,
+    this.lifecycleStage,
+    this.releaseDate,
+    this.deprecatedAt,
+    this.contextTokens,
+    this.maxInputTokens,
+    this.maxOutputTokens,
+    this.supportReasoning,
+    this.supportMultimodal,
+    this.supportFunctionCall,
+    this.supportStructuredOutput,
+    this.supportRealtime,
+    this.supportFineTuning,
+    this.popularityScore,
     this.ownedBy,
+    this.scenes,
     this.tokenLimit,
+    this.functionInfo,
     this.priceInfo,
     this.metadata,
+    this.productSupportInfo,
     this.supportedVoices,
     this.defaultTemperature,
     this.defaultTopP,
@@ -6910,22 +7142,53 @@ class PlusAiModelInfoForm {
   });
 }
 
+class SceneContent {
+  final List<String>? scenes;
+  final List<SceneContent>? children;
+
+  SceneContent({
+    this.scenes,
+    this.children
+  });
+}
+
 class PlusAiModelInfoVO {
   final String? createdAt;
   final String? updatedAt;
   final String? objectId;
   final String? model;
+  final String? modelId;
+  final String? modelKey;
+  final String? vendorModel;
   final String? name;
   final String? description;
   final String? channel;
+  final String? vendor;
   final String? modelVersion;
   final String? family;
   final String? apiEndpoint;
   final String? modelType;
+  final String? pricingType;
+  final String? lifecycleStage;
+  final String? releaseDate;
+  final String? deprecatedAt;
+  final int? contextTokens;
+  final int? maxInputTokens;
+  final int? maxOutputTokens;
+  final bool? supportReasoning;
+  final bool? supportMultimodal;
+  final bool? supportFunctionCall;
+  final bool? supportStructuredOutput;
+  final bool? supportRealtime;
+  final bool? supportFineTuning;
+  final int? popularityScore;
   final String? ownedBy;
+  final SceneContent? scenes;
   final ModelLimitInfo? tokenLimit;
+  final ModelFunctionInfo? functionInfo;
   final ModelPrice? priceInfo;
   final ModelMetadata? metadata;
+  final Map<String, dynamic>? productSupportInfo;
   final String? supportedVoices;
   final double? defaultTemperature;
   final double? defaultTopP;
@@ -6943,17 +7206,38 @@ class PlusAiModelInfoVO {
     this.updatedAt,
     this.objectId,
     this.model,
+    this.modelId,
+    this.modelKey,
+    this.vendorModel,
     this.name,
     this.description,
     this.channel,
+    this.vendor,
     this.modelVersion,
     this.family,
     this.apiEndpoint,
     this.modelType,
+    this.pricingType,
+    this.lifecycleStage,
+    this.releaseDate,
+    this.deprecatedAt,
+    this.contextTokens,
+    this.maxInputTokens,
+    this.maxOutputTokens,
+    this.supportReasoning,
+    this.supportMultimodal,
+    this.supportFunctionCall,
+    this.supportStructuredOutput,
+    this.supportRealtime,
+    this.supportFineTuning,
+    this.popularityScore,
     this.ownedBy,
+    this.scenes,
     this.tokenLimit,
+    this.functionInfo,
     this.priceInfo,
     this.metadata,
+    this.productSupportInfo,
     this.supportedVoices,
     this.defaultTemperature,
     this.defaultTopP,
@@ -6991,7 +7275,17 @@ class PlusApiResultPlusAiModelInfoVO {
 class PlusAiModelPriceForm {
   final String? objectId;
   final String? model;
+  final int? modelId;
+  final String? channel;
+  final String? modelKey;
+  final String? productCode;
+  final String? featureCode;
+  final String? billingType;
+  final String? priceItemType;
+  final String? tierName;
+  final int? rulePriority;
   final String? unit;
+  final double? unitSize;
   final double? price;
   final double? inputPrice;
   final double? batchInputPrice;
@@ -7000,11 +7294,28 @@ class PlusAiModelPriceForm {
   final double? outputPrice;
   final double? batchOutputPrice;
   final String? currency;
+  final double? minUsage;
+  final double? maxUsage;
+  final String? effectiveFrom;
+  final String? effectiveTo;
+  final bool? defaultRule;
+  final String? status;
+  final Map<String, dynamic>? metadata;
 
   PlusAiModelPriceForm({
     this.objectId,
     this.model,
+    this.modelId,
+    this.channel,
+    this.modelKey,
+    this.productCode,
+    this.featureCode,
+    this.billingType,
+    this.priceItemType,
+    this.tierName,
+    this.rulePriority,
     this.unit,
+    this.unitSize,
     this.price,
     this.inputPrice,
     this.batchInputPrice,
@@ -7012,7 +7323,14 @@ class PlusAiModelPriceForm {
     this.batchCachedInputPrice,
     this.outputPrice,
     this.batchOutputPrice,
-    this.currency
+    this.currency,
+    this.minUsage,
+    this.maxUsage,
+    this.effectiveFrom,
+    this.effectiveTo,
+    this.defaultRule,
+    this.status,
+    this.metadata
   });
 }
 
@@ -7021,7 +7339,17 @@ class PlusAiModelPriceVO {
   final String? updatedAt;
   final String? objectId;
   final String? model;
+  final int? modelId;
+  final String? channel;
+  final String? modelKey;
+  final String? productCode;
+  final String? featureCode;
+  final String? billingType;
+  final String? priceItemType;
+  final String? tierName;
+  final int? rulePriority;
   final String? unit;
+  final double? unitSize;
   final double? price;
   final double? inputPrice;
   final double? batchInputPrice;
@@ -7030,13 +7358,30 @@ class PlusAiModelPriceVO {
   final double? outputPrice;
   final double? batchOutputPrice;
   final String? currency;
+  final double? minUsage;
+  final double? maxUsage;
+  final String? effectiveFrom;
+  final String? effectiveTo;
+  final bool? defaultRule;
+  final String? status;
+  final Map<String, dynamic>? metadata;
 
   PlusAiModelPriceVO({
     this.createdAt,
     this.updatedAt,
     this.objectId,
     this.model,
+    this.modelId,
+    this.channel,
+    this.modelKey,
+    this.productCode,
+    this.featureCode,
+    this.billingType,
+    this.priceItemType,
+    this.tierName,
+    this.rulePriority,
     this.unit,
+    this.unitSize,
     this.price,
     this.inputPrice,
     this.batchInputPrice,
@@ -7044,7 +7389,14 @@ class PlusAiModelPriceVO {
     this.batchCachedInputPrice,
     this.outputPrice,
     this.batchOutputPrice,
-    this.currency
+    this.currency,
+    this.minUsage,
+    this.maxUsage,
+    this.effectiveFrom,
+    this.effectiveTo,
+    this.defaultRule,
+    this.status,
+    this.metadata
   });
 }
 
@@ -7150,12 +7502,12 @@ class AgentExecutionContext {
   final PlusFileObject? diskRootFile;
   final bool? completed;
   final bool? running;
-  final bool? paused;
   final bool? expired;
-  final bool? failed;
   final bool? waiting;
-  final bool? init;
+  final bool? failed;
+  final bool? paused;
   final bool? end;
+  final bool? init;
   final Map<String, AgentScope>? agentSCOPES;
   final bool? overSteps;
 
@@ -7183,12 +7535,12 @@ class AgentExecutionContext {
     this.diskRootFile,
     this.completed,
     this.running,
-    this.paused,
     this.expired,
-    this.failed,
     this.waiting,
-    this.init,
+    this.failed,
+    this.paused,
     this.end,
+    this.init,
     this.agentSCOPES,
     this.overSteps
   });
@@ -7483,20 +7835,20 @@ class ChatOptions {
   final double? temperature;
   final double? topP;
   final int? topK;
-  final int? maxTokens;
-  final List<String>? stopSequences;
   final double? frequencyPenalty;
   final double? presencePenalty;
+  final int? maxTokens;
+  final List<String>? stopSequences;
 
   ChatOptions({
     this.model,
     this.temperature,
     this.topP,
     this.topK,
-    this.maxTokens,
-    this.stopSequences,
     this.frequencyPenalty,
-    this.presencePenalty
+    this.presencePenalty,
+    this.maxTokens,
+    this.stopSequences
   });
 }
 
@@ -7585,8 +7937,8 @@ class Flow {
   final int? parentId;
   final String? startTime;
   final String? endTime;
-  final Node? lastNode;
   final Flow? parentFlow;
+  final Node? lastNode;
   final List<PlusAgent>? allAgents;
 
   Flow({
@@ -7600,8 +7952,8 @@ class Flow {
     this.parentId,
     this.startTime,
     this.endTime,
-    this.lastNode,
     this.parentFlow,
+    this.lastNode,
     this.allAgents
   });
 }
@@ -7956,19 +8308,19 @@ class PlusAgent {
   final AgentMetadata? metadata;
   final String? uuid;
   final Prompt? systemPrompt;
+  final LlmAccountConfig? accountConfig;
   final List<PromptToolDescription>? tools;
+  final AgentExecutionContext? executionContext;
   final ChatContext? chatContext;
   final ChatOptions? chatOptions;
-  final AgentExecutionContext? executionContext;
   final List<String>? instructions;
   final String? faceURL;
   final Map<String, Prompt>? prompts;
-  final LlmAccountConfig? accountConfig;
-  final IPlusChatMemory? chatMemory;
   final ToolCallbackProvider? toolCallbackProvider;
   final String? promptPath;
   final PromptContextOptimizer? promptContextOptimizer;
   final List<String>? nextActions;
+  final IPlusChatMemory? chatMemory;
 
   PlusAgent({
     this.name,
@@ -7978,19 +8330,19 @@ class PlusAgent {
     this.metadata,
     this.uuid,
     this.systemPrompt,
+    this.accountConfig,
     this.tools,
+    this.executionContext,
     this.chatContext,
     this.chatOptions,
-    this.executionContext,
     this.instructions,
     this.faceURL,
     this.prompts,
-    this.accountConfig,
-    this.chatMemory,
     this.toolCallbackProvider,
     this.promptPath,
     this.promptContextOptimizer,
-    this.nextActions
+    this.nextActions,
+    this.chatMemory
   });
 }
 
@@ -8191,12 +8543,12 @@ class PlusProjectObject {
   final String? version;
   final TagsContent? tags;
   final String? description;
-  final String? title;
-  final String? createdAt;
-  final int? ownerId;
-  final String? uuid;
-  final int? diskId;
   final String? author;
+  final int? diskId;
+  final String? title;
+  final String? uuid;
+  final int? ownerId;
+  final String? createdAt;
   final List<PlusFileObject>? files;
   final String? screenType;
 
@@ -8209,12 +8561,12 @@ class PlusProjectObject {
     this.version,
     this.tags,
     this.description,
-    this.title,
-    this.createdAt,
-    this.ownerId,
-    this.uuid,
-    this.diskId,
     this.author,
+    this.diskId,
+    this.title,
+    this.uuid,
+    this.ownerId,
+    this.createdAt,
     this.files,
     this.screenType
   });
@@ -8245,9 +8597,9 @@ class Prompt {
   final ChatOptions? options;
   final List<Message>? instructions;
   final Message? lastUserOrToolResponseMessage;
-  final List<SystemMessage>? systemMessages;
   final List<UserMessage>? userMessages;
   final UserMessage? userMessage;
+  final List<SystemMessage>? systemMessages;
   final SystemMessage? systemMessage;
 
   Prompt({
@@ -8255,9 +8607,9 @@ class Prompt {
     this.options,
     this.instructions,
     this.lastUserOrToolResponseMessage,
-    this.systemMessages,
     this.userMessages,
     this.userMessage,
+    this.systemMessages,
     this.systemMessage
   });
 }
@@ -8828,10 +9180,18 @@ class PlusMemberCardVO {
 
 class PlusKnowledgeBaseForm {
   final String? name;
+  final int? diskId;
+  final String? channel;
+  final String? channelId;
+  final int? projectId;
   final String? description;
 
   PlusKnowledgeBaseForm({
     this.name,
+    this.diskId,
+    this.channel,
+    this.channelId,
+    this.projectId,
     this.description
   });
 }
@@ -9174,23 +9534,8 @@ class PlusAiGenerationForm {
   final String? model;
   final String? channel;
   final String? type;
-  final ImageMediaResourceList? coverImages;
-  final AssetMediaResourceList? resourceList;
-  final VideoStoryboard? storyboard;
-  final AuthorInfo? author;
-  final TagsContent? tags;
-  final int? promptId;
-  final String? channelTaskId;
-  final String? channelTaskStatus;
-  final String? taskCreatedTime;
-  final String? taskUpdatedTime;
   final double? cost;
   final String? status;
-  final String? requestTime;
-  final String? responseTime;
-  final int? usageRecordId;
-  final int? conversationId;
-  final int? messageId;
 
   PlusAiGenerationForm({
     this.userId,
@@ -9198,79 +9543,8 @@ class PlusAiGenerationForm {
     this.model,
     this.channel,
     this.type,
-    this.coverImages,
-    this.resourceList,
-    this.storyboard,
-    this.author,
-    this.tags,
-    this.promptId,
-    this.channelTaskId,
-    this.channelTaskStatus,
-    this.taskCreatedTime,
-    this.taskUpdatedTime,
     this.cost,
-    this.status,
-    this.requestTime,
-    this.responseTime,
-    this.usageRecordId,
-    this.conversationId,
-    this.messageId
-  });
-}
-
-class VideoShotItem {
-  final String? id;
-  final String? uuid;
-  final String? shotPrompt;
-  final String? dialogue;
-  final double? duration;
-  final ImageMediaResource? startFrame;
-  final ImageMediaResource? endFrame;
-  final ImageMediaResource? image;
-  final AssetMediaResourceList? resourceList;
-  final String? emotion;
-  final String? videoDescription;
-  final VideoMediaResource? video;
-
-  VideoShotItem({
-    this.id,
-    this.uuid,
-    this.shotPrompt,
-    this.dialogue,
-    this.duration,
-    this.startFrame,
-    this.endFrame,
-    this.image,
-    this.resourceList,
-    this.emotion,
-    this.videoDescription,
-    this.video
-  });
-}
-
-class VideoStoryboard {
-  final List<VideoShotItem>? shots;
-  final VideoMediaResource? finalVideo;
-  final AudioMediaResource? finalAudio;
-  final String? title;
-  final String? description;
-  final String? style;
-  final String? aspectRatio;
-  final String? prompt;
-  final double? duration;
-  final VoiceSpeakerInfo? speaker;
-
-  VideoStoryboard({
-    this.shots,
-    this.finalVideo,
-    this.finalAudio,
-    this.title,
-    this.description,
-    this.style,
-    this.aspectRatio,
-    this.prompt,
-    this.duration,
-    this.speaker
+    this.status
   });
 }
 
@@ -9732,6 +10006,62 @@ class VideoGenerationInput {
   });
 }
 
+class VideoShotItem {
+  final String? id;
+  final String? uuid;
+  final String? shotPrompt;
+  final String? dialogue;
+  final double? duration;
+  final ImageMediaResource? startFrame;
+  final ImageMediaResource? endFrame;
+  final ImageMediaResource? image;
+  final AssetMediaResourceList? resourceList;
+  final String? emotion;
+  final String? videoDescription;
+  final VideoMediaResource? video;
+
+  VideoShotItem({
+    this.id,
+    this.uuid,
+    this.shotPrompt,
+    this.dialogue,
+    this.duration,
+    this.startFrame,
+    this.endFrame,
+    this.image,
+    this.resourceList,
+    this.emotion,
+    this.videoDescription,
+    this.video
+  });
+}
+
+class VideoStoryboard {
+  final List<VideoShotItem>? shots;
+  final VideoMediaResource? finalVideo;
+  final AudioMediaResource? finalAudio;
+  final String? title;
+  final String? description;
+  final String? style;
+  final String? aspectRatio;
+  final String? prompt;
+  final double? duration;
+  final VoiceSpeakerInfo? speaker;
+
+  VideoStoryboard({
+    this.shots,
+    this.finalVideo,
+    this.finalAudio,
+    this.title,
+    this.description,
+    this.style,
+    this.aspectRatio,
+    this.prompt,
+    this.duration,
+    this.speaker
+  });
+}
+
 class VoiceSpeakerGenerationInput {
   final String? title;
   final String? prompt;
@@ -9786,8 +10116,6 @@ class PlusAiGenerationContentForm {
   final String? contentType;
   final int? contentId;
   final Map<String, dynamic>? metadata;
-  final String? contentUrl;
-  final int? fileSize;
   final String? contentFormat;
 
   PlusAiGenerationContentForm({
@@ -9796,8 +10124,6 @@ class PlusAiGenerationContentForm {
     this.contentType,
     this.contentId,
     this.metadata,
-    this.contentUrl,
-    this.fileSize,
     this.contentFormat
   });
 }
@@ -9878,13 +10204,171 @@ class PlusApiResultPlusAiGenerationContentVO {
   });
 }
 
+class PlusGameDefinitionForm {
+  final String? code;
+  final String? gameType;
+  final String? category;
+  final String? name;
+  final String? alias;
+  final String? gameModeCode;
+  final String? description;
+  final String? ruleSummary;
+  final int? minPlayers;
+  final int? maxPlayers;
+  final int? seatCount;
+  final int? teamCount;
+  final int? defaultRoundCount;
+  final bool? turnBased;
+  final bool? ranked;
+  final bool? supportsSpectator;
+  final bool? supportsTrusteeship;
+  final bool? supportsRobot;
+  final bool? supportsReplay;
+  final bool? supportsFriendRoom;
+  final bool? supportsTournament;
+  final bool? supportsClub;
+  final bool? supportsPractice;
+  final int? difficultyLevel;
+  final String? tutorialUrl;
+  final String? rankingType;
+  final Map<String, dynamic>? defaultRuleConfig;
+  final Map<String, dynamic>? metadata;
+  final List<String>? supportedLeaderboardPeriods;
+  final bool? enabled;
+
+  PlusGameDefinitionForm({
+    this.code,
+    this.gameType,
+    this.category,
+    this.name,
+    this.alias,
+    this.gameModeCode,
+    this.description,
+    this.ruleSummary,
+    this.minPlayers,
+    this.maxPlayers,
+    this.seatCount,
+    this.teamCount,
+    this.defaultRoundCount,
+    this.turnBased,
+    this.ranked,
+    this.supportsSpectator,
+    this.supportsTrusteeship,
+    this.supportsRobot,
+    this.supportsReplay,
+    this.supportsFriendRoom,
+    this.supportsTournament,
+    this.supportsClub,
+    this.supportsPractice,
+    this.difficultyLevel,
+    this.tutorialUrl,
+    this.rankingType,
+    this.defaultRuleConfig,
+    this.metadata,
+    this.supportedLeaderboardPeriods,
+    this.enabled
+  });
+}
+
+class PlusApiResultPlusGameDefinitionVO {
+  final PlusGameDefinitionVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPlusGameDefinitionVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameDefinitionVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? definitionId;
+  final String? code;
+  final String? gameType;
+  final String? category;
+  final String? name;
+  final String? alias;
+  final String? gameModeCode;
+  final String? description;
+  final String? ruleSummary;
+  final int? minPlayers;
+  final int? maxPlayers;
+  final int? seatCount;
+  final int? teamCount;
+  final int? defaultRoundCount;
+  final bool? turnBased;
+  final bool? ranked;
+  final bool? supportsSpectator;
+  final bool? supportsTrusteeship;
+  final bool? supportsRobot;
+  final bool? supportsReplay;
+  final bool? supportsFriendRoom;
+  final bool? supportsTournament;
+  final bool? supportsClub;
+  final bool? supportsPractice;
+  final int? difficultyLevel;
+  final String? tutorialUrl;
+  final String? rankingType;
+  final Map<String, dynamic>? defaultRuleConfig;
+  final Map<String, dynamic>? metadata;
+  final List<String>? supportedLeaderboardPeriods;
+  final bool? enabled;
+
+  PlusGameDefinitionVO({
+    this.createdAt,
+    this.updatedAt,
+    this.definitionId,
+    this.code,
+    this.gameType,
+    this.category,
+    this.name,
+    this.alias,
+    this.gameModeCode,
+    this.description,
+    this.ruleSummary,
+    this.minPlayers,
+    this.maxPlayers,
+    this.seatCount,
+    this.teamCount,
+    this.defaultRoundCount,
+    this.turnBased,
+    this.ranked,
+    this.supportsSpectator,
+    this.supportsTrusteeship,
+    this.supportsRobot,
+    this.supportsReplay,
+    this.supportsFriendRoom,
+    this.supportsTournament,
+    this.supportsClub,
+    this.supportsPractice,
+    this.difficultyLevel,
+    this.tutorialUrl,
+    this.rankingType,
+    this.defaultRuleConfig,
+    this.metadata,
+    this.supportedLeaderboardPeriods,
+    this.enabled
+  });
+}
+
 class PlusFileForm {
+  final int? parentId;
   final String? name;
   final String? path;
   final String? objectKey;
   final int? size;
   final String? contentType;
-  final String? extension;
   final String? storageClass;
   final String? versionId;
   final FileMediaResource? resource;
@@ -9894,18 +10378,16 @@ class PlusFileForm {
   final TagsContent? tags;
   final String? fileType;
   final String? fileCategory;
-  final bool? isPublic;
   final String? status;
-  final int? parentId;
   final String? etag;
 
   PlusFileForm({
+    this.parentId,
     this.name,
     this.path,
     this.objectKey,
     this.size,
     this.contentType,
-    this.extension,
     this.storageClass,
     this.versionId,
     this.resource,
@@ -9915,20 +10397,68 @@ class PlusFileForm {
     this.tags,
     this.fileType,
     this.fileCategory,
-    this.isPublic,
     this.status,
-    this.parentId,
     this.etag
   });
 }
 
+class AssetReference {
+  final int? fileId;
+  final String? fileUuid;
+  final String? filePath;
+  final String? assetType;
+  final String? mimeType;
+  final String? url;
+
+  AssetReference({
+    this.fileId,
+    this.fileUuid,
+    this.filePath,
+    this.assetType,
+    this.mimeType,
+    this.url
+  });
+}
+
+class ContentSegment {
+  final String? id;
+  final int? order;
+  final String? type;
+  final String? text;
+  final int? startMs;
+  final int? endMs;
+  final Map<String, dynamic>? metadata;
+
+  ContentSegment({
+    this.id,
+    this.order,
+    this.type,
+    this.text,
+    this.startMs,
+    this.endMs,
+    this.metadata
+  });
+}
+
 class FileContentObject {
+  final String? schemaVersion;
+  final String? source;
   final String? text;
   final Map<String, String>? contents;
+  final Map<String, dynamic>? metadata;
+  final GenerationContext? generation;
+  final List<ContentSegment>? segments;
+  final List<AssetReference>? references;
 
   FileContentObject({
+    this.schemaVersion,
+    this.source,
     this.text,
-    this.contents
+    this.contents,
+    this.metadata,
+    this.generation,
+    this.segments,
+    this.references
   });
 }
 
@@ -9941,6 +10471,30 @@ class FilePermission {
     this.permissions,
     this.readOnly,
     this.permissionSet
+  });
+}
+
+class GenerationContext {
+  final int? generationId;
+  final String? generationType;
+  final String? generationStatus;
+  final String? channel;
+  final String? requestId;
+  final String? channelTaskId;
+  final String? routingStrategy;
+  final String? routingProduct;
+  final String? routingProvider;
+
+  GenerationContext({
+    this.generationId,
+    this.generationType,
+    this.generationStatus,
+    this.channel,
+    this.requestId,
+    this.channelTaskId,
+    this.routingStrategy,
+    this.routingProduct,
+    this.routingProvider
   });
 }
 
@@ -10155,6 +10709,7 @@ class PlusFileContentVO {
 class PlusFeedsForm {
   final String? title;
   final String? summary;
+  final int? categoryId;
   final String? contentType;
   final int? contentId;
   final ImageMediaResourceList? coverImages;
@@ -10162,23 +10717,18 @@ class PlusFeedsForm {
   final String? publishTime;
   final TagsContent? tags;
   final String? status;
-  final int? viewCount;
-  final int? likeCount;
-  final int? commentCount;
 
   PlusFeedsForm({
     this.title,
     this.summary,
+    this.categoryId,
     this.contentType,
     this.contentId,
     this.coverImages,
     this.source,
     this.publishTime,
     this.tags,
-    this.status,
-    this.viewCount,
-    this.likeCount,
-    this.commentCount
+    this.status
   });
 }
 
@@ -10295,7 +10845,6 @@ class PlusFeedbackVO {
 class PlusFavoriteForm {
   final String? contentType;
   final int? contentId;
-  final String? folderName;
   final String? remark;
   final int? sortWeight;
   final String? title;
@@ -10306,7 +10855,6 @@ class PlusFavoriteForm {
   PlusFavoriteForm({
     this.contentType,
     this.contentId,
-    this.folderName,
     this.remark,
     this.sortWeight,
     this.title,
@@ -10376,6 +10924,7 @@ class PlusFavoriteVO {
 
 class PlusDiskForm {
   final String? name;
+  final String? type;
   final String? owner;
   final int? ownerId;
   final int? diskSize;
@@ -10384,6 +10933,7 @@ class PlusDiskForm {
 
   PlusDiskForm({
     this.name,
+    this.type,
     this.owner,
     this.ownerId,
     this.diskSize,
@@ -10683,7 +11233,10 @@ class DatasourceConfig {
 }
 
 class PlusDatasourceForm {
+  final int? projectId;
   final String? name;
+  final String? channel;
+  final String? channelId;
   final int? type;
   final int? status;
   final String? description;
@@ -10700,7 +11253,10 @@ class PlusDatasourceForm {
   final String? color;
 
   PlusDatasourceForm({
+    this.projectId,
     this.name,
+    this.channel,
+    this.channelId,
     this.type,
     this.status,
     this.description,
@@ -11177,7 +11733,6 @@ class PlusCommentsForm {
   final String? contentType;
   final int? contentId;
   final String? status;
-  final int? rating;
   final int? likes;
   final int? replyCount;
   final bool? isTop;
@@ -11193,7 +11748,6 @@ class PlusCommentsForm {
     this.contentType,
     this.contentId,
     this.status,
-    this.rating,
     this.likes,
     this.replyCount,
     this.isTop,
@@ -13594,6 +14148,7 @@ class PlusArticleForm {
   final String? title;
   final String? subtitle;
   final String? content;
+  final int? categoryId;
   final int? wordCount;
   final int? readingTime;
   final ImageMediaResourceList? coverImages;
@@ -13607,6 +14162,7 @@ class PlusArticleForm {
     this.title,
     this.subtitle,
     this.content,
+    this.categoryId,
     this.wordCount,
     this.readingTime,
     this.coverImages,
@@ -13923,7 +14479,6 @@ class PlusApiKeyForm {
   final String? status;
   final String? expireTime;
   final String? description;
-  final String? lastUsedTime;
 
   PlusApiKeyForm({
     this.name,
@@ -13931,8 +14486,7 @@ class PlusApiKeyForm {
     this.type,
     this.status,
     this.expireTime,
-    this.description,
-    this.lastUsedTime
+    this.description
   });
 }
 
@@ -14205,6 +14759,7 @@ class PlusApiResultPlusAiAgentToolVO {
 }
 
 class PlusAccountForm {
+  final String? accountType;
   final int? userId;
   final double? availableBalance;
   final double? frozenBalance;
@@ -14213,6 +14768,7 @@ class PlusAccountForm {
   final String? status;
 
   PlusAccountForm({
+    this.accountType,
     this.userId,
     this.availableBalance,
     this.frozenBalance,
@@ -14309,10 +14865,12 @@ class PlusApiResultPlusAccountVO {
 }
 
 class PlusAccountHistoryForm {
+  final String? accountType;
   final String? assetType;
   final int? accountId;
   final String? transactionId;
   final String? transactionType;
+  final String? status;
   final double? amount;
   final double? balanceBefore;
   final double? balanceAfter;
@@ -14323,14 +14881,15 @@ class PlusAccountHistoryForm {
   final String? sourceType;
   final String? sourceId;
   final String? expiredAt;
-  final String? status;
   final String? remarks;
 
   PlusAccountHistoryForm({
+    this.accountType,
     this.assetType,
     this.accountId,
     this.transactionId,
     this.transactionType,
+    this.status,
     this.amount,
     this.balanceBefore,
     this.balanceAfter,
@@ -14341,7 +14900,6 @@ class PlusAccountHistoryForm {
     this.sourceType,
     this.sourceId,
     this.expiredAt,
-    this.status,
     this.remarks
   });
 }
@@ -14442,11 +15000,11 @@ class PagePlusWorkspaceVO {
   final int? size;
   final List<PlusWorkspaceVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusWorkspaceVO({
@@ -14455,11 +15013,11 @@ class PagePlusWorkspaceVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -14468,16 +15026,16 @@ class PageableObject {
   final int? offset;
   final bool? paged;
   final SortObject? sort;
-  final int? pageNumber;
   final int? pageSize;
+  final int? pageNumber;
   final bool? unpaged;
 
   PageableObject({
     this.offset,
     this.paged,
     this.sort,
-    this.pageNumber,
     this.pageSize,
+    this.pageNumber,
     this.unpaged
   });
 }
@@ -14540,11 +15098,11 @@ class PageContentVoteVO {
   final int? size;
   final List<ContentVoteVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PageContentVoteVO({
@@ -14553,11 +15111,11 @@ class PageContentVoteVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -14628,11 +15186,11 @@ class PagePlusVoiceSpeakerVO {
   final int? size;
   final List<PlusVoiceSpeakerVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusVoiceSpeakerVO({
@@ -14641,11 +15199,11 @@ class PagePlusVoiceSpeakerVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -14696,11 +15254,11 @@ class PagePlusVisitHistoryVO {
   final int? size;
   final List<PlusVisitHistoryVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusVisitHistoryVO({
@@ -14709,11 +15267,11 @@ class PagePlusVisitHistoryVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -14764,11 +15322,11 @@ class PagePlusVipUserVO {
   final int? size;
   final List<PlusVipUserVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusVipUserVO({
@@ -14777,11 +15335,11 @@ class PagePlusVipUserVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -14832,11 +15390,11 @@ class PagePlusVipRechargePackVO {
   final int? size;
   final List<PlusVipRechargePackVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusVipRechargePackVO({
@@ -14845,11 +15403,11 @@ class PagePlusVipRechargePackVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -14900,11 +15458,11 @@ class PagePlusVipRechargeVO {
   final int? size;
   final List<PlusVipRechargeVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusVipRechargeVO({
@@ -14913,11 +15471,11 @@ class PagePlusVipRechargeVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -14968,11 +15526,11 @@ class PagePlusVipPointChangeVO {
   final int? size;
   final List<PlusVipPointChangeVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusVipPointChangeVO({
@@ -14981,11 +15539,11 @@ class PagePlusVipPointChangeVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -15052,11 +15610,11 @@ class PagePlusVipPackGroupVO {
   final int? size;
   final List<PlusVipPackGroupVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusVipPackGroupVO({
@@ -15065,11 +15623,11 @@ class PagePlusVipPackGroupVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -15120,11 +15678,11 @@ class PagePlusVipPackVO {
   final int? size;
   final List<PlusVipPackVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusVipPackVO({
@@ -15133,11 +15691,11 @@ class PagePlusVipPackVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -15188,11 +15746,11 @@ class PagePlusVipLevelVO {
   final int? size;
   final List<PlusVipLevelVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusVipLevelVO({
@@ -15201,11 +15759,11 @@ class PagePlusVipLevelVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -15256,11 +15814,11 @@ class PagePlusVipLevelBenefitVO {
   final int? size;
   final List<PlusVipLevelBenefitVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusVipLevelBenefitVO({
@@ -15269,11 +15827,11 @@ class PagePlusVipLevelBenefitVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -15324,11 +15882,11 @@ class PagePlusVipBenefitUsageVO {
   final int? size;
   final List<PlusVipBenefitUsageVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusVipBenefitUsageVO({
@@ -15337,11 +15895,11 @@ class PagePlusVipBenefitUsageVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -15392,11 +15950,11 @@ class PagePlusVipBenefitVO {
   final int? size;
   final List<PlusVipBenefitVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusVipBenefitVO({
@@ -15405,11 +15963,11 @@ class PagePlusVipBenefitVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -15460,11 +16018,11 @@ class PagePlusVideoVO {
   final int? size;
   final List<PlusVideoVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusVideoVO({
@@ -15473,11 +16031,11 @@ class PagePlusVideoVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -15528,11 +16086,11 @@ class PagePlusUserOAuthAccountVO {
   final int? size;
   final List<PlusUserOAuthAccountVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusUserOAuthAccountVO({
@@ -15541,11 +16099,11 @@ class PagePlusUserOAuthAccountVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -15596,11 +16154,11 @@ class PagePlusUserVO {
   final int? size;
   final List<PlusUserVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusUserVO({
@@ -15609,11 +16167,11 @@ class PagePlusUserVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -15664,11 +16222,11 @@ class PagePlusUserCouponVO {
   final int? size;
   final List<PlusUserCouponVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusUserCouponVO({
@@ -15677,11 +16235,11 @@ class PagePlusUserCouponVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -15732,11 +16290,11 @@ class PagePlusUserCardVO {
   final int? size;
   final List<PlusUserCardVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusUserCardVO({
@@ -15745,11 +16303,11 @@ class PagePlusUserCardVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -15800,11 +16358,11 @@ class PagePlusUserAddressVO {
   final int? size;
   final List<PlusUserAddressVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusUserAddressVO({
@@ -15813,11 +16371,11 @@ class PagePlusUserAddressVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -15868,11 +16426,11 @@ class PageUsageRecordVO {
   final int? size;
   final List<UsageRecordVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PageUsageRecordVO({
@@ -15881,11 +16439,11 @@ class PageUsageRecordVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -15936,11 +16494,11 @@ class PagePlusShoppingCartVO {
   final int? size;
   final List<PlusShoppingCartVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusShoppingCartVO({
@@ -15949,11 +16507,11 @@ class PagePlusShoppingCartVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -16004,11 +16562,11 @@ class PagePlusShoppingCartItemVO {
   final int? size;
   final List<PlusShoppingCartItemVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusShoppingCartItemVO({
@@ -16017,11 +16575,11 @@ class PagePlusShoppingCartItemVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -16072,11 +16630,11 @@ class PagePlusRefundVO {
   final int? size;
   final List<PlusRefundVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusRefundVO({
@@ -16085,11 +16643,11 @@ class PagePlusRefundVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -16152,11 +16710,11 @@ class PagePlusPaymentVO {
   final int? size;
   final List<PlusPaymentVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusPaymentVO({
@@ -16165,11 +16723,11 @@ class PagePlusPaymentVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -16271,6 +16829,72 @@ class PlusApiResultOrderShipVO {
     this.ip,
     this.hostname,
     this.errorName
+  });
+}
+
+class OrderDispatchActionForm {
+  final String? remark;
+
+  OrderDispatchActionForm({
+    this.remark
+  });
+}
+
+class PlusApiResultServiceOrderVO {
+  final ServiceOrderVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultServiceOrderVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class ServiceOrderVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? orderId;
+  final String? orderSn;
+  final String? taskCode;
+  final String? dispatchMode;
+  final String? dispatchStatus;
+  final int? workerUserId;
+  final String? dispatchExpireTime;
+  final bool? success;
+  final String? message;
+
+  ServiceOrderVO({
+    this.createdAt,
+    this.updatedAt,
+    this.orderId,
+    this.orderSn,
+    this.taskCode,
+    this.dispatchMode,
+    this.dispatchStatus,
+    this.workerUserId,
+    this.dispatchExpireTime,
+    this.success,
+    this.message
+  });
+}
+
+class OrderDispatchAssignForm {
+  final int? workerUserId;
+  final String? remark;
+
+  OrderDispatchAssignForm({
+    this.workerUserId,
+    this.remark
   });
 }
 
@@ -16450,6 +17074,74 @@ class PlusApiResultOrderCancelVO {
   });
 }
 
+class PagePlusOrderWorkerDispatchProfileVO {
+  final int? totalElements;
+  final int? totalPages;
+  final int? size;
+  final List<PlusOrderWorkerDispatchProfileVO>? content;
+  final int? number;
+  final int? numberOfElements;
+  final SortObject? sort;
+  final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
+  final bool? empty;
+
+  PagePlusOrderWorkerDispatchProfileVO({
+    this.totalElements,
+    this.totalPages,
+    this.size,
+    this.content,
+    this.number,
+    this.numberOfElements,
+    this.sort,
+    this.pageable,
+    this.first,
+    this.last,
+    this.empty
+  });
+}
+
+class PlusApiResultPagePlusOrderWorkerDispatchProfileVO {
+  final PagePlusOrderWorkerDispatchProfileVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPagePlusOrderWorkerDispatchProfileVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusApiResultListPlusOrderWorkerDispatchProfileVO {
+  final List<PlusOrderWorkerDispatchProfileVO>? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultListPlusOrderWorkerDispatchProfileVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
 class CreateVirtualOrderForm {
   final List<OrderContentItem>? items;
   final String? expireTime;
@@ -16568,6 +17260,30 @@ class VipOrderVO {
   });
 }
 
+class CreateServiceOrderForm {
+  final int? publisherUserId;
+  final String? subject;
+  final String? taskCode;
+  final String? dispatchMode;
+  final double? totalAmount;
+  final String? dispatchExpireTime;
+  final String? expireTime;
+  final Map<String, dynamic>? taskPayload;
+  final String? remark;
+
+  CreateServiceOrderForm({
+    this.publisherUserId,
+    this.subject,
+    this.taskCode,
+    this.dispatchMode,
+    this.totalAmount,
+    this.dispatchExpireTime,
+    this.expireTime,
+    this.taskPayload,
+    this.remark
+  });
+}
+
 class CreatePointsOrderForm {
   final List<OrderContentItem>? items;
   final int? pointsAmount;
@@ -16624,11 +17340,11 @@ class PagePlusOrderVO {
   final int? size;
   final List<PlusOrderVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusOrderVO({
@@ -16637,11 +17353,11 @@ class PagePlusOrderVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -16692,11 +17408,11 @@ class PagePlusOrderItemVO {
   final int? size;
   final List<PlusOrderItemVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusOrderItemVO({
@@ -16705,11 +17421,11 @@ class PagePlusOrderItemVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -16850,6 +17566,74 @@ class PlusApiResultGoodsOrderVO {
   });
 }
 
+class PagePlusOrderDispatchRuleVO {
+  final int? totalElements;
+  final int? totalPages;
+  final int? size;
+  final List<PlusOrderDispatchRuleVO>? content;
+  final int? number;
+  final int? numberOfElements;
+  final SortObject? sort;
+  final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
+  final bool? empty;
+
+  PagePlusOrderDispatchRuleVO({
+    this.totalElements,
+    this.totalPages,
+    this.size,
+    this.content,
+    this.number,
+    this.numberOfElements,
+    this.sort,
+    this.pageable,
+    this.first,
+    this.last,
+    this.empty
+  });
+}
+
+class PlusApiResultPagePlusOrderDispatchRuleVO {
+  final PagePlusOrderDispatchRuleVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPagePlusOrderDispatchRuleVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusApiResultListPlusOrderDispatchRuleVO {
+  final List<PlusOrderDispatchRuleVO>? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultListPlusOrderDispatchRuleVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
 class CreateBookingOrderForm {
   final List<OrderContentItem>? items;
   final String? expireTime;
@@ -16904,11 +17688,11 @@ class PagePlusAiToolVO {
   final int? size;
   final List<PlusAiToolVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusAiToolVO({
@@ -16917,11 +17701,11 @@ class PagePlusAiToolVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -16972,11 +17756,11 @@ class PagePlusTenantAuditLogVO {
   final int? size;
   final List<PlusTenantAuditLogVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusTenantAuditLogVO({
@@ -16985,11 +17769,11 @@ class PagePlusTenantAuditLogVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -17048,11 +17832,11 @@ class PagePlusTenantVO {
   final int? size;
   final List<PlusTenantVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusTenantVO({
@@ -17061,11 +17845,11 @@ class PagePlusTenantVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -17160,11 +17944,11 @@ class PagePlusTableVO {
   final int? size;
   final List<PlusTableVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusTableVO({
@@ -17173,11 +17957,11 @@ class PagePlusTableVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -17300,11 +18084,11 @@ class PagePlusSkuVO {
   final int? size;
   final List<PlusSkuVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusSkuVO({
@@ -17313,11 +18097,11 @@ class PagePlusSkuVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -17420,11 +18204,11 @@ class PagePlusAgentSkillVO {
   final int? size;
   final List<PlusAgentSkillVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusAgentSkillVO({
@@ -17433,11 +18217,11 @@ class PagePlusAgentSkillVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -17520,11 +18304,11 @@ class PagePlusAgentSkillPackageVO {
   final int? size;
   final List<PlusAgentSkillPackageVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusAgentSkillPackageVO({
@@ -17533,11 +18317,11 @@ class PagePlusAgentSkillPackageVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -17588,11 +18372,11 @@ class PageShortUrlVO {
   final int? size;
   final List<ShortUrlVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PageShortUrlVO({
@@ -17601,11 +18385,11 @@ class PageShortUrlVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -17656,11 +18440,11 @@ class PagePlusShopVO {
   final int? size;
   final List<PlusShopVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusShopVO({
@@ -17669,11 +18453,11 @@ class PagePlusShopVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -17724,11 +18508,11 @@ class PagePlusShareVisitRecordVO {
   final int? size;
   final List<PlusShareVisitRecordVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusShareVisitRecordVO({
@@ -17737,11 +18521,11 @@ class PagePlusShareVisitRecordVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -17792,11 +18576,11 @@ class PagePlusShareVO {
   final int? size;
   final List<PlusShareVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusShareVO({
@@ -17805,11 +18589,11 @@ class PagePlusShareVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -17860,11 +18644,11 @@ class PagePlusShardingKeyVO {
   final int? size;
   final List<PlusShardingKeyVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusShardingKeyVO({
@@ -17873,11 +18657,11 @@ class PagePlusShardingKeyVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -17928,11 +18712,11 @@ class PagePlusApiSecurityPolicyVO {
   final int? size;
   final List<PlusApiSecurityPolicyVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusApiSecurityPolicyVO({
@@ -17941,11 +18725,11 @@ class PagePlusApiSecurityPolicyVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -18054,11 +18838,11 @@ class PagePlusSchemaVO {
   final int? size;
   final List<PlusSchemaVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusSchemaVO({
@@ -18067,11 +18851,11 @@ class PagePlusSchemaVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -18122,11 +18906,11 @@ class PagePlusRolePermissionVO {
   final int? size;
   final List<PlusRolePermissionVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusRolePermissionVO({
@@ -18135,11 +18919,11 @@ class PagePlusRolePermissionVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -18190,11 +18974,11 @@ class PagePlusRoleVO {
   final int? size;
   final List<PlusRoleVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusRoleVO({
@@ -18203,11 +18987,11 @@ class PagePlusRoleVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -18258,11 +19042,11 @@ class PagePlusInvokeRecordVO {
   final int? size;
   final List<PlusInvokeRecordVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusInvokeRecordVO({
@@ -18271,11 +19055,11 @@ class PagePlusInvokeRecordVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -18326,11 +19110,11 @@ class PagePlusUserRoleVO {
   final int? size;
   final List<PlusUserRoleVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusUserRoleVO({
@@ -18339,11 +19123,11 @@ class PagePlusUserRoleVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -18394,11 +19178,11 @@ class PagePlusAiPromptVO {
   final int? size;
   final List<PlusAiPromptVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusAiPromptVO({
@@ -18407,11 +19191,11 @@ class PagePlusAiPromptVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -18462,11 +19246,11 @@ class PagePlusProjectVO {
   final int? size;
   final List<PlusProjectVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusProjectVO({
@@ -18475,11 +19259,11 @@ class PagePlusProjectVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -18574,11 +19358,11 @@ class PagePlusProductVO {
   final int? size;
   final List<PlusProductVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusProductVO({
@@ -18587,11 +19371,11 @@ class PagePlusProductVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -18642,11 +19426,11 @@ class PagePlusPptTemplateSlideVO {
   final int? size;
   final List<PlusPptTemplateSlideVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusPptTemplateSlideVO({
@@ -18655,11 +19439,11 @@ class PagePlusPptTemplateSlideVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -18858,11 +19642,11 @@ class PagePlusPptTemplateVO {
   final int? size;
   final List<PlusPptTemplateVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusPptTemplateVO({
@@ -18871,11 +19655,11 @@ class PagePlusPptTemplateVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -18926,11 +19710,11 @@ class PagePlusPermissionVO {
   final int? size;
   final List<PlusPermissionVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusPermissionVO({
@@ -18939,11 +19723,11 @@ class PagePlusPermissionVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -18994,11 +19778,11 @@ class PagePlusPartnerVO {
   final int? size;
   final List<PlusPartnerVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusPartnerVO({
@@ -19007,11 +19791,11 @@ class PagePlusPartnerVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -19062,11 +19846,11 @@ class PagePlusParticipantVO {
   final int? size;
   final List<PlusParticipantVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusParticipantVO({
@@ -19075,11 +19859,11 @@ class PagePlusParticipantVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -19304,11 +20088,11 @@ class PagePlusOssBucketVO {
   final int? size;
   final List<PlusOssBucketVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusOssBucketVO({
@@ -19317,11 +20101,11 @@ class PagePlusOssBucketVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -19372,11 +20156,11 @@ class PagePlusPositionVO {
   final int? size;
   final List<PlusPositionVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusPositionVO({
@@ -19385,11 +20169,11 @@ class PagePlusPositionVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -19440,11 +20224,11 @@ class PagePlusMemberRelationsVO {
   final int? size;
   final List<PlusMemberRelationsVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusMemberRelationsVO({
@@ -19453,11 +20237,11 @@ class PagePlusMemberRelationsVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -19508,11 +20292,11 @@ class PagePlusOrganizationVO {
   final int? size;
   final List<PlusOrganizationVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusOrganizationVO({
@@ -19521,11 +20305,11 @@ class PagePlusOrganizationVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -19576,11 +20360,11 @@ class PagePlusOrganizationMemberVO {
   final int? size;
   final List<PlusOrganizationMemberVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusOrganizationMemberVO({
@@ -19589,11 +20373,11 @@ class PagePlusOrganizationMemberVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -19644,11 +20428,11 @@ class PagePlusNotificationVO {
   final int? size;
   final List<PlusNotificationVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusNotificationVO({
@@ -19657,11 +20441,11 @@ class PagePlusNotificationVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -19824,6 +20608,34 @@ class PlusMediaPublishResultDTO {
   });
 }
 
+class PlusNotesMediaPublishStatusForm {
+  final int? userId;
+  final String? platform;
+  final String? product;
+  final String? publishId;
+
+  PlusNotesMediaPublishStatusForm({
+    this.userId,
+    this.platform,
+    this.product,
+    this.publishId
+  });
+}
+
+class PlusNotesMediaPublishedArticleForm {
+  final int? userId;
+  final String? platform;
+  final String? product;
+  final String? articleId;
+
+  PlusNotesMediaPublishedArticleForm({
+    this.userId,
+    this.platform,
+    this.product,
+    this.articleId
+  });
+}
+
 class PlusNotesMediaPublishDraftForm {
   final int? userId;
   final String? platform;
@@ -19858,11 +20670,11 @@ class PagePlusNewsVO {
   final int? size;
   final List<PlusNewsVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusNewsVO({
@@ -19871,11 +20683,11 @@ class PagePlusNewsVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -19926,11 +20738,11 @@ class PagePlusHostDomainVO {
   final int? size;
   final List<PlusHostDomainVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusHostDomainVO({
@@ -19939,11 +20751,11 @@ class PagePlusHostDomainVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -19994,11 +20806,11 @@ class PagePlusDnsRecordVO {
   final int? size;
   final List<PlusDnsRecordVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusDnsRecordVO({
@@ -20007,11 +20819,11 @@ class PagePlusDnsRecordVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -20062,11 +20874,11 @@ class PagePlusMusicVO {
   final int? size;
   final List<PlusMusicVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusMusicVO({
@@ -20075,11 +20887,11 @@ class PagePlusMusicVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -20130,11 +20942,11 @@ class PagePlusAiModelPriceVO {
   final int? size;
   final List<PlusAiModelPriceVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusAiModelPriceVO({
@@ -20143,11 +20955,11 @@ class PagePlusAiModelPriceVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -20201,7 +21013,16 @@ class PlusAiModelInfoQueryListForm {
   final String? modelType;
   final String? status;
   final String? family;
+  final String? vendor;
   final bool? openSource;
+  final String? pricingType;
+  final String? lifecycleStage;
+  final int? minContextTokens;
+  final bool? supportReasoning;
+  final bool? supportMultimodal;
+  final bool? supportFunctionCall;
+  final bool? supportRealtime;
+  final bool? supportFineTuning;
 
   PlusAiModelInfoQueryListForm({
     this.id,
@@ -20212,7 +21033,16 @@ class PlusAiModelInfoQueryListForm {
     this.modelType,
     this.status,
     this.family,
-    this.openSource
+    this.vendor,
+    this.openSource,
+    this.pricingType,
+    this.lifecycleStage,
+    this.minContextTokens,
+    this.supportReasoning,
+    this.supportMultimodal,
+    this.supportFunctionCall,
+    this.supportRealtime,
+    this.supportFineTuning
   });
 }
 
@@ -20222,11 +21052,11 @@ class PagePlusAiModelInfoVO {
   final int? size;
   final List<PlusAiModelInfoVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusAiModelInfoVO({
@@ -20235,11 +21065,11 @@ class PagePlusAiModelInfoVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -20290,11 +21120,11 @@ class PagePlusChatMessageContentVO {
   final int? size;
   final List<PlusChatMessageContentVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusChatMessageContentVO({
@@ -20303,11 +21133,11 @@ class PagePlusChatMessageContentVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -20358,11 +21188,11 @@ class PagePlusMemberLevelVO {
   final int? size;
   final List<PlusMemberLevelVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusMemberLevelVO({
@@ -20371,11 +21201,11 @@ class PagePlusMemberLevelVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -20426,11 +21256,11 @@ class PagePlusMemberCardVO {
   final int? size;
   final List<PlusMemberCardVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusMemberCardVO({
@@ -20439,11 +21269,11 @@ class PagePlusMemberCardVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -20494,11 +21324,11 @@ class PagePlusKnowledgeBaseVO {
   final int? size;
   final List<PlusKnowledgeBaseVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusKnowledgeBaseVO({
@@ -20507,11 +21337,11 @@ class PagePlusKnowledgeBaseVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -20562,11 +21392,11 @@ class PageInvitationRelationVO {
   final int? size;
   final List<InvitationRelationVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PageInvitationRelationVO({
@@ -20575,11 +21405,11 @@ class PageInvitationRelationVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -20630,11 +21460,11 @@ class PageInvitationCodeVO {
   final int? size;
   final List<InvitationCodeVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PageInvitationCodeVO({
@@ -20643,11 +21473,11 @@ class PageInvitationCodeVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -20698,11 +21528,11 @@ class PagePlusImageVO {
   final int? size;
   final List<PlusImageVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusImageVO({
@@ -20711,11 +21541,11 @@ class PagePlusImageVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -20796,11 +21626,11 @@ class PagePlusMessage {
   final int? size;
   final List<PlusMessage>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusMessage({
@@ -20809,11 +21639,11 @@ class PagePlusMessage {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -20880,11 +21710,11 @@ class PagePlusImGroupVO {
   final int? size;
   final List<PlusImGroupVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusImGroupVO({
@@ -20893,11 +21723,11 @@ class PagePlusImGroupVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -21168,11 +21998,11 @@ class PagePlusAiGenerationVO {
   final int? size;
   final List<PlusAiGenerationVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusAiGenerationVO({
@@ -21181,11 +22011,11 @@ class PagePlusAiGenerationVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -21298,11 +22128,11 @@ class PagePlusAiGenerationContentVO {
   final int? size;
   final List<PlusAiGenerationContentVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusAiGenerationContentVO({
@@ -21311,11 +22141,11 @@ class PagePlusAiGenerationContentVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -21556,17 +22386,3163 @@ class PlusApiResultGenerateAudioEffectVO {
   });
 }
 
+class PlusGameTournamentRegistrationForm {
+  final int? userId;
+
+  PlusGameTournamentRegistrationForm({
+    this.userId
+  });
+}
+
+class PlusGameTournamentPlayerManageForm {
+  final String? status;
+  final int? seedNo;
+  final int? rankNo;
+  final int? teamNo;
+  final double? scoreValue;
+  final int? totalMatchCount;
+  final int? winCount;
+  final int? loseCount;
+
+  PlusGameTournamentPlayerManageForm({
+    this.status,
+    this.seedNo,
+    this.rankNo,
+    this.teamNo,
+    this.scoreValue,
+    this.totalMatchCount,
+    this.winCount,
+    this.loseCount
+  });
+}
+
+class PlusApiResultPlusGameTournamentPlayerVO {
+  final PlusGameTournamentPlayerVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPlusGameTournamentPlayerVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameTournamentPlayerVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? playerId;
+  final int? tournamentId;
+  final int? userId;
+  final String? gameType;
+  final int? clubId;
+  final int? teamNo;
+  final String? status;
+  final int? seedNo;
+  final int? rankNo;
+  final String? nicknameSnapshot;
+  final String? avatarUrl;
+  final double? scoreValue;
+  final int? totalMatchCount;
+  final int? winCount;
+  final int? loseCount;
+  final String? registeredAt;
+  final String? checkedInAt;
+  final String? finishedAt;
+
+  PlusGameTournamentPlayerVO({
+    this.createdAt,
+    this.updatedAt,
+    this.playerId,
+    this.tournamentId,
+    this.userId,
+    this.gameType,
+    this.clubId,
+    this.teamNo,
+    this.status,
+    this.seedNo,
+    this.rankNo,
+    this.nicknameSnapshot,
+    this.avatarUrl,
+    this.scoreValue,
+    this.totalMatchCount,
+    this.winCount,
+    this.loseCount,
+    this.registeredAt,
+    this.checkedInAt,
+    this.finishedAt
+  });
+}
+
+class PlusGameTournamentPlayerQueryForm {
+  final int? id;
+  final String? createdAtFrom;
+  final String? createdAtTo;
+  final int? tournamentId;
+  final int? userId;
+  final String? status;
+
+  PlusGameTournamentPlayerQueryForm({
+    this.id,
+    this.createdAtFrom,
+    this.createdAtTo,
+    this.tournamentId,
+    this.userId,
+    this.status
+  });
+}
+
+class PagePlusGameTournamentPlayerVO {
+  final int? totalElements;
+  final int? totalPages;
+  final int? size;
+  final List<PlusGameTournamentPlayerVO>? content;
+  final int? number;
+  final int? numberOfElements;
+  final SortObject? sort;
+  final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
+  final bool? empty;
+
+  PagePlusGameTournamentPlayerVO({
+    this.totalElements,
+    this.totalPages,
+    this.size,
+    this.content,
+    this.number,
+    this.numberOfElements,
+    this.sort,
+    this.pageable,
+    this.first,
+    this.last,
+    this.empty
+  });
+}
+
+class PlusApiResultPagePlusGameTournamentPlayerVO {
+  final PagePlusGameTournamentPlayerVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPagePlusGameTournamentPlayerVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameTournamentBatchStatusForm {
+  final List<int>? userIds;
+  final List<PlusGameTournamentBatchStatusPlayerForm>? playerItems;
+  final String? status;
+  final int? startRankNo;
+
+  PlusGameTournamentBatchStatusForm({
+    this.userIds,
+    this.playerItems,
+    this.status,
+    this.startRankNo
+  });
+}
+
+class PlusGameTournamentBatchStatusPlayerForm {
+  final int? userId;
+  final String? status;
+  final int? rankNo;
+  final double? scoreValue;
+  final int? totalMatchCount;
+  final int? winCount;
+  final int? loseCount;
+
+  PlusGameTournamentBatchStatusPlayerForm({
+    this.userId,
+    this.status,
+    this.rankNo,
+    this.scoreValue,
+    this.totalMatchCount,
+    this.winCount,
+    this.loseCount
+  });
+}
+
+class PlusApiResultListPlusGameTournamentPlayerVO {
+  final List<PlusGameTournamentPlayerVO>? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultListPlusGameTournamentPlayerVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameTournamentBatchArrangeForm {
+  final List<int>? userIds;
+  final List<PlusGameTournamentBatchArrangePlayerForm>? arrangePlayers;
+  final int? seedNoStart;
+  final int? teamNoStart;
+  final int? groupSize;
+  final bool? overwriteExistingSeedNo;
+  final bool? overwriteExistingTeamNo;
+
+  PlusGameTournamentBatchArrangeForm({
+    this.userIds,
+    this.arrangePlayers,
+    this.seedNoStart,
+    this.teamNoStart,
+    this.groupSize,
+    this.overwriteExistingSeedNo,
+    this.overwriteExistingTeamNo
+  });
+}
+
+class PlusGameTournamentBatchArrangePlayerForm {
+  final int? userId;
+  final int? seedNo;
+  final int? teamNo;
+
+  PlusGameTournamentBatchArrangePlayerForm({
+    this.userId,
+    this.seedNo,
+    this.teamNo
+  });
+}
+
+class PlusGameTournamentManageForm {
+  final String? status;
+  final String? signUpStartAt;
+  final String? signUpEndAt;
+  final String? startAt;
+  final String? endAt;
+  final int? winnerUserId;
+  final int? winnerClubId;
+
+  PlusGameTournamentManageForm({
+    this.status,
+    this.signUpStartAt,
+    this.signUpEndAt,
+    this.startAt,
+    this.endAt,
+    this.winnerUserId,
+    this.winnerClubId
+  });
+}
+
+class PlusApiResultPlusGameTournamentVO {
+  final PlusGameTournamentVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPlusGameTournamentVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameTournamentVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? tournamentId;
+  final String? tournamentNo;
+  final String? name;
+  final String? shortName;
+  final String? description;
+  final String? gameType;
+  final String? gameModeCode;
+  final String? tournamentType;
+  final String? status;
+  final int? organizerUserId;
+  final int? clubId;
+  final String? seasonKey;
+  final String? regionCode;
+  final int? minPlayerCount;
+  final int? maxPlayerCount;
+  final int? teamSize;
+  final bool? registrationRequired;
+  final bool? ranked;
+  final bool? replayEnabled;
+  final String? signUpStartAt;
+  final String? signUpEndAt;
+  final String? startAt;
+  final String? endAt;
+  final int? winnerUserId;
+  final int? winnerClubId;
+  final int? totalParticipantCount;
+  final int? totalMatchCount;
+  final int? registeredCount;
+  final int? checkedInCount;
+  final int? playingCount;
+  final int? advancedCount;
+  final int? eliminatedCount;
+  final int? finishedCount;
+  final int? withdrawnCount;
+
+  PlusGameTournamentVO({
+    this.createdAt,
+    this.updatedAt,
+    this.tournamentId,
+    this.tournamentNo,
+    this.name,
+    this.shortName,
+    this.description,
+    this.gameType,
+    this.gameModeCode,
+    this.tournamentType,
+    this.status,
+    this.organizerUserId,
+    this.clubId,
+    this.seasonKey,
+    this.regionCode,
+    this.minPlayerCount,
+    this.maxPlayerCount,
+    this.teamSize,
+    this.registrationRequired,
+    this.ranked,
+    this.replayEnabled,
+    this.signUpStartAt,
+    this.signUpEndAt,
+    this.startAt,
+    this.endAt,
+    this.winnerUserId,
+    this.winnerClubId,
+    this.totalParticipantCount,
+    this.totalMatchCount,
+    this.registeredCount,
+    this.checkedInCount,
+    this.playingCount,
+    this.advancedCount,
+    this.eliminatedCount,
+    this.finishedCount,
+    this.withdrawnCount
+  });
+}
+
+class PlusGameTournamentQueryForm {
+  final int? id;
+  final String? createdAtFrom;
+  final String? createdAtTo;
+  final String? gameType;
+  final String? status;
+
+  PlusGameTournamentQueryForm({
+    this.id,
+    this.createdAtFrom,
+    this.createdAtTo,
+    this.gameType,
+    this.status
+  });
+}
+
+class PagePlusGameTournamentVO {
+  final int? totalElements;
+  final int? totalPages;
+  final int? size;
+  final List<PlusGameTournamentVO>? content;
+  final int? number;
+  final int? numberOfElements;
+  final SortObject? sort;
+  final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
+  final bool? empty;
+
+  PagePlusGameTournamentVO({
+    this.totalElements,
+    this.totalPages,
+    this.size,
+    this.content,
+    this.number,
+    this.numberOfElements,
+    this.sort,
+    this.pageable,
+    this.first,
+    this.last,
+    this.empty
+  });
+}
+
+class PlusApiResultPagePlusGameTournamentVO {
+  final PagePlusGameTournamentVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPagePlusGameTournamentVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameStatsQueryForm {
+  final int? userId;
+  final String? gameType;
+  final String? gameModeCode;
+  final String? seasonKey;
+  final String? scopeType;
+  final int? scopeOwnerId;
+
+  PlusGameStatsQueryForm({
+    this.userId,
+    this.gameType,
+    this.gameModeCode,
+    this.seasonKey,
+    this.scopeType,
+    this.scopeOwnerId
+  });
+}
+
+class PlusApiResultPlusGameStatsVO {
+  final PlusGameStatsVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPlusGameStatsVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameStatsVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? statsId;
+  final int? userId;
+  final String? gameType;
+  final String? gameModeCode;
+  final String? seasonKey;
+  final String? scopeType;
+  final int? scopeOwnerId;
+  final int? clubId;
+  final String? regionCode;
+  final String? nicknameSnapshot;
+  final String? avatarUrl;
+  final String? rankingType;
+  final int? totalMatchCount;
+  final int? winCount;
+  final int? loseCount;
+  final int? drawCount;
+  final int? escapeCount;
+  final int? totalRoundCount;
+  final int? totalActionCount;
+  final int? totalMoveCount;
+  final int? totalDurationSeconds;
+  final int? score;
+  final int? ratingScore;
+  final int? chipsBalance;
+  final int? profitAmount;
+  final double? winRate;
+  final int? currentWinStreak;
+  final int? bestWinStreak;
+  final int? highestRatingScore;
+  final int? bestRankNo;
+  final int? bestDailyRankNo;
+  final int? bestWeeklyRankNo;
+  final int? bestMonthlyRankNo;
+  final int? bestQuarterlyRankNo;
+  final int? bestYearlyRankNo;
+  final int? honorCount;
+  final int? leaderboardPosition;
+  final String? lastMatchAt;
+  final int? challengeTotalCount;
+  final int? challengeWinCount;
+  final int? challengeLoseCount;
+  final int? arenaAttackWinCount;
+  final int? arenaDefenseWinCount;
+  final int? arenaDefenseLoseCount;
+  final int? arenaBestDefenseStreak;
+
+  PlusGameStatsVO({
+    this.createdAt,
+    this.updatedAt,
+    this.statsId,
+    this.userId,
+    this.gameType,
+    this.gameModeCode,
+    this.seasonKey,
+    this.scopeType,
+    this.scopeOwnerId,
+    this.clubId,
+    this.regionCode,
+    this.nicknameSnapshot,
+    this.avatarUrl,
+    this.rankingType,
+    this.totalMatchCount,
+    this.winCount,
+    this.loseCount,
+    this.drawCount,
+    this.escapeCount,
+    this.totalRoundCount,
+    this.totalActionCount,
+    this.totalMoveCount,
+    this.totalDurationSeconds,
+    this.score,
+    this.ratingScore,
+    this.chipsBalance,
+    this.profitAmount,
+    this.winRate,
+    this.currentWinStreak,
+    this.bestWinStreak,
+    this.highestRatingScore,
+    this.bestRankNo,
+    this.bestDailyRankNo,
+    this.bestWeeklyRankNo,
+    this.bestMonthlyRankNo,
+    this.bestQuarterlyRankNo,
+    this.bestYearlyRankNo,
+    this.honorCount,
+    this.leaderboardPosition,
+    this.lastMatchAt,
+    this.challengeTotalCount,
+    this.challengeWinCount,
+    this.challengeLoseCount,
+    this.arenaAttackWinCount,
+    this.arenaDefenseWinCount,
+    this.arenaDefenseLoseCount,
+    this.arenaBestDefenseStreak
+  });
+}
+
+class PlusGameScoreRecordQueryForm {
+  final int? id;
+  final String? createdAtFrom;
+  final String? createdAtTo;
+  final int? userId;
+  final String? gameType;
+  final String? changeType;
+  final int? tournamentId;
+  final int? roomId;
+  final int? matchId;
+  final int? leaderboardId;
+  final String? bizNo;
+  final int? operatorUserId;
+
+  PlusGameScoreRecordQueryForm({
+    this.id,
+    this.createdAtFrom,
+    this.createdAtTo,
+    this.userId,
+    this.gameType,
+    this.changeType,
+    this.tournamentId,
+    this.roomId,
+    this.matchId,
+    this.leaderboardId,
+    this.bizNo,
+    this.operatorUserId
+  });
+}
+
+class PagePlusGameScoreRecordVO {
+  final int? totalElements;
+  final int? totalPages;
+  final int? size;
+  final List<PlusGameScoreRecordVO>? content;
+  final int? number;
+  final int? numberOfElements;
+  final SortObject? sort;
+  final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
+  final bool? empty;
+
+  PagePlusGameScoreRecordVO({
+    this.totalElements,
+    this.totalPages,
+    this.size,
+    this.content,
+    this.number,
+    this.numberOfElements,
+    this.sort,
+    this.pageable,
+    this.first,
+    this.last,
+    this.empty
+  });
+}
+
+class PlusApiResultPagePlusGameScoreRecordVO {
+  final PagePlusGameScoreRecordVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPagePlusGameScoreRecordVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameScoreRecordVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? recordId;
+  final int? userId;
+  final String? gameType;
+  final String? seasonKey;
+  final int? tournamentId;
+  final int? roomId;
+  final int? matchId;
+  final int? leaderboardId;
+  final String? changeType;
+  final String? rankingType;
+  final String? periodType;
+  final String? scopeType;
+  final String? bizNo;
+  final String? reason;
+  final int? scoreBefore;
+  final int? scoreDelta;
+  final int? scoreAfter;
+  final int? ratingBefore;
+  final int? ratingDelta;
+  final int? ratingAfter;
+  final int? chipsBefore;
+  final int? chipsDelta;
+  final int? chipsAfter;
+  final int? operatorUserId;
+  final String? occurredAt;
+  final Map<String, dynamic>? settlementData;
+  final Map<String, dynamic>? extData;
+
+  PlusGameScoreRecordVO({
+    this.createdAt,
+    this.updatedAt,
+    this.recordId,
+    this.userId,
+    this.gameType,
+    this.seasonKey,
+    this.tournamentId,
+    this.roomId,
+    this.matchId,
+    this.leaderboardId,
+    this.changeType,
+    this.rankingType,
+    this.periodType,
+    this.scopeType,
+    this.bizNo,
+    this.reason,
+    this.scoreBefore,
+    this.scoreDelta,
+    this.scoreAfter,
+    this.ratingBefore,
+    this.ratingDelta,
+    this.ratingAfter,
+    this.chipsBefore,
+    this.chipsDelta,
+    this.chipsAfter,
+    this.operatorUserId,
+    this.occurredAt,
+    this.settlementData,
+    this.extData
+  });
+}
+
+class PlusGameRoomSeatManageForm {
+  final int? userId;
+  final String? status;
+  final String? playerType;
+  final String? nicknameSnapshot;
+  final String? avatarUrl;
+  final String? joinSource;
+  final int? teamNo;
+  final bool? ready;
+  final bool? trusteeship;
+  final bool? spectator;
+  final int? roomScore;
+  final int? chips;
+  final int? eliminatedRankNo;
+
+  PlusGameRoomSeatManageForm({
+    this.userId,
+    this.status,
+    this.playerType,
+    this.nicknameSnapshot,
+    this.avatarUrl,
+    this.joinSource,
+    this.teamNo,
+    this.ready,
+    this.trusteeship,
+    this.spectator,
+    this.roomScore,
+    this.chips,
+    this.eliminatedRankNo
+  });
+}
+
+class PlusApiResultPlusGameRoomSeatVO {
+  final PlusGameRoomSeatVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPlusGameRoomSeatVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameRoomSeatVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? seatId;
+  final int? roomId;
+  final int? definitionId;
+  final String? gameType;
+  final int? userId;
+  final int? seatNo;
+  final String? status;
+  final String? playerType;
+  final String? nicknameSnapshot;
+  final String? avatarUrl;
+  final String? joinSource;
+  final int? teamNo;
+  final bool? ready;
+  final bool? trusteeship;
+  final bool? spectator;
+  final int? roomScore;
+  final int? chips;
+  final int? eliminatedRankNo;
+  final String? joinedAt;
+  final String? eliminatedAt;
+  final String? leftAt;
+  final Map<String, dynamic>? handSnapshot;
+
+  PlusGameRoomSeatVO({
+    this.createdAt,
+    this.updatedAt,
+    this.seatId,
+    this.roomId,
+    this.definitionId,
+    this.gameType,
+    this.userId,
+    this.seatNo,
+    this.status,
+    this.playerType,
+    this.nicknameSnapshot,
+    this.avatarUrl,
+    this.joinSource,
+    this.teamNo,
+    this.ready,
+    this.trusteeship,
+    this.spectator,
+    this.roomScore,
+    this.chips,
+    this.eliminatedRankNo,
+    this.joinedAt,
+    this.eliminatedAt,
+    this.leftAt,
+    this.handSnapshot
+  });
+}
+
+class PlusGameRoomSeatQueryForm {
+  final int? id;
+  final String? createdAtFrom;
+  final String? createdAtTo;
+  final int? roomId;
+  final int? userId;
+  final String? status;
+
+  PlusGameRoomSeatQueryForm({
+    this.id,
+    this.createdAtFrom,
+    this.createdAtTo,
+    this.roomId,
+    this.userId,
+    this.status
+  });
+}
+
+class PagePlusGameRoomSeatVO {
+  final int? totalElements;
+  final int? totalPages;
+  final int? size;
+  final List<PlusGameRoomSeatVO>? content;
+  final int? number;
+  final int? numberOfElements;
+  final SortObject? sort;
+  final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
+  final bool? empty;
+
+  PagePlusGameRoomSeatVO({
+    this.totalElements,
+    this.totalPages,
+    this.size,
+    this.content,
+    this.number,
+    this.numberOfElements,
+    this.sort,
+    this.pageable,
+    this.first,
+    this.last,
+    this.empty
+  });
+}
+
+class PlusApiResultPagePlusGameRoomSeatVO {
+  final PagePlusGameRoomSeatVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPagePlusGameRoomSeatVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameDismissRoomForm {
+  final String? reason;
+
+  PlusGameDismissRoomForm({
+    this.reason
+  });
+}
+
+class PlusApiResultPlusGameRoomVO {
+  final PlusGameRoomVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPlusGameRoomVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameRoomVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? roomId;
+  final int? userId;
+  final int? definitionId;
+  final String? gameType;
+  final String? gameModeCode;
+  final String? seasonKey;
+  final String? roomNo;
+  final String? name;
+  final String? roomType;
+  final String? status;
+  final String? visibility;
+  final int? seatCount;
+  final int? currentPlayerCount;
+  final int? minStartPlayerCount;
+  final int? hostSeatNo;
+  final int? clubId;
+  final int? tournamentId;
+  final String? regionCode;
+  final int? currentMatchId;
+  final int? currentRoundNo;
+  final int? plannedRoundCount;
+  final int? finishedRoundCount;
+  final bool? ranked;
+  final bool? allowSpectator;
+  final bool? allowRobot;
+  final bool? allowTrusteeship;
+  final bool? leaderboardEligible;
+  final bool? replayEnabled;
+  final int? spectatorCount;
+  final String? inviteCode;
+  final Map<String, dynamic>? ruleConfig;
+  final Map<String, dynamic>? extData;
+  final String? startedAt;
+  final String? endedAt;
+  final String? lastActiveAt;
+
+  PlusGameRoomVO({
+    this.createdAt,
+    this.updatedAt,
+    this.roomId,
+    this.userId,
+    this.definitionId,
+    this.gameType,
+    this.gameModeCode,
+    this.seasonKey,
+    this.roomNo,
+    this.name,
+    this.roomType,
+    this.status,
+    this.visibility,
+    this.seatCount,
+    this.currentPlayerCount,
+    this.minStartPlayerCount,
+    this.hostSeatNo,
+    this.clubId,
+    this.tournamentId,
+    this.regionCode,
+    this.currentMatchId,
+    this.currentRoundNo,
+    this.plannedRoundCount,
+    this.finishedRoundCount,
+    this.ranked,
+    this.allowSpectator,
+    this.allowRobot,
+    this.allowTrusteeship,
+    this.leaderboardEligible,
+    this.replayEnabled,
+    this.spectatorCount,
+    this.inviteCode,
+    this.ruleConfig,
+    this.extData,
+    this.startedAt,
+    this.endedAt,
+    this.lastActiveAt
+  });
+}
+
+class PlusGameRoomQueryForm {
+  final int? id;
+  final String? createdAtFrom;
+  final String? createdAtTo;
+  final int? userId;
+  final int? definitionId;
+  final String? gameType;
+  final String? gameModeCode;
+  final String? seasonKey;
+  final String? roomNo;
+  final String? roomNoLike;
+  final String? nameLike;
+  final String? roomType;
+  final String? status;
+  final String? visibility;
+  final bool? ranked;
+  final bool? allowSpectator;
+  final bool? leaderboardEligible;
+  final bool? replayEnabled;
+  final int? clubId;
+  final int? tournamentId;
+  final String? regionCode;
+  final int? currentMatchId;
+
+  PlusGameRoomQueryForm({
+    this.id,
+    this.createdAtFrom,
+    this.createdAtTo,
+    this.userId,
+    this.definitionId,
+    this.gameType,
+    this.gameModeCode,
+    this.seasonKey,
+    this.roomNo,
+    this.roomNoLike,
+    this.nameLike,
+    this.roomType,
+    this.status,
+    this.visibility,
+    this.ranked,
+    this.allowSpectator,
+    this.leaderboardEligible,
+    this.replayEnabled,
+    this.clubId,
+    this.tournamentId,
+    this.regionCode,
+    this.currentMatchId
+  });
+}
+
+class PagePlusGameRoomVO {
+  final int? totalElements;
+  final int? totalPages;
+  final int? size;
+  final List<PlusGameRoomVO>? content;
+  final int? number;
+  final int? numberOfElements;
+  final SortObject? sort;
+  final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
+  final bool? empty;
+
+  PagePlusGameRoomVO({
+    this.totalElements,
+    this.totalPages,
+    this.size,
+    this.content,
+    this.number,
+    this.numberOfElements,
+    this.sort,
+    this.pageable,
+    this.first,
+    this.last,
+    this.empty
+  });
+}
+
+class PlusApiResultPagePlusGameRoomVO {
+  final PagePlusGameRoomVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPagePlusGameRoomVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameReplayManageForm {
+  final String? title;
+  final bool? publicVisible;
+  final bool? allowShare;
+  final String? status;
+  final String? coverUrl;
+  final String? expiredAt;
+
+  PlusGameReplayManageForm({
+    this.title,
+    this.publicVisible,
+    this.allowShare,
+    this.status,
+    this.coverUrl,
+    this.expiredAt
+  });
+}
+
+class PlusApiResultPlusGameReplayVO {
+  final PlusGameReplayVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPlusGameReplayVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameReplayVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? replayId;
+  final String? replayNo;
+  final int? roomId;
+  final int? matchId;
+  final String? gameType;
+  final String? roomType;
+  final String? gameModeCode;
+  final String? seasonKey;
+  final int? clubId;
+  final int? tournamentId;
+  final String? regionCode;
+  final int? ownerUserId;
+  final String? title;
+  final String? status;
+  final bool? publicVisible;
+  final bool? allowShare;
+  final int? durationSeconds;
+  final int? actionCount;
+  final int? keyFrameCount;
+  final String? storageKey;
+  final String? coverUrl;
+  final Map<String, dynamic>? boardSnapshot;
+  final Map<String, dynamic>? keyFrames;
+  final String? startedAt;
+  final String? endedAt;
+  final String? expiredAt;
+
+  PlusGameReplayVO({
+    this.createdAt,
+    this.updatedAt,
+    this.replayId,
+    this.replayNo,
+    this.roomId,
+    this.matchId,
+    this.gameType,
+    this.roomType,
+    this.gameModeCode,
+    this.seasonKey,
+    this.clubId,
+    this.tournamentId,
+    this.regionCode,
+    this.ownerUserId,
+    this.title,
+    this.status,
+    this.publicVisible,
+    this.allowShare,
+    this.durationSeconds,
+    this.actionCount,
+    this.keyFrameCount,
+    this.storageKey,
+    this.coverUrl,
+    this.boardSnapshot,
+    this.keyFrames,
+    this.startedAt,
+    this.endedAt,
+    this.expiredAt
+  });
+}
+
+class PlusGameReplayQueryForm {
+  final int? id;
+  final String? createdAtFrom;
+  final String? createdAtTo;
+  final int? roomId;
+  final int? matchId;
+  final String? gameType;
+  final String? roomType;
+  final String? gameModeCode;
+  final String? seasonKey;
+  final int? clubId;
+  final int? tournamentId;
+  final String? regionCode;
+  final int? ownerUserId;
+  final String? titleLike;
+  final String? status;
+  final bool? publicVisible;
+  final bool? allowShare;
+
+  PlusGameReplayQueryForm({
+    this.id,
+    this.createdAtFrom,
+    this.createdAtTo,
+    this.roomId,
+    this.matchId,
+    this.gameType,
+    this.roomType,
+    this.gameModeCode,
+    this.seasonKey,
+    this.clubId,
+    this.tournamentId,
+    this.regionCode,
+    this.ownerUserId,
+    this.titleLike,
+    this.status,
+    this.publicVisible,
+    this.allowShare
+  });
+}
+
+class PagePlusGameReplayVO {
+  final int? totalElements;
+  final int? totalPages;
+  final int? size;
+  final List<PlusGameReplayVO>? content;
+  final int? number;
+  final int? numberOfElements;
+  final SortObject? sort;
+  final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
+  final bool? empty;
+
+  PagePlusGameReplayVO({
+    this.totalElements,
+    this.totalPages,
+    this.size,
+    this.content,
+    this.number,
+    this.numberOfElements,
+    this.sort,
+    this.pageable,
+    this.first,
+    this.last,
+    this.empty
+  });
+}
+
+class PlusApiResultPagePlusGameReplayVO {
+  final PagePlusGameReplayVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPagePlusGameReplayVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameRecordQueryForm {
+  final int? id;
+  final String? createdAtFrom;
+  final String? createdAtTo;
+  final int? userId;
+  final int? roomId;
+  final int? matchId;
+  final int? tournamentId;
+  final int? clubId;
+  final int? seatNo;
+  final bool? winner;
+  final bool? escaped;
+  final String? gameType;
+  final String? gameModeCode;
+  final String? resultType;
+
+  PlusGameRecordQueryForm({
+    this.id,
+    this.createdAtFrom,
+    this.createdAtTo,
+    this.userId,
+    this.roomId,
+    this.matchId,
+    this.tournamentId,
+    this.clubId,
+    this.seatNo,
+    this.winner,
+    this.escaped,
+    this.gameType,
+    this.gameModeCode,
+    this.resultType
+  });
+}
+
+class PagePlusGameRecordVO {
+  final int? totalElements;
+  final int? totalPages;
+  final int? size;
+  final List<PlusGameRecordVO>? content;
+  final int? number;
+  final int? numberOfElements;
+  final SortObject? sort;
+  final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
+  final bool? empty;
+
+  PagePlusGameRecordVO({
+    this.totalElements,
+    this.totalPages,
+    this.size,
+    this.content,
+    this.number,
+    this.numberOfElements,
+    this.sort,
+    this.pageable,
+    this.first,
+    this.last,
+    this.empty
+  });
+}
+
+class PlusApiResultPagePlusGameRecordVO {
+  final PagePlusGameRecordVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPagePlusGameRecordVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameRecordVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? recordId;
+  final int? roomId;
+  final int? matchId;
+  final int? userId;
+  final String? gameType;
+  final String? gameModeCode;
+  final String? seasonKey;
+  final int? clubId;
+  final int? tournamentId;
+  final String? regionCode;
+  final int? seatNo;
+  final int? teamNo;
+  final String? resultType;
+  final int? rankNo;
+  final String? nicknameSnapshot;
+  final String? avatarUrl;
+  final bool? winner;
+  final bool? escaped;
+  final bool? leaderboardEligible;
+  final int? actionCount;
+  final int? moveCount;
+  final int? scoreBefore;
+  final int? scoreDelta;
+  final int? scoreAfter;
+  final int? ratingBefore;
+  final int? ratingDelta;
+  final int? ratingAfter;
+  final int? chipsBefore;
+  final int? chipsDelta;
+  final int? chipsAfter;
+  final String? joinedAt;
+  final String? finishedAt;
+  final int? bestRankSnapshot;
+  final Map<String, dynamic>? settlementData;
+  final Map<String, dynamic>? honorSnapshot;
+
+  PlusGameRecordVO({
+    this.createdAt,
+    this.updatedAt,
+    this.recordId,
+    this.roomId,
+    this.matchId,
+    this.userId,
+    this.gameType,
+    this.gameModeCode,
+    this.seasonKey,
+    this.clubId,
+    this.tournamentId,
+    this.regionCode,
+    this.seatNo,
+    this.teamNo,
+    this.resultType,
+    this.rankNo,
+    this.nicknameSnapshot,
+    this.avatarUrl,
+    this.winner,
+    this.escaped,
+    this.leaderboardEligible,
+    this.actionCount,
+    this.moveCount,
+    this.scoreBefore,
+    this.scoreDelta,
+    this.scoreAfter,
+    this.ratingBefore,
+    this.ratingDelta,
+    this.ratingAfter,
+    this.chipsBefore,
+    this.chipsDelta,
+    this.chipsAfter,
+    this.joinedAt,
+    this.finishedAt,
+    this.bestRankSnapshot,
+    this.settlementData,
+    this.honorSnapshot
+  });
+}
+
+class PlusApiResultPlusGameMatchVO {
+  final PlusGameMatchVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPlusGameMatchVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameMatchVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? matchId;
+  final int? definitionId;
+  final int? roomId;
+  final String? gameType;
+  final String? gameModeCode;
+  final String? seasonKey;
+  final String? matchNo;
+  final String? roomType;
+  final String? status;
+  final bool? ranked;
+  final int? totalPlayerCount;
+  final int? clubId;
+  final int? tournamentId;
+  final String? regionCode;
+  final int? currentRoundNo;
+  final int? maxRoundCount;
+  final int? currentTurnSeatNo;
+  final int? dealerSeatNo;
+  final int? winnerSeatNo;
+  final int? winnerUserId;
+  final int? replayId;
+  final int? actionCount;
+  final int? moveCount;
+  final bool? leaderboardEligible;
+  final bool? validForStats;
+  final bool? resultConfirmed;
+  final bool? abnormalFinished;
+  final String? invalidReason;
+  final String? startedAt;
+  final String? settledAt;
+  final String? endedAt;
+  final int? durationSeconds;
+
+  PlusGameMatchVO({
+    this.createdAt,
+    this.updatedAt,
+    this.matchId,
+    this.definitionId,
+    this.roomId,
+    this.gameType,
+    this.gameModeCode,
+    this.seasonKey,
+    this.matchNo,
+    this.roomType,
+    this.status,
+    this.ranked,
+    this.totalPlayerCount,
+    this.clubId,
+    this.tournamentId,
+    this.regionCode,
+    this.currentRoundNo,
+    this.maxRoundCount,
+    this.currentTurnSeatNo,
+    this.dealerSeatNo,
+    this.winnerSeatNo,
+    this.winnerUserId,
+    this.replayId,
+    this.actionCount,
+    this.moveCount,
+    this.leaderboardEligible,
+    this.validForStats,
+    this.resultConfirmed,
+    this.abnormalFinished,
+    this.invalidReason,
+    this.startedAt,
+    this.settledAt,
+    this.endedAt,
+    this.durationSeconds
+  });
+}
+
+class PlusGameMatchManageForm {
+  final String? status;
+  final int? currentRoundNo;
+  final int? maxRoundCount;
+  final int? currentTurnSeatNo;
+  final int? dealerSeatNo;
+  final int? winnerSeatNo;
+  final int? winnerUserId;
+  final bool? leaderboardEligible;
+  final bool? validForStats;
+  final bool? resultConfirmed;
+  final bool? abnormalFinished;
+  final String? invalidReason;
+
+  PlusGameMatchManageForm({
+    this.status,
+    this.currentRoundNo,
+    this.maxRoundCount,
+    this.currentTurnSeatNo,
+    this.dealerSeatNo,
+    this.winnerSeatNo,
+    this.winnerUserId,
+    this.leaderboardEligible,
+    this.validForStats,
+    this.resultConfirmed,
+    this.abnormalFinished,
+    this.invalidReason
+  });
+}
+
+class PlusGameStartMatchForm {
+  final int? roomId;
+
+  PlusGameStartMatchForm({
+    this.roomId
+  });
+}
+
+class PlusGameMatchQueryForm {
+  final int? id;
+  final String? createdAtFrom;
+  final String? createdAtTo;
+  final int? definitionId;
+  final int? roomId;
+  final String? gameType;
+  final String? gameModeCode;
+  final String? seasonKey;
+  final String? matchNo;
+  final String? matchNoLike;
+  final String? roomType;
+  final String? status;
+  final bool? ranked;
+  final int? clubId;
+  final int? tournamentId;
+  final String? regionCode;
+  final int? winnerUserId;
+  final int? replayId;
+  final bool? leaderboardEligible;
+  final bool? validForStats;
+  final bool? resultConfirmed;
+  final bool? abnormalFinished;
+
+  PlusGameMatchQueryForm({
+    this.id,
+    this.createdAtFrom,
+    this.createdAtTo,
+    this.definitionId,
+    this.roomId,
+    this.gameType,
+    this.gameModeCode,
+    this.seasonKey,
+    this.matchNo,
+    this.matchNoLike,
+    this.roomType,
+    this.status,
+    this.ranked,
+    this.clubId,
+    this.tournamentId,
+    this.regionCode,
+    this.winnerUserId,
+    this.replayId,
+    this.leaderboardEligible,
+    this.validForStats,
+    this.resultConfirmed,
+    this.abnormalFinished
+  });
+}
+
+class PagePlusGameMatchVO {
+  final int? totalElements;
+  final int? totalPages;
+  final int? size;
+  final List<PlusGameMatchVO>? content;
+  final int? number;
+  final int? numberOfElements;
+  final SortObject? sort;
+  final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
+  final bool? empty;
+
+  PagePlusGameMatchVO({
+    this.totalElements,
+    this.totalPages,
+    this.size,
+    this.content,
+    this.number,
+    this.numberOfElements,
+    this.sort,
+    this.pageable,
+    this.first,
+    this.last,
+    this.empty
+  });
+}
+
+class PlusApiResultPagePlusGameMatchVO {
+  final PagePlusGameMatchVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPagePlusGameMatchVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PagePlusGameLeaderboardEntryVO {
+  final int? totalElements;
+  final int? totalPages;
+  final int? size;
+  final List<PlusGameLeaderboardEntryVO>? content;
+  final int? number;
+  final int? numberOfElements;
+  final SortObject? sort;
+  final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
+  final bool? empty;
+
+  PagePlusGameLeaderboardEntryVO({
+    this.totalElements,
+    this.totalPages,
+    this.size,
+    this.content,
+    this.number,
+    this.numberOfElements,
+    this.sort,
+    this.pageable,
+    this.first,
+    this.last,
+    this.empty
+  });
+}
+
+class PlusApiResultPagePlusGameLeaderboardEntryVO {
+  final PagePlusGameLeaderboardEntryVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPagePlusGameLeaderboardEntryVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameLeaderboardEntryVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? entryId;
+  final int? leaderboardId;
+  final int? userId;
+  final String? rankingType;
+  final String? periodType;
+  final String? scopeType;
+  final int? scopeOwnerId;
+  final String? seasonKey;
+  final String? nicknameSnapshot;
+  final String? avatarUrl;
+  final int? rankNo;
+  final int? previousRankNo;
+  final int? peakRankNo;
+  final String? status;
+  final double? scoreValue;
+  final double? scoreDelta;
+  final double? tieBreakerValue;
+  final String? displayValue;
+  final int? totalMatchCount;
+  final int? winCount;
+  final int? loseCount;
+  final int? drawCount;
+  final int? streakCount;
+  final bool? rewardGranted;
+  final String? rewardIssuedAt;
+  final String? badgeCode;
+
+  PlusGameLeaderboardEntryVO({
+    this.createdAt,
+    this.updatedAt,
+    this.entryId,
+    this.leaderboardId,
+    this.userId,
+    this.rankingType,
+    this.periodType,
+    this.scopeType,
+    this.scopeOwnerId,
+    this.seasonKey,
+    this.nicknameSnapshot,
+    this.avatarUrl,
+    this.rankNo,
+    this.previousRankNo,
+    this.peakRankNo,
+    this.status,
+    this.scoreValue,
+    this.scoreDelta,
+    this.tieBreakerValue,
+    this.displayValue,
+    this.totalMatchCount,
+    this.winCount,
+    this.loseCount,
+    this.drawCount,
+    this.streakCount,
+    this.rewardGranted,
+    this.rewardIssuedAt,
+    this.badgeCode
+  });
+}
+
+class PlusGameLeaderboardQueryForm {
+  final int? id;
+  final String? createdAtFrom;
+  final String? createdAtTo;
+  final String? gameType;
+  final String? gameModeCode;
+  final String? seasonKey;
+  final int? scopeOwnerId;
+  final String? rankingType;
+  final String? periodType;
+  final String? scopeType;
+
+  PlusGameLeaderboardQueryForm({
+    this.id,
+    this.createdAtFrom,
+    this.createdAtTo,
+    this.gameType,
+    this.gameModeCode,
+    this.seasonKey,
+    this.scopeOwnerId,
+    this.rankingType,
+    this.periodType,
+    this.scopeType
+  });
+}
+
+class PagePlusGameLeaderboardVO {
+  final int? totalElements;
+  final int? totalPages;
+  final int? size;
+  final List<PlusGameLeaderboardVO>? content;
+  final int? number;
+  final int? numberOfElements;
+  final SortObject? sort;
+  final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
+  final bool? empty;
+
+  PagePlusGameLeaderboardVO({
+    this.totalElements,
+    this.totalPages,
+    this.size,
+    this.content,
+    this.number,
+    this.numberOfElements,
+    this.sort,
+    this.pageable,
+    this.first,
+    this.last,
+    this.empty
+  });
+}
+
+class PlusApiResultPagePlusGameLeaderboardVO {
+  final PagePlusGameLeaderboardVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPagePlusGameLeaderboardVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameLeaderboardVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? leaderboardId;
+  final String? leaderboardNo;
+  final String? name;
+  final String? shortName;
+  final String? gameType;
+  final String? gameModeCode;
+  final String? rankingType;
+  final String? periodType;
+  final String? scopeType;
+  final int? scopeOwnerId;
+  final String? scopeName;
+  final String? seasonKey;
+  final int? clubId;
+  final int? tournamentId;
+  final String? regionCode;
+  final String? status;
+  final bool? rankedOnly;
+  final bool? includeFriendRoom;
+  final bool? includeTournamentRoom;
+  final bool? includeClubRoom;
+  final int? minMatchCount;
+  final int? minWinRateMatchCount;
+  final int? totalParticipantCount;
+  final String? periodStartAt;
+  final String? periodEndAt;
+  final String? publishedAt;
+  final String? settledAt;
+  final List<PlusGameLeaderboardEntryVO>? entries;
+
+  PlusGameLeaderboardVO({
+    this.createdAt,
+    this.updatedAt,
+    this.leaderboardId,
+    this.leaderboardNo,
+    this.name,
+    this.shortName,
+    this.gameType,
+    this.gameModeCode,
+    this.rankingType,
+    this.periodType,
+    this.scopeType,
+    this.scopeOwnerId,
+    this.scopeName,
+    this.seasonKey,
+    this.clubId,
+    this.tournamentId,
+    this.regionCode,
+    this.status,
+    this.rankedOnly,
+    this.includeFriendRoom,
+    this.includeTournamentRoom,
+    this.includeClubRoom,
+    this.minMatchCount,
+    this.minWinRateMatchCount,
+    this.totalParticipantCount,
+    this.periodStartAt,
+    this.periodEndAt,
+    this.publishedAt,
+    this.settledAt,
+    this.entries
+  });
+}
+
+class PlusGameHonorQueryForm {
+  final int? userId;
+  final String? seasonKey;
+
+  PlusGameHonorQueryForm({
+    this.userId,
+    this.seasonKey
+  });
+}
+
+class PlusApiResultListPlusGameHonorVO {
+  final List<PlusGameHonorVO>? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultListPlusGameHonorVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameHonorVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? honorId;
+  final int? userId;
+  final String? gameType;
+  final String? seasonKey;
+  final String? sourceType;
+  final int? sourceId;
+  final int? leaderboardId;
+  final int? tournamentId;
+  final String? periodType;
+  final String? rankingType;
+  final String? status;
+  final int? clubId;
+  final String? regionCode;
+  final String? title;
+  final String? subtitle;
+  final String? description;
+  final String? badgeCode;
+  final String? iconUrl;
+  final int? rankNo;
+  final double? scoreValue;
+  final bool? wallVisible;
+  final String? grantedAt;
+  final String? expiredAt;
+
+  PlusGameHonorVO({
+    this.createdAt,
+    this.updatedAt,
+    this.honorId,
+    this.userId,
+    this.gameType,
+    this.seasonKey,
+    this.sourceType,
+    this.sourceId,
+    this.leaderboardId,
+    this.tournamentId,
+    this.periodType,
+    this.rankingType,
+    this.status,
+    this.clubId,
+    this.regionCode,
+    this.title,
+    this.subtitle,
+    this.description,
+    this.badgeCode,
+    this.iconUrl,
+    this.rankNo,
+    this.scoreValue,
+    this.wallVisible,
+    this.grantedAt,
+    this.expiredAt
+  });
+}
+
+class PlusGameGrowthRewardClaimQueryForm {
+  final int? accountId;
+  final int? userId;
+  final String? accountType;
+  final String? gameType;
+  final String? gameModeCode;
+  final String? seasonKey;
+
+  PlusGameGrowthRewardClaimQueryForm({
+    this.accountId,
+    this.userId,
+    this.accountType,
+    this.gameType,
+    this.gameModeCode,
+    this.seasonKey
+  });
+}
+
+class PlusApiResultListPlusGameGrowthRewardClaimVO {
+  final List<PlusGameGrowthRewardClaimVO>? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultListPlusGameGrowthRewardClaimVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameGrowthRewardClaimVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? accountId;
+  final int? userId;
+  final String? accountType;
+  final String? gameType;
+  final String? gameModeCode;
+  final String? seasonKey;
+  final int? currentLevelNo;
+  final int? levelNo;
+  final String? levelCode;
+  final String? levelName;
+  final String? title;
+  final String? badgeCode;
+  final String? claimedAt;
+  final String? rewardIssuedAt;
+  final int? operatorUserId;
+  final Map<String, dynamic>? rewardConfig;
+  final Map<String, dynamic>? rewardSummary;
+
+  PlusGameGrowthRewardClaimVO({
+    this.createdAt,
+    this.updatedAt,
+    this.accountId,
+    this.userId,
+    this.accountType,
+    this.gameType,
+    this.gameModeCode,
+    this.seasonKey,
+    this.currentLevelNo,
+    this.levelNo,
+    this.levelCode,
+    this.levelName,
+    this.title,
+    this.badgeCode,
+    this.claimedAt,
+    this.rewardIssuedAt,
+    this.operatorUserId,
+    this.rewardConfig,
+    this.rewardSummary
+  });
+}
+
+class PlusGameGrowthRecordQueryForm {
+  final int? id;
+  final String? createdAtFrom;
+  final String? createdAtTo;
+  final int? userId;
+  final String? accountType;
+  final String? gameType;
+  final String? gameModeCode;
+  final String? seasonKey;
+  final int? roomId;
+  final int? matchId;
+  final int? tournamentId;
+  final String? sourceType;
+
+  PlusGameGrowthRecordQueryForm({
+    this.id,
+    this.createdAtFrom,
+    this.createdAtTo,
+    this.userId,
+    this.accountType,
+    this.gameType,
+    this.gameModeCode,
+    this.seasonKey,
+    this.roomId,
+    this.matchId,
+    this.tournamentId,
+    this.sourceType
+  });
+}
+
+class PagePlusGameGrowthRecordVO {
+  final int? totalElements;
+  final int? totalPages;
+  final int? size;
+  final List<PlusGameGrowthRecordVO>? content;
+  final int? number;
+  final int? numberOfElements;
+  final SortObject? sort;
+  final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
+  final bool? empty;
+
+  PagePlusGameGrowthRecordVO({
+    this.totalElements,
+    this.totalPages,
+    this.size,
+    this.content,
+    this.number,
+    this.numberOfElements,
+    this.sort,
+    this.pageable,
+    this.first,
+    this.last,
+    this.empty
+  });
+}
+
+class PlusApiResultPagePlusGameGrowthRecordVO {
+  final PagePlusGameGrowthRecordVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPagePlusGameGrowthRecordVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameGrowthRecordVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? recordId;
+  final int? userId;
+  final String? accountType;
+  final String? gameType;
+  final String? gameModeCode;
+  final String? seasonKey;
+  final int? roomId;
+  final int? matchId;
+  final int? tournamentId;
+  final String? sourceType;
+  final String? bizNo;
+  final String? reason;
+  final int? expBefore;
+  final int? expDelta;
+  final int? expAfter;
+  final int? totalExpBefore;
+  final int? totalExpDelta;
+  final int? totalExpAfter;
+  final int? levelConfigIdBefore;
+  final int? levelConfigIdAfter;
+  final int? levelNoBefore;
+  final int? levelNoAfter;
+  final String? levelCodeBefore;
+  final String? levelCodeAfter;
+  final bool? levelUp;
+  final int? operatorUserId;
+  final String? occurredAt;
+  final Map<String, dynamic>? settlementData;
+  final Map<String, dynamic>? extData;
+
+  PlusGameGrowthRecordVO({
+    this.createdAt,
+    this.updatedAt,
+    this.recordId,
+    this.userId,
+    this.accountType,
+    this.gameType,
+    this.gameModeCode,
+    this.seasonKey,
+    this.roomId,
+    this.matchId,
+    this.tournamentId,
+    this.sourceType,
+    this.bizNo,
+    this.reason,
+    this.expBefore,
+    this.expDelta,
+    this.expAfter,
+    this.totalExpBefore,
+    this.totalExpDelta,
+    this.totalExpAfter,
+    this.levelConfigIdBefore,
+    this.levelConfigIdAfter,
+    this.levelNoBefore,
+    this.levelNoAfter,
+    this.levelCodeBefore,
+    this.levelCodeAfter,
+    this.levelUp,
+    this.operatorUserId,
+    this.occurredAt,
+    this.settlementData,
+    this.extData
+  });
+}
+
+class PlusGameGrowthLevelConfigQueryForm {
+  final int? id;
+  final String? createdAtFrom;
+  final String? createdAtTo;
+  final String? accountType;
+  final String? gameType;
+  final String? gameModeCode;
+  final String? seasonKey;
+  final String? status;
+
+  PlusGameGrowthLevelConfigQueryForm({
+    this.id,
+    this.createdAtFrom,
+    this.createdAtTo,
+    this.accountType,
+    this.gameType,
+    this.gameModeCode,
+    this.seasonKey,
+    this.status
+  });
+}
+
+class PagePlusGameGrowthLevelConfigVO {
+  final int? totalElements;
+  final int? totalPages;
+  final int? size;
+  final List<PlusGameGrowthLevelConfigVO>? content;
+  final int? number;
+  final int? numberOfElements;
+  final SortObject? sort;
+  final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
+  final bool? empty;
+
+  PagePlusGameGrowthLevelConfigVO({
+    this.totalElements,
+    this.totalPages,
+    this.size,
+    this.content,
+    this.number,
+    this.numberOfElements,
+    this.sort,
+    this.pageable,
+    this.first,
+    this.last,
+    this.empty
+  });
+}
+
+class PlusApiResultPagePlusGameGrowthLevelConfigVO {
+  final PagePlusGameGrowthLevelConfigVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPagePlusGameGrowthLevelConfigVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameGrowthLevelConfigVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? configId;
+  final String? accountType;
+  final String? gameType;
+  final String? gameModeCode;
+  final String? seasonKey;
+  final int? levelNo;
+  final String? levelCode;
+  final String? levelName;
+  final String? title;
+  final String? badgeCode;
+  final String? iconUrl;
+  final int? requiredExp;
+  final int? expStartValue;
+  final int? expEndValue;
+  final int? winExpReward;
+  final int? loseExpReward;
+  final int? drawExpReward;
+  final int? escapeExpPenalty;
+  final String? status;
+  final bool? visible;
+  final String? description;
+  final Map<String, dynamic>? rewardConfig;
+  final Map<String, dynamic>? benefitConfig;
+  final Map<String, dynamic>? extData;
+
+  PlusGameGrowthLevelConfigVO({
+    this.createdAt,
+    this.updatedAt,
+    this.configId,
+    this.accountType,
+    this.gameType,
+    this.gameModeCode,
+    this.seasonKey,
+    this.levelNo,
+    this.levelCode,
+    this.levelName,
+    this.title,
+    this.badgeCode,
+    this.iconUrl,
+    this.requiredExp,
+    this.expStartValue,
+    this.expEndValue,
+    this.winExpReward,
+    this.loseExpReward,
+    this.drawExpReward,
+    this.escapeExpPenalty,
+    this.status,
+    this.visible,
+    this.description,
+    this.rewardConfig,
+    this.benefitConfig,
+    this.extData
+  });
+}
+
+class PlusGameGrowthAccountRefreshForm {
+  final int? userId;
+  final String? accountType;
+  final String? gameType;
+  final String? gameModeCode;
+  final String? seasonKey;
+
+  PlusGameGrowthAccountRefreshForm({
+    this.userId,
+    this.accountType,
+    this.gameType,
+    this.gameModeCode,
+    this.seasonKey
+  });
+}
+
+class PlusApiResultPlusGameGrowthAccountVO {
+  final PlusGameGrowthAccountVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPlusGameGrowthAccountVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameGrowthAccountVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? accountId;
+  final int? userId;
+  final String? accountType;
+  final String? gameType;
+  final String? gameModeCode;
+  final String? seasonKey;
+  final int? currentLevelConfigId;
+  final int? currentLevelNo;
+  final String? currentLevelCode;
+  final String? currentLevelName;
+  final String? currentTitle;
+  final String? currentBadgeCode;
+  final int? currentExp;
+  final int? totalExp;
+  final int? currentLevelStartExp;
+  final int? nextLevelRequiredExp;
+  final int? expToNextLevel;
+  final double? progressPercent;
+  final int? peakLevelNo;
+  final int? peakExp;
+  final int? levelUpCount;
+  final int? rewardClaimedCount;
+  final String? lastGainAt;
+  final String? lastLevelUpAt;
+  final String? lastResetAt;
+  final bool? active;
+  final int? lastClaimedLevelNo;
+  final String? lastRewardClaimedAt;
+  final String? lastRewardIssuedAt;
+  final String? lastClaimedRewardLevelCode;
+  final String? lastClaimedRewardLevelName;
+  final Map<String, dynamic>? lastClaimedRewardSummary;
+  final Map<String, dynamic>? lastClaimedRewardConfig;
+  final Map<String, dynamic>? extData;
+
+  PlusGameGrowthAccountVO({
+    this.createdAt,
+    this.updatedAt,
+    this.accountId,
+    this.userId,
+    this.accountType,
+    this.gameType,
+    this.gameModeCode,
+    this.seasonKey,
+    this.currentLevelConfigId,
+    this.currentLevelNo,
+    this.currentLevelCode,
+    this.currentLevelName,
+    this.currentTitle,
+    this.currentBadgeCode,
+    this.currentExp,
+    this.totalExp,
+    this.currentLevelStartExp,
+    this.nextLevelRequiredExp,
+    this.expToNextLevel,
+    this.progressPercent,
+    this.peakLevelNo,
+    this.peakExp,
+    this.levelUpCount,
+    this.rewardClaimedCount,
+    this.lastGainAt,
+    this.lastLevelUpAt,
+    this.lastResetAt,
+    this.active,
+    this.lastClaimedLevelNo,
+    this.lastRewardClaimedAt,
+    this.lastRewardIssuedAt,
+    this.lastClaimedRewardLevelCode,
+    this.lastClaimedRewardLevelName,
+    this.lastClaimedRewardSummary,
+    this.lastClaimedRewardConfig,
+    this.extData
+  });
+}
+
+class PlusGameGrowthAccountQueryForm {
+  final int? id;
+  final String? createdAtFrom;
+  final String? createdAtTo;
+  final int? userId;
+  final String? accountType;
+  final String? gameType;
+  final String? gameModeCode;
+  final String? seasonKey;
+  final bool? active;
+
+  PlusGameGrowthAccountQueryForm({
+    this.id,
+    this.createdAtFrom,
+    this.createdAtTo,
+    this.userId,
+    this.accountType,
+    this.gameType,
+    this.gameModeCode,
+    this.seasonKey,
+    this.active
+  });
+}
+
+class PagePlusGameGrowthAccountVO {
+  final int? totalElements;
+  final int? totalPages;
+  final int? size;
+  final List<PlusGameGrowthAccountVO>? content;
+  final int? number;
+  final int? numberOfElements;
+  final SortObject? sort;
+  final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
+  final bool? empty;
+
+  PagePlusGameGrowthAccountVO({
+    this.totalElements,
+    this.totalPages,
+    this.size,
+    this.content,
+    this.number,
+    this.numberOfElements,
+    this.sort,
+    this.pageable,
+    this.first,
+    this.last,
+    this.empty
+  });
+}
+
+class PlusApiResultPagePlusGameGrowthAccountVO {
+  final PagePlusGameGrowthAccountVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPagePlusGameGrowthAccountVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameDefinitionQueryForm {
+  final int? id;
+  final String? createdAtFrom;
+  final String? createdAtTo;
+  final String? code;
+  final String? codeLike;
+  final String? nameLike;
+  final String? gameType;
+  final String? category;
+  final String? gameModeCode;
+  final bool? enabled;
+  final bool? ranked;
+  final bool? supportsReplay;
+  final bool? supportsTournament;
+
+  PlusGameDefinitionQueryForm({
+    this.id,
+    this.createdAtFrom,
+    this.createdAtTo,
+    this.code,
+    this.codeLike,
+    this.nameLike,
+    this.gameType,
+    this.category,
+    this.gameModeCode,
+    this.enabled,
+    this.ranked,
+    this.supportsReplay,
+    this.supportsTournament
+  });
+}
+
+class PagePlusGameDefinitionVO {
+  final int? totalElements;
+  final int? totalPages;
+  final int? size;
+  final List<PlusGameDefinitionVO>? content;
+  final int? number;
+  final int? numberOfElements;
+  final SortObject? sort;
+  final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
+  final bool? empty;
+
+  PagePlusGameDefinitionVO({
+    this.totalElements,
+    this.totalPages,
+    this.size,
+    this.content,
+    this.number,
+    this.numberOfElements,
+    this.sort,
+    this.pageable,
+    this.first,
+    this.last,
+    this.empty
+  });
+}
+
+class PlusApiResultPagePlusGameDefinitionVO {
+  final PagePlusGameDefinitionVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPagePlusGameDefinitionVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusApiResultListPlusGameDefinitionVO {
+  final List<PlusGameDefinitionVO>? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultListPlusGameDefinitionVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameChallengeManageForm {
+  final String? status;
+  final int? winnerUserId;
+  final int? roomId;
+  final int? matchId;
+  final String? reason;
+
+  PlusGameChallengeManageForm({
+    this.status,
+    this.winnerUserId,
+    this.roomId,
+    this.matchId,
+    this.reason
+  });
+}
+
+class PlusApiResultPlusGameChallengeVO {
+  final PlusGameChallengeVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPlusGameChallengeVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameChallengeVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? challengeId;
+  final String? challengeNo;
+  final int? arenaId;
+  final String? sourceType;
+  final String? gameType;
+  final String? gameModeCode;
+  final String? status;
+  final int? challengerUserId;
+  final int? targetUserId;
+  final int? winnerUserId;
+  final int? loserUserId;
+  final int? stakeScore;
+  final int? challengerStakeLocked;
+  final int? targetStakeLocked;
+  final int? leaderboardId;
+  final int? roomId;
+  final int? matchId;
+  final String? reason;
+  final String? challengedAt;
+  final String? acceptedAt;
+  final String? settledAt;
+  final String? expiredAt;
+  final String? canceledAt;
+
+  PlusGameChallengeVO({
+    this.createdAt,
+    this.updatedAt,
+    this.challengeId,
+    this.challengeNo,
+    this.arenaId,
+    this.sourceType,
+    this.gameType,
+    this.gameModeCode,
+    this.status,
+    this.challengerUserId,
+    this.targetUserId,
+    this.winnerUserId,
+    this.loserUserId,
+    this.stakeScore,
+    this.challengerStakeLocked,
+    this.targetStakeLocked,
+    this.leaderboardId,
+    this.roomId,
+    this.matchId,
+    this.reason,
+    this.challengedAt,
+    this.acceptedAt,
+    this.settledAt,
+    this.expiredAt,
+    this.canceledAt
+  });
+}
+
+class PlusGameChallengeQueryForm {
+  final int? id;
+  final String? createdAtFrom;
+  final String? createdAtTo;
+  final int? challengerUserId;
+  final int? targetUserId;
+  final int? arenaId;
+  final int? winnerUserId;
+  final String? gameType;
+  final String? status;
+  final String? sourceType;
+
+  PlusGameChallengeQueryForm({
+    this.id,
+    this.createdAtFrom,
+    this.createdAtTo,
+    this.challengerUserId,
+    this.targetUserId,
+    this.arenaId,
+    this.winnerUserId,
+    this.gameType,
+    this.status,
+    this.sourceType
+  });
+}
+
+class PagePlusGameChallengeVO {
+  final int? totalElements;
+  final int? totalPages;
+  final int? size;
+  final List<PlusGameChallengeVO>? content;
+  final int? number;
+  final int? numberOfElements;
+  final SortObject? sort;
+  final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
+  final bool? empty;
+
+  PagePlusGameChallengeVO({
+    this.totalElements,
+    this.totalPages,
+    this.size,
+    this.content,
+    this.number,
+    this.numberOfElements,
+    this.sort,
+    this.pageable,
+    this.first,
+    this.last,
+    this.empty
+  });
+}
+
+class PlusApiResultPagePlusGameChallengeVO {
+  final PagePlusGameChallengeVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPagePlusGameChallengeVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameChallengeCreateForm {
+  final int? challengerUserId;
+  final int? targetUserId;
+  final String? gameType;
+  final String? gameModeCode;
+  final int? stakeScore;
+  final String? sourceType;
+  final int? arenaId;
+  final int? leaderboardId;
+  final String? reason;
+
+  PlusGameChallengeCreateForm({
+    this.challengerUserId,
+    this.targetUserId,
+    this.gameType,
+    this.gameModeCode,
+    this.stakeScore,
+    this.sourceType,
+    this.arenaId,
+    this.leaderboardId,
+    this.reason
+  });
+}
+
+class PlusGameArenaManageForm {
+  final int? ownerUserId;
+  final int? currentChampionUserId;
+  final String? gameType;
+  final String? gameModeCode;
+  final String? status;
+  final String? name;
+  final String? description;
+  final int? stakeScore;
+  final int? roomId;
+  final int? matchId;
+  final String? reason;
+
+  PlusGameArenaManageForm({
+    this.ownerUserId,
+    this.currentChampionUserId,
+    this.gameType,
+    this.gameModeCode,
+    this.status,
+    this.name,
+    this.description,
+    this.stakeScore,
+    this.roomId,
+    this.matchId,
+    this.reason
+  });
+}
+
+class PlusApiResultPlusGameArenaVO {
+  final PlusGameArenaVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPlusGameArenaVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameArenaVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? arenaId;
+  final String? arenaNo;
+  final String? name;
+  final String? description;
+  final String? gameType;
+  final String? gameModeCode;
+  final String? status;
+  final int? ownerUserId;
+  final int? currentChampionUserId;
+  final int? currentChallengeId;
+  final int? stakeScore;
+  final int? totalChallengeCount;
+  final int? successfulDefenseCount;
+  final int? failedDefenseCount;
+  final int? currentDefenseStreak;
+  final int? bestDefenseStreak;
+  final int? totalRewardScore;
+  final int? roomId;
+  final int? matchId;
+  final String? openedAt;
+  final String? lastChallengeAt;
+  final String? lastSettledAt;
+  final String? closedAt;
+
+  PlusGameArenaVO({
+    this.createdAt,
+    this.updatedAt,
+    this.arenaId,
+    this.arenaNo,
+    this.name,
+    this.description,
+    this.gameType,
+    this.gameModeCode,
+    this.status,
+    this.ownerUserId,
+    this.currentChampionUserId,
+    this.currentChallengeId,
+    this.stakeScore,
+    this.totalChallengeCount,
+    this.successfulDefenseCount,
+    this.failedDefenseCount,
+    this.currentDefenseStreak,
+    this.bestDefenseStreak,
+    this.totalRewardScore,
+    this.roomId,
+    this.matchId,
+    this.openedAt,
+    this.lastChallengeAt,
+    this.lastSettledAt,
+    this.closedAt
+  });
+}
+
+class PlusGameArenaQueryForm {
+  final int? id;
+  final String? createdAtFrom;
+  final String? createdAtTo;
+  final int? ownerUserId;
+  final int? currentChampionUserId;
+  final String? gameType;
+  final String? gameModeCode;
+  final String? status;
+
+  PlusGameArenaQueryForm({
+    this.id,
+    this.createdAtFrom,
+    this.createdAtTo,
+    this.ownerUserId,
+    this.currentChampionUserId,
+    this.gameType,
+    this.gameModeCode,
+    this.status
+  });
+}
+
+class PagePlusGameArenaVO {
+  final int? totalElements;
+  final int? totalPages;
+  final int? size;
+  final List<PlusGameArenaVO>? content;
+  final int? number;
+  final int? numberOfElements;
+  final SortObject? sort;
+  final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
+  final bool? empty;
+
+  PagePlusGameArenaVO({
+    this.totalElements,
+    this.totalPages,
+    this.size,
+    this.content,
+    this.number,
+    this.numberOfElements,
+    this.sort,
+    this.pageable,
+    this.first,
+    this.last,
+    this.empty
+  });
+}
+
+class PlusApiResultPagePlusGameArenaVO {
+  final PagePlusGameArenaVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPagePlusGameArenaVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameActionRecordQueryForm {
+  final int? id;
+  final String? createdAtFrom;
+  final String? createdAtTo;
+  final int? roomId;
+  final int? matchId;
+  final int? playerUserId;
+  final String? actionType;
+  final String? actionCode;
+
+  PlusGameActionRecordQueryForm({
+    this.id,
+    this.createdAtFrom,
+    this.createdAtTo,
+    this.roomId,
+    this.matchId,
+    this.playerUserId,
+    this.actionType,
+    this.actionCode
+  });
+}
+
+class PagePlusGameActionRecordVO {
+  final int? totalElements;
+  final int? totalPages;
+  final int? size;
+  final List<PlusGameActionRecordVO>? content;
+  final int? number;
+  final int? numberOfElements;
+  final SortObject? sort;
+  final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
+  final bool? empty;
+
+  PagePlusGameActionRecordVO({
+    this.totalElements,
+    this.totalPages,
+    this.size,
+    this.content,
+    this.number,
+    this.numberOfElements,
+    this.sort,
+    this.pageable,
+    this.first,
+    this.last,
+    this.empty
+  });
+}
+
+class PlusApiResultPagePlusGameActionRecordVO {
+  final PagePlusGameActionRecordVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPagePlusGameActionRecordVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusGameActionRecordVO {
+  final String? createdAt;
+  final String? updatedAt;
+  final int? actionId;
+  final int? roomId;
+  final int? matchId;
+  final int? roundId;
+  final String? gameType;
+  final String? roomType;
+  final int? replayId;
+  final int? tournamentId;
+  final int? playerUserId;
+  final int? seatNo;
+  final String? playerType;
+  final int? seqNo;
+  final int? turnNo;
+  final String? phaseName;
+  final String? actionType;
+  final String? actionCode;
+  final String? notation;
+  final int? targetSeatNo;
+  final String? sourcePosition;
+  final String? targetPosition;
+  final int? consumeMillis;
+  final bool? validAction;
+  final bool? systemAction;
+  final bool? timeoutAction;
+  final String? actionAt;
+  final Map<String, dynamic>? actionPayload;
+  final Map<String, dynamic>? beforeState;
+  final Map<String, dynamic>? afterState;
+
+  PlusGameActionRecordVO({
+    this.createdAt,
+    this.updatedAt,
+    this.actionId,
+    this.roomId,
+    this.matchId,
+    this.roundId,
+    this.gameType,
+    this.roomType,
+    this.replayId,
+    this.tournamentId,
+    this.playerUserId,
+    this.seatNo,
+    this.playerType,
+    this.seqNo,
+    this.turnNo,
+    this.phaseName,
+    this.actionType,
+    this.actionCode,
+    this.notation,
+    this.targetSeatNo,
+    this.sourcePosition,
+    this.targetPosition,
+    this.consumeMillis,
+    this.validAction,
+    this.systemAction,
+    this.timeoutAction,
+    this.actionAt,
+    this.actionPayload,
+    this.beforeState,
+    this.afterState
+  });
+}
+
 class PagePlusFilePartVO {
   final int? totalElements;
   final int? totalPages;
   final int? size;
   final List<PlusFilePartVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusFilePartVO({
@@ -21575,11 +25551,11 @@ class PagePlusFilePartVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -21630,11 +25606,11 @@ class PagePlusFileVO {
   final int? size;
   final List<PlusFileVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusFileVO({
@@ -21643,11 +25619,11 @@ class PagePlusFileVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -21719,8 +25695,8 @@ class PlusTreeNodePlusFileVO {
   final int? index;
   final bool? root;
   final bool? leaf;
-  final int? depth;
   final int? childrenCount;
+  final int? depth;
 
   PlusTreeNodePlusFileVO({
     this.data,
@@ -21729,8 +25705,8 @@ class PlusTreeNodePlusFileVO {
     this.index,
     this.root,
     this.leaf,
-    this.depth,
-    this.childrenCount
+    this.childrenCount,
+    this.depth
   });
 }
 
@@ -21740,11 +25716,11 @@ class PagePlusFileContentVO {
   final int? size;
   final List<PlusFileContentVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusFileContentVO({
@@ -21753,11 +25729,11 @@ class PagePlusFileContentVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -21808,11 +25784,11 @@ class PagePlusFeedsVO {
   final int? size;
   final List<PlusFeedsVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusFeedsVO({
@@ -21821,11 +25797,11 @@ class PagePlusFeedsVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -21876,11 +25852,11 @@ class PagePlusFeedbackVO {
   final int? size;
   final List<PlusFeedbackVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusFeedbackVO({
@@ -21889,11 +25865,11 @@ class PagePlusFeedbackVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -21944,11 +25920,11 @@ class PagePlusFavoriteVO {
   final int? size;
   final List<PlusFavoriteVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusFavoriteVO({
@@ -21957,11 +25933,11 @@ class PagePlusFavoriteVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -22012,11 +25988,11 @@ class PagePlusDiskMemberVO {
   final int? size;
   final List<PlusDiskMemberVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusDiskMemberVO({
@@ -22025,11 +26001,11 @@ class PagePlusDiskMemberVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -22080,11 +26056,11 @@ class PagePlusDiskVO {
   final int? size;
   final List<PlusDiskVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusDiskVO({
@@ -22093,11 +26069,11 @@ class PagePlusDiskVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -22148,11 +26124,11 @@ class PagePlusDetailVO {
   final int? size;
   final List<PlusDetailVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusDetailVO({
@@ -22161,11 +26137,11 @@ class PagePlusDetailVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -22216,11 +26192,11 @@ class PagePlusDepartmentVO {
   final int? size;
   final List<PlusDepartmentVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusDepartmentVO({
@@ -22229,11 +26205,11 @@ class PagePlusDepartmentVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -22284,11 +26260,11 @@ class PagePlusDatasourceVO {
   final int? size;
   final List<PlusDatasourceVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusDatasourceVO({
@@ -22297,11 +26273,11 @@ class PagePlusDatasourceVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -22360,11 +26336,11 @@ class PagePlusCouponTemplateVO {
   final int? size;
   final List<PlusCouponTemplateVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusCouponTemplateVO({
@@ -22373,11 +26349,11 @@ class PagePlusCouponTemplateVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -22424,11 +26400,9 @@ class PlusApiResultListPlusCouponTemplateVO {
 
 class CouponRedeemForm {
   final String? redeemCode;
-  final String? channel;
 
   CouponRedeemForm({
-    this.redeemCode,
-    this.channel
+    this.redeemCode
   });
 }
 
@@ -22446,11 +26420,11 @@ class PagePlusCouponVO {
   final int? size;
   final List<PlusCouponVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusCouponVO({
@@ -22459,11 +26433,11 @@ class PagePlusCouponVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -22511,7 +26485,6 @@ class PlusApiResultListPlusCouponVO {
 class PlusConversationOpenForm {
   final String? conversationId;
   final String? uuid;
-  final String? title;
   final int? userId;
   final int? agentId;
   final int? knowledgeBaseId;
@@ -22521,7 +26494,6 @@ class PlusConversationOpenForm {
   PlusConversationOpenForm({
     this.conversationId,
     this.uuid,
-    this.title,
     this.userId,
     this.agentId,
     this.knowledgeBaseId,
@@ -22562,11 +26534,11 @@ class PagePlusConversationVO {
   final int? size;
   final List<PlusConversationVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusConversationVO({
@@ -22575,11 +26547,11 @@ class PagePlusConversationVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -22696,11 +26668,11 @@ class PagePlusCommentsVO {
   final int? size;
   final List<PlusCommentsVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusCommentsVO({
@@ -22709,11 +26681,11 @@ class PagePlusCommentsVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -22764,11 +26736,11 @@ class PagePlusColumnVO {
   final int? size;
   final List<PlusColumnVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusColumnVO({
@@ -22777,11 +26749,11 @@ class PagePlusColumnVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -22832,11 +26804,11 @@ class PagePlusCollectionVO {
   final int? size;
   final List<PlusCollectionVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusCollectionVO({
@@ -22845,11 +26817,11 @@ class PagePlusCollectionVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -22900,11 +26872,11 @@ class PagePlusCollectionItemVO {
   final int? size;
   final List<PlusCollectionItemVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusCollectionItemVO({
@@ -22913,11 +26885,11 @@ class PagePlusCollectionItemVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -22986,11 +26958,11 @@ class PagePlusChatMessageVO {
   final int? size;
   final List<PlusChatMessageVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusChatMessageVO({
@@ -22999,11 +26971,11 @@ class PagePlusChatMessageVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -23054,11 +27026,11 @@ class PagePlusCharacterVO {
   final int? size;
   final List<PlusCharacterVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusCharacterVO({
@@ -23067,11 +27039,11 @@ class PagePlusCharacterVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -23122,11 +27094,11 @@ class PagePlusChannelResourceVO {
   final int? size;
   final List<PlusChannelResourceVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusChannelResourceVO({
@@ -23135,11 +27107,11 @@ class PagePlusChannelResourceVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -23190,11 +27162,11 @@ class PagePlusChannelProxyVO {
   final int? size;
   final List<PlusChannelProxyVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusChannelProxyVO({
@@ -23203,11 +27175,11 @@ class PagePlusChannelProxyVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -23258,11 +27230,11 @@ class PagePlusChannelVO {
   final int? size;
   final List<PlusChannelVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusChannelVO({
@@ -23271,11 +27243,11 @@ class PagePlusChannelVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -23366,11 +27338,11 @@ class PagePlusChannelAccountVO {
   final int? size;
   final List<PlusChannelAccountVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusChannelAccountVO({
@@ -23379,11 +27351,11 @@ class PagePlusChannelAccountVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -23414,11 +27386,11 @@ class PagePlusCategoryVO {
   final int? size;
   final List<PlusCategoryVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusCategoryVO({
@@ -23427,11 +27399,11 @@ class PagePlusCategoryVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -23503,8 +27475,8 @@ class PlusTreeNodePlusCategoryVO {
   final int? index;
   final bool? root;
   final bool? leaf;
-  final int? depth;
   final int? childrenCount;
+  final int? depth;
 
   PlusTreeNodePlusCategoryVO({
     this.data,
@@ -23513,8 +27485,8 @@ class PlusTreeNodePlusCategoryVO {
     this.index,
     this.root,
     this.leaf,
-    this.depth,
-    this.childrenCount
+    this.childrenCount,
+    this.depth
   });
 }
 
@@ -23524,11 +27496,11 @@ class PagePlusCardTemplateVO {
   final int? size;
   final List<PlusCardTemplateVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusCardTemplateVO({
@@ -23537,11 +27509,11 @@ class PagePlusCardTemplateVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -23592,11 +27564,11 @@ class PagePlusCardVO {
   final int? size;
   final List<PlusCardVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusCardVO({
@@ -23605,11 +27577,11 @@ class PagePlusCardVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -24158,11 +28130,11 @@ class PagePlusAttributeVO {
   final int? size;
   final List<PlusAttributeVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusAttributeVO({
@@ -24171,11 +28143,11 @@ class PagePlusAttributeVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -24226,11 +28198,11 @@ class PagePlusArticleVO {
   final int? size;
   final List<PlusArticleVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusArticleVO({
@@ -24239,11 +28211,11 @@ class PagePlusArticleVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -24294,11 +28266,11 @@ class PagePlusAppVO {
   final int? size;
   final List<PlusAppVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusAppVO({
@@ -24307,11 +28279,11 @@ class PagePlusAppVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -24470,11 +28442,11 @@ class PagePlusApiKeyVO {
   final int? size;
   final List<PlusApiKeyVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusApiKeyVO({
@@ -24483,11 +28455,11 @@ class PagePlusApiKeyVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -24538,11 +28510,11 @@ class PagePlusAiAgentToolVO {
   final int? size;
   final List<PlusAiAgentToolVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusAiAgentToolVO({
@@ -24551,11 +28523,11 @@ class PagePlusAiAgentToolVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -24626,11 +28598,11 @@ class PagePlusAiAgentVO {
   final int? size;
   final List<PlusAiAgentVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusAiAgentVO({
@@ -24639,11 +28611,11 @@ class PagePlusAiAgentVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -24694,11 +28666,11 @@ class PagePlusAccountVO {
   final int? size;
   final List<PlusAccountVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusAccountVO({
@@ -24707,11 +28679,11 @@ class PagePlusAccountVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -24762,11 +28734,11 @@ class PagePlusAccountHistoryVO {
   final int? size;
   final List<PlusAccountHistoryVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusAccountHistoryVO({
@@ -24775,11 +28747,11 @@ class PagePlusAccountHistoryVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -24904,11 +28876,11 @@ class PagePlusSystemInvoiceVO {
   final int? size;
   final List<PlusSystemInvoiceVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusSystemInvoiceVO({
@@ -24917,11 +28889,11 @@ class PagePlusSystemInvoiceVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -25012,11 +28984,11 @@ class PagePlusNotesVO {
   final int? size;
   final List<PlusNotesVO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusNotesVO({
@@ -25025,11 +28997,11 @@ class PagePlusNotesVO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -25060,11 +29032,11 @@ class PagePlusMediaPublishRecordDTO {
   final int? size;
   final List<PlusMediaPublishRecordDTO>? content;
   final int? number;
-  final bool? first;
-  final bool? last;
   final int? numberOfElements;
   final SortObject? sort;
   final PageableObject? pageable;
+  final bool? first;
+  final bool? last;
   final bool? empty;
 
   PagePlusMediaPublishRecordDTO({
@@ -25073,11 +29045,11 @@ class PagePlusMediaPublishRecordDTO {
     this.size,
     this.content,
     this.number,
-    this.first,
-    this.last,
     this.numberOfElements,
     this.sort,
     this.pageable,
+    this.first,
+    this.last,
     this.empty
   });
 }
@@ -25164,6 +29136,146 @@ class PlusApiResultListPlusNotesVO {
   final String? errorName;
 
   PlusApiResultListPlusNotesVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusApiResultPlusGameScoreRecordVO {
+  final PlusGameScoreRecordVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPlusGameScoreRecordVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusApiResultPlusGameRecordVO {
+  final PlusGameRecordVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPlusGameRecordVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusApiResultPlusGameLeaderboardVO {
+  final PlusGameLeaderboardVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPlusGameLeaderboardVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusApiResultPlusGameLeaderboardEntryVO {
+  final PlusGameLeaderboardEntryVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPlusGameLeaderboardEntryVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusApiResultPlusGameGrowthRecordVO {
+  final PlusGameGrowthRecordVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPlusGameGrowthRecordVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusApiResultPlusGameGrowthLevelConfigVO {
+  final PlusGameGrowthLevelConfigVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPlusGameGrowthLevelConfigVO({
+    this.data,
+    this.code,
+    this.msg,
+    this.requestId,
+    this.ip,
+    this.hostname,
+    this.errorName
+  });
+}
+
+class PlusApiResultPlusGameActionRecordVO {
+  final PlusGameActionRecordVO? data;
+  final String? code;
+  final String? msg;
+  final String? requestId;
+  final String? ip;
+  final String? hostname;
+  final String? errorName;
+
+  PlusApiResultPlusGameActionRecordVO({
     this.data,
     this.code,
     this.msg,

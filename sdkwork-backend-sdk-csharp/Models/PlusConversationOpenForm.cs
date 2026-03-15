@@ -8,7 +8,6 @@ namespace Backend.Models
     {
         public string? ConversationId { get; set; }
         public string? Uuid { get; set; }
-        public string? Title { get; set; }
         public int? UserId { get; set; }
         public int? AgentId { get; set; }
         public int? KnowledgeBaseId { get; set; }

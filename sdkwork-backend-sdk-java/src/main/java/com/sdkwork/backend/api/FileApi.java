@@ -22,38 +22,43 @@ public class FileApi {
         return (PlusApiResultPlusFileVO) client.post(ApiPaths.backendPath("/file"), body);
     }
 
-    /** List files */
-    public PlusApiResultFileListVO listFiles(Map<String, Object> params) throws Exception {
-        return (PlusApiResultFileListVO) client.get(ApiPaths.backendPath("/oss/files"), params);
+    /** Update an existing file part */
+    public PlusApiResultPlusFilePartVO updatePart(PlusFilePartForm body) throws Exception {
+        return (PlusApiResultPlusFilePartVO) client.put(ApiPaths.backendPath("/file/part"), body);
     }
 
-    /** Upload file */
-    public PlusApiResultFileItemVO upload(UploadFileRequest body, Map<String, Object> params) throws Exception {
-        return (PlusApiResultFileItemVO) client.post(ApiPaths.backendPath("/oss/files"), body, params, null, "multipart/form-data");
+    /** Create a new file part */
+    public PlusApiResultPlusFilePartVO createPart(PlusFilePartForm body) throws Exception {
+        return (PlusApiResultPlusFilePartVO) client.post(ApiPaths.backendPath("/file/part"), body);
     }
 
-    /** Get upload temporary session */
-    public PlusApiResultPlusTempSessionVO getTempSession(PlusGetTempSessionForm body) throws Exception {
-        return (PlusApiResultPlusTempSessionVO) client.post(ApiPaths.backendPath("/oss/files/temp_session"), body);
+    /** Update file content */
+    public PlusApiResultPlusFileContentVO updateContent(PlusFileContentForm body) throws Exception {
+        return (PlusApiResultPlusFileContentVO) client.put(ApiPaths.backendPath("/file/content"), body);
     }
 
-    /** Generate presigned URL */
-    public PlusApiResultGetUrlResult getPresignedUrl(PlusGetPresignedUrlForm body) throws Exception {
-        return (PlusApiResultGetUrlResult) client.post(ApiPaths.backendPath("/oss/files/get_presigned_url"), body);
+    /** Create file content */
+    public PlusApiResultPlusFileContentVO createContent(PlusFileContentForm body) throws Exception {
+        return (PlusApiResultPlusFileContentVO) client.post(ApiPaths.backendPath("/file/content"), body);
     }
 
-    /** Upload file */
-    public PlusApiResultPlusFileVO createFiles(PlusUploadForm body) throws Exception {
-        return (PlusApiResultPlusFileVO) client.post(ApiPaths.backendPath("/oss/files/create"), body);
+    /** Get file parts by page */
+    public PlusApiResultPagePlusFilePartVO createListByPage(QueryListForm body, Map<String, Object> params) throws Exception {
+        return (PlusApiResultPagePlusFilePartVO) client.post(ApiPaths.backendPath("/file/part/list"), body, params);
+    }
+
+    /** Get all file parts */
+    public PlusApiResultListPlusFilePartVO createListAllEntities(QueryListForm body) throws Exception {
+        return (PlusApiResultListPlusFilePartVO) client.post(ApiPaths.backendPath("/file/part/list/all"), body);
     }
 
     /** Get file metadata by page */
-    public PlusApiResultPagePlusFileVO listByPage(QueryListForm body, Map<String, Object> params) throws Exception {
+    public PlusApiResultPagePlusFileVO createListByPageFile(QueryListForm body, Map<String, Object> params) throws Exception {
         return (PlusApiResultPagePlusFileVO) client.post(ApiPaths.backendPath("/file/list"), body, params);
     }
 
     /** Get all file metadata */
-    public PlusApiResultListPlusFileVO listAllEntities(QueryListForm body) throws Exception {
+    public PlusApiResultListPlusFileVO createListAllEntitiesFile(QueryListForm body) throws Exception {
         return (PlusApiResultListPlusFileVO) client.post(ApiPaths.backendPath("/file/list/all"), body);
     }
 
@@ -62,19 +67,14 @@ public class FileApi {
         return (PlusApiResultSetPlusTreeNodePlusFileVO) client.post(ApiPaths.backendPath("/file/get_tree"), body, params);
     }
 
-    /** Get file */
-    public PlusApiResultFileItemVO getFile(String fileId) throws Exception {
-        return (PlusApiResultFileItemVO) client.get(ApiPaths.backendPath("/oss/files/" + fileId + ""));
+    /** Get file contents by page */
+    public PlusApiResultPagePlusFileContentVO createListByPageContent(QueryListForm body, Map<String, Object> params) throws Exception {
+        return (PlusApiResultPagePlusFileContentVO) client.post(ApiPaths.backendPath("/file/content/list"), body, params);
     }
 
-    /** Delete file */
-    public PlusApiResultFileItemVO deleteFile(String fileId) throws Exception {
-        return (PlusApiResultFileItemVO) client.delete(ApiPaths.backendPath("/oss/files/" + fileId + ""));
-    }
-
-    /** Get file content */
-    public String getFileContent(String fileId) throws Exception {
-        return (String) client.get(ApiPaths.backendPath("/oss/files/" + fileId + "/content"));
+    /** Get all file contents */
+    public PlusApiResultListPlusFileContentVO createListAllEntitiesContent(QueryListForm body) throws Exception {
+        return (PlusApiResultListPlusFileContentVO) client.post(ApiPaths.backendPath("/file/content/list/all"), body);
     }
 
     /** Get file metadata by ID */
@@ -85,5 +85,25 @@ public class FileApi {
     /** Delete file metadata */
     public PlusApiResultBoolean delete(String id) throws Exception {
         return (PlusApiResultBoolean) client.delete(ApiPaths.backendPath("/file/" + id + ""));
+    }
+
+    /** Get a file part by ID */
+    public PlusApiResultPlusFilePartVO getByIdPart(String id) throws Exception {
+        return (PlusApiResultPlusFilePartVO) client.get(ApiPaths.backendPath("/file/part/" + id + ""));
+    }
+
+    /** Delete a file part */
+    public PlusApiResultBoolean deletePart(String id) throws Exception {
+        return (PlusApiResultBoolean) client.delete(ApiPaths.backendPath("/file/part/" + id + ""));
+    }
+
+    /** Get file content by ID */
+    public PlusApiResultPlusFileContentVO getByIdContent(String id) throws Exception {
+        return (PlusApiResultPlusFileContentVO) client.get(ApiPaths.backendPath("/file/content/" + id + ""));
+    }
+
+    /** Delete file content */
+    public PlusApiResultBoolean deleteContent(String id) throws Exception {
+        return (PlusApiResultBoolean) client.delete(ApiPaths.backendPath("/file/content/" + id + ""));
     }
 }

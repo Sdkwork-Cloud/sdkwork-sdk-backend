@@ -15,6 +15,21 @@ class SkillApi(private val client: HttpClient) {
         return client.put(ApiPaths.backendPath("/skill/$id"), body) as? PlusApiResultPlusAgentSkillVO
     }
 
+    /** Get skill package detail */
+    suspend fun getByIdPackage(id: String): PlusApiResultPlusAgentSkillPackageVO? {
+        return client.get(ApiPaths.backendPath("/skill/package/$id")) as? PlusApiResultPlusAgentSkillPackageVO
+    }
+
+    /** Update skill package */
+    suspend fun updatePackage(id: String, body: PlusAgentSkillPackageForm): PlusApiResultPlusAgentSkillPackageVO? {
+        return client.put(ApiPaths.backendPath("/skill/package/$id"), body) as? PlusApiResultPlusAgentSkillPackageVO
+    }
+
+    /** Delete skill package */
+    suspend fun delete(id: String): PlusApiResultBoolean? {
+        return client.delete(ApiPaths.backendPath("/skill/package/$id")) as? PlusApiResultBoolean
+    }
+
     /** Create skill */
     suspend fun create(body: PlusAgentSkillForm): PlusApiResultPlusAgentSkillVO? {
         return client.post(ApiPaths.backendPath("/skill"), body) as? PlusApiResultPlusAgentSkillVO
@@ -51,12 +66,12 @@ class SkillApi(private val client: HttpClient) {
     }
 
     /** Enable skill */
-    suspend fun enable(id: String): PlusApiResultPlusAgentSkillVO? {
+    suspend fun createEnable(id: String): PlusApiResultPlusAgentSkillVO? {
         return client.post(ApiPaths.backendPath("/skill/$id/enable"), null) as? PlusApiResultPlusAgentSkillVO
     }
 
     /** Disable skill */
-    suspend fun disable(id: String): PlusApiResultPlusAgentSkillVO? {
+    suspend fun createDisable(id: String): PlusApiResultPlusAgentSkillVO? {
         return client.post(ApiPaths.backendPath("/skill/$id/disable"), null) as? PlusApiResultPlusAgentSkillVO
     }
 
@@ -75,13 +90,38 @@ class SkillApi(private val client: HttpClient) {
         return client.post(ApiPaths.backendPath("/skill/review/batch/approve"), body) as? PlusApiResultListPlusAgentSkillVO
     }
 
+    /** Create skill package */
+    suspend fun createPackage(body: PlusAgentSkillPackageForm): PlusApiResultPlusAgentSkillPackageVO? {
+        return client.post(ApiPaths.backendPath("/skill/package"), body) as? PlusApiResultPlusAgentSkillPackageVO
+    }
+
+    /** Enable skill package */
+    suspend fun createEnablePackage(id: String): PlusApiResultPlusAgentSkillPackageVO? {
+        return client.post(ApiPaths.backendPath("/skill/package/$id/enable"), null) as? PlusApiResultPlusAgentSkillPackageVO
+    }
+
+    /** Disable skill package */
+    suspend fun createDisablePackage(id: String): PlusApiResultPlusAgentSkillPackageVO? {
+        return client.post(ApiPaths.backendPath("/skill/package/$id/disable"), null) as? PlusApiResultPlusAgentSkillPackageVO
+    }
+
+    /** Query skill package list by page */
+    suspend fun createListByPage(body: PlusAgentSkillPackageQueryListForm? = null, params: Map<String, Any>? = null): PlusApiResultPagePlusAgentSkillPackageVO? {
+        return client.post(ApiPaths.backendPath("/skill/package/list"), body, params) as? PlusApiResultPagePlusAgentSkillPackageVO
+    }
+
+    /** Query all skill packages */
+    suspend fun createListAll(body: PlusAgentSkillPackageQueryListForm? = null): PlusApiResultListPlusAgentSkillPackageVO? {
+        return client.post(ApiPaths.backendPath("/skill/package/list/all"), body) as? PlusApiResultListPlusAgentSkillPackageVO
+    }
+
     /** Query skill list by page */
-    suspend fun listByPage(body: PlusAgentSkillQueryListForm? = null, params: Map<String, Any>? = null): PlusApiResultPagePlusAgentSkillVO? {
+    suspend fun createListByPageSkill(body: PlusAgentSkillQueryListForm? = null, params: Map<String, Any>? = null): PlusApiResultPagePlusAgentSkillVO? {
         return client.post(ApiPaths.backendPath("/skill/list"), body, params) as? PlusApiResultPagePlusAgentSkillVO
     }
 
     /** Query all skills */
-    suspend fun listAll(body: PlusAgentSkillQueryListForm? = null): PlusApiResultListPlusAgentSkillVO? {
+    suspend fun createListAllSkill(body: PlusAgentSkillQueryListForm? = null): PlusApiResultListPlusAgentSkillVO? {
         return client.post(ApiPaths.backendPath("/skill/list/all"), body) as? PlusApiResultListPlusAgentSkillVO
     }
 }

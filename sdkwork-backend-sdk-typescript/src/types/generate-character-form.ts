@@ -1,31 +1,31 @@
-/** 角色生成表单，用于传递角色生成的业务参数 */
+/** 瑙掕壊鐢熸垚琛ㄥ崟锛岀敤浜庝紶閫掕鑹茬敓鎴愮殑涓氬姟鍙傛暟 */
 export interface GenerateCharacterForm {
-  /** 角色名称 */
+  /** 瑙掕壊鍚嶇О */
   name: string;
-  /** 角色描述 */
+  /** 瑙掕壊鎻忚堪 */
   description: string;
-  /** 角色外观描述 */
+  /** 瑙掕壊澶栬鎻忚堪 */
   appearance?: string;
-  /** 角色性格特点 */
+  /** 瑙掕壊鎬ф牸鐗圭偣 */
   personality?: string;
-  /** 角色背景故事 */
+  /** 瑙掕壊鑳屾櫙鏁呬簨 */
   background?: string;
-  /** 生成风格 */
+  /** 鐢熸垚椋庢牸 */
   style?: string;
-  /** 输出格式 */
+  /** 杈撳嚭鏍煎紡 */
   responseFormat?: string;
-  /** 生成模型 */
+  /** 鐢熸垚妯″瀷 */
   model?: string;
-  /** 生成数量 */
+  /** 鐢熸垚鏁伴噺 */
   n: number;
-  /** 图像宽度 */
+  /** 鍥惧儚瀹藉害 */
   width?: number;
-  /** 图像高度 */
+  /** 鍥惧儚楂樺害 */
   height?: number;
-  /** 生成质量 */
+  /** 鐢熸垚璐ㄩ噺 */
   quality?: string;
-  /** 提示词 */
+  /** P ro mp t */
   prompt?: string;
-  /** 反向提示词 */
+  /** N eg at iv eP ro mp t */
   negativePrompt?: string;
 }

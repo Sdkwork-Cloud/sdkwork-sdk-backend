@@ -9,17 +9,17 @@ type PlusAgent struct {
 	Metadata AgentMetadata `json:"metadata"`
 	Uuid string `json:"uuid"`
 	SystemPrompt Prompt `json:"systemPrompt"`
+	AccountConfig LlmAccountConfig `json:"accountConfig"`
 	Tools []PromptToolDescription `json:"tools"`
+	ExecutionContext AgentExecutionContext `json:"executionContext"`
 	ChatContext ChatContext `json:"chatContext"`
 	ChatOptions ChatOptions `json:"chatOptions"`
-	ExecutionContext AgentExecutionContext `json:"executionContext"`
 	Instructions []string `json:"instructions"`
 	FaceURL string `json:"faceURL"`
 	Prompts map[string]Prompt `json:"prompts"`
-	AccountConfig LlmAccountConfig `json:"accountConfig"`
-	ChatMemory IPlusChatMemory `json:"chatMemory"`
 	ToolCallbackProvider ToolCallbackProvider `json:"toolCallbackProvider"`
 	PromptPath string `json:"promptPath"`
 	PromptContextOptimizer PromptContextOptimizer `json:"promptContextOptimizer"`
 	NextActions []string `json:"nextActions"`
+	ChatMemory IPlusChatMemory `json:"chatMemory"`
 }

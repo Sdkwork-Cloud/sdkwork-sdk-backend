@@ -3,7 +3,7 @@ from .http_client import HttpClient, SdkConfig
 from .models import *
 from .api import *
 
-__version__ = "1.0.0"
+__version__ = "1.0.9"
 
 __all__ = [
     'SdkworkBackendClient',

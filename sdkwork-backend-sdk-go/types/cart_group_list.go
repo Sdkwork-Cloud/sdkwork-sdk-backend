@@ -1,6 +1,6 @@
 package types
 
-// 购物车分组列表
+// Shopping cart group list
 type CartGroupList struct {
 	Groups []CartGroup `json:"groups"`
 	TotalQuantity int `json:"totalQuantity"`

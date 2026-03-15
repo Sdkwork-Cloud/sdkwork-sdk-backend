@@ -1,6 +1,6 @@
 package types
 
-// 修改密码表单
+// Change password form
 type ChangePasswordForm struct {
 	UserId string `json:"userId"`
 	OldPassword string `json:"oldPassword"`

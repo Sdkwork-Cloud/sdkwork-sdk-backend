@@ -1,5 +1,5 @@
-/** 积分兑换优惠券请求 */
+/** C ou po nP oi nt sE xc ha ng eF or m */
 export interface CouponPointsExchangeForm {
-  /** 请求号(幂等键) */
+  /** 璇锋眰鍙?骞傜瓑閿? */
   requestNo: string;
 }

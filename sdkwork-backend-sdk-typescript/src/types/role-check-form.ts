@@ -1,5 +1,5 @@
-/** 角色检查请求表单 */
+/** R ol eC he ck Fo rm */
 export interface RoleCheckForm {
-  /** 角色标识 */
+  /** 瑙掕壊鏍囪瘑 */
   role: string;
 }

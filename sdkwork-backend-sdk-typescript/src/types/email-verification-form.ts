@@ -1,9 +1,6 @@
-/** 邮箱验证请求表单 */
+/** 閭楠岃瘉璇锋眰琛ㄥ崟 */
 export interface EmailVerificationForm {
-  /** 邮箱地址 */
   email: string;
-  /** 验证码 */
   code: string;
-  /** 验证类型（业务场景） */
   type: string;
 }

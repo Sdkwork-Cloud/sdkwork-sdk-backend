@@ -1,6 +1,6 @@
 package types
 
-// 开发者自助更新API Key请求
+// Current user API key update form
 type PlusApiKeySelfUpdateForm struct {
 	Name string `json:"name"`
 	ExpireTime string `json:"expireTime"`

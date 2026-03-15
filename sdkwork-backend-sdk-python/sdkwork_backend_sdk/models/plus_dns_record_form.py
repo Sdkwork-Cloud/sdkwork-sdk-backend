@@ -9,7 +9,7 @@ class PlusDnsRecordForm:
     file_name: str = None
     file_content: str = None
     record_type: str
-    record_value: DnsRecordValue
-    ttl: int = None
+    record_value: DnsRecordValue = None
+    ttl: int
     priority: int = None
     enabled: bool

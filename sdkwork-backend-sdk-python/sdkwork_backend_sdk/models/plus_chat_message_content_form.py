@@ -13,4 +13,4 @@ class PlusChatMessageContentForm:
     agent_type: str
     agent_biz_type: str = None
     content: MessageBody
-    metadata: Dict[str, Any]
+    metadata: Dict[str, Any] = None

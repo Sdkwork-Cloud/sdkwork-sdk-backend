@@ -7,6 +7,6 @@ class PlusVisitHistoryForm:
     content_type: str
     content_id: int
     visit_count: int = None
-    last_visited_at: str
-    duration: int = None
+    last_visited_at: str = None
+    duration: int
     source: str = None

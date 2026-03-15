@@ -8,17 +8,17 @@ data class PlusAgent(
     val metadata: AgentMetadata? = null,
     val uuid: String? = null,
     val systemPrompt: Prompt? = null,
+    val accountConfig: LlmAccountConfig? = null,
     val tools: List<PromptToolDescription>? = null,
+    val executionContext: AgentExecutionContext? = null,
     val chatContext: ChatContext? = null,
     val chatOptions: ChatOptions? = null,
-    val executionContext: AgentExecutionContext? = null,
     val instructions: List<String>? = null,
     val faceURL: String? = null,
     val prompts: Map<String, Prompt>? = null,
-    val accountConfig: LlmAccountConfig? = null,
-    val chatMemory: IPlusChatMemory? = null,
     val toolCallbackProvider: ToolCallbackProvider? = null,
     val promptPath: String? = null,
     val promptContextOptimizer: PromptContextOptimizer? = null,
-    val nextActions: List<String>? = null
+    val nextActions: List<String>? = null,
+    val chatMemory: IPlusChatMemory? = null
 )

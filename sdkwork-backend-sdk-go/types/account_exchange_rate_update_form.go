@@ -1,6 +1,6 @@
 package types
 
-// 账户兑换比例更新表单
+// Account exchange rate update form
 type AccountExchangeRateUpdateForm struct {
 	PointsToCashRate float64 `json:"pointsToCashRate"`
 	Remarks string `json:"remarks"`

@@ -34,58 +34,68 @@ func (a *FileApi) Create(body sdktypes.PlusFileForm) (sdktypes.PlusApiResultPlus
     return decodeResult[sdktypes.PlusApiResultPlusFileVO](raw)
 }
 
-// List files
-func (a *FileApi) ListFiles(query map[string]interface{}) (sdktypes.PlusApiResultFileListVO, error) {
-    raw, err := a.client.Get(BackendApiPath("/oss/files"), query, nil)
+// Update an existing file part
+func (a *FileApi) UpdatePart(body sdktypes.PlusFilePartForm) (sdktypes.PlusApiResultPlusFilePartVO, error) {
+    raw, err := a.client.Put(BackendApiPath("/file/part"), body, nil, nil, "")
     if err != nil {
-        var zero sdktypes.PlusApiResultFileListVO
+        var zero sdktypes.PlusApiResultPlusFilePartVO
         return zero, err
     }
-    return decodeResult[sdktypes.PlusApiResultFileListVO](raw)
+    return decodeResult[sdktypes.PlusApiResultPlusFilePartVO](raw)
 }
 
-// Upload file
-func (a *FileApi) Upload(body *sdktypes.UploadFileRequest, query map[string]interface{}) (sdktypes.PlusApiResultFileItemVO, error) {
-    raw, err := a.client.Post(BackendApiPath("/oss/files"), body, query, nil, "multipart/form-data")
+// Create a new file part
+func (a *FileApi) CreatePart(body sdktypes.PlusFilePartForm) (sdktypes.PlusApiResultPlusFilePartVO, error) {
+    raw, err := a.client.Post(BackendApiPath("/file/part"), body, nil, nil, "")
     if err != nil {
-        var zero sdktypes.PlusApiResultFileItemVO
+        var zero sdktypes.PlusApiResultPlusFilePartVO
         return zero, err
     }
-    return decodeResult[sdktypes.PlusApiResultFileItemVO](raw)
+    return decodeResult[sdktypes.PlusApiResultPlusFilePartVO](raw)
 }
 
-// Get upload temporary session
-func (a *FileApi) GetTempSession(body sdktypes.PlusGetTempSessionForm) (sdktypes.PlusApiResultPlusTempSessionVO, error) {
-    raw, err := a.client.Post(BackendApiPath("/oss/files/temp_session"), body, nil, nil, "")
+// Update file content
+func (a *FileApi) UpdateContent(body sdktypes.PlusFileContentForm) (sdktypes.PlusApiResultPlusFileContentVO, error) {
+    raw, err := a.client.Put(BackendApiPath("/file/content"), body, nil, nil, "")
     if err != nil {
-        var zero sdktypes.PlusApiResultPlusTempSessionVO
+        var zero sdktypes.PlusApiResultPlusFileContentVO
         return zero, err
     }
-    return decodeResult[sdktypes.PlusApiResultPlusTempSessionVO](raw)
+    return decodeResult[sdktypes.PlusApiResultPlusFileContentVO](raw)
 }
 
-// Generate presigned URL
-func (a *FileApi) GetPresignedUrl(body sdktypes.PlusGetPresignedUrlForm) (sdktypes.PlusApiResultGetUrlResult, error) {
-    raw, err := a.client.Post(BackendApiPath("/oss/files/get_presigned_url"), body, nil, nil, "")
+// Create file content
+func (a *FileApi) CreateContent(body sdktypes.PlusFileContentForm) (sdktypes.PlusApiResultPlusFileContentVO, error) {
+    raw, err := a.client.Post(BackendApiPath("/file/content"), body, nil, nil, "")
     if err != nil {
-        var zero sdktypes.PlusApiResultGetUrlResult
+        var zero sdktypes.PlusApiResultPlusFileContentVO
         return zero, err
     }
-    return decodeResult[sdktypes.PlusApiResultGetUrlResult](raw)
+    return decodeResult[sdktypes.PlusApiResultPlusFileContentVO](raw)
 }
 
-// Upload file
-func (a *FileApi) CreateFiles(body sdktypes.PlusUploadForm) (sdktypes.PlusApiResultPlusFileVO, error) {
-    raw, err := a.client.Post(BackendApiPath("/oss/files/create"), body, nil, nil, "")
+// Get file parts by page
+func (a *FileApi) CreateListByPage(body *sdktypes.QueryListForm, query map[string]interface{}) (sdktypes.PlusApiResultPagePlusFilePartVO, error) {
+    raw, err := a.client.Post(BackendApiPath("/file/part/list"), body, query, nil, "")
     if err != nil {
-        var zero sdktypes.PlusApiResultPlusFileVO
+        var zero sdktypes.PlusApiResultPagePlusFilePartVO
         return zero, err
     }
-    return decodeResult[sdktypes.PlusApiResultPlusFileVO](raw)
+    return decodeResult[sdktypes.PlusApiResultPagePlusFilePartVO](raw)
+}
+
+// Get all file parts
+func (a *FileApi) CreateListAllEntities(body *sdktypes.QueryListForm) (sdktypes.PlusApiResultListPlusFilePartVO, error) {
+    raw, err := a.client.Post(BackendApiPath("/file/part/list/all"), body, nil, nil, "")
+    if err != nil {
+        var zero sdktypes.PlusApiResultListPlusFilePartVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultListPlusFilePartVO](raw)
 }
 
 // Get file metadata by page
-func (a *FileApi) ListByPage(body *sdktypes.QueryListForm, query map[string]interface{}) (sdktypes.PlusApiResultPagePlusFileVO, error) {
+func (a *FileApi) CreateListByPageFile(body *sdktypes.QueryListForm, query map[string]interface{}) (sdktypes.PlusApiResultPagePlusFileVO, error) {
     raw, err := a.client.Post(BackendApiPath("/file/list"), body, query, nil, "")
     if err != nil {
         var zero sdktypes.PlusApiResultPagePlusFileVO
@@ -95,7 +105,7 @@ func (a *FileApi) ListByPage(body *sdktypes.QueryListForm, query map[string]inte
 }
 
 // Get all file metadata
-func (a *FileApi) ListAllEntities(body *sdktypes.QueryListForm) (sdktypes.PlusApiResultListPlusFileVO, error) {
+func (a *FileApi) CreateListAllEntitiesFile(body *sdktypes.QueryListForm) (sdktypes.PlusApiResultListPlusFileVO, error) {
     raw, err := a.client.Post(BackendApiPath("/file/list/all"), body, nil, nil, "")
     if err != nil {
         var zero sdktypes.PlusApiResultListPlusFileVO
@@ -114,34 +124,24 @@ func (a *FileApi) GetTree(body *sdktypes.QueryListForm, query map[string]interfa
     return decodeResult[sdktypes.PlusApiResultSetPlusTreeNodePlusFileVO](raw)
 }
 
-// Get file
-func (a *FileApi) GetFile(fileId string) (sdktypes.PlusApiResultFileItemVO, error) {
-    raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/oss/files/%s", fileId)), nil, nil)
+// Get file contents by page
+func (a *FileApi) CreateListByPageContent(body *sdktypes.QueryListForm, query map[string]interface{}) (sdktypes.PlusApiResultPagePlusFileContentVO, error) {
+    raw, err := a.client.Post(BackendApiPath("/file/content/list"), body, query, nil, "")
     if err != nil {
-        var zero sdktypes.PlusApiResultFileItemVO
+        var zero sdktypes.PlusApiResultPagePlusFileContentVO
         return zero, err
     }
-    return decodeResult[sdktypes.PlusApiResultFileItemVO](raw)
+    return decodeResult[sdktypes.PlusApiResultPagePlusFileContentVO](raw)
 }
 
-// Delete file
-func (a *FileApi) DeleteFile(fileId string) (sdktypes.PlusApiResultFileItemVO, error) {
-    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/oss/files/%s", fileId)), nil, nil)
+// Get all file contents
+func (a *FileApi) CreateListAllEntitiesContent(body *sdktypes.QueryListForm) (sdktypes.PlusApiResultListPlusFileContentVO, error) {
+    raw, err := a.client.Post(BackendApiPath("/file/content/list/all"), body, nil, nil, "")
     if err != nil {
-        var zero sdktypes.PlusApiResultFileItemVO
+        var zero sdktypes.PlusApiResultListPlusFileContentVO
         return zero, err
     }
-    return decodeResult[sdktypes.PlusApiResultFileItemVO](raw)
-}
-
-// Get file content
-func (a *FileApi) GetFileContent(fileId string) (string, error) {
-    raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/oss/files/%s/content", fileId)), nil, nil)
-    if err != nil {
-        var zero string
-        return zero, err
-    }
-    return decodeResult[string](raw)
+    return decodeResult[sdktypes.PlusApiResultListPlusFileContentVO](raw)
 }
 
 // Get file metadata by ID
@@ -157,6 +157,46 @@ func (a *FileApi) GetById(id string) (sdktypes.PlusApiResultPlusFileVO, error) {
 // Delete file metadata
 func (a *FileApi) Delete(id string) (sdktypes.PlusApiResultBoolean, error) {
     raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/file/%s", id)), nil, nil)
+    if err != nil {
+        var zero sdktypes.PlusApiResultBoolean
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultBoolean](raw)
+}
+
+// Get a file part by ID
+func (a *FileApi) GetByIdPart(id string) (sdktypes.PlusApiResultPlusFilePartVO, error) {
+    raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/file/part/%s", id)), nil, nil)
+    if err != nil {
+        var zero sdktypes.PlusApiResultPlusFilePartVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPlusFilePartVO](raw)
+}
+
+// Delete a file part
+func (a *FileApi) DeletePart(id string) (sdktypes.PlusApiResultBoolean, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/file/part/%s", id)), nil, nil)
+    if err != nil {
+        var zero sdktypes.PlusApiResultBoolean
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultBoolean](raw)
+}
+
+// Get file content by ID
+func (a *FileApi) GetByIdContent(id string) (sdktypes.PlusApiResultPlusFileContentVO, error) {
+    raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/file/content/%s", id)), nil, nil)
+    if err != nil {
+        var zero sdktypes.PlusApiResultPlusFileContentVO
+        return zero, err
+    }
+    return decodeResult[sdktypes.PlusApiResultPlusFileContentVO](raw)
+}
+
+// Delete file content
+func (a *FileApi) DeleteContent(id string) (sdktypes.PlusApiResultBoolean, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/file/content/%s", id)), nil, nil)
     if err != nil {
         var zero sdktypes.PlusApiResultBoolean
         return zero, err

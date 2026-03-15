@@ -1,11 +1,11 @@
 /** Payment cancel form */
 export interface PlusPaymentCancelForm {
-  /** 支付记录ID */
+  /** Payment ID */
   paymentId: number;
-  /** 商户订单号/支付渠道订单号 */
-  outTradeNo: string;
-  /** 支付金额 */
+  /** External trade number */
+  outTradeNo?: string;
+  /** Payment amount */
   amount: number;
-  /** 取消原因 */
+  /** Cancel reason */
   reason?: string;
 }

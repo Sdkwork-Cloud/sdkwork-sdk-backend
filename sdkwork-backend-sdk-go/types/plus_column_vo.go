@@ -1,6 +1,6 @@
 package types
 
-// 数据库列定义VO
+// Column view object
 type PlusColumnVO struct {
 	CreatedAt string `json:"createdAt"`
 	UpdatedAt string `json:"updatedAt"`

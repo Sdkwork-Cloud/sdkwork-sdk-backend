@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="sdkwork-backend-sdk",
-    version="1.0.0",
+    version="1.0.9",
     description="sdkwork-backend-sdk SDK",
     author="SDKWork Team",
     author_email="support@sdkwork.com",

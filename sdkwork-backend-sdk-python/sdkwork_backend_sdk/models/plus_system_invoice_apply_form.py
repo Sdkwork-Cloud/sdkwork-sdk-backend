@@ -3,7 +3,7 @@ from typing import Optional, List, Dict, Any
 
 @dataclass
 class PlusSystemInvoiceApplyForm:
-    """系统发票申请表单"""
+    """System invoice application form"""
     title: str
     tax_id: str = None
     type: str

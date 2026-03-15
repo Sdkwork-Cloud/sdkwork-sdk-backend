@@ -19,44 +19,50 @@ public class FileApi {
         return response as? PlusApiResultPlusFileVO
     }
 
-    /// List files
-    public func listFiles(params: [String: Any]? = nil) async throws -> PlusApiResultFileListVO? {
-        let response = try await client.get(ApiPaths.backendPath("/oss/files"), params: params)
-        return response as? PlusApiResultFileListVO
+    /// Update an existing file part
+    public func updatePart(body: PlusFilePartForm) async throws -> PlusApiResultPlusFilePartVO? {
+        let response = try await client.put(ApiPaths.backendPath("/file/part"), body: body)
+        return response as? PlusApiResultPlusFilePartVO
     }
 
-    /// Upload file
-    public func upload(body: UploadFileRequest? = nil, params: [String: Any]? = nil) async throws -> PlusApiResultFileItemVO? {
-        let response = try await client.post(ApiPaths.backendPath("/oss/files"), body: body, params: params, headers: nil, contentType: "multipart/form-data")
-        return response as? PlusApiResultFileItemVO
+    /// Create a new file part
+    public func createPart(body: PlusFilePartForm) async throws -> PlusApiResultPlusFilePartVO? {
+        let response = try await client.post(ApiPaths.backendPath("/file/part"), body: body)
+        return response as? PlusApiResultPlusFilePartVO
     }
 
-    /// Get upload temporary session
-    public func getTempSession(body: PlusGetTempSessionForm) async throws -> PlusApiResultPlusTempSessionVO? {
-        let response = try await client.post(ApiPaths.backendPath("/oss/files/temp_session"), body: body)
-        return response as? PlusApiResultPlusTempSessionVO
+    /// Update file content
+    public func updateContent(body: PlusFileContentForm) async throws -> PlusApiResultPlusFileContentVO? {
+        let response = try await client.put(ApiPaths.backendPath("/file/content"), body: body)
+        return response as? PlusApiResultPlusFileContentVO
     }
 
-    /// Generate presigned URL
-    public func getPresignedUrl(body: PlusGetPresignedUrlForm) async throws -> PlusApiResultGetUrlResult? {
-        let response = try await client.post(ApiPaths.backendPath("/oss/files/get_presigned_url"), body: body)
-        return response as? PlusApiResultGetUrlResult
+    /// Create file content
+    public func createContent(body: PlusFileContentForm) async throws -> PlusApiResultPlusFileContentVO? {
+        let response = try await client.post(ApiPaths.backendPath("/file/content"), body: body)
+        return response as? PlusApiResultPlusFileContentVO
     }
 
-    /// Upload file
-    public func createFiles(body: PlusUploadForm) async throws -> PlusApiResultPlusFileVO? {
-        let response = try await client.post(ApiPaths.backendPath("/oss/files/create"), body: body)
-        return response as? PlusApiResultPlusFileVO
+    /// Get file parts by page
+    public func createListByPage(body: QueryListForm? = nil, params: [String: Any]? = nil) async throws -> PlusApiResultPagePlusFilePartVO? {
+        let response = try await client.post(ApiPaths.backendPath("/file/part/list"), body: body, params: params)
+        return response as? PlusApiResultPagePlusFilePartVO
+    }
+
+    /// Get all file parts
+    public func createListAllEntities(body: QueryListForm? = nil) async throws -> PlusApiResultListPlusFilePartVO? {
+        let response = try await client.post(ApiPaths.backendPath("/file/part/list/all"), body: body)
+        return response as? PlusApiResultListPlusFilePartVO
     }
 
     /// Get file metadata by page
-    public func listByPage(body: QueryListForm? = nil, params: [String: Any]? = nil) async throws -> PlusApiResultPagePlusFileVO? {
+    public func createListByPageFile(body: QueryListForm? = nil, params: [String: Any]? = nil) async throws -> PlusApiResultPagePlusFileVO? {
         let response = try await client.post(ApiPaths.backendPath("/file/list"), body: body, params: params)
         return response as? PlusApiResultPagePlusFileVO
     }
 
     /// Get all file metadata
-    public func listAllEntities(body: QueryListForm? = nil) async throws -> PlusApiResultListPlusFileVO? {
+    public func createListAllEntitiesFile(body: QueryListForm? = nil) async throws -> PlusApiResultListPlusFileVO? {
         let response = try await client.post(ApiPaths.backendPath("/file/list/all"), body: body)
         return response as? PlusApiResultListPlusFileVO
     }
@@ -67,22 +73,16 @@ public class FileApi {
         return response as? PlusApiResultSetPlusTreeNodePlusFileVO
     }
 
-    /// Get file
-    public func getFile(fileId: String) async throws -> PlusApiResultFileItemVO? {
-        let response = try await client.get(ApiPaths.backendPath("/oss/files/\(fileId)"))
-        return response as? PlusApiResultFileItemVO
+    /// Get file contents by page
+    public func createListByPageContent(body: QueryListForm? = nil, params: [String: Any]? = nil) async throws -> PlusApiResultPagePlusFileContentVO? {
+        let response = try await client.post(ApiPaths.backendPath("/file/content/list"), body: body, params: params)
+        return response as? PlusApiResultPagePlusFileContentVO
     }
 
-    /// Delete file
-    public func deleteFile(fileId: String) async throws -> PlusApiResultFileItemVO? {
-        let response = try await client.delete(ApiPaths.backendPath("/oss/files/\(fileId)"))
-        return response as? PlusApiResultFileItemVO
-    }
-
-    /// Get file content
-    public func getFileContent(fileId: String) async throws -> String? {
-        let response = try await client.get(ApiPaths.backendPath("/oss/files/\(fileId)/content"))
-        return response as? String
+    /// Get all file contents
+    public func createListAllEntitiesContent(body: QueryListForm? = nil) async throws -> PlusApiResultListPlusFileContentVO? {
+        let response = try await client.post(ApiPaths.backendPath("/file/content/list/all"), body: body)
+        return response as? PlusApiResultListPlusFileContentVO
     }
 
     /// Get file metadata by ID
@@ -94,6 +94,30 @@ public class FileApi {
     /// Delete file metadata
     public func delete(id: String) async throws -> PlusApiResultBoolean? {
         let response = try await client.delete(ApiPaths.backendPath("/file/\(id)"))
+        return response as? PlusApiResultBoolean
+    }
+
+    /// Get a file part by ID
+    public func getByIdPart(id: String) async throws -> PlusApiResultPlusFilePartVO? {
+        let response = try await client.get(ApiPaths.backendPath("/file/part/\(id)"))
+        return response as? PlusApiResultPlusFilePartVO
+    }
+
+    /// Delete a file part
+    public func deletePart(id: String) async throws -> PlusApiResultBoolean? {
+        let response = try await client.delete(ApiPaths.backendPath("/file/part/\(id)"))
+        return response as? PlusApiResultBoolean
+    }
+
+    /// Get file content by ID
+    public func getByIdContent(id: String) async throws -> PlusApiResultPlusFileContentVO? {
+        let response = try await client.get(ApiPaths.backendPath("/file/content/\(id)"))
+        return response as? PlusApiResultPlusFileContentVO
+    }
+
+    /// Delete file content
+    public func deleteContent(id: String) async throws -> PlusApiResultBoolean? {
+        let response = try await client.delete(ApiPaths.backendPath("/file/content/\(id)"))
         return response as? PlusApiResultBoolean
     }
 }

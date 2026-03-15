@@ -6,10 +6,10 @@ data class PagePlusNewsVO(
     val size: Int? = null,
     val content: List<PlusNewsVO>? = null,
     val number: Int? = null,
-    val first: Boolean? = null,
-    val last: Boolean? = null,
     val numberOfElements: Int? = null,
     val sort: SortObject? = null,
     val pageable: PageableObject? = null,
+    val first: Boolean? = null,
+    val last: Boolean? = null,
     val empty: Boolean? = null
 )

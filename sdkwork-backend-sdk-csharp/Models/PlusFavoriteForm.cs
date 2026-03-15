@@ -8,7 +8,6 @@ namespace Backend.Models
     {
         public string? ContentType { get; set; }
         public int? ContentId { get; set; }
-        public string? FolderName { get; set; }
         public string? Remark { get; set; }
         public int? SortWeight { get; set; }
         public string? Title { get; set; }

@@ -7,7 +7,5 @@ type PlusAiGenerationContentForm struct {
 	ContentType string `json:"contentType"`
 	ContentId int `json:"contentId"`
 	Metadata map[string]interface{} `json:"metadata"`
-	ContentUrl string `json:"contentUrl"`
-	FileSize int `json:"fileSize"`
 	ContentFormat string `json:"contentFormat"`
 }

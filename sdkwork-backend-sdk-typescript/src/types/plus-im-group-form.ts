@@ -2,26 +2,26 @@ import type { ImageMediaResource } from './image-media-resource';
 
 /** Chat group creation form */
 export interface PlusImGroupForm {
-  /** 群组名称 */
+  /** 缇ょ粍鍚嶇О */
   name: string;
-  /** 群组描述 */
+  /** 缇ょ粍鎻忚堪 */
   description?: string;
-  /** 群组头像 */
+  /** 缇ょ粍澶村儚 */
   avatar?: ImageMediaResource;
-  /** 群组公告 */
+  /** 缇ょ粍鍏憡 */
   announcement?: string;
-  /** 群组成员数量 */
+  /** 缇ょ粍鎴愬憳鏁伴噺 */
   memberCount: number;
-  /** 最大成员数量 */
+  /** M ax Me mb er s */
   maxMembers: number;
-  /** 群组创建者ID */
+  /** 缇ょ粍鍒涘缓鑰匢D */
   creatorId: number;
-  /** 群组类型 */
+  /** 缇ょ粍绫诲瀷 */
   type?: 'NORMAL' | 'WORK' | 'INTEREST' | 'SUPPORT';
-  /** 群组状态 */
+  /** S ta tu s */
   status?: 'ACTIVE' | 'INACTIVE' | 'DISABLED' | 'DELETED';
-  /** 是否允许成员邀请新成员 */
+  /** 鏄惁鍏佽鎴愬憳閭€璇锋柊鎴愬憳 */
   allowMemberInvite?: boolean;
-  /** 是否需要审批才能加入 */
+  /** R eq ui re Ap pr ov al */
   requireApproval?: boolean;
 }

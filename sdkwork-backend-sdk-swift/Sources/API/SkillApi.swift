@@ -19,6 +19,24 @@ public class SkillApi {
         return response as? PlusApiResultPlusAgentSkillVO
     }
 
+    /// Get skill package detail
+    public func getByIdPackage(id: String) async throws -> PlusApiResultPlusAgentSkillPackageVO? {
+        let response = try await client.get(ApiPaths.backendPath("/skill/package/\(id)"))
+        return response as? PlusApiResultPlusAgentSkillPackageVO
+    }
+
+    /// Update skill package
+    public func updatePackage(id: String, body: PlusAgentSkillPackageForm) async throws -> PlusApiResultPlusAgentSkillPackageVO? {
+        let response = try await client.put(ApiPaths.backendPath("/skill/package/\(id)"), body: body)
+        return response as? PlusApiResultPlusAgentSkillPackageVO
+    }
+
+    /// Delete skill package
+    public func delete(id: String) async throws -> PlusApiResultBoolean? {
+        let response = try await client.delete(ApiPaths.backendPath("/skill/package/\(id)"))
+        return response as? PlusApiResultBoolean
+    }
+
     /// Create skill
     public func create(body: PlusAgentSkillForm) async throws -> PlusApiResultPlusAgentSkillVO? {
         let response = try await client.post(ApiPaths.backendPath("/skill"), body: body)
@@ -62,13 +80,13 @@ public class SkillApi {
     }
 
     /// Enable skill
-    public func enable(id: String) async throws -> PlusApiResultPlusAgentSkillVO? {
+    public func createEnable(id: String) async throws -> PlusApiResultPlusAgentSkillVO? {
         let response = try await client.post(ApiPaths.backendPath("/skill/\(id)/enable"), body: nil)
         return response as? PlusApiResultPlusAgentSkillVO
     }
 
     /// Disable skill
-    public func disable(id: String) async throws -> PlusApiResultPlusAgentSkillVO? {
+    public func createDisable(id: String) async throws -> PlusApiResultPlusAgentSkillVO? {
         let response = try await client.post(ApiPaths.backendPath("/skill/\(id)/disable"), body: nil)
         return response as? PlusApiResultPlusAgentSkillVO
     }
@@ -91,14 +109,44 @@ public class SkillApi {
         return response as? PlusApiResultListPlusAgentSkillVO
     }
 
+    /// Create skill package
+    public func createPackage(body: PlusAgentSkillPackageForm) async throws -> PlusApiResultPlusAgentSkillPackageVO? {
+        let response = try await client.post(ApiPaths.backendPath("/skill/package"), body: body)
+        return response as? PlusApiResultPlusAgentSkillPackageVO
+    }
+
+    /// Enable skill package
+    public func createEnablePackage(id: String) async throws -> PlusApiResultPlusAgentSkillPackageVO? {
+        let response = try await client.post(ApiPaths.backendPath("/skill/package/\(id)/enable"), body: nil)
+        return response as? PlusApiResultPlusAgentSkillPackageVO
+    }
+
+    /// Disable skill package
+    public func createDisablePackage(id: String) async throws -> PlusApiResultPlusAgentSkillPackageVO? {
+        let response = try await client.post(ApiPaths.backendPath("/skill/package/\(id)/disable"), body: nil)
+        return response as? PlusApiResultPlusAgentSkillPackageVO
+    }
+
+    /// Query skill package list by page
+    public func createListByPage(body: PlusAgentSkillPackageQueryListForm? = nil, params: [String: Any]? = nil) async throws -> PlusApiResultPagePlusAgentSkillPackageVO? {
+        let response = try await client.post(ApiPaths.backendPath("/skill/package/list"), body: body, params: params)
+        return response as? PlusApiResultPagePlusAgentSkillPackageVO
+    }
+
+    /// Query all skill packages
+    public func createListAll(body: PlusAgentSkillPackageQueryListForm? = nil) async throws -> PlusApiResultListPlusAgentSkillPackageVO? {
+        let response = try await client.post(ApiPaths.backendPath("/skill/package/list/all"), body: body)
+        return response as? PlusApiResultListPlusAgentSkillPackageVO
+    }
+
     /// Query skill list by page
-    public func listByPage(body: PlusAgentSkillQueryListForm? = nil, params: [String: Any]? = nil) async throws -> PlusApiResultPagePlusAgentSkillVO? {
+    public func createListByPageSkill(body: PlusAgentSkillQueryListForm? = nil, params: [String: Any]? = nil) async throws -> PlusApiResultPagePlusAgentSkillVO? {
         let response = try await client.post(ApiPaths.backendPath("/skill/list"), body: body, params: params)
         return response as? PlusApiResultPagePlusAgentSkillVO
     }
 
     /// Query all skills
-    public func listAll(body: PlusAgentSkillQueryListForm? = nil) async throws -> PlusApiResultListPlusAgentSkillVO? {
+    public func createListAllSkill(body: PlusAgentSkillQueryListForm? = nil) async throws -> PlusApiResultListPlusAgentSkillVO? {
         let response = try await client.post(ApiPaths.backendPath("/skill/list/all"), body: body)
         return response as? PlusApiResultListPlusAgentSkillVO
     }

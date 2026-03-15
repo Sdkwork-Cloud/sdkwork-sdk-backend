@@ -9,12 +9,12 @@ public class PlusProjectObject {
     private String version;
     private TagsContent tags;
     private String description;
-    private String title;
-    private String createdAt;
-    private Integer ownerId;
-    private String uuid;
-    private Integer diskId;
     private String author;
+    private Integer diskId;
+    private String title;
+    private String uuid;
+    private Integer ownerId;
+    private String createdAt;
     private List<PlusFileObject> files;
     private String screenType;
 
@@ -82,36 +82,12 @@ public class PlusProjectObject {
         this.description = description;
     }
 
-    public String getTitle() {
-        return this.title;
+    public String getAuthor() {
+        return this.author;
     }
     
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getCreatedAt() {
-        return this.createdAt;
-    }
-    
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Integer getOwnerId() {
-        return this.ownerId;
-    }
-    
-    public void setOwnerId(Integer ownerId) {
-        this.ownerId = ownerId;
-    }
-
-    public String getUuid() {
-        return this.uuid;
-    }
-    
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public Integer getDiskId() {
@@ -122,12 +98,36 @@ public class PlusProjectObject {
         this.diskId = diskId;
     }
 
-    public String getAuthor() {
-        return this.author;
+    public String getTitle() {
+        return this.title;
     }
     
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getUuid() {
+        return this.uuid;
+    }
+    
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
+    public Integer getOwnerId() {
+        return this.ownerId;
+    }
+    
+    public void setOwnerId(Integer ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    public String getCreatedAt() {
+        return this.createdAt;
+    }
+    
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 
     public List<PlusFileObject> getFiles() {

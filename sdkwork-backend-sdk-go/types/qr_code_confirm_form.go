@@ -1,6 +1,6 @@
 package types
 
-// 二维码确认登录请求
+// QR code confirmation form
 type QrCodeConfirmForm struct {
 	QrKey string `json:"qrKey"`
 	Token string `json:"token"`

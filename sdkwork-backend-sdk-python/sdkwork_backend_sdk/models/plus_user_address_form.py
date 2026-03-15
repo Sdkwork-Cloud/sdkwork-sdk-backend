@@ -12,5 +12,5 @@ class PlusUserAddressForm:
     district_code: str = None
     address_detail: str
     postal_code: str = None
-    is_default: bool
+    is_default: bool = None
     tags: TagsContent = None

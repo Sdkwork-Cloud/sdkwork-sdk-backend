@@ -1,27 +1,27 @@
 /** VIP package creation form */
 export interface PlusVipPackForm {
-  /** 套餐名称 */
+  /** Package name */
   name: string;
-  /** 套餐描述 */
+  /** Package description */
   description?: string;
-  /** 所属分组ID */
+  /** Package group ID */
   groupId: number;
-  /** 关联的VIP等级ID */
+  /** VIP level ID */
   vipLevelId: number;
-  /** 套餐价格(元) */
+  /** Price */
   price: number;
-  /** 赠送灵点数量 */
+  /** Point amount */
   pointAmount: number;
-  /** VIP时长(天) */
-  vipDurationDays?: number;
-  /** 套餐状态 */
+  /** VIP duration in days */
+  vipDurationDays: number;
+  /** Package status */
   status: 'DEFAULT' | 'ACTIVE' | 'INACTIVE';
-  /** 排序权重 */
+  /** Sort weight */
   sortWeight?: number;
-  /** 套餐有效期开始时间 */
+  /** Valid from */
   validFrom?: string;
-  /** 套餐有效期结束时间 */
+  /** Valid to */
   validTo?: string;
-  /** 备注信息 */
+  /** Remark */
   remark?: string;
 }

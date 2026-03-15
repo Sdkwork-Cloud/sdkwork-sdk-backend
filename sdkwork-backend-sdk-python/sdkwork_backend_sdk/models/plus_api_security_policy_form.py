@@ -3,7 +3,7 @@ from typing import Optional, List, Dict, Any
 
 @dataclass
 class PlusApiSecurityPolicyForm:
-    """API安全策略表单"""
+    """API瀹夊叏绛栫暐琛ㄥ崟"""
     policy_code: str
     api_type: str
     path_pattern: str
