@@ -8,6 +8,8 @@ export interface PlusAccountVO {
   updatedAt?: string;
   /** 关联的用户ID，对应 plus_user 表的主键 */
   userId?: number;
+  /** 账户类型 */
+  accountType?: 'DEFAULT' | 'CASH' | 'POINTS' | 'TOKEN';
   /** 可用余额 */
   availableBalance?: number;
   /** 冻结余额，例如提现申请中 */

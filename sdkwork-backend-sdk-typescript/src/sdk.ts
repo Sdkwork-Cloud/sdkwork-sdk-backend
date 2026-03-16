@@ -50,6 +50,7 @@ import { ImApi, createImApi } from './api/im';
 import { GenerationApi, createGenerationApi } from './api/generation';
 import { GameApi, createGameApi } from './api/game';
 import { FileApi, createFileApi } from './api/file';
+import { FinanceApi, createFinanceApi } from './api/finance';
 import { FeedApi, createFeedApi } from './api/feed';
 import { FeedbackApi, createFeedbackApi } from './api/feedback';
 import { FavoriteApi, createFavoriteApi } from './api/favorite';
@@ -130,6 +131,7 @@ export class SdkworkBackendClient {
   public readonly generation: GenerationApi;
   public readonly game: GameApi;
   public readonly file: FileApi;
+  public readonly finance: FinanceApi;
   public readonly feed: FeedApi;
   public readonly feedback: FeedbackApi;
   public readonly favorite: FavoriteApi;
@@ -256,6 +258,8 @@ export class SdkworkBackendClient {
     this.game = createGameApi(this.httpClient);
 
     this.file = createFileApi(this.httpClient);
+
+    this.finance = createFinanceApi(this.httpClient);
 
     this.feed = createFeedApi(this.httpClient);
 

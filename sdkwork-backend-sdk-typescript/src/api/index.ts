@@ -48,6 +48,7 @@ export { ImApi, createImApi } from './im';
 export { GenerationApi, createGenerationApi } from './generation';
 export { GameApi, createGameApi } from './game';
 export { FileApi, createFileApi } from './file';
+export { FinanceApi, createFinanceApi } from './finance';
 export { FeedApi, createFeedApi } from './feed';
 export { FeedbackApi, createFeedbackApi } from './feedback';
 export { FavoriteApi, createFavoriteApi } from './favorite';
