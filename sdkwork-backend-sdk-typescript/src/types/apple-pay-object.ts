@@ -1,19 +1,19 @@
-/** Apple Pay支付创建订单返回对象 */
+/** Apple Payæ¯ä»åå»ºè®¢åè¿åå¯¹è±¡ */
 export interface ApplePayObject {
-  /** 支付数据，包含加密的支付信息 */
+  /** æ¯ä»æ°æ®ï¼åå«å å¯çæ¯ä»ä¿¡æ¯ */
   paymentData?: string;
-  /** 商户标识 */
+  /** åæ·æ è¯ */
   merchantId?: string;
-  /** 交易标识符 */
+  /** äº¤ææ è¯ç¬¦ */
   transactionId?: string;
-  /** 支付方式显示名称 */
+  /** æ¯ä»æ¹å¼æ¾ç¤ºåç§° */
   displayName?: string;
-  /** 支付网络 */
+  /** æ¯ä»ç½ç» */
   network?: string;
-  /** 支付类型 */
+  /** æ¯ä»ç±»å */
   type?: string;
-  /** 支付金额 */
+  /** æ¯ä»éé¢ */
   amount?: string;
-  /** 货币代码 */
+  /** è´§å¸ä»£ç  */
   currencyCode?: string;
 }

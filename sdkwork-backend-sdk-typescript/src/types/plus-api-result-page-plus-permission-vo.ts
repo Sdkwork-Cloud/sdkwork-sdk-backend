@@ -1,6 +1,6 @@
 import type { PagePlusPermissionVO } from './page-plus-permission-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusPermissionVO {
   /** Response data */
   data: PagePlusPermissionVO;

@@ -1,39 +1,39 @@
 import type { TagsContent } from './tags-content';
 
-/** 文件媒体资源 */
+/** æä»¶åªä½èµæº */
 export interface FileMediaResource {
-  /** 资源ID */
+  /** èµæºID */
   id?: number;
-  /** 资源UUID */
+  /** èµæºUUID */
   uuid?: string;
-  /** 资源URL */
+  /** èµæºURL */
   url?: string;
-  /** 资源字节数据 */
+  /** èµæºå­èæ°æ® */
   bytes?: string;
-  /** 本地文件 */
+  /** æ¬å°æä»¶ */
   localFile?: unknown;
-  /** 资源Base64编码 */
+  /** èµæºBase64ç¼ç  */
   base64?: string;
-  /** 资源类型 */
+  /** èµæºç±»å */
   type?: 'IMAGE' | 'VIDEO' | 'AUDIO' | 'DOCUMENT' | 'FILE' | 'MUSIC' | 'CHARACTER' | 'MODEL_3D' | 'PPT' | 'CODE';
-  /** 资源大小(字节) */
+  /** èµæºå¤§å°(å­è) */
   size?: number;
-  /** 文件名 */
+  /** æä»¶å */
   name?: string;
-  /** 资源扩展名 */
+  /** èµæºæ©å±å */
   extension?: string;
-  /** 资源标签 */
+  /** èµæºæ ç­¾ */
   tags?: TagsContent;
-  /** 资源元数据 */
+  /** èµæºåæ°æ® */
   metadata?: Record<string, unknown>;
-  /** AI生成提示词 */
+  /** AIçææç¤ºè¯ */
   prompt?: string;
-  /** 宽度 */
+  /** å®½åº¦ */
   width?: number;
-  /** 高度 */
+  /** é«åº¦ */
   height?: number;
-  /** 时长(秒) */
+  /** æ¶é¿(ç§) */
   duration?: number;
-  /** MIME类型 */
+  /** MIMEç±»å */
   mime_type?: string;
 }

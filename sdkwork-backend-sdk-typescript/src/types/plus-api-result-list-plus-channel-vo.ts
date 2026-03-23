@@ -1,6 +1,6 @@
 import type { PlusChannelVO } from './plus-channel-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultListPlusChannelVO {
   /** Response data */
   data: PlusChannelVO[];

@@ -1,63 +1,63 @@
-/** AI模型价格VO */
+/** AIæ¨¡åä»·æ ¼VO */
 export interface PlusAiModelPriceVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 模型标ID */
+  /** æ¨¡åæ ID */
   objectId?: string;
-  /** 模型标识符(如"gpt-4","claude-3-opus") */
+  /** æ¨¡åæ è¯ç¬¦(å¦"gpt-4","claude-3-opus") */
   model?: string;
-  /** 模型主键ID */
+  /** æ¨¡åä¸»é®ID */
   modelId?: number;
-  /** 渠道 */
+  /** æ¸ é */
   channel?: 'DEFAULT' | 'ALIYUN' | 'AWS' | 'APPLE' | 'AZURE' | 'BAIDU' | 'VOLCENGINE' | 'TENCENT' | 'HUAWEI' | 'GOOGLE' | 'META' | 'WECHAT' | 'ALIPAY' | 'UNION_PAY' | 'UNIONPAY' | 'DOUYIN' | 'MICROSOFT' | 'AMAZON' | 'ANTHROPIC' | 'XAI' | 'DEEPSEEK' | 'GROQ' | 'HUGGING_FACE' | 'KUAISHOU' | 'MINIMAX' | 'MISTRAL' | 'MOONSHOT' | 'NVIDIA' | 'OPENAI' | 'OLLAMA' | 'PERPLEXITY' | 'SDKWORK' | 'SILICONFLOW' | 'STEPFUN' | 'XUNFEI' | 'ZHIPU' | 'RAGFLOW' | 'STABILITY' | 'MINDSDB' | 'MEM0' | 'BOCHA' | 'BING' | 'OPEN_ROUTER' | 'STRIPE' | 'PAYPAL' | 'SUNO' | 'VIDU' | 'RUNWAY' | 'MEITUAN' | 'YUNWU' | 'MIDJOURNEY' | 'IDEOGRAM' | 'FLUX' | 'VECTOR_STORE_AZURE' | 'VECTOR_STORE_CASSANDRA' | 'VECTOR_STORE_CHROMA' | 'VECTOR_STORE_COUCHBASE' | 'VECTOR_STORE_ELASTICSEARCH' | 'VECTOR_STORE_GEMFIRE' | 'VECTOR_STORE_MARIADB' | 'VECTOR_STORE_MILVUS' | 'VECTOR_STORE_MONGODB' | 'VECTOR_STORE_NEO4J' | 'VECTOR_STORE_OPENSEARCH' | 'VECTOR_STORE_ORACLE' | 'VECTOR_STORE_PGVECTOR' | 'VECTOR_STORE_PINECONE' | 'VECTOR_STORE_QDRANT' | 'VECTOR_STORE_REDIS' | 'VECTOR_STORE_TYPESENSE' | 'VECTOR_STORE_WEAVIATE';
-  /** 规范化模型键 */
+  /** è§èåæ¨¡åé® */
   modelKey?: string;
-  /** 产品编码 */
+  /** äº§åç¼ç  */
   productCode?: string;
-  /** 功能编码 */
+  /** åè½ç¼ç  */
   featureCode?: string;
-  /** 计费类型 */
+  /** è®¡è´¹ç±»å */
   billingType?: 'TOKEN' | 'REQUEST' | 'DURATION' | 'CHARACTER' | 'IMAGE' | 'VIDEO_SECOND' | 'AUDIO_SECOND' | 'STORAGE_MB' | 'TIERED' | 'SUBSCRIPTION' | 'FREE';
-  /** 价格项类型 */
+  /** ä»·æ ¼é¡¹ç±»å */
   priceItemType?: 'INPUT' | 'BATCH_INPUT' | 'CACHED_INPUT' | 'BATCH_CACHED_INPUT' | 'OUTPUT' | 'BATCH_OUTPUT' | 'COUNT' | 'DURATION';
-  /** 档位名称 */
+  /** æ¡£ä½åç§° */
   tierName?: string;
-  /** 规则优先级 */
+  /** è§åä¼åçº§ */
   rulePriority?: number;
-  /** 价格计量单位 */
+  /** ä»·æ ¼è®¡éåä½ */
   unit?: 'TOKEN' | 'K_TOKEN' | 'M_TOKEN' | 'COUNT' | 'DURATION';
-  /** 计量单位大小 */
+  /** è®¡éåä½å¤§å° */
   unitSize?: number;
-  /** 基础价格 */
+  /** åºç¡ä»·æ ¼ */
   price?: number;
-  /** 输入价格 */
+  /** è¾å¥ä»·æ ¼ */
   inputPrice?: number;
-  /** 批量输入价格 */
+  /** æ¹éè¾å¥ä»·æ ¼ */
   batchInputPrice?: number;
-  /** 缓存输入价格 */
+  /** ç¼å­è¾å¥ä»·æ ¼ */
   cachedInputPrice?: number;
-  /** 批量缓存输入价格 */
+  /** æ¹éç¼å­è¾å¥ä»·æ ¼ */
   batchCachedInputPrice?: number;
-  /** 输出价格 */
+  /** è¾åºä»·æ ¼ */
   outputPrice?: number;
-  /** 批量输出价格 */
+  /** æ¹éè¾åºä»·æ ¼ */
   batchOutputPrice?: number;
-  /** 货币类型 */
+  /** è´§å¸ç±»å */
   currency?: 'USD' | 'EUR' | 'GBP' | 'JPY' | 'AUD' | 'CAD' | 'CHF' | 'CNY' | 'SEK' | 'NZD' | 'BRL' | 'INR' | 'RUB' | 'ZAR' | 'SGD' | 'HKD' | 'KRW' | 'MXN' | 'TRY' | 'ILS' | 'POINT' | 'TOKEN';
-  /** 最小使用量 */
+  /** æå°ä½¿ç¨é */
   minUsage?: number;
-  /** 最大使用量 */
+  /** æå¤§ä½¿ç¨é */
   maxUsage?: number;
-  /** 生效开始时间 */
+  /** çæå¼å§æ¶é´ */
   effectiveFrom?: string;
-  /** 生效结束时间 */
+  /** çæç»ææ¶é´ */
   effectiveTo?: string;
-  /** 是否默认规则 */
+  /** æ¯å¦é»è®¤è§å */
   defaultRule?: boolean;
-  /** 状态 */
+  /** ç¶æ */
   status?: 'DEFAULT' | 'ACTIVE' | 'INACTIVE' | 'SUSPENDED' | 'DELETED';
-  /** 扩展元数据 */
+  /** æ©å±åæ°æ® */
   metadata?: Record<string, unknown>;
 }

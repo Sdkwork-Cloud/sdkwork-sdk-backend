@@ -1,12 +1,12 @@
-/** 棋牌游戏赛事参赛者查询表单 */
+/** æ£çæ¸¸æèµäºåèµèæ¥è¯¢è¡¨å */
 export interface PlusGameTournamentPlayerQueryForm {
   id?: number;
   createdAtFrom?: string;
   createdAtTo?: string;
-  /** 赛事ID */
+  /** èµäºID */
   tournamentId?: number;
-  /** 玩家用户ID */
+  /** ç©å®¶ç¨æ·ID */
   userId?: number;
-  /** 参赛状态 */
+  /** åèµç¶æ */
   status?: 'REGISTERED' | 'CHECKED_IN' | 'PLAYING' | 'ADVANCED' | 'ELIMINATED' | 'FINISHED' | 'WITHDRAWN';
 }

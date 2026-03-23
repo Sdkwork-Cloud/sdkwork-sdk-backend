@@ -42,7 +42,7 @@ export class AuthApi {
   }
 
 /** Get OAuth authorization URL */
-  async createGetAuthUrl(body: OAuthLoginRequestForm): Promise<PlusApiResultOAuthLoginResponseVO> {
+  async getAuthUrlAuthorize(body: OAuthLoginRequestForm): Promise<PlusApiResultOAuthLoginResponseVO> {
     return this.client.post<PlusApiResultOAuthLoginResponseVO>(backendApiPath(`/auth/oauth/authorize`), body);
   }
 

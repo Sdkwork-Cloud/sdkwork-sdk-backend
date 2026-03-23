@@ -1,13 +1,13 @@
 import type { PlusGameTournamentBatchStatusPlayerForm } from './plus-game-tournament-batch-status-player-form';
 
-/** 棋牌游戏赛事参赛者批量状态管理表单 */
+/** æ£çæ¸¸æèµäºåèµèæ¹éç¶æç®¡çè¡¨å */
 export interface PlusGameTournamentBatchStatusForm {
-  /** 用户ID集合；为空表示对赛事下全部参赛者执行 */
+  /** ç¨æ·IDéåï¼ä¸ºç©ºè¡¨ç¤ºå¯¹èµäºä¸å¨é¨åèµèæ§è¡ */
   userIds?: number[];
-  /** 逐玩家状态项列表；存在时按列表顺序处理，并优先于 userIds */
+  /** éç©å®¶ç¶æé¡¹åè¡¨ï¼å­å¨æ¶æåè¡¨é¡ºåºå¤çï¼å¹¶ä¼åäº userIds */
   playerItems?: PlusGameTournamentBatchStatusPlayerForm[];
-  /** 批量默认参赛状态；逐玩家项未设置状态时回退使用 */
+  /** æ¹éé»è®¤åèµç¶æï¼éç©å®¶é¡¹æªè®¾ç½®ç¶ææ¶åéä½¿ç¨ */
   status?: 'REGISTERED' | 'CHECKED_IN' | 'PLAYING' | 'ADVANCED' | 'ELIMINATED' | 'FINISHED' | 'WITHDRAWN';
-  /** 起始名次，仅在淘汰/完赛且未显式设置名次时按顺序回填 */
+  /** èµ·å§åæ¬¡ï¼ä»å¨æ·æ±°/å®èµä¸æªæ¾å¼è®¾ç½®åæ¬¡æ¶æé¡ºåºåå¡« */
   startRankNo?: number;
 }

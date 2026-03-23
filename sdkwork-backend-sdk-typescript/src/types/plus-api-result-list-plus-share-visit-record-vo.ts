@@ -1,6 +1,6 @@
 import type { PlusShareVisitRecordVO } from './plus-share-visit-record-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultListPlusShareVisitRecordVO {
   /** Response data */
   data: PlusShareVisitRecordVO[];

@@ -3,14 +3,14 @@ import type { PlusPermissionVO } from './plus-permission-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusPermissionVO {
-  totalElements?: number;
   totalPages?: number;
+  totalElements?: number;
   size?: number;
   content?: PlusPermissionVO[];
   number?: number;
   numberOfElements?: number;
-  sort?: SortObject;
   pageable?: PageableObject;
+  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   empty?: boolean;

@@ -1,27 +1,27 @@
-/** 技能分包创建/更新表单 */
+/** æè½åååå»º/æ´æ°è¡¨å */
 export interface PlusAgentSkillPackageForm {
-  /** 归属用户ID，不传默认当前用户 */
+  /** å½å±ç¨æ·IDï¼ä¸ä¼ é»è®¤å½åç¨æ· */
   userId?: number;
-  /** 分包标识（machine key） */
+  /** ååæ è¯ï¼machine keyï¼ */
   packageKey?: string;
-  /** 分包名称 */
+  /** åååç§° */
   name?: string;
-  /** 分包简介 */
+  /** ååç®ä» */
   summary?: string;
-  /** 分包描述 */
+  /** ååæè¿° */
   description?: string;
-  /** 分包图标 */
+  /** ååå¾æ  */
   icon?: string;
-  /** 封面图 */
+  /** å°é¢å¾ */
   coverImage?: string;
-  /** 分类ID */
+  /** åç±»ID */
   categoryId?: number;
-  /** 是否启用 */
+  /** æ¯å¦å¯ç¨ */
   enabled?: boolean;
-  /** 是否推荐 */
+  /** æ¯å¦æ¨è */
   featured?: boolean;
-  /** 排序权重 */
+  /** æåºæé */
   sortWeight?: number;
-  /** 标签 */
+  /** æ ç­¾ */
   tags?: string[];
 }

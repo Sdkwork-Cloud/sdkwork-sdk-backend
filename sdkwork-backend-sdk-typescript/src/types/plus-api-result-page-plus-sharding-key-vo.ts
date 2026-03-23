@@ -1,6 +1,6 @@
 import type { PagePlusShardingKeyVO } from './page-plus-sharding-key-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusShardingKeyVO {
   /** Response data */
   data: PagePlusShardingKeyVO;

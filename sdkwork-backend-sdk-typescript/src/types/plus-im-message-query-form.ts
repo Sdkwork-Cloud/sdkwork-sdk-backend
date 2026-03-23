@@ -1,16 +1,16 @@
-/** IM消息分页查询参数 */
+/** IMæ¶æ¯åé¡µæ¥è¯¢åæ° */
 export interface PlusImMessageQueryForm {
   id?: number;
   createdAtFrom?: string;
   createdAtTo?: string;
-  /** 会话ID */
+  /** ä¼è¯ID */
   conversationId?: number;
-  /** 发送者ID */
+  /** åéèID */
   senderId?: number;
-  /** 接收者ID */
+  /** æ¥æ¶èID */
   receiverId?: number;
-  /** 群组ID */
+  /** ç¾¤ç»ID */
   groupId?: number;
-  /** 消息类型 */
+  /** æ¶æ¯ç±»å */
   type?: 'DEFAULT' | 'TEXT' | 'IMAGE' | 'FILE' | 'AUDIO' | 'VIDEO' | 'CODE' | 'MARKDOWN' | 'MIXED' | 'LOCATION' | 'MUSIC' | 'NEWS' | 'VOICE' | 'ARTICLE' | 'APP' | 'CHUNK' | 'FRAME' | 'BINARY' | 'EVENT' | 'MCP';
 }

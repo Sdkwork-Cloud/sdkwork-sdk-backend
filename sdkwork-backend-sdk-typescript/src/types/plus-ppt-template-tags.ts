@@ -1,11 +1,11 @@
-/** PPT模板标签信息 */
+/** PPTæ¨¡æ¿æ ç­¾ä¿¡æ¯ */
 export interface PlusPptTemplateTags {
-  /** PPT使用场景标签集合 */
+  /** PPTä½¿ç¨åºæ¯æ ç­¾éå */
   scene: string[];
-  /** PPT设计风格标签集合 */
+  /** PPTè®¾è®¡é£æ ¼æ ç­¾éå */
   design: string[];
-  /** PPT主题标签集合 */
+  /** PPTä¸»é¢æ ç­¾éå */
   theme?: string[];
-  /** PPT样式标签集合 */
+  /** PPTæ ·å¼æ ç­¾éå */
   style?: string[];
 }

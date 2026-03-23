@@ -1,27 +1,29 @@
 import type { TagsContent } from './tags-content';
 
-/** 新闻资讯VO对象 */
+/** æ°é»èµè®¯VOå¯¹è±¡ */
 export interface PlusNewsVO {
-  /** 创建时间，实体首次持久化时设置 */
+  /** åå»ºæ¶é´ï¼å®ä½é¦æ¬¡æä¹åæ¶è®¾ç½® */
   createdAt?: string;
-  /** 最后更新时间，实体修改时更新 */
+  /** æåæ´æ°æ¶é´ï¼å®ä½ä¿®æ¹æ¶æ´æ° */
   updatedAt?: string;
-  /** 主键ID，由数据库自动生成 */
+  /** ä¸»é®IDï¼ç±æ°æ®åºèªå¨çæ */
   id?: number;
-  /** 通用唯一标识符UUID */
+  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
   uuid?: string;
-  /** 用户ID(外键关联plus_user.id) */
+  /** ç¨æ·ID(å¤é®å³èplus_user.id) */
   userId?: number;
-  /** 新闻标题 */
+  /** æ°é»æ é¢ */
   title?: string;
-  /** 新闻内容URL */
+  /** æ°é»åå®¹URL */
   url?: string;
-  /** 新闻来源 */
+  /** æ°é»æ¥æº */
   source?: string;
-  /** 新闻摘要 */
+  /** æ°é»æè¦ */
   summary?: string;
-  /** 新闻发布时间 */
+  /** æ°é»åå¸æ¶é´ */
   publishTime?: string;
-  /** 新闻标签 */
+  /** æ°é»æ ç­¾ */
   tags?: TagsContent;
+  /** æ°é»åç±»ID */
+  categoryId?: number;
 }

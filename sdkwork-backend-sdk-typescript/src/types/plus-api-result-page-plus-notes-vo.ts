@@ -1,6 +1,6 @@
 import type { PagePlusNotesVO } from './page-plus-notes-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusNotesVO {
   /** Response data */
   data: PagePlusNotesVO;

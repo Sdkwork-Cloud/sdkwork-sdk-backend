@@ -3,14 +3,14 @@ import type { PlusAgentSkillVO } from './plus-agent-skill-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusAgentSkillVO {
-  totalElements?: number;
   totalPages?: number;
+  totalElements?: number;
   size?: number;
   content?: PlusAgentSkillVO[];
   number?: number;
   numberOfElements?: number;
-  sort?: SortObject;
   pageable?: PageableObject;
+  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   empty?: boolean;

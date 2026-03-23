@@ -1,6 +1,6 @@
 import type { PlusCouponTemplateVO } from './plus-coupon-template-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultListPlusCouponTemplateVO {
   /** Response data */
   data: PlusCouponTemplateVO[];

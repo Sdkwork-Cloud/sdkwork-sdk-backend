@@ -1,36 +1,36 @@
 import type { AuthorInfo } from './author-info';
 import type { ImageMediaResource } from './image-media-resource';
 
-/** 图片信息VO */
+/** å¾çä¿¡æ¯VO */
 export interface PlusImageVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 最后更新时间 */
+  /** æåæ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 主键ID */
+  /** ä¸»é®ID */
   id?: number;
-  /** 通用唯一标识符UUID */
+  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
   uuid?: string;
-  /** 图片标题 */
+  /** å¾çæ é¢ */
   title?: string;
-  /** 图片描述信息 */
+  /** å¾çæè¿°ä¿¡æ¯ */
   description?: string;
-  /** 图片资源信息 */
+  /** å¾çèµæºä¿¡æ¯ */
   resource?: ImageMediaResource;
-  /** 作者信息 */
+  /** ä½èä¿¡æ¯ */
   author?: AuthorInfo;
-  /** 图片存储URL */
+  /** å¾çå­å¨URL */
   url?: string;
-  /** 图片比例 */
+  /** å¾çæ¯ä¾ */
   aspectRatio?: string;
-  /** 图片宽度（像素） */
+  /** å¾çå®½åº¦ï¼åç´ ï¼ */
   width?: number;
-  /** 图片高度（像素） */
+  /** å¾çé«åº¦ï¼åç´ ï¼ */
   height?: number;
-  /** 图片文件大小 */
+  /** å¾çæä»¶å¤§å° */
   fileSize?: number;
-  /** 图片格式 */
+  /** å¾çæ ¼å¼ */
   format?: string;
-  /** 图片状态 */
+  /** å¾çç¶æ */
   status?: 'DEFAULT' | 'PROCESSING' | 'COMPLETED' | 'FAILED' | 'DELETED';
 }

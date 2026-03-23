@@ -1,6 +1,6 @@
 import type { PagePlusUserRoleVO } from './page-plus-user-role-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusUserRoleVO {
   /** Response data */
   data: PagePlusUserRoleVO;

@@ -3,14 +3,14 @@ import type { PlusOrderItemVO } from './plus-order-item-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusOrderItemVO {
-  totalElements?: number;
   totalPages?: number;
+  totalElements?: number;
   size?: number;
   content?: PlusOrderItemVO[];
   number?: number;
   numberOfElements?: number;
-  sort?: SortObject;
   pageable?: PageableObject;
+  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   empty?: boolean;

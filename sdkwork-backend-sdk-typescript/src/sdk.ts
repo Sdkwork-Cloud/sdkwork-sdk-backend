@@ -37,6 +37,7 @@ import { OrganizationApi, createOrganizationApi } from './api/organization';
 import { OrganizationMemberApi, createOrganizationMemberApi } from './api/organization-member';
 import { NotificationApi, createNotificationApi } from './api/notification';
 import { NoteApi, createNoteApi } from './api/note';
+import { NotaryApi, createNotaryApi } from './api/notary';
 import { NewsApi, createNewsApi } from './api/news';
 import { NetApi, createNetApi } from './api/net';
 import { MusicApi, createMusicApi } from './api/music';
@@ -50,7 +51,6 @@ import { ImApi, createImApi } from './api/im';
 import { GenerationApi, createGenerationApi } from './api/generation';
 import { GameApi, createGameApi } from './api/game';
 import { FileApi, createFileApi } from './api/file';
-import { FinanceApi, createFinanceApi } from './api/finance';
 import { FeedApi, createFeedApi } from './api/feed';
 import { FeedbackApi, createFeedbackApi } from './api/feedback';
 import { FavoriteApi, createFavoriteApi } from './api/favorite';
@@ -78,6 +78,8 @@ import { AgentApi, createAgentApi } from './api/agent';
 import { AccountApi, createAccountApi } from './api/account';
 import { SystemApi, createSystemApi } from './api/system';
 import { SearchApi, createSearchApi } from './api/search';
+import { RtcApi, createRtcApi } from './api/rtc';
+import { FinanceApi, createFinanceApi } from './api/finance';
 import { AuthApi, createAuthApi } from './api/auth';
 
 export class SdkworkBackendClient {
@@ -118,6 +120,7 @@ export class SdkworkBackendClient {
   public readonly organizationMember: OrganizationMemberApi;
   public readonly notification: NotificationApi;
   public readonly note: NoteApi;
+  public readonly notary: NotaryApi;
   public readonly news: NewsApi;
   public readonly net: NetApi;
   public readonly music: MusicApi;
@@ -131,7 +134,6 @@ export class SdkworkBackendClient {
   public readonly generation: GenerationApi;
   public readonly game: GameApi;
   public readonly file: FileApi;
-  public readonly finance: FinanceApi;
   public readonly feed: FeedApi;
   public readonly feedback: FeedbackApi;
   public readonly favorite: FavoriteApi;
@@ -159,6 +161,8 @@ export class SdkworkBackendClient {
   public readonly account: AccountApi;
   public readonly system: SystemApi;
   public readonly search: SearchApi;
+  public readonly rtc: RtcApi;
+  public readonly finance: FinanceApi;
   public readonly auth: AuthApi;
 
   constructor(config: SdkworkBackendConfig) {
@@ -233,6 +237,8 @@ export class SdkworkBackendClient {
 
     this.note = createNoteApi(this.httpClient);
 
+    this.notary = createNotaryApi(this.httpClient);
+
     this.news = createNewsApi(this.httpClient);
 
     this.net = createNetApi(this.httpClient);
@@ -258,8 +264,6 @@ export class SdkworkBackendClient {
     this.game = createGameApi(this.httpClient);
 
     this.file = createFileApi(this.httpClient);
-
-    this.finance = createFinanceApi(this.httpClient);
 
     this.feed = createFeedApi(this.httpClient);
 
@@ -314,6 +318,10 @@ export class SdkworkBackendClient {
     this.system = createSystemApi(this.httpClient);
 
     this.search = createSearchApi(this.httpClient);
+
+    this.rtc = createRtcApi(this.httpClient);
+
+    this.finance = createFinanceApi(this.httpClient);
 
     this.auth = createAuthApi(this.httpClient);
   }

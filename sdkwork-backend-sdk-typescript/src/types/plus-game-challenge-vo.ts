@@ -1,53 +1,53 @@
-/** 棋牌游戏挑战赛VO */
+/** æ£çæ¸¸æææèµVO */
 export interface PlusGameChallengeVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 挑战ID */
+  /** ææID */
   challengeId?: number;
-  /** 挑战编号 */
+  /** ææç¼å· */
   challengeNo?: string;
-  /** 擂台ID */
+  /** æå°ID */
   arenaId?: number;
-  /** 挑战来源 */
+  /** æææ¥æº */
   sourceType?: 'SEARCH' | 'LEADERBOARD' | 'ARENA' | 'MANUAL';
-  /** 玩法类型 */
+  /** ç©æ³ç±»å */
   gameType?: 'INTERNATIONAL_CHESS' | 'CHINESE_CHESS' | 'GOMOKU' | 'JUNQI' | 'LANDLORD' | 'SHENG_JI' | 'TUO_LA_JI' | 'TEXAS_HOLDEM' | 'MAHJONG' | 'CUSTOM';
-  /** 玩法模式编码 */
+  /** ç©æ³æ¨¡å¼ç¼ç  */
   gameModeCode?: string;
-  /** 挑战状态 */
+  /** ææç¶æ */
   status?: 'PENDING' | 'ACCEPTED' | 'REJECTED' | 'CANCELED' | 'EXPIRED' | 'SETTLED';
-  /** 挑战方用户ID */
+  /** æææ¹ç¨æ·ID */
   challengerUserId?: number;
-  /** 被挑战方用户ID */
+  /** è¢«æææ¹ç¨æ·ID */
   targetUserId?: number;
-  /** 获胜方用户ID */
+  /** è·èæ¹ç¨æ·ID */
   winnerUserId?: number;
-  /** 失败方用户ID */
+  /** å¤±è´¥æ¹ç¨æ·ID */
   loserUserId?: number;
-  /** 单边押分 */
+  /** åè¾¹æ¼å */
   stakeScore?: number;
-  /** 挑战方已锁积分 */
+  /** æææ¹å·²éç§¯å */
   challengerStakeLocked?: number;
-  /** 被挑战方已锁积分 */
+  /** è¢«æææ¹å·²éç§¯å */
   targetStakeLocked?: number;
-  /** 来源榜单ID */
+  /** æ¥æºæ¦åID */
   leaderboardId?: number;
-  /** 关联房间ID */
+  /** å³èæ¿é´ID */
   roomId?: number;
-  /** 关联对局ID */
+  /** å³èå¯¹å±ID */
   matchId?: number;
-  /** 挑战备注 */
+  /** ææå¤æ³¨ */
   reason?: string;
-  /** 发起时间 */
+  /** åèµ·æ¶é´ */
   challengedAt?: string;
-  /** 接受时间 */
+  /** æ¥åæ¶é´ */
   acceptedAt?: string;
-  /** 结算时间 */
+  /** ç»ç®æ¶é´ */
   settledAt?: string;
-  /** 过期时间 */
+  /** è¿ææ¶é´ */
   expiredAt?: string;
-  /** 取消时间 */
+  /** åæ¶æ¶é´ */
   canceledAt?: string;
 }

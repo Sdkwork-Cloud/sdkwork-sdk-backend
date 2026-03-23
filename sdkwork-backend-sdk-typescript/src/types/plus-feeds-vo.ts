@@ -3,44 +3,44 @@ import type { AuthorInfo } from './author-info';
 import type { ImageMediaResourceList } from './image-media-resource-list';
 import type { TagsContent } from './tags-content';
 
-/** Feeds流VO对象，支持通用内容展示，包括新闻资讯、博客、视频、图片、音频等多种类型 */
+/** FeedsæµVOå¯¹è±¡ï¼æ¯æéç¨åå®¹å±ç¤ºï¼åæ¬æ°é»èµè®¯ãåå®¢ãè§é¢ãå¾çãé³é¢ç­å¤ç§ç±»å */
 export interface PlusFeedsVO {
-  /** 创建时间，实体首次持久化时设置 */
+  /** åå»ºæ¶é´ï¼å®ä½é¦æ¬¡æä¹åæ¶è®¾ç½® */
   createdAt?: string;
-  /** 最后更新时间，实体修改时更新 */
+  /** æåæ´æ°æ¶é´ï¼å®ä½ä¿®æ¹æ¶æ´æ° */
   updatedAt?: string;
-  /** 主键ID，由数据库自动生成 */
+  /** ä¸»é®IDï¼ç±æ°æ®åºèªå¨çæ */
   id?: number;
-  /** 通用唯一标识符UUID */
+  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
   uuid?: string;
-  /** 用户ID(外键关联plus_user.id) */
+  /** ç¨æ·ID(å¤é®å³èplus_user.id) */
   userId?: number;
-  /** Feeds标题 */
+  /** Feedsæ é¢ */
   title?: string;
-  /** Feeds内容摘要 */
+  /** Feedsåå®¹æè¦ */
   summary?: string;
-  /** 关联内容类型 */
-  contentType?: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM';
-  /** 关联内容ID */
+  /** å³èåå®¹ç±»å */
+  contentType?: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM' | 'JOB';
+  /** å³èåå®¹ID */
   contentId?: number;
-  /** 封面图片URL列表 */
+  /** å°é¢å¾çURLåè¡¨ */
   coverImages?: ImageMediaResourceList;
   /** resource list */
   resourceList?: AssetMediaResourceList;
-  /** 作者信息 */
+  /** ä½èä¿¡æ¯ */
   author?: AuthorInfo;
-  /** 内容来源 */
+  /** åå®¹æ¥æº */
   source?: string;
-  /** 发布时间 */
+  /** åå¸æ¶é´ */
   publishTime?: string;
-  /** Feeds标签 */
+  /** Feedsæ ç­¾ */
   tags?: TagsContent;
-  /** Feeds状态 */
+  /** Feedsç¶æ */
   status?: 'DEFAULT' | 'DRAFT' | 'PUBLISHED' | 'DELETED';
-  /** 浏览次数 */
+  /** æµè§æ¬¡æ° */
   viewCount?: number;
-  /** 点赞次数 */
+  /** ç¹èµæ¬¡æ° */
   likeCount?: number;
-  /** 评论次数 */
+  /** è¯è®ºæ¬¡æ° */
   commentCount?: number;
 }

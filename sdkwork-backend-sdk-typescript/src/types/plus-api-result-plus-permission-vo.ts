@@ -1,6 +1,6 @@
 import type { PlusPermissionVO } from './plus-permission-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPlusPermissionVO {
   /** Response data */
   data: PlusPermissionVO;

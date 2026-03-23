@@ -1,6 +1,6 @@
 import type { PlusCommentsVO } from './plus-comments-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultListPlusCommentsVO {
   /** Response data */
   data: PlusCommentsVO[];

@@ -1,6 +1,6 @@
 import type { PlusMallHomeVO } from './plus-mall-home-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPlusMallHomeVO {
   /** Response data */
   data: PlusMallHomeVO;

@@ -1,6 +1,6 @@
 import type { PagePlusRolePermissionVO } from './page-plus-role-permission-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusRolePermissionVO {
   /** Response data */
   data: PagePlusRolePermissionVO;

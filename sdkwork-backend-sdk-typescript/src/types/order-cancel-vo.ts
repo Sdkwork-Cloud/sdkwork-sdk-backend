@@ -1,23 +1,23 @@
-/** 订单取消操作VO */
+/** è®¢ååæ¶æä½VO */
 export interface OrderCancelVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 操作是否成功 */
+  /** æä½æ¯å¦æå */
   success?: boolean;
-  /** 操作结果消息 */
+  /** æä½ç»ææ¶æ¯ */
   message?: string;
-  /** 操作时间 */
+  /** æä½æ¶é´ */
   operationTime?: string;
-  /** 被取消的订单ID */
+  /** è¢«åæ¶çè®¢åID */
   orderId?: number;
-  /** 取消原因 */
+  /** åæ¶åå  */
   cancelReason?: string;
-  /** 是否支持退款 */
+  /** æ¯å¦æ¯æéæ¬¾ */
   refundable?: boolean;
-  /** 退款金额（如果支持退款） */
+  /** éæ¬¾éé¢ï¼å¦ææ¯æéæ¬¾ï¼ */
   refundAmount?: string;
-  /** 取消时间 */
+  /** åæ¶æ¶é´ */
   cancelTime?: string;
 }

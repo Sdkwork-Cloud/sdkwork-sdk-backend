@@ -1,16 +1,16 @@
 import type { LoginResultVO } from './login-result-vo';
 import type { UserVO } from './user-vo';
 
-/** 二维码状态响应 */
+/** äºç»´ç ç¶æååº */
 export interface QrCodeStatusVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 二维码状态: pending(等待扫描)/scanned(已扫描)/confirmed(已确认)/expired(已过期)/cancelled(已取消) */
+  /** äºç»´ç ç¶æ: pending(ç­å¾æ«æ)/scanned(å·²æ«æ)/confirmed(å·²ç¡®è®¤)/expired(å·²è¿æ)/cancelled(å·²åæ¶) */
   status?: 'pending' | 'scanned' | 'confirmed' | 'expired' | 'cancelled';
-  /** 用户信息(扫描后返回) */
+  /** ç¨æ·ä¿¡æ¯(æ«æåè¿å) */
   userInfo?: UserVO;
-  /** 登录令牌(确认后返回) */
+  /** ç»å½ä»¤ç(ç¡®è®¤åè¿å) */
   token?: LoginResultVO;
 }

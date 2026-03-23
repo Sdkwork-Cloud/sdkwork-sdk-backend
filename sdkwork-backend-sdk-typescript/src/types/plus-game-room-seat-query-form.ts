@@ -1,12 +1,12 @@
-/** 棋牌游戏房间座位查询表单 */
+/** æ£çæ¸¸ææ¿é´åº§ä½æ¥è¯¢è¡¨å */
 export interface PlusGameRoomSeatQueryForm {
   id?: number;
   createdAtFrom?: string;
   createdAtTo?: string;
-  /** 房间ID */
+  /** æ¿é´ID */
   roomId?: number;
-  /** 玩家用户ID */
+  /** ç©å®¶ç¨æ·ID */
   userId?: number;
-  /** 座位状态 */
+  /** åº§ä½ç¶æ */
   status?: 'EMPTY' | 'RESERVED' | 'READY' | 'PLAYING' | 'ELIMINATED' | 'OFFLINE' | 'LEFT' | 'TRUSTEESHIP';
 }

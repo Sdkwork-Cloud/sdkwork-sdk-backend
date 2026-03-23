@@ -1,25 +1,25 @@
-/** 访问历史VO */
+/** è®¿é®åå²VO */
 export interface PlusVisitHistoryVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 最后更新时间 */
+  /** æåæ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 主键ID */
+  /** ä¸»é®ID */
   id?: number;
-  /** 通用唯一标识符 */
+  /** éç¨å¯ä¸æ è¯ç¬¦ */
   uuid?: string;
-  /** 用户ID */
+  /** ç¨æ·ID */
   userId?: number;
-  /** 内容类型 */
-  contentType?: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM';
-  /** 关联的内容ID */
+  /** åå®¹ç±»å */
+  contentType?: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM' | 'JOB';
+  /** å³èçåå®¹ID */
   contentId?: number;
-  /** 访问次数 */
+  /** è®¿é®æ¬¡æ° */
   visitCount?: number;
-  /** 最后访问时间 */
+  /** æåè®¿é®æ¶é´ */
   lastVisitedAt?: string;
-  /** 访问时长（秒） */
+  /** è®¿é®æ¶é¿ï¼ç§ï¼ */
   duration?: number;
-  /** 访问来源 */
+  /** è®¿é®æ¥æº */
   source?: string;
 }

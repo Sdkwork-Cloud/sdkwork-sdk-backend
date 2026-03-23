@@ -3,34 +3,34 @@ import type { SocialInfoList } from './social-info-list';
 
 /** System User Value Object */
 export interface PlusUserVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 用户ID */
+  /** ç¨æ·ID */
   id?: number;
-  /** 用户UUID */
+  /** ç¨æ·UUID */
   uuid?: string;
-  /** 用户头像 */
+  /** ç¨æ·å¤´å */
   faceImage?: ImageMediaResource;
-  /** 用户视频介绍 */
+  /** ç¨æ·è§é¢ä»ç» */
   faceVideo?: ImageMediaResource;
-  /** 用户名(唯一) */
+  /** ç¨æ·å(å¯ä¸) */
   username?: string;
-  /** 昵称 */
+  /** æµç§° */
   nickname?: string;
-  /** 电子邮箱 */
+  /** çµå­é®ç®± */
   email?: string;
-  /** 手机号码 */
+  /** ææºå·ç  */
   phone?: string;
-  /** 性别 */
+  /** æ§å« */
   gender?: 'UNKNOWN' | 'MALE' | 'FEMALE' | 'NEUTRAL';
-  /** 用户状态(ACTIVE:活跃,INACTIVE:未激活,LOCKED:锁定,DELETED:已删除) */
+  /** ç¨æ·ç¶æ(ACTIVE:æ´»è·,INACTIVE:æªæ¿æ´»,LOCKED:éå®,DELETED:å·²å é¤) */
   status?: 'ACTIVE' | 'INACTIVE';
-  /** 用户角色ID集合 */
+  /** ç¨æ·è§è²IDéå */
   roleIds?: number[];
-  /** 用户角色名称集合 */
+  /** ç¨æ·è§è²åç§°éå */
   roleNames?: string[];
-  /** 社交信息 */
+  /** ç¤¾äº¤ä¿¡æ¯ */
   socialInfoList?: SocialInfoList;
 }

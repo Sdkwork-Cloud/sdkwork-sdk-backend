@@ -1,15 +1,15 @@
 import type { GeoPoint } from './geo-point';
 
-/** IM位置消息内容类 */
+/** IMä½ç½®æ¶æ¯åå®¹ç±» */
 export interface MsgLocationContent {
-  /** 消息内容 */
+  /** æ¶æ¯åå®¹ */
   content?: string;
-  /** 地理位置坐标 */
+  /** å°çä½ç½®åæ  */
   location?: GeoPoint;
-  /** 位置的地址信息 */
+  /** ä½ç½®çå°åä¿¡æ¯ */
   address?: string;
-  /** 位置或地点名称 */
+  /** ä½ç½®æå°ç¹åç§° */
   name?: string;
-  /** 位置精度半径(米) */
+  /** ä½ç½®ç²¾åº¦åå¾(ç±³) */
   radius?: number;
 }

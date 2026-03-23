@@ -33,12 +33,12 @@ export interface AgentExecutionContext {
   diskRootFile?: PlusFileObject;
   completed?: boolean;
   running?: boolean;
-  expired?: boolean;
   waiting?: boolean;
+  expired?: boolean;
   failed?: boolean;
   paused?: boolean;
-  end?: boolean;
-  init?: boolean;
   agent_SCOPES?: Record<string, AgentScope>;
   overSteps?: boolean;
+  init?: boolean;
+  end?: boolean;
 }

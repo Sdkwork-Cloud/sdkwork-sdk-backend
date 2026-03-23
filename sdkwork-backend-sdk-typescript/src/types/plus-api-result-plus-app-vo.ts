@@ -1,6 +1,6 @@
 import type { PlusAppVO } from './plus-app-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPlusAppVO {
   /** Response data */
   data: PlusAppVO;

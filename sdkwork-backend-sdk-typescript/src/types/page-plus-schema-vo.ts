@@ -3,14 +3,14 @@ import type { PlusSchemaVO } from './plus-schema-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusSchemaVO {
-  totalElements?: number;
   totalPages?: number;
+  totalElements?: number;
   size?: number;
   content?: PlusSchemaVO[];
   number?: number;
   numberOfElements?: number;
-  sort?: SortObject;
   pageable?: PageableObject;
+  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   empty?: boolean;

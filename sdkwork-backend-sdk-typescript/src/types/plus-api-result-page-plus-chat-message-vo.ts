@@ -1,6 +1,6 @@
 import type { PagePlusChatMessageVO } from './page-plus-chat-message-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusChatMessageVO {
   /** Response data */
   data: PagePlusChatMessageVO;

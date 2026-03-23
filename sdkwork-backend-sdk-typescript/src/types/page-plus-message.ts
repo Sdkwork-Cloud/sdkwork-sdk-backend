@@ -3,14 +3,14 @@ import type { PlusMessage } from './plus-message';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusMessage {
-  totalElements?: number;
   totalPages?: number;
+  totalElements?: number;
   size?: number;
   content?: PlusMessage[];
   number?: number;
   numberOfElements?: number;
-  sort?: SortObject;
   pageable?: PageableObject;
+  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   empty?: boolean;

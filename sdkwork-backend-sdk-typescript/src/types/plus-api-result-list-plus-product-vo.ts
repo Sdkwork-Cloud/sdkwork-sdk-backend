@@ -1,6 +1,6 @@
 import type { PlusProductVO } from './plus-product-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultListPlusProductVO {
   /** Response data */
   data: PlusProductVO[];

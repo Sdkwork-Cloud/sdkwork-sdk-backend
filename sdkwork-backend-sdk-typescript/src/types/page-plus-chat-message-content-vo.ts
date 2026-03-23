@@ -3,14 +3,14 @@ import type { PlusChatMessageContentVO } from './plus-chat-message-content-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusChatMessageContentVO {
-  totalElements?: number;
   totalPages?: number;
+  totalElements?: number;
   size?: number;
   content?: PlusChatMessageContentVO[];
   number?: number;
   numberOfElements?: number;
-  sort?: SortObject;
   pageable?: PageableObject;
+  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   empty?: boolean;

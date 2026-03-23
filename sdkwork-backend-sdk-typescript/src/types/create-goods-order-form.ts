@@ -2,8 +2,8 @@ import type { CartItem } from './cart-item';
 
 /** Create goods order form */
 export interface CreateGoodsOrderForm {
-  /** 订单内容项列表 */
+  /** è®¢ååå®¹é¡¹åè¡¨ */
   items?: CartItem[];
-  /** 虚拟商品有效期 */
+  /** èæååæææ */
   expireTime?: string;
 }

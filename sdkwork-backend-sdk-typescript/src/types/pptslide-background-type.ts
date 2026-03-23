@@ -1,2 +1,2 @@
-/** 幻灯片背景类型 */
+/** å¹»ç¯çèæ¯ç±»å */
 export type PPTSlideBackgroundType = 'solid' | 'image' | 'gradient';

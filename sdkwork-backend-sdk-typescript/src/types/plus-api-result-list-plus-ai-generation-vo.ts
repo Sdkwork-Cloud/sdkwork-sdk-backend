@@ -1,6 +1,6 @@
 import type { PlusAiGenerationVO } from './plus-ai-generation-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultListPlusAiGenerationVO {
   /** Response data */
   data: PlusAiGenerationVO[];

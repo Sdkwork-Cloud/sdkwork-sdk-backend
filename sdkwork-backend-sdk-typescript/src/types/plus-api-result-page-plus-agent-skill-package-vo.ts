@@ -1,6 +1,6 @@
 import type { PagePlusAgentSkillPackageVO } from './page-plus-agent-skill-package-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusAgentSkillPackageVO {
   /** Response data */
   data: PagePlusAgentSkillPackageVO;

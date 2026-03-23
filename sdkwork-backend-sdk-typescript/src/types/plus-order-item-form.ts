@@ -1,23 +1,23 @@
 /** Order item creation form */
 export interface PlusOrderItemForm {
-  /** 鍏宠仈鐨勮鍗旾D */
+  /** éå® ä»é¨å®î¹éæ¾D */
   orderId: number;
-  /** 鍟嗗搧绫诲瀷: PHYSICAL-瀹炵墿鍟嗗搧, VIRTUAL-铏氭嫙鍟嗗搧, MEMBER-浼氬憳鏈嶅姟 */
+  /** éåæ§ç»«è¯²ç·: PHYSICAL-ç¹çµå¢¿éåæ§, VIRTUAL-éæ°­å«éåæ§, MEMBER-æµ¼æ°¬æ³éå¶å§ */
   productType: 'GOODS' | 'VIRTUAL' | 'SERVICE';
-  /** 鍟嗗搧ID */
+  /** éåæ§ID */
   productId: number;
-  /** 鍟嗗搧SKU ID */
+  /** éåæ§SKU ID */
   skuId: number;
-  /** 璐拱鏁伴噺 */
+  /** çîæ±éä¼´åº */
   quantity: number;
-  /** 鍟嗗搧鍗曚环 */
+  /** éåæ§éæç¯ */
   unitPrice: number;
-  /** 鍟嗗搧鎬讳环 */
+  /** éåæ§é¬è®³ç¯ */
   totalAmount: number;
-  /** 铏氭嫙鍟嗗搧鏈夋晥鏈?浠呭綋productType=VIRTUAL鏃舵湁鏁? */
+  /** éæ°­å«éåæ§éå¤æ¥é?æµ å­ç¶productType=VIRTUALéèµæ¹é? */
   expireTime?: string;
   /** C on te nt Ty pe */
-  contentType?: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM';
+  contentType?: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM' | 'JOB';
   /** C on te nt Id */
   contentId?: number;
 }

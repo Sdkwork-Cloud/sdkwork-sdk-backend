@@ -1,6 +1,6 @@
 import type { TokenResult } from './token-result';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultListTokenResult {
   /** Response data */
   data: TokenResult[];

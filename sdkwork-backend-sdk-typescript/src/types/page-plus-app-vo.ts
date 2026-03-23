@@ -3,14 +3,14 @@ import type { PlusAppVO } from './plus-app-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusAppVO {
-  totalElements?: number;
   totalPages?: number;
+  totalElements?: number;
   size?: number;
   content?: PlusAppVO[];
   number?: number;
   numberOfElements?: number;
-  sort?: SortObject;
   pageable?: PageableObject;
+  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   empty?: boolean;

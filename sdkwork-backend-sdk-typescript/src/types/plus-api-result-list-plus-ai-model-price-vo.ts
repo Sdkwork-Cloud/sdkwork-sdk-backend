@@ -1,6 +1,6 @@
 import type { PlusAiModelPriceVO } from './plus-ai-model-price-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultListPlusAiModelPriceVO {
   /** Response data */
   data: PlusAiModelPriceVO[];

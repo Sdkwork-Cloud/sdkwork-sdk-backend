@@ -3,14 +3,14 @@ import type { PlusGameMatchVO } from './plus-game-match-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusGameMatchVO {
-  totalElements?: number;
   totalPages?: number;
+  totalElements?: number;
   size?: number;
   content?: PlusGameMatchVO[];
   number?: number;
   numberOfElements?: number;
-  sort?: SortObject;
   pageable?: PageableObject;
+  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   empty?: boolean;

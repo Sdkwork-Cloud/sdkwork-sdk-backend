@@ -3,34 +3,34 @@ import type { PlusPptTemplateMeta } from './plus-ppt-template-meta';
 import type { PlusPptTemplateSlideVO } from './plus-ppt-template-slide-vo';
 import type { PlusPptTemplateTags } from './plus-ppt-template-tags';
 
-/** PPT模板VO对象，存储PPT模板的基本信息及关联关系 */
+/** PPTæ¨¡æ¿VOå¯¹è±¡ï¼å­å¨PPTæ¨¡æ¿çåºæ¬ä¿¡æ¯åå³èå³ç³» */
 export interface PlusPptTemplateVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 最后更新时间 */
+  /** æåæ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 主键ID */
+  /** ä¸»é®ID */
   id?: number;
-  /** 通用唯一标识符UUID */
+  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
   uuid?: string;
-  /** 模板名称 */
+  /** æ¨¡æ¿åç§° */
   title?: string;
-  /** 模板描述 */
+  /** æ¨¡æ¿æè¿° */
   description?: string;
-  /** 模板封面图URL */
+  /** æ¨¡æ¿å°é¢å¾URL */
   coverImages?: ImageMediaResourceList;
-  /** 模板类型（1-商业/2-教育/3-汇报/4-其他） */
+  /** æ¨¡æ¿ç±»åï¼1-åä¸/2-æè²/3-æ±æ¥/4-å¶ä»ï¼ */
   type?: 'DEFAULT' | 'BUSINESS' | 'EDUCATION' | 'REPORT' | 'OTHER';
-  /** 模板状态（1-启用/2-禁用/3-草稿） */
+  /** æ¨¡æ¿ç¶æï¼1-å¯ç¨/2-ç¦ç¨/3-èç¨¿ï¼ */
   status?: 'DEFAULT' | 'ACTIVE' | 'INACTIVE' | 'DRAFT';
-  /** 模板作者ID */
+  /** æ¨¡æ¿ä½èID */
   authorId?: number;
-  /** 模板作者名称 */
+  /** æ¨¡æ¿ä½èåç§° */
   authorName?: string;
-  /** PPT tags信息 */
+  /** PPT tagsä¿¡æ¯ */
   tags?: PlusPptTemplateTags;
-  /** PPT meta信息 */
+  /** PPT metaä¿¡æ¯ */
   meta?: PlusPptTemplateMeta;
-  /** PPT模板详情列表 */
+  /** PPTæ¨¡æ¿è¯¦æåè¡¨ */
   slides?: PlusPptTemplateSlideVO[];
 }

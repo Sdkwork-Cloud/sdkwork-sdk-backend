@@ -1,6 +1,6 @@
 import type { PagePlusUserAddressVO } from './page-plus-user-address-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusUserAddressVO {
   /** Response data */
   data: PagePlusUserAddressVO;

@@ -1,7 +1,7 @@
 import type { ModelFunctionItem } from './model-function-item';
 
-/** AI模型服务功能支持配置信息 */
+/** AIæ¨¡åæå¡åè½æ¯æéç½®ä¿¡æ¯ */
 export interface ModelFunctionInfo {
-  /** 模型功能项列表（包含函数调用、缓存支持等能力配置） */
+  /** æ¨¡ååè½é¡¹åè¡¨ï¼åå«å½æ°è°ç¨ãç¼å­æ¯æç­è½åéç½®ï¼ */
   functions?: ModelFunctionItem[];
 }

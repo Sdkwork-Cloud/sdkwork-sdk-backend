@@ -1,6 +1,6 @@
 import type { PagePlusCollectionItemVO } from './page-plus-collection-item-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusCollectionItemVO {
   /** Response data */
   data: PagePlusCollectionItemVO;

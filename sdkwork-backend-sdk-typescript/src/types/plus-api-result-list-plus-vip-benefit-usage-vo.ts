@@ -1,6 +1,6 @@
 import type { PlusVipBenefitUsageVO } from './plus-vip-benefit-usage-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultListPlusVipBenefitUsageVO {
   /** Response data */
   data: PlusVipBenefitUsageVO[];

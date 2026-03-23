@@ -3,14 +3,14 @@ import type { PlusGameGrowthAccountVO } from './plus-game-growth-account-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusGameGrowthAccountVO {
-  totalElements?: number;
   totalPages?: number;
+  totalElements?: number;
   size?: number;
   content?: PlusGameGrowthAccountVO[];
   number?: number;
   numberOfElements?: number;
-  sort?: SortObject;
   pageable?: PageableObject;
+  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   empty?: boolean;

@@ -1,14 +1,14 @@
 import type { ChatCompletionChunkDelta } from './chat-completion-chunk-delta';
 import type { LogProbInfo } from './log-prob-info';
 
-/** 流式聊天完成响应中的选项对象，包含模型生成的响应内容块 */
+/** æµå¼èå¤©å®æååºä¸­çéé¡¹å¯¹è±¡ï¼åå«æ¨¡åçæçååºåå®¹å */
 export interface ChatCompletionChunkChoice {
-  /** 选项索引 */
+  /** éé¡¹ç´¢å¼ */
   index: number;
-  /** 模型生成的消息增量内容，客户端需要将所有chunk的delta拼接起来形成完整消息 */
+  /** æ¨¡åçæçæ¶æ¯å¢éåå®¹ï¼å®¢æ·ç«¯éè¦å°ææchunkçdeltaæ¼æ¥èµ·æ¥å½¢æå®æ´æ¶æ¯ */
   delta?: ChatCompletionChunkDelta;
-  /** 日志概率信息（仅在请求时指定了logprobs参数时返回） */
+  /** æ¥å¿æ¦çä¿¡æ¯ï¼ä»å¨è¯·æ±æ¶æå®äºlogprobsåæ°æ¶è¿åï¼ */
   logprobs?: LogProbInfo;
-  /** 完成原因，可能的值："stop"（正常停止）、"length"（达到长度限制）、"function_call"（需要调用函数）等，在流式响应中只有最后一个chunk会包含非null的完成原因 */
+  /** å®æåå ï¼å¯è½çå¼ï¼"stop"ï¼æ­£å¸¸åæ­¢ï¼ã"length"ï¼è¾¾å°é¿åº¦éå¶ï¼ã"function_call"ï¼éè¦è°ç¨å½æ°ï¼ç­ï¼å¨æµå¼ååºä¸­åªææåä¸ä¸ªchunkä¼åå«énullçå®æåå  */
   finish_reason?: string;
 }

@@ -1,17 +1,17 @@
 import type { MusicMediaResource } from './music-media-resource';
 
-/** IM音乐消息内容类 */
+/** IMé³ä¹æ¶æ¯åå®¹ç±» */
 export interface MsgMusicContent {
-  /** 消息内容 */
+  /** æ¶æ¯åå®¹ */
   content?: string;
-  /** 音频资源 */
+  /** é³é¢èµæº */
   resource?: MusicMediaResource;
-  /** 音乐标题 */
+  /** é³ä¹æ é¢ */
   title?: string;
-  /** 音乐艺术家或歌手 */
+  /** é³ä¹èºæ¯å®¶ææ­æ */
   artist?: string;
-  /** 音乐专辑名称 */
+  /** é³ä¹ä¸è¾åç§° */
   album?: string;
-  /** 音乐时长(秒) */
+  /** é³ä¹æ¶é¿(ç§) */
   duration?: number;
 }

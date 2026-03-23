@@ -1,8 +1,8 @@
 /** Collection VO */
 export interface PlusCollectionVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
   /** ID */
   id?: number;

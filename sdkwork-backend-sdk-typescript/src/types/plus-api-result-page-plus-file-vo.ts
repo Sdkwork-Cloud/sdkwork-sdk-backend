@@ -1,6 +1,6 @@
 import type { PagePlusFileVO } from './page-plus-file-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusFileVO {
   /** Response data */
   data: PagePlusFileVO;

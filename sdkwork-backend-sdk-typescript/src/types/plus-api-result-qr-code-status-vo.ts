@@ -1,6 +1,6 @@
 import type { QrCodeStatusVO } from './qr-code-status-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultQrCodeStatusVO {
   /** Response data */
   data: QrCodeStatusVO;

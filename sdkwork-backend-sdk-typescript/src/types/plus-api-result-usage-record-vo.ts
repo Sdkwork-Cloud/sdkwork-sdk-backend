@@ -1,6 +1,6 @@
 import type { UsageRecordVO } from './usage-record-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultUsageRecordVO {
   /** Response data */
   data: UsageRecordVO;

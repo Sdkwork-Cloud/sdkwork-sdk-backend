@@ -1,25 +1,25 @@
 import type { PlusAccountHistoryVO } from './plus-account-history-vo';
 
-/** 用户账户VO，记录余额和积分信息 */
+/** ç¨æ·è´¦æ·VOï¼è®°å½ä½é¢åç§¯åä¿¡æ¯ */
 export interface PlusAccountVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 关联的用户ID，对应 plus_user 表的主键 */
+  /** å³èçç¨æ·IDï¼å¯¹åº plus_user è¡¨çä¸»é® */
   userId?: number;
-  /** 账户类型 */
+  /** è´¦æ·ç±»å */
   accountType?: 'DEFAULT' | 'CASH' | 'POINTS' | 'TOKEN';
-  /** 可用余额 */
+  /** å¯ç¨ä½é¢ */
   availableBalance?: number;
-  /** 冻结余额，例如提现申请中 */
+  /** å»ç»ä½é¢ï¼ä¾å¦æç°ç³è¯·ä¸­ */
   frozenBalance?: number;
-  /** 当前可用积分 */
+  /** å½åå¯ç¨ç§¯å */
   availablePoints?: number;
-  /** 当前冻结积分 */
+  /** å½åå»ç»ç§¯å */
   frozenPoints?: number;
-  /** 账户状态 (1-激活, 2-冻结, 3-已注销) */
+  /** è´¦æ·ç¶æ (1-æ¿æ´», 2-å»ç», 3-å·²æ³¨é) */
   status?: 'DEFAULT' | 'ACTIVE' | 'FROZEN' | 'CLOSED';
-  /** 账户历史记录 */
+  /** è´¦æ·åå²è®°å½ */
   historyList?: PlusAccountHistoryVO[];
 }

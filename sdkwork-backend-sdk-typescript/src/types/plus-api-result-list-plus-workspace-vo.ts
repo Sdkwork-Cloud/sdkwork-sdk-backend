@@ -1,6 +1,6 @@
 import type { PlusWorkspaceVO } from './plus-workspace-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultListPlusWorkspaceVO {
   /** Response data */
   data: PlusWorkspaceVO[];

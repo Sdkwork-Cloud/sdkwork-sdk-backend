@@ -1,12 +1,12 @@
 import type { PPTGradientColor } from './pptgradient-color';
 import type { PPTGradientType } from './pptgradient-type';
 
-/** 渐变 */
+/** æ¸å */
 export interface PPTGradient {
-  /** 渐变类型（径向、线性） */
+  /** æ¸åç±»åï¼å¾åãçº¿æ§ï¼ */
   type: PPTGradientType;
-  /** 渐变颜色列表 */
+  /** æ¸åé¢è²åè¡¨ */
   colors: PPTGradientColor[];
-  /** 渐变角度（线性渐变） */
+  /** æ¸åè§åº¦ï¼çº¿æ§æ¸åï¼ */
   rotate: number;
 }

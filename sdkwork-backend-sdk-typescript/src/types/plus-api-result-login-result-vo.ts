@@ -1,6 +1,6 @@
 import type { LoginResultVO } from './login-result-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultLoginResultVO {
   /** Response data */
   data: LoginResultVO;

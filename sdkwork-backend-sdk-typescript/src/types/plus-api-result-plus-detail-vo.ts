@@ -1,6 +1,6 @@
 import type { PlusDetailVO } from './plus-detail-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPlusDetailVO {
   /** Response data */
   data: PlusDetailVO;

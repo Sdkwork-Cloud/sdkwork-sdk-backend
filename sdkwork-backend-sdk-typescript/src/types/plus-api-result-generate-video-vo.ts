@@ -1,6 +1,6 @@
 import type { GenerateVideoVO } from './generate-video-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultGenerateVideoVO {
   /** Response data */
   data: GenerateVideoVO;

@@ -1,20 +1,20 @@
-/** 棋牌游戏排行榜查询表单 */
+/** æ£çæ¸¸ææè¡æ¦æ¥è¯¢è¡¨å */
 export interface PlusGameLeaderboardQueryForm {
   id?: number;
   createdAtFrom?: string;
   createdAtTo?: string;
-  /** 玩法类型 */
+  /** ç©æ³ç±»å */
   gameType?: 'INTERNATIONAL_CHESS' | 'CHINESE_CHESS' | 'GOMOKU' | 'JUNQI' | 'LANDLORD' | 'SHENG_JI' | 'TUO_LA_JI' | 'TEXAS_HOLDEM' | 'MAHJONG' | 'CUSTOM';
-  /** 玩法模式编码 */
+  /** ç©æ³æ¨¡å¼ç¼ç  */
   gameModeCode?: string;
-  /** 赛季标识 */
+  /** èµå­£æ è¯ */
   seasonKey?: string;
-  /** 榜单归属范围ID */
+  /** æ¦åå½å±èå´ID */
   scopeOwnerId?: number;
-  /** 排行类型 */
+  /** æè¡ç±»å */
   rankingType?: 'SCORE' | 'RATING' | 'WIN_RATE' | 'WIN_COUNT' | 'STREAK' | 'PROFIT';
-  /** 榜单周期类型 */
+  /** æ¦åå¨æç±»å */
   periodType?: 'HOUR' | 'DAY' | 'WEEK' | 'MONTH' | 'QUARTER' | 'YEAR' | 'SEASON';
-  /** 榜单范围类型 */
+  /** æ¦åèå´ç±»å */
   scopeType?: 'GLOBAL' | 'GAME' | 'MODE' | 'FRIEND' | 'CLUB' | 'REGION' | 'TOURNAMENT';
 }

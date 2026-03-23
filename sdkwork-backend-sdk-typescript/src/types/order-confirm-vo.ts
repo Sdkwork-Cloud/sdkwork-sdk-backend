@@ -1,19 +1,19 @@
-/** 订单确认操作VO */
+/** è®¢åç¡®è®¤æä½VO */
 export interface OrderConfirmVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 操作是否成功 */
+  /** æä½æ¯å¦æå */
   success?: boolean;
-  /** 操作结果消息 */
+  /** æä½ç»ææ¶æ¯ */
   message?: string;
-  /** 操作时间 */
+  /** æä½æ¶é´ */
   operationTime?: string;
-  /** 被确认的订单ID */
+  /** è¢«ç¡®è®¤çè®¢åID */
   orderId?: number;
-  /** 确认时间 */
+  /** ç¡®è®¤æ¶é´ */
   confirmTime?: string;
-  /** 预计发货时间 */
+  /** é¢è®¡åè´§æ¶é´ */
   estimatedShipTime?: string;
 }

@@ -1,17 +1,17 @@
 /** User OAuth account creation form */
 export interface PlusUserOAuthAccountForm {
-  /** 鐢ㄦ埛ID */
+  /** é¢ã¦åID */
   userId: number;
-  /** OAuth骞冲彴绫诲瀷 */
+  /** OAuthéªå²å½´ç»«è¯²ç· */
   oauthProvider: 'WECHAT' | 'QQ' | 'WEIBO' | 'GITHUB' | 'GOOGLE' | 'FACEBOOK' | 'TWITTER' | 'LINKEDIN' | 'MICROSOFT' | 'APPLE' | 'ALIPAY' | 'DINGTALK' | 'GITEE';
-  /** 寮€鏀惧钩鍙癐D */
+  /** å¯®â¬éæ§é©éçD */
   openId: string;
-  /** 缁熶竴ID */
+  /** ç¼ç¶ç«´ID */
   unionId?: string;
-  /** 搴旂敤ID */
+  /** æ´ææ¤ID */
   appId?: string;
-  /** 娓犻亾璐︽埛ID */
+  /** å¨ç»äº¾çï¸½åID */
   channelAccountId?: number;
-  /** 璁块棶浠ょ墝杩囨湡鏃堕棿 */
+  /** çåæ£¶æµ ãå¢æ©å¨æ¹¡éå æ£¿ */
   accessTokenExpiresAt?: string;
 }

@@ -1,25 +1,25 @@
-/** 笔记发布文章表单 */
+/** ç¬è®°åå¸æç« è¡¨å */
 export interface PlusNotesPublishArticleForm {
-  /** 笔记ID */
+  /** ç¬è®°ID */
   noteId?: number;
-  /** 笔记UUID */
+  /** ç¬è®°UUID */
   noteUuid?: string;
-  /** 文章标题，未传则使用笔记标题 */
+  /** æç« æ é¢ï¼æªä¼ åä½¿ç¨ç¬è®°æ é¢ */
   title?: string;
-  /** 文章内容（支持 Markdown/HTML），未传则使用笔记内容 */
+  /** æç« åå®¹ï¼æ¯æ Markdown/HTMLï¼ï¼æªä¼ åä½¿ç¨ç¬è®°åå®¹ */
   content?: string;
-  /** 文章摘要 */
+  /** æç« æè¦ */
   digest?: string;
-  /** 作者 */
+  /** ä½è */
   author?: string;
-  /** 封面图 mediaId */
+  /** å°é¢å¾ mediaId */
   thumbMediaId?: string;
-  /** 原文链接 */
+  /** åæé¾æ¥ */
   contentSourceUrl?: string;
-  /** 是否显示封面（0否，1是） */
+  /** æ¯å¦æ¾ç¤ºå°é¢ï¼0å¦ï¼1æ¯ï¼ */
   showCoverPic?: number;
-  /** 是否打开评论（0否，1是） */
+  /** æ¯å¦æå¼è¯è®ºï¼0å¦ï¼1æ¯ï¼ */
   needOpenComment?: number;
-  /** 是否仅粉丝可评论（0否，1是） */
+  /** æ¯å¦ä»ç²ä¸å¯è¯è®ºï¼0å¦ï¼1æ¯ï¼ */
   onlyFansCanComment?: number;
 }

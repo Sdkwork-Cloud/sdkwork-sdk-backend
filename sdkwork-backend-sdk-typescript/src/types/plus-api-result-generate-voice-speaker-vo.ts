@@ -1,6 +1,6 @@
 import type { GenerateVoiceSpeakerVO } from './generate-voice-speaker-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultGenerateVoiceSpeakerVO {
   /** Response data */
   data: GenerateVoiceSpeakerVO;

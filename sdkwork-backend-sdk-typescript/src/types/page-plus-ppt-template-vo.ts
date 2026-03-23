@@ -3,14 +3,14 @@ import type { PlusPptTemplateVO } from './plus-ppt-template-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusPptTemplateVO {
-  totalElements?: number;
   totalPages?: number;
+  totalElements?: number;
   size?: number;
   content?: PlusPptTemplateVO[];
   number?: number;
   numberOfElements?: number;
-  sort?: SortObject;
   pageable?: PageableObject;
+  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   empty?: boolean;

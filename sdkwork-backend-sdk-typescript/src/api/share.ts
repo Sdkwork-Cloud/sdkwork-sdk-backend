@@ -11,12 +11,12 @@ export class ShareApi {
     this.client = client; 
   }
 
-/** 更新分享 */
+/** æ´æ°åäº« */
   async update(body: PlusShareForm): Promise<PlusApiResultPlusShareVO> {
     return this.client.put<PlusApiResultPlusShareVO>(backendApiPath(`/share`), body);
   }
 
-/** 创建分享 */
+/** åå»ºåäº« */
   async create(body: PlusShareForm): Promise<PlusApiResultPlusShareVO> {
     return this.client.post<PlusApiResultPlusShareVO>(backendApiPath(`/share`), body);
   }
@@ -41,22 +41,22 @@ export class ShareApi {
     return this.client.post<PlusApiResultListPlusShareVisitRecordVO>(backendApiPath(`/share/visit_record/list/all`), body);
   }
 
-/** 分页获取分享 */
+/** åé¡µè·ååäº« */
   async createListByPageShare(body?: QueryListForm, params?: QueryParams): Promise<PlusApiResultPagePlusShareVO> {
     return this.client.post<PlusApiResultPagePlusShareVO>(backendApiPath(`/share/list`), body, params);
   }
 
-/** 获取所有分享 */
+/** è·åææåäº« */
   async createListAllEntitiesShare(body?: QueryListForm): Promise<PlusApiResultListPlusShareVO> {
     return this.client.post<PlusApiResultListPlusShareVO>(backendApiPath(`/share/list/all`), body);
   }
 
-/** 获取分享详情 */
+/** è·ååäº«è¯¦æ */
   async getById(id: string | number): Promise<PlusApiResultPlusShareVO> {
     return this.client.get<PlusApiResultPlusShareVO>(backendApiPath(`/share/${id}`));
   }
 
-/** 删除分享 */
+/** å é¤åäº« */
   async delete(id: string | number): Promise<PlusApiResultBoolean> {
     return this.client.delete<PlusApiResultBoolean>(backendApiPath(`/share/${id}`));
   }

@@ -1,8 +1,8 @@
 /** Growth reward claim audit view object */
 export interface PlusGameGrowthRewardClaimVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
   /** Growth account ID */
   accountId?: number;

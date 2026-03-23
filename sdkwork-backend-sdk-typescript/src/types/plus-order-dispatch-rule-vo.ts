@@ -2,9 +2,9 @@ import type { OrderDispatchRuleMetadata } from './order-dispatch-rule-metadata';
 
 /** Dispatch rule view object */
 export interface PlusOrderDispatchRuleVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
   id?: number;
   taskCode?: string;

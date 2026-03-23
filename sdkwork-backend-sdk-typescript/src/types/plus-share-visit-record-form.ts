@@ -1,12 +1,12 @@
 /** Visit record creation form */
 export interface PlusShareVisitRecordForm {
-  /** 鍏宠仈鐨勫垎浜獻D */
+  /** éå® ä»é¨å«åæµç»D */
   shareId: number;
-  /** 璁块棶鑰匢P鍦板潃 */
+  /** çåæ£¶é°å¢Pé¦æ¿æ½ */
   ipAddress?: string;
-  /** 璁块棶鑰匲ser-Agent */
+  /** çåæ£¶é°å²ser-Agent */
   userAgent?: string;
-  /** 璁块棶鏃堕棿 */
+  /** çåæ£¶éå æ£¿ */
   accessedAt: string;
   /** S uc ce ss */
   success?: boolean;

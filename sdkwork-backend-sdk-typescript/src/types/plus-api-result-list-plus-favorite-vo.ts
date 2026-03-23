@@ -1,6 +1,6 @@
 import type { PlusFavoriteVO } from './plus-favorite-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultListPlusFavoriteVO {
   /** Response data */
   data: PlusFavoriteVO[];

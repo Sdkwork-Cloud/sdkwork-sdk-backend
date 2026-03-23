@@ -1,2 +1,2 @@
-/** 渐变类型 */
+/** æ¸åç±»å */
 export type PPTGradientType = 'linear' | 'radial';

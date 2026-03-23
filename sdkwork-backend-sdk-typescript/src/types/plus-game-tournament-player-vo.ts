@@ -1,43 +1,43 @@
-/** 棋牌游戏赛事参赛者VO */
+/** æ£çæ¸¸æèµäºåèµèVO */
 export interface PlusGameTournamentPlayerVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 参赛记录ID */
+  /** åèµè®°å½ID */
   playerId?: number;
-  /** 赛事ID */
+  /** èµäºID */
   tournamentId?: number;
-  /** 玩家用户ID */
+  /** ç©å®¶ç¨æ·ID */
   userId?: number;
-  /** 玩法类型 */
+  /** ç©æ³ç±»å */
   gameType?: 'INTERNATIONAL_CHESS' | 'CHINESE_CHESS' | 'GOMOKU' | 'JUNQI' | 'LANDLORD' | 'SHENG_JI' | 'TUO_LA_JI' | 'TEXAS_HOLDEM' | 'MAHJONG' | 'CUSTOM';
-  /** 俱乐部ID */
+  /** ä¿±ä¹é¨ID */
   clubId?: number;
-  /** 队伍号 */
+  /** éä¼å· */
   teamNo?: number;
-  /** 参赛状态 */
+  /** åèµç¶æ */
   status?: 'REGISTERED' | 'CHECKED_IN' | 'PLAYING' | 'ADVANCED' | 'ELIMINATED' | 'FINISHED' | 'WITHDRAWN';
-  /** 种子位 */
+  /** ç§å­ä½ */
   seedNo?: number;
-  /** 最终名次 */
+  /** æç»åæ¬¡ */
   rankNo?: number;
-  /** 昵称快照 */
+  /** æµç§°å¿«ç§ */
   nicknameSnapshot?: string;
-  /** 头像URL */
+  /** å¤´åURL */
   avatarUrl?: string;
-  /** 赛事成绩值 */
+  /** èµäºæç»©å¼ */
   scoreValue?: number;
-  /** 赛事有效对局数 */
+  /** èµäºææå¯¹å±æ° */
   totalMatchCount?: number;
-  /** 胜场数 */
+  /** èåºæ° */
   winCount?: number;
-  /** 负场数 */
+  /** è´åºæ° */
   loseCount?: number;
-  /** 报名时间 */
+  /** æ¥åæ¶é´ */
   registeredAt?: string;
-  /** 签到时间 */
+  /** ç­¾å°æ¶é´ */
   checkedInAt?: string;
-  /** 完赛时间 */
+  /** å®èµæ¶é´ */
   finishedAt?: string;
 }

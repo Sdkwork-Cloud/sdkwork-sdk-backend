@@ -1,55 +1,55 @@
 import type { TagsContent } from './tags-content';
 
-/** 文件对象DTO */
+/** æä»¶å¯¹è±¡DTO */
 export interface PlusFileObject {
-  /** 文件ID */
+  /** æä»¶ID */
   id?: number;
-  /** 文件UUID */
+  /** æä»¶UUID */
   uuid?: string;
-  /** 网盘ID */
+  /** ç½çID */
   diskId?: number;
-  /** 文件名 */
+  /** æä»¶å */
   name?: string;
-  /** 文件大小（字节） */
+  /** æä»¶å¤§å°ï¼å­èï¼ */
   size?: number;
-  /** 文件路径 */
+  /** æä»¶è·¯å¾ */
   path?: string;
-  /** 相对路径 */
+  /** ç¸å¯¹è·¯å¾ */
   relativePath?: string;
-  /** 文件类型 */
+  /** æä»¶ç±»å */
   type?: 'DEFAULT' | 'FILE' | 'DIRECTORY';
-  /** 文件扩展名 */
+  /** æä»¶æ©å±å */
   extension?: string;
-  /** 最后修改时间 */
+  /** æåä¿®æ¹æ¶é´ */
   lastModifiedTime?: string;
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 文件版本 */
+  /** æä»¶çæ¬ */
   versionId?: string;
-  /** 文件描述 */
+  /** æä»¶æè¿° */
   description?: string;
-  /** 项目UUID */
+  /** é¡¹ç®UUID */
   projectUuid?: string;
-  /** 项目ID */
+  /** é¡¹ç®ID */
   projectId?: number;
-  /** 文件所有者类型 */
+  /** æä»¶ææèç±»å */
   owner?: 'DEFAULT' | 'USER' | 'PROJECT' | 'TENANT' | 'SYSTEM' | 'ORGANIZATION';
-  /** 文件所有者ID */
+  /** æä»¶ææèID */
   ownerId?: number;
-  /** 文件作者 */
+  /** æä»¶ä½è */
   author?: string;
-  /** 提示词内容 */
+  /** æç¤ºè¯åå®¹ */
   prompt?: string;
-  /** 文件内容 */
+  /** æä»¶åå®¹ */
   content?: string;
-  /** 文件标签 */
+  /** æä»¶æ ç­¾ */
   tags?: TagsContent;
-  /** 是否只读 */
+  /** æ¯å¦åªè¯» */
   readonly?: boolean;
-  /** 文件权限 */
+  /** æä»¶æé */
   permission?: 'OWNER_READ' | 'OWNER_WRITE' | 'OWNER_EXECUTE' | 'GROUP_READ' | 'GROUP_WRITE' | 'GROUP_EXECUTE' | 'OTHERS_READ' | 'OTHERS_WRITE' | 'OTHERS_EXECUTE'[];
-  /** 引用文件ID */
+  /** å¼ç¨æä»¶ID */
   referenceFileId?: number;
-  /** 子文件列表 */
+  /** å­æä»¶åè¡¨ */
   children?: PlusFileObject[];
 }

@@ -1,6 +1,6 @@
 import type { ShortUrlVO } from './short-url-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultListShortUrlVO {
   /** Response data */
   data: ShortUrlVO[];

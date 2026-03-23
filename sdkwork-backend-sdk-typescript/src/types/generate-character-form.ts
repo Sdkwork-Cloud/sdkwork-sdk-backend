@@ -1,31 +1,31 @@
-/** 瑙掕壊鐢熸垚琛ㄥ崟锛岀敤浜庝紶閫掕鑹茬敓鎴愮殑涓氬姟鍙傛暟 */
+/** Character generation request form */
 export interface GenerateCharacterForm {
-  /** 瑙掕壊鍚嶇О */
+  /** Character name */
   name: string;
-  /** 瑙掕壊鎻忚堪 */
+  /** Character description */
   description: string;
-  /** 瑙掕壊澶栬鎻忚堪 */
+  /** Character appearance */
   appearance?: string;
-  /** 瑙掕壊鎬ф牸鐗圭偣 */
+  /** Character personality */
   personality?: string;
-  /** 瑙掕壊鑳屾櫙鏁呬簨 */
+  /** Character background */
   background?: string;
-  /** 鐢熸垚椋庢牸 */
+  /** Generation style */
   style?: string;
-  /** 杈撳嚭鏍煎紡 */
+  /** Response format */
   responseFormat?: string;
-  /** 鐢熸垚妯″瀷 */
+  /** Model */
   model?: string;
-  /** 鐢熸垚鏁伴噺 */
+  /** Number of images */
   n: number;
-  /** 鍥惧儚瀹藉害 */
+  /** Image width */
   width?: number;
-  /** 鍥惧儚楂樺害 */
+  /** Image height */
   height?: number;
-  /** 鐢熸垚璐ㄩ噺 */
+  /** Quality */
   quality?: string;
-  /** P ro mp t */
+  /** Prompt */
   prompt?: string;
-  /** N eg at iv eP ro mp t */
+  /** Negative prompt */
   negativePrompt?: string;
 }

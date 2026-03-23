@@ -4,7 +4,7 @@ import type { PlusPptSlide } from './plus-ppt-slide';
 import type { PlusPptTheme } from './plus-ppt-theme';
 import type { TagsContent } from './tags-content';
 
-/** PPT项目信息 */
+/** PPTé¡¹ç®ä¿¡æ¯ */
 export interface PlusPptProject {
   /** Project ID */
   id?: string;
@@ -12,52 +12,52 @@ export interface PlusPptProject {
   uuid?: string;
   /** Project Type */
   type?: 'NONE' | 'SDK' | 'PPT' | 'APP_HTML' | 'APP_VUE' | 'APP_FLUTTER' | 'APP_UNIAPP' | 'APP_REACT' | 'APP_UNITY' | 'VIDEO' | 'POSTER';
-  /** 屏幕类型 */
+  /** å±å¹ç±»å */
   screenType?: 'PHONE' | 'TABLET' | 'LAPTOP' | 'DESKTOP' | 'TV';
-  /** Sdk项目名称 */
+  /** Sdké¡¹ç®åç§° */
   name: string;
-  /** 项目标题 */
+  /** é¡¹ç®æ é¢ */
   title: string;
-  /** 项目所有者类型 */
+  /** é¡¹ç®ææèç±»å */
   owner?: 'DEFAULT' | 'USER' | 'PROJECT' | 'TENANT' | 'SYSTEM' | 'ORGANIZATION';
-  /** 项目所有者ID */
+  /** é¡¹ç®ææèID */
   ownerId?: number;
-  /** 网盘ID */
+  /** ç½çID */
   diskId?: number;
-  /** Sdk文件列表 */
+  /** Sdkæä»¶åè¡¨ */
   files?: PlusFileObject[];
-  /** 作者 */
+  /** ä½è */
   author?: string;
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 最后修改时间 */
+  /** æåä¿®æ¹æ¶é´ */
   lastModifiedTime?: string;
-  /** 版本号 */
+  /** çæ¬å· */
   version?: string;
-  /** AI输入的需求提示词 */
+  /** AIè¾å¥çéæ±æç¤ºè¯ */
   prompt?: string;
-  /** 项目描述 */
+  /** é¡¹ç®æè¿° */
   description?: string;
-  /** 标签列表 */
+  /** æ ç­¾åè¡¨ */
   tags?: TagsContent;
-  /** PPT宽度(像素) */
+  /** PPTå®½åº¦(åç´ ) */
   width: number;
-  /** PPT高度(像素) */
+  /** PPTé«åº¦(åç´ ) */
   height: number;
-  /** 幻灯片数组 */
+  /** å¹»ç¯çæ°ç» */
   slides: PlusPptSlide[];
-  /** PPT主题 */
+  /** PPTä¸»é¢ */
   theme?: PlusPptTheme;
-  /** PPT上下文信息 */
+  /** PPTä¸ä¸æä¿¡æ¯ */
   context?: PlusPptContext;
-  /** PPT副标题 */
+  /** PPTå¯æ é¢ */
   subtitle?: string;
-  /** 是否包含页码 */
+  /** æ¯å¦åå«é¡µç  */
   includePageNumbers?: boolean;
-  /** 是否包含页脚 */
+  /** æ¯å¦åå«é¡µè */
   includeFooter?: boolean;
-  /** 页脚文本 */
+  /** é¡µèææ¬ */
   footerText?: string;
-  /** 导出格式 */
+  /** å¯¼åºæ ¼å¼ */
   exportFormat?: 'pptx' | 'pdf' | 'jpg' | 'png';
 }

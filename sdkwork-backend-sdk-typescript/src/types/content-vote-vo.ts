@@ -1,25 +1,25 @@
 import type { ContentVoteMetadata } from './content-vote-metadata';
 
-/** 内容投票数据传输对象 */
+/** åå®¹æç¥¨æ°æ®ä¼ è¾å¯¹è±¡ */
 export interface ContentVoteVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 最后更新时间 */
+  /** æåæ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 主键ID */
+  /** ä¸»é®ID */
   id?: number;
-  /** 通用唯一标识符UUID */
+  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
   uuid?: string;
-  /** 版本号（乐观锁控制） */
+  /** çæ¬å·ï¼ä¹è§éæ§å¶ï¼ */
   v?: number;
-  /** 用户ID（关联plus_user.id） */
+  /** ç¨æ·IDï¼å³èplus_user.idï¼ */
   userId?: number;
-  /** 内容类型（如:商品、会员、新闻等） */
-  contentType?: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM';
-  /** 评分(like, dislike, neutral) */
+  /** åå®¹ç±»åï¼å¦:ååãä¼åãæ°é»ç­ï¼ */
+  contentType?: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM' | 'JOB';
+  /** è¯å(like, dislike, neutral) */
   rating?: 'LIKE' | 'DISLIKE' | 'NEUTRAL';
-  /** 关联内容ID（外键关联对应实体的ID） */
+  /** å³èåå®¹IDï¼å¤é®å³èå¯¹åºå®ä½çIDï¼ */
   contentId?: number;
-  /** 元数据 */
+  /** åæ°æ® */
   metadata?: ContentVoteMetadata;
 }

@@ -1,4 +1,6 @@
-/** 瀵嗙爜閲嶇疆璇锋眰琛ㄥ崟 */
+/** çµåçé²å¶ççéç°çã¥å´ */
 export interface PasswordResetRequestForm {
-  email: string;
+  email?: string;
+  /** Phone account for password reset */
+  phone?: string;
 }

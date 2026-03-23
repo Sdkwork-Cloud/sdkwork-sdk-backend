@@ -1,6 +1,6 @@
 import type { PointsOrderVO } from './points-order-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPointsOrderVO {
   /** Response data */
   data: PointsOrderVO;

@@ -1,6 +1,6 @@
 import type { PlusRefundVO } from './plus-refund-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultListPlusRefundVO {
   /** Response data */
   data: PlusRefundVO[];

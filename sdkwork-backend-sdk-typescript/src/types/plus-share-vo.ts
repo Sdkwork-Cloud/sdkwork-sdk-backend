@@ -1,40 +1,40 @@
 import type { ShareContents } from './share-contents';
 import type { TagsContent } from './tags-content';
 
-/** 分享VO */
+/** åäº«VO */
 export interface PlusShareVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 分享ID */
+  /** åäº«ID */
   id?: number;
-  /** 分享UUID */
+  /** åäº«UUID */
   uuid?: string;
-  /** 分享标题 */
+  /** åäº«æ é¢ */
   title?: string;
-  /** 分享描述 */
+  /** åäº«æè¿° */
   description?: string;
-  /** 分享类型 */
+  /** åäº«ç±»å */
   type?: 'LINK' | 'PRODUCT' | 'FILE' | 'DOCUMENT' | 'IMAGE' | 'VIDEO' | 'AUDIO' | 'ARTICLE' | 'FAVORITE' | 'MIXED';
-  /** 分享内容 */
+  /** åäº«åå®¹ */
   contents?: ShareContents;
-  /** 内容类型 */
-  contentType?: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM';
-  /** 分享状态 */
+  /** åå®¹ç±»å */
+  contentType?: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM' | 'JOB';
+  /** åäº«ç¶æ */
   status?: 'ACTIVE' | 'DISABLED' | 'EXPIRED' | 'DELETED';
-  /** 分享链接 */
+  /** åäº«é¾æ¥ */
   shareUrl?: string;
-  /** 关联内容ID列表 */
+  /** å³èåå®¹IDåè¡¨ */
   contentIds?: string[];
-  /** 分享密码 */
+  /** åäº«å¯ç  */
   password?: string;
-  /** 过期时间 */
+  /** è¿ææ¶é´ */
   expireAt?: string;
-  /** 点击次数 */
+  /** ç¹å»æ¬¡æ° */
   clickCount?: number;
-  /** 分享标签 */
+  /** åäº«æ ç­¾ */
   tags?: TagsContent;
-  /** 分享码 */
+  /** åäº«ç  */
   shareCode?: string;
 }

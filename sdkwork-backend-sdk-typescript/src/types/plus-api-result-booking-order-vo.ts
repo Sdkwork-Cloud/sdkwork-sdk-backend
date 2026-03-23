@@ -1,6 +1,6 @@
 import type { BookingOrderVO } from './booking-order-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultBookingOrderVO {
   /** Response data */
   data: BookingOrderVO;

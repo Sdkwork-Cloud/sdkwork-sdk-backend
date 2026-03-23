@@ -1,27 +1,27 @@
-/** PPT模板详情配置VO（存储模板中各页面/section的具体配置） */
+/** PPTæ¨¡æ¿è¯¦æéç½®VOï¼å­å¨æ¨¡æ¿ä¸­åé¡µé¢/sectionçå·ä½éç½®ï¼ */
 export interface PlusPptTemplateSlideVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 最后更新时间 */
+  /** æåæ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 主键ID */
+  /** ä¸»é®ID */
   id?: number;
-  /** 通用唯一标识符UUID */
+  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
   uuid?: string;
-  /** 关联的PPT模板ID */
+  /** å³èçPPTæ¨¡æ¿ID */
   templateId?: number;
-  /** 模板section标题（如'封面页'、'目录页'、'内容页1'等） */
+  /** æ¨¡æ¿sectionæ é¢ï¼å¦'å°é¢é¡µ'ã'ç®å½é¡µ'ã'åå®¹é¡µ1'ç­ï¼ */
   sectionTitle?: string;
-  /** 模板section内容描述（可包含占位符说明） */
+  /** æ¨¡æ¿sectionåå®¹æè¿°ï¼å¯åå«å ä½ç¬¦è¯´æï¼ */
   sectionContent?: string;
-  /** 页码（模板中的页面序号） */
+  /** é¡µç ï¼æ¨¡æ¿ä¸­çé¡µé¢åºå·ï¼ */
   pageNumber?: number;
-  /** 页面布局类型（1-标题页/2-内容页/3-标题+内容/4-分栏内容） */
+  /** é¡µé¢å¸å±ç±»åï¼1-æ é¢é¡µ/2-åå®¹é¡µ/3-æ é¢+åå®¹/4-åæ åå®¹ï¼ */
   layoutType?: 'DEFAULT' | 'TITLE' | 'CONTENT' | 'TITLE_CONTENT' | 'COLUMN_CONTENT';
-  /** 背景图片URL */
+  /** èæ¯å¾çURL */
   backgroundImage?: string;
-  /** 排序序号（用于调整section在模板中的展示顺序） */
+  /** æåºåºå·ï¼ç¨äºè°æ´sectionå¨æ¨¡æ¿ä¸­çå±ç¤ºé¡ºåºï¼ */
   sortOrder?: number;
-  /** 是否必填section（true-必填/false-可选） */
+  /** æ¯å¦å¿å¡«sectionï¼true-å¿å¡«/false-å¯éï¼ */
   isRequired?: boolean;
 }

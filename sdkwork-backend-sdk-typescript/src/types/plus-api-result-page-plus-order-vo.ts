@@ -1,6 +1,6 @@
 import type { PagePlusOrderVO } from './page-plus-order-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusOrderVO {
   /** Response data */
   data: PagePlusOrderVO;

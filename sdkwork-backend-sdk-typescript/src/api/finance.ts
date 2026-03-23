@@ -1,87 +1,109 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
+import type { QueryParams } from '../types/common';
+import type { FinanceConfigRecord, FinanceExceptionResolveRequest, FinanceExpenseAuditRequest, FinanceExpenseCreateRequest, FinanceIdRequest, FinanceSettlementBatchRequest, FinanceWithdrawalAuditRequest, PlusApiResultBoolean, PlusApiResultFinanceConfigRecord, PlusApiResultFinanceExpenseRecord, PlusApiResultFinanceLedgerStatsResponse, PlusApiResultFinanceOverviewResponse, PlusApiResultFinancePageResultFinanceExceptionRecord, PlusApiResultFinancePageResultFinanceExpenseRecord, PlusApiResultFinancePageResultFinanceLedgerFlow, PlusApiResultFinancePageResultFinancePayoutRecord, PlusApiResultFinancePageResultFinanceReconciliationBill, PlusApiResultFinancePageResultFinanceSettlementRecord, PlusApiResultFinancePageResultFinanceWithdrawalRecord, PlusApiResultFinanceRiskProfileResponse, PlusApiResultFinanceSettlementBatchResponse } from '../types';
+
 
 export class FinanceApi {
   private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
+  
+  constructor(client: HttpClient) { 
+    this.client = client; 
   }
 
-  async getOverview(): Promise<unknown> {
-    return this.client.get<unknown>(backendApiPath(`/finance/admin/overview`));
+/** Create settlement batch */
+  async createSettlementBatch(body: FinanceSettlementBatchRequest): Promise<PlusApiResultFinanceSettlementBatchResponse> {
+    return this.client.post<PlusApiResultFinanceSettlementBatchResponse>(backendApiPath(`/finance/admin/settlements/batch`), body);
   }
 
-  async getLedgerStats(): Promise<unknown> {
-    return this.client.get<unknown>(backendApiPath(`/finance/admin/ledger/stats`));
+/** Expenses */
+  async getExpenses(params?: QueryParams): Promise<PlusApiResultFinancePageResultFinanceExpenseRecord> {
+    return this.client.get<PlusApiResultFinancePageResultFinanceExpenseRecord>(backendApiPath(`/finance/admin/expenses`), params);
   }
 
-  async getLedger(params?: Record<string, string | number | boolean | undefined>): Promise<unknown> {
-    return this.client.get<unknown>(backendApiPath(`/finance/admin/ledger`), params);
+/** Create expense */
+  async createExpense(body: FinanceExpenseCreateRequest): Promise<PlusApiResultFinanceExpenseRecord> {
+    return this.client.post<PlusApiResultFinanceExpenseRecord>(backendApiPath(`/finance/admin/expenses`), body);
   }
 
-  async getWithdrawals(params?: Record<string, string | number | boolean | undefined>): Promise<unknown> {
-    return this.client.get<unknown>(backendApiPath(`/finance/admin/withdrawals`), params);
+/** Finance config */
+  async getConfig(): Promise<PlusApiResultFinanceConfigRecord> {
+    return this.client.get<PlusApiResultFinanceConfigRecord>(backendApiPath(`/finance/admin/config`));
   }
 
-  async auditWithdrawal(body: Record<string, unknown>): Promise<unknown> {
-    return this.client.patch<unknown>(backendApiPath(`/finance/admin/withdrawals/audit`), body);
+/** Save finance config */
+  async saveConfig(body: FinanceConfigRecord): Promise<PlusApiResultFinanceConfigRecord> {
+    return this.client.post<PlusApiResultFinanceConfigRecord>(backendApiPath(`/finance/admin/config`), body);
   }
 
-  async getRiskProfile(params: Record<string, string | number | boolean | undefined>): Promise<unknown> {
-    return this.client.get<unknown>(backendApiPath(`/finance/admin/withdrawals/risk-profile`), params);
+/** Audit withdrawal */
+  async auditWithdrawal(body: FinanceWithdrawalAuditRequest): Promise<PlusApiResultBoolean> {
+    return this.client.patch<PlusApiResultBoolean>(backendApiPath(`/finance/admin/withdrawals/audit`), body);
   }
 
-  async getSettlements(params?: Record<string, string | number | boolean | undefined>): Promise<unknown> {
-    return this.client.get<unknown>(backendApiPath(`/finance/admin/settlements`), params);
+/** Confirm settlement */
+  async confirmSettlement(body: FinanceIdRequest): Promise<PlusApiResultBoolean> {
+    return this.client.patch<PlusApiResultBoolean>(backendApiPath(`/finance/admin/settlements/confirm`), body);
   }
 
-  async confirmSettlement(body: Record<string, unknown>): Promise<unknown> {
-    return this.client.patch<unknown>(backendApiPath(`/finance/admin/settlements/confirm`), body);
+/** Retry payout */
+  async retryPayout(body: FinanceIdRequest): Promise<PlusApiResultBoolean> {
+    return this.client.patch<PlusApiResultBoolean>(backendApiPath(`/finance/admin/payouts/retry`), body);
   }
 
-  async createSettlementBatch(body: Record<string, unknown>): Promise<unknown> {
-    return this.client.post<unknown>(backendApiPath(`/finance/admin/settlements/batch`), body);
+/** Audit expense */
+  async auditExpense(body: FinanceExpenseAuditRequest): Promise<PlusApiResultBoolean> {
+    return this.client.patch<PlusApiResultBoolean>(backendApiPath(`/finance/admin/expenses/audit`), body);
   }
 
-  async getExpenses(params?: Record<string, string | number | boolean | undefined>): Promise<unknown> {
-    return this.client.get<unknown>(backendApiPath(`/finance/admin/expenses`), params);
+/** Resolve exception */
+  async resolveException(body: FinanceExceptionResolveRequest): Promise<PlusApiResultBoolean> {
+    return this.client.patch<PlusApiResultBoolean>(backendApiPath(`/finance/admin/exceptions/resolve`), body);
   }
 
-  async createExpense(body: Record<string, unknown>): Promise<unknown> {
-    return this.client.post<unknown>(backendApiPath(`/finance/admin/expenses`), body);
+/** Withdrawals */
+  async getWithdrawals(params?: QueryParams): Promise<PlusApiResultFinancePageResultFinanceWithdrawalRecord> {
+    return this.client.get<PlusApiResultFinancePageResultFinanceWithdrawalRecord>(backendApiPath(`/finance/admin/withdrawals`), params);
   }
 
-  async auditExpense(body: Record<string, unknown>): Promise<unknown> {
-    return this.client.patch<unknown>(backendApiPath(`/finance/admin/expenses/audit`), body);
+/** Withdrawal risk profile */
+  async getRiskProfile(params?: QueryParams): Promise<PlusApiResultFinanceRiskProfileResponse> {
+    return this.client.get<PlusApiResultFinanceRiskProfileResponse>(backendApiPath(`/finance/admin/withdrawals/risk-profile`), params);
   }
 
-  async getReconciliations(params?: Record<string, string | number | boolean | undefined>): Promise<unknown> {
-    return this.client.get<unknown>(backendApiPath(`/finance/admin/reconciliations`), params);
+/** Settlements */
+  async getSettlements(params?: QueryParams): Promise<PlusApiResultFinancePageResultFinanceSettlementRecord> {
+    return this.client.get<PlusApiResultFinancePageResultFinanceSettlementRecord>(backendApiPath(`/finance/admin/settlements`), params);
   }
 
-  async getPayouts(params?: Record<string, string | number | boolean | undefined>): Promise<unknown> {
-    return this.client.get<unknown>(backendApiPath(`/finance/admin/payouts`), params);
+/** Reconciliations */
+  async getReconciliations(params?: QueryParams): Promise<PlusApiResultFinancePageResultFinanceReconciliationBill> {
+    return this.client.get<PlusApiResultFinancePageResultFinanceReconciliationBill>(backendApiPath(`/finance/admin/reconciliations`), params);
   }
 
-  async retryPayout(body: Record<string, unknown>): Promise<unknown> {
-    return this.client.patch<unknown>(backendApiPath(`/finance/admin/payouts/retry`), body);
+/** Payouts */
+  async getPayouts(params?: QueryParams): Promise<PlusApiResultFinancePageResultFinancePayoutRecord> {
+    return this.client.get<PlusApiResultFinancePageResultFinancePayoutRecord>(backendApiPath(`/finance/admin/payouts`), params);
   }
 
-  async getExceptions(params?: Record<string, string | number | boolean | undefined>): Promise<unknown> {
-    return this.client.get<unknown>(backendApiPath(`/finance/admin/exceptions`), params);
+/** Finance overview */
+  async getOverview(): Promise<PlusApiResultFinanceOverviewResponse> {
+    return this.client.get<PlusApiResultFinanceOverviewResponse>(backendApiPath(`/finance/admin/overview`));
   }
 
-  async resolveException(body: Record<string, unknown>): Promise<unknown> {
-    return this.client.patch<unknown>(backendApiPath(`/finance/admin/exceptions/resolve`), body);
+/** Ledger page */
+  async getLedger(params?: QueryParams): Promise<PlusApiResultFinancePageResultFinanceLedgerFlow> {
+    return this.client.get<PlusApiResultFinancePageResultFinanceLedgerFlow>(backendApiPath(`/finance/admin/ledger`), params);
   }
 
-  async getConfig(): Promise<unknown> {
-    return this.client.get<unknown>(backendApiPath(`/finance/admin/config`));
+/** Ledger stats */
+  async getLedgerStats(): Promise<PlusApiResultFinanceLedgerStatsResponse> {
+    return this.client.get<PlusApiResultFinanceLedgerStatsResponse>(backendApiPath(`/finance/admin/ledger/stats`));
   }
 
-  async saveConfig(body: Record<string, unknown>): Promise<unknown> {
-    return this.client.post<unknown>(backendApiPath(`/finance/admin/config`), body);
+/** Exceptions */
+  async getExceptions(params?: QueryParams): Promise<PlusApiResultFinancePageResultFinanceExceptionRecord> {
+    return this.client.get<PlusApiResultFinancePageResultFinanceExceptionRecord>(backendApiPath(`/finance/admin/exceptions`), params);
   }
 }
 

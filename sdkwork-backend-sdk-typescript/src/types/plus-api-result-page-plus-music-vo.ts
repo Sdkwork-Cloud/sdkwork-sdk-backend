@@ -1,6 +1,6 @@
 import type { PagePlusMusicVO } from './page-plus-music-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusMusicVO {
   /** Response data */
   data: PagePlusMusicVO;

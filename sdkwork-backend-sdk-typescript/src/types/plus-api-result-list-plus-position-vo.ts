@@ -1,6 +1,6 @@
 import type { PlusPositionVO } from './plus-position-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultListPlusPositionVO {
   /** Response data */
   data: PlusPositionVO[];

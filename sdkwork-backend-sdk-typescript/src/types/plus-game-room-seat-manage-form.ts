@@ -1,29 +1,29 @@
-/** 棋牌游戏房间座位管理表单 */
+/** æ£çæ¸¸ææ¿é´åº§ä½ç®¡çè¡¨å */
 export interface PlusGameRoomSeatManageForm {
-  /** 玩家用户ID */
+  /** ç©å®¶ç¨æ·ID */
   userId?: number;
-  /** 座位状态 */
+  /** åº§ä½ç¶æ */
   status?: 'EMPTY' | 'RESERVED' | 'READY' | 'PLAYING' | 'ELIMINATED' | 'OFFLINE' | 'LEFT' | 'TRUSTEESHIP';
-  /** 玩家类型 */
+  /** ç©å®¶ç±»å */
   playerType?: 'HUMAN' | 'AI' | 'BOT' | 'SPECTATOR';
-  /** 昵称快照 */
+  /** æµç§°å¿«ç§ */
   nicknameSnapshot?: string;
-  /** 头像URL */
+  /** å¤´åURL */
   avatarUrl?: string;
-  /** 进入来源 */
+  /** è¿å¥æ¥æº */
   joinSource?: string;
-  /** 队伍号 */
+  /** éä¼å· */
   teamNo?: number;
-  /** 是否准备 */
+  /** æ¯å¦åå¤ */
   ready?: boolean;
-  /** 是否托管 */
+  /** æ¯å¦æç®¡ */
   trusteeship?: boolean;
-  /** 是否旁观席 */
+  /** æ¯å¦æè§å¸­ */
   spectator?: boolean;
-  /** 房间内累计分 */
+  /** æ¿é´åç´¯è®¡å */
   roomScore?: number;
-  /** 房间内筹码 */
+  /** æ¿é´åç­¹ç  */
   chips?: number;
-  /** 淘汰名次 */
+  /** æ·æ±°åæ¬¡ */
   eliminatedRankNo?: number;
 }

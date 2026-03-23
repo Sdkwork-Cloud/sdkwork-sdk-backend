@@ -5,7 +5,7 @@ export interface PlusCategoryForm {
   /** Category description */
   description?: string;
   /** Category type */
-  type: 'DEFAULT' | 'AGENT' | 'TOOL' | 'PROMPT' | 'FEEDS' | 'PRODUCT' | 'COURSE' | 'NEWS' | 'BOOK' | 'VIDEO' | 'AUDIO' | 'MUSIC' | 'SAAS' | 'PPT' | 'EVENTS' | 'NOTARY' | 'SHOP' | 'VOICE_SPEAK' | 'SOUND_EFFECT' | 'SKILLS' | 'SKILLS_COLLECTION' | 'PLUGIN' | 'MCP' | 'KNOWLEDGE_BASE' | 'OTHER';
+  type: 'DEFAULT' | 'AGENT' | 'TOOL' | 'PROMPT' | 'FEEDS' | 'PRODUCT' | 'COURSE' | 'NEWS' | 'BOOK' | 'VIDEO' | 'AUDIO' | 'MUSIC' | 'SAAS' | 'PPT' | 'EVENTS' | 'NOTARY' | 'SHOP' | 'VOICE_SPEAK' | 'SOUND_EFFECT' | 'SKILLS' | 'SKILLS_COLLECTION' | 'PLUGIN' | 'MCP' | 'KNOWLEDGE_BASE' | 'RECRUIT' | 'OTHER';
   /** Category icon */
   icon?: string;
   /** Sort weight */

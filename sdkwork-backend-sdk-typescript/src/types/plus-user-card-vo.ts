@@ -1,23 +1,23 @@
-/** 用户会员卡VO，用于表示用户与会员卡的绑定关系 */
+/** ç¨æ·ä¼åå¡VOï¼ç¨äºè¡¨ç¤ºç¨æ·ä¸ä¼åå¡çç»å®å³ç³» */
 export interface PlusUserCardVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 用户ID（引用plus_user表） */
+  /** ç¨æ·IDï¼å¼ç¨plus_userè¡¨ï¼ */
   userId?: number;
-  /** 会员卡模板ID */
+  /** ä¼åå¡æ¨¡æ¿ID */
   cardId?: number;
-  /** 用户会员卡的卡号/Code */
+  /** ç¨æ·ä¼åå¡çå¡å·/Code */
   cardCode?: string;
-  /** 领取时间 */
+  /** é¢åæ¶é´ */
   acquireTime?: string;
-  /** 激活时间 */
+  /** æ¿æ´»æ¶é´ */
   activateTime?: string;
-  /** 注销/到期时间 */
+  /** æ³¨é/å°ææ¶é´ */
   cancelTime?: string;
-  /** 当前积分余额 */
+  /** å½åç§¯åä½é¢ */
   points?: number;
-  /** 当前储值余额 */
+  /** å½åå¨å¼ä½é¢ */
   balance?: number;
 }

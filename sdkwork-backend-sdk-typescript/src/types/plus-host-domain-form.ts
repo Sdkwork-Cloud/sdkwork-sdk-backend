@@ -1,6 +1,6 @@
 import type { DnsServers } from './dns-servers';
 
-/** 域名创建表单 */
+/** åååå»ºè¡¨å */
 export interface PlusHostDomainForm {
   /** Domain name */
   domainName: string;

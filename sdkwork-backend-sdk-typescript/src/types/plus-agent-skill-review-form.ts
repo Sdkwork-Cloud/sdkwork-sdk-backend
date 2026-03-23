@@ -1,5 +1,5 @@
-/** 技能审核参数 */
+/** æè½å®¡æ ¸åæ° */
 export interface PlusAgentSkillReviewForm {
-  /** 审核备注/驳回原因 */
+  /** å®¡æ ¸å¤æ³¨/é©³ååå  */
   comment?: string;
 }

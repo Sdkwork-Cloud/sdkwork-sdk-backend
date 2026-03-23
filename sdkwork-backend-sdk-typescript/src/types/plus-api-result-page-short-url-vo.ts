@@ -1,6 +1,6 @@
 import type { PageShortUrlVO } from './page-short-url-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPageShortUrlVO {
   /** Response data */
   data: PageShortUrlVO;

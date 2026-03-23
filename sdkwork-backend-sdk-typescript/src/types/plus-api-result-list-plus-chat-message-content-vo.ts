@@ -1,6 +1,6 @@
 import type { PlusChatMessageContentVO } from './plus-chat-message-content-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultListPlusChatMessageContentVO {
   /** Response data */
   data: PlusChatMessageContentVO[];

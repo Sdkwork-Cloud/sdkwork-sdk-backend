@@ -1,27 +1,27 @@
-/** 订单项Value Object，支持多种商品类型：1.实物商品 2.虚拟商品(如电子书、课程等) 3.会员服务 */
+/** è®¢åé¡¹Value Objectï¼æ¯æå¤ç§ååç±»åï¼1.å®ç©åå 2.èæåå(å¦çµå­ä¹¦ãè¯¾ç¨ç­) 3.ä¼åæå¡ */
 export interface PlusOrderItemVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 关联的订单ID */
+  /** å³èçè®¢åID */
   orderId?: number;
-  /** 商品类型：PHYSICAL-实物商品，VIRTUAL-虚拟商品，MEMBER-会员服务 */
+  /** ååç±»åï¼PHYSICAL-å®ç©ååï¼VIRTUAL-èæååï¼MEMBER-ä¼åæå¡ */
   productType?: 'GOODS' | 'VIRTUAL' | 'SERVICE';
-  /** 商品ID */
+  /** ååID */
   productId?: number;
-  /** 商品SKU ID */
+  /** ååSKU ID */
   skuId?: number;
-  /** 购买数量 */
+  /** è´­ä¹°æ°é */
   quantity?: number;
-  /** 商品单价 */
+  /** åååä»· */
   unitPrice?: number;
-  /** 商品总价 */
+  /** ååæ»ä»· */
   totalAmount?: number;
-  /** 虚拟商品有效期(仅当productType=VIRTUAL时有效)，如电子书、课程等的使用期限 */
+  /** èæååæææ(ä»å½productType=VIRTUALæ¶ææ)ï¼å¦çµå­ä¹¦ãè¯¾ç¨ç­çä½¿ç¨æé */
   expireTime?: string;
-  /** 关联内容类型，标识订单项关联的业务内容类型 */
-  contentType?: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM';
-  /** 关联内容ID，标识订单项关联的具体业务内容 */
+  /** å³èåå®¹ç±»åï¼æ è¯è®¢åé¡¹å³èçä¸å¡åå®¹ç±»å */
+  contentType?: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM' | 'JOB';
+  /** å³èåå®¹IDï¼æ è¯è®¢åé¡¹å³èçå·ä½ä¸å¡åå®¹ */
   contentId?: number;
 }

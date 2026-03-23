@@ -1,9 +1,9 @@
 import type { VideoMediaResource } from './video-media-resource';
 
-/** IM视频消息内容类 */
+/** IMè§é¢æ¶æ¯åå®¹ç±» */
 export interface MsgVideoContent {
-  /** 消息内容 */
+  /** æ¶æ¯åå®¹ */
   content?: string;
-  /** 视频资源 */
+  /** è§é¢èµæº */
   resource?: VideoMediaResource;
 }

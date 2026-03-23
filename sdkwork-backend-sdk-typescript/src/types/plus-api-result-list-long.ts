@@ -1,4 +1,4 @@
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultListLong {
   /** Response data */
   data: number[];

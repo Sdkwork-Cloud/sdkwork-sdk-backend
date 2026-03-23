@@ -1,6 +1,6 @@
 import type { PagePlusShoppingCartItemVO } from './page-plus-shopping-cart-item-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusShoppingCartItemVO {
   /** Response data */
   data: PagePlusShoppingCartItemVO;

@@ -1,6 +1,6 @@
 import type { PlusCharacterVO } from './plus-character-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPlusCharacterVO {
   /** Response data */
   data: PlusCharacterVO;

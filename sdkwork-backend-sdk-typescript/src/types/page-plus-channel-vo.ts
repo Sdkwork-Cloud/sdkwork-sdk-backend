@@ -3,14 +3,14 @@ import type { PlusChannelVO } from './plus-channel-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusChannelVO {
-  totalElements?: number;
   totalPages?: number;
+  totalElements?: number;
   size?: number;
   content?: PlusChannelVO[];
   number?: number;
   numberOfElements?: number;
-  sort?: SortObject;
   pageable?: PageableObject;
+  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   empty?: boolean;

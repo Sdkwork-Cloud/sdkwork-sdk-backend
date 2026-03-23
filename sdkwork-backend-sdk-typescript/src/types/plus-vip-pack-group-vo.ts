@@ -1,27 +1,27 @@
 import type { PlusVipPackVO } from './plus-vip-pack-vo';
 
-/** VIP套餐分组VO */
+/** VIPå¥é¤åç»VO */
 export interface PlusVipPackGroupVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 主键ID */
+  /** ä¸»é®ID */
   id?: number;
-  /** 通用唯一标识符UUID */
+  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
   uuid?: string;
-  /** 应用ID */
+  /** åºç¨ID */
   appId?: number;
-  /** 分组名称 */
+  /** åç»åç§° */
   name?: string;
-  /** 分组描述 */
+  /** åç»æè¿° */
   description?: string;
-  /** 排序权重 */
+  /** æåºæé */
   sortWeight?: number;
-  /** 分组状态 */
+  /** åç»ç¶æ */
   status?: 'DEFAULT' | 'ENABLED' | 'DISABLED';
-  /** 备注信息 */
+  /** å¤æ³¨ä¿¡æ¯ */
   remark?: string;
-  /** 关联的套餐列表 */
+  /** å³èçå¥é¤åè¡¨ */
   packs?: PlusVipPackVO[];
 }

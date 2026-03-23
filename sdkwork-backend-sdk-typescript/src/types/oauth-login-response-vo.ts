@@ -1,17 +1,17 @@
-/** OAuth第三方登录响应 */
+/** OAuthç¬¬ä¸æ¹ç»å½ååº */
 export interface OAuthLoginResponseVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** OAuth提供商类型 */
+  /** OAuthæä¾åç±»å */
   provider?: 'WECHAT' | 'QQ' | 'WEIBO' | 'GITHUB' | 'GOOGLE' | 'FACEBOOK' | 'TWITTER' | 'LINKEDIN' | 'MICROSOFT' | 'APPLE' | 'ALIPAY' | 'DINGTALK' | 'GITEE';
-  /** 授权URL */
+  /** ææURL */
   authUrl?: string;
-  /** 二维码图片URL */
+  /** äºç»´ç å¾çURL */
   qrCodeUrl?: string;
-  /** 二维码内容（Base64编码的图片数据） */
+  /** äºç»´ç åå®¹ï¼Base64ç¼ç çå¾çæ°æ®ï¼ */
   qrCodeContent?: string;
-  /** 过期时间（秒） */
+  /** è¿ææ¶é´ï¼ç§ï¼ */
   expiresIn?: number;
 }

@@ -1,6 +1,6 @@
 import type { PagePlusOrderDispatchRuleVO } from './page-plus-order-dispatch-rule-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusOrderDispatchRuleVO {
   /** Response data */
   data: PagePlusOrderDispatchRuleVO;

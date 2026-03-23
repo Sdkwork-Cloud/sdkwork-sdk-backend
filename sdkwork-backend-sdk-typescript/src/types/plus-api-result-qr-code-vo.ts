@@ -1,6 +1,6 @@
 import type { QrCodeVO } from './qr-code-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultQrCodeVO {
   /** Response data */
   data: QrCodeVO;

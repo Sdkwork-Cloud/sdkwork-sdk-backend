@@ -1,57 +1,57 @@
 import type { AssetMediaResource } from './asset-media-resource';
 import type { VideoStoryboard } from './video-storyboard';
 
-/** 虚拟角色生成输入参数 */
+/** èæè§è²çæè¾å¥åæ° */
 export interface CharacterGenerationInput {
-  /** 任务标题 */
+  /** ä»»å¡æ é¢ */
   title?: string;
-  /** 主提示词 */
+  /** ä¸»æç¤ºè¯ */
   prompt?: string;
-  /** 反向提示词 */
+  /** ååæç¤ºè¯ */
   negativePrompt?: string;
-  /** 参考资源列表(支持图片/视频/音频等任意类型) */
+  /** åèèµæºåè¡¨(æ¯æå¾ç/è§é¢/é³é¢ç­ä»»æç±»å) */
   referenceAssets?: AssetMediaResource[];
-  /** 视频故事板 */
+  /** è§é¢æäºæ¿ */
   storyboard?: VideoStoryboard;
-  /** 生成参数 */
+  /** çæåæ° */
   parameters?: Record<string, unknown>;
-  /** 生成数量 */
+  /** çææ°é */
   n?: number;
-  /** 随机种子 */
+  /** éæºç§å­ */
   seed?: number;
-  /** 输出格式 */
+  /** è¾åºæ ¼å¼ */
   format?: string;
-  /** 角色名称 */
+  /** è§è²åç§° */
   name?: string;
-  /** 角色描述 */
+  /** è§è²æè¿° */
   description?: string;
-  /** 角色外观描述 */
+  /** è§è²å¤è§æè¿° */
   appearance?: string;
-  /** 角色性格特点 */
+  /** è§è²æ§æ ¼ç¹ç¹ */
   personality?: string;
-  /** 角色背景故事 */
+  /** è§è²èæ¯æäº */
   background?: string;
-  /** 角色类型 */
+  /** è§è²ç±»å */
   type?: 'HUMAN' | 'PET' | 'ANIMAL' | 'ROBOT' | 'OTHER';
-  /** 角色风格(anime/realistic/cartoon/3d等) */
+  /** è§è²é£æ ¼(anime/realistic/cartoon/3dç­) */
   style?: string;
-  /** 姿势 */
+  /** å§¿å¿ */
   pose?: string;
-  /** 表情 */
+  /** è¡¨æ */
   expression?: string;
-  /** 性别 */
+  /** æ§å« */
   gender?: string;
-  /** 年龄段 */
+  /** å¹´é¾æ®µ */
   age?: string;
-  /** 服装 */
+  /** æè£ */
   clothing?: string;
-  /** 图片宽度(像素) */
+  /** å¾çå®½åº¦(åç´ ) */
   width?: number;
-  /** 图片高度(像素) */
+  /** å¾çé«åº¦(åç´ ) */
   height?: number;
-  /** 是否高清 */
+  /** æ¯å¦é«æ¸ */
   hd?: boolean;
-  /** 是否生成多视角 */
+  /** æ¯å¦çæå¤è§è§ */
   multiView?: boolean;
   referenceAssetCount?: number;
 }

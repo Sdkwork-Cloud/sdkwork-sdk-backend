@@ -1,6 +1,6 @@
 import type { GoodsOrderVO } from './goods-order-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultGoodsOrderVO {
   /** Response data */
   data: GoodsOrderVO;

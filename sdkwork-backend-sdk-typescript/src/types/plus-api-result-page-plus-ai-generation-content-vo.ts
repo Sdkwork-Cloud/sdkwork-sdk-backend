@@ -1,6 +1,6 @@
 import type { PagePlusAiGenerationContentVO } from './page-plus-ai-generation-content-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusAiGenerationContentVO {
   /** Response data */
   data: PagePlusAiGenerationContentVO;

@@ -3,26 +3,26 @@ import type { VoiceMotion } from './voice-motion';
 import type { VoiceStyle } from './voice-style';
 
 export interface VoiceSpeakerInfo {
-  /** 语音服务提供商 */
+  /** è¯­é³æå¡æä¾å */
   channel?: 'DEFAULT' | 'ALIYUN' | 'AWS' | 'APPLE' | 'AZURE' | 'BAIDU' | 'VOLCENGINE' | 'TENCENT' | 'HUAWEI' | 'GOOGLE' | 'META' | 'WECHAT' | 'ALIPAY' | 'UNION_PAY' | 'UNIONPAY' | 'DOUYIN' | 'MICROSOFT' | 'AMAZON' | 'ANTHROPIC' | 'XAI' | 'DEEPSEEK' | 'GROQ' | 'HUGGING_FACE' | 'KUAISHOU' | 'MINIMAX' | 'MISTRAL' | 'MOONSHOT' | 'NVIDIA' | 'OPENAI' | 'OLLAMA' | 'PERPLEXITY' | 'SDKWORK' | 'SILICONFLOW' | 'STEPFUN' | 'XUNFEI' | 'ZHIPU' | 'RAGFLOW' | 'STABILITY' | 'MINDSDB' | 'MEM0' | 'BOCHA' | 'BING' | 'OPEN_ROUTER' | 'STRIPE' | 'PAYPAL' | 'SUNO' | 'VIDU' | 'RUNWAY' | 'MEITUAN' | 'YUNWU' | 'MIDJOURNEY' | 'IDEOGRAM' | 'FLUX' | 'VECTOR_STORE_AZURE' | 'VECTOR_STORE_CASSANDRA' | 'VECTOR_STORE_CHROMA' | 'VECTOR_STORE_COUCHBASE' | 'VECTOR_STORE_ELASTICSEARCH' | 'VECTOR_STORE_GEMFIRE' | 'VECTOR_STORE_MARIADB' | 'VECTOR_STORE_MILVUS' | 'VECTOR_STORE_MONGODB' | 'VECTOR_STORE_NEO4J' | 'VECTOR_STORE_OPENSEARCH' | 'VECTOR_STORE_ORACLE' | 'VECTOR_STORE_PGVECTOR' | 'VECTOR_STORE_PINECONE' | 'VECTOR_STORE_QDRANT' | 'VECTOR_STORE_REDIS' | 'VECTOR_STORE_TYPESENSE' | 'VECTOR_STORE_WEAVIATE';
-  /** 语音服务提供商 */
+  /** è¯­é³æå¡æä¾å */
   provider?: 'ALIYUN' | 'TENCENT' | 'OPENAI' | 'HUGGING_FACE' | 'AZURE' | 'GOOGLE' | 'BAIDU';
-  /** 语音模型产品名称 */
+  /** è¯­é³æ¨¡åäº§ååç§° */
   product?: string;
-  /** 模型唯一标识符（由AI服务提供商提供） */
+  /** æ¨¡åå¯ä¸æ è¯ç¬¦ï¼ç±AIæå¡æä¾åæä¾ï¼ */
   id?: string;
-  /** 语音模型配置信息 */
+  /** è¯­é³æ¨¡åéç½®ä¿¡æ¯ */
   models?: string[];
-  /** 发音人Id */
+  /** åé³äººId */
   speakerId?: string;
-  /** 显示的语音名称 */
+  /** æ¾ç¤ºçè¯­é³åç§° */
   displayName?: string;
-  /** 语音标签 */
+  /** è¯­é³æ ç­¾ */
   tags?: TagsContent;
-  /** 语音情感 */
+  /** è¯­é³ææ */
   motion?: VoiceMotion;
-  /** 语音风格 */
+  /** è¯­é³é£æ ¼ */
   style?: VoiceStyle;
-  /** 语音描述信息 */
+  /** è¯­é³æè¿°ä¿¡æ¯ */
   description?: string;
 }

@@ -1,6 +1,6 @@
 import type { PlusDnsRecordVO } from './plus-dns-record-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultListPlusDnsRecordVO {
   /** Response data */
   data: PlusDnsRecordVO[];

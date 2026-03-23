@@ -1,25 +1,25 @@
-/** 棋牌游戏擂台管理表单 */
+/** æ£çæ¸¸ææå°ç®¡çè¡¨å */
 export interface PlusGameArenaManageForm {
-  /** 创建擂主用户ID；开擂时必填 */
+  /** åå»ºæä¸»ç¨æ·IDï¼å¼ææ¶å¿å¡« */
   ownerUserId?: number;
-  /** 当前擂主用户ID */
+  /** å½åæä¸»ç¨æ·ID */
   currentChampionUserId?: number;
-  /** 玩法类型；开擂时必填 */
+  /** ç©æ³ç±»åï¼å¼ææ¶å¿å¡« */
   gameType?: 'INTERNATIONAL_CHESS' | 'CHINESE_CHESS' | 'GOMOKU' | 'JUNQI' | 'LANDLORD' | 'SHENG_JI' | 'TUO_LA_JI' | 'TEXAS_HOLDEM' | 'MAHJONG' | 'CUSTOM';
-  /** 玩法模式编码 */
+  /** ç©æ³æ¨¡å¼ç¼ç  */
   gameModeCode?: string;
-  /** 擂台状态 */
+  /** æå°ç¶æ */
   status?: 'OPEN' | 'LOCKED' | 'CLOSED';
-  /** 擂台名称 */
+  /** æå°åç§° */
   name?: string;
-  /** 擂台描述 */
+  /** æå°æè¿° */
   description?: string;
-  /** 擂台押分 */
+  /** æå°æ¼å */
   stakeScore?: number;
-  /** 关联房间ID */
+  /** å³èæ¿é´ID */
   roomId?: number;
-  /** 关联对局ID */
+  /** å³èå¯¹å±ID */
   matchId?: number;
-  /** 处理备注 */
+  /** å¤çå¤æ³¨ */
   reason?: string;
 }

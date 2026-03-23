@@ -1,25 +1,25 @@
 import type { AssetMediaResource } from './asset-media-resource';
 import type { VideoStoryboard } from './video-storyboard';
 
-/** AI生成任务输入参数基类 */
+/** AIçæä»»å¡è¾å¥åæ°åºç±» */
 export interface BaseGenerationInput {
-  /** 任务标题 */
+  /** ä»»å¡æ é¢ */
   title?: string;
-  /** 主提示词 */
+  /** ä¸»æç¤ºè¯ */
   prompt?: string;
-  /** 反向提示词 */
+  /** ååæç¤ºè¯ */
   negativePrompt?: string;
-  /** 参考资源列表(支持图片/视频/音频等任意类型) */
+  /** åèèµæºåè¡¨(æ¯æå¾ç/è§é¢/é³é¢ç­ä»»æç±»å) */
   referenceAssets?: AssetMediaResource[];
-  /** 视频故事板 */
+  /** è§é¢æäºæ¿ */
   storyboard?: VideoStoryboard;
-  /** 生成参数 */
+  /** çæåæ° */
   parameters?: Record<string, unknown>;
-  /** 生成数量 */
+  /** çææ°é */
   n?: number;
-  /** 随机种子 */
+  /** éæºç§å­ */
   seed?: number;
-  /** 输出格式 */
+  /** è¾åºæ ¼å¼ */
   format?: string;
   referenceAssetCount?: number;
 }

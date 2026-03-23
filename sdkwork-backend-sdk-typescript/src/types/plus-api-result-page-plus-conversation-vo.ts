@@ -1,6 +1,6 @@
 import type { PagePlusConversationVO } from './page-plus-conversation-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusConversationVO {
   /** Response data */
   data: PagePlusConversationVO;

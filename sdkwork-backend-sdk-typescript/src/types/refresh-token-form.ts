@@ -1,5 +1,5 @@
-/** 鍒锋柊浠ょ墝璇锋眰琛ㄥ崟 */
+/** ééææµ ãå¢çéç°çã¥å´ */
 export interface RefreshTokenForm {
-  /** 鍒锋柊浠ょ墝 */
+  /** ééææµ ãå¢ */
   refreshToken: string;
 }

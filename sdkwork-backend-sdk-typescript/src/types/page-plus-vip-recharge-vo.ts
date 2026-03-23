@@ -3,14 +3,14 @@ import type { PlusVipRechargeVO } from './plus-vip-recharge-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusVipRechargeVO {
-  totalElements?: number;
   totalPages?: number;
+  totalElements?: number;
   size?: number;
   content?: PlusVipRechargeVO[];
   number?: number;
   numberOfElements?: number;
-  sort?: SortObject;
   pageable?: PageableObject;
+  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   empty?: boolean;

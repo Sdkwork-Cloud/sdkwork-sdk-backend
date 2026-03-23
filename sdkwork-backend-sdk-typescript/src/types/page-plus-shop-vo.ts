@@ -3,14 +3,14 @@ import type { PlusShopVO } from './plus-shop-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusShopVO {
-  totalElements?: number;
   totalPages?: number;
+  totalElements?: number;
   size?: number;
   content?: PlusShopVO[];
   number?: number;
   numberOfElements?: number;
-  sort?: SortObject;
   pageable?: PageableObject;
+  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   empty?: boolean;

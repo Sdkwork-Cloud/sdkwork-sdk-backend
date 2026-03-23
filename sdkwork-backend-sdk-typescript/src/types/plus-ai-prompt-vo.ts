@@ -1,35 +1,35 @@
 import type { TagsContent } from './tags-content';
 
-/** AI提示语Value Object */
+/** AIæç¤ºè¯­Value Object */
 export interface PlusAiPromptVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 主键ID */
+  /** ä¸»é®ID */
   id?: number;
-  /** 提示语标题 */
+  /** æç¤ºè¯­æ é¢ */
   title?: string;
-  /** 提示语内容 */
+  /** æç¤ºè¯­åå®¹ */
   content?: string;
-  /** 提示语描述 */
+  /** æç¤ºè¯­æè¿° */
   description?: string;
-  /** 关联分类ID */
+  /** å³èåç±»ID */
   categoryId?: number;
-  /** 是否启用(true:启用,false:禁用) */
+  /** æ¯å¦å¯ç¨(true:å¯ç¨,false:ç¦ç¨) */
   enabled?: boolean;
-  /** 排序顺序 */
+  /** æåºé¡ºåº */
   sort?: number;
-  /** 参数定义(JSON格式) */
+  /** åæ°å®ä¹(JSONæ ¼å¼) */
   parameters?: Record<string, unknown>;
-  /** 创建者 */
+  /** åå»ºè */
   creator?: string;
-  /** 适用的AI模型 */
+  /** éç¨çAIæ¨¡å */
   model?: string;
-  /** 标签(逗号分隔) */
+  /** æ ç­¾(éå·åé) */
   tags?: TagsContent;
-  /** 使用次数 */
+  /** ä½¿ç¨æ¬¡æ° */
   usageCount?: number;
-  /** 平均响应时间(毫秒) */
+  /** å¹³åååºæ¶é´(æ¯«ç§) */
   avgResponseTime?: number;
 }

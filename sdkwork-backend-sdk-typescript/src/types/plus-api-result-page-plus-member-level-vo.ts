@@ -1,6 +1,6 @@
 import type { PagePlusMemberLevelVO } from './page-plus-member-level-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusMemberLevelVO {
   /** Response data */
   data: PagePlusMemberLevelVO;

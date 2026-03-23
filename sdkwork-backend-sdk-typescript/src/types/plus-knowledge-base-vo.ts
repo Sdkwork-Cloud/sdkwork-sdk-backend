@@ -1,13 +1,13 @@
-/** 知识库 Value Object */
+/** ç¥è¯åº Value Object */
 export interface PlusKnowledgeBaseVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
   /** ID */
   id?: number;
-  /** 知识库名称 */
+  /** ç¥è¯åºåç§° */
   name?: string;
-  /** 知识库描述 */
+  /** ç¥è¯åºæè¿° */
   description?: string;
 }

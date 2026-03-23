@@ -1,7 +1,7 @@
-/** 幻灯片背景图片 */
+/** å¹»ç¯çèæ¯å¾ç */
 export interface PPTSlideBackgroundImage {
-  /** 图片地址 */
+  /** å¾çå°å */
   src: string;
-  /** 图片大小 */
+  /** å¾çå¤§å° */
   size: string;
 }

@@ -1,6 +1,6 @@
 import type { PagePlusNotificationVO } from './page-plus-notification-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusNotificationVO {
   /** Response data */
   data: PagePlusNotificationVO;

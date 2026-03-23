@@ -1,23 +1,23 @@
-/** 分片键值对象 */
+/** åçé®å¼å¯¹è±¡ */
 export interface PlusShardingKeyVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 最后更新时间 */
+  /** æåæ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 主键ID */
+  /** ä¸»é®ID */
   id?: number;
-  /** 通用唯一标识符UUID */
+  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
   uuid?: string;
-  /** 分片Key */
+  /** åçKey */
   shardingKey?: string;
-  /** 租户ID */
+  /** ç§æ·ID */
   tenantId?: number;
-  /** 数据拥有者 */
+  /** æ°æ®æ¥æè */
   owner?: 'DEFAULT' | 'TENANT' | 'ORGANIZATION';
-  /** 数据拥有者ID */
+  /** æ°æ®æ¥æèID */
   ownerId?: number;
-  /** 数据状态 */
+  /** æ°æ®ç¶æ */
   status?: 'DEFAULT' | 'ACTIVE' | 'INACTIVE' | 'SUSPENDED' | 'DELETED';
-  /** 描述 */
+  /** æè¿° */
   description?: string;
 }

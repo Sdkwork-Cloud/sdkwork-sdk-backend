@@ -1,6 +1,6 @@
 import type { PagePlusMessage } from './page-plus-message';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusMessage {
   /** Response data */
   data: PagePlusMessage;

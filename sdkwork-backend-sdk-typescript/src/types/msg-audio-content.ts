@@ -1,9 +1,9 @@
 import type { AudioMediaResource } from './audio-media-resource';
 
-/** IM音频消息内容类 */
+/** IMé³é¢æ¶æ¯åå®¹ç±» */
 export interface MsgAudioContent {
-  /** 消息内容 */
+  /** æ¶æ¯åå®¹ */
   content?: string;
-  /** 音频资源 */
+  /** é³é¢èµæº */
   resource?: AudioMediaResource;
 }

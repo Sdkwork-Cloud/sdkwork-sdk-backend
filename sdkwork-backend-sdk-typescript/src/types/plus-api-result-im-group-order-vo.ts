@@ -1,6 +1,6 @@
 import type { ImGroupOrderVO } from './im-group-order-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultImGroupOrderVO {
   /** Response data */
   data: ImGroupOrderVO;

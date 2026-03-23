@@ -1,16 +1,16 @@
 import type { ChatCompletionAudio } from './chat-completion-audio';
 import type { ChatCompletionMessageToolCall } from './chat-completion-message-tool-call';
 
-/** 聊天消息对象，包含消息的角色、内容和工具调用信息 */
+/** èå¤©æ¶æ¯å¯¹è±¡ï¼åå«æ¶æ¯çè§è²ãåå®¹åå·¥å·è°ç¨ä¿¡æ¯ */
 export interface ChatCompletionChunkDelta {
-  /** 消息发送者角色，可能的值："system"（系统消息）、"user"（用户消息）、"assistant"（助手消息）、"function"（函数返回结果消息）、"tool"（工具返回结果消息） */
+  /** æ¶æ¯åéèè§è²ï¼å¯è½çå¼ï¼"system"ï¼ç³»ç»æ¶æ¯ï¼ã"user"ï¼ç¨æ·æ¶æ¯ï¼ã"assistant"ï¼å©ææ¶æ¯ï¼ã"function"ï¼å½æ°è¿åç»ææ¶æ¯ï¼ã"tool"ï¼å·¥å·è¿åç»ææ¶æ¯ï¼ */
   role: string;
-  /** 消息内容，对于工具/函数返回结果消息，content为对应的返回结果 */
+  /** æ¶æ¯åå®¹ï¼å¯¹äºå·¥å·/å½æ°è¿åç»ææ¶æ¯ï¼contentä¸ºå¯¹åºçè¿åç»æ */
   content: string;
-  /** 音频消息 */
+  /** é³é¢æ¶æ¯ */
   audio?: ChatCompletionAudio;
-  /** 仅适用于 reasoner 模型。内容为 assistant 消息中在最终答案之前的推理内容 */
+  /** ä»éç¨äº reasoner æ¨¡åãåå®¹ä¸º assistant æ¶æ¯ä¸­å¨æç»ç­æ¡ä¹åçæ¨çåå®¹ */
   reasoning_content?: string;
-  /** 工具调用列表，仅当role为"assistant"且需要调用工具时存在 */
+  /** å·¥å·è°ç¨åè¡¨ï¼ä»å½roleä¸º"assistant"ä¸éè¦è°ç¨å·¥å·æ¶å­å¨ */
   tool_calls?: ChatCompletionMessageToolCall[];
 }

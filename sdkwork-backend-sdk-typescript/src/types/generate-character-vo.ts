@@ -1,29 +1,29 @@
 import type { ImageMediaResource } from './image-media-resource';
 
-/** 角色生成结果VO */
+/** Character generation response */
 export interface GenerateCharacterVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 请求ID */
+  /** Request ID */
   requestId?: string;
-  /** 任务ID */
+  /** Task ID */
   taskId?: string;
-  /** 生成任务状态 */
+  /** Task status */
   taskStatus?: string;
-  /** 生成的角色图像资源列表 */
+  /** Generated character images */
   characterImages?: ImageMediaResource[];
-  /** 生成的角色ID */
+  /** Generated character ID */
   characterId?: string;
-  /** 生成的角色名称 */
+  /** Generated character name */
   characterName?: string;
-  /** 生成的角色描述 */
+  /** Generated character description */
   characterDescription?: string;
-  /** 生成的模型名称 */
+  /** Generation model name */
   model?: string;
-  /** 生成耗时（毫秒） */
+  /** Generation duration in milliseconds */
   duration?: number;
-  /** 错误信息 */
+  /** Error message */
   errorMessage?: string;
 }

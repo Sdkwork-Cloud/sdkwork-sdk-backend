@@ -1,69 +1,69 @@
-/** 棋牌游戏玩法定义VO */
+/** æ£çæ¸¸æç©æ³å®ä¹VO */
 export interface PlusGameDefinitionVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 玩法定义ID */
+  /** ç©æ³å®ä¹ID */
   definitionId?: number;
-  /** 玩法编码 */
+  /** ç©æ³ç¼ç  */
   code?: string;
-  /** 玩法类型 */
+  /** ç©æ³ç±»å */
   gameType?: 'INTERNATIONAL_CHESS' | 'CHINESE_CHESS' | 'GOMOKU' | 'JUNQI' | 'LANDLORD' | 'SHENG_JI' | 'TUO_LA_JI' | 'TEXAS_HOLDEM' | 'MAHJONG' | 'CUSTOM';
-  /** 玩法分类 */
+  /** ç©æ³åç±» */
   category?: 'BOARD' | 'CARD' | 'TILE' | 'MIXED';
-  /** 玩法名称 */
+  /** ç©æ³åç§° */
   name?: string;
-  /** 玩法别名 */
+  /** ç©æ³å«å */
   alias?: string;
-  /** 玩法模式编码 */
+  /** ç©æ³æ¨¡å¼ç¼ç  */
   gameModeCode?: string;
-  /** 玩法描述 */
+  /** ç©æ³æè¿° */
   description?: string;
-  /** 规则摘要 */
+  /** è§åæè¦ */
   ruleSummary?: string;
-  /** 最少玩家数 */
+  /** æå°ç©å®¶æ° */
   minPlayers?: number;
-  /** 最多玩家数 */
+  /** æå¤ç©å®¶æ° */
   maxPlayers?: number;
-  /** 座位数 */
+  /** åº§ä½æ° */
   seatCount?: number;
-  /** 队伍数 */
+  /** éä¼æ° */
   teamCount?: number;
-  /** 默认局数 */
+  /** é»è®¤å±æ° */
   defaultRoundCount?: number;
-  /** 是否回合制 */
+  /** æ¯å¦ååå¶ */
   turnBased?: boolean;
-  /** 是否支持排位 */
+  /** æ¯å¦æ¯ææä½ */
   ranked?: boolean;
-  /** 是否支持旁观 */
+  /** æ¯å¦æ¯ææè§ */
   supportsSpectator?: boolean;
-  /** 是否支持托管 */
+  /** æ¯å¦æ¯ææç®¡ */
   supportsTrusteeship?: boolean;
-  /** 是否支持机器人 */
+  /** æ¯å¦æ¯ææºå¨äºº */
   supportsRobot?: boolean;
-  /** 是否支持回放 */
+  /** æ¯å¦æ¯æåæ¾ */
   supportsReplay?: boolean;
-  /** 是否支持好友房 */
+  /** æ¯å¦æ¯æå¥½åæ¿ */
   supportsFriendRoom?: boolean;
-  /** 是否支持赛事 */
+  /** æ¯å¦æ¯æèµäº */
   supportsTournament?: boolean;
-  /** 是否支持俱乐部 */
+  /** æ¯å¦æ¯æä¿±ä¹é¨ */
   supportsClub?: boolean;
-  /** 是否支持练习模式 */
+  /** æ¯å¦æ¯æç»ä¹ æ¨¡å¼ */
   supportsPractice?: boolean;
-  /** 推荐难度等级 */
+  /** æ¨èé¾åº¦ç­çº§ */
   difficultyLevel?: number;
-  /** 教程链接 */
+  /** æç¨é¾æ¥ */
   tutorialUrl?: string;
-  /** 默认排行类型 */
+  /** é»è®¤æè¡ç±»å */
   rankingType?: 'SCORE' | 'RATING' | 'WIN_RATE' | 'WIN_COUNT' | 'STREAK' | 'PROFIT';
-  /** 默认规则配置 */
+  /** é»è®¤è§åéç½® */
   defaultRuleConfig?: Record<string, unknown>;
-  /** 扩展元数据 */
+  /** æ©å±åæ°æ® */
   metadata?: Record<string, unknown>;
-  /** 支持的榜单周期 */
+  /** æ¯æçæ¦åå¨æ */
   supportedLeaderboardPeriods?: 'HOUR' | 'DAY' | 'WEEK' | 'MONTH' | 'QUARTER' | 'YEAR' | 'SEASON'[];
-  /** 是否启用 */
+  /** æ¯å¦å¯ç¨ */
   enabled?: boolean;
 }

@@ -1,6 +1,6 @@
 import type { RegisterResultVO } from './register-result-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultRegisterResultVO {
   /** Response data */
   data: RegisterResultVO;

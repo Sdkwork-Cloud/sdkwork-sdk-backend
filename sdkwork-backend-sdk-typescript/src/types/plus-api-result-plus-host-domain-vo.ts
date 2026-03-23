@@ -1,6 +1,6 @@
 import type { PlusHostDomainVO } from './plus-host-domain-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPlusHostDomainVO {
   /** Response data */
   data: PlusHostDomainVO;

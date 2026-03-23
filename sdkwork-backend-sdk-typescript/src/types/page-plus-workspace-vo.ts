@@ -3,14 +3,14 @@ import type { PlusWorkspaceVO } from './plus-workspace-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusWorkspaceVO {
-  totalElements?: number;
   totalPages?: number;
+  totalElements?: number;
   size?: number;
   content?: PlusWorkspaceVO[];
   number?: number;
   numberOfElements?: number;
-  sort?: SortObject;
   pageable?: PageableObject;
+  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   empty?: boolean;

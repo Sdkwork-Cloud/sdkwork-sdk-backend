@@ -1,17 +1,17 @@
 /** Shopping cart item creation form */
 export interface PlusShoppingCartItemForm {
-  /** 璐墿杞D */
+  /** çî å¢¿æî¯D */
   cartId: number;
-  /** 璐墿杞﹀垎缁刄UID */
+  /** çî å¢¿æï¹åç¼åUID */
   cartGroupUuid: string;
-  /** 鍟嗗搧ID */
+  /** éåæ§ID */
   productId: number;
   /** SKU ID */
   skuId: number;
-  /** 鍟嗗搧鏁伴噺 */
+  /** éåæ§éä¼´åº */
   quantity: number;
   /** P ri ce */
   price: number;
-  /** 鏄惁閫変腑 */
+  /** éîæé«å¤è */
   selected: boolean;
 }

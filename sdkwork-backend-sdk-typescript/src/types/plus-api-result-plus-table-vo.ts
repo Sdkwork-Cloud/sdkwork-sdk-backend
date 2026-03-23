@@ -1,6 +1,6 @@
 import type { PlusTableVO } from './plus-table-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPlusTableVO {
   /** Response data */
   data: PlusTableVO;

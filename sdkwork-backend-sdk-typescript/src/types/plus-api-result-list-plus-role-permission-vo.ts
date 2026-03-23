@@ -1,6 +1,6 @@
 import type { PlusRolePermissionVO } from './plus-role-permission-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultListPlusRolePermissionVO {
   /** Response data */
   data: PlusRolePermissionVO[];

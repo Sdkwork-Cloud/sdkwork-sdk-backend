@@ -1,36 +1,38 @@
 import type { AuthorInfo } from './author-info';
 import type { ImageMediaResourceList } from './image-media-resource-list';
 
-/** AI生成文章VO对象 */
+/** AIçææç« VOå¯¹è±¡ */
 export interface PlusArticleVO {
-  /** 创建时间，实体首次持久化时设置 */
+  /** åå»ºæ¶é´ï¼å®ä½é¦æ¬¡æä¹åæ¶è®¾ç½® */
   createdAt?: string;
-  /** 最后更新时间，实体修改时更新 */
+  /** æåæ´æ°æ¶é´ï¼å®ä½ä¿®æ¹æ¶æ´æ° */
   updatedAt?: string;
-  /** 主键ID，由数据库自动生成 */
+  /** ä¸»é®IDï¼ç±æ°æ®åºèªå¨çæ */
   id?: number;
-  /** 通用唯一标识符UUID */
+  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
   uuid?: string;
-  /** 文章标题 */
+  /** æç« æ é¢ */
   title?: string;
-  /** 文章副标题 */
+  /** æç« å¯æ é¢ */
   subtitle?: string;
-  /** 文章正文内容 */
+  /** æç« æ­£æåå®¹ */
   content?: string;
-  /** 文章字数统计 */
+  /** æç« åç±»ID */
+  categoryId?: number;
+  /** æç« å­æ°ç»è®¡ */
   wordCount?: number;
-  /** 预计阅读时间 */
+  /** é¢è®¡éè¯»æ¶é´ */
   readingTime?: number;
-  /** 文章封面图URL */
+  /** æç« å°é¢å¾URL */
   coverImages?: ImageMediaResourceList;
-  /** 文章作者信息 */
+  /** æç« ä½èä¿¡æ¯ */
   author?: AuthorInfo;
-  /** 文章来源 */
+  /** æç« æ¥æº */
   source?: string;
-  /** 文章状态 */
+  /** æç« ç¶æ */
   status?: 'DEFAULT' | 'DRAFT' | 'PUBLISHED' | 'ARCHIVED' | 'DELETED';
-  /** 文章关键词 */
+  /** æç« å³é®è¯ */
   keywords?: string[];
-  /** 文章摘要 */
+  /** æç« æè¦ */
   summary?: string;
 }

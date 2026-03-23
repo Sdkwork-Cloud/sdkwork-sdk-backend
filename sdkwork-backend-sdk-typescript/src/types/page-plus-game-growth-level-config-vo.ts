@@ -3,14 +3,14 @@ import type { PlusGameGrowthLevelConfigVO } from './plus-game-growth-level-confi
 import type { SortObject } from './sort-object';
 
 export interface PagePlusGameGrowthLevelConfigVO {
-  totalElements?: number;
   totalPages?: number;
+  totalElements?: number;
   size?: number;
   content?: PlusGameGrowthLevelConfigVO[];
   number?: number;
   numberOfElements?: number;
-  sort?: SortObject;
   pageable?: PageableObject;
+  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   empty?: boolean;

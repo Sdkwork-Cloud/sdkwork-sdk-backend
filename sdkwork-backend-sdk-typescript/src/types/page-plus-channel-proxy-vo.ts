@@ -3,14 +3,14 @@ import type { PlusChannelProxyVO } from './plus-channel-proxy-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusChannelProxyVO {
-  totalElements?: number;
   totalPages?: number;
+  totalElements?: number;
   size?: number;
   content?: PlusChannelProxyVO[];
   number?: number;
   numberOfElements?: number;
-  sort?: SortObject;
   pageable?: PageableObject;
+  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   empty?: boolean;

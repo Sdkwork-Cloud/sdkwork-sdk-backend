@@ -1,6 +1,6 @@
 import type { PagePlusUserOAuthAccountVO } from './page-plus-user-oauth-account-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusUserOAuthAccountVO {
   /** Response data */
   data: PagePlusUserOAuthAccountVO;

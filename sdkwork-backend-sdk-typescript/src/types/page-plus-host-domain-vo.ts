@@ -3,14 +3,14 @@ import type { PlusHostDomainVO } from './plus-host-domain-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusHostDomainVO {
-  totalElements?: number;
   totalPages?: number;
+  totalElements?: number;
   size?: number;
   content?: PlusHostDomainVO[];
   number?: number;
   numberOfElements?: number;
-  sort?: SortObject;
   pageable?: PageableObject;
+  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   empty?: boolean;

@@ -1,6 +1,6 @@
 import type { PagePlusUserCouponVO } from './page-plus-user-coupon-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusUserCouponVO {
   /** Response data */
   data: PagePlusUserCouponVO;

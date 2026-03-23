@@ -1,6 +1,6 @@
 import type { PagePlusRefundVO } from './page-plus-refund-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusRefundVO {
   /** Response data */
   data: PagePlusRefundVO;

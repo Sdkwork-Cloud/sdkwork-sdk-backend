@@ -1,6 +1,6 @@
 import type { PagePlusImageVO } from './page-plus-image-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusImageVO {
   /** Response data */
   data: PagePlusImageVO;

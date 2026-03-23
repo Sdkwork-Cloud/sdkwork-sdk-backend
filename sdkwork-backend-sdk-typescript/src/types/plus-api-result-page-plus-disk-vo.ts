@@ -1,6 +1,6 @@
 import type { PagePlusDiskVO } from './page-plus-disk-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusDiskVO {
   /** Response data */
   data: PagePlusDiskVO;

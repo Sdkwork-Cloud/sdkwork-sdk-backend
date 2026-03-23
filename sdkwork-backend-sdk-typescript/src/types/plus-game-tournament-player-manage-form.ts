@@ -1,19 +1,19 @@
-/** 棋牌游戏赛事参赛者管理表单 */
+/** æ£çæ¸¸æèµäºåèµèç®¡çè¡¨å */
 export interface PlusGameTournamentPlayerManageForm {
-  /** 参赛状态 */
+  /** åèµç¶æ */
   status?: 'REGISTERED' | 'CHECKED_IN' | 'PLAYING' | 'ADVANCED' | 'ELIMINATED' | 'FINISHED' | 'WITHDRAWN';
-  /** 种子位 */
+  /** ç§å­ä½ */
   seedNo?: number;
-  /** 最终名次 */
+  /** æç»åæ¬¡ */
   rankNo?: number;
-  /** 队伍号 */
+  /** éä¼å· */
   teamNo?: number;
-  /** 赛事成绩值 */
+  /** èµäºæç»©å¼ */
   scoreValue?: number;
-  /** 赛事有效对局数 */
+  /** èµäºææå¯¹å±æ° */
   totalMatchCount?: number;
-  /** 胜场数 */
+  /** èåºæ° */
   winCount?: number;
-  /** 负场数 */
+  /** è´åºæ° */
   loseCount?: number;
 }

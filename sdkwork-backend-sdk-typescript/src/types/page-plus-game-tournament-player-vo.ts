@@ -3,14 +3,14 @@ import type { PlusGameTournamentPlayerVO } from './plus-game-tournament-player-v
 import type { SortObject } from './sort-object';
 
 export interface PagePlusGameTournamentPlayerVO {
-  totalElements?: number;
   totalPages?: number;
+  totalElements?: number;
   size?: number;
   content?: PlusGameTournamentPlayerVO[];
   number?: number;
   numberOfElements?: number;
-  sort?: SortObject;
   pageable?: PageableObject;
+  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   empty?: boolean;

@@ -105,6 +105,7 @@ const client = new SdkworkBackendClient({
 - `client.organizationMember` - organization_member API
 - `client.notification` - notification API
 - `client.note` - note API
+- `client.notary` - notary API
 - `client.news` - news API
 - `client.net` - net API
 - `client.music` - music API
@@ -145,6 +146,8 @@ const client = new SdkworkBackendClient({
 - `client.account` - account API
 - `client.system` - system API
 - `client.search` - search API
+- `client.rtc` - rtc API
+- `client.finance` - finance API
 - `client.auth` - auth API
 
 ## Usage Examples
@@ -270,9 +273,8 @@ const result = await client.shortUrl.listAllEntities(body);
 ### shop
 
 ```typescript
-// Get all shops
-const body = {} as any;
-const result = await client.shop.listAllEntities(body);
+// Get shop decoration
+const result = await client.shop.getDecoration();
 ```
 
 ### share
@@ -426,6 +428,14 @@ const result = await client.notification.listAllEntities(body);
 const result = await client.note.listAll();
 ```
 
+### notary
+
+```typescript
+// Notary record page
+const body = {} as any;
+const result = await client.notary.listRecords(body);
+```
+
 ### news
 
 ```typescript
@@ -437,7 +447,7 @@ const result = await client.news.listAllEntities(body);
 ### net
 
 ```typescript
-// 获取所有域名
+// è·åææåå
 const body = {} as any;
 const result = await client.net.createListAllEntities(body);
 ```
@@ -559,7 +569,7 @@ const result = await client.favorite.listAllEntities(body);
 ```typescript
 // List files
 const params = {} as Record<string, any>;
-const result = await client.disk.getListFiles(params);
+const result = await client.disk.listFiles(params);
 ```
 
 ### detail
@@ -646,7 +656,7 @@ const result = await client.collectionItem.listAllEntities(body);
 ```typescript
 // Get all chat messages
 const body = {} as any;
-const result = await client.chat.createListAllEntities(body);
+const result = await client.chat.listAllEntities(body);
 ```
 
 ### character
@@ -741,6 +751,21 @@ const result = await client.system.listByPage(params);
 const params = {} as Record<string, any>;
 const headers = {} as Record<string, string>;
 const result = await client.search.stop(params, headers);
+```
+
+### rtc
+
+```typescript
+// RTC access rule page
+const body = {} as any;
+const result = await client.rtc.listAccessRules(body);
+```
+
+### finance
+
+```typescript
+// Finance config
+const result = await client.finance.getConfig();
 ```
 
 ### auth

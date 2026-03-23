@@ -1,17 +1,17 @@
-/** 系统角色VO类 */
+/** ç³»ç»è§è²VOç±» */
 export interface PlusRoleVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 角色ID */
+  /** è§è²ID */
   id?: number;
-  /** 角色编码(唯一) */
+  /** è§è²ç¼ç (å¯ä¸) */
   code?: string;
-  /** 角色名称 */
+  /** è§è²åç§° */
   name?: string;
-  /** 角色描述 */
+  /** è§è²æè¿° */
   description?: string;
-  /** 角色状态(ACTIVE:活跃,INACTIVE:未激活,LOCKED:锁定) */
+  /** è§è²ç¶æ(ACTIVE:æ´»è·,INACTIVE:æªæ¿æ´»,LOCKED:éå®) */
   status?: 'ACTIVE' | 'INACTIVE';
 }

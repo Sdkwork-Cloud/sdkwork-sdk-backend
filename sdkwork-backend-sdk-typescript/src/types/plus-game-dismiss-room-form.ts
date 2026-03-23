@@ -1,5 +1,5 @@
-/** 棋牌游戏房间解散表单 */
+/** æ£çæ¸¸ææ¿é´è§£æ£è¡¨å */
 export interface PlusGameDismissRoomForm {
-  /** 解散原因 */
+  /** è§£æ£åå  */
   reason?: string;
 }

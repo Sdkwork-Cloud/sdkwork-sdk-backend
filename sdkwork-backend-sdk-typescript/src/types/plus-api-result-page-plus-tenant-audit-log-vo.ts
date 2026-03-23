@@ -1,6 +1,6 @@
 import type { PagePlusTenantAuditLogVO } from './page-plus-tenant-audit-log-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusTenantAuditLogVO {
   /** Response data */
   data: PagePlusTenantAuditLogVO;

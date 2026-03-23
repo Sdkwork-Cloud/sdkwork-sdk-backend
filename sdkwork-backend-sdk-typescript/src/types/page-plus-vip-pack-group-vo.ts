@@ -3,14 +3,14 @@ import type { PlusVipPackGroupVO } from './plus-vip-pack-group-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusVipPackGroupVO {
-  totalElements?: number;
   totalPages?: number;
+  totalElements?: number;
   size?: number;
   content?: PlusVipPackGroupVO[];
   number?: number;
   numberOfElements?: number;
-  sort?: SortObject;
   pageable?: PageableObject;
+  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   empty?: boolean;

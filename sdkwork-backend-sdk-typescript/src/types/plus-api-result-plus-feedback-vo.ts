@@ -1,6 +1,6 @@
 import type { PlusFeedbackVO } from './plus-feedback-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPlusFeedbackVO {
   /** Response data */
   data: PlusFeedbackVO;

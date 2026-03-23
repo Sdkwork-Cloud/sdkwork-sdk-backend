@@ -1,6 +1,6 @@
 import type { PagePlusPositionVO } from './page-plus-position-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusPositionVO {
   /** Response data */
   data: PagePlusPositionVO;

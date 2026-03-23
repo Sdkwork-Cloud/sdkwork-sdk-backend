@@ -1,25 +1,25 @@
 import type { DiskPermission } from './disk-permission';
 
-/** 磁盘成员VO，封装磁盘成员的核心信息 */
+/** ç£çæåVOï¼å°è£ç£çæåçæ ¸å¿ä¿¡æ¯ */
 export interface PlusDiskMemberVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 最后更新时间 */
+  /** æåæ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 主键ID */
+  /** ä¸»é®ID */
   id?: number;
-  /** 通用唯一标识符UUID */
+  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
   uuid?: string;
-  /** 版本号（乐观锁控制） */
+  /** çæ¬å·ï¼ä¹è§éæ§å¶ï¼ */
   v?: number;
-  /** 关联磁盘ID */
+  /** å³èç£çID */
   diskId?: number;
-  /** 用户ID */
+  /** ç¨æ·ID */
   userId?: number;
-  /** 成员权限集合（位运算表示） */
+  /** æåæééåï¼ä½è¿ç®è¡¨ç¤ºï¼ */
   permission?: DiskPermission;
-  /** 成员备注信息 */
+  /** æåå¤æ³¨ä¿¡æ¯ */
   remark?: string;
-  /** 是否为磁盘所有者 */
+  /** æ¯å¦ä¸ºç£çææè */
   isOwner?: boolean;
 }

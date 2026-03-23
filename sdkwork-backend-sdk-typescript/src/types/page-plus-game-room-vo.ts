@@ -3,14 +3,14 @@ import type { PlusGameRoomVO } from './plus-game-room-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusGameRoomVO {
-  totalElements?: number;
   totalPages?: number;
+  totalElements?: number;
   size?: number;
   content?: PlusGameRoomVO[];
   number?: number;
   numberOfElements?: number;
-  sort?: SortObject;
   pageable?: PageableObject;
+  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   empty?: boolean;

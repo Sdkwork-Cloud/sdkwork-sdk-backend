@@ -1,17 +1,17 @@
-/** VIP权益定义VO */
+/** VIPæçå®ä¹VO */
 export interface PlusVipBenefitVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 权益ID */
+  /** æçID */
   id?: number;
-  /** 权益名称, e.g., '每月免费灵点', '专属客服' */
+  /** æçåç§°, e.g., 'æ¯æåè´¹çµç¹', 'ä¸å±å®¢æ' */
   name?: string;
-  /** 权益的详细描述 */
+  /** æççè¯¦ç»æè¿° */
   description?: string;
-  /** 权益标识符，用于程序内部识别 */
+  /** æçæ è¯ç¬¦ï¼ç¨äºç¨åºåé¨è¯å« */
   benefitKey?: string;
-  /** 权益类型，用于程序内部处理 */
+  /** æçç±»åï¼ç¨äºç¨åºåé¨å¤ç */
   type?: 'DEFAULT' | 'MONTHLY_FREE_POINTS' | 'DEDICATED_SUPPORT' | 'PURCHASE_DISCOUNT' | 'EXCLUSIVE_CONTENT' | 'PRIORITY_SERVICE' | 'BIRTHDAY_GIFT';
 }

@@ -1,7 +1,7 @@
-/** 鍙戦€侀獙璇佺爜璇锋眰琛ㄥ崟 */
+/** éæ¦â¬ä¾ççä½ºççéç°çã¥å´ */
 export interface SendVerificationCodeForm {
   identifier: string;
-  /** 楠岃瘉鏂瑰紡 */
+  /** æ¥ å²çéç°ç´¡ */
   method: 'email' | 'phone' | 'sms';
   type: string;
 }

@@ -1,6 +1,6 @@
 import type { PlusShareVO } from './plus-share-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPlusShareVO {
   /** Response data */
   data: PlusShareVO;

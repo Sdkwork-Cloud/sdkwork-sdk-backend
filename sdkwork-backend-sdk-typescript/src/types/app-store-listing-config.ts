@@ -1,35 +1,35 @@
-/** 应用商店发布配置 */
+/** åºç¨ååºåå¸éç½® */
 export interface AppStoreListingConfig {
-  /** 商店平台 */
+  /** ååºå¹³å° */
   platform?: 'APPLE_APP_STORE' | 'GOOGLE_PLAY';
-  /** 商店中的应用ID */
+  /** ååºä¸­çåºç¨ID */
   storeAppId?: string;
-  /** Android 包名 */
+  /** Android åå */
   packageName?: string;
   /** iOS Bundle ID */
   bundleId?: string;
-  /** 发布轨道 */
+  /** åå¸è½¨é */
   releaseTrack?: 'INTERNAL' | 'ALPHA' | 'BETA' | 'PRODUCTION';
-  /** 隐私政策URL */
+  /** éç§æ¿ç­URL */
   privacyPolicyUrl?: string;
-  /** 服务条款URL */
+  /** æå¡æ¡æ¬¾URL */
   termsOfServiceUrl?: string;
-  /** 支持页URL */
+  /** æ¯æé¡µURL */
   supportUrl?: string;
-  /** 支持邮箱 */
+  /** æ¯æé®ç®± */
   supportEmail?: string;
-  /** 营销页URL */
+  /** è¥éé¡µURL */
   marketingUrl?: string;
-  /** 主分类 */
+  /** ä¸»åç±» */
   category?: string;
-  /** 子分类 */
+  /** å­åç±» */
   subcategory?: string;
-  /** 内容分级 */
+  /** åå®¹åçº§ */
   contentRating?: string;
-  /** 语言列表 */
+  /** è¯­è¨åè¡¨ */
   languages?: string[];
-  /** 国家/地区列表 */
+  /** å½å®¶/å°åºåè¡¨ */
   countries?: string[];
-  /** 应用截图URL列表 */
+  /** åºç¨æªå¾URLåè¡¨ */
   screenshotUrls?: string[];
 }

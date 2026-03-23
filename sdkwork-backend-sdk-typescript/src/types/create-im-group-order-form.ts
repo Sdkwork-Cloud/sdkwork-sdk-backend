@@ -2,8 +2,8 @@ import type { OrderContentItem } from './order-content-item';
 
 /** Create IM group order form */
 export interface CreateImGroupOrderForm {
-  /** 订单内容项列表 */
+  /** è®¢ååå®¹é¡¹åè¡¨ */
   items?: OrderContentItem[];
-  /** 有效期 */
+  /** æææ */
   expireTime?: string;
 }

@@ -1,17 +1,17 @@
 import type { AppInstallPackage } from './app-install-package';
 
-/** 应用安装配置 */
+/** åºç¨å®è£éç½® */
 export interface AppInstallConfig {
-  /** 安装包列表 */
+  /** å®è£ååè¡¨ */
   packages?: AppInstallPackage[];
-  /** 默认安装包ID */
+  /** é»è®¤å®è£åID */
   defaultPackageId?: string;
-  /** 安装命令模板 */
+  /** å®è£å½ä»¤æ¨¡æ¿ */
   installCommand?: string;
-  /** 启动命令模板 */
+  /** å¯å¨å½ä»¤æ¨¡æ¿ */
   launchCommand?: string;
-  /** 卸载命令模板 */
+  /** å¸è½½å½ä»¤æ¨¡æ¿ */
   uninstallCommand?: string;
-  /** 扩展元数据 */
+  /** æ©å±åæ°æ® */
   metadata?: Record<string, unknown>;
 }

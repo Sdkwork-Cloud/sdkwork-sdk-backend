@@ -1,6 +1,6 @@
 import type { PagePlusMemberRelationsVO } from './page-plus-member-relations-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusMemberRelationsVO {
   /** Response data */
   data: PagePlusMemberRelationsVO;

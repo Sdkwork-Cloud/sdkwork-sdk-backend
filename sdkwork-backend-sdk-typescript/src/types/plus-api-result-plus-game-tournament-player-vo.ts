@@ -1,6 +1,6 @@
 import type { PlusGameTournamentPlayerVO } from './plus-game-tournament-player-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPlusGameTournamentPlayerVO {
   /** Response data */
   data: PlusGameTournamentPlayerVO;

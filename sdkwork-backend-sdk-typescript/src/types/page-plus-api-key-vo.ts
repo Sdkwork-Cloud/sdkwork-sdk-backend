@@ -3,14 +3,14 @@ import type { PlusApiKeyVO } from './plus-api-key-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusApiKeyVO {
-  totalElements?: number;
   totalPages?: number;
+  totalElements?: number;
   size?: number;
   content?: PlusApiKeyVO[];
   number?: number;
   numberOfElements?: number;
-  sort?: SortObject;
   pageable?: PageableObject;
+  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   empty?: boolean;

@@ -1,6 +1,6 @@
 import type { GetUrlResult } from './get-url-result';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultGetUrlResult {
   /** Response data */
   data: GetUrlResult;

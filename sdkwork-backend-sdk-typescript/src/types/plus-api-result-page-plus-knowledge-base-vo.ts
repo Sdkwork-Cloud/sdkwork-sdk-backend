@@ -1,6 +1,6 @@
 import type { PagePlusKnowledgeBaseVO } from './page-plus-knowledge-base-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusKnowledgeBaseVO {
   /** Response data */
   data: PagePlusKnowledgeBaseVO;

@@ -1,19 +1,19 @@
 import type { PlusGameTournamentBatchArrangePlayerForm } from './plus-game-tournament-batch-arrange-player-form';
 
-/** 棋牌游戏赛事参赛者批量编排表单 */
+/** æ£çæ¸¸æèµäºåèµèæ¹éç¼æè¡¨å */
 export interface PlusGameTournamentBatchArrangeForm {
-  /** 用户ID集合；为空表示对赛事下全部参赛者执行 */
+  /** ç¨æ·IDéåï¼ä¸ºç©ºè¡¨ç¤ºå¯¹èµäºä¸å¨é¨åèµèæ§è¡ */
   userIds?: number[];
-  /** 显式编排项列表；按列表顺序编排，存在时优先生效 */
+  /** æ¾å¼ç¼æé¡¹åè¡¨ï¼æåè¡¨é¡ºåºç¼æï¼å­å¨æ¶ä¼åçæ */
   arrangePlayers?: PlusGameTournamentBatchArrangePlayerForm[];
-  /** 种子位起始值；为空时自动衔接现有最大种子位 */
+  /** ç§å­ä½èµ·å§å¼ï¼ä¸ºç©ºæ¶èªå¨è¡æ¥ç°ææå¤§ç§å­ä½ */
   seedNoStart?: number;
-  /** 队伍号起始值 */
+  /** éä¼å·èµ·å§å¼ */
   teamNoStart?: number;
-  /** 每组人数，用于自动编排队伍号 */
+  /** æ¯ç»äººæ°ï¼ç¨äºèªå¨ç¼æéä¼å· */
   groupSize?: number;
-  /** 是否覆盖已有种子位 */
+  /** æ¯å¦è¦çå·²æç§å­ä½ */
   overwriteExistingSeedNo?: boolean;
-  /** 是否覆盖已有队伍号 */
+  /** æ¯å¦è¦çå·²æéä¼å· */
   overwriteExistingTeamNo?: boolean;
 }

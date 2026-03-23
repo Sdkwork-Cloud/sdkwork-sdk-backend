@@ -1,7 +1,7 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 import type { QueryParams } from '../types/common';
-import type { PlusApiResultBoolean, PlusApiResultListPlusChannelAccountVO, PlusApiResultListPlusChannelProxyVO, PlusApiResultListPlusChannelResourceVO, PlusApiResultListPlusChannelVO, PlusApiResultPagePlusChannelAccountVO, PlusApiResultPagePlusChannelProxyVO, PlusApiResultPagePlusChannelResourceVO, PlusApiResultPagePlusChannelVO, PlusApiResultPlusChannelAccountVO, PlusApiResultPlusChannelProxyVO, PlusApiResultPlusChannelResourceVO, PlusApiResultPlusChannelVO, PlusChannelAccountForm, PlusChannelAccountQueryForm, PlusChannelForm, PlusChannelProxyForm, PlusChannelResourceForm, QueryListForm } from '../types';
+import type { PlusApiResultBoolean, PlusApiResultListPlusChannelAccountVO, PlusApiResultListPlusChannelProxyVO, PlusApiResultListPlusChannelResourceVO, PlusApiResultListPlusChannelVO, PlusApiResultPagePlusChannelAccountVO, PlusApiResultPagePlusChannelProxyVO, PlusApiResultPagePlusChannelResourceVO, PlusApiResultPagePlusChannelVO, PlusApiResultPlusChannelAccountVO, PlusApiResultPlusChannelProxyVO, PlusApiResultPlusChannelResourceVO, PlusApiResultPlusChannelVO, PlusApiResultWechatConnectivityCheckResponse, PlusApiResultWechatDomainVerifyResponse, PlusChannelAccountForm, PlusChannelAccountQueryForm, PlusChannelForm, PlusChannelProxyForm, PlusChannelResourceForm, QueryListForm, WechatConnectivityCheckRequest, WechatDomainVerifyRequest } from '../types';
 
 
 export class ChannelApi {
@@ -79,6 +79,16 @@ export class ChannelApi {
 /** List all channels */
   async createListAllEntitiesChannel(body?: QueryListForm): Promise<PlusApiResultListPlusChannelVO> {
     return this.client.post<PlusApiResultListPlusChannelVO>(backendApiPath(`/channel/list/all`), body);
+  }
+
+/** Verify WeChat official account domains */
+  async verifyWechatDomains(id: string | number, body?: WechatDomainVerifyRequest): Promise<PlusApiResultWechatDomainVerifyResponse> {
+    return this.client.post<PlusApiResultWechatDomainVerifyResponse>(backendApiPath(`/channel/account/${id}/wechat/domain/verify`), body);
+  }
+
+/** Check WeChat official account connectivity */
+  async checkWechatConnectivity(id: string | number, body?: WechatConnectivityCheckRequest): Promise<PlusApiResultWechatConnectivityCheckResponse> {
+    return this.client.post<PlusApiResultWechatConnectivityCheckResponse>(backendApiPath(`/channel/account/${id}/wechat/connectivity/check`), body);
   }
 
 /** Get SMS channel accounts */

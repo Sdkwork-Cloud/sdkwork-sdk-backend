@@ -1,26 +1,26 @@
 import type { HttpApiDefinition } from './http-api-definition';
 import type { PlusToolDefinition } from './plus-tool-definition';
 
-/** AI工具VO类 */
+/** AIå·¥å·VOç±» */
 export interface PlusAiToolVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 工具ID */
+  /** å·¥å·ID */
   id?: number;
-  /** 工具名称 */
+  /** å·¥å·åç§° */
   name?: string;
-  /** 工具描述 */
+  /** å·¥å·æè¿° */
   description?: string;
-  /** 工具类型(HTTP_API:HTTP接口,FUNCTION:函数,PLUGIN:插件) */
+  /** å·¥å·ç±»å(HTTP_API:HTTPæ¥å£,FUNCTION:å½æ°,PLUGIN:æä»¶) */
   type?: 'HTTP' | 'TOOL' | 'MCP' | 'SCRIPT';
-  /** 工具状态(DRAFT:草稿,PUBLISHED:已发布,DEPRECATED:已弃用) */
+  /** å·¥å·ç¶æ(DRAFT:èç¨¿,PUBLISHED:å·²åå¸,DEPRECATED:å·²å¼ç¨) */
   status?: 'ACTIVE' | 'INACTIVE';
-  /** 是否启用(true:启用,false:禁用) */
+  /** æ¯å¦å¯ç¨(true:å¯ç¨,false:ç¦ç¨) */
   enabled?: boolean;
-  /** HTTP API定义(JSON格式) */
+  /** HTTP APIå®ä¹(JSONæ ¼å¼) */
   httpApiDefinition?: HttpApiDefinition;
-  /** 工具定义(JSON格式) */
+  /** å·¥å·å®ä¹(JSONæ ¼å¼) */
   toolDefinition?: PlusToolDefinition;
 }

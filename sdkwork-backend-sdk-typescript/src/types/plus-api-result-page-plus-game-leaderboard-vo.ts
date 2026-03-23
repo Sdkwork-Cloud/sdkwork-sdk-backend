@@ -1,6 +1,6 @@
 import type { PagePlusGameLeaderboardVO } from './page-plus-game-leaderboard-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusGameLeaderboardVO {
   /** Response data */
   data: PagePlusGameLeaderboardVO;

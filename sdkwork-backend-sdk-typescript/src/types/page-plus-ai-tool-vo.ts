@@ -3,14 +3,14 @@ import type { PlusAiToolVO } from './plus-ai-tool-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusAiToolVO {
-  totalElements?: number;
   totalPages?: number;
+  totalElements?: number;
   size?: number;
   content?: PlusAiToolVO[];
   number?: number;
   numberOfElements?: number;
-  sort?: SortObject;
   pageable?: PageableObject;
+  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   empty?: boolean;

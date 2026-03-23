@@ -1,15 +1,15 @@
-/** 妫嬬墝娓告垙鐜╁缁熻鏌ヨ琛ㄥ崟 */
+/** å¦«å¬¬å¢å¨ååéâîç¼ç»î¸éã¨îçã¥å´ */
 export interface PlusGameStatsQueryForm {
-  /** 鐜╁鐢ㄦ埛ID */
+  /** éâîé¢ã¦åID */
   userId: number;
-  /** 鐜╂硶绫诲瀷 */
+  /** éâç¡¶ç»«è¯²ç· */
   gameType: 'INTERNATIONAL_CHESS' | 'CHINESE_CHESS' | 'GOMOKU' | 'JUNQI' | 'LANDLORD' | 'SHENG_JI' | 'TUO_LA_JI' | 'TEXAS_HOLDEM' | 'MAHJONG' | 'CUSTOM';
-  /** 鐜╂硶妯″紡缂栫爜 */
+  /** éâç¡¶å¦¯â³ç´¡ç¼æ «ç */
   gameModeCode?: string;
-  /** 璧涘鏍囪瘑 */
+  /** ç§æ¶îéåªç */
   seasonKey?: string;
-  /** 缁熻鑼冨洿绫诲瀷 */
+  /** ç¼ç»î¸é¼å¨æ´¿ç»«è¯²ç· */
   scopeType?: 'GLOBAL' | 'GAME' | 'MODE' | 'FRIEND' | 'CLUB' | 'REGION' | 'TOURNAMENT';
-  /** 缁熻鑼冨洿褰掑睘ID */
+  /** ç¼ç»î¸é¼å¨æ´¿è¤°æçID */
   scopeOwnerId?: number;
 }

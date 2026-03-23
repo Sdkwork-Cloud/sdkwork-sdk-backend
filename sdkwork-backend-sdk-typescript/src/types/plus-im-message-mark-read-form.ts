@@ -1,5 +1,5 @@
-/** IM娑堟伅宸茶璇锋眰鍙傛暟 */
+/** IMå¨å ä¼å®¸è¶î°çéç°éåæ */
 export interface PlusImMessageMarkReadForm {
-  /** 浼氳瘽ID */
+  /** æµ¼æ°³ç½ID */
   conversationId: number;
 }

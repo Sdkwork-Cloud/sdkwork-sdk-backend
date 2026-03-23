@@ -1,38 +1,38 @@
 import type { DnsServers } from './dns-servers';
 import type { PlusDnsRecordVO } from './plus-dns-record-vo';
 
-/** 域名管理VO */
+/** ååç®¡çVO */
 export interface PlusHostDomainVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 主键ID，由数据库自动生成 */
+  /** ä¸»é®IDï¼ç±æ°æ®åºèªå¨çæ */
   id?: number;
-  /** 通用唯一标识符UUID */
+  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
   uuid?: string;
-  /** 域名（例如：example.com） */
+  /** ååï¼ä¾å¦ï¼example.comï¼ */
   domainName?: string;
-  /** 顶级域名（例如：com, cn, net） */
+  /** é¡¶çº§ååï¼ä¾å¦ï¼com, cn, netï¼ */
   tld?: string;
-  /** 注册商 */
+  /** æ³¨åå */
   registrar?: string;
-  /** 所属用户ID */
+  /** æå±ç¨æ·ID */
   ownerId?: number;
-  /** 注册时间 */
+  /** æ³¨åæ¶é´ */
   registeredAt?: string;
-  /** 过期时间 */
+  /** è¿ææ¶é´ */
   expiredAt?: string;
-  /** 域名状态（ACTIVE-正常, EXPIRED-过期, PENDING- pending, SUSPENDED- suspended 等） */
+  /** ååç¶æï¼ACTIVE-æ­£å¸¸, EXPIRED-è¿æ, PENDING- pending, SUSPENDED- suspended ç­ï¼ */
   status?: 'ACTIVE' | 'EXPIRED' | 'PENDING' | 'SUSPENDED' | 'DELETED';
-  /** DNS服务器列表 */
+  /** DNSæå¡å¨åè¡¨ */
   dnsServers?: DnsServers;
-  /** 解析状态（NORMAL-正常 / ABnormal-异常） */
+  /** è§£æç¶æï¼NORMAL-æ­£å¸¸ / ABnormal-å¼å¸¸ï¼ */
   resolutionStatus?: 'NORMAL' | 'ERROR' | 'PAUSED' | 'FAILED';
-  /** 是否自动续费 */
+  /** æ¯å¦èªå¨ç»­è´¹ */
   autoRenew?: boolean;
-  /** 备注信息 */
+  /** å¤æ³¨ä¿¡æ¯ */
   remark?: string;
-  /** 关联的DNS解析记录列表 */
+  /** å³èçDNSè§£æè®°å½åè¡¨ */
   dnsRecords?: PlusDnsRecordVO[];
 }

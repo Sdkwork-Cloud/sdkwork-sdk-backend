@@ -1,10 +1,10 @@
 import type { AssetMediaResource } from './asset-media-resource';
 import type { AudioMediaResource } from './audio-media-resource';
 
-/** 音频媒体资源列表 */
+/** é³é¢åªä½èµæºåè¡¨ */
 export interface AudioMediaResourceList {
-  /** 音频资源列表 */
+  /** é³é¢èµæºåè¡¨ */
   audios?: AudioMediaResource[];
-  /** 通用资源列表 */
+  /** éç¨èµæºåè¡¨ */
   resources?: AssetMediaResource[];
 }

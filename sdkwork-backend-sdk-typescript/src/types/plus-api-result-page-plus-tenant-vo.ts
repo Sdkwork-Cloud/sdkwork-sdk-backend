@@ -1,6 +1,6 @@
 import type { PagePlusTenantVO } from './page-plus-tenant-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusTenantVO {
   /** Response data */
   data: PagePlusTenantVO;

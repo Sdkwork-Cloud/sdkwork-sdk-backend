@@ -1,6 +1,6 @@
 import type { PlusAiToolVO } from './plus-ai-tool-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPlusAiToolVO {
   /** Response data */
   data: PlusAiToolVO;

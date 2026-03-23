@@ -4,57 +4,57 @@ import type { FilePermission } from './file-permission';
 import type { PlusTreeParentMetadata } from './plus-tree-parent-metadata';
 import type { TagsContent } from './tags-content';
 
-/** 文件VO类，用于存储文件的元数据信息 */
+/** æä»¶VOç±»ï¼ç¨äºå­å¨æä»¶çåæ°æ®ä¿¡æ¯ */
 export interface PlusFileVO {
   parentUuid?: string;
   parentMetadata?: PlusTreeParentMetadata;
-  /** 文件ID */
+  /** æä»¶ID */
   id?: number;
-  /** 父节点ID */
+  /** ç¶èç¹ID */
   parentId?: number;
-  /** 文件名称 */
+  /** æä»¶åç§° */
   name?: string;
-  /** 文件路径 */
+  /** æä»¶è·¯å¾ */
   path?: string;
-  /** 文件完整路径 */
+  /** æä»¶å®æ´è·¯å¾ */
   fullPath?: string;
-  /** 存储键 */
+  /** å­å¨é® */
   objectKey?: string;
-  /** 文件大小（字节） */
+  /** æä»¶å¤§å°ï¼å­èï¼ */
   size?: number;
-  /** 文件内容类型 */
-  contentType?: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM';
-  /** 文件扩展名 */
+  /** æä»¶åå®¹ç±»å */
+  contentType?: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM' | 'JOB';
+  /** æä»¶æ©å±å */
   extension?: string;
-  /** 文件的存储类别 */
+  /** æä»¶çå­å¨ç±»å« */
   storageClass?: 'STANDARD' | 'REDUCED_REDUNDANCY' | 'STANDARD_IA' | 'ONEZONE_IA' | 'INTELLIGENT_TIERING' | 'GLACIER' | 'DEEP_ARCHIVE';
-  /** 文件的版本ID */
+  /** æä»¶ççæ¬ID */
   versionId?: string;
   /** File resource */
   resource?: FileMediaResource;
-  /** 文件的访问URL */
+  /** æä»¶çè®¿é®URL */
   url?: string;
-  /** 文件上传时间 */
+  /** æä»¶ä¸ä¼ æ¶é´ */
   uploadTime?: string;
-  /** 文件最后访问时间 */
+  /** æä»¶æåè®¿é®æ¶é´ */
   lastAccessTime?: string;
-  /** 文件描述 */
+  /** æä»¶æè¿° */
   description?: string;
-  /** 文件标签 */
+  /** æä»¶æ ç­¾ */
   tags?: TagsContent;
-  /** 文件类型 */
+  /** æä»¶ç±»å */
   fileType?: 'DEFAULT' | 'FILE' | 'DIRECTORY';
-  /** 文件分类 */
+  /** æä»¶åç±» */
   fileCategory?: 'UNKNOWN' | 'DOCUMENT' | 'IMAGE' | 'VIDEO' | 'AUDIO' | 'ARCHIVE' | 'CODE' | 'DATA' | 'PROJECT' | 'OTHER';
   /** File permissions */
   permission?: FilePermission;
-  /** 是否为公开访问 */
+  /** æ¯å¦ä¸ºå¬å¼è®¿é® */
   isPublic?: boolean;
-  /** 置顶时间 */
+  /** ç½®é¡¶æ¶é´ */
   pinnedAt?: string;
-  /** 文件状态 */
+  /** æä»¶ç¶æ */
   status?: 'NORMAL' | 'DELETED' | 'ARCHIVED';
-  /** 文件文件内容 */
+  /** æä»¶æä»¶åå®¹ */
   content?: FileContentObject;
   etag?: string;
 }

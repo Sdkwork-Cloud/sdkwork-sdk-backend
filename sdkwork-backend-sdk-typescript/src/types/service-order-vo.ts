@@ -1,8 +1,8 @@
 /** Service order action result */
 export interface ServiceOrderVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
   /** Order id */
   orderId?: number;

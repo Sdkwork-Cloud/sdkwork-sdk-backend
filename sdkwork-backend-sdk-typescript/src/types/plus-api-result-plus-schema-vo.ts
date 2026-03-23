@@ -1,6 +1,6 @@
 import type { PlusSchemaVO } from './plus-schema-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPlusSchemaVO {
   /** Response data */
   data: PlusSchemaVO;

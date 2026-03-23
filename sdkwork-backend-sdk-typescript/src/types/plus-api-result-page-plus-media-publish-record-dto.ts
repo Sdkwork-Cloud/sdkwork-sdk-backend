@@ -1,6 +1,6 @@
 import type { PagePlusMediaPublishRecordDTO } from './page-plus-media-publish-record-dto';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusMediaPublishRecordDTO {
   /** Response data */
   data: PagePlusMediaPublishRecordDTO;

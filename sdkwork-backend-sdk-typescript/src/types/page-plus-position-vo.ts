@@ -3,14 +3,14 @@ import type { PlusPositionVO } from './plus-position-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusPositionVO {
-  totalElements?: number;
   totalPages?: number;
+  totalElements?: number;
   size?: number;
   content?: PlusPositionVO[];
   number?: number;
   numberOfElements?: number;
-  sort?: SortObject;
   pageable?: PageableObject;
+  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   empty?: boolean;

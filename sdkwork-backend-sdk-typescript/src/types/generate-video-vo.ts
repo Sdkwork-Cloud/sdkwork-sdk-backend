@@ -2,15 +2,15 @@ import type { VideoMediaResourceList } from './video-media-resource-list';
 
 /** Video generation result value object */
 export interface GenerateVideoVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
   /** Request ID for tracking */
   requestId?: string;
   /** Task ID from the generation service */
   taskId?: string;
-  /** 生成任务状态 */
+  /** Task status */
   taskStatus?: string;
   /** Generated video resources */
   videos?: VideoMediaResourceList;

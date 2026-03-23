@@ -1,6 +1,6 @@
 import type { OrderCloseVO } from './order-close-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultOrderCloseVO {
   /** Response data */
   data: OrderCloseVO;

@@ -1,2 +1,2 @@
-/** 动画触发方式 */
+/** å¨ç»è§¦åæ¹å¼ */
 export type PPTAnimationTrigger = 'click' | 'meantime' | 'auto';

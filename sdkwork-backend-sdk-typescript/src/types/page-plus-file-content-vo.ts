@@ -3,14 +3,14 @@ import type { PlusFileContentVO } from './plus-file-content-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusFileContentVO {
-  totalElements?: number;
   totalPages?: number;
+  totalElements?: number;
   size?: number;
   content?: PlusFileContentVO[];
   number?: number;
   numberOfElements?: number;
-  sort?: SortObject;
   pageable?: PageableObject;
+  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   empty?: boolean;

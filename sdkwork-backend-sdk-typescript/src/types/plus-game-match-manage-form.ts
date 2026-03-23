@@ -1,27 +1,27 @@
-/** 棋牌游戏对局管理表单 */
+/** æ£çæ¸¸æå¯¹å±ç®¡çè¡¨å */
 export interface PlusGameMatchManageForm {
-  /** 对局状态 */
+  /** å¯¹å±ç¶æ */
   status?: 'CREATED' | 'RUNNING' | 'PAUSED' | 'SETTLING' | 'FINISHED' | 'ABORTED';
-  /** 当前轮次 */
+  /** å½åè½®æ¬¡ */
   currentRoundNo?: number;
-  /** 最大轮次 */
+  /** æå¤§è½®æ¬¡ */
   maxRoundCount?: number;
-  /** 当前行动座位号 */
+  /** å½åè¡å¨åº§ä½å· */
   currentTurnSeatNo?: number;
-  /** 庄家/先手座位号 */
+  /** åºå®¶/åæåº§ä½å· */
   dealerSeatNo?: number;
-  /** 获胜座位号 */
+  /** è·èåº§ä½å· */
   winnerSeatNo?: number;
-  /** 获胜用户ID */
+  /** è·èç¨æ·ID */
   winnerUserId?: number;
-  /** 是否计入榜单 */
+  /** æ¯å¦è®¡å¥æ¦å */
   leaderboardEligible?: boolean;
-  /** 是否计入统计 */
+  /** æ¯å¦è®¡å¥ç»è®¡ */
   validForStats?: boolean;
-  /** 是否确认结果 */
+  /** æ¯å¦ç¡®è®¤ç»æ */
   resultConfirmed?: boolean;
-  /** 是否异常结束 */
+  /** æ¯å¦å¼å¸¸ç»æ */
   abnormalFinished?: boolean;
-  /** 异常或无效原因 */
+  /** å¼å¸¸ææ æåå  */
   invalidReason?: string;
 }

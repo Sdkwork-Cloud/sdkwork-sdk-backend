@@ -1,6 +1,6 @@
 import type { PlusApiKeyVO } from './plus-api-key-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultListPlusApiKeyVO {
   /** Response data */
   data: PlusApiKeyVO[];

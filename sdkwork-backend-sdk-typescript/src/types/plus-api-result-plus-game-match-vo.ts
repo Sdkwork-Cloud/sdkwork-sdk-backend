@@ -1,6 +1,6 @@
 import type { PlusGameMatchVO } from './plus-game-match-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPlusGameMatchVO {
   /** Response data */
   data: PlusGameMatchVO;

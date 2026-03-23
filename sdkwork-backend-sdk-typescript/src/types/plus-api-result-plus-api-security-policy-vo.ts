@@ -1,6 +1,6 @@
 import type { PlusApiSecurityPolicyVO } from './plus-api-security-policy-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPlusApiSecurityPolicyVO {
   /** Response data */
   data: PlusApiSecurityPolicyVO;

@@ -1,75 +1,75 @@
-/** 棋牌游戏赛事VO */
+/** æ£çæ¸¸æèµäºVO */
 export interface PlusGameTournamentVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 赛事ID */
+  /** èµäºID */
   tournamentId?: number;
-  /** 赛事编号 */
+  /** èµäºç¼å· */
   tournamentNo?: string;
-  /** 赛事名称 */
+  /** èµäºåç§° */
   name?: string;
-  /** 赛事简称 */
+  /** èµäºç®ç§° */
   shortName?: string;
-  /** 赛事描述 */
+  /** èµäºæè¿° */
   description?: string;
-  /** 玩法类型 */
+  /** ç©æ³ç±»å */
   gameType?: 'INTERNATIONAL_CHESS' | 'CHINESE_CHESS' | 'GOMOKU' | 'JUNQI' | 'LANDLORD' | 'SHENG_JI' | 'TUO_LA_JI' | 'TEXAS_HOLDEM' | 'MAHJONG' | 'CUSTOM';
-  /** 玩法模式编码 */
+  /** ç©æ³æ¨¡å¼ç¼ç  */
   gameModeCode?: string;
-  /** 赛事类型 */
+  /** èµäºç±»å */
   tournamentType?: 'LADDER' | 'CHALLENGE' | 'KNOCKOUT' | 'ROUND_ROBIN' | 'TEAM' | 'FESTIVAL';
-  /** 赛事状态 */
+  /** èµäºç¶æ */
   status?: 'DRAFT' | 'REGISTERING' | 'RUNNING' | 'SETTLING' | 'FINISHED' | 'CANCELED';
-  /** 组织者用户ID */
+  /** ç»ç»èç¨æ·ID */
   organizerUserId?: number;
-  /** 俱乐部ID */
+  /** ä¿±ä¹é¨ID */
   clubId?: number;
-  /** 赛季标识 */
+  /** èµå­£æ è¯ */
   seasonKey?: string;
-  /** 地区编码 */
+  /** å°åºç¼ç  */
   regionCode?: string;
-  /** 最少玩家人数 */
+  /** æå°ç©å®¶äººæ° */
   minPlayerCount?: number;
-  /** 最多玩家人数 */
+  /** æå¤ç©å®¶äººæ° */
   maxPlayerCount?: number;
-  /** 队伍规模 */
+  /** éä¼è§æ¨¡ */
   teamSize?: number;
-  /** 是否需要报名 */
+  /** æ¯å¦éè¦æ¥å */
   registrationRequired?: boolean;
-  /** 是否排位赛事 */
+  /** æ¯å¦æä½èµäº */
   ranked?: boolean;
-  /** 是否启用回放 */
+  /** æ¯å¦å¯ç¨åæ¾ */
   replayEnabled?: boolean;
-  /** 报名开始时间 */
+  /** æ¥åå¼å§æ¶é´ */
   signUpStartAt?: string;
-  /** 报名结束时间 */
+  /** æ¥åç»ææ¶é´ */
   signUpEndAt?: string;
-  /** 开始时间 */
+  /** å¼å§æ¶é´ */
   startAt?: string;
-  /** 结束时间 */
+  /** ç»ææ¶é´ */
   endAt?: string;
-  /** 冠军用户ID */
+  /** å åç¨æ·ID */
   winnerUserId?: number;
-  /** 冠军俱乐部ID */
+  /** å åä¿±ä¹é¨ID */
   winnerClubId?: number;
-  /** 总参赛人数 */
+  /** æ»åèµäººæ° */
   totalParticipantCount?: number;
-  /** 总对局数 */
+  /** æ»å¯¹å±æ° */
   totalMatchCount?: number;
-  /** 已报名人数 */
+  /** å·²æ¥åäººæ° */
   registeredCount?: number;
-  /** 已签到人数 */
+  /** å·²ç­¾å°äººæ° */
   checkedInCount?: number;
-  /** 比赛中人数 */
+  /** æ¯èµä¸­äººæ° */
   playingCount?: number;
-  /** 已晋级人数 */
+  /** å·²æçº§äººæ° */
   advancedCount?: number;
-  /** 已淘汰人数 */
+  /** å·²æ·æ±°äººæ° */
   eliminatedCount?: number;
-  /** 已完赛人数 */
+  /** å·²å®èµäººæ° */
   finishedCount?: number;
-  /** 已退赛人数 */
+  /** å·²éèµäººæ° */
   withdrawnCount?: number;
 }

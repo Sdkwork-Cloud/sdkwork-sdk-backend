@@ -1,6 +1,6 @@
 import type { PlusAccountVO } from './plus-account-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPlusAccountVO {
   /** Response data */
   data: PlusAccountVO;

@@ -1,23 +1,23 @@
-/** 订单发货操作VO */
+/** è®¢ååè´§æä½VO */
 export interface OrderShipVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 操作是否成功 */
+  /** æä½æ¯å¦æå */
   success?: boolean;
-  /** 操作结果消息 */
+  /** æä½ç»ææ¶æ¯ */
   message?: string;
-  /** 操作时间 */
+  /** æä½æ¶é´ */
   operationTime?: string;
-  /** 发货的订单ID */
+  /** åè´§çè®¢åID */
   orderId?: number;
-  /** 快递公司 */
+  /** å¿«éå¬å¸ */
   shippingCompany?: string;
-  /** 快递单号 */
+  /** å¿«éåå· */
   trackingNumber?: string;
-  /** 发货时间 */
+  /** åè´§æ¶é´ */
   shipTime?: string;
-  /** 预计到达时间 */
+  /** é¢è®¡å°è¾¾æ¶é´ */
   estimatedArrivalTime?: string;
 }

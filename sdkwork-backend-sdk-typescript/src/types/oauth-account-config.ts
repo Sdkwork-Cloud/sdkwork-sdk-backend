@@ -1,6 +1,6 @@
 import type { AccountConfigMetadata } from './account-config-metadata';
 
-/** OAuth第三方登录账户配置 */
+/** OAuthç¬¬ä¸æ¹ç»å½è´¦æ·éç½® */
 export interface OAuthAccountConfig {
   id?: number;
   uuid?: string;
@@ -11,27 +11,27 @@ export interface OAuthAccountConfig {
   functions?: 'NONE' | 'SPEECH_SYNTHESIS' | 'SPEECH_TRANSCRIPTION' | 'SPEECH_TRANSLATION'[];
   metadata?: AccountConfigMetadata;
   properties?: Record<string, unknown>;
-  /** OAuth提供商类型 */
+  /** OAuthæä¾åç±»å */
   authProvider?: 'WECHAT' | 'QQ' | 'WEIBO' | 'GITHUB' | 'GOOGLE' | 'FACEBOOK' | 'TWITTER' | 'LINKEDIN' | 'MICROSOFT' | 'APPLE' | 'ALIPAY' | 'DINGTALK' | 'GITEE';
-  /** 客户端ID（AppID） */
+  /** å®¢æ·ç«¯IDï¼AppIDï¼ */
   appId?: string;
-  /** 客户端密钥（AppSecret） */
+  /** å®¢æ·ç«¯å¯é¥ï¼AppSecretï¼ */
   appSecret?: string;
-  /** 令牌 */
+  /** ä»¤ç */
   token?: string;
-  /** 回调URL */
+  /** åè°URL */
   redirectUri?: string;
-  /** 授权范围 */
+  /** ææèå´ */
   scope?: string;
-  /** 是否为服务号 */
+  /** æ¯å¦ä¸ºæå¡å· */
   isServiceAccount?: boolean;
   /** Apple Team ID */
   teamId?: string;
   /** Apple Key ID */
   keyId?: string;
-  /** Apple私钥PEM格式内容 */
+  /** Appleç§é¥PEMæ ¼å¼åå®¹ */
   privateKey?: string;
-  /** 支付宝公钥 */
+  /** æ¯ä»å®å¬é¥ */
   publicKey?: string;
   encodingAESKey?: string;
 }

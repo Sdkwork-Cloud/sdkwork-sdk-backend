@@ -1,6 +1,6 @@
 import type { PlusNotesVO } from './plus-notes-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultListPlusNotesVO {
   /** Response data */
   data: PlusNotesVO[];

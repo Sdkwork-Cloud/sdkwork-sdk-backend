@@ -7,26 +7,26 @@ import type { PPTSlideBackground } from './pptslide-background';
 import type { PPTSlideType } from './pptslide-type';
 import type { PPTTurningMode } from './pptturning-mode';
 
-/** PPT幻灯片信息 */
+/** PPTå¹»ç¯çä¿¡æ¯ */
 export interface PlusPptSlide {
-  /** 页面ID */
+  /** é¡µé¢ID */
   id: string;
-  /** 元素集合 */
+  /** åç´ éå */
   elements: PPTBaseElement[];
-  /** 批注 */
+  /** æ¹æ³¨ */
   notes?: PPTNote[];
-  /** 备注 */
+  /** å¤æ³¨ */
   remark?: string;
-  /** 页面背景 */
+  /** é¡µé¢èæ¯ */
   background?: PPTSlideBackground;
-  /** 元素动画集合 */
+  /** åç´ å¨ç»éå */
   animations?: PPTAnimation[];
-  /** 翻页方式 */
+  /** ç¿»é¡µæ¹å¼ */
   turningMode?: PPTTurningMode;
-  /** 章节标签 */
+  /** ç« èæ ç­¾ */
   sectionTag?: PPTSectionTag;
-  /** 页面类型 */
+  /** é¡µé¢ç±»å */
   type?: PPTSlideType;
-  /** 幻灯片内容载荷 */
+  /** å¹»ç¯çåå®¹è½½è· */
   payload?: PlusPptPayload;
 }

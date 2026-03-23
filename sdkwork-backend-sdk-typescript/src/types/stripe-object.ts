@@ -1,19 +1,19 @@
-/** Stripe支付创建订单返回对象 */
+/** Stripeæ¯ä»åå»ºè®¢åè¿åå¯¹è±¡ */
 export interface StripeObject {
-  /** 支付会话ID */
+  /** æ¯ä»ä¼è¯ID */
   sessionId?: string;
-  /** 支付链接，用于H5跳转支付 */
+  /** æ¯ä»é¾æ¥ï¼ç¨äºH5è·³è½¬æ¯ä» */
   paymentUrl?: string;
-  /** 客户端密钥，用于前端初始化支付 */
+  /** å®¢æ·ç«¯å¯é¥ï¼ç¨äºåç«¯åå§åæ¯ä» */
   clientSecret?: string;
-  /** 支付意图ID */
+  /** æ¯ä»æå¾ID */
   paymentIntentId?: string;
-  /** 发布密钥 */
+  /** åå¸å¯é¥ */
   publishableKey?: string;
-  /** 回调URL，用于支付完成后返回 */
+  /** åè°URLï¼ç¨äºæ¯ä»å®æåè¿å */
   returnUrl?: string;
-  /** 交易金额 */
+  /** äº¤æéé¢ */
   amount?: string;
-  /** 货币代码 */
+  /** è´§å¸ä»£ç  */
   currency?: string;
 }

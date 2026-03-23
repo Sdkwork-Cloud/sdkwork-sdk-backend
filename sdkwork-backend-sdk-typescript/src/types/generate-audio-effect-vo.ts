@@ -1,12 +1,12 @@
 export interface GenerateAudioEffectVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 请求ID */
+  /** Request ID */
   requestId?: string;
-  /** 任务ID */
+  /** Task ID */
   taskId?: string;
-  /** 生成任务状态 */
+  /** Task status */
   taskStatus?: string;
 }

@@ -1,11 +1,11 @@
 /** P lu sN ot es Me di aP ub li sh ed Ar ti cl eF or m */
 export interface PlusNotesMediaPublishedArticleForm {
-  /** 鍙戝竷鐢ㄦ埛ID锛堢鐞嗗憳鍙寚瀹氾級 */
+  /** éæç«·é¢ã¦åIDéå ¢î¸éåæ³éîå¯ç¹æ°¾ç´ */
   userId?: number;
-  /** 鍙戝竷骞冲彴 */
+  /** éæç«·éªå²å½´ */
   platform?: 'DEFAULT' | 'WECHAT_OFFICIAL_ACCOUNT' | 'DOUYIN';
-  /** 骞冲彴浜у搧鏍囪瘑锛岄粯璁efault */
+  /** éªå²å½´æµÑæ§éåªçéå²ç²¯çîefault */
   product?: string;
-  /** 宸插彂甯冩枃绔燼rticleId */
+  /** å®¸æå½ç¯å©æç»ç¼rticleId */
   articleId: string;
 }

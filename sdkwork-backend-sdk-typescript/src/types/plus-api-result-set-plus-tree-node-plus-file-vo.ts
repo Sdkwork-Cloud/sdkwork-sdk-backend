@@ -1,6 +1,6 @@
 import type { PlusTreeNodePlusFileVO } from './plus-tree-node-plus-file-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultSetPlusTreeNodePlusFileVO {
   /** Response data */
   data: PlusTreeNodePlusFileVO[];

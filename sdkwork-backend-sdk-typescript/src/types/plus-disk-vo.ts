@@ -1,27 +1,27 @@
-/** 文件存储盘信息VO */
+/** æä»¶å­å¨çä¿¡æ¯VO */
 export interface PlusDiskVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 最后更新时间 */
+  /** æåæ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 主键ID */
+  /** ä¸»é®ID */
   id?: number;
-  /** 通用唯一标识符UUID */
+  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
   uuid?: string;
-  /** 存储盘名称 */
+  /** å­å¨çåç§° */
   name?: string;
-  /** 存储盘所有者类型 */
+  /** å­å¨çææèç±»å */
   owner?: 'DEFAULT' | 'USER' | 'PROJECT' | 'TENANT' | 'SYSTEM' | 'ORGANIZATION';
-  /** 所有者ID */
+  /** ææèID */
   ownerId?: number;
-  /** 总容量（字节） */
+  /** æ»å®¹éï¼å­èï¼ */
   diskSize?: number;
-  /** 已使用容量（字节） */
+  /** å·²ä½¿ç¨å®¹éï¼å­èï¼ */
   usedSize?: number;
-  /** 存储盘描述 */
+  /** å­å¨çæè¿° */
   description?: string;
-  /** 剩余可用容量（字节） */
+  /** å©ä½å¯ç¨å®¹éï¼å­èï¼ */
   remainingSize?: number;
-  /** 存储盘使用率（百分比） */
+  /** å­å¨çä½¿ç¨çï¼ç¾åæ¯ï¼ */
   usageRate?: number;
 }

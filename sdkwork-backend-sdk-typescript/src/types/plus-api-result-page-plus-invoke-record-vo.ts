@@ -1,6 +1,6 @@
 import type { PagePlusInvokeRecordVO } from './page-plus-invoke-record-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusInvokeRecordVO {
   /** Response data */
   data: PagePlusInvokeRecordVO;

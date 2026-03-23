@@ -2,25 +2,25 @@ import type { ImageMediaResource } from './image-media-resource';
 
 /** Chat group creation form */
 export interface PlusImGroupForm {
-  /** 缇ょ粍鍚嶇О */
+  /** ç¼ãç²éå¶Ð */
   name: string;
-  /** 缇ょ粍鎻忚堪 */
+  /** ç¼ãç²é»å¿å ª */
   description?: string;
-  /** 缇ょ粍澶村儚 */
+  /** ç¼ãç²æ¾¶æå */
   avatar?: ImageMediaResource;
-  /** 缇ょ粍鍏憡 */
+  /** ç¼ãç²éîæ¡ */
   announcement?: string;
-  /** 缇ょ粍鎴愬憳鏁伴噺 */
+  /** ç¼ãç²é´æ¬æ³éä¼´åº */
   memberCount: number;
   /** M ax Me mb er s */
   maxMembers: number;
-  /** 缇ょ粍鍒涘缓鑰匢D */
+  /** ç¼ãç²éæ¶ç¼é°å¢D */
   creatorId: number;
-  /** 缇ょ粍绫诲瀷 */
+  /** ç¼ãç²ç»«è¯²ç· */
   type?: 'NORMAL' | 'WORK' | 'INTEREST' | 'SUPPORT';
   /** S ta tu s */
   status?: 'ACTIVE' | 'INACTIVE' | 'DISABLED' | 'DELETED';
-  /** 鏄惁鍏佽鎴愬憳閭€璇锋柊鎴愬憳 */
+  /** éîæéä½½îé´æ¬æ³é­â¬çéæé´æ¬æ³ */
   allowMemberInvite?: boolean;
   /** R eq ui re Ap pr ov al */
   requireApproval?: boolean;

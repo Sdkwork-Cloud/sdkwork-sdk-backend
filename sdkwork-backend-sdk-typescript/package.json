@@ -1,6 +1,6 @@
 {
   "name": "@sdkwork/backend-sdk",
-  "version": "1.0.10",
+  "version": "1.0.13",
   "description": "sdkwork-backend-sdk",
   "author": "SDKWork Team",
   "license": "MIT",
@@ -24,7 +24,7 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@sdkwork/sdk-common": "^1.0.2"
+    "@sdkwork/sdk-common": "file:../../../sdk/sdkwork-sdk-commons/sdkwork-sdk-common-typescript"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",

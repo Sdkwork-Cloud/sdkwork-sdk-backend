@@ -1,39 +1,39 @@
-/** 账户流水VO(包含资金和积分) */
+/** è´¦æ·æµæ°´VO(åå«èµéåç§¯å) */
 export interface PlusAccountHistoryVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 资产类型 (BALANCE-资金, POINT-积分) */
+  /** èµäº§ç±»å (BALANCE-èµé, POINT-ç§¯å) */
   assetType?: 'DEFAULT' | 'BALANCE' | 'POINT' | 'TOKEN';
-  /** 关联的账户ID */
+  /** å³èçè´¦æ·ID */
   accountId?: number;
-  /** 外部交易号或业务唯一标识，用于幂等控制 */
+  /** å¤é¨äº¤æå·æä¸å¡å¯ä¸æ è¯ï¼ç¨äºå¹ç­æ§å¶ */
   transactionId?: string;
-  /** 交易类型 (1-充值, 2-提现, 3-退款, 4-转账, 5-调账, 6-积分获得, 7-积分使用, 8-积分过期, 9-收益) */
+  /** äº¤æç±»å (1-åå¼, 2-æç°, 3-éæ¬¾, 4-è½¬è´¦, 5-è°è´¦, 6-ç§¯åè·å¾, 7-ç§¯åä½¿ç¨, 8-ç§¯åè¿æ, 9-æ¶ç) */
   transactionType?: 'DEFAULT' | 'DEPOSIT' | 'WITHDRAW' | 'REFUND' | 'TRANSFER' | 'ADJUST' | 'INCOME' | 'FROZEN' | 'UNFROZEN' | 'DEDUCT' | 'RECHARGE' | 'CONSUME' | 'POINT_EARN' | 'POINT_USE' | 'POINT_EXPIRE' | 'POINT_TRANSFER' | 'POINT_ADJUST' | 'POINT_REFUND' | 'POINT_FROZEN' | 'POINT_UNFROZEN' | 'TOKEN_DEPOSIT' | 'TOKEN_USE' | 'TOKEN_REFUND' | 'TOKEN_FROZEN' | 'TOKEN_UNFROZEN' | 'TOKEN_TRANSFER' | 'TOKEN_ADJUST' | 'TOKEN_EXPIRE' | 'SYSTEM_ADJUST' | 'OTHER';
-  /** 变动金额 (资金专用) */
+  /** åå¨éé¢ (èµéä¸ç¨) */
   amount?: number;
-  /** 交易前账户余额 (资金专用) */
+  /** äº¤æåè´¦æ·ä½é¢ (èµéä¸ç¨) */
   balanceBefore?: number;
-  /** 交易后账户余额 (资金专用) */
+  /** äº¤æåè´¦æ·ä½é¢ (èµéä¸ç¨) */
   balanceAfter?: number;
-  /** 关联账户ID (如转账时的对方账户) */
+  /** å³èè´¦æ·ID (å¦è½¬è´¦æ¶çå¯¹æ¹è´¦æ·) */
   relatedAccountId?: number;
-  /** 变动积分值 (积分专用) */
+  /** åå¨ç§¯åå¼ (ç§¯åä¸ç¨) */
   pointsChange?: number;
-  /** 变动前账户积分 (积分专用) */
+  /** åå¨åè´¦æ·ç§¯å (ç§¯åä¸ç¨) */
   pointsBefore?: number;
-  /** 变动后账户积分 (积分专用) */
+  /** åå¨åè´¦æ·ç§¯å (ç§¯åä¸ç¨) */
   pointsAfter?: number;
-  /** 来源类型 (1-订单, 2-活动, 3-签到, 4-分享, 5-邀请, 6-系统奖励, 99-其他) */
+  /** æ¥æºç±»å (1-è®¢å, 2-æ´»å¨, 3-ç­¾å°, 4-åäº«, 5-éè¯·, 6-ç³»ç»å¥å±, 99-å¶ä») */
   sourceType?: 'DEFAULT' | 'ORDER' | 'ACTIVITY' | 'SIGN_IN' | 'SHARE' | 'INVITE' | 'SYSTEM' | 'OTHER';
-  /** 来源业务ID (如订单ID、活动ID) */
+  /** æ¥æºä¸å¡ID (å¦è®¢åIDãæ´»å¨ID) */
   sourceId?: string;
-  /** 积分过期时间 (积分专用) */
+  /** ç§¯åè¿ææ¶é´ (ç§¯åä¸ç¨) */
   expiredAt?: string;
-  /** 交易状态 (1-处理中, 2-成功, 3-失败) */
+  /** äº¤æç¶æ (1-å¤çä¸­, 2-æå, 3-å¤±è´¥) */
   status?: 'DEFAULT' | 'PROCESSING' | 'SUCCESS' | 'FAILED' | 'CANCELLED';
-  /** 备注信息，可存JSON或其他文本 */
+  /** å¤æ³¨ä¿¡æ¯ï¼å¯å­JSONæå¶ä»ææ¬ */
   remarks?: string;
 }

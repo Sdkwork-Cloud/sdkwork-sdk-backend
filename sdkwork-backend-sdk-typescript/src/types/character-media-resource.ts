@@ -1,49 +1,49 @@
 import type { TagsContent } from './tags-content';
 
-/** 数字人媒体资源 */
+/** æ°å­äººåªä½èµæº */
 export interface CharacterMediaResource {
-  /** 资源ID */
+  /** èµæºID */
   id?: number;
-  /** 资源UUID */
+  /** èµæºUUID */
   uuid?: string;
-  /** 资源URL */
+  /** èµæºURL */
   url?: string;
-  /** 资源字节数据 */
+  /** èµæºå­èæ°æ® */
   bytes?: string;
-  /** 本地文件 */
+  /** æ¬å°æä»¶ */
   localFile?: unknown;
-  /** 资源Base64编码 */
+  /** èµæºBase64ç¼ç  */
   base64?: string;
-  /** 资源类型 */
+  /** èµæºç±»å */
   type?: 'IMAGE' | 'VIDEO' | 'AUDIO' | 'DOCUMENT' | 'FILE' | 'MUSIC' | 'CHARACTER' | 'MODEL_3D' | 'PPT' | 'CODE';
-  /** 资源MIME类型 */
+  /** èµæºMIMEç±»å */
   mimeType?: string;
-  /** 资源大小(字节) */
+  /** èµæºå¤§å°(å­è) */
   size?: number;
-  /** 角色名称 */
+  /** è§è²åç§° */
   name?: string;
-  /** 资源扩展名 */
+  /** èµæºæ©å±å */
   extension?: string;
-  /** 资源标签 */
+  /** èµæºæ ç­¾ */
   tags?: TagsContent;
-  /** 资源元数据 */
+  /** èµæºåæ°æ® */
   metadata?: Record<string, unknown>;
-  /** AI生成提示词 */
+  /** AIçææç¤ºè¯ */
   prompt?: string;
-  /** 角色类型 */
+  /** è§è²ç±»å */
   characterType?: string;
-  /** 性别 */
+  /** æ§å« */
   gender?: string;
-  /** 年龄段 */
+  /** å¹´é¾æ®µ */
   ageGroup?: string;
-  /** 头像图片URL */
+  /** å¤´åå¾çURL */
   avatarUrl?: string;
-  /** 头像视频URL */
+  /** å¤´åè§é¢URL */
   avatarVideoUrl?: string;
-  /** 关联发音人ID */
+  /** å³èåé³äººID */
   speakerId?: number;
-  /** 外观参数 */
+  /** å¤è§åæ° */
   appearanceParams?: Record<string, unknown>;
-  /** 动画参数 */
+  /** å¨ç»åæ° */
   animationParams?: Record<string, unknown>;
 }

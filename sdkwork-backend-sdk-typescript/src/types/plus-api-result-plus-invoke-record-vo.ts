@@ -1,6 +1,6 @@
 import type { PlusInvokeRecordVO } from './plus-invoke-record-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPlusInvokeRecordVO {
   /** Response data */
   data: PlusInvokeRecordVO;

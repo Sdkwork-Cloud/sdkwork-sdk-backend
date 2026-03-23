@@ -6,20 +6,20 @@ import type { MusicGenerationInput } from './music-generation-input';
 import type { VideoGenerationInput } from './video-generation-input';
 import type { VoiceSpeakerGenerationInput } from './voice-speaker-generation-input';
 
-/** AI生成任务输入参数 */
+/** AIçæä»»å¡è¾å¥åæ° */
 export interface GenerationInputParams {
-  /** 图像生成输入参数 */
+  /** å¾åçæè¾å¥åæ° */
   image?: ImageGenerationInput;
-  /** 视频生成输入参数 */
+  /** è§é¢çæè¾å¥åæ° */
   video?: VideoGenerationInput;
-  /** 音频生成输入参数 */
+  /** é³é¢çæè¾å¥åæ° */
   audio?: AudioGenerationInput;
-  /** 音乐生成输入参数 */
+  /** é³ä¹çæè¾å¥åæ° */
   music?: MusicGenerationInput;
-  /** 语音说话人生成输入参数 */
+  /** è¯­é³è¯´è¯äººçæè¾å¥åæ° */
   voice?: VoiceSpeakerGenerationInput;
-  /** 角色生成输入参数 */
+  /** è§è²çæè¾å¥åæ° */
   character?: CharacterGenerationInput;
-  /** 音效生成输入参数 */
+  /** é³æçæè¾å¥åæ° */
   audioEffect?: AudioEffectGenerationInput;
 }

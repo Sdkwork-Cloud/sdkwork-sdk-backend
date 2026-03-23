@@ -1,23 +1,23 @@
-/** PayPal支付创建订单返回对象 */
+/** PayPalæ¯ä»åå»ºè®¢åè¿åå¯¹è±¡ */
 export interface PaypalObject {
-  /** 支付令牌，用于后续支付操作 */
+  /** æ¯ä»ä»¤çï¼ç¨äºåç»­æ¯ä»æä½ */
   token?: string;
-  /** 支付人ID */
+  /** æ¯ä»äººID */
   payerId?: string;
-  /** 支付链接，用于跳转到PayPal支付页面 */
+  /** æ¯ä»é¾æ¥ï¼ç¨äºè·³è½¬å°PayPalæ¯ä»é¡µé¢ */
   paymentUrl?: string;
-  /** 商户订单号 */
+  /** åæ·è®¢åå· */
   invoice?: string;
-  /** 支付金额 */
+  /** æ¯ä»éé¢ */
   amount?: string;
-  /** 货币代码 */
+  /** è´§å¸ä»£ç  */
   currency?: string;
-  /** 支付状态 */
+  /** æ¯ä»ç¶æ */
   paymentStatus?: string;
-  /** 交易号 */
+  /** äº¤æå· */
   transactionId?: string;
-  /** 返回URL */
+  /** è¿åURL */
   returnUrl?: string;
-  /** 取消URL */
+  /** åæ¶URL */
   cancelUrl?: string;
 }

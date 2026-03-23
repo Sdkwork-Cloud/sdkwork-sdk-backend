@@ -1,6 +1,6 @@
 import type { OrderShipVO } from './order-ship-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultOrderShipVO {
   /** Response data */
   data: OrderShipVO;

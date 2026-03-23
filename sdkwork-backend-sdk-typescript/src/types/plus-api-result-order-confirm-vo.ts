@@ -1,6 +1,6 @@
 import type { OrderConfirmVO } from './order-confirm-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultOrderConfirmVO {
   /** Response data */
   data: OrderConfirmVO;

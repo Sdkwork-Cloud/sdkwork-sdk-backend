@@ -1,6 +1,6 @@
 import type { PagePlusCharacterVO } from './page-plus-character-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusCharacterVO {
   /** Response data */
   data: PagePlusCharacterVO;

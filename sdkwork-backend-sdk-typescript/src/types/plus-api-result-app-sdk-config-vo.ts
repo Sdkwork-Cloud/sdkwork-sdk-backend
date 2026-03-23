@@ -1,6 +1,6 @@
 import type { AppSdkConfigVO } from './app-sdk-config-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultAppSdkConfigVO {
   /** Response data */
   data: AppSdkConfigVO;

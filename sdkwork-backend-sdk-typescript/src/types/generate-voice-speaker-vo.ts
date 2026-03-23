@@ -1,31 +1,31 @@
 import type { AudioMediaResourceList } from './audio-media-resource-list';
 
-/** 语音说话人生成结果VO */
+/** è¯­é³è¯´è¯äººçæç»æVO */
 export interface GenerateVoiceSpeakerVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 请求ID */
+  /** Request ID */
   requestId?: string;
-  /** 任务ID */
+  /** Task ID */
   taskId?: string;
-  /** 生成任务状态 */
+  /** Task status */
   taskStatus?: string;
-  /** 生成的语音资源列表 */
+  /** çæçè¯­é³èµæºåè¡¨ */
   voiceResources?: AudioMediaResourceList;
-  /** 语音说话人ID */
+  /** è¯­é³è¯´è¯äººID */
   voiceSpeakerId?: string;
-  /** 语音说话人名称 */
+  /** è¯­é³è¯´è¯äººåç§° */
   voiceSpeakerName?: string;
-  /** 语音说话人类型 */
+  /** è¯­é³è¯´è¯äººç±»å */
   voiceType?: string;
-  /** 语音说话人风格 */
+  /** è¯­é³è¯´è¯äººé£æ ¼ */
   voiceStyle?: string;
-  /** 生成的模型名称 */
+  /** çæçæ¨¡ååç§° */
   model?: string;
-  /** 生成耗时（毫秒） */
+  /** çæèæ¶ï¼æ¯«ç§ï¼ */
   duration?: number;
-  /** 错误信息 */
+  /** éè¯¯ä¿¡æ¯ */
   errorMessage?: string;
 }

@@ -1,6 +1,6 @@
 import type { PagePlusAiPromptVO } from './page-plus-ai-prompt-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusAiPromptVO {
   /** Response data */
   data: PagePlusAiPromptVO;

@@ -1,6 +1,6 @@
 import type { PlusConversationVO } from './plus-conversation-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPlusConversationVO {
   /** Response data */
   data: PlusConversationVO;

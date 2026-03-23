@@ -1,65 +1,65 @@
 import type { PlusGameLeaderboardEntryVO } from './plus-game-leaderboard-entry-vo';
 
-/** 棋牌游戏排行榜VO */
+/** æ£çæ¸¸ææè¡æ¦VO */
 export interface PlusGameLeaderboardVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 榜单ID */
+  /** æ¦åID */
   leaderboardId?: number;
-  /** 榜单编号 */
+  /** æ¦åç¼å· */
   leaderboardNo?: string;
-  /** 榜单名称 */
+  /** æ¦ååç§° */
   name?: string;
-  /** 榜单简称 */
+  /** æ¦åç®ç§° */
   shortName?: string;
-  /** 玩法类型 */
+  /** ç©æ³ç±»å */
   gameType?: 'INTERNATIONAL_CHESS' | 'CHINESE_CHESS' | 'GOMOKU' | 'JUNQI' | 'LANDLORD' | 'SHENG_JI' | 'TUO_LA_JI' | 'TEXAS_HOLDEM' | 'MAHJONG' | 'CUSTOM';
-  /** 玩法模式编码 */
+  /** ç©æ³æ¨¡å¼ç¼ç  */
   gameModeCode?: string;
-  /** 排行类型 */
+  /** æè¡ç±»å */
   rankingType?: 'SCORE' | 'RATING' | 'WIN_RATE' | 'WIN_COUNT' | 'STREAK' | 'PROFIT';
-  /** 榜单周期类型 */
+  /** æ¦åå¨æç±»å */
   periodType?: 'HOUR' | 'DAY' | 'WEEK' | 'MONTH' | 'QUARTER' | 'YEAR' | 'SEASON';
-  /** 榜单范围类型 */
+  /** æ¦åèå´ç±»å */
   scopeType?: 'GLOBAL' | 'GAME' | 'MODE' | 'FRIEND' | 'CLUB' | 'REGION' | 'TOURNAMENT';
-  /** 榜单范围归属ID */
+  /** æ¦åèå´å½å±ID */
   scopeOwnerId?: number;
-  /** 榜单范围名称 */
+  /** æ¦åèå´åç§° */
   scopeName?: string;
-  /** 赛季标识 */
+  /** èµå­£æ è¯ */
   seasonKey?: string;
-  /** 俱乐部ID */
+  /** ä¿±ä¹é¨ID */
   clubId?: number;
-  /** 赛事ID */
+  /** èµäºID */
   tournamentId?: number;
-  /** 地区编码 */
+  /** å°åºç¼ç  */
   regionCode?: string;
-  /** 榜单状态 */
+  /** æ¦åç¶æ */
   status?: 'DRAFT' | 'CALCULATING' | 'ACTIVE' | 'SETTLING' | 'SETTLED' | 'ARCHIVED';
-  /** 是否仅统计排位 */
+  /** æ¯å¦ä»ç»è®¡æä½ */
   rankedOnly?: boolean;
-  /** 是否统计好友房 */
+  /** æ¯å¦ç»è®¡å¥½åæ¿ */
   includeFriendRoom?: boolean;
-  /** 是否统计赛事房 */
+  /** æ¯å¦ç»è®¡èµäºæ¿ */
   includeTournamentRoom?: boolean;
-  /** 是否统计俱乐部房 */
+  /** æ¯å¦ç»è®¡ä¿±ä¹é¨æ¿ */
   includeClubRoom?: boolean;
-  /** 最少对局门槛 */
+  /** æå°å¯¹å±é¨æ§ */
   minMatchCount?: number;
-  /** 胜率榜最少对局门槛 */
+  /** èçæ¦æå°å¯¹å±é¨æ§ */
   minWinRateMatchCount?: number;
-  /** 参与人数 */
+  /** åä¸äººæ° */
   totalParticipantCount?: number;
-  /** 周期开始时间 */
+  /** å¨æå¼å§æ¶é´ */
   periodStartAt?: string;
-  /** 周期结束时间 */
+  /** å¨æç»ææ¶é´ */
   periodEndAt?: string;
-  /** 发布时间 */
+  /** åå¸æ¶é´ */
   publishedAt?: string;
-  /** 结算时间 */
+  /** ç»ç®æ¶é´ */
   settledAt?: string;
-  /** 榜单头部明细 */
+  /** æ¦åå¤´é¨æç» */
   entries?: PlusGameLeaderboardEntryVO[];
 }

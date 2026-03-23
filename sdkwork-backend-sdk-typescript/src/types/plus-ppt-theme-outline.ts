@@ -1,9 +1,9 @@
-/** 轮廓效果设置 */
+/** è½®å»ææè®¾ç½® */
 export interface PlusPptThemeOutline {
-  /** 轮廓线宽度(像素) */
+  /** è½®å»çº¿å®½åº¦(åç´ ) */
   width: number;
-  /** 轮廓线颜色 */
+  /** è½®å»çº¿é¢è² */
   color: string;
-  /** 轮廓线样式 */
+  /** è½®å»çº¿æ ·å¼ */
   style: 'solid' | 'dashed' | 'dotted' | 'double';
 }

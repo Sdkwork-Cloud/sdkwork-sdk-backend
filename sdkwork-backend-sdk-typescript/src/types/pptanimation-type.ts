@@ -1,2 +1,2 @@
-/** 动画类型 */
+/** å¨ç»ç±»å */
 export type PPTAnimationType = 'in' | 'out' | 'attention';

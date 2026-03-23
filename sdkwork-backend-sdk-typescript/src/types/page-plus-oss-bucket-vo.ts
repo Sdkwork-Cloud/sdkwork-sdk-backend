@@ -3,14 +3,14 @@ import type { PlusOssBucketVO } from './plus-oss-bucket-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusOssBucketVO {
-  totalElements?: number;
   totalPages?: number;
+  totalElements?: number;
   size?: number;
   content?: PlusOssBucketVO[];
   number?: number;
   numberOfElements?: number;
-  sort?: SortObject;
   pageable?: PageableObject;
+  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   empty?: boolean;

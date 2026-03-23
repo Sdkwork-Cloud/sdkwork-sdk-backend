@@ -1,19 +1,19 @@
-/** 邀请码VO对象 */
+/** éè¯·ç VOå¯¹è±¡ */
 export interface InvitationCodeVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 邀请码值 */
+  /** éè¯·ç å¼ */
   code?: string;
-  /** 创建者ID */
+  /** åå»ºèID */
   creatorUserId?: number;
-  /** 邀请码状态 */
+  /** éè¯·ç ç¶æ */
   status?: 'UNUSED' | 'USED' | 'EXPIRED' | 'INVALID';
-  /** 过期时间 */
+  /** è¿ææ¶é´ */
   expireTime?: string;
-  /** 使用限制次数 */
+  /** ä½¿ç¨éå¶æ¬¡æ° */
   usageLimit?: number;
-  /** 已使用次数 */
+  /** å·²ä½¿ç¨æ¬¡æ° */
   usedCount?: number;
 }

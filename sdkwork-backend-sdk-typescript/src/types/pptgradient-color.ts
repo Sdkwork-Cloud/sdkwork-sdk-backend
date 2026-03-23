@@ -1,7 +1,7 @@
-/** 渐变颜色 */
+/** æ¸åé¢è² */
 export interface PPTGradientColor {
-  /** 百分比位置 */
+  /** ç¾åæ¯ä½ç½® */
   pos: number;
-  /** 颜色 */
+  /** é¢è² */
   color: string;
 }

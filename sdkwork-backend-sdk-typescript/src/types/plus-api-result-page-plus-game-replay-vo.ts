@@ -1,6 +1,6 @@
 import type { PagePlusGameReplayVO } from './page-plus-game-replay-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusGameReplayVO {
   /** Response data */
   data: PagePlusGameReplayVO;

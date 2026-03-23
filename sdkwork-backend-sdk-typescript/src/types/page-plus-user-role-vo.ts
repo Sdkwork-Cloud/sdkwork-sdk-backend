@@ -3,14 +3,14 @@ import type { PlusUserRoleVO } from './plus-user-role-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusUserRoleVO {
-  totalElements?: number;
   totalPages?: number;
+  totalElements?: number;
   size?: number;
   content?: PlusUserRoleVO[];
   number?: number;
   numberOfElements?: number;
-  sort?: SortObject;
   pageable?: PageableObject;
+  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   empty?: boolean;

@@ -6,48 +6,48 @@ import type { MusicMediaResource } from './music-media-resource';
 import type { TagsContent } from './tags-content';
 import type { VideoMediaResource } from './video-media-resource';
 
-/** 媒体资源包装类 */
+/** åªä½èµæºåè£ç±» */
 export interface AssetMediaResource {
-  /** 资源ID */
+  /** èµæºID */
   id?: number;
-  /** 资源UUID */
+  /** èµæºUUID */
   uuid?: string;
-  /** 资源URL */
+  /** èµæºURL */
   url?: string;
-  /** 资源字节数据 */
+  /** èµæºå­èæ°æ® */
   bytes?: string;
-  /** 本地文件 */
+  /** æ¬å°æä»¶ */
   localFile?: unknown;
-  /** 资源Base64编码 */
+  /** èµæºBase64ç¼ç  */
   base64?: string;
-  /** 资源类型 */
+  /** èµæºç±»å */
   type?: 'IMAGE' | 'VIDEO' | 'AUDIO' | 'DOCUMENT' | 'FILE' | 'MUSIC' | 'CHARACTER' | 'MODEL_3D' | 'PPT' | 'CODE';
-  /** 资源MIME类型 */
+  /** èµæºMIMEç±»å */
   mimeType?: string;
-  /** 资源大小(字节) */
+  /** èµæºå¤§å°(å­è) */
   size?: number;
-  /** 资源名称 */
+  /** èµæºåç§° */
   name?: string;
-  /** 资源扩展名 */
+  /** èµæºæ©å±å */
   extension?: string;
-  /** 资源标签 */
+  /** èµæºæ ç­¾ */
   tags?: TagsContent;
-  /** 资源元数据 */
+  /** èµæºåæ°æ® */
   metadata?: Record<string, unknown>;
-  /** AI生成提示词 */
+  /** AIçææç¤ºè¯ */
   prompt?: string;
-  /** 图片资源 */
+  /** å¾çèµæº */
   image?: ImageMediaResource;
-  /** 视频资源 */
+  /** è§é¢èµæº */
   video?: VideoMediaResource;
-  /** 音频资源 */
+  /** é³é¢èµæº */
   audio?: AudioMediaResource;
-  /** 音乐资源 */
+  /** é³ä¹èµæº */
   music?: MusicMediaResource;
-  /** 数字人/角色资源 */
+  /** æ°å­äºº/è§è²èµæº */
   character?: CharacterMediaResource;
-  /** 文件资源 */
+  /** æä»¶èµæº */
   file?: FileMediaResource;
-  /** 扩展属性 */
+  /** æ©å±å±æ§ */
   extraProps?: Record<string, unknown>;
 }

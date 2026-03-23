@@ -2,9 +2,9 @@ import type { PlusColumnVO } from './plus-column-vo';
 
 /** Table view object */
 export interface PlusTableVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
   /** Table ID */
   id?: number;

@@ -1,6 +1,6 @@
 import type { PlusGameGrowthLevelConfigVO } from './plus-game-growth-level-config-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPlusGameGrowthLevelConfigVO {
   /** Response data */
   data: PlusGameGrowthLevelConfigVO;

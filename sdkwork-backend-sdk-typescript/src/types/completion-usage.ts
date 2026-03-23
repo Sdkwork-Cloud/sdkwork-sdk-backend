@@ -1,20 +1,20 @@
 import type { CompletionTokensDetails } from './completion-tokens-details';
 import type { PromptTokensDetails } from './prompt-tokens-details';
 
-/** 完成响应的使用统计信息，包含token使用情况 */
+/** å®æååºçä½¿ç¨ç»è®¡ä¿¡æ¯ï¼åå«tokenä½¿ç¨æåµ */
 export interface CompletionUsage {
-  /** 提示词使用的token数量 */
+  /** æç¤ºè¯ä½¿ç¨çtokenæ°é */
   prompt_tokens: number;
-  /** 响应内容使用的token数量 */
+  /** ååºåå®¹ä½¿ç¨çtokenæ°é */
   completion_tokens: number;
-  /** 总token使用数量 */
+  /** æ»tokenä½¿ç¨æ°é */
   total_tokens: number;
-  /** 用户 prompt 中，命中上下文缓存的 token 数 */
+  /** ç¨æ· prompt ä¸­ï¼å½ä¸­ä¸ä¸æç¼å­ç token æ° */
   prompt_cache_hit_tokens: number;
-  /** 用户 prompt 中，未命中上下文缓存的 token 数 */
+  /** ç¨æ· prompt ä¸­ï¼æªå½ä¸­ä¸ä¸æç¼å­ç token æ° */
   prompt_cache_miss_tokens: number;
-  /** 提示词缓存token详情 */
+  /** æç¤ºè¯ç¼å­tokenè¯¦æ */
   prompt_tokens_details?: PromptTokensDetails;
-  /** 响应内容token详情 */
+  /** ååºåå®¹tokenè¯¦æ */
   completion_tokens_details?: CompletionTokensDetails;
 }

@@ -1,6 +1,6 @@
 import type { AccountExchangeRateVO } from './account-exchange-rate-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultAccountExchangeRateVO {
   /** Response data */
   data: AccountExchangeRateVO;

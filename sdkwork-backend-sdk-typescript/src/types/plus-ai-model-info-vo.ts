@@ -7,98 +7,98 @@ import type { TagsContent } from './tags-content';
 
 /** Enhanced AI Model Information Value Object */
 export interface PlusAiModelInfoVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 模型标ID */
+  /** æ¨¡åæ ID */
   objectId?: string;
-  /** 模型标识符(如"gpt-4","claude-3-opus") */
+  /** æ¨¡åæ è¯ç¬¦(å¦"gpt-4","claude-3-opus") */
   model?: string;
-  /** 模型ID */
+  /** æ¨¡åID */
   modelId?: string;
-  /** 规范化模型键 */
+  /** è§èåæ¨¡åé® */
   modelKey?: string;
-  /** 厂商原始模型键 */
+  /** åååå§æ¨¡åé® */
   vendorModel?: string;
-  /** 模型显示名称(如"GPT-4","Claude 3 Opus") */
+  /** æ¨¡åæ¾ç¤ºåç§°(å¦"GPT-4","Claude 3 Opus") */
   name?: string;
-  /** 模型描述 */
+  /** æ¨¡åæè¿° */
   description?: string;
-  /** 模型提供商(如"OpenAI","Anthropic","Hugging Face") */
+  /** æ¨¡åæä¾å(å¦"OpenAI","Anthropic","Hugging Face") */
   channel?: 'DEFAULT' | 'ALIYUN' | 'AWS' | 'APPLE' | 'AZURE' | 'BAIDU' | 'VOLCENGINE' | 'TENCENT' | 'HUAWEI' | 'GOOGLE' | 'META' | 'WECHAT' | 'ALIPAY' | 'UNION_PAY' | 'UNIONPAY' | 'DOUYIN' | 'MICROSOFT' | 'AMAZON' | 'ANTHROPIC' | 'XAI' | 'DEEPSEEK' | 'GROQ' | 'HUGGING_FACE' | 'KUAISHOU' | 'MINIMAX' | 'MISTRAL' | 'MOONSHOT' | 'NVIDIA' | 'OPENAI' | 'OLLAMA' | 'PERPLEXITY' | 'SDKWORK' | 'SILICONFLOW' | 'STEPFUN' | 'XUNFEI' | 'ZHIPU' | 'RAGFLOW' | 'STABILITY' | 'MINDSDB' | 'MEM0' | 'BOCHA' | 'BING' | 'OPEN_ROUTER' | 'STRIPE' | 'PAYPAL' | 'SUNO' | 'VIDU' | 'RUNWAY' | 'MEITUAN' | 'YUNWU' | 'MIDJOURNEY' | 'IDEOGRAM' | 'FLUX' | 'VECTOR_STORE_AZURE' | 'VECTOR_STORE_CASSANDRA' | 'VECTOR_STORE_CHROMA' | 'VECTOR_STORE_COUCHBASE' | 'VECTOR_STORE_ELASTICSEARCH' | 'VECTOR_STORE_GEMFIRE' | 'VECTOR_STORE_MARIADB' | 'VECTOR_STORE_MILVUS' | 'VECTOR_STORE_MONGODB' | 'VECTOR_STORE_NEO4J' | 'VECTOR_STORE_OPENSEARCH' | 'VECTOR_STORE_ORACLE' | 'VECTOR_STORE_PGVECTOR' | 'VECTOR_STORE_PINECONE' | 'VECTOR_STORE_QDRANT' | 'VECTOR_STORE_REDIS' | 'VECTOR_STORE_TYPESENSE' | 'VECTOR_STORE_WEAVIATE';
-  /** 模型厂商 */
+  /** æ¨¡ååå */
   vendor?: 'OPENAI' | 'ANTHROPIC' | 'GOOGLE' | 'META' | 'MICROSOFT' | 'ALIBABA' | 'BAIDU' | 'TENCENT' | 'HUAWEI_CLOUD' | 'IFLYTEK' | 'XAI' | 'AMAZON' | 'ZERO_ONE_AI' | 'ZHIPU_AI' | 'SENSE_TIME' | 'MOONSHOT_AI' | 'DEEPSEEK' | 'MISTRAL_AI' | 'STABILITY_AI' | 'GROQ' | 'HUGGING_FACE' | 'MINIMAX' | 'NVIDIA' | 'OLLAMA' | 'PERPLEXITY' | 'SILICONFLOW' | 'STEPFUN' | 'KUAISHOU';
-  /** 模型版本(如"1.0","2023-05-15") */
+  /** æ¨¡åçæ¬(å¦"1.0","2023-05-15") */
   modelVersion?: string;
-  /** 模型系列(如"GPT","Claude","Llama") */
+  /** æ¨¡åç³»å(å¦"GPT","Claude","Llama") */
   family?: string;
-  /** 模型API端点URL */
+  /** æ¨¡åAPIç«¯ç¹URL */
   apiEndpoint?: string;
-  /** 模型类型(TEXT:文本,IMAGE:图像,VIDEO:视频,AUDIO:音频) */
+  /** æ¨¡åç±»å(TEXT:ææ¬,IMAGE:å¾å,VIDEO:è§é¢,AUDIO:é³é¢) */
   modelType?: 'CHAT' | 'EMBEDDING' | 'IMAGE' | 'TEXT' | 'VIDEO' | 'AUDIO' | 'MUSIC' | 'MODERATION' | 'NEWS' | 'SEARCH' | 'DOCUMENT' | 'CODE' | 'MEMORY' | 'UNKNOWN';
-  /** 定价类型 */
+  /** å®ä»·ç±»å */
   pricingType?: 'FREE' | 'PAID' | 'ENTERPRISE';
-  /** 生命周期阶段 */
+  /** çå½å¨æé¶æ®µ */
   lifecycleStage?: 'PREVIEW' | 'GA' | 'DEPRECATED' | 'EOL';
-  /** 发布日期 */
+  /** åå¸æ¥æ */
   releaseDate?: string;
-  /** 废弃时间 */
+  /** åºå¼æ¶é´ */
   deprecatedAt?: string;
-  /** 上下文token数量 */
+  /** ä¸ä¸ætokenæ°é */
   contextTokens?: number;
-  /** 最大输入token */
+  /** æå¤§è¾å¥token */
   maxInputTokens?: number;
-  /** 最大输出token */
+  /** æå¤§è¾åºtoken */
   maxOutputTokens?: number;
-  /** 支持推理 */
+  /** æ¯ææ¨ç */
   supportReasoning?: boolean;
-  /** 支持多模态 */
+  /** æ¯æå¤æ¨¡æ */
   supportMultimodal?: boolean;
-  /** 支持函数调用 */
+  /** æ¯æå½æ°è°ç¨ */
   supportFunctionCall?: boolean;
-  /** 支持结构化输出 */
+  /** æ¯æç»æåè¾åº */
   supportStructuredOutput?: boolean;
-  /** 支持实时能力 */
+  /** æ¯æå®æ¶è½å */
   supportRealtime?: boolean;
-  /** 支持微调 */
+  /** æ¯æå¾®è° */
   supportFineTuning?: boolean;
-  /** 热度分值 */
+  /** ç­åº¦åå¼ */
   popularityScore?: number;
-  /** 模型所有者/组织 */
+  /** æ¨¡åææè/ç»ç» */
   ownedBy?: string;
-  /** 支持场景 */
+  /** æ¯æåºæ¯ */
   scenes?: SceneContent;
-  /** 模型令牌限制信息 */
+  /** æ¨¡åä»¤çéå¶ä¿¡æ¯ */
   tokenLimit?: ModelLimitInfo;
-  /** 模型功能信息 */
+  /** æ¨¡ååè½ä¿¡æ¯ */
   functionInfo?: ModelFunctionInfo;
-  /** 模型价格信息 */
+  /** æ¨¡åä»·æ ¼ä¿¡æ¯ */
   priceInfo?: ModelPrice;
-  /** 模型元数据及能力信息 */
+  /** æ¨¡ååæ°æ®åè½åä¿¡æ¯ */
   metadata?: ModelMetadata;
-  /** 产品支持信息 */
+  /** äº§åæ¯æä¿¡æ¯ */
   productSupportInfo?: Record<string, unknown>;
-  /** 支持的语音列表(用于文本转语音模型) */
+  /** æ¯æçè¯­é³åè¡¨(ç¨äºææ¬è½¬è¯­é³æ¨¡å) */
   supportedVoices?: string;
-  /** 默认温度设置 */
+  /** é»è®¤æ¸©åº¦è®¾ç½® */
   defaultTemperature?: number;
-  /** 默认top_p设置 */
+  /** é»è®¤top_pè®¾ç½® */
   defaultTopP?: number;
-  /** 默认频率惩罚值 */
+  /** é»è®¤é¢çæ©ç½å¼ */
   defaultFrequencyPenalty?: number;
-  /** 默认存在惩罚值 */
+  /** é»è®¤å­å¨æ©ç½å¼ */
   defaultPresencePenalty?: number;
-  /** 模型状态(active:活跃,deprecated:已弃用) */
+  /** æ¨¡åç¶æ(active:æ´»è·,deprecated:å·²å¼ç¨) */
   status?: 'DEFAULT' | 'ACTIVE' | 'INACTIVE' | 'SUSPENDED' | 'DELETED';
-  /** 总使用次数 */
+  /** æ»ä½¿ç¨æ¬¡æ° */
   usageCount?: number;
-  /** 处理的总令牌数 */
+  /** å¤ççæ»ä»¤çæ° */
   totalTokens?: number;
-  /** 平均响应时间(毫秒) */
+  /** å¹³åååºæ¶é´(æ¯«ç§) */
   avgResponseTime?: number;
-  /** 模型标签(逗号分隔) */
+  /** æ¨¡åæ ç­¾(éå·åé) */
   tags?: TagsContent;
-  /** 附加配置参数(JSON格式) */
+  /** éå éç½®åæ°(JSONæ ¼å¼) */
   configParams?: string;
 }

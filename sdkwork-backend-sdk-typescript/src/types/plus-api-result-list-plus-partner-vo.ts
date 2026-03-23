@@ -1,6 +1,6 @@
 import type { PlusPartnerVO } from './plus-partner-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultListPlusPartnerVO {
   /** Response data */
   data: PlusPartnerVO[];

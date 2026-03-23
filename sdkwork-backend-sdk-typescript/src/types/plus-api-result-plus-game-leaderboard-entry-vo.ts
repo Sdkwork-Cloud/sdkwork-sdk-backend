@@ -1,6 +1,6 @@
 import type { PlusGameLeaderboardEntryVO } from './plus-game-leaderboard-entry-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPlusGameLeaderboardEntryVO {
   /** Response data */
   data: PlusGameLeaderboardEntryVO;

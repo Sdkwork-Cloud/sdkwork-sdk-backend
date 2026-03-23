@@ -1,6 +1,6 @@
 import type { PagePlusApiSecurityPolicyVO } from './page-plus-api-security-policy-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusApiSecurityPolicyVO {
   /** Response data */
   data: PagePlusApiSecurityPolicyVO;

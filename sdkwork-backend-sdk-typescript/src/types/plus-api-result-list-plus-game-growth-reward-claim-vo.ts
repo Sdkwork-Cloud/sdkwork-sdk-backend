@@ -1,6 +1,6 @@
 import type { PlusGameGrowthRewardClaimVO } from './plus-game-growth-reward-claim-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultListPlusGameGrowthRewardClaimVO {
   /** Response data */
   data: PlusGameGrowthRewardClaimVO[];

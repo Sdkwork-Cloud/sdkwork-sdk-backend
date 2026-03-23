@@ -1,59 +1,59 @@
-/** 棋牌游戏回放VO */
+/** æ£çæ¸¸æåæ¾VO */
 export interface PlusGameReplayVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 回放ID */
+  /** åæ¾ID */
   replayId?: number;
-  /** 回放编号 */
+  /** åæ¾ç¼å· */
   replayNo?: string;
-  /** 房间ID */
+  /** æ¿é´ID */
   roomId?: number;
-  /** 对局ID */
+  /** å¯¹å±ID */
   matchId?: number;
-  /** 玩法类型 */
+  /** ç©æ³ç±»å */
   gameType?: 'INTERNATIONAL_CHESS' | 'CHINESE_CHESS' | 'GOMOKU' | 'JUNQI' | 'LANDLORD' | 'SHENG_JI' | 'TUO_LA_JI' | 'TEXAS_HOLDEM' | 'MAHJONG' | 'CUSTOM';
-  /** 房间类型 */
+  /** æ¿é´ç±»å */
   roomType?: 'MATCHMAKING' | 'CLASSIC' | 'FRIEND' | 'TOURNAMENT' | 'PRACTICE' | 'CLUB';
-  /** 玩法模式编码 */
+  /** ç©æ³æ¨¡å¼ç¼ç  */
   gameModeCode?: string;
-  /** 赛季标识 */
+  /** èµå­£æ è¯ */
   seasonKey?: string;
-  /** 俱乐部ID */
+  /** ä¿±ä¹é¨ID */
   clubId?: number;
-  /** 赛事ID */
+  /** èµäºID */
   tournamentId?: number;
-  /** 地区编码 */
+  /** å°åºç¼ç  */
   regionCode?: string;
-  /** 回放归属用户ID */
+  /** åæ¾å½å±ç¨æ·ID */
   ownerUserId?: number;
-  /** 回放标题 */
+  /** åæ¾æ é¢ */
   title?: string;
-  /** 回放状态 */
+  /** åæ¾ç¶æ */
   status?: 'GENERATING' | 'READY' | 'EXPIRED' | 'DELETED';
-  /** 是否公开可见 */
+  /** æ¯å¦å¬å¼å¯è§ */
   publicVisible?: boolean;
-  /** 是否允许分享 */
+  /** æ¯å¦åè®¸åäº« */
   allowShare?: boolean;
-  /** 回放时长 */
+  /** åæ¾æ¶é¿ */
   durationSeconds?: number;
-  /** 动作总数 */
+  /** å¨ä½æ»æ° */
   actionCount?: number;
-  /** 关键帧数量 */
+  /** å³é®å¸§æ°é */
   keyFrameCount?: number;
-  /** 回放存储键 */
+  /** åæ¾å­å¨é® */
   storageKey?: string;
-  /** 封面地址 */
+  /** å°é¢å°å */
   coverUrl?: string;
-  /** 初始局面快照 */
+  /** åå§å±é¢å¿«ç§ */
   boardSnapshot?: Record<string, unknown>;
-  /** 关键帧摘要 */
+  /** å³é®å¸§æè¦ */
   keyFrames?: Record<string, unknown>;
-  /** 开始时间 */
+  /** å¼å§æ¶é´ */
   startedAt?: string;
-  /** 结束时间 */
+  /** ç»ææ¶é´ */
   endedAt?: string;
-  /** 过期时间 */
+  /** è¿ææ¶é´ */
   expiredAt?: string;
 }

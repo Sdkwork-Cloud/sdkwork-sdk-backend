@@ -1,26 +1,26 @@
-/** 棋牌游戏玩法定义查询表单 */
+/** æ£çæ¸¸æç©æ³å®ä¹æ¥è¯¢è¡¨å */
 export interface PlusGameDefinitionQueryForm {
   id?: number;
   createdAtFrom?: string;
   createdAtTo?: string;
-  /** 玩法编码 */
+  /** ç©æ³ç¼ç  */
   code?: string;
-  /** 玩法编码模糊匹配 */
+  /** ç©æ³ç¼ç æ¨¡ç³å¹é */
   codeLike?: string;
-  /** 玩法名称模糊匹配 */
+  /** ç©æ³åç§°æ¨¡ç³å¹é */
   nameLike?: string;
-  /** 玩法类型 */
+  /** ç©æ³ç±»å */
   gameType?: 'INTERNATIONAL_CHESS' | 'CHINESE_CHESS' | 'GOMOKU' | 'JUNQI' | 'LANDLORD' | 'SHENG_JI' | 'TUO_LA_JI' | 'TEXAS_HOLDEM' | 'MAHJONG' | 'CUSTOM';
-  /** 玩法分类 */
+  /** ç©æ³åç±» */
   category?: 'BOARD' | 'CARD' | 'TILE' | 'MIXED';
-  /** 玩法模式编码 */
+  /** ç©æ³æ¨¡å¼ç¼ç  */
   gameModeCode?: string;
-  /** 是否启用 */
+  /** æ¯å¦å¯ç¨ */
   enabled?: boolean;
-  /** 是否支持排位 */
+  /** æ¯å¦æ¯ææä½ */
   ranked?: boolean;
-  /** 是否支持回放 */
+  /** æ¯å¦æ¯æåæ¾ */
   supportsReplay?: boolean;
-  /** 是否支持赛事 */
+  /** æ¯å¦æ¯æèµäº */
   supportsTournament?: boolean;
 }

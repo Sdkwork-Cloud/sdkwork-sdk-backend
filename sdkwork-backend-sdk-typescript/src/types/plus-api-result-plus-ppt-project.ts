@@ -1,6 +1,6 @@
 import type { PlusPptProject } from './plus-ppt-project';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPlusPptProject {
   /** Response data */
   data: PlusPptProject;

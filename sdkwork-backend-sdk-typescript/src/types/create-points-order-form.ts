@@ -2,10 +2,10 @@ import type { OrderContentItem } from './order-content-item';
 
 /** Create points order form */
 export interface CreatePointsOrderForm {
-  /** 订单内容项列表 */
+  /** è®¢ååå®¹é¡¹åè¡¨ */
   items?: OrderContentItem[];
-  /** 积分数量 */
+  /** ç§¯åæ°é */
   pointsAmount?: number;
-  /** 积分有效期 */
+  /** ç§¯åæææ */
   expireTime?: string;
 }

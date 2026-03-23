@@ -3,14 +3,14 @@ import type { PlusNotesVO } from './plus-notes-vo';
 import type { SortObject } from './sort-object';
 
 export interface PagePlusNotesVO {
-  totalElements?: number;
   totalPages?: number;
+  totalElements?: number;
   size?: number;
   content?: PlusNotesVO[];
   number?: number;
   numberOfElements?: number;
-  sort?: SortObject;
   pageable?: PageableObject;
+  sort?: SortObject;
   first?: boolean;
   last?: boolean;
   empty?: boolean;

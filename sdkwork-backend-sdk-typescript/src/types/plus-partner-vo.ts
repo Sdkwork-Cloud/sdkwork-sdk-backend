@@ -1,53 +1,53 @@
 import type { PlusTreeParentMetadata } from './plus-tree-parent-metadata';
 
-/** 分销合作伙伴VO */
+/** åéåä½ä¼ä¼´VO */
 export interface PlusPartnerVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 最后更新时间 */
+  /** æåæ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 主键ID */
+  /** ä¸»é®ID */
   id?: number;
-  /** 通用唯一标识符UUID */
+  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
   uuid?: string;
-  /** 合作伙伴名称/公司名称 */
+  /** åä½ä¼ä¼´åç§°/å¬å¸åç§° */
   name?: string;
-  /** 合作伙伴等级 */
+  /** åä½ä¼ä¼´ç­çº§ */
   level?: 'DEFAULT' | 'NORMAL' | 'SENIOR' | 'STRATEGIC';
-  /** 合作伙伴状态 */
+  /** åä½ä¼ä¼´ç¶æ */
   status?: 'DEFAULT' | 'ACTIVE' | 'SUSPENDED' | 'FROZEN' | 'CLOSED';
-  /** 联系人姓名 */
+  /** èç³»äººå§å */
   contactName?: string;
-  /** 联系电话 */
+  /** èç³»çµè¯ */
   contactPhone?: string;
-  /** 联系邮箱 */
+  /** èç³»é®ç®± */
   contactEmail?: string;
-  /** 公司地址 */
+  /** å¬å¸å°å */
   companyAddress?: string;
-  /** 营业执照号码 */
+  /** è¥ä¸æ§ç§å·ç  */
   businessLicense?: string;
-  /** 结算账户 */
+  /** ç»ç®è´¦æ· */
   settlementAccount?: string;
-  /** 佣金比例 */
+  /** ä½£éæ¯ä¾ */
   commissionRate?: number;
-  /** 累计佣金金额 */
+  /** ç´¯è®¡ä½£ééé¢ */
   totalCommission?: number;
-  /** 可提现佣金金额 */
+  /** å¯æç°ä½£ééé¢ */
   withdrawableCommission?: number;
-  /** 已提现佣金金额 */
+  /** å·²æç°ä½£ééé¢ */
   withdrawnCommission?: number;
-  /** 推广码 */
+  /** æ¨å¹¿ç  */
   promotionCode?: string;
-  /** 上级合作伙伴ID */
+  /** ä¸çº§åä½ä¼ä¼´ID */
   parentId?: number;
-  /** 父级元数据信息（包含所有父级ID路径） */
+  /** ç¶çº§åæ°æ®ä¿¡æ¯ï¼åå«ææç¶çº§IDè·¯å¾ï¼ */
   parentMetadata?: PlusTreeParentMetadata;
-  /** 上级合作伙伴UUID */
+  /** ä¸çº§åä½ä¼ä¼´UUID */
   parentUuid?: string;
-  /** 合作开始时间 */
+  /** åä½å¼å§æ¶é´ */
   cooperationStartTime?: string;
-  /** 合作结束时间 */
+  /** åä½ç»ææ¶é´ */
   cooperationEndTime?: string;
-  /** 备注 */
+  /** å¤æ³¨ */
   remark?: string;
 }

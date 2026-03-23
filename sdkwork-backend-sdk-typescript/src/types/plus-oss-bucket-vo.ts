@@ -1,43 +1,43 @@
-/** OSS存储桶值对象 */
+/** OSSå­å¨æ¡¶å¼å¯¹è±¡ */
 export interface PlusOssBucketVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 最后更新时间 */
+  /** æåæ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 存储桶ID */
+  /** å­å¨æ¡¶ID */
   id?: number;
-  /** 通用唯一标识符UUID */
+  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
   uuid?: string;
-  /** 版本号 */
+  /** çæ¬å· */
   v?: number;
-  /** 用户ID */
+  /** ç¨æ·ID */
   userId?: number;
-  /** 存储桶名称 */
+  /** å­å¨æ¡¶åç§° */
   name?: string;
-  /** 存储桶所在区域 */
+  /** å­å¨æ¡¶æå¨åºå */
   region?: string;
-  /** 模型提供商(如"OpenAI","Anthropic","Hugging Face") */
+  /** æ¨¡åæä¾å(å¦"OpenAI","Anthropic","Hugging Face") */
   channel?: 'DEFAULT' | 'ALIYUN' | 'AWS' | 'APPLE' | 'AZURE' | 'BAIDU' | 'VOLCENGINE' | 'TENCENT' | 'HUAWEI' | 'GOOGLE' | 'META' | 'WECHAT' | 'ALIPAY' | 'UNION_PAY' | 'UNIONPAY' | 'DOUYIN' | 'MICROSOFT' | 'AMAZON' | 'ANTHROPIC' | 'XAI' | 'DEEPSEEK' | 'GROQ' | 'HUGGING_FACE' | 'KUAISHOU' | 'MINIMAX' | 'MISTRAL' | 'MOONSHOT' | 'NVIDIA' | 'OPENAI' | 'OLLAMA' | 'PERPLEXITY' | 'SDKWORK' | 'SILICONFLOW' | 'STEPFUN' | 'XUNFEI' | 'ZHIPU' | 'RAGFLOW' | 'STABILITY' | 'MINDSDB' | 'MEM0' | 'BOCHA' | 'BING' | 'OPEN_ROUTER' | 'STRIPE' | 'PAYPAL' | 'SUNO' | 'VIDU' | 'RUNWAY' | 'MEITUAN' | 'YUNWU' | 'MIDJOURNEY' | 'IDEOGRAM' | 'FLUX' | 'VECTOR_STORE_AZURE' | 'VECTOR_STORE_CASSANDRA' | 'VECTOR_STORE_CHROMA' | 'VECTOR_STORE_COUCHBASE' | 'VECTOR_STORE_ELASTICSEARCH' | 'VECTOR_STORE_GEMFIRE' | 'VECTOR_STORE_MARIADB' | 'VECTOR_STORE_MILVUS' | 'VECTOR_STORE_MONGODB' | 'VECTOR_STORE_NEO4J' | 'VECTOR_STORE_OPENSEARCH' | 'VECTOR_STORE_ORACLE' | 'VECTOR_STORE_PGVECTOR' | 'VECTOR_STORE_PINECONE' | 'VECTOR_STORE_QDRANT' | 'VECTOR_STORE_REDIS' | 'VECTOR_STORE_TYPESENSE' | 'VECTOR_STORE_WEAVIATE';
-  /** 渠道配置ID */
+  /** æ¸ ééç½®ID */
   channelConfigId?: number;
-  /** 存储桶描述信息 */
+  /** å­å¨æ¡¶æè¿°ä¿¡æ¯ */
   description?: string;
-  /** 存储桶状态 */
+  /** å­å¨æ¡¶ç¶æ */
   status?: string;
-  /** 存储桶创建时间 */
+  /** å­å¨æ¡¶åå»ºæ¶é´ */
   creationDate?: string;
-  /** 存储桶ARN */
+  /** å­å¨æ¡¶ARN */
   arn?: string;
-  /** 存储桶访问域名 */
+  /** å­å¨æ¡¶è®¿é®åå */
   endpoint?: string;
-  /** 存储类型 */
+  /** å­å¨ç±»å */
   storageClass?: string;
-  /** 是否启用版本控制 */
+  /** æ¯å¦å¯ç¨çæ¬æ§å¶ */
   versioningEnabled?: boolean;
-  /** 是否加密 */
+  /** æ¯å¦å å¯ */
   encryptionEnabled?: boolean;
-  /** 加密类型 */
+  /** å å¯ç±»å */
   encryptionType?: string;
-  /** 访问控制列表 */
+  /** è®¿é®æ§å¶åè¡¨ */
   acl?: string;
 }

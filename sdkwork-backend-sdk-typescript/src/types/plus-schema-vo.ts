@@ -1,25 +1,25 @@
-/** 数据库Schema定义VO */
+/** æ°æ®åºSchemaå®ä¹VO */
 export interface PlusSchemaVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
   /** Schema ID */
   id?: number;
-  /** Schema名称 */
+  /** Schemaåç§° */
   name?: string;
-  /** Schema描述 */
+  /** Schemaæè¿° */
   description?: string;
-  /** 状态(0-禁用,1-启用) */
+  /** ç¶æ(0-ç¦ç¨,1-å¯ç¨) */
   status?: number;
-  /** 表数量 */
+  /** è¡¨æ°é */
   tableCount?: number;
-  /** 最后同步时间 */
+  /** æååæ­¥æ¶é´ */
   lastSyncTime?: string;
-  /** 是否默认Schema */
+  /** æ¯å¦é»è®¤Schema */
   isDefault?: boolean;
-  /** 所属数据源ID */
+  /** æå±æ°æ®æºID */
   datasourceId?: number;
-  /** 表ID列表 */
+  /** è¡¨IDåè¡¨ */
   tableIds?: number[];
 }

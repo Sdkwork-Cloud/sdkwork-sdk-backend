@@ -1,10 +1,10 @@
-/** VIP套餐分组查询Form */
+/** VIPå¥é¤åç»æ¥è¯¢Form */
 export interface PlusVipPackGroupQueryForm {
   id?: number;
   createdAtFrom?: string;
   createdAtTo?: string;
-  /** 应用ID */
+  /** åºç¨ID */
   appId?: number;
-  /** 应用ID列表 */
+  /** åºç¨IDåè¡¨ */
   appIdIn?: number[];
 }

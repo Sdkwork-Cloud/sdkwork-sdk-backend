@@ -1,34 +1,34 @@
-/** 棋牌游戏回放查询表单 */
+/** æ£çæ¸¸æåæ¾æ¥è¯¢è¡¨å */
 export interface PlusGameReplayQueryForm {
   id?: number;
   createdAtFrom?: string;
   createdAtTo?: string;
-  /** 房间ID */
+  /** æ¿é´ID */
   roomId?: number;
-  /** 对局ID */
+  /** å¯¹å±ID */
   matchId?: number;
-  /** 玩法类型 */
+  /** ç©æ³ç±»å */
   gameType?: 'INTERNATIONAL_CHESS' | 'CHINESE_CHESS' | 'GOMOKU' | 'JUNQI' | 'LANDLORD' | 'SHENG_JI' | 'TUO_LA_JI' | 'TEXAS_HOLDEM' | 'MAHJONG' | 'CUSTOM';
-  /** 房间类型 */
+  /** æ¿é´ç±»å */
   roomType?: 'MATCHMAKING' | 'CLASSIC' | 'FRIEND' | 'TOURNAMENT' | 'PRACTICE' | 'CLUB';
-  /** 玩法模式编码 */
+  /** ç©æ³æ¨¡å¼ç¼ç  */
   gameModeCode?: string;
-  /** 赛季标识 */
+  /** èµå­£æ è¯ */
   seasonKey?: string;
-  /** 俱乐部ID */
+  /** ä¿±ä¹é¨ID */
   clubId?: number;
-  /** 赛事ID */
+  /** èµäºID */
   tournamentId?: number;
-  /** 地区编码 */
+  /** å°åºç¼ç  */
   regionCode?: string;
-  /** 回放归属用户ID */
+  /** åæ¾å½å±ç¨æ·ID */
   ownerUserId?: number;
-  /** 回放标题模糊匹配 */
+  /** åæ¾æ é¢æ¨¡ç³å¹é */
   titleLike?: string;
-  /** 回放状态 */
+  /** åæ¾ç¶æ */
   status?: 'GENERATING' | 'READY' | 'EXPIRED' | 'DELETED';
-  /** 是否公开可见 */
+  /** æ¯å¦å¬å¼å¯è§ */
   publicVisible?: boolean;
-  /** 是否允许分享 */
+  /** æ¯å¦åè®¸åäº« */
   allowShare?: boolean;
 }

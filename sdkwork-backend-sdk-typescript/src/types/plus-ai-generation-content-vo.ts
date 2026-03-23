@@ -1,36 +1,36 @@
 import type { GenerationInputParams } from './generation-input-params';
 import type { GenerationOutput } from './generation-output';
 
-/** AI生成内容详情VO */
+/** AIçæåå®¹è¯¦æVO */
 export interface PlusAiGenerationContentVO {
-  /** 创建时间，实体首次持久化时设置 */
+  /** åå»ºæ¶é´ï¼å®ä½é¦æ¬¡æä¹åæ¶è®¾ç½® */
   createdAt?: string;
-  /** 最后更新时间，实体修改时更新 */
+  /** æåæ´æ°æ¶é´ï¼å®ä½ä¿®æ¹æ¶æ´æ° */
   updatedAt?: string;
-  /** 主键ID，由数据库自动生成 */
+  /** ä¸»é®IDï¼ç±æ°æ®åºèªå¨çæ */
   id?: number;
-  /** 通用唯一标识符UUID */
+  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
   uuid?: string;
-  /** 版本号，用于乐观锁控制 */
+  /** çæ¬å·ï¼ç¨äºä¹è§éæ§å¶ */
   version?: number;
-  /** 生成内容的标题 */
+  /** çæåå®¹çæ é¢ */
   title?: string;
-  /** 生成内容的描述信息 */
+  /** çæåå®¹çæè¿°ä¿¡æ¯ */
   description?: string;
-  /** 内容类型 */
-  contentType?: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM';
-  /** 关联内容ID */
+  /** åå®¹ç±»å */
+  contentType?: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM' | 'JOB';
+  /** å³èåå®¹ID */
   contentId?: number;
-  /** 内容元数据 */
+  /** åå®¹åæ°æ® */
   metadata?: Record<string, unknown>;
-  /** 输入参数 */
+  /** è¾å¥åæ° */
   inputParams?: GenerationInputParams;
-  /** 输出结果 */
+  /** è¾åºç»æ */
   output?: GenerationOutput;
-  /** 生成内容的格式 */
+  /** çæåå®¹çæ ¼å¼ */
   contentFormat?: string;
-  /** 生成内容的存储URL */
+  /** çæåå®¹çå­å¨URL */
   contentUrl?: string;
-  /** 生成内容的文件大小 */
+  /** çæåå®¹çæä»¶å¤§å° */
   fileSize?: number;
 }

@@ -1,6 +1,6 @@
 import type { PlusCollectionItemVO } from './plus-collection-item-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultListPlusCollectionItemVO {
   /** Response data */
   data: PlusCollectionItemVO[];

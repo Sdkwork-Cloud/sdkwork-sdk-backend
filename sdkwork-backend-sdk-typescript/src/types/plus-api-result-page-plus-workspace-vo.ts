@@ -1,6 +1,6 @@
 import type { PagePlusWorkspaceVO } from './page-plus-workspace-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPagePlusWorkspaceVO {
   /** Response data */
   data: PagePlusWorkspaceVO;

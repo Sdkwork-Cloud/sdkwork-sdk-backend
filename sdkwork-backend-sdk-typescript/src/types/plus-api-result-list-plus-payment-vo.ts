@@ -1,6 +1,6 @@
 import type { PlusPaymentVO } from './plus-payment-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultListPlusPaymentVO {
   /** Response data */
   data: PlusPaymentVO[];

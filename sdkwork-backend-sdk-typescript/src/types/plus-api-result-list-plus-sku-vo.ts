@@ -1,6 +1,6 @@
 import type { PlusSkuVO } from './plus-sku-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultListPlusSkuVO {
   /** Response data */
   data: PlusSkuVO[];

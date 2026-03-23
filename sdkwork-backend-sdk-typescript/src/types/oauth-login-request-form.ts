@@ -1,11 +1,11 @@
 /** OAuth login request form */
 export interface OAuthLoginRequestForm {
-  /** OAuth提供商类型 */
+  /** OAuthæä¾åç±»å */
   provider?: 'WECHAT' | 'QQ' | 'WEIBO' | 'GITHUB' | 'GOOGLE' | 'FACEBOOK' | 'TWITTER' | 'LINKEDIN' | 'MICROSOFT' | 'APPLE' | 'ALIPAY' | 'DINGTALK' | 'GITEE';
-  /** 回调URL */
+  /** åè°URL */
   redirectUri?: string;
-  /** 授权范围 */
+  /** ææèå´ */
   scope?: string;
-  /** 状态参数，用于防止CSRF攻击 */
+  /** ç¶æåæ°ï¼ç¨äºé²æ­¢CSRFæ»å» */
   state?: string;
 }

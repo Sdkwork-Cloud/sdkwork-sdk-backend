@@ -1,6 +1,6 @@
 import type { PlusDepartmentVO } from './plus-department-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultListPlusDepartmentVO {
   /** Response data */
   data: PlusDepartmentVO[];

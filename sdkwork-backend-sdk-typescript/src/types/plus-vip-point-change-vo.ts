@@ -1,23 +1,23 @@
-/** VIP积分变动记录VO */
+/** VIPç§¯ååå¨è®°å½VO */
 export interface PlusVipPointChangeVO {
-  /** 创建时间 */
+  /** åå»ºæ¶é´ */
   createdAt?: string;
-  /** 更新时间 */
+  /** æ´æ°æ¶é´ */
   updatedAt?: string;
-  /** 用户ID，关联plus_user表 */
+  /** ç¨æ·IDï¼å³èplus_userè¡¨ */
   userId?: number;
-  /** 变动类型 */
+  /** åå¨ç±»å */
   changeType?: 'DEFAULT' | 'RECHARGE' | 'CONSUME' | 'REWARD' | 'ADJUST' | 'EXPIRE';
-  /** 变动数量(正数为增加，负数为减少) */
+  /** åå¨æ°é(æ­£æ°ä¸ºå¢å ï¼è´æ°ä¸ºåå°) */
   changeAmount?: number;
-  /** 变动前余额 */
+  /** åå¨åä½é¢ */
   beforeBalance?: number;
-  /** 变动后余额 */
+  /** åå¨åä½é¢ */
   afterBalance?: number;
-  /** 业务来源ID(如充值记录ID、订单ID等) */
+  /** ä¸å¡æ¥æºID(å¦åå¼è®°å½IDãè®¢åIDç­) */
   sourceId?: number;
-  /** 业务来源类型 */
+  /** ä¸å¡æ¥æºç±»å */
   sourceType?: 'DEFAULT' | 'PURCHASE' | 'DAILY_REWARD' | 'COUPON_POINTS_EXCHANGE' | 'COUPON_POINTS_ROLLBACK' | 'SYSTEM' | 'OTHER';
-  /** 备注信息 */
+  /** å¤æ³¨ä¿¡æ¯ */
   remark?: string;
 }

@@ -1,6 +1,6 @@
 import type { FileItemVO } from './file-item-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultFileItemVO {
   /** Response data */
   data: FileItemVO;

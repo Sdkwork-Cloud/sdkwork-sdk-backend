@@ -1,0 +1,19 @@
+import type { FinancePageResultFinanceExceptionRecord } from './finance-page-result-finance-exception-record';
+
+/** APIè°ç¨ç»æ */
+export interface PlusApiResultFinancePageResultFinanceExceptionRecord {
+  /** Response data */
+  data: FinancePageResultFinanceExceptionRecord;
+  /** Response code: 2000=success, 4xxx=business failure, 5xxx=server error */
+  code: string;
+  /** Business message */
+  msg: string;
+  /** Request identifier */
+  requestId: string;
+  /** Client IP address */
+  ip?: string;
+  /** Server hostname */
+  hostname?: string;
+  /** Business error name */
+  errorName: string;
+}

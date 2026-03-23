@@ -1,6 +1,6 @@
 import type { PlusGameRoomSeatVO } from './plus-game-room-seat-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPlusGameRoomSeatVO {
   /** Response data */
   data: PlusGameRoomSeatVO;

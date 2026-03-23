@@ -1,28 +1,28 @@
-/** 棋牌游戏战绩查询表单 */
+/** æ£çæ¸¸ææç»©æ¥è¯¢è¡¨å */
 export interface PlusGameRecordQueryForm {
   id?: number;
   createdAtFrom?: string;
   createdAtTo?: string;
-  /** 玩家用户ID，不传表示查询全量战绩 */
+  /** ç©å®¶ç¨æ·IDï¼ä¸ä¼ è¡¨ç¤ºæ¥è¯¢å¨éæç»© */
   userId?: number;
-  /** 房间ID */
+  /** æ¿é´ID */
   roomId?: number;
-  /** 对局ID */
+  /** å¯¹å±ID */
   matchId?: number;
-  /** 赛事ID */
+  /** èµäºID */
   tournamentId?: number;
-  /** 俱乐部ID */
+  /** ä¿±ä¹é¨ID */
   clubId?: number;
-  /** 座位号 */
+  /** åº§ä½å· */
   seatNo?: number;
-  /** 是否获胜 */
+  /** æ¯å¦è·è */
   winner?: boolean;
-  /** 是否逃跑 */
+  /** æ¯å¦éè· */
   escaped?: boolean;
-  /** 玩法类型 */
+  /** ç©æ³ç±»å */
   gameType?: 'INTERNATIONAL_CHESS' | 'CHINESE_CHESS' | 'GOMOKU' | 'JUNQI' | 'LANDLORD' | 'SHENG_JI' | 'TUO_LA_JI' | 'TEXAS_HOLDEM' | 'MAHJONG' | 'CUSTOM';
-  /** 玩法模式编码 */
+  /** ç©æ³æ¨¡å¼ç¼ç  */
   gameModeCode?: string;
-  /** 结果类型 */
+  /** ç»æç±»å */
   resultType?: 'PENDING' | 'WIN' | 'LOSE' | 'DRAW' | 'ESCAPE' | 'DISMISS';
 }

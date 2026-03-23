@@ -4,7 +4,7 @@ import type { PlusPptTemplate } from './plus-ppt-template';
 import type { PPTSlideType } from './pptslide-type';
 import type { PPTTurningMode } from './pptturning-mode';
 
-/** PPT模板幻灯片配置，存储模板中单个幻灯片的结构和属性 */
+/** PPTæ¨¡æ¿å¹»ç¯çéç½®ï¼å­å¨æ¨¡æ¿ä¸­åä¸ªå¹»ç¯ççç»æåå±æ§ */
 export interface PlusPptTemplateSlide {
   tenantId?: number;
   organizationId?: number;
@@ -14,23 +14,23 @@ export interface PlusPptTemplateSlide {
   createdAt?: string;
   updatedAt?: string;
   v?: number;
-  /** 所属PPT模板ID */
+  /** æå±PPTæ¨¡æ¿ID */
   templateId: number;
-  /** 所属PPT模板详细信息 */
+  /** æå±PPTæ¨¡æ¿è¯¦ç»ä¿¡æ¯ */
   pptTemplate?: PlusPptTemplate;
-  /** 幻灯片功能类型 */
+  /** å¹»ç¯çåè½ç±»å */
   type: PPTSlideType;
-  /** 幻灯片显示标题 */
+  /** å¹»ç¯çæ¾ç¤ºæ é¢ */
   title?: string;
-  /** 幻灯片内容说明或备注 */
+  /** å¹»ç¯çåå®¹è¯´ææå¤æ³¨ */
   description?: string;
-  /** 幻灯片在模板中的显示顺序，值越小越靠前 */
+  /** å¹»ç¯çå¨æ¨¡æ¿ä¸­çæ¾ç¤ºé¡ºåºï¼å¼è¶å°è¶é å */
   sortOrder: number;
-  /** 幻灯片内容布局样式 */
+  /** å¹»ç¯çåå®¹å¸å±æ ·å¼ */
   layoutType?: 'DEFAULT' | 'TITLE' | 'CONTENT' | 'TITLE_CONTENT' | 'COLUMN_CONTENT';
-  /** 幻灯片详细配置信息，包含结构定义和内容属性 */
+  /** å¹»ç¯çè¯¦ç»éç½®ä¿¡æ¯ï¼åå«ç»æå®ä¹ååå®¹å±æ§ */
   slideConfig?: PlusPptSlide;
-  /** 幻灯片详细内容定义，JSON格式存储 */
+  /** å¹»ç¯çè¯¦ç»åå®¹å®ä¹ï¼JSONæ ¼å¼å­å¨ */
   payload?: PlusPptPayload;
   pptturningMode?: PPTTurningMode;
 }

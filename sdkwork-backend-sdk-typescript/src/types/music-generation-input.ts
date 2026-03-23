@@ -1,47 +1,47 @@
 import type { AssetMediaResource } from './asset-media-resource';
 import type { VideoStoryboard } from './video-storyboard';
 
-/** 音乐生成输入参数 */
+/** é³ä¹çæè¾å¥åæ° */
 export interface MusicGenerationInput {
-  /** 任务标题 */
+  /** ä»»å¡æ é¢ */
   title?: string;
-  /** 主提示词 */
+  /** ä¸»æç¤ºè¯ */
   prompt?: string;
-  /** 反向提示词 */
+  /** ååæç¤ºè¯ */
   negativePrompt?: string;
-  /** 参考资源列表(支持图片/视频/音频等任意类型) */
+  /** åèèµæºåè¡¨(æ¯æå¾ç/è§é¢/é³é¢ç­ä»»æç±»å) */
   referenceAssets?: AssetMediaResource[];
-  /** 视频故事板 */
+  /** è§é¢æäºæ¿ */
   storyboard?: VideoStoryboard;
-  /** 生成参数 */
+  /** çæåæ° */
   parameters?: Record<string, unknown>;
-  /** 生成数量 */
+  /** çææ°é */
   n?: number;
-  /** 随机种子 */
+  /** éæºç§å­ */
   seed?: number;
-  /** 输出格式 */
+  /** è¾åºæ ¼å¼ */
   format?: string;
-  /** 歌词 */
+  /** æ­è¯ */
   lyrics?: string;
-  /** 音乐时长(秒) */
+  /** é³ä¹æ¶é¿(ç§) */
   duration?: number;
-  /** 流派(pop/rock/jazz/classical/edm等) */
+  /** æµæ´¾(pop/rock/jazz/classical/edmç­) */
   genre?: string;
-  /** 风格 */
+  /** é£æ ¼ */
   style?: string;
-  /** 速度BPM */
+  /** éåº¦BPM */
   tempo?: number;
-  /** 调式(C major/A minor等) */
+  /** è°å¼(C major/A minorç­) */
   key?: string;
-  /** 拍号(4/4/3/4等) */
+  /** æå·(4/4/3/4ç­) */
   timeSignature?: string;
-  /** 情绪(happy/sad/energetic/calm等) */
+  /** æç»ª(happy/sad/energetic/calmç­) */
   mood?: string;
-  /** 乐器 */
+  /** ä¹å¨ */
   instruments?: string;
-  /** 是否纯音乐(无人声) */
+  /** æ¯å¦çº¯é³ä¹(æ äººå£°) */
   instrumental?: boolean;
-  /** 是否高清 */
+  /** æ¯å¦é«æ¸ */
   hd?: boolean;
   referenceAssetCount?: number;
 }

@@ -1,16 +1,16 @@
-/** 棋牌游戏动作流水查询表单 */
+/** æ£çæ¸¸æå¨ä½æµæ°´æ¥è¯¢è¡¨å */
 export interface PlusGameActionRecordQueryForm {
   id?: number;
   createdAtFrom?: string;
   createdAtTo?: string;
-  /** 房间ID */
+  /** æ¿é´ID */
   roomId?: number;
-  /** 对局ID */
+  /** å¯¹å±ID */
   matchId?: number;
-  /** 玩家用户ID */
+  /** ç©å®¶ç¨æ·ID */
   playerUserId?: number;
-  /** 动作类型 */
+  /** å¨ä½ç±»å */
   actionType?: 'SYSTEM' | 'JOIN_ROOM' | 'LEAVE_ROOM' | 'READY' | 'CANCEL_READY' | 'START_MATCH' | 'MOVE' | 'PLACE' | 'CAPTURE' | 'DRAW_CARD' | 'PLAY_CARD' | 'DISCARD' | 'BID' | 'PASS' | 'CHI' | 'PENG' | 'GANG' | 'HU' | 'CHECK' | 'BET' | 'CALL' | 'RAISE' | 'FOLD' | 'ALL_IN' | 'TRUSTEESHIP' | 'UNDO' | 'SETTLEMENT' | 'CHAT';
-  /** 动作编码 */
+  /** å¨ä½ç¼ç  */
   actionCode?: string;
 }

@@ -1,5 +1,5 @@
-/** 妫嬬墝娓告垙寮€灞€琛ㄥ崟 */
+/** å¦«å¬¬å¢å¨ååå¯®â¬çâ¬çã¥å´ */
 export interface PlusGameStartMatchForm {
-  /** 鎴块棿ID */
+  /** é´åæ£¿ID */
   roomId: number;
 }

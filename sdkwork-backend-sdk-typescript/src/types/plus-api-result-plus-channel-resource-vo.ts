@@ -1,6 +1,6 @@
 import type { PlusChannelResourceVO } from './plus-channel-resource-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPlusChannelResourceVO {
   /** Response data */
   data: PlusChannelResourceVO;

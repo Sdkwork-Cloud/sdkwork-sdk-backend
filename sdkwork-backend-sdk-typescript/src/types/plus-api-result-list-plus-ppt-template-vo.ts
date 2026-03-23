@@ -1,6 +1,6 @@
 import type { PlusPptTemplateVO } from './plus-ppt-template-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultListPlusPptTemplateVO {
   /** Response data */
   data: PlusPptTemplateVO[];

@@ -1,8 +1,8 @@
-/** Audio Generation Form */
+/** Audio generation form */
 export interface GenerateAudioForm {
   /** Title */
   title?: string;
-  /** Prompt/Text to convert */
+  /** Prompt or text to convert */
   prompt?: string;
   /** Voice type */
   voice?: string;

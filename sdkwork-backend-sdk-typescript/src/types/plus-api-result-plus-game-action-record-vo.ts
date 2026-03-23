@@ -1,6 +1,6 @@
 import type { PlusGameActionRecordVO } from './plus-game-action-record-vo';
 
-/** API调用结果 */
+/** APIè°ç¨ç»æ */
 export interface PlusApiResultPlusGameActionRecordVO {
   /** Response data */
   data: PlusGameActionRecordVO;

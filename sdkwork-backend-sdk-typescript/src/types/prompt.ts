@@ -5,11 +5,11 @@ import type { UserMessage } from './user-message';
 
 export interface Prompt {
   contents?: string;
-  options?: ChatOptions;
   instructions?: Message[];
   lastUserOrToolResponseMessage?: Message;
   userMessages?: UserMessage[];
+  systemMessage?: SystemMessage;
   userMessage?: UserMessage;
   systemMessages?: SystemMessage[];
-  systemMessage?: SystemMessage;
+  options?: ChatOptions;
 }
