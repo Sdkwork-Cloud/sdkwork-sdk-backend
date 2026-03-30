@@ -1,6 +1,6 @@
 import type { GenerateAudioVO } from './generate-audio-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultGenerateAudioVO {
   /** Response data */
   data: GenerateAudioVO;

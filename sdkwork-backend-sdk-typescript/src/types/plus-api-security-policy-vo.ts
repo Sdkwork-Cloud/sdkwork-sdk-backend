@@ -1,4 +1,4 @@
-/** APIå®å¨ç­ç¥VO */
+/** API安全策略VO */
 export interface PlusApiSecurityPolicyVO {
   createdAt?: string;
   updatedAt?: string;

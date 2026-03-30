@@ -1,6 +1,6 @@
 import type { PlusImGroupVO } from './plus-im-group-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPlusImGroupVO {
   /** Response data */
   data: PlusImGroupVO;

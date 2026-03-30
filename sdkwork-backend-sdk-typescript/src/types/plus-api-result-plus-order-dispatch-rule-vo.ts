@@ -1,6 +1,6 @@
 import type { PlusOrderDispatchRuleVO } from './plus-order-dispatch-rule-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPlusOrderDispatchRuleVO {
   /** Response data */
   data: PlusOrderDispatchRuleVO;

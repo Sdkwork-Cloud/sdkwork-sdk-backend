@@ -1,7 +1,7 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 import type { QueryParams } from '../types/common';
-import type { AppListRequest, AppSettingsVO, BuildTriggerRequest, ConfigDefinitionVO, CreateJsapiSignatureForm, InstanceActionRequest, InstanceDeployRequest, InstanceUpdateRequest, MenuConfigVO, PlusApiResultAppBuildVO, PlusApiResultAppInfoVO, PlusApiResultAppInstanceVO, PlusApiResultAppSdkConfigVO, PlusApiResultAppSettingsVO, PlusApiResultBoolean, PlusApiResultConfigDefinitionVO, PlusApiResultListAppBuildVO, PlusApiResultListAppInstanceLogVO, PlusApiResultListAppInstanceVO, PlusApiResultListAppVersionVO, PlusApiResultListPlusAppVO, PlusApiResultMenuConfigVO, PlusApiResultPagePlusAppVO, PlusApiResultPageResultAppInstanceVO, PlusApiResultPageResultAuditEntryVO, PlusApiResultPlusAppVO, PlusAppForm, QueryListForm } from '../types';
+import type { AppListRequest, AppSettingsVO, BuildTriggerRequest, ConfigDefinitionVO, CreateJsapiSignatureForm, InstanceActionRequest, InstanceDeployRequest, InstanceUpdateRequest, MenuConfigVO, PlusApiResultAppBuildVO, PlusApiResultAppInfoVO, PlusApiResultAppInstanceVO, PlusApiResultAppSdkConfigVO, PlusApiResultAppSettingsVO, PlusApiResultBoolean, PlusApiResultConfigDefinitionVO, PlusApiResultListAppBuildVO, PlusApiResultListAppInstanceLogVO, PlusApiResultListAppInstanceVO, PlusApiResultListAppVersionVO, PlusApiResultListPlusAppVO, PlusApiResultMenuConfigVO, PlusApiResultPagePlusAppVO, PlusApiResultPageResultAppInstanceVO, PlusApiResultPageResultAuditEntryVO, PlusApiResultPlusAppOAuthBindingVO, PlusApiResultPlusAppOAuthConfigVO, PlusApiResultPlusAppVO, PlusAppForm, PlusAppOAuthBindingSaveForm, QueryListForm } from '../types';
 
 
 export class AppApi {
@@ -29,6 +29,16 @@ export class AppApi {
 /** Save app settings */
   async saveSettings(appId: string | number, body: AppSettingsVO): Promise<PlusApiResultAppSettingsVO> {
     return this.client.put<PlusApiResultAppSettingsVO>(backendApiPath(`/app/admin/${appId}/settings`), body);
+  }
+
+/** Get app oauth config */
+  async getOauthConfig(appId: string | number): Promise<PlusApiResultPlusAppOAuthConfigVO> {
+    return this.client.get<PlusApiResultPlusAppOAuthConfigVO>(backendApiPath(`/app/admin/${appId}/oauth`));
+  }
+
+/** Save app oauth binding */
+  async saveOauthBinding(appId: string | number, body: PlusAppOAuthBindingSaveForm): Promise<PlusApiResultPlusAppOAuthBindingVO> {
+    return this.client.put<PlusApiResultPlusAppOAuthBindingVO>(backendApiPath(`/app/admin/${appId}/oauth`), body);
   }
 
 /** Get menu config */

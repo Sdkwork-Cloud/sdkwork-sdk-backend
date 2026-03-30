@@ -1,97 +1,97 @@
-/** æ£çæ¸¸æç©å®¶ç»è®¡VO */
+/** 棋牌游戏玩家统计VO */
 export interface PlusGameStatsVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** ç»è®¡ID */
+  /** 统计ID */
   statsId?: number;
-  /** ç©å®¶ç¨æ·ID */
+  /** 玩家用户ID */
   userId?: number;
-  /** ç©æ³ç±»å */
+  /** 玩法类型 */
   gameType?: 'INTERNATIONAL_CHESS' | 'CHINESE_CHESS' | 'GOMOKU' | 'JUNQI' | 'LANDLORD' | 'SHENG_JI' | 'TUO_LA_JI' | 'TEXAS_HOLDEM' | 'MAHJONG' | 'CUSTOM';
-  /** ç©æ³æ¨¡å¼ç¼ç  */
+  /** 玩法模式编码 */
   gameModeCode?: string;
-  /** èµå­£æ è¯ */
+  /** 赛季标识 */
   seasonKey?: string;
-  /** ç»è®¡èå´ç±»å */
+  /** 统计范围类型 */
   scopeType?: 'GLOBAL' | 'GAME' | 'MODE' | 'FRIEND' | 'CLUB' | 'REGION' | 'TOURNAMENT';
-  /** ç»è®¡èå´å½å±ID */
+  /** 统计范围归属ID */
   scopeOwnerId?: number;
-  /** ä¿±ä¹é¨ID */
+  /** 俱乐部ID */
   clubId?: number;
-  /** å°åºç¼ç  */
+  /** 地区编码 */
   regionCode?: string;
-  /** æµç§°å¿«ç§ */
+  /** 昵称快照 */
   nicknameSnapshot?: string;
-  /** å¤´åURL */
+  /** 头像URL */
   avatarUrl?: string;
-  /** æè¡å£å¾ */
+  /** 排行口径 */
   rankingType?: 'SCORE' | 'RATING' | 'WIN_RATE' | 'WIN_COUNT' | 'STREAK' | 'PROFIT';
-  /** æ»å¯¹å±æ° */
+  /** 总对局数 */
   totalMatchCount?: number;
-  /** èåºæ° */
+  /** 胜场数 */
   winCount?: number;
-  /** è´åºæ° */
+  /** 负场数 */
   loseCount?: number;
-  /** å¹³å±æ° */
+  /** 平局数 */
   drawCount?: number;
-  /** éè·æ° */
+  /** 逃跑数 */
   escapeCount?: number;
-  /** æ»å°å±æ° */
+  /** 总小局数 */
   totalRoundCount?: number;
-  /** æ»å¨ä½æ° */
+  /** 总动作数 */
   totalActionCount?: number;
-  /** æ»ææå¨ä½æ° */
+  /** 总有效动作数 */
   totalMoveCount?: number;
-  /** æ»å¯¹å±æ¶é¿ç§æ° */
+  /** 总对局时长秒数 */
   totalDurationSeconds?: number;
-  /** å½åç§¯å */
+  /** 当前积分 */
   score?: number;
-  /** å½åç­çº§å */
+  /** 当前等级分 */
   ratingScore?: number;
-  /** å½åç­¹ç ä½é¢ */
+  /** 当前筹码余额 */
   chipsBalance?: number;
-  /** ç´¯è®¡æ¶ç */
+  /** 累计收益 */
   profitAmount?: number;
-  /** èç */
+  /** 胜率 */
   winRate?: number;
-  /** å½åè¿è */
+  /** 当前连胜 */
   currentWinStreak?: number;
-  /** æä½³è¿è */
+  /** 最佳连胜 */
   bestWinStreak?: number;
-  /** åå²æé«ç­çº§å */
+  /** 历史最高等级分 */
   highestRatingScore?: number;
-  /** åå²æä½³åæ¬¡ */
+  /** 历史最佳名次 */
   bestRankNo?: number;
-  /** åå²æä½³æ¥æ¦åæ¬¡ */
+  /** 历史最佳日榜名次 */
   bestDailyRankNo?: number;
-  /** åå²æä½³å¨æ¦åæ¬¡ */
+  /** 历史最佳周榜名次 */
   bestWeeklyRankNo?: number;
-  /** åå²æä½³ææ¦åæ¬¡ */
+  /** 历史最佳月榜名次 */
   bestMonthlyRankNo?: number;
-  /** åå²æä½³å­£åº¦æ¦åæ¬¡ */
+  /** 历史最佳季度榜名次 */
   bestQuarterlyRankNo?: number;
-  /** åå²æä½³å¹´æ¦åæ¬¡ */
+  /** 历史最佳年榜名次 */
   bestYearlyRankNo?: number;
-  /** è£èªæ°é */
+  /** 荣誉数量 */
   honorCount?: number;
-  /** å½åæè¡æ¦åæ¬¡ */
+  /** 当前排行榜名次 */
   leaderboardPosition?: number;
-  /** æè¿å¯¹å±æ¶é´ */
+  /** 最近对局时间 */
   lastMatchAt?: string;
-  /** æææ»åºæ¬¡ */
+  /** 挑战总场次 */
   challengeTotalCount?: number;
-  /** ææèåº */
+  /** 挑战胜场 */
   challengeWinCount?: number;
-  /** ææè´åº */
+  /** 挑战负场 */
   challengeLoseCount?: number;
-  /** æ»ææåæ¬¡æ° */
+  /** 攻擂成功次数 */
   arenaAttackWinCount?: number;
-  /** å®ææåæ¬¡æ° */
+  /** 守擂成功次数 */
   arenaDefenseWinCount?: number;
-  /** å®æå¤±è´¥æ¬¡æ° */
+  /** 守擂失败次数 */
   arenaDefenseLoseCount?: number;
-  /** æä½³å®æè¿è */
+  /** 最佳守擂连胜 */
   arenaBestDefenseStreak?: number;
 }

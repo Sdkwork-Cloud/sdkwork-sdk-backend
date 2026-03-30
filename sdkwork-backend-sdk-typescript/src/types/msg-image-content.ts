@@ -1,9 +1,9 @@
 import type { ImageMediaResource } from './image-media-resource';
 
-/** IMå¾çæ¶æ¯åå®¹ç±» */
+/** IM图片消息内容类 */
 export interface MsgImageContent {
-  /** æ¶æ¯åå®¹ */
+  /** 消息内容 */
   content?: string;
-  /** å¾çèµæº */
+  /** 图片资源 */
   resource?: ImageMediaResource;
 }

@@ -1,53 +1,53 @@
-/** AIæ¨¡åä½¿ç¨è®°å½VOï¼ç¨äºè®°å½åç§AIæ¨¡åè°ç¨çä½¿ç¨æåµ */
+/** AI模型使用记录VO，用于记录各种AI模型调用的使用情况 */
 export interface UsageRecordVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** ç¨æ·ID */
+  /** 用户ID */
   userId?: number;
-  /** è¯·æ±ID(ç¨äºè·è¸ªåå³èè¯·æ±) */
+  /** 请求ID(用于跟踪和关联请求) */
   requestId?: string;
-  /** æ¨¡ååç§° */
+  /** 模型名称 */
   modelName?: string;
-  /** æå¡æä¾å(å¦OpenAIãAzureãAnthropicç­) */
+  /** 服务提供商(如OpenAI、Azure、Anthropic等) */
   channel?: 'DEFAULT' | 'ALIYUN' | 'AWS' | 'APPLE' | 'AZURE' | 'BAIDU' | 'VOLCENGINE' | 'TENCENT' | 'HUAWEI' | 'GOOGLE' | 'META' | 'WECHAT' | 'ALIPAY' | 'UNION_PAY' | 'UNIONPAY' | 'DOUYIN' | 'MICROSOFT' | 'AMAZON' | 'ANTHROPIC' | 'XAI' | 'DEEPSEEK' | 'GROQ' | 'HUGGING_FACE' | 'KUAISHOU' | 'MINIMAX' | 'MISTRAL' | 'MOONSHOT' | 'NVIDIA' | 'OPENAI' | 'OLLAMA' | 'PERPLEXITY' | 'SDKWORK' | 'SILICONFLOW' | 'STEPFUN' | 'XUNFEI' | 'ZHIPU' | 'RAGFLOW' | 'STABILITY' | 'MINDSDB' | 'MEM0' | 'BOCHA' | 'BING' | 'OPEN_ROUTER' | 'STRIPE' | 'PAYPAL' | 'SUNO' | 'VIDU' | 'RUNWAY' | 'MEITUAN' | 'YUNWU' | 'MIDJOURNEY' | 'IDEOGRAM' | 'FLUX' | 'VECTOR_STORE_AZURE' | 'VECTOR_STORE_CASSANDRA' | 'VECTOR_STORE_CHROMA' | 'VECTOR_STORE_COUCHBASE' | 'VECTOR_STORE_ELASTICSEARCH' | 'VECTOR_STORE_GEMFIRE' | 'VECTOR_STORE_MARIADB' | 'VECTOR_STORE_MILVUS' | 'VECTOR_STORE_MONGODB' | 'VECTOR_STORE_NEO4J' | 'VECTOR_STORE_OPENSEARCH' | 'VECTOR_STORE_ORACLE' | 'VECTOR_STORE_PGVECTOR' | 'VECTOR_STORE_PINECONE' | 'VECTOR_STORE_QDRANT' | 'VECTOR_STORE_REDIS' | 'VECTOR_STORE_TYPESENSE' | 'VECTOR_STORE_WEAVIATE';
-  /** ä½¿ç¨ç±»å(TEXT:ææ¬çæ,IMAGE:å¾ççæ,VIDEO:è§é¢çæ,AUDIO:è¯­é³çæ,EMBEDDING:åµå¥åé) */
+  /** 使用类型(TEXT:文本生成,IMAGE:图片生成,VIDEO:视频生成,AUDIO:语音生成,EMBEDDING:嵌入向量) */
   usageType?: 'DEFAULT' | 'TEXT' | 'IMAGE' | 'VIDEO' | 'AUDIO' | 'EMBEDDING' | 'CHAT' | 'TEXT_TO_SPEECH' | 'SPEECH_TO_TEXT' | 'PASS_SMS' | 'PAAS_FILE' | 'OTHER';
-  /** è®¡è´¹ç±»å(TOKEN:ætokenè®¡è´¹,COUNT:ææ¬¡æ°è®¡è´¹,TIME:ææ¶é´è®¡è´¹) */
+  /** 计费类型(TOKEN:按token计费,COUNT:按次数计费,TIME:按时间计费) */
   billingType?: 'DEFAULT' | 'TOKEN' | 'COUNT' | 'TIME' | 'DATA_VOLUME' | 'HYBRID';
-  /** è¾å¥tokenæ°é(TOKENè®¡è´¹ç±»åéç¨) */
+  /** 输入token数量(TOKEN计费类型适用) */
   promptTokens?: number;
-  /** è¾åºtokenæ°é(TOKENè®¡è´¹ç±»åéç¨) */
+  /** 输出token数量(TOKEN计费类型适用) */
   completionTokens?: number;
-  /** ç¼å­tokenæ°é(TOKENè®¡è´¹ç±»åéç¨) */
+  /** 缓存token数量(TOKEN计费类型适用) */
   cachedTokens?: number;
-  /** æ»tokenæ°é(TOKENè®¡è´¹ç±»åéç¨) */
+  /** 总token数量(TOKEN计费类型适用) */
   totalTokens?: number;
-  /** è°ç¨æ¬¡æ°(COUNTè®¡è´¹ç±»åéç¨) */
+  /** 调用次数(COUNT计费类型适用) */
   callCount?: number;
-  /** å¤çæ¶é´(æ¯«ç§)(TIMEè®¡è´¹ç±»åéç¨) */
+  /** 处理时间(毫秒)(TIME计费类型适用) */
   processingTime?: number;
-  /** å¾çæ°é(IMAGEä½¿ç¨ç±»åéç¨) */
+  /** 图片数量(IMAGE使用类型适用) */
   imageCount?: number;
-  /** å¾çå°ºå¯¸(å¦1024x1024)(IMAGEä½¿ç¨ç±»åéç¨) */
+  /** 图片尺寸(如1024x1024)(IMAGE使用类型适用) */
   imageSize?: string;
-  /** è§é¢æ¶é¿(ç§)(VIDEOä½¿ç¨ç±»åéç¨) */
+  /** 视频时长(秒)(VIDEO使用类型适用) */
   videoDuration?: number;
-  /** é³é¢æ¶é¿(ç§)(AUDIOä½¿ç¨ç±»åéç¨) */
+  /** 音频时长(秒)(AUDIO使用类型适用) */
   audioDuration?: number;
-  /** å®éè´¹ç¨ */
+  /** 实际费用 */
   cost?: number;
-  /** è´§å¸åä½(å¦USDãCNYç­) */
+  /** 货币单位(如USD、CNY等) */
   currencyCode?: 'USD' | 'EUR' | 'GBP' | 'JPY' | 'AUD' | 'CAD' | 'CHF' | 'CNY' | 'SEK' | 'NZD' | 'BRL' | 'INR' | 'RUB' | 'ZAR' | 'SGD' | 'HKD' | 'KRW' | 'MXN' | 'TRY' | 'ILS' | 'POINT' | 'TOKEN';
-  /** ç¶æ(SUCCESS:æå,FAILED:å¤±è´¥) */
+  /** 状态(SUCCESS:成功,FAILED:失败) */
   status?: 'DEFAULT' | 'SUCCESS' | 'FAILED' | 'PARTIAL_SUCCESS' | 'TIMEOUT' | 'CANCELLED' | 'PROCESSING' | 'QUEUED';
-  /** è¯·æ±æ¶é´ */
+  /** 请求时间 */
   requestTime?: string;
-  /** ååºæ¶é´ */
+  /** 响应时间 */
   responseTime?: string;
-  /** å³èçæç¤ºè¯­ID */
+  /** 关联的提示语ID */
   promptId?: number;
-  /** å³èçå·¥å·ID */
+  /** 关联的工具ID */
   toolId?: number;
 }

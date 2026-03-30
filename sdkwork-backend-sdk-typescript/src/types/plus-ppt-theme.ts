@@ -1,22 +1,22 @@
 import type { PlusPptThemeOutline } from './plus-ppt-theme-outline';
 import type { PlusPptThemeShadow } from './plus-ppt-theme-shadow';
 
-/** PPTä¸»é¢æ ·å¼å®ä¹ */
+/** PPT主题样式定义 */
 export interface PlusPptTheme {
-  /** ä¸»é¢ä¸»è¦é¢è²æ¹æ¡ */
+  /** 主题主要颜色方案 */
   themeColors: string[];
-  /** æ¬¡è¦é¢è²æ¹æ¡ */
+  /** 次要颜色方案 */
   subColors: string[];
-  /** å¯¼åºç¨ä¸»é¢é¢è²éå */
+  /** 导出用主题颜色集合 */
   exportThemeColors: string[];
-  /** é»è®¤å­ä½é¢è² */
+  /** 默认字体颜色 */
   fontColor: string;
-  /** å­ä½åç§°ï¼ä¸ºç©ºæ¶ä½¿ç¨é»è®¤å­ä½ */
+  /** 字体名称，为空时使用默认字体 */
   fontName?: string;
-  /** å¹»ç¯çèæ¯é¢è² */
+  /** 幻灯片背景颜色 */
   backgroundColor: string;
-  /** åç´ é´å½±ææè®¾ç½® */
+  /** 元素阴影效果设置 */
   shadow?: PlusPptThemeShadow;
-  /** åç´ è½®å»ææè®¾ç½® */
+  /** 元素轮廓效果设置 */
   outline?: PlusPptThemeOutline;
 }

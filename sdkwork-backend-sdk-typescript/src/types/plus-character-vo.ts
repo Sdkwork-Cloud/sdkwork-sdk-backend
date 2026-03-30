@@ -1,42 +1,42 @@
 import type { ImageMediaResource } from './image-media-resource';
 import type { VideoMediaResource } from './video-media-resource';
 
-/** èæè§è²VO */
+/** 虚拟角色VO */
 export interface PlusCharacterVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æåæ´æ°æ¶é´ */
+  /** 最后更新时间 */
   updatedAt?: string;
-  /** è§è²ID */
+  /** 角色ID */
   id?: number;
-  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
+  /** 通用唯一标识符UUID */
   uuid?: string;
-  /** è§è²åç§° */
+  /** 角色名称 */
   name?: string;
-  /** è§è²ç±»å */
+  /** 角色类型 */
   type?: 'HUMAN' | 'PET' | 'ANIMAL' | 'ROBOT' | 'OTHER';
-  /** è§è²å¤´åå¾ç */
+  /** 角色头像图片 */
   avatar?: ImageMediaResource;
-  /** è§è²ä¸è§å¾ */
+  /** 角色三视图 */
   threeViewImage?: ImageMediaResource;
-  /** è§è²GRIDåéå¾ */
+  /** 角色GRID分镜图 */
   gridShotsImage?: ImageMediaResource;
-  /** è§è²å¤´åè§é¢ */
+  /** 角色头像视频 */
   avatarVideo?: VideoMediaResource;
-  /** å³èçAIæºè½ä½ID */
+  /** 关联的AI智能体ID */
   agentId?: number;
-  /** è§è²æè¿° (è¯¦ç»åè½è¯´æ) */
+  /** 角色描述 (详细功能说明) */
   description?: string;
-  /** è§è²ç¶æ */
+  /** 角色状态 */
   status?: 'DEFAULT' | 'ACTIVE' | 'INACTIVE' | 'SUSPENDED' | 'DELETED';
-  /** è§è²ä¸ªæ§ç¹å¾ (JSONæ ¼å¼å­å¨) */
+  /** 角色个性特征 (JSON格式存储) */
   personality?: string;
-  /** è§è²èæ¯æäº (JSONæ ¼å¼å­å¨) */
+  /** 角色背景故事 (JSON格式存储) */
   background?: string;
-  /** äº¤äºè®¾ç½® (JSONæ ¼å¼å­å¨) */
+  /** 交互设置 (JSON格式存储) */
   interactionSettings?: string;
-  /** è§è²çæ¬ */
+  /** 角色版本 */
   version?: string;
-  /** ç¨æ·ID */
+  /** 用户ID */
   userId?: number;
 }

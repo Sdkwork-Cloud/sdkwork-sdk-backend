@@ -1,6 +1,6 @@
 import type { PlusAiModelInfoVO } from './plus-ai-model-info-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultListPlusAiModelInfoVO {
   /** Response data */
   data: PlusAiModelInfoVO[];

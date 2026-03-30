@@ -1,6 +1,6 @@
 import type { PagePlusChannelAccountVO } from './page-plus-channel-account-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPagePlusChannelAccountVO {
   /** Response data */
   data: PagePlusChannelAccountVO;

@@ -1,57 +1,57 @@
-/** æè½åå»º/æ´æ°è¡¨å */
+/** 技能创建/更新表单 */
 export interface PlusAgentSkillForm {
-  /** æè½å½å±ç¨æ·IDï¼ä¸ä¼ é»è®¤å½åç¨æ· */
+  /** 技能归属用户ID，不传默认当前用户 */
   userId?: number;
-  /** æè½å¯ä¸æ è¯ */
+  /** 技能唯一标识 */
   skillKey?: string;
-  /** æè½åç§° */
+  /** 技能名称 */
   name?: string;
-  /** æè½ç®ä» */
+  /** 技能简介 */
   summary?: string;
-  /** æè½æè¿° */
+  /** 技能描述 */
   description?: string;
-  /** æè½å¾æ  */
+  /** 技能图标 */
   icon?: string;
-  /** æè½å°é¢å¾ */
+  /** 技能封面图 */
   coverImage?: string;
-  /** åç±»ID */
+  /** 分类ID */
   categoryId?: number;
-  /** ååID */
+  /** 分包ID */
   packageId?: number;
-  /** æä¾å */
+  /** 提供商 */
   provider?: string;
-  /** çæ¬ */
+  /** 版本 */
   version?: string;
-  /** è¿è¡æ¶ */
+  /** 运行时 */
   runtime?: string;
-  /** å¥å£ */
+  /** 入口 */
   entrypoint?: string;
-  /** manifestå°å */
+  /** manifest地址 */
   manifestUrl?: string;
-  /** ä»£ç ä»åºå°å */
+  /** 代码仓库地址 */
   repositoryUrl?: string;
-  /** ä¸»é¡µå°å */
+  /** 主页地址 */
   homepageUrl?: string;
-  /** ææ¡£å°å */
+  /** 文档地址 */
   documentationUrl?: string;
-  /** è®¸å¯è¯åç§° */
+  /** 许可证名称 */
   licenseName?: string;
-  /** æ¥æºç±»å */
+  /** 来源类型 */
   sourceType?: 'OFFICIAL' | 'COMMUNITY' | 'ENTERPRISE' | 'PRIVATE' | 'CUSTOM';
-  /** å¯è§æ§ */
+  /** 可见性 */
   visibility?: 'PUBLIC' | 'PRIVATE' | 'UNLISTED';
-  /** æ¯å¦å¯ç¨ */
+  /** 是否启用 */
   enabled?: boolean;
-  /** ä»·æ ¼ */
+  /** 价格 */
   price?: number;
-  /** è´§å¸ */
+  /** 货币 */
   currency?: string;
-  /** æ ç­¾ */
+  /** 标签 */
   tags?: string[];
-  /** è½ååè¡¨ */
+  /** 能力列表 */
   capabilities?: string[];
-  /** éç½®Schema */
-  configSchema?: Record<string, unknown>;
-  /** é»è®¤éç½® */
-  defaultConfig?: Record<string, unknown>;
+  /** 配置Schema */
+  configSchema?: Record<string, Record<string, unknown>>;
+  /** 默认配置 */
+  defaultConfig?: Record<string, Record<string, unknown>>;
 }

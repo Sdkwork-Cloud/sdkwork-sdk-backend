@@ -51,7 +51,7 @@ export interface PlusSkillForm {
   /** Skill capabilities */
   capabilities?: string[];
   /** Configuration schema */
-  configSchema?: Record<string, unknown>;
+  configSchema?: Record<string, Record<string, unknown>>;
   /** Default configuration */
-  defaultConfig?: Record<string, unknown>;
+  defaultConfig?: Record<string, Record<string, unknown>>;
 }

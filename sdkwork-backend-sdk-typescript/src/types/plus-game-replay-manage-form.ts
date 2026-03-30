@@ -1,15 +1,15 @@
-/** æ£çæ¸¸æåæ¾ç®¡çè¡¨å */
+/** 棋牌游戏回放管理表单 */
 export interface PlusGameReplayManageForm {
-  /** åæ¾æ é¢ */
+  /** 回放标题 */
   title?: string;
-  /** æ¯å¦å¬å¼å¯è§ */
+  /** 是否公开可见 */
   publicVisible?: boolean;
-  /** æ¯å¦åè®¸åäº« */
+  /** 是否允许分享 */
   allowShare?: boolean;
-  /** åæ¾ç¶æ */
+  /** 回放状态 */
   status?: 'GENERATING' | 'READY' | 'EXPIRED' | 'DELETED';
-  /** å°é¢å°å */
+  /** 封面地址 */
   coverUrl?: string;
-  /** è¿ææ¶é´ */
+  /** 过期时间 */
   expiredAt?: string;
 }

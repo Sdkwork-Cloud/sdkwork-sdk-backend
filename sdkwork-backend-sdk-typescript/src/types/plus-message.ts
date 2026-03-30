@@ -1,35 +1,35 @@
 import type { MessageBody } from './message-body';
 import type { Participant } from './participant';
 
-/** IMæ¶æ¯å®ä½ç±» */
+/** IM消息实体类 */
 export interface PlusMessage {
-  /** æ¶æ¯å¨æ°æ®åºä¸­çå¯ä¸æ è¯ç¬¦ */
+  /** 消息在数据库中的唯一标识符 */
   id?: number;
-  /** æ¶æ¯çUUIDï¼ç¨äºå¯ä¸æ è¯ä¸æ¡æ¶æ¯ */
+  /** 消息的UUID，用于唯一标识一条消息 */
   uuid?: string;
-  /** æ¶æ¯åå»ºæ¶é´ */
+  /** 消息创建时间 */
   createdAt?: string;
-  /** æ¶æ¯æåæ´æ°æ¶é´ */
+  /** 消息最后更新时间 */
   updatedAt?: string;
-  /** æ¶æ¯åéæ¶é´ */
+  /** 消息发送时间 */
   sendAt?: string;
-  /** ä¼è¯ID */
+  /** 会话ID */
   conversationId?: number;
-  /** æ¶æ¯ç±»å */
+  /** 消息类型 */
   type?: 'DEFAULT' | 'TEXT' | 'IMAGE' | 'FILE' | 'AUDIO' | 'VIDEO' | 'CODE' | 'MARKDOWN' | 'MIXED' | 'LOCATION' | 'MUSIC' | 'NEWS' | 'VOICE' | 'ARTICLE' | 'APP' | 'CHUNK' | 'FRAME' | 'BINARY' | 'EVENT' | 'MCP';
-  /** åéè */
+  /** 发送者 */
   sender?: Participant;
-  /** æ¥æ¶è */
+  /** 接收者 */
   receiver?: Participant;
-  /** ç¾¤ç»IDï¼ç¨äºç¾¤èæ¶æ¯ï¼ */
+  /** 群组ID（用于群聊消息） */
   groupId?: number;
-  /** æ¶æ¯IDï¼æå¡ç«¯çæï¼ */
+  /** 消息ID（服务端生成） */
   msgId?: string;
-  /** å®¢æ·ç«¯æ¶æ¯IDï¼å®¢æ·ç«¯çæï¼ */
+  /** 客户端消息ID（客户端生成） */
   clientMsgId?: string;
-  /** æ¶æ¯æ°æ®åå®¹ */
+  /** 消息数据内容 */
   body?: MessageBody;
-  /** æ¶æ¯åæ°æ® */
-  metadata?: Record<string, unknown>;
+  /** 消息元数据 */
+  metadata?: Record<string, Record<string, unknown>>;
   content?: string;
 }

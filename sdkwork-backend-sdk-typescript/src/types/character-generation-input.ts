@@ -1,57 +1,57 @@
 import type { AssetMediaResource } from './asset-media-resource';
 import type { VideoStoryboard } from './video-storyboard';
 
-/** èæè§è²çæè¾å¥åæ° */
+/** 虚拟角色生成输入参数 */
 export interface CharacterGenerationInput {
-  /** ä»»å¡æ é¢ */
+  /** 任务标题 */
   title?: string;
-  /** ä¸»æç¤ºè¯ */
+  /** 主提示词 */
   prompt?: string;
-  /** ååæç¤ºè¯ */
+  /** 反向提示词 */
   negativePrompt?: string;
-  /** åèèµæºåè¡¨(æ¯æå¾ç/è§é¢/é³é¢ç­ä»»æç±»å) */
+  /** 参考资源列表(支持图片/视频/音频等任意类型) */
   referenceAssets?: AssetMediaResource[];
-  /** è§é¢æäºæ¿ */
+  /** 视频故事板 */
   storyboard?: VideoStoryboard;
-  /** çæåæ° */
-  parameters?: Record<string, unknown>;
-  /** çææ°é */
+  /** 生成参数 */
+  parameters?: Record<string, Record<string, unknown>>;
+  /** 生成数量 */
   n?: number;
-  /** éæºç§å­ */
+  /** 随机种子 */
   seed?: number;
-  /** è¾åºæ ¼å¼ */
+  /** 输出格式 */
   format?: string;
-  /** è§è²åç§° */
+  /** 角色名称 */
   name?: string;
-  /** è§è²æè¿° */
+  /** 角色描述 */
   description?: string;
-  /** è§è²å¤è§æè¿° */
+  /** 角色外观描述 */
   appearance?: string;
-  /** è§è²æ§æ ¼ç¹ç¹ */
+  /** 角色性格特点 */
   personality?: string;
-  /** è§è²èæ¯æäº */
+  /** 角色背景故事 */
   background?: string;
-  /** è§è²ç±»å */
+  /** 角色类型 */
   type?: 'HUMAN' | 'PET' | 'ANIMAL' | 'ROBOT' | 'OTHER';
-  /** è§è²é£æ ¼(anime/realistic/cartoon/3dç­) */
+  /** 角色风格(anime/realistic/cartoon/3d等) */
   style?: string;
-  /** å§¿å¿ */
+  /** 姿势 */
   pose?: string;
-  /** è¡¨æ */
+  /** 表情 */
   expression?: string;
-  /** æ§å« */
+  /** 性别 */
   gender?: string;
-  /** å¹´é¾æ®µ */
+  /** 年龄段 */
   age?: string;
-  /** æè£ */
+  /** 服装 */
   clothing?: string;
-  /** å¾çå®½åº¦(åç´ ) */
+  /** 图片宽度(像素) */
   width?: number;
-  /** å¾çé«åº¦(åç´ ) */
+  /** 图片高度(像素) */
   height?: number;
-  /** æ¯å¦é«æ¸ */
+  /** 是否高清 */
   hd?: boolean;
-  /** æ¯å¦çæå¤è§è§ */
+  /** 是否生成多视角 */
   multiView?: boolean;
   referenceAssetCount?: number;
 }

@@ -1,6 +1,6 @@
 import type { PlusMemberRelationsVO } from './plus-member-relations-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultListPlusMemberRelationsVO {
   /** Response data */
   data: PlusMemberRelationsVO[];

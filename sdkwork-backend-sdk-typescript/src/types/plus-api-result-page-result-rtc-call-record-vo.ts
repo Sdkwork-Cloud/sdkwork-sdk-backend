@@ -1,6 +1,6 @@
 import type { PageResultRtcCallRecordVO } from './page-result-rtc-call-record-vo';
 
-/** API???? */
+/** API调用结果 */
 export interface PlusApiResultPageResultRtcCallRecordVO {
   /** Response data */
   data: PageResultRtcCallRecordVO;

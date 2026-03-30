@@ -1,32 +1,32 @@
 import type { DnsRecordValue } from './dns-record-value';
 
-/** DNSè§£æè®°å½VO */
+/** DNS解析记录VO */
 export interface PlusDnsRecordVO {
-  /** è®°å½åå»ºæ¶é´ */
+  /** 记录创建时间 */
   createdAt?: string;
-  /** è®°å½æ´æ°æ¶é´ */
+  /** 记录更新时间 */
   updatedAt?: string;
-  /** ä¸»é®IDï¼ç±æ°æ®åºèªå¨çæ */
+  /** 主键ID，由数据库自动生成 */
   id?: number;
-  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
+  /** 通用唯一标识符UUID */
   uuid?: string;
-  /** å³èçååID */
+  /** 关联的域名ID */
   domainId?: number;
-  /** è®°å½åç§°ï¼å¦ www, @, ftp ç­ï¼ */
+  /** 记录名称（如 www, @, ftp 等） */
   recordName?: string;
-  /** æä»¶åï¼ç¨äºååéªè¯æä»¶ç­åºæ¯ï¼ */
+  /** 文件名（用于域名验证文件等场景） */
   fileName?: string;
-  /** æä»¶åå®¹ï¼ç¨äºååéªè¯æä»¶åå®¹ï¼ */
+  /** 文件内容（用于域名验证文件内容） */
   fileContent?: string;
-  /** DNSè®°å½ç±»åï¼A, AAAA, CNAME, MX, TXTç­ï¼ */
+  /** DNS记录类型（A, AAAA, CNAME, MX, TXT等） */
   recordType?: 'A' | 'AAAA' | 'CNAME' | 'MX' | 'TXT' | 'SRV' | 'NS' | 'PTR' | 'SOA' | 'SPF';
-  /** è®°å½å¼ï¼å¦IPå°åãå«åç­ï¼ */
+  /** 记录值（如IP地址、别名等） */
   recordValue?: DnsRecordValue;
-  /** TTLï¼çå­æ¶é´ï¼åä½ç§ï¼ */
+  /** TTL（生存时间，单位秒） */
   ttl?: number;
-  /** ä¼åçº§ï¼ç¨äºMXè®°å½ç­ï¼ */
+  /** 优先级（用于MX记录等） */
   priority?: number;
-  /** è®°å½ç¶æï¼å¯ç¨/ç¦ç¨ï¼ */
+  /** 记录状态（启用/禁用） */
   enabled?: boolean;
   recordValues?: string[];
   firstRecordValue?: string;

@@ -1,7 +1,7 @@
-/** å½æ°è°ç¨ä¿¡æ¯ï¼å½æ¨¡åå³å®éè¦è°ç¨å·¥å·å½æ°æ¶è¿å */
+/** 函数调用信息，当模型决定需要调用工具函数时返回 */
 export interface FunctionCall {
-  /** è¦è°ç¨çå½æ°åç§° */
+  /** 要调用的函数名称 */
   name: string;
-  /** å½æ°åæ°ï¼é®å¼å¯¹å½¢å¼ */
-  arguments: Record<string, unknown>;
+  /** 函数参数，键值对形式 */
+  arguments: Record<string, Record<string, unknown>>;
 }

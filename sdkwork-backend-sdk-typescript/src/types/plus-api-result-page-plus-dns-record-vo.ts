@@ -1,6 +1,6 @@
 import type { PagePlusDnsRecordVO } from './page-plus-dns-record-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPagePlusDnsRecordVO {
   /** Response data */
   data: PagePlusDnsRecordVO;

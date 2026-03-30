@@ -1,6 +1,6 @@
 import type { GenerateImageVO } from './generate-image-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultGenerateImageVO {
   /** Response data */
   data: GenerateImageVO;

@@ -1,6 +1,6 @@
 import type { PlusMediaPublishResultDTO } from './plus-media-publish-result-dto';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPlusMediaPublishResultDTO {
   /** Response data */
   data: PlusMediaPublishResultDTO;

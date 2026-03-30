@@ -1,5 +1,5 @@
 export interface MenuConfigVO {
   appId?: string;
-  button?: Record<string, unknown>[];
+  button?: Record<string, Record<string, unknown>>[];
   updatedAt?: string;
 }

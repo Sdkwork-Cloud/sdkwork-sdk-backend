@@ -1,59 +1,59 @@
-/** æ£çæ¸¸ææè¡æ¦æç»VO */
+/** 棋牌游戏排行榜明细VO */
 export interface PlusGameLeaderboardEntryVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** æ¦åæç»ID */
+  /** 榜单明细ID */
   entryId?: number;
-  /** æ¦åID */
+  /** 榜单ID */
   leaderboardId?: number;
-  /** ç©å®¶ç¨æ·ID */
+  /** 玩家用户ID */
   userId?: number;
-  /** æè¡ç±»å */
+  /** 排行类型 */
   rankingType?: 'SCORE' | 'RATING' | 'WIN_RATE' | 'WIN_COUNT' | 'STREAK' | 'PROFIT';
-  /** æ¦åå¨æç±»å */
+  /** 榜单周期类型 */
   periodType?: 'HOUR' | 'DAY' | 'WEEK' | 'MONTH' | 'QUARTER' | 'YEAR' | 'SEASON';
-  /** æ¦åèå´ç±»å */
+  /** 榜单范围类型 */
   scopeType?: 'GLOBAL' | 'GAME' | 'MODE' | 'FRIEND' | 'CLUB' | 'REGION' | 'TOURNAMENT';
-  /** æ¦åèå´å½å±ID */
+  /** 榜单范围归属ID */
   scopeOwnerId?: number;
-  /** èµå­£æ è¯ */
+  /** 赛季标识 */
   seasonKey?: string;
-  /** æµç§°å¿«ç§ */
+  /** 昵称快照 */
   nicknameSnapshot?: string;
-  /** å¤´åURL */
+  /** 头像URL */
   avatarUrl?: string;
-  /** å½ååæ¬¡ */
+  /** 当前名次 */
   rankNo?: number;
-  /** ä¸ä¸æåæ¬¡ */
+  /** 上一期名次 */
   previousRankNo?: number;
-  /** åå²æä½³åæ¬¡ */
+  /** 历史最佳名次 */
   peakRankNo?: number;
-  /** æ¦åæç»ç¶æ */
+  /** 榜单明细状态 */
   status?: 'ACTIVE' | 'REWARDED' | 'INVALID';
-  /** æç»©å¼ */
+  /** 成绩值 */
   scoreValue?: number;
-  /** æç»©åå */
+  /** 成绩变化 */
   scoreDelta?: number;
-  /** ååè¾å©å¼ */
+  /** 同分辅助值 */
   tieBreakerValue?: number;
-  /** å±ç¤ºå¼ */
+  /** 展示值 */
   displayValue?: string;
-  /** ææå¯¹å±æ° */
+  /** 有效对局数 */
   totalMatchCount?: number;
-  /** èåºæ° */
+  /** 胜场数 */
   winCount?: number;
-  /** è´åºæ° */
+  /** 负场数 */
   loseCount?: number;
-  /** å¹³å±æ° */
+  /** 平局数 */
   drawCount?: number;
-  /** è¿èæ° */
+  /** 连胜数 */
   streakCount?: number;
-  /** æ¯å¦å·²åå¥ */
+  /** 是否已发奖 */
   rewardGranted?: boolean;
-  /** å¥å±åæ¾æ¶é´ */
+  /** 奖励发放时间 */
   rewardIssuedAt?: string;
-  /** æ¦åå¾½ç« ç¼ç  */
+  /** 榜单徽章编码 */
   badgeCode?: string;
 }

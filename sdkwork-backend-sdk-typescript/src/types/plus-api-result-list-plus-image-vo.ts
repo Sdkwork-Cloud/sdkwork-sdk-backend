@@ -1,6 +1,6 @@
 import type { PlusImageVO } from './plus-image-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultListPlusImageVO {
   /** Response data */
   data: PlusImageVO[];

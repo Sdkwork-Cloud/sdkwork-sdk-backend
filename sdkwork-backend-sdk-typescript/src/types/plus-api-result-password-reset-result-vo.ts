@@ -1,6 +1,6 @@
 import type { PasswordResetResultVO } from './password-reset-result-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPasswordResetResultVO {
   /** Response data */
   data: PasswordResetResultVO;

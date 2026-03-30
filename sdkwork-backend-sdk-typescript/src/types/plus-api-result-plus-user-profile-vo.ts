@@ -1,6 +1,6 @@
 import type { PlusUserProfileVO } from './plus-user-profile-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPlusUserProfileVO {
   /** Response data */
   data: PlusUserProfileVO;

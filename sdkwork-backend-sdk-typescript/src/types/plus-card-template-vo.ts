@@ -1,51 +1,51 @@
-/** ä¼åå¡æ¨¡æ¿Value Object */
+/** 会员卡模板Value Object */
 export interface PlusCardTemplateVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** æ¨¡æ¿åç§° */
+  /** 模板名称 */
   name?: string;
-  /** æ¨¡æ¿ç¼ç  */
+  /** 模板编码 */
   templateCode?: string;
-  /** å¡çç±»å(æä¸¾) */
+  /** 卡片类型(枚举) */
   cardType?: 'DEFAULT' | 'MEMBER' | 'GIFT' | 'DISCOUNT' | 'CASH' | 'NORMAL';
-  /** ç¼ç ç±»å(æä¸¾) */
+  /** 编码类型(枚举) */
   codeType?: 'DEFAULT' | 'TEXT' | 'BARCODE' | 'QRCODE';
-  /** æ é¢ */
+  /** 标题 */
   title?: string;
-  /** æè¿° */
+  /** 描述 */
   description?: string;
-  /** åçåç§° */
+  /** 品牌名称 */
   brandName?: string;
   /** Logo URL */
   logoUrl?: string;
-  /** å¬å */
+  /** 公告 */
   notice?: string;
-  /** é¢è² */
+  /** 颜色 */
   color?: string;
-  /** æ°é */
+  /** 数量 */
   quantity?: number;
-  /** è·åéå¶ */
+  /** 获取限制 */
   getLimit?: number;
-  /** æ¯å¦å¯åäº« */
+  /** 是否可分享 */
   canShare?: boolean;
-  /** æ¯å¦å¯èµ å */
+  /** 是否可赠友 */
   canGiveFriend?: boolean;
-  /** æä½ä½é¢ */
+  /** 最低余额 */
   minimumBalance?: number;
-  /** åå§ä½é¢ */
+  /** 初始余额 */
   initialBalance?: number;
-  /** ææ£ç */
+  /** 折扣率 */
   discountRate?: number;
-  /** æææç±»å */
+  /** 有效期类型 */
   validityType?: 'DEFAULT' | 'FIXED' | 'DAYS_AFTER_RECEIVE' | 'DAYS_AFTER_ACTIVATION';
-  /** å¼å§æ¶é´ */
+  /** 开始时间 */
   startTime?: string;
-  /** ç»ææ¶é´ */
+  /** 结束时间 */
   endTime?: string;
-  /** ææå¤©æ° */
+  /** 有效天数 */
   validityDays?: number;
-  /** æ¯å¦å é¤ */
+  /** 是否删除 */
   isDeleted?: boolean;
 }

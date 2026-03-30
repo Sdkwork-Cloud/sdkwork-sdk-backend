@@ -1,6 +1,6 @@
 import type { PlusUserAddressVO } from './plus-user-address-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultListPlusUserAddressVO {
   /** Response data */
   data: PlusUserAddressVO[];

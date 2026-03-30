@@ -14,8 +14,10 @@ export interface PlusVipPackForm {
   pointAmount: number;
   /** VIP duration in days */
   vipDurationDays: number;
+  /** Billing cycle */
+  billingCycle?: 'DEFAULT' | 'MONTHLY' | 'QUARTERLY' | 'YEARLY' | 'CUSTOM';
   /** Package status */
-  status: 'DEFAULT' | 'ACTIVE' | 'INACTIVE';
+  status?: 'DEFAULT' | 'ACTIVE' | 'INACTIVE';
   /** Sort weight */
   sortWeight?: number;
   /** Valid from */

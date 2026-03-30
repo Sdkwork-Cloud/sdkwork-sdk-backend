@@ -1,77 +1,77 @@
-/** æ£çæ¸¸ææ¿é´VO */
+/** 棋牌游戏房间VO */
 export interface PlusGameRoomVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** æ¿é´ID */
+  /** 房间ID */
   roomId?: number;
-  /** æ¿ä¸»ç¨æ·ID */
+  /** 房主用户ID */
   userId?: number;
-  /** ç©æ³å®ä¹ID */
+  /** 玩法定义ID */
   definitionId?: number;
-  /** ç©æ³ç±»å */
+  /** 玩法类型 */
   gameType?: 'INTERNATIONAL_CHESS' | 'CHINESE_CHESS' | 'GOMOKU' | 'JUNQI' | 'LANDLORD' | 'SHENG_JI' | 'TUO_LA_JI' | 'TEXAS_HOLDEM' | 'MAHJONG' | 'CUSTOM';
-  /** ç©æ³æ¨¡å¼ç¼ç  */
+  /** 玩法模式编码 */
   gameModeCode?: string;
-  /** èµå­£æ è¯ */
+  /** 赛季标识 */
   seasonKey?: string;
-  /** æ¿é´å· */
+  /** 房间号 */
   roomNo?: string;
-  /** æ¿é´åç§° */
+  /** 房间名称 */
   name?: string;
-  /** æ¿é´ç±»å */
+  /** 房间类型 */
   roomType?: 'MATCHMAKING' | 'CLASSIC' | 'FRIEND' | 'TOURNAMENT' | 'PRACTICE' | 'CLUB';
-  /** æ¿é´ç¶æ */
+  /** 房间状态 */
   status?: 'WAITING' | 'READY' | 'PLAYING' | 'SETTLING' | 'FINISHED' | 'DISMISSED' | 'EXPIRED';
-  /** æ¿é´å¯è§æ§ */
+  /** 房间可见性 */
   visibility?: 'PUBLIC' | 'PRIVATE' | 'PASSWORD';
-  /** åº§ä½æ° */
+  /** 座位数 */
   seatCount?: number;
-  /** å½åç©å®¶æ° */
+  /** 当前玩家数 */
   currentPlayerCount?: number;
-  /** å¼å±æå°äººæ° */
+  /** 开局最少人数 */
   minStartPlayerCount?: number;
-  /** æ¿ä¸»åº§ä½å· */
+  /** 房主座位号 */
   hostSeatNo?: number;
-  /** ä¿±ä¹é¨ID */
+  /** 俱乐部ID */
   clubId?: number;
-  /** èµäºID */
+  /** 赛事ID */
   tournamentId?: number;
-  /** å°åºç¼ç  */
+  /** 地区编码 */
   regionCode?: string;
-  /** å½åå¯¹å±ID */
+  /** 当前对局ID */
   currentMatchId?: number;
-  /** å½åå±æ° */
+  /** 当前局数 */
   currentRoundNo?: number;
-  /** è®¡åæ»å±æ° */
+  /** 计划总局数 */
   plannedRoundCount?: number;
-  /** å·²å®æå±æ° */
+  /** 已完成局数 */
   finishedRoundCount?: number;
-  /** æ¯å¦æä½æ¿ */
+  /** 是否排位房 */
   ranked?: boolean;
-  /** æ¯å¦åè®¸æè§ */
+  /** 是否允许旁观 */
   allowSpectator?: boolean;
-  /** æ¯å¦åè®¸æºå¨äºº */
+  /** 是否允许机器人 */
   allowRobot?: boolean;
-  /** æ¯å¦åè®¸æç®¡ */
+  /** 是否允许托管 */
   allowTrusteeship?: boolean;
-  /** æ¯å¦è®¡å¥æ¦å */
+  /** 是否计入榜单 */
   leaderboardEligible?: boolean;
-  /** æ¯å¦å¯ç¨åæ¾ */
+  /** 是否启用回放 */
   replayEnabled?: boolean;
-  /** è§æäººæ° */
+  /** 观战人数 */
   spectatorCount?: number;
-  /** éè¯·ç  */
+  /** 邀请码 */
   inviteCode?: string;
-  /** æ¿é´è§åéç½® */
-  ruleConfig?: Record<string, unknown>;
-  /** æ©å±æ°æ® */
-  extData?: Record<string, unknown>;
-  /** å¼å§æ¶é´ */
+  /** 房间规则配置 */
+  ruleConfig?: Record<string, Record<string, unknown>>;
+  /** 扩展数据 */
+  extData?: Record<string, Record<string, unknown>>;
+  /** 开始时间 */
   startedAt?: string;
-  /** ç»ææ¶é´ */
+  /** 结束时间 */
   endedAt?: string;
-  /** æåæ´»è·æ¶é´ */
+  /** 最后活跃时间 */
   lastActiveAt?: string;
 }

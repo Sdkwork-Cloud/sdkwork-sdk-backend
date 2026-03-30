@@ -1,6 +1,6 @@
 import type { FinancePageResultFinanceSettlementRecord } from './finance-page-result-finance-settlement-record';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultFinancePageResultFinanceSettlementRecord {
   /** Response data */
   data: FinancePageResultFinanceSettlementRecord;

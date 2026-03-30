@@ -1,24 +1,24 @@
-/** æ£çæ¸¸æç§¯åæµæ°´æ¥è¯¢è¡¨å */
+/** 棋牌游戏积分流水查询表单 */
 export interface PlusGameScoreRecordQueryForm {
   id?: number;
   createdAtFrom?: string;
   createdAtTo?: string;
-  /** ç©å®¶ç¨æ·ID */
+  /** 玩家用户ID */
   userId?: number;
-  /** ç©æ³ç±»å */
+  /** 玩法类型 */
   gameType?: 'INTERNATIONAL_CHESS' | 'CHINESE_CHESS' | 'GOMOKU' | 'JUNQI' | 'LANDLORD' | 'SHENG_JI' | 'TUO_LA_JI' | 'TEXAS_HOLDEM' | 'MAHJONG' | 'CUSTOM';
-  /** ç§¯ååæ´ç±»å */
+  /** 积分变更类型 */
   changeType?: 'MATCH_SETTLEMENT' | 'ROUND_SETTLEMENT' | 'TOURNAMENT_REWARD' | 'RANKING_REWARD' | 'CHALLENGE_STAKE' | 'CHALLENGE_REFUND' | 'CHALLENGE_REWARD' | 'ARENA_STAKE' | 'ARENA_REFUND' | 'ARENA_REWARD' | 'ROOM_REFUND' | 'MANUAL_ADJUST' | 'PENALTY';
-  /** èµäºID */
+  /** 赛事ID */
   tournamentId?: number;
-  /** æ¿é´ID */
+  /** 房间ID */
   roomId?: number;
-  /** å¯¹å±ID */
+  /** 对局ID */
   matchId?: number;
-  /** æ¦åID */
+  /** 榜单ID */
   leaderboardId?: number;
-  /** ä¸å¡æµæ°´å· */
+  /** 业务流水号 */
   bizNo?: string;
-  /** æä½äººç¨æ·ID */
+  /** 操作人用户ID */
   operatorUserId?: number;
 }

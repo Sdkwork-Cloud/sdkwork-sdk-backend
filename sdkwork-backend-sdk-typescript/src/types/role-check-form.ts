@@ -1,5 +1,5 @@
 /** R ol eC he ck Fo rm */
 export interface RoleCheckForm {
-  /** çæå£éåªç */
+  /** 瑙掕壊鏍囪瘑 */
   role: string;
 }

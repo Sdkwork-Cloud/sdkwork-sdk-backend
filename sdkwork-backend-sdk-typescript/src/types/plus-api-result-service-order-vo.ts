@@ -1,6 +1,6 @@
 import type { ServiceOrderVO } from './service-order-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultServiceOrderVO {
   /** Response data */
   data: ServiceOrderVO;

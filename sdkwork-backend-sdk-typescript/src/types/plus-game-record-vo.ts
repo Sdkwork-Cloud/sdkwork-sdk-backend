@@ -1,77 +1,77 @@
-/** æ£çæ¸¸ææç»©VO */
+/** 棋牌游戏战绩VO */
 export interface PlusGameRecordVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** æç»©ID */
+  /** 战绩ID */
   recordId?: number;
-  /** æ¿é´ID */
+  /** 房间ID */
   roomId?: number;
-  /** å¯¹å±ID */
+  /** 对局ID */
   matchId?: number;
-  /** ç©å®¶ç¨æ·ID */
+  /** 玩家用户ID */
   userId?: number;
-  /** ç©æ³ç±»å */
+  /** 玩法类型 */
   gameType?: 'INTERNATIONAL_CHESS' | 'CHINESE_CHESS' | 'GOMOKU' | 'JUNQI' | 'LANDLORD' | 'SHENG_JI' | 'TUO_LA_JI' | 'TEXAS_HOLDEM' | 'MAHJONG' | 'CUSTOM';
-  /** ç©æ³æ¨¡å¼ç¼ç  */
+  /** 玩法模式编码 */
   gameModeCode?: string;
-  /** èµå­£æ è¯ */
+  /** 赛季标识 */
   seasonKey?: string;
-  /** ä¿±ä¹é¨ID */
+  /** 俱乐部ID */
   clubId?: number;
-  /** èµäºID */
+  /** 赛事ID */
   tournamentId?: number;
-  /** å°åºç¼ç  */
+  /** 地区编码 */
   regionCode?: string;
-  /** åº§ä½å· */
+  /** 座位号 */
   seatNo?: number;
-  /** éä¼å· */
+  /** 队伍号 */
   teamNo?: number;
-  /** å¯¹å±ç»æ */
+  /** 对局结果 */
   resultType?: 'PENDING' | 'WIN' | 'LOSE' | 'DRAW' | 'ESCAPE' | 'DISMISS';
-  /** åæ¬¡ */
+  /** 名次 */
   rankNo?: number;
-  /** æµç§°å¿«ç§ */
+  /** 昵称快照 */
   nicknameSnapshot?: string;
-  /** å¤´åURL */
+  /** 头像URL */
   avatarUrl?: string;
-  /** æ¯å¦èè */
+  /** 是否胜者 */
   winner?: boolean;
-  /** æ¯å¦éè· */
+  /** 是否逃跑 */
   escaped?: boolean;
-  /** æ¯å¦è®¡å¥æ¦å */
+  /** 是否计入榜单 */
   leaderboardEligible?: boolean;
-  /** å¨ä½æ° */
+  /** 动作数 */
   actionCount?: number;
-  /** ææå¨ä½æ° */
+  /** 有效动作数 */
   moveCount?: number;
-  /** èµåç§¯å */
+  /** 赛前积分 */
   scoreBefore?: number;
-  /** ç§¯ååå */
+  /** 积分变化 */
   scoreDelta?: number;
-  /** èµåç§¯å */
+  /** 赛后积分 */
   scoreAfter?: number;
-  /** èµåç­çº§å */
+  /** 赛前等级分 */
   ratingBefore?: number;
-  /** ç­çº§ååå */
+  /** 等级分变化 */
   ratingDelta?: number;
-  /** èµåç­çº§å */
+  /** 赛后等级分 */
   ratingAfter?: number;
-  /** èµåç­¹ç  */
+  /** 赛前筹码 */
   chipsBefore?: number;
-  /** ç­¹ç åå */
+  /** 筹码变化 */
   chipsDelta?: number;
-  /** èµåç­¹ç  */
+  /** 赛后筹码 */
   chipsAfter?: number;
-  /** åä¸æ¶é´ */
+  /** 参与时间 */
   joinedAt?: string;
-  /** å®ææ¶é´ */
+  /** 完成时间 */
   finishedAt?: string;
-  /** åå²æä½³åæ¬¡å¿«ç§ */
+  /** 历史最佳名次快照 */
   bestRankSnapshot?: number;
-  /** ç©å®¶ç»ç®æ°æ® */
-  settlementData?: Record<string, unknown>;
-  /** è£èªå¿«ç§ */
-  honorSnapshot?: Record<string, unknown>;
+  /** 玩家结算数据 */
+  settlementData?: Record<string, Record<string, unknown>>;
+  /** 荣誉快照 */
+  honorSnapshot?: Record<string, Record<string, unknown>>;
 }

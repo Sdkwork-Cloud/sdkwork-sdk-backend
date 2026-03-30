@@ -1,21 +1,21 @@
-/** åäº«è®¿é®è®°å½Value Object */
+/** 分享访问记录Value Object */
 export interface PlusShareVisitRecordVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æåæ´æ°æ¶é´ */
+  /** 最后更新时间 */
   updatedAt?: string;
-  /** è®°å½ID */
+  /** 记录ID */
   id?: number;
-  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
+  /** 通用唯一标识符UUID */
   uuid?: string;
-  /** å³èçåäº«ID */
+  /** 关联的分享ID */
   shareId?: number;
-  /** è®¿é®èIPå°å */
+  /** 访问者IP地址 */
   ipAddress?: string;
-  /** è®¿é®èUser-Agent */
+  /** 访问者User-Agent */
   userAgent?: string;
-  /** è®¿é®æ¶é´ */
+  /** 访问时间 */
   accessedAt?: string;
-  /** æ¯å¦æåè®¿é® */
+  /** 是否成功访问 */
   success?: boolean;
 }

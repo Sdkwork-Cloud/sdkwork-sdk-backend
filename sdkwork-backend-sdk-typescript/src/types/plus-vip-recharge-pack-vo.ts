@@ -1,29 +1,29 @@
-/** VIPåå¼å¥é¤VOå¯¹è±¡ */
+/** VIP充值套餐VO对象 */
 export interface PlusVipRechargePackVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** å¥é¤ID */
+  /** 套餐ID */
   id?: number;
-  /** å¥é¤åç§° */
+  /** 套餐名称 */
   name?: string;
-  /** å¥é¤æè¿° */
+  /** 套餐描述 */
   description?: string;
-  /** å¥é¤ä»·æ ¼(å) */
+  /** 套餐价格(元) */
   price?: number;
-  /** èµ éçµç¹æ°é */
+  /** 赠送灵点数量 */
   pointAmount?: number;
-  /** VIPæ¶é¿(å¤©) */
+  /** VIP时长(天) */
   vipDurationDays?: number;
-  /** å¥é¤ç¶æ(1-ä¸æ¶ 2-ä¸æ¶) */
+  /** 套餐状态(1-上架 2-下架) */
   status?: number;
-  /** æåºæé */
+  /** 排序权重 */
   sortWeight?: number;
-  /** å¥é¤æææå¼å§æ¶é´ */
+  /** 套餐有效期开始时间 */
   validFrom?: string;
-  /** å¥é¤æææç»ææ¶é´ */
+  /** 套餐有效期结束时间 */
   validTo?: string;
-  /** å¤æ³¨ä¿¡æ¯ */
+  /** 备注信息 */
   remark?: string;
 }

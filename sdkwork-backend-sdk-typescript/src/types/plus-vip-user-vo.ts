@@ -1,33 +1,33 @@
 import type { PlusVipLevelVO } from './plus-vip-level-vo';
 
-/** VIPä¼åç¨æ·ä¿¡æ¯VO */
+/** VIP会员用户信息VO */
 export interface PlusVipUserVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
   /** ID */
   id?: number;
   /** UUID */
   uuid?: string;
-  /** ç¨æ·IDï¼å³èplus_userè¡¨ */
+  /** 用户ID，关联plus_user表 */
   userId?: number;
-  /** å½åVIPç­çº§ID */
+  /** 当前VIP等级ID */
   vipLevelId?: number;
-  /** ä¼åç¶æ */
+  /** 会员状态 */
   status?: 'DEFAULT' | 'ACTIVE' | 'EXPIRED' | 'FROZEN' | 'CANCELLED';
-  /** å½åçµç¹(ç§¯å)ä½é¢ */
+  /** 当前灵点(积分)余额 */
   pointBalance?: number;
-  /** ç´¯è®¡åå¼çµç¹(ç§¯å) */
+  /** 累计充值灵点(积分) */
   totalRechargedPoints?: number;
-  /** ä¼åæææå¼å§æ¶é´ */
+  /** 会员有效期开始时间 */
   validFrom?: string;
-  /** ä¼åæææç»ææ¶é´ */
+  /** 会员有效期结束时间 */
   validTo?: string;
-  /** æåæ´»è·æ¶é´ */
+  /** 最后活跃时间 */
   lastActiveTime?: string;
-  /** å¤æ³¨ä¿¡æ¯ */
+  /** 备注信息 */
   remark?: string;
-  /** VIPç­çº§ä¿¡æ¯ */
+  /** VIP等级信息 */
   vipLevel?: PlusVipLevelVO;
 }

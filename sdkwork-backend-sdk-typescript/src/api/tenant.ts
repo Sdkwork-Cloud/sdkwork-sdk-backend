@@ -1,7 +1,7 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 import type { QueryParams } from '../types/common';
-import type { GetAccessTokenForm, PlusApiResultBoolean, PlusApiResultListPlusTenantVO, PlusApiResultListTokenResult, PlusApiResultPagePlusTenantAuditLogVO, PlusApiResultPagePlusTenantVO, PlusApiResultPlusTenantVO, PlusTenantForm, QueryListForm } from '../types';
+import type { GetAccessTokenForm, GetCloudAccessTokenForm, PlusApiResultBoolean, PlusApiResultListPlusTenantVO, PlusApiResultListTokenResult, PlusApiResultPagePlusTenantAuditLogVO, PlusApiResultPagePlusTenantVO, PlusApiResultPlusTenantVO, PlusTenantForm, PlusTenantQueryListForm } from '../types';
 
 
 export class TenantApi {
@@ -37,18 +37,23 @@ export class TenantApi {
   }
 
 /** Get tenants by page */
-  async listByPage(body?: QueryListForm, params?: QueryParams): Promise<PlusApiResultPagePlusTenantVO> {
+  async listByPage(body?: PlusTenantQueryListForm, params?: QueryParams): Promise<PlusApiResultPagePlusTenantVO> {
     return this.client.post<PlusApiResultPagePlusTenantVO>(backendApiPath(`/tenant/list`), body, params);
   }
 
 /** Get all tenants */
-  async listAllEntities(body?: QueryListForm): Promise<PlusApiResultListPlusTenantVO> {
+  async listAllEntities(body?: PlusTenantQueryListForm): Promise<PlusApiResultListPlusTenantVO> {
     return this.client.post<PlusApiResultListPlusTenantVO>(backendApiPath(`/tenant/list/all`), body);
   }
 
 /** Get access tokens */
   async getAccessTokens(body: GetAccessTokenForm): Promise<PlusApiResultListTokenResult> {
     return this.client.post<PlusApiResultListTokenResult>(backendApiPath(`/tenant/get_access_tokens`), body);
+  }
+
+/** Get default cloud tenant access tokens */
+  async getCloudAccessTokens(body: GetCloudAccessTokenForm): Promise<PlusApiResultListTokenResult> {
+    return this.client.post<PlusApiResultListTokenResult>(backendApiPath(`/tenant/cloud/get_access_tokens`), body);
   }
 
 /** Get a tenant by ID */

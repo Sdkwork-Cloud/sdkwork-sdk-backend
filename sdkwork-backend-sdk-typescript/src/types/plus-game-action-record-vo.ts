@@ -1,63 +1,63 @@
-/** æ£çæ¸¸æå¨ä½æµæ°´VO */
+/** 棋牌游戏动作流水VO */
 export interface PlusGameActionRecordVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** å¨ä½æµæ°´ID */
+  /** 动作流水ID */
   actionId?: number;
-  /** æ¿é´ID */
+  /** 房间ID */
   roomId?: number;
-  /** å¯¹å±ID */
+  /** 对局ID */
   matchId?: number;
-  /** è½®æ¬¡ID */
+  /** 轮次ID */
   roundId?: number;
-  /** ç©æ³ç±»å */
+  /** 玩法类型 */
   gameType?: 'INTERNATIONAL_CHESS' | 'CHINESE_CHESS' | 'GOMOKU' | 'JUNQI' | 'LANDLORD' | 'SHENG_JI' | 'TUO_LA_JI' | 'TEXAS_HOLDEM' | 'MAHJONG' | 'CUSTOM';
-  /** æ¿é´ç±»å */
+  /** 房间类型 */
   roomType?: 'MATCHMAKING' | 'CLASSIC' | 'FRIEND' | 'TOURNAMENT' | 'PRACTICE' | 'CLUB';
-  /** åæ¾ID */
+  /** 回放ID */
   replayId?: number;
-  /** èµäºID */
+  /** 赛事ID */
   tournamentId?: number;
-  /** ç©å®¶ç¨æ·ID */
+  /** 玩家用户ID */
   playerUserId?: number;
-  /** åº§ä½å· */
+  /** 座位号 */
   seatNo?: number;
-  /** ç©å®¶ç±»å */
+  /** 玩家类型 */
   playerType?: 'HUMAN' | 'AI' | 'BOT' | 'SPECTATOR';
-  /** æµæ°´åºå· */
+  /** 流水序号 */
   seqNo?: number;
-  /** åååºå· */
+  /** 回合序号 */
   turnNo?: number;
-  /** é¶æ®µåç§° */
+  /** 阶段名称 */
   phaseName?: string;
-  /** å¨ä½ç±»å */
+  /** 动作类型 */
   actionType?: 'SYSTEM' | 'JOIN_ROOM' | 'LEAVE_ROOM' | 'READY' | 'CANCEL_READY' | 'START_MATCH' | 'MOVE' | 'PLACE' | 'CAPTURE' | 'DRAW_CARD' | 'PLAY_CARD' | 'DISCARD' | 'BID' | 'PASS' | 'CHI' | 'PENG' | 'GANG' | 'HU' | 'CHECK' | 'BET' | 'CALL' | 'RAISE' | 'FOLD' | 'ALL_IN' | 'TRUSTEESHIP' | 'UNDO' | 'SETTLEMENT' | 'CHAT';
-  /** å¨ä½ç¼ç  */
+  /** 动作编码 */
   actionCode?: string;
-  /** æ åè®°è°± */
+  /** 标准记谱 */
   notation?: string;
-  /** ç®æ åº§ä½å· */
+  /** 目标座位号 */
   targetSeatNo?: number;
-  /** èµ·å§ä½ç½® */
+  /** 起始位置 */
   sourcePosition?: string;
-  /** ç®æ ä½ç½® */
+  /** 目标位置 */
   targetPosition?: string;
-  /** èæ¶æ¯«ç§ */
+  /** 耗时毫秒 */
   consumeMillis?: number;
-  /** æ¯å¦ææå¨ä½ */
+  /** 是否有效动作 */
   validAction?: boolean;
-  /** æ¯å¦ç³»ç»å¨ä½ */
+  /** 是否系统动作 */
   systemAction?: boolean;
-  /** æ¯å¦è¶æ¶å¨ä½ */
+  /** 是否超时动作 */
   timeoutAction?: boolean;
-  /** å¨ä½åçæ¶é´ */
+  /** 动作发生时间 */
   actionAt?: string;
-  /** å¨ä½è½½è· */
-  actionPayload?: Record<string, unknown>;
-  /** å¨ä½åç¶æ */
-  beforeState?: Record<string, unknown>;
-  /** å¨ä½åç¶æ */
-  afterState?: Record<string, unknown>;
+  /** 动作载荷 */
+  actionPayload?: Record<string, Record<string, unknown>>;
+  /** 动作前状态 */
+  beforeState?: Record<string, Record<string, unknown>>;
+  /** 动作后状态 */
+  afterState?: Record<string, Record<string, unknown>>;
 }

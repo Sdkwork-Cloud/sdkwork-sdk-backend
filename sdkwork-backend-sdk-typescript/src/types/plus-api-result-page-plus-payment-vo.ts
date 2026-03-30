@@ -1,6 +1,6 @@
 import type { PagePlusPaymentVO } from './page-plus-payment-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPagePlusPaymentVO {
   /** Response data */
   data: PagePlusPaymentVO;

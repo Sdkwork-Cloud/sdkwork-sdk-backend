@@ -1,14 +1,14 @@
 import type { ChatCompletionMessage } from './chat-completion-message';
 import type { LogProbInfo } from './log-prob-info';
 
-/** èå¤©å®æååºä¸­çéé¡¹å¯¹è±¡ */
+/** 聊天完成响应中的选项对象 */
 export interface ChatCompletionChoice {
-  /** éé¡¹ç´¢å¼ */
+  /** 选项索引 */
   index: number;
-  /** æ¨¡åçæçæ¶æ¯ */
+  /** 模型生成的消息 */
   message: ChatCompletionMessage;
-  /** æ¥å¿æ¦çä¿¡æ¯ï¼ä»å¨è¯·æ±æ¶æå®äºlogprobsåæ°æ¶è¿åï¼ */
+  /** 日志概率信息（仅在请求时指定了logprobs参数时返回） */
   logprobs?: LogProbInfo;
-  /** å®æåå ï¼å¯è½çå¼ï¼"stop"ï¼æ­£å¸¸åæ­¢ï¼ã"length"ï¼è¾¾å°é¿åº¦éå¶ï¼ã"function_call"ï¼éè¦è°ç¨å½æ°ï¼ç­ */
+  /** 完成原因，可能的值："stop"（正常停止）、"length"（达到长度限制）、"function_call"（需要调用函数）等 */
   finish_reason: string;
 }

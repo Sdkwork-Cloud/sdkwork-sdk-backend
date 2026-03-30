@@ -1,17 +1,17 @@
-/** æ£çæ¸¸æèµäºç®¡çè¡¨å */
+/** 棋牌游戏赛事管理表单 */
 export interface PlusGameTournamentManageForm {
-  /** èµäºç¶æ */
+  /** 赛事状态 */
   status?: 'DRAFT' | 'REGISTERING' | 'RUNNING' | 'SETTLING' | 'FINISHED' | 'CANCELED';
-  /** æ¥åå¼å§æ¶é´ */
+  /** 报名开始时间 */
   signUpStartAt?: string;
-  /** æ¥åç»ææ¶é´ */
+  /** 报名结束时间 */
   signUpEndAt?: string;
-  /** èµäºå¼å§æ¶é´ */
+  /** 赛事开始时间 */
   startAt?: string;
-  /** èµäºç»ææ¶é´ */
+  /** 赛事结束时间 */
   endAt?: string;
-  /** å åç¨æ·ID */
+  /** 冠军用户ID */
   winnerUserId?: number;
-  /** å åä¿±ä¹é¨ID */
+  /** 冠军俱乐部ID */
   winnerClubId?: number;
 }

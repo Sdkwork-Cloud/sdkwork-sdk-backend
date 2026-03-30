@@ -1,10 +1,10 @@
 export interface ChatOptions {
-  frequencyPenalty?: number;
-  maxTokens?: number;
-  stopSequences?: string[];
-  presencePenalty?: number;
   temperature?: number;
   model?: string;
-  topP?: number;
   topK?: number;
+  topP?: number;
+  stopSequences?: string[];
+  presencePenalty?: number;
+  maxTokens?: number;
+  frequencyPenalty?: number;
 }

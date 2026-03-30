@@ -1,6 +1,6 @@
 import type { PlusOrganizationMemberVO } from './plus-organization-member-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultListPlusOrganizationMemberVO {
   /** Response data */
   data: PlusOrganizationMemberVO[];

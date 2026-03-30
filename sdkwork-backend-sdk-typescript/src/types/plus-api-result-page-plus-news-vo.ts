@@ -1,6 +1,6 @@
 import type { PagePlusNewsVO } from './page-plus-news-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPagePlusNewsVO {
   /** Response data */
   data: PagePlusNewsVO;

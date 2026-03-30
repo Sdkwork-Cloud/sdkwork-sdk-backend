@@ -1,13 +1,13 @@
-/** è´¦æ·åæ¢æ¯ä¾VO */
+/** 账户兑换比例VO */
 export interface AccountExchangeRateVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** éç½®é® */
+  /** 配置键 */
   configKey?: string;
-  /** ç§¯ååæ¢ç°éæ¯ä¾ï¼Nç§¯å=1åï¼ */
+  /** 积分兑换现金比例（N积分=1元） */
   pointsToCashRate?: number;
-  /** å¤æ³¨ */
+  /** 备注 */
   remarks?: string;
 }

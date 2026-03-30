@@ -35,6 +35,7 @@ import { ParticipantApi, createParticipantApi } from './api/participant';
 import { OssApi, createOssApi } from './api/oss';
 import { OrganizationApi, createOrganizationApi } from './api/organization';
 import { OrganizationMemberApi, createOrganizationMemberApi } from './api/organization-member';
+import { OauthApi, createOauthApi } from './api/oauth';
 import { NotificationApi, createNotificationApi } from './api/notification';
 import { NoteApi, createNoteApi } from './api/note';
 import { NotaryApi, createNotaryApi } from './api/notary';
@@ -81,6 +82,7 @@ import { SearchApi, createSearchApi } from './api/search';
 import { RtcApi, createRtcApi } from './api/rtc';
 import { FinanceApi, createFinanceApi } from './api/finance';
 import { AuthApi, createAuthApi } from './api/auth';
+import { DashboardApi, createDashboardApi } from './api/dashboard';
 
 export class SdkworkBackendClient {
   private httpClient: HttpClient;
@@ -118,6 +120,7 @@ export class SdkworkBackendClient {
   public readonly oss: OssApi;
   public readonly organization: OrganizationApi;
   public readonly organizationMember: OrganizationMemberApi;
+  public readonly oauth: OauthApi;
   public readonly notification: NotificationApi;
   public readonly note: NoteApi;
   public readonly notary: NotaryApi;
@@ -164,6 +167,7 @@ export class SdkworkBackendClient {
   public readonly rtc: RtcApi;
   public readonly finance: FinanceApi;
   public readonly auth: AuthApi;
+  public readonly dashboard: DashboardApi;
 
   constructor(config: SdkworkBackendConfig) {
     this.httpClient = createHttpClient(config);
@@ -232,6 +236,8 @@ export class SdkworkBackendClient {
     this.organization = createOrganizationApi(this.httpClient);
 
     this.organizationMember = createOrganizationMemberApi(this.httpClient);
+
+    this.oauth = createOauthApi(this.httpClient);
 
     this.notification = createNotificationApi(this.httpClient);
 
@@ -324,6 +330,8 @@ export class SdkworkBackendClient {
     this.finance = createFinanceApi(this.httpClient);
 
     this.auth = createAuthApi(this.httpClient);
+
+    this.dashboard = createDashboardApi(this.httpClient);
   }
 
   setApiKey(apiKey: string): this {

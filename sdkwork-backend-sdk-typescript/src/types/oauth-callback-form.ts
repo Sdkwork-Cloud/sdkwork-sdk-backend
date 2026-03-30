@@ -1,9 +1,9 @@
 /** OAuth callback form */
 export interface OAuthCallbackForm {
-  /** OAuthæä¾åç±»å */
-  provider?: 'WECHAT' | 'QQ' | 'WEIBO' | 'GITHUB' | 'GOOGLE' | 'FACEBOOK' | 'TWITTER' | 'LINKEDIN' | 'MICROSOFT' | 'APPLE' | 'ALIPAY' | 'DINGTALK' | 'GITEE';
-  /** ææç  */
+  /** OAuth提供商类型 */
+  provider?: 'WECHAT' | 'QQ' | 'WEIBO' | 'GITHUB' | 'GOOGLE' | 'FACEBOOK' | 'TWITTER' | 'LINKEDIN' | 'MICROSOFT' | 'APPLE' | 'ALIPAY' | 'DINGTALK' | 'GITEE' | 'DOUYIN';
+  /** 授权码 */
   code?: string;
-  /** ç¶æåæ°ï¼ç¨äºéªè¯è¯·æ±ä¸è´æ§ */
+  /** 状态参数，用于验证请求一致性 */
   state?: string;
 }

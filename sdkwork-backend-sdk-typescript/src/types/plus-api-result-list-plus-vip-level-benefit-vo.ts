@@ -1,6 +1,6 @@
 import type { PlusVipLevelBenefitVO } from './plus-vip-level-benefit-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultListPlusVipLevelBenefitVO {
   /** Response data */
   data: PlusVipLevelBenefitVO[];

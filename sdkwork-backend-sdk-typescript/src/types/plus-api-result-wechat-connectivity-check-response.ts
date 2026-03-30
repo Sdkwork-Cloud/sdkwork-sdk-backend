@@ -1,6 +1,6 @@
 import type { WechatConnectivityCheckResponse } from './wechat-connectivity-check-response';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultWechatConnectivityCheckResponse {
   /** Response data */
   data: WechatConnectivityCheckResponse;

@@ -1,16 +1,16 @@
 /** PPT template slide creation form */
 export interface PlusPptTemplateSlideForm {
-  /** éå® ä»é¨å±PTå¦¯âæ¾ID */
+  /** 鍏宠仈鐨凱PT妯℃澘ID */
   templateId: number;
-  /** å¦¯âæ¾sectionéå¬î½éå î§'çä¾æ½°æ¤¤?é?é©î¼ç¶æ¤¤?é?éå­îæ¤¤?'ç»å¤ç´ */
+  /** 妯℃澘section鏍囬锛堝'灏侀潰椤?銆?鐩綍椤?銆?鍐呭椤?'绛夛級 */
   pageNumber: number;
-  /** æ¤¤ç¸æ½°ç¯å¨ç¬ç»«è¯²ç·éå ç£æ£°æ©ã/éå­îæ¤¤?éå¬î½+éå­î/éåç®éå­îç»å¤ç´ */
+  /** 椤甸潰甯冨眬绫诲瀷锛堟爣棰橀〉/鍐呭椤?鏍囬+鍐呭/鍒嗘爮鍐呭绛夛級 */
   layoutType: 'DEFAULT' | 'TITLE' | 'CONTENT' | 'TITLE_CONTENT' | 'COLUMN_CONTENT';
   /** S or tO rd er */
   sortOrder: number;
-  /** éîææ¶åç¹æ¿ç¸ectionéå±rue-è¹å­ï½éå²æé´æ­PTéæµç¬éîå¹éãç´±false-éîâ¬å¤ç´éîå¹éãç´ */
+  /** 鏄惁涓哄繀濉玸ection锛坱rue-蹇呭～锛岀敓鎴怭PT鏃朵笉鍙垹闄わ紱false-鍙€夛紝鍙垹闄わ級 */
   isRequired: boolean;
-  /** éæ¶ç¼éå æ£¿ */
+  /** 鍒涘缓鏃堕棿 */
   createdAt?: string;
   /** U pd at ed At */
   updatedAt?: string;

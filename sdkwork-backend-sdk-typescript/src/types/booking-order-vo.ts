@@ -1,15 +1,15 @@
-/** é¢çº¦è®¢åVO */
+/** 预约订单VO */
 export interface BookingOrderVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** è®¢åID */
+  /** 订单ID */
   orderId?: number;
-  /** è®¢åç¼å· */
+  /** 订单编号 */
   orderSn?: string;
-  /** æ¯å¦åå»ºæå */
+  /** 是否创建成功 */
   success?: boolean;
-  /** æ¶æ¯ */
+  /** 消息 */
   message?: string;
 }

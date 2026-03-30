@@ -3,46 +3,46 @@ import type { AuthorInfo } from './author-info';
 import type { ImageMediaResourceList } from './image-media-resource-list';
 import type { MusicMediaResource } from './music-media-resource';
 
-/** é³ä¹ä¿¡æ¯VO */
+/** 音乐信息VO */
 export interface PlusMusicVO {
-  /** åå»ºæ¶é´ï¼å®ä½é¦æ¬¡æä¹åæ¶è®¾ç½® */
+  /** 创建时间，实体首次持久化时设置 */
   createdAt?: string;
-  /** æåæ´æ°æ¶é´ï¼å®ä½ä¿®æ¹æ¶æ´æ° */
+  /** 最后更新时间，实体修改时更新 */
   updatedAt?: string;
-  /** ä¸»é®IDï¼ç±æ°æ®åºèªå¨çæ */
+  /** 主键ID，由数据库自动生成 */
   id?: number;
-  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
+  /** 通用唯一标识符UUID */
   uuid?: string;
-  /** çæ¬å·ï¼ç¨äºä¹è§éæ§å¶ */
+  /** 版本号，用于乐观锁控制 */
   version?: number;
-  /** é³ä¹æ é¢ */
+  /** 音乐标题 */
   title?: string;
-  /** é³ä¹å°é¢å¾çåè¡¨ */
+  /** 音乐封面图片列表 */
   coverImages?: ImageMediaResourceList;
-  /** é³ä¹æè¿°ä¿¡æ¯ */
+  /** 音乐描述信息 */
   description?: string;
-  /** èµæºä¿¡æ¯ */
+  /** 资源信息 */
   resource?: MusicMediaResource;
-  /** ä½èä¿¡æ¯ */
+  /** 作者信息 */
   author?: AuthorInfo;
-  /** é³ä¹å­å¨URL */
+  /** 音乐存储URL */
   contentUrl?: string;
-  /** é³ä¹èµæºåè¡¨ */
+  /** 音乐资源列表 */
   resourceList?: AssetMediaResourceList;
-  /** é³ä¹æ ¼å¼ */
+  /** 音乐格式 */
   format?: string;
-  /** é³ä¹æ¶é¿ï¼ç§ï¼ */
+  /** 音乐时长（秒） */
   duration?: number;
-  /** é³ä¹æä»¶å¤§å° */
+  /** 音乐文件大小 */
   fileSize?: number;
-  /** é³ä¹ç¼©ç¥å¾URL */
+  /** 音乐缩略图URL */
   thumbnailUrl?: string;
-  /** èºæ¯å®¶åç§° */
+  /** 艺术家名称 */
   artist?: string;
-  /** é³ä¹æµæ´¾ */
+  /** 音乐流派 */
   genre?: string;
-  /** é³é¢æ¯ç¹ç */
+  /** 音频比特率 */
   bitrate?: number;
-  /** é³ä¹ç¶æ */
+  /** 音乐状态 */
   status?: 'DEFAULT' | 'PROCESSING' | 'COMPLETED' | 'FAILED' | 'DELETED';
 }

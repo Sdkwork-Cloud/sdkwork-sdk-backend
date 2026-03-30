@@ -1,6 +1,6 @@
 import type { PlusColumnVO } from './plus-column-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultListPlusColumnVO {
   /** Response data */
   data: PlusColumnVO[];

@@ -1,6 +1,6 @@
 import type { PagePlusVideoVO } from './page-plus-video-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPagePlusVideoVO {
   /** Response data */
   data: PagePlusVideoVO;

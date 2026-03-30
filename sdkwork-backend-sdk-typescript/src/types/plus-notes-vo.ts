@@ -2,9 +2,9 @@ import type { ImageMediaResource } from './image-media-resource';
 
 /** Notes VO */
 export interface PlusNotesVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
   /** ID */
   id?: number;

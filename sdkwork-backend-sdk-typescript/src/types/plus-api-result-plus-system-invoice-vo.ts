@@ -1,6 +1,6 @@
 import type { PlusSystemInvoiceVO } from './plus-system-invoice-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPlusSystemInvoiceVO {
   /** Response data */
   data: PlusSystemInvoiceVO;

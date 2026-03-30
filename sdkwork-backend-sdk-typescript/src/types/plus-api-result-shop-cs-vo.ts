@@ -1,6 +1,6 @@
 import type { ShopCsVO } from './shop-cs-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultShopCsVO {
   /** Response data */
   data: ShopCsVO;

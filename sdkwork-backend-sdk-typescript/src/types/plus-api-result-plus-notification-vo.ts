@@ -1,6 +1,6 @@
 import type { PlusNotificationVO } from './plus-notification-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPlusNotificationVO {
   /** Response data */
   data: PlusNotificationVO;

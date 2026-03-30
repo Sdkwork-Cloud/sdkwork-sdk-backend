@@ -1,6 +1,6 @@
 import type { VirtualOrderVO } from './virtual-order-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultVirtualOrderVO {
   /** Response data */
   data: VirtualOrderVO;

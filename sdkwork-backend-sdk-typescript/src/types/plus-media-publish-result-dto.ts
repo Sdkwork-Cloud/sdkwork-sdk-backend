@@ -10,6 +10,6 @@ export interface PlusMediaPublishResultDTO {
   draftMediaId?: string;
   publishId?: string;
   articleId?: string;
-  previewData?: unknown;
+  previewData?: Record<string, unknown>;
   items?: PlusMediaPublishItemResultDTO[];
 }

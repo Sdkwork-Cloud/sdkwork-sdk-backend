@@ -1,8 +1,8 @@
 /** Coupon Template Value Object */
 export interface PlusCouponTemplateVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
   /** Template ID */
   id?: number;

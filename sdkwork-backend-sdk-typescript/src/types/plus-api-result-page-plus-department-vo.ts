@@ -1,6 +1,6 @@
 import type { PagePlusDepartmentVO } from './page-plus-department-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPagePlusDepartmentVO {
   /** Response data */
   data: PagePlusDepartmentVO;

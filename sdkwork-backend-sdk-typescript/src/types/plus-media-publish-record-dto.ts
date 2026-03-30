@@ -18,8 +18,8 @@ export interface PlusMediaPublishRecordDTO {
   articleIndex?: number;
   errcode?: number;
   errmsg?: string;
-  requestPayload?: Record<string, unknown>;
-  responsePayload?: Record<string, unknown>;
+  requestPayload?: Record<string, Record<string, unknown>>;
+  responsePayload?: Record<string, Record<string, unknown>>;
   startedAt?: string;
   finishedAt?: string;
 }

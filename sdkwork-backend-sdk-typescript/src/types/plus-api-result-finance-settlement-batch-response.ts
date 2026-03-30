@@ -1,6 +1,6 @@
 import type { FinanceSettlementBatchResponse } from './finance-settlement-batch-response';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultFinanceSettlementBatchResponse {
   /** Response data */
   data: FinanceSettlementBatchResponse;

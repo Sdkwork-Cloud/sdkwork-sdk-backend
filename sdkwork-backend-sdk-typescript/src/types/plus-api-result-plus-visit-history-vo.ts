@@ -1,6 +1,6 @@
 import type { PlusVisitHistoryVO } from './plus-visit-history-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPlusVisitHistoryVO {
   /** Response data */
   data: PlusVisitHistoryVO;

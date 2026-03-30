@@ -1,8 +1,8 @@
 /** Growth record view object */
 export interface PlusGameGrowthRecordVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
   /** Record ID */
   recordId?: number;
@@ -59,7 +59,7 @@ export interface PlusGameGrowthRecordVO {
   /** Occurred time */
   occurredAt?: string;
   /** Settlement snapshot */
-  settlementData?: Record<string, unknown>;
+  settlementData?: Record<string, Record<string, unknown>>;
   /** Extension data */
-  extData?: Record<string, unknown>;
+  extData?: Record<string, Record<string, unknown>>;
 }

@@ -1,27 +1,27 @@
-/** APIç¹å¤åç»æ «æçã¥å´ */
+/** API瀹夊叏绛栫暐琛ㄥ崟 */
 export interface PlusApiSecurityPolicyForm {
-  /** ç»æ «æç¼æ «ç */
+  /** 绛栫暐缂栫爜 */
   policyCode: string;
-  /** APIç»«è¯²ç·(app/backend/ai/open/*) */
+  /** API绫诲瀷(app/backend/ai/open/*) */
   apiType: string;
-  /** çºîç·éå½å¤å¦¯â³ç´¡ */
+  /** 璺緞鍖归厤妯″紡 */
   pathPattern: string;
-  /** HTTPéè§ç¡¶(GET/POST/.../*) */
+  /** HTTP鏂规硶(GET/POST/.../*) */
   httpMethod?: string;
-  /** çºîç·éå½å¤éç°ç´¡(EXACT/PREFIX/ANT) */
+  /** 璺緞鍖归厤鏂瑰紡(EXACT/PREFIX/ANT) */
   matchMode: 'EXACT' | 'PREFIX' | 'ANT';
-  /** çãçå¦¯â³ç´¡(NONE/API_KEY/AUTH_TOKEN/ACCESS_TOKEN/AUTHENTICATED) */
+  /** 璁よ瘉妯″紡(NONE/API_KEY/AUTH_TOKEN/ACCESS_TOKEN/AUTHENTICATED) */
   authMode: 'NONE' | 'API_KEY' | 'AUTH_TOKEN' | 'ACCESS_TOKEN' | 'AUTHENTICATED';
-  /** éîæéä½½îéå®æçåæ£¶ */
+  /** 鏄惁鍏佽鍖垮悕璁块棶 */
   allowAnonymous?: boolean;
-  /** éµâ¬éâ¬çæå£ç¼æ «çéæ¥ã(é«æ¥å½¿éåæ®§) */
+  /** 鎵€闇€瑙掕壊缂栫爜鍒楄〃(閫楀彿鍒嗛殧) */
   requiredRoles?: string;
-  /** éµâ¬éâ¬éå®æªºç¼æ «çéæ¥ã(é«æ¥å½¿éåæ®§) */
+  /** 鎵€闇€鏉冮檺缂栫爜鍒楄〃(閫楀彿鍒嗛殧) */
   requiredPermissions?: string;
-  /** æµ¼æ¨ºåç»¾?éæ¿â¬è°ç§ºçå¿ç´­éå ¢éªçå©ç®) */
+  /** 浼樺厛绾?鏁板€艰秺灏忎紭鍏堢骇瓒婇珮) */
   priority?: number;
-  /** éîæéîæ¤ */
+  /** 鏄惁鍚敤 */
   enabled?: boolean;
-  /** é»å¿å ª */
+  /** 鎻忚堪 */
   description?: string;
 }

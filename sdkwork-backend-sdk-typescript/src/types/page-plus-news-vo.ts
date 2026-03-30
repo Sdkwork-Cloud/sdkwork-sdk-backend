@@ -9,9 +9,9 @@ export interface PagePlusNewsVO {
   content?: PlusNewsVO[];
   number?: number;
   numberOfElements?: number;
-  pageable?: PageableObject;
-  sort?: SortObject;
   first?: boolean;
   last?: boolean;
+  sort?: SortObject;
+  pageable?: PageableObject;
   empty?: boolean;
 }

@@ -2,46 +2,46 @@ import type { ImageMediaResource } from './image-media-resource';
 import type { SocialInfoList } from './social-info-list';
 import type { VideoMediaResource } from './video-media-resource';
 
-/** ç¨æ·ä¸ªäººèµæVO */
+/** 用户个人资料VO */
 export interface PlusUserProfileVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** ç¨æ·ID */
+  /** 用户ID */
   id?: number;
-  /** ç¨æ·UUID */
+  /** 用户UUID */
   uuid?: string;
-  /** ç¨æ·å¤´å */
+  /** 用户头像 */
   faceImage?: ImageMediaResource;
-  /** ç¨æ·è§é¢ä»ç» */
+  /** 用户视频介绍 */
   faceVideo?: VideoMediaResource;
-  /** ç¨æ·å(å¯ä¸) */
+  /** 用户名(唯一) */
   username?: string;
-  /** æµç§° */
+  /** 昵称 */
   nickname?: string;
-  /** çµå­é®ç®± */
+  /** 电子邮箱 */
   email?: string;
-  /** ææºå·ç  */
+  /** 手机号码 */
   phone?: string;
-  /** æ§å« */
+  /** 性别 */
   gender?: 'UNKNOWN' | 'MALE' | 'FEMALE' | 'NEUTRAL';
-  /** ç¨æ·ç¶æ(ACTIVE:æ´»è·,INACTIVE:æªæ¿æ´»,LOCKED:éå®,DELETED:å·²å é¤) */
+  /** 用户状态(ACTIVE:活跃,INACTIVE:未激活,LOCKED:锁定,DELETED:已删除) */
   status?: 'ACTIVE' | 'INACTIVE';
-  /** å½å®¶ä»£ç  */
+  /** 国家代码 */
   countryCode?: string;
-  /** çä»½ä»£ç  */
+  /** 省份代码 */
   provinceCode?: string;
-  /** åå¸ä»£ç  */
+  /** 城市代码 */
   cityCode?: string;
-  /** åºåä»£ç  */
+  /** 区域代码 */
   districtCode?: string;
-  /** è¯¦ç»å°å */
+  /** 详细地址 */
   address?: string;
-  /** ä¸ªäººç®ä» */
+  /** 个人简介 */
   bio?: string;
-  /** åºçæ¥æ */
+  /** 出生日期 */
   birthDate?: string;
-  /** ç¤¾äº¤ä¿¡æ¯ */
+  /** 社交信息 */
   socialInfoList?: SocialInfoList;
 }

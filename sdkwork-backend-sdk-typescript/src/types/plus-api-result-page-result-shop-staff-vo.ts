@@ -1,6 +1,6 @@
 import type { PageResultShopStaffVO } from './page-result-shop-staff-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPageResultShopStaffVO {
   /** Response data */
   data: PageResultShopStaffVO;

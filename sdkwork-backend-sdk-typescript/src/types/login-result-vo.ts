@@ -1,21 +1,21 @@
 import type { UserVO } from './user-vo';
 
-/** è®¤è¯ä»¤çä¿¡æ¯ */
+/** 认证令牌信息 */
 export interface LoginResultVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** è®¿é®ä»¤ç */
+  /** 访问令牌 */
   token: string;
-  /** å·æ°ä»¤ç */
+  /** 刷新令牌 */
   refreshToken: string;
-  /** è®¿é®ä»¤çè¿ææ¶é´(ç§) */
+  /** 访问令牌过期时间(秒) */
   expiresIn: number;
-  /** å·æ°ä»¤çè¿ææ¶é´(ç§) */
+  /** 刷新令牌过期时间(秒) */
   refreshExpiresIn: number;
-  /** ç¨æ·id */
+  /** 用户id */
   userId: number;
-  /** ç¨æ·ä¿¡æ¯ */
+  /** 用户信息 */
   user?: UserVO;
 }

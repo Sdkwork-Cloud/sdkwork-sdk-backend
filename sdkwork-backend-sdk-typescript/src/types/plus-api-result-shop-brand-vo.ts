@@ -1,6 +1,6 @@
 import type { ShopBrandVO } from './shop-brand-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultShopBrandVO {
   /** Response data */
   data: ShopBrandVO;

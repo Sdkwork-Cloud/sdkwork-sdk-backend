@@ -1,6 +1,6 @@
 import type { PlusMemberLevelVO } from './plus-member-level-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPlusMemberLevelVO {
   /** Response data */
   data: PlusMemberLevelVO;

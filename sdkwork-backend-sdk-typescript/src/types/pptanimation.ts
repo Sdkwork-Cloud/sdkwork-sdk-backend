@@ -1,18 +1,18 @@
 import type { PPTAnimationTrigger } from './pptanimation-trigger';
 import type { PPTAnimationType } from './pptanimation-type';
 
-/** åç´ å¨ç» */
+/** 元素动画 */
 export interface PPTAnimation {
-  /** å¨ç»id */
+  /** 动画id */
   id: string;
-  /** åç´ ID */
+  /** 元素ID */
   elId: string;
-  /** å¨ç»ææ */
+  /** 动画效果 */
   effect: string;
-  /** å¨ç»ç±»åï¼å¥åºãéåºãå¼ºè°ï¼ */
+  /** 动画类型（入场、退场、强调） */
   type: PPTAnimationType;
-  /** å¨ç»æç»­æ¶é´ */
+  /** 动画持续时间 */
   duration: number;
-  /** å¨ç»è§¦åæ¹å¼ */
+  /** 动画触发方式 */
   trigger: PPTAnimationTrigger;
 }

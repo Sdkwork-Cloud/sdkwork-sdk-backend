@@ -5,18 +5,18 @@ import type { ImageMediaResource } from './image-media-resource';
 import type { MusicMediaResource } from './music-media-resource';
 import type { VideoMediaResource } from './video-media-resource';
 
-/** åªä½èµæºåè¡¨ */
+/** 媒体资源列表 */
 export interface AssetMediaResourceList {
-  /** å¾çèµæºåè¡¨ */
+  /** 图片资源列表 */
   images?: ImageMediaResource[];
-  /** è§é¢èµæºåè¡¨ */
+  /** 视频资源列表 */
   videos?: VideoMediaResource[];
-  /** é³é¢èµæºåè¡¨ */
+  /** 音频资源列表 */
   audios?: AudioMediaResource[];
-  /** æä»¶èµæºåè¡¨ */
+  /** 文件资源列表 */
   files?: FileMediaResource[];
-  /** é³ä¹èµæºåè¡¨ */
+  /** 音乐资源列表 */
   musics?: MusicMediaResource[];
-  /** éç¨èµæºåè¡¨ */
+  /** 通用资源列表 */
   resources?: AssetMediaResource[];
 }

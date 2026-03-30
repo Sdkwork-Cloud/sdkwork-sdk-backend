@@ -1,4 +1,4 @@
 export interface UploadFilePostRequest {
-  /** è¦ä¸ä¼ çæä»¶ */
+  /** 要上传的文件 */
   file: string;
 }

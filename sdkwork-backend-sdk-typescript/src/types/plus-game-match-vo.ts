@@ -1,71 +1,71 @@
-/** æ£çæ¸¸æå¯¹å±VO */
+/** 棋牌游戏对局VO */
 export interface PlusGameMatchVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** å¯¹å±ID */
+  /** 对局ID */
   matchId?: number;
-  /** ç©æ³å®ä¹ID */
+  /** 玩法定义ID */
   definitionId?: number;
-  /** æ¿é´ID */
+  /** 房间ID */
   roomId?: number;
-  /** ç©æ³ç±»å */
+  /** 玩法类型 */
   gameType?: 'INTERNATIONAL_CHESS' | 'CHINESE_CHESS' | 'GOMOKU' | 'JUNQI' | 'LANDLORD' | 'SHENG_JI' | 'TUO_LA_JI' | 'TEXAS_HOLDEM' | 'MAHJONG' | 'CUSTOM';
-  /** ç©æ³æ¨¡å¼ç¼ç  */
+  /** 玩法模式编码 */
   gameModeCode?: string;
-  /** èµå­£æ è¯ */
+  /** 赛季标识 */
   seasonKey?: string;
-  /** å¯¹å±ç¼å· */
+  /** 对局编号 */
   matchNo?: string;
-  /** æ¿é´ç±»å */
+  /** 房间类型 */
   roomType?: 'MATCHMAKING' | 'CLASSIC' | 'FRIEND' | 'TOURNAMENT' | 'PRACTICE' | 'CLUB';
-  /** å¯¹å±ç¶æ */
+  /** 对局状态 */
   status?: 'CREATED' | 'RUNNING' | 'PAUSED' | 'SETTLING' | 'FINISHED' | 'ABORTED';
-  /** æ¯å¦æä½å¯¹å± */
+  /** 是否排位对局 */
   ranked?: boolean;
-  /** ç©å®¶æ»æ° */
+  /** 玩家总数 */
   totalPlayerCount?: number;
-  /** ä¿±ä¹é¨ID */
+  /** 俱乐部ID */
   clubId?: number;
-  /** èµäºID */
+  /** 赛事ID */
   tournamentId?: number;
-  /** å°åºç¼ç  */
+  /** 地区编码 */
   regionCode?: string;
-  /** å½åè½®æ¬¡ */
+  /** 当前轮次 */
   currentRoundNo?: number;
-  /** è®¡åæ»è½®æ¬¡ */
+  /** 计划总轮次 */
   maxRoundCount?: number;
-  /** å½åè¡å¨åº§ä½ */
+  /** 当前行动座位 */
   currentTurnSeatNo?: number;
-  /** åºå®¶/åæåº§ä½ */
+  /** 庄家/先手座位 */
   dealerSeatNo?: number;
-  /** è·èåº§ä½ */
+  /** 获胜座位 */
   winnerSeatNo?: number;
-  /** è·èç¨æ·ID */
+  /** 获胜用户ID */
   winnerUserId?: number;
-  /** åæ¾ID */
+  /** 回放ID */
   replayId?: number;
-  /** å¨ä½æ»æ° */
+  /** 动作总数 */
   actionCount?: number;
-  /** ææå¨ä½æ° */
+  /** 有效动作数 */
   moveCount?: number;
-  /** æ¯å¦è®¡å¥æ¦å */
+  /** 是否计入榜单 */
   leaderboardEligible?: boolean;
-  /** æ¯å¦è®¡å¥ç»è®¡ */
+  /** 是否计入统计 */
   validForStats?: boolean;
-  /** ç»ææ¯å¦å·²ç¡®è®¤ */
+  /** 结果是否已确认 */
   resultConfirmed?: boolean;
-  /** æ¯å¦å¼å¸¸ç»æ */
+  /** 是否异常结束 */
   abnormalFinished?: boolean;
-  /** å¼å¸¸åå  */
+  /** 异常原因 */
   invalidReason?: string;
-  /** å¼å§æ¶é´ */
+  /** 开始时间 */
   startedAt?: string;
-  /** ç»ç®æ¶é´ */
+  /** 结算时间 */
   settledAt?: string;
-  /** ç»ææ¶é´ */
+  /** 结束时间 */
   endedAt?: string;
-  /** æç»­ç§æ° */
+  /** 持续秒数 */
   durationSeconds?: number;
 }

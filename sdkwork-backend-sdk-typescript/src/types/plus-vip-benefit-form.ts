@@ -8,4 +8,6 @@ export interface PlusVipBenefitForm {
   benefitKey: string;
   /** Benefit type */
   type: 'DEFAULT' | 'MONTHLY_FREE_POINTS' | 'DEDICATED_SUPPORT' | 'PURCHASE_DISCOUNT' | 'EXCLUSIVE_CONTENT' | 'PRIORITY_SERVICE' | 'BIRTHDAY_GIFT';
+  /** Benefit status */
+  status?: 'ENABLED' | 'DISABLED';
 }

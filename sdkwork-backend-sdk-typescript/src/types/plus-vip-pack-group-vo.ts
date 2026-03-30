@@ -1,27 +1,33 @@
 import type { PlusVipPackVO } from './plus-vip-pack-vo';
 
-/** VIPå¥é¤åç»VO */
+/** VIP package group view object */
 export interface PlusVipPackGroupVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** ä¸»é®ID */
+  /** Primary key */
   id?: number;
-  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
+  /** UUID */
   uuid?: string;
-  /** åºç¨ID */
+  /** Application ID */
   appId?: number;
-  /** åç»åç§° */
+  /** Scope type */
+  scopeType?: 'DEFAULT' | 'GLOBAL' | 'APP';
+  /** Scope ID */
+  scopeId?: number;
+  /** Stable group key */
+  groupKey?: string;
+  /** Group name */
   name?: string;
-  /** åç»æè¿° */
+  /** Group description */
   description?: string;
-  /** æåºæé */
+  /** Sort weight */
   sortWeight?: number;
-  /** åç»ç¶æ */
+  /** Group status */
   status?: 'DEFAULT' | 'ENABLED' | 'DISABLED';
-  /** å¤æ³¨ä¿¡æ¯ */
+  /** Remark */
   remark?: string;
-  /** å³èçå¥é¤åè¡¨ */
+  /** Packs under the group */
   packs?: PlusVipPackVO[];
 }

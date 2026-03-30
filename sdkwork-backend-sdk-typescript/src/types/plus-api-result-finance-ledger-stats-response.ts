@@ -1,6 +1,6 @@
 import type { FinanceLedgerStatsResponse } from './finance-ledger-stats-response';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultFinanceLedgerStatsResponse {
   /** Response data */
   data: FinanceLedgerStatsResponse;

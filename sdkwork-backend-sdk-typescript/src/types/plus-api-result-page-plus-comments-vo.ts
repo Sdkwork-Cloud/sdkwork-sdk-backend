@@ -1,6 +1,6 @@
 import type { PagePlusCommentsVO } from './page-plus-comments-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPagePlusCommentsVO {
   /** Response data */
   data: PagePlusCommentsVO;

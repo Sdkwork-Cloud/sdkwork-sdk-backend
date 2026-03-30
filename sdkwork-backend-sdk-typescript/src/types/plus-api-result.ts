@@ -1,7 +1,7 @@
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResult {
   /** Response data */
-  data: unknown;
+  data: Record<string, unknown>;
   /** Response code: 2000=success, 4xxx=business failure, 5xxx=server error */
   code: string;
   /** Business message */

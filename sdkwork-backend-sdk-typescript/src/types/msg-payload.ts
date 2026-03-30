@@ -6,20 +6,20 @@ import type { MsgMusicContent } from './msg-music-content';
 import type { MsgTextContent } from './msg-text-content';
 import type { MsgVideoContent } from './msg-video-content';
 
-/** IMæ¶æ¯è½½ä½ç±» */
+/** IM消息载体类 */
 export interface MsgPayload {
-  /** é³é¢æ¶æ¯åå®¹ */
+  /** 音频消息内容 */
   audio?: MsgAudioContent;
-  /** æä»¶æ¶æ¯åå®¹ */
+  /** 文件消息内容 */
   file?: MsgFileContent;
-  /** å¾çæ¶æ¯åå®¹ */
+  /** 图片消息内容 */
   image?: MsgImageContent;
-  /** ä½ç½®æ¶æ¯åå®¹ */
+  /** 位置消息内容 */
   location?: MsgLocationContent;
-  /** é³ä¹æ¶æ¯åå®¹ */
+  /** 音乐消息内容 */
   music?: MsgMusicContent;
-  /** ææ¬æ¶æ¯åå®¹ */
+  /** 文本消息内容 */
   text?: MsgTextContent;
-  /** è§é¢æ¶æ¯åå®¹ */
+  /** 视频消息内容 */
   video?: MsgVideoContent;
 }

@@ -2,9 +2,9 @@ import type { ImageMediaResourceList } from './image-media-resource-list';
 
 /** Image generation result value object */
 export interface GenerateImageVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
   /** Request ID */
   requestId?: string;

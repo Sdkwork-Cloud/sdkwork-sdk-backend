@@ -1,11 +1,11 @@
-/** ç§»å¨åºç¨SDKéç½® */
+/** 移动应用SDK配置 */
 export interface MobileAppSdkConfigVO {
-  /** åºç¨åå */
+  /** 应用包名 */
   packageName?: string;
-  /** åºç¨çæ¬ */
+  /** 应用版本 */
   version?: string;
-  /** åºç¨å¯é¥ */
+  /** 应用密钥 */
   appKey?: string;
-  /** æ¨éä»¤ç */
+  /** 推送令牌 */
   pushToken?: string;
 }

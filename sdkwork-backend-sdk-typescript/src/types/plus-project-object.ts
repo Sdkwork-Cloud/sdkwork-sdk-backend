@@ -8,14 +8,14 @@ export interface PlusProjectObject {
   owner?: 'DEFAULT' | 'USER' | 'PROJECT' | 'TENANT' | 'SYSTEM' | 'ORGANIZATION';
   lastModifiedTime?: string;
   version?: string;
-  tags?: TagsContent;
   description?: string;
-  title?: string;
-  screenType?: 'PHONE' | 'TABLET' | 'LAPTOP' | 'DESKTOP' | 'TV';
-  ownerId?: number;
-  uuid?: string;
-  author?: string;
-  createdAt?: string;
   diskId?: number;
+  tags?: TagsContent;
+  createdAt?: string;
+  title?: string;
+  author?: string;
   files?: PlusFileObject[];
+  uuid?: string;
+  ownerId?: number;
+  screenType?: 'PHONE' | 'TABLET' | 'LAPTOP' | 'DESKTOP' | 'TV';
 }

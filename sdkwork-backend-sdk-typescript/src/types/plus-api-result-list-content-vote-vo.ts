@@ -1,6 +1,6 @@
 import type { ContentVoteVO } from './content-vote-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultListContentVoteVO {
   /** Response data */
   data: ContentVoteVO[];

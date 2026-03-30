@@ -1,6 +1,6 @@
 import type { PageResultAuditEntryVO } from './page-result-audit-entry-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPageResultAuditEntryVO {
   /** Response data */
   data: PageResultAuditEntryVO;

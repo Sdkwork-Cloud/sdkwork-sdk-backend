@@ -1,6 +1,6 @@
 import type { PlusSkillVO } from './plus-skill-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultListPlusSkillVO {
   /** Response data */
   data: PlusSkillVO[];

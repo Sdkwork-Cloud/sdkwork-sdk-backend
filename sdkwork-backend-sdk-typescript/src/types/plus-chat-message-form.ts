@@ -18,7 +18,7 @@ export interface PlusChatMessageForm {
   /** Parent message ID (for threaded conversations) */
   parentMessageId?: number;
   /** Message metadata (JSON format, can store additional information) */
-  metadata?: Record<string, unknown>;
+  metadata?: Record<string, Record<string, unknown>>;
   /** Token count (for billing/usage tracking) */
   tokenCount?: number;
   /** Processing time in milliseconds (for performance tracking) */

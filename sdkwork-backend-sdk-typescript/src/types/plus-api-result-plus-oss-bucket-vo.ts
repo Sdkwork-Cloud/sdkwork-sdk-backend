@@ -1,6 +1,6 @@
 import type { PlusOssBucketVO } from './plus-oss-bucket-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPlusOssBucketVO {
   /** Response data */
   data: PlusOssBucketVO;

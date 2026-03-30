@@ -1,6 +1,6 @@
 import type { WechatDomainVerifyResponse } from './wechat-domain-verify-response';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultWechatDomainVerifyResponse {
   /** Response data */
   data: WechatDomainVerifyResponse;

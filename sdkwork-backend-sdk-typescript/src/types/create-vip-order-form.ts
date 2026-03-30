@@ -2,8 +2,8 @@ import type { OrderContentItem } from './order-content-item';
 
 /** Create VIP order form */
 export interface CreateVipOrderForm {
-  /** è®¢ååå®¹é¡¹åè¡¨ */
+  /** 订单内容项列表 */
   items?: OrderContentItem[];
-  /** ä¼åæææ */
+  /** 会员有效期 */
   expireTime?: string;
 }

@@ -7,23 +7,23 @@ import type { MusicGenerationInput } from './music-generation-input';
 import type { VideoGenerationInput } from './video-generation-input';
 import type { VoiceSpeakerGenerationInput } from './voice-speaker-generation-input';
 
-/** AIçæä»»å¡è¾å¥åæ°ç»ä¸å¥å£ */
+/** AI生成任务输入参数统一入口 */
 export interface GenerationInput {
-  /** çæç±»å */
+  /** 生成类型 */
   type?: 'DEFAULT' | 'IMAGE' | 'VIDEO' | 'SPEECH' | 'MUSIC' | 'MODEL_3D' | 'CODE' | 'DOCUMENT' | 'PPT' | 'VIDEO_AUTO_SLICE' | 'VOICE_SPEAKER' | 'CHARACTER' | 'AUDIO_EFFECT' | 'FILM' | 'OTHER';
-  /** å¾ççæåæ° */
+  /** 图片生成参数 */
   image?: ImageGenerationInput;
-  /** è§é¢çæåæ° */
+  /** 视频生成参数 */
   video?: VideoGenerationInput;
-  /** é³é¢çæåæ° */
+  /** 音频生成参数 */
   audio?: AudioGenerationInput;
-  /** é³ä¹çæåæ° */
+  /** 音乐生成参数 */
   music?: MusicGenerationInput;
-  /** è§è²çæåæ° */
+  /** 角色生成参数 */
   character?: CharacterGenerationInput;
-  /** è¯­é³è¯´è¯äººçæåæ° */
+  /** 语音说话人生成参数 */
   voiceSpeaker?: VoiceSpeakerGenerationInput;
-  /** é³æçæåæ° */
+  /** 音效生成参数 */
   audioEffect?: AudioEffectGenerationInput;
   input?: BaseGenerationInput;
   prompt?: string;

@@ -1,25 +1,25 @@
-/** è´­ç©è½¦æ¡ç®VO */
+/** 购物车条目VO */
 export interface PlusShoppingCartItemVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æåæ´æ°æ¶é´ */
+  /** 最后更新时间 */
   updatedAt?: string;
-  /** ä¸»é®ID */
+  /** 主键ID */
   id?: number;
-  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
+  /** 通用唯一标识符UUID */
   uuid?: string;
-  /** è´­ç©è½¦ID */
+  /** 购物车ID */
   cartId?: number;
-  /** è´­ç©è½¦åç»UUID */
+  /** 购物车分组UUID */
   cartGroupUuid?: string;
-  /** ååID */
+  /** 商品ID */
   productId?: number;
   /** SKU ID */
   skuId?: number;
-  /** ååæ°é */
+  /** 商品数量 */
   quantity?: number;
-  /** å å¥è´­ç©è½¦æ¶çä»·æ ¼ */
+  /** 加入购物车时的价格 */
   price?: number;
-  /** æ¯å¦éä¸­ */
+  /** 是否选中 */
   selected?: boolean;
 }

@@ -1,6 +1,6 @@
 import type { PagePlusShareVO } from './page-plus-share-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPagePlusShareVO {
   /** Response data */
   data: PagePlusShareVO;

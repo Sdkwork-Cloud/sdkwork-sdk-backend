@@ -1,43 +1,43 @@
 import type { AssetMediaResource } from './asset-media-resource';
 import type { VideoStoryboard } from './video-storyboard';
 
-/** é³æçæè¾å¥åæ° */
+/** 音效生成输入参数 */
 export interface AudioEffectGenerationInput {
-  /** ä»»å¡æ é¢ */
+  /** 任务标题 */
   title?: string;
-  /** ä¸»æç¤ºè¯ */
+  /** 主提示词 */
   prompt?: string;
-  /** ååæç¤ºè¯ */
+  /** 反向提示词 */
   negativePrompt?: string;
-  /** åèèµæºåè¡¨(æ¯æå¾ç/è§é¢/é³é¢ç­ä»»æç±»å) */
+  /** 参考资源列表(支持图片/视频/音频等任意类型) */
   referenceAssets?: AssetMediaResource[];
-  /** è§é¢æäºæ¿ */
+  /** 视频故事板 */
   storyboard?: VideoStoryboard;
-  /** çæåæ° */
-  parameters?: Record<string, unknown>;
-  /** çææ°é */
+  /** 生成参数 */
+  parameters?: Record<string, Record<string, unknown>>;
+  /** 生成数量 */
   n?: number;
-  /** éæºç§å­ */
+  /** 随机种子 */
   seed?: number;
-  /** è¾åºæ ¼å¼ */
+  /** 输出格式 */
   format?: string;
-  /** é³ææè¿° */
+  /** 音效描述 */
   description?: string;
-  /** é³æç±»å«(nature/urban/mechanical/human/ambientç­) */
+  /** 音效类别(nature/urban/mechanical/human/ambient等) */
   category?: string;
-  /** é³ææ¶é¿(ç§) */
+  /** 音效时长(秒) */
   duration?: number;
-  /** éæ ·ç */
+  /** 采样率 */
   sampleRate?: number;
-  /** æ¯ç¹ç */
+  /** 比特率 */
   bitRate?: number;
-  /** å£°éæ° */
+  /** 声道数 */
   channels?: number;
-  /** æ¯å¦å¾ªç¯ */
+  /** 是否循环 */
   loop?: boolean;
-  /** æ·¡å¥æ¶é¿(ç§) */
+  /** 淡入时长(秒) */
   fadeIn?: number;
-  /** æ·¡åºæ¶é¿(ç§) */
+  /** 淡出时长(秒) */
   fadeOut?: number;
   referenceAssetCount?: number;
 }

@@ -1,6 +1,6 @@
 import type { PlusFileContentVO } from './plus-file-content-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPlusFileContentVO {
   /** Response data */
   data: PlusFileContentVO;

@@ -1,23 +1,23 @@
 import type { BucketObject } from './bucket-object';
 
-/** æä»¶VOç±»ï¼ç¨äºå­å¨æä»¶çåæ°æ®ä¿¡æ¯ */
+/** 文件VO类，用于存储文件的元数据信息 */
 export interface PlusTempSessionVO {
-  /** æä»¶ID */
+  /** 文件ID */
   fileId?: number;
-  /** ä¸´æ¶è®¿é® keyId */
+  /** 临时访问 keyId */
   tmpAccessKeyId?: string;
-  /** ä¸´æ¶è®¿é®å¯é¥ */
+  /** 临时访问密钥 */
   tmpAccessKeySecret?: string;
-  /** ä¼è¯ token */
+  /** 会话 token */
   sessionToken?: string;
-  /** å­è¯ææç§æ° */
+  /** 凭证有效秒数 */
   expirationSeconds?: number;
-  /** ä¸ä¼ å°å */
+  /** 上传地址 */
   uploadUrl?: string;
-  /** å¯¹è±¡ key */
+  /** 对象 key */
   objectKey?: string;
-  /** æ¡¶ä¿¡æ¯ */
+  /** 桶信息 */
   bucket?: BucketObject;
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createTime?: string;
 }

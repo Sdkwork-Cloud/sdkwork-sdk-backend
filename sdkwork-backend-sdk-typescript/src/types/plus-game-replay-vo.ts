@@ -1,59 +1,59 @@
-/** æ£çæ¸¸æåæ¾VO */
+/** 棋牌游戏回放VO */
 export interface PlusGameReplayVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** åæ¾ID */
+  /** 回放ID */
   replayId?: number;
-  /** åæ¾ç¼å· */
+  /** 回放编号 */
   replayNo?: string;
-  /** æ¿é´ID */
+  /** 房间ID */
   roomId?: number;
-  /** å¯¹å±ID */
+  /** 对局ID */
   matchId?: number;
-  /** ç©æ³ç±»å */
+  /** 玩法类型 */
   gameType?: 'INTERNATIONAL_CHESS' | 'CHINESE_CHESS' | 'GOMOKU' | 'JUNQI' | 'LANDLORD' | 'SHENG_JI' | 'TUO_LA_JI' | 'TEXAS_HOLDEM' | 'MAHJONG' | 'CUSTOM';
-  /** æ¿é´ç±»å */
+  /** 房间类型 */
   roomType?: 'MATCHMAKING' | 'CLASSIC' | 'FRIEND' | 'TOURNAMENT' | 'PRACTICE' | 'CLUB';
-  /** ç©æ³æ¨¡å¼ç¼ç  */
+  /** 玩法模式编码 */
   gameModeCode?: string;
-  /** èµå­£æ è¯ */
+  /** 赛季标识 */
   seasonKey?: string;
-  /** ä¿±ä¹é¨ID */
+  /** 俱乐部ID */
   clubId?: number;
-  /** èµäºID */
+  /** 赛事ID */
   tournamentId?: number;
-  /** å°åºç¼ç  */
+  /** 地区编码 */
   regionCode?: string;
-  /** åæ¾å½å±ç¨æ·ID */
+  /** 回放归属用户ID */
   ownerUserId?: number;
-  /** åæ¾æ é¢ */
+  /** 回放标题 */
   title?: string;
-  /** åæ¾ç¶æ */
+  /** 回放状态 */
   status?: 'GENERATING' | 'READY' | 'EXPIRED' | 'DELETED';
-  /** æ¯å¦å¬å¼å¯è§ */
+  /** 是否公开可见 */
   publicVisible?: boolean;
-  /** æ¯å¦åè®¸åäº« */
+  /** 是否允许分享 */
   allowShare?: boolean;
-  /** åæ¾æ¶é¿ */
+  /** 回放时长 */
   durationSeconds?: number;
-  /** å¨ä½æ»æ° */
+  /** 动作总数 */
   actionCount?: number;
-  /** å³é®å¸§æ°é */
+  /** 关键帧数量 */
   keyFrameCount?: number;
-  /** åæ¾å­å¨é® */
+  /** 回放存储键 */
   storageKey?: string;
-  /** å°é¢å°å */
+  /** 封面地址 */
   coverUrl?: string;
-  /** åå§å±é¢å¿«ç§ */
-  boardSnapshot?: Record<string, unknown>;
-  /** å³é®å¸§æè¦ */
-  keyFrames?: Record<string, unknown>;
-  /** å¼å§æ¶é´ */
+  /** 初始局面快照 */
+  boardSnapshot?: Record<string, Record<string, unknown>>;
+  /** 关键帧摘要 */
+  keyFrames?: Record<string, Record<string, unknown>>;
+  /** 开始时间 */
   startedAt?: string;
-  /** ç»ææ¶é´ */
+  /** 结束时间 */
   endedAt?: string;
-  /** è¿ææ¶é´ */
+  /** 过期时间 */
   expiredAt?: string;
 }

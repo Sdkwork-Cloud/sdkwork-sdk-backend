@@ -1,47 +1,47 @@
 import type { AssetMediaResource } from './asset-media-resource';
 import type { VideoStoryboard } from './video-storyboard';
 
-/** é³ä¹çæè¾å¥åæ° */
+/** 音乐生成输入参数 */
 export interface MusicGenerationInput {
-  /** ä»»å¡æ é¢ */
+  /** 任务标题 */
   title?: string;
-  /** ä¸»æç¤ºè¯ */
+  /** 主提示词 */
   prompt?: string;
-  /** ååæç¤ºè¯ */
+  /** 反向提示词 */
   negativePrompt?: string;
-  /** åèèµæºåè¡¨(æ¯æå¾ç/è§é¢/é³é¢ç­ä»»æç±»å) */
+  /** 参考资源列表(支持图片/视频/音频等任意类型) */
   referenceAssets?: AssetMediaResource[];
-  /** è§é¢æäºæ¿ */
+  /** 视频故事板 */
   storyboard?: VideoStoryboard;
-  /** çæåæ° */
-  parameters?: Record<string, unknown>;
-  /** çææ°é */
+  /** 生成参数 */
+  parameters?: Record<string, Record<string, unknown>>;
+  /** 生成数量 */
   n?: number;
-  /** éæºç§å­ */
+  /** 随机种子 */
   seed?: number;
-  /** è¾åºæ ¼å¼ */
+  /** 输出格式 */
   format?: string;
-  /** æ­è¯ */
+  /** 歌词 */
   lyrics?: string;
-  /** é³ä¹æ¶é¿(ç§) */
+  /** 音乐时长(秒) */
   duration?: number;
-  /** æµæ´¾(pop/rock/jazz/classical/edmç­) */
+  /** 流派(pop/rock/jazz/classical/edm等) */
   genre?: string;
-  /** é£æ ¼ */
+  /** 风格 */
   style?: string;
-  /** éåº¦BPM */
+  /** 速度BPM */
   tempo?: number;
-  /** è°å¼(C major/A minorç­) */
+  /** 调式(C major/A minor等) */
   key?: string;
-  /** æå·(4/4/3/4ç­) */
+  /** 拍号(4/4/3/4等) */
   timeSignature?: string;
-  /** æç»ª(happy/sad/energetic/calmç­) */
+  /** 情绪(happy/sad/energetic/calm等) */
   mood?: string;
-  /** ä¹å¨ */
+  /** 乐器 */
   instruments?: string;
-  /** æ¯å¦çº¯é³ä¹(æ äººå£°) */
+  /** 是否纯音乐(无人声) */
   instrumental?: boolean;
-  /** æ¯å¦é«æ¸ */
+  /** 是否高清 */
   hd?: boolean;
   referenceAssetCount?: number;
 }

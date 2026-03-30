@@ -1,15 +1,15 @@
-/** å¯ç éç½®ååºè§å¾å¯¹è±¡ */
+/** 密码重置响应视图对象 */
 export interface PasswordResetResultVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** æ¯å¦æå */
+  /** 是否成功 */
   success?: boolean;
-  /** æ¶æ¯ */
+  /** 消息 */
   message?: string;
-  /** è¿ææ¶é´ï¼ç§ï¼ */
+  /** 过期时间（秒） */
   expiresIn?: number;
-  /** éç½®ä»¤ç */
+  /** 重置令牌 */
   token?: string;
 }

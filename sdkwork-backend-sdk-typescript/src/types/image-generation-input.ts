@@ -1,47 +1,47 @@
 import type { AssetMediaResource } from './asset-media-resource';
 import type { VideoStoryboard } from './video-storyboard';
 
-/** å¾ççæè¾å¥åæ° */
+/** 图片生成输入参数 */
 export interface ImageGenerationInput {
-  /** ä»»å¡æ é¢ */
+  /** 任务标题 */
   title?: string;
-  /** ä¸»æç¤ºè¯ */
+  /** 主提示词 */
   prompt?: string;
-  /** ååæç¤ºè¯ */
+  /** 反向提示词 */
   negativePrompt?: string;
-  /** åèèµæºåè¡¨(æ¯æå¾ç/è§é¢/é³é¢ç­ä»»æç±»å) */
+  /** 参考资源列表(支持图片/视频/音频等任意类型) */
   referenceAssets?: AssetMediaResource[];
-  /** è§é¢æäºæ¿ */
+  /** 视频故事板 */
   storyboard?: VideoStoryboard;
-  /** çæåæ° */
-  parameters?: Record<string, unknown>;
-  /** çææ°é */
+  /** 生成参数 */
+  parameters?: Record<string, Record<string, unknown>>;
+  /** 生成数量 */
   n?: number;
-  /** éæºç§å­ */
+  /** 随机种子 */
   seed?: number;
-  /** è¾åºæ ¼å¼ */
+  /** 输出格式 */
   format?: string;
-  /** å¾çå®½åº¦(åç´ ) */
+  /** 图片宽度(像素) */
   width?: number;
-  /** å¾çé«åº¦(åç´ ) */
+  /** 图片高度(像素) */
   height?: number;
-  /** å¾çå°ºå¯¸é¢è®¾ */
+  /** 图片尺寸预设 */
   size?: string;
-  /** å¾çè´¨é(standard/hd) */
+  /** 图片质量(standard/hd) */
   quality?: string;
-  /** å¾çé£æ ¼(vivid/natural) */
+  /** 图片风格(vivid/natural) */
   style?: string;
   /** CFG Scale */
   cfgScale?: number;
-  /** æ¨çæ­¥æ° */
+  /** 推理步数 */
   steps?: number;
-  /** éæ ·å¨ç±»å */
+  /** 采样器类型 */
   sampler?: string;
-  /** å¾çå¾å¼ºåº¦(0.0-1.0) */
+  /** 图生图强度(0.0-1.0) */
   strength?: number;
-  /** æ¯å¦å¯ç¨å®å¨æ£æ¥ */
+  /** 是否启用安全检查 */
   safetyChecker?: boolean;
-  /** å®½é«æ¯(16:9/9:16/1:1ç­) */
+  /** 宽高比(16:9/9:16/1:1等) */
   aspectRatio?: string;
   referenceAssetCount?: number;
 }

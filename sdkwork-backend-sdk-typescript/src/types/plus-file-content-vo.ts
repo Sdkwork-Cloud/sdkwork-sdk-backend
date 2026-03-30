@@ -1,23 +1,23 @@
 import type { FileContentObject } from './file-content-object';
 
-/** æä»¶åå®¹VOï¼ä¸PlusFileä¸å¯¹ä¸å¯¹åºï¼å­å¨æä»¶çææ¬åå®¹åç¼ç ä¿¡æ¯ï¼ */
+/** 文件内容VO（与PlusFile一对一对应，存储文件的文本内容和编码信息） */
 export interface PlusFileContentVO {
-  /** åå»ºæ¶é´ï¼å®ä½é¦æ¬¡æä¹åæ¶è®¾ç½® */
+  /** 创建时间，实体首次持久化时设置 */
   createdAt?: string;
-  /** æåæ´æ°æ¶é´ï¼å®ä½ä¿®æ¹æ¶æ´æ° */
+  /** 最后更新时间，实体修改时更新 */
   updatedAt?: string;
-  /** ä¸»é®IDï¼ç±æ°æ®åºèªå¨çæ */
+  /** 主键ID，由数据库自动生成 */
   id?: number;
-  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
+  /** 通用唯一标识符UUID */
   uuid?: string;
-  /** å³èæä»¶ID(å¤é®å³èplus_file.id) */
+  /** 关联文件ID(外键关联plus_file.id) */
   fileId?: number;
-  /** å³èæä»¶UUID(å¤é®å³èplus_file.uuid) */
+  /** 关联文件UUID(外键关联plus_file.uuid) */
   fileUuid?: string;
-  /** æç¤ºè¯ */
+  /** 提示词 */
   prompt?: string;
-  /** æä»¶ç¼ç æ ¼å¼(å¦UTF-8ãGBKãISO-8859-1ç­) */
+  /** 文件编码格式(如UTF-8、GBK、ISO-8859-1等) */
   encoding?: string;
-  /** æä»¶ææ¬åå®¹ */
+  /** 文件文本内容 */
   content?: FileContentObject;
 }

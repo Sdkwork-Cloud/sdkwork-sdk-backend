@@ -1,4 +1,4 @@
-/** é­î¾îæ¥ å²ççéç°çã¥å´ */
+/** 閭楠岃瘉璇锋眰琛ㄥ崟 */
 export interface EmailVerificationForm {
   email: string;
   code: string;

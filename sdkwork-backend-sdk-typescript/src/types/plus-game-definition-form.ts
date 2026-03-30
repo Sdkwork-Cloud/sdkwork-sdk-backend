@@ -1,24 +1,24 @@
-/** å¦«å¬¬å¢å¨ååéâç¡¶ç¹æ°«ç®çã¥å´ */
+/** 妫嬬墝娓告垙鐜╂硶瀹氫箟琛ㄥ崟 */
 export interface PlusGameDefinitionForm {
-  /** éâç¡¶ç¼æ «ç */
+  /** 鐜╂硶缂栫爜 */
   code: string;
-  /** éâç¡¶ç»«è¯²ç· */
+  /** 鐜╂硶绫诲瀷 */
   gameType: 'INTERNATIONAL_CHESS' | 'CHINESE_CHESS' | 'GOMOKU' | 'JUNQI' | 'LANDLORD' | 'SHENG_JI' | 'TUO_LA_JI' | 'TEXAS_HOLDEM' | 'MAHJONG' | 'CUSTOM';
-  /** éâç¡¶éåè¢« */
+  /** 鐜╂硶鍒嗙被 */
   category: 'BOARD' | 'CARD' | 'TILE' | 'MIXED';
-  /** éâç¡¶éå¶Ð */
+  /** 鐜╂硶鍚嶇О */
   name: string;
-  /** éâç¡¶éî¢æ */
+  /** 鐜╂硶鍒悕 */
   alias?: string;
-  /** éâç¡¶å¦¯â³ç´¡ç¼æ «ç */
+  /** 鐜╂硶妯″紡缂栫爜 */
   gameModeCode?: string;
-  /** éâç¡¶é»å¿å ª */
+  /** 鐜╂硶鎻忚堪 */
   description?: string;
-  /** çå«å¯é½æ¨¿î¦ */
+  /** 瑙勫垯鎽樿 */
   ruleSummary?: string;
-  /** éâ¬çæ å¸ºç¹èµæ */
+  /** 鏈€灏戠帺瀹舵暟 */
   minPlayers: number;
-  /** éâ¬æ¾¶æ°±å¸ºç¹èµæ */
+  /** 鏈€澶氱帺瀹舵暟 */
   maxPlayers: number;
   /** S ea tC ou nt */
   seatCount: number;
@@ -28,36 +28,36 @@ export interface PlusGameDefinitionForm {
   defaultRoundCount?: number;
   /** T ur nB as ed */
   turnBased?: boolean;
-  /** éîæéîå¯éºæç¶ */
+  /** 鏄惁鏀寔鎺掍綅 */
   ranked?: boolean;
-  /** éîæéîå¯éä½½î */
+  /** 鏄惁鏀寔鏃佽 */
   supportsSpectator?: boolean;
-  /** éîæéîå¯éµæ¨¼î¸ */
+  /** 鏄惁鏀寔鎵樼 */
   supportsTrusteeship?: boolean;
   /** S up po rt sR ob ot */
   supportsRobot?: boolean;
-  /** éîæéîå¯é¥ç´æ */
+  /** 鏄惁鏀寔鍥炴斁 */
   supportsReplay?: boolean;
   /** S up po rt sF ri en dR oo m */
   supportsFriendRoom?: boolean;
-  /** éîæéîå¯ç§æ¶ç°¨ */
+  /** 鏄惁鏀寔璧涗簨 */
   supportsTournament?: boolean;
   /** S up po rt sC lu b */
   supportsClub?: boolean;
-  /** éîæéîå¯ç¼å§ç¯å¦¯â³ç´¡ */
+  /** 鏄惁鏀寔缁冧範妯″紡 */
   supportsPractice?: boolean;
-  /** éºã¨å´éæ§å®³ç»å¤éª */
+  /** 鎺ㄨ崘闅惧害绛夌骇 */
   difficultyLevel?: number;
-  /** éæ¬â¼é¾ç¬å¸´ */
+  /** 鏁欑▼閾炬帴 */
   tutorialUrl?: string;
-  /** æ¦æ¨¿î»éºæîç»«è¯²ç· */
+  /** 榛樿鎺掕绫诲瀷 */
   rankingType?: 'SCORE' | 'RATING' | 'WIN_RATE' | 'WIN_COUNT' | 'STREAK' | 'PROFIT';
-  /** æ¦æ¨¿î»çå«å¯é°å¶ç */
-  defaultRuleConfig?: Record<string, unknown>;
+  /** 榛樿瑙勫垯閰嶇疆 */
+  defaultRuleConfig?: Record<string, Record<string, unknown>>;
   /** M et ad at a */
-  metadata?: Record<string, unknown>;
+  metadata?: Record<string, Record<string, unknown>>;
   /** S up po rt ed Le ad er bo ar dP er io ds */
-  supportedLeaderboardPeriods?: 'HOUR' | 'DAY' | 'WEEK' | 'MONTH' | 'QUARTER' | 'YEAR' | 'SEASON'[];
-  /** éîæéîæ¤ */
+  supportedLeaderboardPeriods?: ('HOUR' | 'DAY' | 'WEEK' | 'MONTH' | 'QUARTER' | 'YEAR' | 'SEASON')[];
+  /** 鏄惁鍚敤 */
   enabled?: boolean;
 }

@@ -1,6 +1,6 @@
 import type { PlusChannelProxyVO } from './plus-channel-proxy-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPlusChannelProxyVO {
   /** Response data */
   data: PlusChannelProxyVO;

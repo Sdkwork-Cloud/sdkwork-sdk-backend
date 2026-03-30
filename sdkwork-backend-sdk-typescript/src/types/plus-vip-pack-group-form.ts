@@ -1,7 +1,13 @@
 /** VIP package group creation form */
 export interface PlusVipPackGroupForm {
   /** Application ID */
-  appId: number;
+  appId?: number;
+  /** Scope type */
+  scopeType?: 'DEFAULT' | 'GLOBAL' | 'APP';
+  /** Scope ID */
+  scopeId?: number;
+  /** Group key */
+  groupKey?: string;
   /** Group name */
   name: string;
   /** Group description */
@@ -9,7 +15,7 @@ export interface PlusVipPackGroupForm {
   /** Sort weight */
   sortWeight?: number;
   /** Group status */
-  status: 'DEFAULT' | 'ENABLED' | 'DISABLED';
+  status?: 'DEFAULT' | 'ENABLED' | 'DISABLED';
   /** Remark */
   remark?: string;
 }

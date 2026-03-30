@@ -1,6 +1,6 @@
 import type { RtcAccessRuleVO } from './rtc-access-rule-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultRtcAccessRuleVO {
   /** Response data */
   data: RtcAccessRuleVO;

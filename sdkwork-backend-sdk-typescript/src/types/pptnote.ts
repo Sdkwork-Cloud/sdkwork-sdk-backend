@@ -1,17 +1,17 @@
 import type { PPTNoteReply } from './pptnote-reply';
 
-/** æ¹æ³¨ */
+/** 批注 */
 export interface PPTNote {
-  /** æ¹æ³¨ID */
+  /** 批注ID */
   id: string;
-  /** æ¹æ³¨åå®¹ */
+  /** 批注内容 */
   content: string;
-  /** æ¹æ³¨æ¶é´ */
+  /** 批注时间 */
   time: number;
-  /** æ¹æ³¨ç¨æ· */
+  /** 批注用户 */
   user: string;
-  /** åç´ ID */
+  /** 元素ID */
   elId?: string;
-  /** åå¤åè¡¨ */
+  /** 回复列表 */
   replies?: PPTNoteReply[];
 }

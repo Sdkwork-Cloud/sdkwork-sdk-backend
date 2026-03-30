@@ -1,25 +1,25 @@
-/** ç§æ·å®¡è®¡æ¥å¿å¼å¯¹è±¡ */
+/** 租户审计日志值对象 */
 export interface PlusTenantAuditLogVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** æ¥å¿ID */
+  /** 日志ID */
   id?: number;
-  /** ç§æ·ID */
+  /** 租户ID */
   tenantId?: number;
-  /** æä½å¨ä½ */
+  /** 操作动作 */
   action?: string;
-  /** æå±æ¨¡å */
+  /** 所属模块 */
   module?: string;
-  /** æä½äºº */
+  /** 操作人 */
   operator?: string;
-  /** æä½è¯´æ */
+  /** 操作说明 */
   description?: string;
-  /** ç»æç¶æ */
+  /** 结果状态 */
   result?: string;
-  /** æä½æ¶é´ */
+  /** 操作时间 */
   createTime?: string;
-  /** æ¥æºIP */
+  /** 来源IP */
   ip?: string;
 }

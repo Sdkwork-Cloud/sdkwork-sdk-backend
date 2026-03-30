@@ -1,9 +1,9 @@
 import type { FileMediaResource } from './file-media-resource';
 
-/** IMæä»¶æ¶æ¯åå®¹ç±» */
+/** IM文件消息内容类 */
 export interface MsgFileContent {
-  /** æ¶æ¯åå®¹ */
+  /** 消息内容 */
   content?: string;
-  /** æä»¶èµæº */
+  /** 文件资源 */
   resource?: FileMediaResource;
 }

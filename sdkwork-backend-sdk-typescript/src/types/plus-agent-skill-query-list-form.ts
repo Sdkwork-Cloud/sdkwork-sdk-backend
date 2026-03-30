@@ -1,28 +1,28 @@
-/** æè½åé¡µæ¥è¯¢åæ° */
+/** 技能分页查询参数 */
 export interface PlusAgentSkillQueryListForm {
   id?: number;
   createdAtFrom?: string;
   createdAtTo?: string;
-  /** å³é®è¯ï¼å¹é name/skillKey/summary/description/providerï¼ */
+  /** 关键词（匹配 name/skillKey/summary/description/provider） */
   keyword?: string;
-  /** å½å±ç¨æ·ID */
+  /** 归属用户ID */
   userId?: number;
-  /** åç±»ID */
+  /** 分类ID */
   categoryId?: number;
-  /** ååID */
+  /** 分包ID */
   packageId?: number;
-  /** å¸åºç¶æ */
+  /** 市场状态 */
   marketStatus?: 'DRAFT' | 'PUBLISHED' | 'OFFLINE' | 'DEPRECATED';
-  /** å¯è§æ§ */
+  /** 可见性 */
   visibility?: 'PUBLIC' | 'PRIVATE' | 'UNLISTED';
-  /** æ¥æºç±»å */
+  /** 来源类型 */
   sourceType?: 'OFFICIAL' | 'COMMUNITY' | 'ENTERPRISE' | 'PRIVATE' | 'CUSTOM';
-  /** å®¡æ ¸ç¶æ */
+  /** 审核状态 */
   reviewStatus?: 'PENDING' | 'APPROVED' | 'REJECTED';
-  /** æ¯å¦åç½® */
+  /** 是否内置 */
   builtin?: boolean;
-  /** æ¯å¦å¯ç¨ */
+  /** 是否启用 */
   enabled?: boolean;
-  /** æ¯å¦æ¨è */
+  /** 是否推荐 */
   featured?: boolean;
 }

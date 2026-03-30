@@ -1,21 +1,21 @@
-/** è®¢åå®ææä½VO */
+/** 订单完成操作VO */
 export interface OrderCompleteVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** æä½æ¯å¦æå */
+  /** 操作是否成功 */
   success?: boolean;
-  /** æä½ç»ææ¶æ¯ */
+  /** 操作结果消息 */
   message?: string;
-  /** æä½æ¶é´ */
+  /** 操作时间 */
   operationTime?: string;
-  /** å®æçè®¢åID */
+  /** 完成的订单ID */
   orderId?: number;
-  /** å®ææ¶é´ */
+  /** 完成时间 */
   completeTime?: string;
-  /** æ¯å¦å·²è¯ä»· */
+  /** 是否已评价 */
   reviewed?: boolean;
-  /** è·å¾ç§¯åæ°é */
+  /** 获得积分数量 */
   pointsEarned?: number;
 }

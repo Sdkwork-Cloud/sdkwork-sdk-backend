@@ -1,6 +1,6 @@
 import type { PageResultRtcRoomVO } from './page-result-rtc-room-vo';
 
-/** API???? */
+/** API调用结果 */
 export interface PlusApiResultPageResultRtcRoomVO {
   /** Response data */
   data: PageResultRtcRoomVO;

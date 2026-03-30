@@ -1,6 +1,6 @@
 import type { PagePlusVoiceSpeakerVO } from './page-plus-voice-speaker-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPagePlusVoiceSpeakerVO {
   /** Response data */
   data: PagePlusVoiceSpeakerVO;

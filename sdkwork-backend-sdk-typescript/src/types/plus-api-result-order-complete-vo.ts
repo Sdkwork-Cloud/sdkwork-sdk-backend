@@ -1,6 +1,6 @@
 import type { OrderCompleteVO } from './order-complete-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultOrderCompleteVO {
   /** Response data */
   data: OrderCompleteVO;

@@ -101,6 +101,11 @@ export class ChannelApi {
     return this.client.post<PlusApiResultListPlusChannelAccountVO>(backendApiPath(`/channel/account/list_payment`), body);
   }
 
+/** Get payment channel accounts by page */
+  async listPaymentByPage(body?: PlusChannelAccountQueryForm, params?: QueryParams): Promise<PlusApiResultPagePlusChannelAccountVO> {
+    return this.client.post<PlusApiResultPagePlusChannelAccountVO>(backendApiPath(`/channel/account/list_payment/page`), body, params);
+  }
+
 /** Get OSS channel accounts */
   async listOss(body?: PlusChannelAccountQueryForm): Promise<PlusApiResultListPlusChannelAccountVO> {
     return this.client.post<PlusApiResultListPlusChannelAccountVO>(backendApiPath(`/channel/account/list_oss`), body);
@@ -111,9 +116,19 @@ export class ChannelApi {
     return this.client.post<PlusApiResultListPlusChannelAccountVO>(backendApiPath(`/channel/account/list_official_account`), body);
   }
 
+/** Get official account channel accounts by page */
+  async listOfficialAccountByPage(body?: PlusChannelAccountQueryForm, params?: QueryParams): Promise<PlusApiResultPagePlusChannelAccountVO> {
+    return this.client.post<PlusApiResultPagePlusChannelAccountVO>(backendApiPath(`/channel/account/list_official_account/page`), body, params);
+  }
+
 /** Get mini program channel accounts */
   async listMiniProgram(body?: PlusChannelAccountQueryForm): Promise<PlusApiResultListPlusChannelAccountVO> {
     return this.client.post<PlusApiResultListPlusChannelAccountVO>(backendApiPath(`/channel/account/list_mini_program`), body);
+  }
+
+/** Get mini program channel accounts by page */
+  async listMiniProgramByPage(body?: PlusChannelAccountQueryForm, params?: QueryParams): Promise<PlusApiResultPagePlusChannelAccountVO> {
+    return this.client.post<PlusApiResultPagePlusChannelAccountVO>(backendApiPath(`/channel/account/list_mini_program/page`), body, params);
   }
 
 /** Get channel accounts by page */

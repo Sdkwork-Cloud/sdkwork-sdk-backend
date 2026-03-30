@@ -1,6 +1,6 @@
 import type { FinanceConfigRecord } from './finance-config-record';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultFinanceConfigRecord {
   /** Response data */
   data: FinanceConfigRecord;

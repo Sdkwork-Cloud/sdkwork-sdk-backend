@@ -1,6 +1,6 @@
 import type { PagePlusShareVisitRecordVO } from './page-plus-share-visit-record-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPagePlusShareVisitRecordVO {
   /** Response data */
   data: PagePlusShareVisitRecordVO;

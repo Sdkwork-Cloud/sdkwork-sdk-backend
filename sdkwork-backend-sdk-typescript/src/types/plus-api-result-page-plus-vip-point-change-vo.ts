@@ -1,6 +1,6 @@
 import type { PagePlusVipPointChangeVO } from './page-plus-vip-point-change-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPagePlusVipPointChangeVO {
   /** Response data */
   data: PagePlusVipPointChangeVO;

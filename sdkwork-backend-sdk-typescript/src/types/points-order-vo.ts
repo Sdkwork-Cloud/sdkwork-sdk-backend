@@ -1,15 +1,15 @@
-/** ç§¯ååå¼è®¢åVO */
+/** 积分充值订单VO */
 export interface PointsOrderVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** è®¢åID */
+  /** 订单ID */
   orderId?: number;
-  /** è®¢åç¼å· */
+  /** 订单编号 */
   orderSn?: string;
-  /** æ¯å¦åå»ºæå */
+  /** 是否创建成功 */
   success?: boolean;
-  /** æ¶æ¯ */
+  /** 消息 */
   message?: string;
 }

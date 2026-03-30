@@ -15,7 +15,7 @@ export interface PlusAiPromptForm {
   /** Sort order */
   sort?: number;
   /** Prompt parameters */
-  parameters?: Record<string, unknown>;
+  parameters?: Record<string, Record<string, unknown>>;
   /** Creator */
   creator?: string;
   /** Model */

@@ -1,39 +1,39 @@
 import type { AuthorInfo } from './author-info';
 
-/** ç¨æ·è¯è®ºVOï¼æ¯ææ°é»ãæç« ãè§é¢ãå¾çãååãå¸å­ç­ä»»ä½åå®¹ç±»åçè¯è®º */
+/** 用户评论VO，支持新闻、文章、视频、图片、商品、帖子等任何内容类型的评论 */
 export interface PlusCommentsVO {
-  /** åå»ºæ¶é´ï¼å®ä½é¦æ¬¡æä¹åæ¶è®¾ç½® */
+  /** 创建时间，实体首次持久化时设置 */
   createdAt?: string;
-  /** æåæ´æ°æ¶é´ï¼å®ä½ä¿®æ¹æ¶æ´æ° */
+  /** 最后更新时间，实体修改时更新 */
   updatedAt?: string;
-  /** ä¸»é®IDï¼ç±æ°æ®åºèªå¨çæ */
+  /** 主键ID，由数据库自动生成 */
   id?: number;
-  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
+  /** 通用唯一标识符UUID */
   uuid?: string;
-  /** ç¶èç¹ID */
+  /** 父节点ID */
   parentId?: number;
-  /** ç¶èç¹UUID */
+  /** 父节点UUID */
   parentUuid?: string;
-  /** ç¨æ·ID(å¤é®å³èplus_user.id) */
+  /** 用户ID(外键关联plus_user.id) */
   userId?: number;
-  /** è¯è®ºåå®¹ */
+  /** 评论内容 */
   content: string;
-  /** åå®¹ç±»å */
-  contentType: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM' | 'JOB';
-  /** è¢«è¯è®ºåå®¹ID */
+  /** 内容类型 */
+  contentType: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM' | 'JOB' | 'SKILL';
+  /** 被评论内容ID */
   contentId: number;
-  /** è¯è®ºç¶æ */
+  /** 评论状态 */
   status?: 'DEFAULT' | 'PUBLISHED' | 'PENDING' | 'DELETED';
-  /** ç¹èµæ°é */
+  /** 点赞数量 */
   likes?: number;
-  /** åå¤æ°é */
+  /** 回复数量 */
   replyCount?: number;
-  /** æ¯å¦ç½®é¡¶ */
+  /** 是否置顶 */
   isTop?: boolean;
-  /** è¯è®ºèIPå°å */
+  /** 评论者IP地址 */
   ipAddress?: string;
-  /** è®¾å¤ä¿¡æ¯ */
+  /** 设备信息 */
   deviceInfo?: string;
-  /** ä½èä¿¡æ¯ */
+  /** 作者信息 */
   author?: AuthorInfo;
 }

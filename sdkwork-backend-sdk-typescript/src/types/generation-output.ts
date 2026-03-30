@@ -1,26 +1,26 @@
 import type { AssetMediaResource } from './asset-media-resource';
 
-/** AIçæä»»å¡è¾åºç»æ */
+/** AI生成任务输出结果 */
 export interface GenerationOutput {
-  /** çæç»æèµæºåè¡¨ */
+  /** 生成结果资源列表 */
   resources?: AssetMediaResource[];
-  /** ä¸»ç»æURL(å¼å®¹æ§æ¥å£) */
+  /** 主结果URL(兼容旧接口) */
   primaryUrl?: string;
-  /** ç»æURLåè¡¨(å¼å®¹æ§æ¥å£) */
+  /** 结果URL列表(兼容旧接口) */
   urls?: string[];
-  /** çæèæ¶(æ¯«ç§) */
+  /** 生成耗时(毫秒) */
   durationMs?: number;
-  /** æ¶èTokenæ° */
+  /** 消耗Token数 */
   tokenUsage?: number;
-  /** æ¶èè´¹ç¨ */
+  /** 消耗费用 */
   cost?: number;
-  /** æ¨¡åçæ¬ */
+  /** 模型版本 */
   modelVersion?: string;
-  /** çæç§å­ */
+  /** 生成种子 */
   seed?: number;
-  /** æ©å±åæ°æ® */
-  metadata?: Record<string, unknown>;
-  /** åå»ºæ¶é´ */
+  /** 扩展元数据 */
+  metadata?: Record<string, Record<string, unknown>>;
+  /** 创建时间 */
   createdAt?: string;
   resourceCount?: number;
   primaryResource?: AssetMediaResource;

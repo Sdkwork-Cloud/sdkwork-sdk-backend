@@ -1,6 +1,6 @@
 import type { PagePlusVipPackGroupVO } from './page-plus-vip-pack-group-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPagePlusVipPackGroupVO {
   /** Response data */
   data: PagePlusVipPackGroupVO;

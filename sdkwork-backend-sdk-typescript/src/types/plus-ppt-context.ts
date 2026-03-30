@@ -1,4 +1,4 @@
 export interface PlusPptContext {
-  /** PPTæ¨¡æ¿æä»¶URL */
+  /** PPT模板文件URL */
   templateUrl?: string;
 }

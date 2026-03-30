@@ -1,6 +1,6 @@
 import type { PagePlusSkillBundleVO } from './page-plus-skill-bundle-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPagePlusSkillBundleVO {
   /** Response data */
   data: PagePlusSkillBundleVO;

@@ -1,6 +1,6 @@
 import type { PagePlusGameMatchVO } from './page-plus-game-match-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPagePlusGameMatchVO {
   /** Response data */
   data: PagePlusGameMatchVO;

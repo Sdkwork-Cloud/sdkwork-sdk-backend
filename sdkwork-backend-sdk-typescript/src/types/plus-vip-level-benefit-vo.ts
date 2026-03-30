@@ -1,25 +1,27 @@
 import type { VipLevelBenefitMetadata } from './vip-level-benefit-metadata';
 
-/** VIPç­çº§æçå³èVO */
+/** VIP等级权益关联VO */
 export interface PlusVipLevelBenefitVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** VIPç­çº§IDï¼å³èplus_vip_levelè¡¨ */
+  /** VIP等级权益关联ID */
+  id?: number;
+  /** VIP等级ID，关联plus_vip_level表 */
   vipLevelId?: number;
-  /** æçIDï¼å³èplus_vip_benefitè¡¨ */
+  /** 权益ID，关联plus_vip_benefit表 */
   benefitId?: number;
-  /** æ¯æ¥ä½¿ç¨éå¶æ¬¡æ° */
+  /** 每日使用限制次数 */
   dailyLimit?: number;
-  /** æ¯æä½¿ç¨éå¶æ¬¡æ° */
+  /** 每月使用限制次数 */
   monthlyLimit?: number;
-  /** æ»ä½¿ç¨éå¶æ¬¡æ° */
+  /** 总使用限制次数 */
   totalLimit?: number;
-  /** æ¯å¦å¯ç¨(1-å¯ç¨ 0-ç¦ç¨) */
+  /** 是否启用(1-启用 0-禁用) */
   status?: 'ENABLED' | 'DISABLED';
-  /** æ©å±åæ°æ®(JSONæ ¼å¼) */
+  /** 扩展元数据(JSON格式) */
   metadata?: VipLevelBenefitMetadata;
-  /** å¤æ³¨ä¿¡æ¯ */
+  /** 备注信息 */
   remark?: string;
 }

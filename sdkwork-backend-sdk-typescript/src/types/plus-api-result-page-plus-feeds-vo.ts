@@ -1,6 +1,6 @@
 import type { PagePlusFeedsVO } from './page-plus-feeds-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPagePlusFeedsVO {
   /** Response data */
   data: PagePlusFeedsVO;

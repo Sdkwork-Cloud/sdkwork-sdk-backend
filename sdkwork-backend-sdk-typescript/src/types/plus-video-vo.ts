@@ -1,44 +1,44 @@
 import type { AuthorInfo } from './author-info';
 import type { VideoMediaResource } from './video-media-resource';
 
-/** è§é¢ä¿¡æ¯VO */
+/** 视频信息VO */
 export interface PlusVideoVO {
-  /** åå»ºæ¶é´ï¼å®ä½é¦æ¬¡æä¹åæ¶è®¾ç½® */
+  /** 创建时间，实体首次持久化时设置 */
   createdAt?: string;
-  /** æåæ´æ°æ¶é´ï¼å®ä½ä¿®æ¹æ¶æ´æ° */
+  /** 最后更新时间，实体修改时更新 */
   updatedAt?: string;
-  /** ä¸»é®IDï¼ç±æ°æ®åºèªå¨çæ */
+  /** 主键ID，由数据库自动生成 */
   id?: number;
-  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
+  /** 通用唯一标识符UUID */
   uuid?: string;
-  /** çæ¬å·ï¼ç¨äºä¹è§éæ§å¶ */
+  /** 版本号，用于乐观锁控制 */
   version?: number;
-  /** è§é¢æ é¢ */
+  /** 视频标题 */
   title?: string;
-  /** è§é¢æè¿°ä¿¡æ¯ */
+  /** 视频描述信息 */
   description?: string;
-  /** è§é¢èµæºä¿¡æ¯ */
+  /** 视频资源信息 */
   resource?: VideoMediaResource;
-  /** ä½èä¿¡æ¯ */
+  /** 作者信息 */
   author?: AuthorInfo;
-  /** è§é¢å­å¨URL */
+  /** 视频存储URL */
   contentUrl?: string;
-  /** è§é¢æ¯ä¾ */
+  /** 视频比例 */
   aspectRatio?: string;
-  /** è§é¢æ¶é¿ï¼ç§ï¼ */
+  /** 视频时长（秒） */
   duration?: number;
-  /** è§é¢åè¾¨ç */
+  /** 视频分辨率 */
   resolution?: string;
-  /** å¾çå®½åº¦ï¼åç´ ï¼ */
+  /** 图片宽度（像素） */
   width?: number;
-  /** å¾çé«åº¦ï¼åç´ ï¼ */
+  /** 图片高度（像素） */
   height?: number;
-  /** è§é¢æä»¶å¤§å° */
+  /** 视频文件大小 */
   fileSize?: number;
-  /** è§é¢æ ¼å¼ */
+  /** 视频格式 */
   format?: string;
-  /** è§é¢ç¼©ç¥å¾URL */
+  /** 视频缩略图URL */
   thumbnailUrl?: string;
-  /** è§é¢ç¶æ */
+  /** 视频状态 */
   status?: 'DEFAULT' | 'PROCESSING' | 'COMPLETED' | 'FAILED' | 'DELETED';
 }

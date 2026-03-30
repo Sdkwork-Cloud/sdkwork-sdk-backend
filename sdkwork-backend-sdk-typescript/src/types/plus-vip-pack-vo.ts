@@ -1,39 +1,43 @@
 import type { PlusVipLevelVO } from './plus-vip-level-vo';
 
-/** VIPå¥é¤VO */
+/** VIP package view object */
 export interface PlusVipPackVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** ä¸»é®ID */
+  /** Primary key */
   id?: number;
-  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
+  /** UUID */
   uuid?: string;
-  /** å¥é¤åç§° */
+  /** Application ID */
+  appId?: number;
+  /** Package name */
   name?: string;
-  /** å¥é¤æè¿° */
+  /** Package description */
   description?: string;
-  /** æå±åç»ID */
+  /** Package group ID */
   groupId?: number;
-  /** å³èçVIPç­çº§ID */
+  /** VIP level ID */
   vipLevelId?: number;
-  /** å¥é¤ä»·æ ¼(å) */
+  /** Price */
   price?: number;
-  /** èµ éçµç¹æ°é */
+  /** Point amount */
   pointAmount?: number;
-  /** VIPæ¶é¿(å¤©) */
+  /** VIP duration days */
   vipDurationDays?: number;
-  /** å¥é¤ç¶æ */
+  /** Billing cycle */
+  billingCycle?: 'DEFAULT' | 'MONTHLY' | 'QUARTERLY' | 'YEARLY' | 'CUSTOM';
+  /** Package status */
   status?: 'DEFAULT' | 'ACTIVE' | 'INACTIVE';
-  /** æåºæé */
+  /** Sort weight */
   sortWeight?: number;
-  /** å¥é¤æææå¼å§æ¶é´ */
+  /** Valid from */
   validFrom?: string;
-  /** å¥é¤æææç»ææ¶é´ */
+  /** Valid to */
   validTo?: string;
-  /** å¤æ³¨ä¿¡æ¯ */
+  /** Remark */
   remark?: string;
-  /** å³èçVIPç­çº§éå */
+  /** VIP level details */
   vipLevel?: PlusVipLevelVO;
 }

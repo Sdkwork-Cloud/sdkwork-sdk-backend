@@ -1,43 +1,43 @@
 import type { ImageMediaResource } from './image-media-resource';
 
-/** èå¤©åä¸èè§å¾å¯¹è±¡ */
+/** 聊天参与者视图对象 */
 export interface PlusParticipantVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æåæ´æ°æ¶é´ */
+  /** 最后更新时间 */
   updatedAt?: string;
-  /** åä¸èID */
+  /** 参与者ID */
   id?: number;
-  /** éç¨å¯ä¸æ è¯ç¬¦ */
+  /** 通用唯一标识符 */
   uuid?: string;
-  /** åä¸èç±»åï¼ç¨æ·ãAIå©æç­ï¼ */
+  /** 参与者类型（用户、AI助手等） */
   type?: 'USER' | 'AI_ASSISTANT' | 'SYSTEM' | 'CUSTOMER_SERVICE';
-  /** åä¸èåç§° */
+  /** 参与者名称 */
   name?: string;
-  /** åä¸èå¤´åèµæº */
+  /** 参与者头像资源 */
   face?: ImageMediaResource;
-  /** å³èçç¨æ·ID */
+  /** 关联的用户ID */
   userId?: number;
-  /** å³èçAIå©æID */
+  /** 关联的AI助手ID */
   agentId?: number;
-  /** åä¸èè§è²ï¼å¦ï¼owner-ææèãmember-æåãguest-è®¿å®¢ç­ï¼ */
+  /** 参与者角色（如：owner-所有者、member-成员、guest-访客等） */
   role?: 'OWNER' | 'ADMIN' | 'MEMBER' | 'GUEST' | 'AI_ASSISTANT' | 'SYSTEM';
-  /** ä¸ä¸æç±»åï¼CONVERSATION-ä¼è¯ãGROUP-ç¾¤ç»ï¼ */
+  /** 上下文类型（CONVERSATION-会话、GROUP-群组） */
   contextType?: 'CONVERSATION' | 'GROUP';
-  /** ä¸ä¸æIDï¼ä¼è¯IDæç¾¤ç»IDï¼ */
+  /** 上下文ID（会话ID或群组ID） */
   contextId?: number;
-  /** ä¼è¯IDï¼å½ä¸ä¸æç±»åä¸ºç¾¤ç»æ¶å­å¨ï¼ */
+  /** 会话ID（当上下文类型为群组时存储） */
   conversationId?: number;
-  /** ç¾¤ç»ç±»å */
+  /** 群组类型 */
   groupType?: 'NORMAL' | 'WORK' | 'INTEREST' | 'SUPPORT';
-  /** ä¼è¯ç±»å */
+  /** 会话类型 */
   conversationType?: 'CHAT' | 'C2C' | 'GROUP' | 'KF';
-  /** æ¯å¦ä¸ºä¸ä¸æåå»ºè */
+  /** 是否为上下文创建者 */
   isCreator?: boolean;
-  /** æ¯å¦å¨çº¿ */
+  /** 是否在线 */
   isOnline?: boolean;
-  /** æåæ´»è·æ¶é´ */
+  /** 最后活跃时间 */
   lastActiveTime?: string;
-  /** æ¯å¦ä¸ºä¸´æ¶åä¸èï¼ç¨äºç¾¤ç»ä¸´æ¶ä¼è¯ï¼ */
+  /** 是否为临时参与者（用于群组临时会话） */
   isTemporary?: boolean;
 }

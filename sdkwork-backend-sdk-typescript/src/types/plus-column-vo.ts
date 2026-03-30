@@ -1,8 +1,8 @@
 /** Column view object */
 export interface PlusColumnVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
   /** Column ID */
   id?: number;

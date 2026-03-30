@@ -1,6 +1,6 @@
 import type { PlusOrderVO } from './plus-order-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPlusOrderVO {
   /** Response data */
   data: PlusOrderVO;

@@ -1,39 +1,39 @@
 import type { TagsContent } from './tags-content';
 
-/** æä»¶åªä½èµæº */
+/** 文件媒体资源 */
 export interface FileMediaResource {
-  /** èµæºID */
+  /** 资源ID */
   id?: number;
-  /** èµæºUUID */
+  /** 资源UUID */
   uuid?: string;
-  /** èµæºURL */
+  /** 资源URL */
   url?: string;
-  /** èµæºå­èæ°æ® */
+  /** 资源字节数据 */
   bytes?: string;
-  /** æ¬å°æä»¶ */
-  localFile?: unknown;
-  /** èµæºBase64ç¼ç  */
+  /** 本地文件 */
+  localFile?: Record<string, unknown>;
+  /** 资源Base64编码 */
   base64?: string;
-  /** èµæºç±»å */
+  /** 资源类型 */
   type?: 'IMAGE' | 'VIDEO' | 'AUDIO' | 'DOCUMENT' | 'FILE' | 'MUSIC' | 'CHARACTER' | 'MODEL_3D' | 'PPT' | 'CODE';
-  /** èµæºå¤§å°(å­è) */
+  /** 资源大小(字节) */
   size?: number;
-  /** æä»¶å */
+  /** 文件名 */
   name?: string;
-  /** èµæºæ©å±å */
+  /** 资源扩展名 */
   extension?: string;
-  /** èµæºæ ç­¾ */
+  /** 资源标签 */
   tags?: TagsContent;
-  /** èµæºåæ°æ® */
-  metadata?: Record<string, unknown>;
-  /** AIçææç¤ºè¯ */
+  /** 资源元数据 */
+  metadata?: Record<string, Record<string, unknown>>;
+  /** AI生成提示词 */
   prompt?: string;
-  /** å®½åº¦ */
+  /** 宽度 */
   width?: number;
-  /** é«åº¦ */
+  /** 高度 */
   height?: number;
-  /** æ¶é¿(ç§) */
+  /** 时长(秒) */
   duration?: number;
-  /** MIMEç±»å */
+  /** MIME类型 */
   mime_type?: string;
 }

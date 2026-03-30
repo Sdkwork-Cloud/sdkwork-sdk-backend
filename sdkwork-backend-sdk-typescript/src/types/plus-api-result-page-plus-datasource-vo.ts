@@ -1,6 +1,6 @@
 import type { PagePlusDatasourceVO } from './page-plus-datasource-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPagePlusDatasourceVO {
   /** Response data */
   data: PagePlusDatasourceVO;

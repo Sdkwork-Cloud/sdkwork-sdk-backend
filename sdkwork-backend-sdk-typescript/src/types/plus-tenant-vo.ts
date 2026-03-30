@@ -1,25 +1,25 @@
 import type { InstallAppList } from './install-app-list';
 
-/** ç§æ·Value Object */
+/** 租户Value Object */
 export interface PlusTenantVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** ç§æ·ID */
+  /** 租户ID */
   id?: number;
-  /** ç§æ·åç§° */
+  /** 租户名称 */
   name?: string;
-  /** ç§æ·å¯ä¸ç¼ç  */
+  /** 租户唯一编码 */
   code?: string;
-  /** ç§æ·ç¶æ */
+  /** 租户状态 */
   status?: 'DEFAULT' | 'ACTIVE' | 'INACTIVE' | 'SUSPENDED' | 'DELETED';
-  /** ç§æ·æè¿° */
+  /** 租户描述 */
   description?: string;
-  /** ç§æ·ç®¡çåç¨æ·ID */
+  /** 租户管理员用户ID */
   adminUserId?: number;
-  /** ç§æ·è¿ææ¶é´ */
+  /** 租户过期时间 */
   expireTime?: string;
-  /** å®è£åºç¨åè¡¨ */
+  /** 安装应用列表 */
   installAppList?: InstallAppList;
 }

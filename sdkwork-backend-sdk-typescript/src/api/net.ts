@@ -11,12 +11,12 @@ export class NetApi {
     this.client = client; 
   }
 
-/** æ´æ°åå */
+/** 更新域名 */
   async update(body: PlusHostDomainForm): Promise<PlusApiResultPlusHostDomainVO> {
     return this.client.put<PlusApiResultPlusHostDomainVO>(backendApiPath(`/net/host/domain`), body);
   }
 
-/** åå»ºåå */
+/** 创建域名 */
   async create(body: PlusHostDomainForm): Promise<PlusApiResultPlusHostDomainVO> {
     return this.client.post<PlusApiResultPlusHostDomainVO>(backendApiPath(`/net/host/domain`), body);
   }
@@ -31,12 +31,12 @@ export class NetApi {
     return this.client.post<PlusApiResultPlusDnsRecordVO>(backendApiPath(`/net/dns/record`), body);
   }
 
-/** åé¡µè·ååå */
+/** 分页获取域名 */
   async createListByPage(body?: QueryListForm, params?: QueryParams): Promise<PlusApiResultPagePlusHostDomainVO> {
     return this.client.post<PlusApiResultPagePlusHostDomainVO>(backendApiPath(`/net/host/domain/list`), body, params);
   }
 
-/** è·åææåå */
+/** 获取所有域名 */
   async createListAllEntities(body?: QueryListForm): Promise<PlusApiResultListPlusHostDomainVO> {
     return this.client.post<PlusApiResultListPlusHostDomainVO>(backendApiPath(`/net/host/domain/list/all`), body);
   }
@@ -51,12 +51,12 @@ export class NetApi {
     return this.client.post<PlusApiResultListPlusDnsRecordVO>(backendApiPath(`/net/dns/record/list/all`), body);
   }
 
-/** è·åååè¯¦æ */
+/** 获取域名详情 */
   async getById(id: string | number): Promise<PlusApiResultPlusHostDomainVO> {
     return this.client.get<PlusApiResultPlusHostDomainVO>(backendApiPath(`/net/host/domain/${id}`));
   }
 
-/** å é¤åå */
+/** 删除域名 */
   async delete(id: string | number): Promise<PlusApiResultBoolean> {
     return this.client.delete<PlusApiResultBoolean>(backendApiPath(`/net/host/domain/${id}`));
   }

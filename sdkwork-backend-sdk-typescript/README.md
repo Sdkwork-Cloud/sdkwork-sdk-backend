@@ -103,6 +103,7 @@ const client = new SdkworkBackendClient({
 - `client.oss` - oss API
 - `client.organization` - organization API
 - `client.organizationMember` - organization_member API
+- `client.oauth` - oauth API
 - `client.notification` - notification API
 - `client.note` - note API
 - `client.notary` - notary API
@@ -149,6 +150,7 @@ const client = new SdkworkBackendClient({
 - `client.rtc` - rtc API
 - `client.finance` - finance API
 - `client.auth` - auth API
+- `client.dashboard` - dashboard API
 
 ## Usage Examples
 
@@ -413,6 +415,14 @@ const body = {} as any;
 const result = await client.organizationMember.listAllEntities(body);
 ```
 
+### oauth
+
+```typescript
+// POST /backend/v3/api/oauth/provider-account/list/all
+const body = {} as any;
+const result = await client.oauth.listAllEntities(body);
+```
+
 ### notification
 
 ```typescript
@@ -447,7 +457,7 @@ const result = await client.news.listAllEntities(body);
 ### net
 
 ```typescript
-// è·åææåå
+// 获取所有域名
 const body = {} as any;
 const result = await client.net.createListAllEntities(body);
 ```
@@ -569,7 +579,7 @@ const result = await client.favorite.listAllEntities(body);
 ```typescript
 // List files
 const params = {} as Record<string, any>;
-const result = await client.disk.listFiles(params);
+const result = await client.disk.getListFiles(params);
 ```
 
 ### detail
@@ -656,7 +666,7 @@ const result = await client.collectionItem.listAllEntities(body);
 ```typescript
 // Get all chat messages
 const body = {} as any;
-const result = await client.chat.listAllEntities(body);
+const result = await client.chat.createListAllEntities(body);
 ```
 
 ### character
@@ -756,9 +766,9 @@ const result = await client.search.stop(params, headers);
 ### rtc
 
 ```typescript
-// RTC access rule page
+// RTC room page
 const body = {} as any;
-const result = await client.rtc.listAccessRules(body);
+const result = await client.rtc.listRooms(body);
 ```
 
 ### finance
@@ -773,6 +783,13 @@ const result = await client.finance.getConfig();
 ```typescript
 // Get roles
 const result = await client.auth.getRoles();
+```
+
+### dashboard
+
+```typescript
+// Dashboard overview
+const result = await client.dashboard.getOverview();
 ```
 
 ## Error Handling

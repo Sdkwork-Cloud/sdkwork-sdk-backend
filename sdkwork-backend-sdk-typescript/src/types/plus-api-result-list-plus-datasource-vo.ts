@@ -1,6 +1,6 @@
 import type { PlusDatasourceVO } from './plus-datasource-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultListPlusDatasourceVO {
   /** Response data */
   data: PlusDatasourceVO[];

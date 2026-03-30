@@ -1,6 +1,6 @@
 import type { PagePlusOrganizationVO } from './page-plus-organization-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPagePlusOrganizationVO {
   /** Response data */
   data: PagePlusOrganizationVO;

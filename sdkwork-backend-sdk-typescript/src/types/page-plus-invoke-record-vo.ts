@@ -9,9 +9,9 @@ export interface PagePlusInvokeRecordVO {
   content?: PlusInvokeRecordVO[];
   number?: number;
   numberOfElements?: number;
-  pageable?: PageableObject;
-  sort?: SortObject;
   first?: boolean;
   last?: boolean;
+  sort?: SortObject;
+  pageable?: PageableObject;
   empty?: boolean;
 }

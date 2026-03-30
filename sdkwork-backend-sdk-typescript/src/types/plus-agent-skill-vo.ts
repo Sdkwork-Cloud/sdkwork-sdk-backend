@@ -1,97 +1,97 @@
-/** æè½ç®¡çVO */
+/** 技能管理VO */
 export interface PlusAgentSkillVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** æè½ID */
+  /** 技能ID */
   id?: number;
-  /** æè½UUID */
+  /** 技能UUID */
   uuid?: string;
-  /** ç§æ·ID */
+  /** 租户ID */
   tenantId?: number;
-  /** ç»ç»ID */
+  /** 组织ID */
   organizationId?: number;
-  /** å½å±ç¨æ·ID */
+  /** 归属用户ID */
   userId?: number;
-  /** æè½å¯ä¸æ è¯ */
+  /** 技能唯一标识 */
   skillKey?: string;
-  /** æè½åç§° */
+  /** 技能名称 */
   name?: string;
-  /** æè½ç®ä» */
+  /** 技能简介 */
   summary?: string;
-  /** æè½æè¿° */
+  /** 技能描述 */
   description?: string;
-  /** æè½å¾æ  */
+  /** 技能图标 */
   icon?: string;
-  /** æè½å°é¢å¾ */
+  /** 技能封面图 */
   coverImage?: string;
-  /** åç±»ID */
+  /** 分类ID */
   categoryId?: number;
-  /** åç±»åç§° */
+  /** 分类名称 */
   categoryName?: string;
-  /** ååID */
+  /** 分包ID */
   packageId?: number;
-  /** åååç§° */
+  /** 分包名称 */
   packageName?: string;
-  /** æä¾å */
+  /** 提供商 */
   provider?: string;
-  /** çæ¬ */
+  /** 版本 */
   version?: string;
-  /** è¿è¡æ¶ */
+  /** 运行时 */
   runtime?: string;
-  /** å¥å£ */
+  /** 入口 */
   entrypoint?: string;
-  /** manifestå°å */
+  /** manifest地址 */
   manifestUrl?: string;
-  /** ä»£ç ä»åºå°å */
+  /** 代码仓库地址 */
   repositoryUrl?: string;
-  /** ä¸»é¡µå°å */
+  /** 主页地址 */
   homepageUrl?: string;
-  /** ææ¡£å°å */
+  /** 文档地址 */
   documentationUrl?: string;
-  /** è®¸å¯è¯ */
+  /** 许可证 */
   licenseName?: string;
-  /** æ¥æºç±»å */
+  /** 来源类型 */
   sourceType?: 'OFFICIAL' | 'COMMUNITY' | 'ENTERPRISE' | 'PRIVATE' | 'CUSTOM';
-  /** å¸åºç¶æ */
+  /** 市场状态 */
   marketStatus?: 'DRAFT' | 'PUBLISHED' | 'OFFLINE' | 'DEPRECATED';
-  /** å¯è§æ§ */
+  /** 可见性 */
   visibility?: 'PUBLIC' | 'PRIVATE' | 'UNLISTED';
-  /** å®¡æ ¸ç¶æ */
+  /** 审核状态 */
   reviewStatus?: 'PENDING' | 'APPROVED' | 'REJECTED';
-  /** å®¡æ ¸æè§ */
+  /** 审核意见 */
   reviewComment?: string;
-  /** å®¡æ ¸äººç¨æ·ID */
+  /** 审核人用户ID */
   reviewedBy?: number;
-  /** å®¡æ ¸æ¶é´ */
+  /** 审核时间 */
   reviewedAt?: string;
-  /** æ¯å¦åç½® */
+  /** 是否内置 */
   builtin?: boolean;
-  /** æ¯å¦å¯ç¨ */
+  /** 是否启用 */
   enabled?: boolean;
-  /** æ¯å¦æ¨è */
+  /** 是否推荐 */
   featured?: boolean;
-  /** æ¨èæé */
+  /** 推荐权重 */
   recommendWeight?: number;
-  /** ä»·æ ¼ */
+  /** 价格 */
   price?: number;
-  /** è´§å¸ */
+  /** 货币 */
   currency?: string;
-  /** å®è£æ¬¡æ° */
+  /** 安装次数 */
   installCount?: number;
-  /** è¯ååå¼ */
+  /** 评分均值 */
   ratingAvg?: number;
-  /** è¯åæ¬¡æ° */
+  /** 评分次数 */
   ratingCount?: number;
-  /** æ ç­¾ */
+  /** 标签 */
   tags?: string[];
-  /** è½ååè¡¨ */
+  /** 能力列表 */
   capabilities?: string[];
-  /** éç½®schema */
-  configSchema?: Record<string, unknown>;
-  /** é»è®¤éç½® */
-  defaultConfig?: Record<string, unknown>;
-  /** æè¿åå¸æ¶é´ */
+  /** 配置schema */
+  configSchema?: Record<string, Record<string, unknown>>;
+  /** 默认配置 */
+  defaultConfig?: Record<string, Record<string, unknown>>;
+  /** 最近发布时间 */
   latestPublishedAt?: string;
 }

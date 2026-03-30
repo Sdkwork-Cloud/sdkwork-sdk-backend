@@ -1,17 +1,17 @@
-/** æ£çæ¸¸æèµäºåèµèæ¹éç¶æé¡¹ */
+/** 棋牌游戏赛事参赛者批量状态项 */
 export interface PlusGameTournamentBatchStatusPlayerForm {
-  /** ç©å®¶ç¨æ·ID */
+  /** 玩家用户ID */
   userId?: number;
-  /** ç©å®¶ç¶æï¼ä¸ºç©ºæ¶ç»§æ¿æ¹éé»è®¤ç¶æ */
+  /** 玩家状态；为空时继承批量默认状态 */
   status?: 'REGISTERED' | 'CHECKED_IN' | 'PLAYING' | 'ADVANCED' | 'ELIMINATED' | 'FINISHED' | 'WITHDRAWN';
-  /** æ¾å¼åæ¬¡ï¼ä»æ·æ±°/å®èµç¶æåè®¸å¡«å */
+  /** 显式名次；仅淘汰/完赛状态允许填写 */
   rankNo?: number;
-  /** èµäºæç»©å¼ */
+  /** 赛事成绩值 */
   scoreValue?: number;
-  /** èµäºææå¯¹å±æ° */
+  /** 赛事有效对局数 */
   totalMatchCount?: number;
-  /** èåºæ° */
+  /** 胜场数 */
   winCount?: number;
-  /** è´åºæ° */
+  /** 负场数 */
   loseCount?: number;
 }

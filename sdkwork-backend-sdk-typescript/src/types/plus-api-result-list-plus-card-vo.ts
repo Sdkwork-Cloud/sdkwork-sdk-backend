@@ -1,6 +1,6 @@
 import type { PlusCardVO } from './plus-card-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultListPlusCardVO {
   /** Response data */
   data: PlusCardVO[];

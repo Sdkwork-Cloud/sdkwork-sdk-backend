@@ -1,6 +1,6 @@
 import type { PlusTreeNodePlusCategoryVO } from './plus-tree-node-plus-category-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultSetPlusTreeNodePlusCategoryVO {
   /** Response data */
   data: PlusTreeNodePlusCategoryVO[];

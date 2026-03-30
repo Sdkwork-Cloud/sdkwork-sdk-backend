@@ -1,23 +1,23 @@
 import type { InstallAppList } from './install-app-list';
 
-/** ç»ç»VOå¯¹è±¡ */
+/** 组织VO对象 */
 export interface PlusOrganizationVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** ç»ç»ID */
+  /** 组织ID */
   id?: number;
-  /** ç»ç»åç§° */
+  /** 组织名称 */
   name?: string;
-  /** ç»ç»ç¼ç  */
+  /** 组织编码 */
   code?: string;
-  /** ç»ç»ç¶æï¼1-æ´»è·, 2-æªæ¿æ´», 3-ç¦ç¨, 4-å·²å é¤ */
+  /** 组织状态：1-活跃, 2-未激活, 3-禁用, 4-已删除 */
   status?: 'ACTIVE' | 'INACTIVE' | 'DISABLED' | 'DELETED';
-  /** ç»ç»æè¿° */
+  /** 组织描述 */
   description?: string;
-  /** ç¶ç»ç»ID */
+  /** 父组织ID */
   parentId?: number;
-  /** å®è£åºç¨åè¡¨ */
+  /** 安装应用列表 */
   installAppList?: InstallAppList;
 }

@@ -7,5 +7,5 @@ export interface InstanceUpdateRequest {
   linkedWechatName?: string;
   linkedMiniProgramId?: string;
   linkedMiniProgramName?: string;
-  configData?: Record<string, unknown>;
+  configData?: Record<string, Record<string, unknown>>;
 }

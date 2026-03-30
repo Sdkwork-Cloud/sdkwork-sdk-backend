@@ -1,41 +1,41 @@
 /** Membership Card Value Object */
 export interface PlusCardVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
   /** Card ID */
   id?: number;
-  /** åå¡æºæID */
+  /** 发卡机构ID */
   cardOrganizationId?: number;
-  /** å¡å¸ç±»åï¼ä¼åå¡ãç¤¼åå¸ç­ */
+  /** 卡券类型：会员卡、礼品券等 */
   cardType?: 'DEFAULT' | 'MEMBER' | 'GIFT' | 'DISCOUNT' | 'CASH' | 'NORMAL';
-  /** å¸çCodeç ç±»åï¼å¦äºç»´ç ãæ¡å½¢ç  */
+  /** 券的Code码类型，如二维码、条形码 */
   codeType?: 'DEFAULT' | 'TEXT' | 'BARCODE' | 'QRCODE';
-  /** å¡å¸æ é¢ */
+  /** 卡券标题 */
   title?: string;
-  /** åæ·åç§° */
+  /** 商户名称 */
   brandName?: string;
-  /** å¡å¸Logoå¾çURL */
+  /** 卡券Logo图片URL */
   logoUrl?: string;
-  /** ä½¿ç¨é¡»ç¥ */
+  /** 使用须知 */
   notice?: string;
-  /** å¡å¸è¯¦ææè¿° */
+  /** 卡券详情描述 */
   description?: string;
-  /** å¡å¸é¢è² */
+  /** 卡券颜色 */
   color?: string;
-  /** å¡å¸åºå­/åè¡é */
+  /** 卡券库存/发行量 */
   quantity?: number;
-  /** æ¯äººé¢åä¸é */
+  /** 每人领取上限 */
   getLimit?: number;
-  /** æ¯å¦å¯åäº« */
+  /** 是否可分享 */
   canShare?: boolean;
-  /** æ¯å¦å¯è½¬èµ  */
+  /** 是否可转赠 */
   canGiveFriend?: boolean;
-  /** çææ¶é´ */
+  /** 生效时间 */
   startTime?: string;
-  /** å¤±ææ¶é´ */
+  /** 失效时间 */
   endTime?: string;
-  /** å¡å¸ç¶æï¼å¯ç¨/ç¦ç¨/å é¤ */
+  /** 卡券状态：启用/禁用/删除 */
   status?: 'DEFAULT' | 'ACTIVE' | 'INACTIVE' | 'DELETED';
 }

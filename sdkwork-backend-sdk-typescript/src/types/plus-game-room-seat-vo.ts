@@ -1,51 +1,51 @@
-/** æ£çæ¸¸ææ¿é´åº§ä½VO */
+/** 棋牌游戏房间座位VO */
 export interface PlusGameRoomSeatVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** åº§ä½è®°å½ID */
+  /** 座位记录ID */
   seatId?: number;
-  /** æ¿é´ID */
+  /** 房间ID */
   roomId?: number;
-  /** ç©æ³å®ä¹ID */
+  /** 玩法定义ID */
   definitionId?: number;
-  /** ç©æ³ç±»å */
+  /** 玩法类型 */
   gameType?: 'INTERNATIONAL_CHESS' | 'CHINESE_CHESS' | 'GOMOKU' | 'JUNQI' | 'LANDLORD' | 'SHENG_JI' | 'TUO_LA_JI' | 'TEXAS_HOLDEM' | 'MAHJONG' | 'CUSTOM';
-  /** ç©å®¶ç¨æ·ID */
+  /** 玩家用户ID */
   userId?: number;
-  /** åº§ä½å· */
+  /** 座位号 */
   seatNo?: number;
-  /** åº§ä½ç¶æ */
+  /** 座位状态 */
   status?: 'EMPTY' | 'RESERVED' | 'READY' | 'PLAYING' | 'ELIMINATED' | 'OFFLINE' | 'LEFT' | 'TRUSTEESHIP';
-  /** ç©å®¶ç±»å */
+  /** 玩家类型 */
   playerType?: 'HUMAN' | 'AI' | 'BOT' | 'SPECTATOR';
-  /** æµç§°å¿«ç§ */
+  /** 昵称快照 */
   nicknameSnapshot?: string;
-  /** å¤´åURL */
+  /** 头像URL */
   avatarUrl?: string;
-  /** è¿å¥æ¥æº */
+  /** 进入来源 */
   joinSource?: string;
-  /** éä¼å· */
+  /** 队伍号 */
   teamNo?: number;
-  /** æ¯å¦åå¤ */
+  /** 是否准备 */
   ready?: boolean;
-  /** æ¯å¦æç®¡ */
+  /** 是否托管 */
   trusteeship?: boolean;
-  /** æ¯å¦æè§å¸­ */
+  /** 是否旁观席 */
   spectator?: boolean;
-  /** æ¿é´åç´¯è®¡å */
+  /** 房间内累计分 */
   roomScore?: number;
-  /** æ¿é´åç­¹ç  */
+  /** 房间内筹码 */
   chips?: number;
-  /** æ·æ±°åæ¬¡ */
+  /** 淘汰名次 */
   eliminatedRankNo?: number;
-  /** å¥åº§æ¶é´ */
+  /** 入座时间 */
   joinedAt?: string;
-  /** æ·æ±°æ¶é´ */
+  /** 淘汰时间 */
   eliminatedAt?: string;
-  /** ç¦»åº§æ¶é´ */
+  /** 离座时间 */
   leftAt?: string;
-  /** æç/æ£å­å¿«ç§ */
-  handSnapshot?: Record<string, unknown>;
+  /** 手牌/棋子快照 */
+  handSnapshot?: Record<string, Record<string, unknown>>;
 }

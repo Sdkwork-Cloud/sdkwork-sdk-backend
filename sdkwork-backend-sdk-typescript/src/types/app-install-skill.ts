@@ -1,7 +1,7 @@
-/** åºç¨å®è£æè½ä¿¡æ¯ */
+/** 应用安装技能信息 */
 export interface AppInstallSkill {
-  /** æè½ID */
+  /** 技能ID */
   id?: number;
-  /** æè½åç§° */
+  /** 技能名称 */
   name?: string;
 }

@@ -1,8 +1,8 @@
 /** Skill view object */
 export interface PlusSkillVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
   /** Skill id */
   id?: number;
@@ -89,9 +89,9 @@ export interface PlusSkillVO {
   /** Skill capabilities */
   capabilities?: string[];
   /** Configuration schema */
-  configSchema?: Record<string, unknown>;
+  configSchema?: Record<string, Record<string, unknown>>;
   /** Default configuration */
-  defaultConfig?: Record<string, unknown>;
+  defaultConfig?: Record<string, Record<string, unknown>>;
   /** Latest publish time */
   latestPublishedAt?: string;
 }

@@ -1,6 +1,6 @@
 import type { AppBuildVO } from './app-build-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultAppBuildVO {
   /** Response data */
   data: AppBuildVO;

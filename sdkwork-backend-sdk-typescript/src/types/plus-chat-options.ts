@@ -25,7 +25,7 @@ export interface PlusChatOptions {
   temperature?: number;
   top_p?: number;
   tools?: FunctionTool[];
-  tool_choice?: unknown;
+  tool_choice?: Record<string, unknown>;
   user?: string;
   parallel_tool_calls?: boolean;
   store?: boolean;

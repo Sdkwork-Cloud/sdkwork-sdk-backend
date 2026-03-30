@@ -1,6 +1,6 @@
 import type { PagePlusUserCardVO } from './page-plus-user-card-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPagePlusUserCardVO {
   /** Response data */
   data: PagePlusUserCardVO;

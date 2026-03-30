@@ -3,25 +3,25 @@ import type { ChatCompletionMetadata } from './chat-completion-metadata';
 import type { CompletionUsage } from './completion-usage';
 import type { PlusAgent } from './plus-agent';
 
-/** èå¤©å®æStreamæ¹å¼çååºå¯¹è±¡ï¼ç¨äºæµå¼ä¼ è¾çèå¤©æ¨¡åååº */
+/** 聊天完成Stream方式的响应对象，用于流式传输的聊天模型响应 */
 export interface ChatCompletionChunk {
-  /** ååºçå¯ä¸æ è¯ç¬¦ï¼åä¸æµå¼ååºçææchunkå±äº«ç¸åçid */
+  /** 响应的唯一标识符，同一流式响应的所有chunk共享相同的id */
   id: string;
-  /** å¯¹è±¡ç±»åï¼æµå¼ååºåºå®ä¸º"chat.completion.chunk" */
+  /** 对象类型，流式响应固定为"chat.completion.chunk" */
   object: string;
-  /** ååºåå»ºçæ¶é´æ³ï¼Unixæ¶é´ï¼ä»¥ç§ä¸ºåä½ï¼ */
+  /** 响应创建的时间戳（Unix时间，以秒为单位） */
   created: number;
-  /** ç¨äºçæååºçæ¨¡ååç§° */
+  /** 用于生成响应的模型名称 */
   model: string;
-  /** ååºéé¡¹åè¡¨ï¼åå«å½åchunkçå¢éåå®¹ */
+  /** 响应选项列表，包含当前chunk的增量内容 */
   choices: ChatCompletionChunkChoice[];
-  /** ä½¿ç¨æåµç»è®¡ä¿¡æ¯ */
+  /** 使用情况统计信息 */
   usage?: CompletionUsage;
   /** metadata */
   metadata?: ChatCompletionMetadata;
   content?: string;
-  agent?: PlusAgent;
   reasoningContent?: string;
-  /** ç³»ç»æçº¹ï¼ç¨äºè¯å«æ¨¡åçæ¬åéç½® */
+  agent?: PlusAgent;
+  /** 系统指纹，用于识别模型版本和配置 */
   system_fingerprint?: string;
 }

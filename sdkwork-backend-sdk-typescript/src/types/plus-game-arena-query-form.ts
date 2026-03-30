@@ -1,16 +1,16 @@
-/** æ£çæ¸¸ææå°æ¥è¯¢è¡¨å */
+/** 棋牌游戏擂台查询表单 */
 export interface PlusGameArenaQueryForm {
   id?: number;
   createdAtFrom?: string;
   createdAtTo?: string;
-  /** åå»ºæä¸»ç¨æ·ID */
+  /** 创建擂主用户ID */
   ownerUserId?: number;
-  /** å½åæä¸»ç¨æ·ID */
+  /** 当前擂主用户ID */
   currentChampionUserId?: number;
-  /** ç©æ³ç±»å */
+  /** 玩法类型 */
   gameType?: 'INTERNATIONAL_CHESS' | 'CHINESE_CHESS' | 'GOMOKU' | 'JUNQI' | 'LANDLORD' | 'SHENG_JI' | 'TUO_LA_JI' | 'TEXAS_HOLDEM' | 'MAHJONG' | 'CUSTOM';
-  /** ç©æ³æ¨¡å¼ç¼ç  */
+  /** 玩法模式编码 */
   gameModeCode?: string;
-  /** æå°ç¶æ */
+  /** 擂台状态 */
   status?: 'OPEN' | 'LOCKED' | 'CLOSED';
 }

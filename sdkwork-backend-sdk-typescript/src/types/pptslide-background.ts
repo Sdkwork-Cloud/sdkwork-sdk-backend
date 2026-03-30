@@ -2,13 +2,13 @@ import type { PPTGradient } from './pptgradient';
 import type { PPTSlideBackgroundImage } from './pptslide-background-image';
 import type { PPTSlideBackgroundType } from './pptslide-background-type';
 
-/** å¹»ç¯çèæ¯ */
+/** 幻灯片背景 */
 export interface PPTSlideBackground {
-  /** èæ¯ç±»åï¼çº¯è²ãå¾çãæ¸åï¼ */
+  /** 背景类型（纯色、图片、渐变） */
   type: PPTSlideBackgroundType;
-  /** èæ¯é¢è²ï¼çº¯è²ï¼ */
+  /** 背景颜色（纯色） */
   color?: string;
-  /** å¾çèæ¯ */
+  /** 图片背景 */
   image?: PPTSlideBackgroundImage;
   pptgradient?: PPTGradient;
 }

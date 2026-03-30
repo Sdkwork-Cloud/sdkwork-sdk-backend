@@ -1,6 +1,6 @@
 import type { PlusDiskVO } from './plus-disk-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPlusDiskVO {
   /** Response data */
   data: PlusDiskVO;

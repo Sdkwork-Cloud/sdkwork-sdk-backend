@@ -1,9 +1,9 @@
 /** Chat Message Feedback Form */
 export interface PlusMessageFeedbackForm {
-  /** æ¶æ¯ID */
+  /** 消息ID */
   id?: string;
-  /** ä¼è¯ID */
+  /** 会话ID */
   conversationId?: string;
-  /** åé¦åå®¹ */
+  /** 反馈内容 */
   rating?: string;
 }

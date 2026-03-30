@@ -1,6 +1,6 @@
 import type { PagePlusAiAgentToolVO } from './page-plus-ai-agent-tool-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPagePlusAiAgentToolVO {
   /** Response data */
   data: PagePlusAiAgentToolVO;

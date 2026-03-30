@@ -1,9 +1,9 @@
 import type { PPTElementLinkType } from './pptelement-link-type';
 
-/** åç´ è¶é¾æ¥ */
+/** 元素超链接 */
 export interface PPTElementLink {
-  /** é¾æ¥ç±»åï¼ç½é¡µãå¹»ç¯çé¡µé¢ï¼ */
+  /** 链接类型（网页、幻灯片页面） */
   type: PPTElementLinkType;
-  /** ç®æ å°åï¼ç½é¡µé¾æ¥ãå¹»ç¯çé¡µé¢IDï¼ */
+  /** 目标地址（网页链接、幻灯片页面ID） */
   target: string;
 }

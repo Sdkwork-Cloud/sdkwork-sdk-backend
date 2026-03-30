@@ -1,6 +1,6 @@
 import type { ProfileItem } from './profile-item';
 
-/** AIæ¨¡åæå¡ä»¤çä½¿ç¨éå¶éç½®ä¿¡æ¯ */
+/** AI模型服务令牌使用限制配置信息 */
 export interface MemoryProfile {
   items?: ProfileItem[];
   customs?: Record<string, ProfileItem[]>;

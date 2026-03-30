@@ -1,6 +1,6 @@
 import type { PlusNewsVO } from './plus-news-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultListPlusNewsVO {
   /** Response data */
   data: PlusNewsVO[];

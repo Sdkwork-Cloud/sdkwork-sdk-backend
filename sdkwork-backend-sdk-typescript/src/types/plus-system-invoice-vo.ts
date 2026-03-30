@@ -1,29 +1,29 @@
-/** ç³»ç»åç¥¨VO */
+/** 系统发票VO */
 export interface PlusSystemInvoiceVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** ä¸»é®ID */
+  /** 主键ID */
   id?: number;
-  /** ä¸å¡UUID */
+  /** 业务UUID */
   uuid?: string;
-  /** åç¥¨æ¬å¤´ */
+  /** 发票抬头 */
   title?: string;
-  /** çº³ç¨äººè¯å«å· */
+  /** 纳税人识别号 */
   taxId?: string;
-  /** åç¥¨ç±»åï¼electronic|paper */
+  /** 发票类型：electronic|paper */
   type?: string;
-  /** éé¢ */
+  /** 金额 */
   amount?: number;
-  /** ç¶æï¼pending|issued|rejected */
+  /** 状态：pending|issued|rejected */
   status?: string;
-  /** å¼ç¥¨åå®¹ */
+  /** 开票内容 */
   content?: string;
-  /** çµå­åç¥¨é®ç®± */
+  /** 电子发票邮箱 */
   email?: string;
-  /** é®å¯å°å */
+  /** 邮寄地址 */
   address?: string;
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createTime?: string;
 }

@@ -1,11 +1,11 @@
-/** æ¹æ³¨åå¤ */
+/** 批注回复 */
 export interface PPTNoteReply {
-  /** åå¤ID */
+  /** 回复ID */
   id: string;
-  /** åå¤åå®¹ */
+  /** 回复内容 */
   content: string;
-  /** åå¤æ¶é´ */
+  /** 回复时间 */
   time: number;
-  /** åå¤ç¨æ· */
+  /** 回复用户 */
   user: string;
 }

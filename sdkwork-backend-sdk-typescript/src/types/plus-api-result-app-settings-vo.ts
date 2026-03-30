@@ -1,6 +1,6 @@
 import type { AppSettingsVO } from './app-settings-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultAppSettingsVO {
   /** Response data */
   data: AppSettingsVO;

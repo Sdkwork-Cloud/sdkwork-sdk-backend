@@ -52,12 +52,12 @@ export class DiskApi {
   }
 
 /** List files */
-  async listFiles(params?: QueryParams): Promise<PlusApiResultFileListVO> {
+  async getListFiles(params?: QueryParams): Promise<PlusApiResultFileListVO> {
     return this.client.get<PlusApiResultFileListVO>(backendApiPath(`/disk/files`), params);
   }
 
 /** Upload file */
-  async uploadFile(body?: FormData, params?: QueryParams): Promise<PlusApiResultFileItemVO> {
+  async createUploadFile(body?: FormData, params?: QueryParams): Promise<PlusApiResultFileItemVO> {
     return this.client.post<PlusApiResultFileItemVO>(backendApiPath(`/disk/files`), body, params);
   }
 

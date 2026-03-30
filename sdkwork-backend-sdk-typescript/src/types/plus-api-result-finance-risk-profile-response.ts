@@ -1,6 +1,6 @@
 import type { FinanceRiskProfileResponse } from './finance-risk-profile-response';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultFinanceRiskProfileResponse {
   /** Response data */
   data: FinanceRiskProfileResponse;

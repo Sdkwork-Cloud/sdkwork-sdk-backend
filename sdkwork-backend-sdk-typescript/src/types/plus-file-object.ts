@@ -1,55 +1,55 @@
 import type { TagsContent } from './tags-content';
 
-/** æä»¶å¯¹è±¡DTO */
+/** 文件对象DTO */
 export interface PlusFileObject {
-  /** æä»¶ID */
+  /** 文件ID */
   id?: number;
-  /** æä»¶UUID */
+  /** 文件UUID */
   uuid?: string;
-  /** ç½çID */
+  /** 网盘ID */
   diskId?: number;
-  /** æä»¶å */
+  /** 文件名 */
   name?: string;
-  /** æä»¶å¤§å°ï¼å­èï¼ */
+  /** 文件大小（字节） */
   size?: number;
-  /** æä»¶è·¯å¾ */
+  /** 文件路径 */
   path?: string;
-  /** ç¸å¯¹è·¯å¾ */
+  /** 相对路径 */
   relativePath?: string;
-  /** æä»¶ç±»å */
+  /** 文件类型 */
   type?: 'DEFAULT' | 'FILE' | 'DIRECTORY';
-  /** æä»¶æ©å±å */
+  /** 文件扩展名 */
   extension?: string;
-  /** æåä¿®æ¹æ¶é´ */
+  /** 最后修改时间 */
   lastModifiedTime?: string;
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æä»¶çæ¬ */
+  /** 文件版本 */
   versionId?: string;
-  /** æä»¶æè¿° */
+  /** 文件描述 */
   description?: string;
-  /** é¡¹ç®UUID */
+  /** 项目UUID */
   projectUuid?: string;
-  /** é¡¹ç®ID */
+  /** 项目ID */
   projectId?: number;
-  /** æä»¶ææèç±»å */
+  /** 文件所有者类型 */
   owner?: 'DEFAULT' | 'USER' | 'PROJECT' | 'TENANT' | 'SYSTEM' | 'ORGANIZATION';
-  /** æä»¶ææèID */
+  /** 文件所有者ID */
   ownerId?: number;
-  /** æä»¶ä½è */
+  /** 文件作者 */
   author?: string;
-  /** æç¤ºè¯åå®¹ */
+  /** 提示词内容 */
   prompt?: string;
-  /** æä»¶åå®¹ */
+  /** 文件内容 */
   content?: string;
-  /** æä»¶æ ç­¾ */
+  /** 文件标签 */
   tags?: TagsContent;
-  /** æ¯å¦åªè¯» */
+  /** 是否只读 */
   readonly?: boolean;
-  /** æä»¶æé */
-  permission?: 'OWNER_READ' | 'OWNER_WRITE' | 'OWNER_EXECUTE' | 'GROUP_READ' | 'GROUP_WRITE' | 'GROUP_EXECUTE' | 'OTHERS_READ' | 'OTHERS_WRITE' | 'OTHERS_EXECUTE'[];
-  /** å¼ç¨æä»¶ID */
+  /** 文件权限 */
+  permission?: ('OWNER_READ' | 'OWNER_WRITE' | 'OWNER_EXECUTE' | 'GROUP_READ' | 'GROUP_WRITE' | 'GROUP_EXECUTE' | 'OTHERS_READ' | 'OTHERS_WRITE' | 'OTHERS_EXECUTE')[];
+  /** 引用文件ID */
   referenceFileId?: number;
-  /** å­æä»¶åè¡¨ */
+  /** 子文件列表 */
   children?: PlusFileObject[];
 }

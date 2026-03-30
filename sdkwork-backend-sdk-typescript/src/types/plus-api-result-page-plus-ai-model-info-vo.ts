@@ -1,6 +1,6 @@
 import type { PagePlusAiModelInfoVO } from './page-plus-ai-model-info-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPagePlusAiModelInfoVO {
   /** Response data */
   data: PagePlusAiModelInfoVO;

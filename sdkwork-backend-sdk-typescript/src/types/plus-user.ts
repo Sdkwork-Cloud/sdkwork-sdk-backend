@@ -39,6 +39,6 @@ export interface PlusUser {
   roles?: PlusRole[];
   metadata?: UserMetadata;
   socialInfoList?: SocialInfoList;
-  authorities?: GrantedAuthority[];
   roleCodes?: string[];
+  authorities?: GrantedAuthority[];
 }

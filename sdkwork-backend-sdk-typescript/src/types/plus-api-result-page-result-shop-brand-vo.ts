@@ -1,6 +1,6 @@
 import type { PageResultShopBrandVO } from './page-result-shop-brand-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPageResultShopBrandVO {
   /** Response data */
   data: PageResultShopBrandVO;

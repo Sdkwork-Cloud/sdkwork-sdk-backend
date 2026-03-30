@@ -1,21 +1,21 @@
-/** æ£çæ¸¸æææèµåå»ºè¡¨å */
+/** 棋牌游戏挑战赛创建表单 */
 export interface PlusGameChallengeCreateForm {
-  /** æææ¹ç¨æ·ID */
+  /** 挑战方用户ID */
   challengerUserId?: number;
-  /** è¢«æææ¹ç¨æ·IDï¼æå°ææå¯ä¸ºç©º */
+  /** 被挑战方用户ID；擂台挑战可为空 */
   targetUserId?: number;
-  /** ç©æ³ç±»åï¼æå°ææå¯ä¸ºç©ºå¹¶ç»§æ¿æå°ç©æ³ */
+  /** 玩法类型；擂台挑战可为空并继承擂台玩法 */
   gameType?: 'INTERNATIONAL_CHESS' | 'CHINESE_CHESS' | 'GOMOKU' | 'JUNQI' | 'LANDLORD' | 'SHENG_JI' | 'TUO_LA_JI' | 'TEXAS_HOLDEM' | 'MAHJONG' | 'CUSTOM';
-  /** ç©æ³æ¨¡å¼ç¼ç  */
+  /** 玩法模式编码 */
   gameModeCode?: string;
-  /** åè¾¹æ¼å */
+  /** 单边押分 */
   stakeScore?: number;
-  /** æææ¥æº */
+  /** 挑战来源 */
   sourceType?: 'SEARCH' | 'LEADERBOARD' | 'ARENA' | 'MANUAL';
-  /** æå°ID */
+  /** 擂台ID */
   arenaId?: number;
-  /** æ¥æºæ¦åID */
+  /** 来源榜单ID */
   leaderboardId?: number;
-  /** ææå¤æ³¨ */
+  /** 挑战备注 */
   reason?: string;
 }

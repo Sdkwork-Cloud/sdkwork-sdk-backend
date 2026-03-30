@@ -21,5 +21,5 @@ export interface PlusChatMessageContentForm {
   /** Message content */
   content: MessageBody;
   /** Message metadata */
-  metadata?: Record<string, unknown>;
+  metadata?: Record<string, Record<string, unknown>>;
 }

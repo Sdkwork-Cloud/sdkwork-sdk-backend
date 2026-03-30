@@ -1,6 +1,6 @@
 import type { GenerateCharacterVO } from './generate-character-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultGenerateCharacterVO {
   /** Response data */
   data: GenerateCharacterVO;

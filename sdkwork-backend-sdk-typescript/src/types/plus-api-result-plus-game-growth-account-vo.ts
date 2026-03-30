@@ -1,6 +1,6 @@
 import type { PlusGameGrowthAccountVO } from './plus-game-growth-account-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPlusGameGrowthAccountVO {
   /** Response data */
   data: PlusGameGrowthAccountVO;

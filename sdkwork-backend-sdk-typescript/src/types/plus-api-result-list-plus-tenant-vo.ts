@@ -1,6 +1,6 @@
 import type { PlusTenantVO } from './plus-tenant-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultListPlusTenantVO {
   /** Response data */
   data: PlusTenantVO[];

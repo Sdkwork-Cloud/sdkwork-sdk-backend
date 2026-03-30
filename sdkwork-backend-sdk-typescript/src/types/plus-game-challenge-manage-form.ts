@@ -1,13 +1,13 @@
-/** æ£çæ¸¸æææèµç®¡çè¡¨å */
+/** 棋牌游戏挑战赛管理表单 */
 export interface PlusGameChallengeManageForm {
-  /** ææç¶æ */
+  /** 挑战状态 */
   status?: 'PENDING' | 'ACCEPTED' | 'REJECTED' | 'CANCELED' | 'EXPIRED' | 'SETTLED';
-  /** è·èæ¹ç¨æ·IDï¼ä»ç»ç®æ¶ä½¿ç¨ */
+  /** 获胜方用户ID，仅结算时使用 */
   winnerUserId?: number;
-  /** å³èæ¿é´ID */
+  /** 关联房间ID */
   roomId?: number;
-  /** å³èå¯¹å±ID */
+  /** 关联对局ID */
   matchId?: number;
-  /** å¤çå¤æ³¨ */
+  /** 处理备注 */
   reason?: string;
 }

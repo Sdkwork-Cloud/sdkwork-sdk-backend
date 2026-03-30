@@ -1,6 +1,6 @@
 import type { ShopDecorationVO } from './shop-decoration-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultShopDecorationVO {
   /** Response data */
   data: ShopDecorationVO;

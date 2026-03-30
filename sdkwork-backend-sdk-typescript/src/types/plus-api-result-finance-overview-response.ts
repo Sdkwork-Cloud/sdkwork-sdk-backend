@@ -1,6 +1,6 @@
 import type { FinanceOverviewResponse } from './finance-overview-response';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultFinanceOverviewResponse {
   /** Response data */
   data: FinanceOverviewResponse;

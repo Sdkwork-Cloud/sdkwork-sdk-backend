@@ -1,11 +1,11 @@
 import type { ModelPriceItem } from './model-price-item';
 
-/** AIæ¨¡åæå¡ä»·æ ¼éç½®ä¿¡æ¯ */
+/** AI模型服务价格配置信息 */
 export interface ModelPrice {
-  /** ä»·æ ¼è®¡éåä½ï¼ç¨äºæå®ä»·æ ¼é¡¹çè®¡éåºåï¼ */
+  /** 价格计量单位（用于指定价格项的计量基准） */
   unit?: 'TOKEN' | 'K_TOKEN' | 'M_TOKEN' | 'COUNT' | 'DURATION';
-  /** ä»·æ ¼é¡¹åè¡¨ï¼åå«è¾å¥/è¾åº/æ¹éå¤çç­ä»·æ ¼ç±»åï¼ */
+  /** 价格项列表（包含输入/输出/批量处理等价格类型） */
   items?: ModelPriceItem[];
-  /** è´§å¸ä»£ç ï¼æå®ä»·æ ¼ä½¿ç¨çè´§å¸ç±»åï¼å¦USDãCNYç­ï¼ */
+  /** 货币代码（指定价格使用的货币类型，如USD、CNY等） */
   currency?: 'USD' | 'EUR' | 'GBP' | 'JPY' | 'AUD' | 'CAD' | 'CHF' | 'CNY' | 'SEK' | 'NZD' | 'BRL' | 'INR' | 'RUB' | 'ZAR' | 'SGD' | 'HKD' | 'KRW' | 'MXN' | 'TRY' | 'ILS' | 'POINT' | 'TOKEN';
 }

@@ -1,4 +1,4 @@
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultVoid {
   /** Response data */
   data: unknown;

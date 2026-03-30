@@ -1,6 +1,6 @@
 import type { PagePlusProductVO } from './page-plus-product-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPagePlusProductVO {
   /** Response data */
   data: PagePlusProductVO;

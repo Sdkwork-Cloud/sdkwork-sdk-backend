@@ -65,6 +65,6 @@ export interface ModelConfig {
   video?: VideoAccountConfig;
   voice?: AudioAccountConfig;
   resources?: ChannelResourceInfo;
-  properties?: Record<string, unknown>;
+  properties?: Record<string, Record<string, unknown>>;
   oauth?: OAuthAccountConfig;
 }

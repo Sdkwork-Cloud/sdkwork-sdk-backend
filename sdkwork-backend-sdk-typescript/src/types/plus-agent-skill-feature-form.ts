@@ -1,7 +1,7 @@
-/** æè½æ¨èéç½®åæ° */
+/** 技能推荐配置参数 */
 export interface PlusAgentSkillFeatureForm {
-  /** æ¯å¦æ¨è */
+  /** 是否推荐 */
   featured?: boolean;
-  /** æ¨èæéï¼>=0 */
+  /** 推荐权重，>=0 */
   recommendWeight?: number;
 }

@@ -1,6 +1,6 @@
 import type { PlusSkillBundleVO } from './plus-skill-bundle-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultListPlusSkillBundleVO {
   /** Response data */
   data: PlusSkillBundleVO[];

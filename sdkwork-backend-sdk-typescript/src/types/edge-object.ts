@@ -5,5 +5,5 @@ export interface EdgeObject {
   sourceNodeId?: string;
   targetNodeId?: string;
   type?: 'NORMAL' | 'CONDITIONAL';
-  condition?: unknown;
+  condition?: Record<string, unknown>;
 }

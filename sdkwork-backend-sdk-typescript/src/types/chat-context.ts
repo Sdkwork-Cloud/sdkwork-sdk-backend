@@ -17,5 +17,5 @@ export interface ChatContext {
   save_audio?: boolean;
   modalities?: string[];
   chat_options?: PlusChatOptions;
-  response_channels?: 'DINGTALK' | 'DISCORD' | 'FEISHU' | 'KAKAOTALK' | 'LINE' | 'MICROSOFT_TEAMS' | 'OPENIM' | 'SLACK' | 'TELEGRAM' | 'WECHAT_OFFICIAL_ACCOUNT' | 'WECHAT_WORK' | 'WECHAT_KF' | 'WHATSAPP' | 'WUKONG_IM' | 'XIAOZHI' | 'MQTT' | 'SDKWORK'[];
+  response_channels?: ('DINGTALK' | 'DISCORD' | 'FEISHU' | 'KAKAOTALK' | 'LINE' | 'MICROSOFT_TEAMS' | 'OPENIM' | 'SLACK' | 'TELEGRAM' | 'WECHAT_OFFICIAL_ACCOUNT' | 'WECHAT_WORK' | 'WECHAT_KF' | 'WHATSAPP' | 'WUKONG_IM' | 'XIAOZHI' | 'MQTT' | 'SDKWORK')[];
 }

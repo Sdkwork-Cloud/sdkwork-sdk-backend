@@ -1,6 +1,6 @@
 import type { PageResultNotaryRecordVO } from './page-result-notary-record-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPageResultNotaryRecordVO {
   /** Response data */
   data: PageResultNotaryRecordVO;

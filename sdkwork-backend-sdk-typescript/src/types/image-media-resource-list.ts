@@ -1,7 +1,7 @@
 import type { ImageMediaResource } from './image-media-resource';
 
-/** å¾çåªä½èµæºåè¡¨ */
+/** 图片媒体资源列表 */
 export interface ImageMediaResourceList {
-  /** å¾çèµæºåè¡¨ */
+  /** 图片资源列表 */
   images?: ImageMediaResource[];
 }

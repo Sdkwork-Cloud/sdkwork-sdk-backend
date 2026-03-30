@@ -15,7 +15,7 @@ export interface CreateServiceOrderForm {
   /** Order expire time */
   expireTime?: string;
   /** Task payload */
-  taskPayload?: Record<string, unknown>;
+  taskPayload?: Record<string, Record<string, unknown>>;
   /** Remark */
   remark?: string;
 }

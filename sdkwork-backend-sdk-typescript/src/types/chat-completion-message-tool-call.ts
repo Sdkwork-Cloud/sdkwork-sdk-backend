@@ -1,11 +1,11 @@
 import type { FunctionCall } from './function-call';
 
-/** å·¥å·è°ç¨å¯¹è±¡ï¼åå«å·¥å·è°ç¨çå¯ä¸æ è¯ãç±»ååå·ä½å½æ°è°ç¨ä¿¡æ¯ */
+/** 工具调用对象，包含工具调用的唯一标识、类型和具体函数调用信息 */
 export interface ChatCompletionMessageToolCall {
-  /** å·¥å·è°ç¨çå¯ä¸æ è¯ç¬¦ */
+  /** 工具调用的唯一标识符 */
   id: string;
-  /** å·¥å·ç±»åï¼å½åä»æ¯æ"function" */
+  /** 工具类型，当前仅支持"function" */
   type: string;
-  /** å½æ°è°ç¨è¯¦æä¿¡æ¯ */
+  /** 函数调用详情信息 */
   function: FunctionCall;
 }

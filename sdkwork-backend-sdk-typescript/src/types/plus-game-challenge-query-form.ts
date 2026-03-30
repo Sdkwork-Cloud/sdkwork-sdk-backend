@@ -1,20 +1,20 @@
-/** æ£çæ¸¸æææèµæ¥è¯¢è¡¨å */
+/** 棋牌游戏挑战赛查询表单 */
 export interface PlusGameChallengeQueryForm {
   id?: number;
   createdAtFrom?: string;
   createdAtTo?: string;
-  /** æææ¹ç¨æ·ID */
+  /** 挑战方用户ID */
   challengerUserId?: number;
-  /** è¢«æææ¹ç¨æ·ID */
+  /** 被挑战方用户ID */
   targetUserId?: number;
-  /** æå°ID */
+  /** 擂台ID */
   arenaId?: number;
-  /** è·èæ¹ç¨æ·ID */
+  /** 获胜方用户ID */
   winnerUserId?: number;
-  /** ç©æ³ç±»å */
+  /** 玩法类型 */
   gameType?: 'INTERNATIONAL_CHESS' | 'CHINESE_CHESS' | 'GOMOKU' | 'JUNQI' | 'LANDLORD' | 'SHENG_JI' | 'TUO_LA_JI' | 'TEXAS_HOLDEM' | 'MAHJONG' | 'CUSTOM';
-  /** ææç¶æ */
+  /** 挑战状态 */
   status?: 'PENDING' | 'ACCEPTED' | 'REJECTED' | 'CANCELED' | 'EXPIRED' | 'SETTLED';
-  /** æææ¥æº */
+  /** 挑战来源 */
   sourceType?: 'SEARCH' | 'LEADERBOARD' | 'ARENA' | 'MANUAL';
 }

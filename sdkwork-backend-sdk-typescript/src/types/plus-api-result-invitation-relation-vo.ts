@@ -1,6 +1,6 @@
 import type { InvitationRelationVO } from './invitation-relation-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultInvitationRelationVO {
   /** Response data */
   data: InvitationRelationVO;

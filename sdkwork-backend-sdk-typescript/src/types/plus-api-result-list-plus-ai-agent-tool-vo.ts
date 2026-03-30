@@ -1,6 +1,6 @@
 import type { PlusAiAgentToolVO } from './plus-ai-agent-tool-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultListPlusAiAgentToolVO {
   /** Response data */
   data: PlusAiAgentToolVO[];

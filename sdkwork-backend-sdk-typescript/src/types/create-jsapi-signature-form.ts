@@ -1,5 +1,5 @@
-/** éæ¶ç¼JSAPIç»æ§æçã¥å´ */
+/** 鍒涘缓JSAPI绛惧悕琛ㄥ崟 */
 export interface CreateJsapiSignatureForm {
-  /** URLé¦æ¿æ½ */
+  /** URL鍦板潃 */
   url: string;
 }

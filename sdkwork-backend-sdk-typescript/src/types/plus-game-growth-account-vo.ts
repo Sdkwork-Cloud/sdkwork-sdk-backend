@@ -1,8 +1,8 @@
 /** Growth account view object */
 export interface PlusGameGrowthAccountVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
   /** Growth account ID */
   accountId?: number;
@@ -67,9 +67,9 @@ export interface PlusGameGrowthAccountVO {
   /** Last claimed level name */
   lastClaimedRewardLevelName?: string;
   /** Last claimed reward summary */
-  lastClaimedRewardSummary?: Record<string, unknown>;
+  lastClaimedRewardSummary?: Record<string, Record<string, unknown>>;
   /** Last claimed raw reward config */
-  lastClaimedRewardConfig?: Record<string, unknown>;
+  lastClaimedRewardConfig?: Record<string, Record<string, unknown>>;
   /** Extension data */
-  extData?: Record<string, unknown>;
+  extData?: Record<string, Record<string, unknown>>;
 }

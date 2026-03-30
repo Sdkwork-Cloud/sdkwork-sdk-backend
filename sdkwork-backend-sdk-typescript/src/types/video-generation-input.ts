@@ -1,47 +1,47 @@
 import type { AssetMediaResource } from './asset-media-resource';
 import type { VideoStoryboard } from './video-storyboard';
 
-/** è§é¢çæè¾å¥åæ° */
+/** 视频生成输入参数 */
 export interface VideoGenerationInput {
-  /** ä»»å¡æ é¢ */
+  /** 任务标题 */
   title?: string;
-  /** ä¸»æç¤ºè¯ */
+  /** 主提示词 */
   prompt?: string;
-  /** ååæç¤ºè¯ */
+  /** 反向提示词 */
   negativePrompt?: string;
-  /** åèèµæºåè¡¨(æ¯æå¾ç/è§é¢/é³é¢ç­ä»»æç±»å) */
+  /** 参考资源列表(支持图片/视频/音频等任意类型) */
   referenceAssets?: AssetMediaResource[];
-  /** è§é¢æäºæ¿ */
+  /** 视频故事板 */
   storyboard?: VideoStoryboard;
-  /** çæåæ° */
-  parameters?: Record<string, unknown>;
-  /** çææ°é */
+  /** 生成参数 */
+  parameters?: Record<string, Record<string, unknown>>;
+  /** 生成数量 */
   n?: number;
-  /** éæºç§å­ */
+  /** 随机种子 */
   seed?: number;
-  /** è¾åºæ ¼å¼ */
+  /** 输出格式 */
   format?: string;
-  /** è§é¢å®½åº¦(åç´ ) */
+  /** 视频宽度(像素) */
   width?: number;
-  /** è§é¢é«åº¦(åç´ ) */
+  /** 视频高度(像素) */
   height?: number;
-  /** è§é¢æ¶é¿(ç§) */
+  /** 视频时长(秒) */
   duration?: number;
-  /** å¸§ç(FPS) */
+  /** 帧率(FPS) */
   fps?: number;
-  /** è§é¢é£æ ¼(cinematic/anime/realisticç­) */
+  /** 视频风格(cinematic/anime/realistic等) */
   style?: string;
-  /** å®½é«æ¯(16:9/9:16/1:1ç­) */
+  /** 宽高比(16:9/9:16/1:1等) */
   aspectRatio?: string;
-  /** è¿å¨å¼ºåº¦(1-255) */
+  /** 运动强度(1-255) */
   motionStrength?: number;
-  /** æåæºè¿å¨ç±»å(zoom_in/zoom_out/pan_left/pan_rightç­) */
+  /** 摄像机运动类型(zoom_in/zoom_out/pan_left/pan_right等) */
   cameraMotion?: string;
-  /** æ¯å¦å¾ªç¯è§é¢ */
+  /** 是否循环视频 */
   loop?: boolean;
-  /** æ¯å¦é«æ¸ */
+  /** 是否高清 */
   hd?: boolean;
-  /** æ¯å¦çæå­å¹ */
+  /** 是否生成字幕 */
   subtitle?: boolean;
   textToVideo?: boolean;
   referenceAssetCount?: number;

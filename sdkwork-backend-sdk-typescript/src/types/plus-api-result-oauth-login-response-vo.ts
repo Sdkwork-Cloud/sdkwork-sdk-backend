@@ -1,6 +1,6 @@
 import type { OAuthLoginResponseVO } from './oauth-login-response-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultOAuthLoginResponseVO {
   /** Response data */
   data: OAuthLoginResponseVO;

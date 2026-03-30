@@ -5,7 +5,7 @@ export interface Node {
   name?: string;
   description?: string;
   type?: 'START' | 'END' | 'TASK' | 'SUB_FLOW' | 'FORK' | 'JOIN';
-  properties?: Record<string, unknown>;
+  properties?: Record<string, Record<string, unknown>>;
   startTime?: string;
   endTime?: string;
   agents?: PlusAgent[];

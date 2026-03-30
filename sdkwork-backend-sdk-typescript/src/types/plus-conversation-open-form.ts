@@ -3,16 +3,16 @@ import type { PlusChatOptions } from './plus-chat-options';
 /** P lu sC on ve rs at io nO pe nF or m */
 export interface PlusConversationOpenForm {
   conversationId?: string;
-  /** æµ¼æ°³ç½UUID */
+  /** 浼氳瘽UUID */
   uuid?: string;
-  /** æµ¼æ°³ç½éå¬î½ */
+  /** 浼氳瘽鏍囬 */
   userId: number;
-  /** Agent ID(æ¾¶æ ­æ­éå® ä»plus_ai_agent.id) */
+  /** Agent ID(澶栭敭鍏宠仈plus_ai_agent.id) */
   agentId?: number;
-  /** é­ã¨çæ´æD(æ¾¶æ ­æ­éå® ä»plus_knowledge_base_info.id) */
+  /** 鐭ヨ瘑搴揑D(澶栭敭鍏宠仈plus_knowledge_base_info.id) */
   knowledgeBaseId?: number;
-  /** éçåµå©§æD(æ¾¶æ ­æ­éå® ä»plus_data_source_info.id) */
+  /** 鏁版嵁婧怚D(澶栭敭鍏宠仈plus_data_source_info.id) */
   dataSourceId?: number;
-  /** é±å©ãé«å¤ã(temperature, top_pç»? */
+  /** 鑱婂ぉ閫夐」(temperature, top_p绛? */
   chatOptions?: PlusChatOptions;
 }

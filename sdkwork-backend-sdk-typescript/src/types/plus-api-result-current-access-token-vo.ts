@@ -1,6 +1,6 @@
 import type { CurrentAccessTokenVO } from './current-access-token-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultCurrentAccessTokenVO {
   /** Response data */
   data: CurrentAccessTokenVO;

@@ -1,6 +1,6 @@
 import type { PagePlusVipRechargePackVO } from './page-plus-vip-recharge-pack-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPagePlusVipRechargePackVO {
   /** Response data */
   data: PagePlusVipRechargePackVO;

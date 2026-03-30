@@ -1,44 +1,44 @@
-/** æ£çæ¸¸ææ¿é´æ¥è¯¢è¡¨å */
+/** 棋牌游戏房间查询表单 */
 export interface PlusGameRoomQueryForm {
   id?: number;
   createdAtFrom?: string;
   createdAtTo?: string;
-  /** æ¿ä¸»ç¨æ·ID */
+  /** 房主用户ID */
   userId?: number;
-  /** ç©æ³å®ä¹ID */
+  /** 玩法定义ID */
   definitionId?: number;
-  /** ç©æ³ç±»å */
+  /** 玩法类型 */
   gameType?: 'INTERNATIONAL_CHESS' | 'CHINESE_CHESS' | 'GOMOKU' | 'JUNQI' | 'LANDLORD' | 'SHENG_JI' | 'TUO_LA_JI' | 'TEXAS_HOLDEM' | 'MAHJONG' | 'CUSTOM';
-  /** ç©æ³æ¨¡å¼ç¼ç  */
+  /** 玩法模式编码 */
   gameModeCode?: string;
-  /** èµå­£æ è¯ */
+  /** 赛季标识 */
   seasonKey?: string;
-  /** æ¿é´å· */
+  /** 房间号 */
   roomNo?: string;
-  /** æ¿é´å·æ¨¡ç³å¹é */
+  /** 房间号模糊匹配 */
   roomNoLike?: string;
-  /** æ¿é´åç§°æ¨¡ç³å¹é */
+  /** 房间名称模糊匹配 */
   nameLike?: string;
-  /** æ¿é´ç±»å */
+  /** 房间类型 */
   roomType?: 'MATCHMAKING' | 'CLASSIC' | 'FRIEND' | 'TOURNAMENT' | 'PRACTICE' | 'CLUB';
-  /** æ¿é´ç¶æ */
+  /** 房间状态 */
   status?: 'WAITING' | 'READY' | 'PLAYING' | 'SETTLING' | 'FINISHED' | 'DISMISSED' | 'EXPIRED';
-  /** å¯è§æ§ */
+  /** 可见性 */
   visibility?: 'PUBLIC' | 'PRIVATE' | 'PASSWORD';
-  /** æ¯å¦æä½æ¿ */
+  /** 是否排位房 */
   ranked?: boolean;
-  /** æ¯å¦åè®¸è§æ */
+  /** 是否允许观战 */
   allowSpectator?: boolean;
-  /** æ¯å¦è®¡å¥æ¦å */
+  /** 是否计入榜单 */
   leaderboardEligible?: boolean;
-  /** æ¯å¦å¯ç¨åæ¾ */
+  /** 是否启用回放 */
   replayEnabled?: boolean;
-  /** ä¿±ä¹é¨ID */
+  /** 俱乐部ID */
   clubId?: number;
-  /** èµäºID */
+  /** 赛事ID */
   tournamentId?: number;
-  /** å°åºç¼ç  */
+  /** 地区编码 */
   regionCode?: string;
-  /** å½åå¯¹å±ID */
+  /** 当前对局ID */
   currentMatchId?: number;
 }

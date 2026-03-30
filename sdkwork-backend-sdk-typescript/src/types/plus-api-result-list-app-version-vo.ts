@@ -1,6 +1,6 @@
 import type { AppVersionVO } from './app-version-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultListAppVersionVO {
   /** Response data */
   data: AppVersionVO[];

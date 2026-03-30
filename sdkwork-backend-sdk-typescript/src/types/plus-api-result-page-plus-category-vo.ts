@@ -1,6 +1,6 @@
 import type { PagePlusCategoryVO } from './page-plus-category-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPagePlusCategoryVO {
   /** Response data */
   data: PagePlusCategoryVO;

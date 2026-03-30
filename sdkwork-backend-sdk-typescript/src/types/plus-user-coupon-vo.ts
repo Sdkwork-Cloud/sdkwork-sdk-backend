@@ -1,29 +1,29 @@
-/** ç¨æ·ä¼æ å¸VOï¼è®°å½ç¨æ·ææçä¼æ å¸ä¿¡æ¯ */
+/** 用户优惠券VO，记录用户持有的优惠券信息 */
 export interface PlusUserCouponVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** ç¨æ·ID */
+  /** 用户ID */
   userId?: number;
-  /** ä¼æ å¸æ¨¡æ¿ID */
+  /** 优惠券模板ID */
   couponId?: number;
-  /** ç¨æ·ä¼æ å¸çå¯ä¸ç¼ç  */
+  /** 用户优惠券的唯一编码 */
   couponCode?: string;
-  /** é¢åæ¶é´ */
+  /** 领取时间 */
   acquireTime?: string;
-  /** é¢åè¯·æ±å·(å¹ç­é®) */
+  /** 领取请求号(幂等键) */
   acquireRequestNo?: string;
-  /** é¢åæ¹å¼ */
+  /** 领取方式 */
   acquireType?: 'DEFAULT' | 'RECEIVE' | 'REDEEM_CODE' | 'POINTS_EXCHANGE' | 'ADMIN_GRANT';
-  /** é¢åæ¶èç§¯å */
+  /** 领取消耗积分 */
   pointCost?: number;
-  /** æ¯å¦å·²éåç§¯å */
+  /** 是否已退回积分 */
   pointsRefunded?: boolean;
-  /** ç§¯åéåæ¶é´ */
+  /** 积分退回时间 */
   pointsRefundAt?: string;
-  /** ä½¿ç¨æ¶é´ */
+  /** 使用时间 */
   useTime?: string;
-  /** ä½¿ç¨ç¶æï¼æªä½¿ç¨/å·²ä½¿ç¨/å·²è¿æç­ */
+  /** 使用状态：未使用/已使用/已过期等 */
   status?: 'DEFAULT' | 'UNUSED' | 'USED' | 'EXPIRED' | 'INACTIVE';
 }

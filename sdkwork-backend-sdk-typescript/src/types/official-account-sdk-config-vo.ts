@@ -1,15 +1,15 @@
-/** å¾®ä¿¡å¬ä¼å·JS-SDKéç½® */
+/** 微信公众号JS-SDK配置 */
 export interface OfficialAccountSdkConfigVO {
-  /** å¼å¯è°è¯æ¨¡å¼ */
+  /** 开启调试模式 */
   debug?: boolean;
-  /** æå¡å·çå¯ä¸æ è¯ */
+  /** 服务号的唯一标识 */
   appId?: string;
-  /** çæç­¾åçæ¶é´æ³ */
+  /** 生成签名的时间戳 */
   timestamp?: string;
-  /** çæç­¾åçéæºä¸² */
+  /** 生成签名的随机串 */
   nonceStr?: string;
-  /** ç­¾å */
+  /** 签名 */
   signature?: string;
-  /** éè¦ä½¿ç¨çJSæ¥å£åè¡¨ */
+  /** 需要使用的JS接口列表 */
   jsApiList?: string[];
 }

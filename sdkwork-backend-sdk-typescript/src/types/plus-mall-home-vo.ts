@@ -3,9 +3,9 @@ import type { PlusProductVO } from './plus-product-vo';
 
 /** Mall Home Value Object - Represents the home page data of the mall including various product lists */
 export interface PlusMallHomeVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
   /** List of grid categories for home page display */
   gridCategories?: PlusCategoryVO[];

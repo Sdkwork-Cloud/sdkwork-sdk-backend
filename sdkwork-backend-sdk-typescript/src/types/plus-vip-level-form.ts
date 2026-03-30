@@ -8,4 +8,6 @@ export interface PlusVipLevelForm {
   requiredPoints: number;
   /** VIP level description */
   description?: string;
+  /** VIP level status */
+  status?: 'ENABLED' | 'DISABLED';
 }

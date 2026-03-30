@@ -1,6 +1,6 @@
 import type { PlusAttributeVO } from './plus-attribute-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultListPlusAttributeVO {
   /** Response data */
   data: PlusAttributeVO[];

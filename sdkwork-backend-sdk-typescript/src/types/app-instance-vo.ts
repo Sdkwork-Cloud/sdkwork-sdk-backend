@@ -17,5 +17,5 @@ export interface AppInstanceVO {
   linkedWechatName?: string;
   linkedMiniProgramId?: string;
   linkedMiniProgramName?: string;
-  configData?: Record<string, unknown>;
+  configData?: Record<string, Record<string, unknown>>;
 }

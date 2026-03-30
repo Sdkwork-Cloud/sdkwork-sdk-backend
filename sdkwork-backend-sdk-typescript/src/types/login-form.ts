@@ -1,24 +1,24 @@
-/** é§è¯²ç¶çéç°çã¥å´ */
+/** 鐧诲綍璇锋眰琛ㄥ崟 */
 export interface LoginForm {
-  /** é§è¯²ç¶ç»«è¯²ç· */
+  /** 鐧诲綍绫诲瀷 */
   type?: 'MOBILE' | 'EMAIL' | 'OAUTH' | 'USERNAME';
-  /** é­î¾î */
+  /** 閭 */
   email?: string;
   /** P ho ne */
   phone?: string;
   username: string;
-  /** çµåç */
+  /** 瀵嗙爜 */
   password: string;
-  /** éªå²å½´ */
+  /** 骞冲彴 */
   owner?: 'DEFAULT' | 'TENANT' | 'ORGANIZATION';
   /** C ap tc ha */
   captcha?: string;
-  /** æ¥ å²çé®ä¸¡D */
+  /** 楠岃瘉鐮両D */
   captchaId?: string;
   /** R em em be rM e */
   rememberMe?: boolean;
   /** V er if ic at io nC od e */
   verificationCode?: string;
-  /** é­â¬çé£ç */
+  /** 閭€璇风爜 */
   invitationCode?: string;
 }

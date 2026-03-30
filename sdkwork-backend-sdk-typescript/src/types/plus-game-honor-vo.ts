@@ -1,53 +1,53 @@
-/** æ£çæ¸¸æè£èªè®°å½VO */
+/** 棋牌游戏荣誉记录VO */
 export interface PlusGameHonorVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** è£èªID */
+  /** 荣誉ID */
   honorId?: number;
-  /** ç©å®¶ç¨æ·ID */
+  /** 玩家用户ID */
   userId?: number;
-  /** ç©æ³ç±»å */
+  /** 玩法类型 */
   gameType?: 'INTERNATIONAL_CHESS' | 'CHINESE_CHESS' | 'GOMOKU' | 'JUNQI' | 'LANDLORD' | 'SHENG_JI' | 'TUO_LA_JI' | 'TEXAS_HOLDEM' | 'MAHJONG' | 'CUSTOM';
-  /** èµå­£æ è¯ */
+  /** 赛季标识 */
   seasonKey?: string;
-  /** è£èªæ¥æºç±»å */
+  /** 荣誉来源类型 */
   sourceType?: 'LEADERBOARD' | 'TOURNAMENT' | 'SEASON' | 'ACTIVITY' | 'SYSTEM';
-  /** è£èªæ¥æºID */
+  /** 荣誉来源ID */
   sourceId?: number;
-  /** æ¦åID */
+  /** 榜单ID */
   leaderboardId?: number;
-  /** èµäºID */
+  /** 赛事ID */
   tournamentId?: number;
-  /** æ¦åå¨æç±»å */
+  /** 榜单周期类型 */
   periodType?: 'HOUR' | 'DAY' | 'WEEK' | 'MONTH' | 'QUARTER' | 'YEAR' | 'SEASON';
-  /** æè¡ç±»å */
+  /** 排行类型 */
   rankingType?: 'SCORE' | 'RATING' | 'WIN_RATE' | 'WIN_COUNT' | 'STREAK' | 'PROFIT';
-  /** è£èªç¶æ */
+  /** 荣誉状态 */
   status?: 'PENDING' | 'GRANTED' | 'EXPIRED' | 'REVOKED';
-  /** ä¿±ä¹é¨ID */
+  /** 俱乐部ID */
   clubId?: number;
-  /** å°åºç¼ç  */
+  /** 地区编码 */
   regionCode?: string;
-  /** è£èªæ é¢ */
+  /** 荣誉标题 */
   title?: string;
-  /** è£èªå¯æ é¢ */
+  /** 荣誉副标题 */
   subtitle?: string;
-  /** è£èªè¯´æ */
+  /** 荣誉说明 */
   description?: string;
-  /** å¾½ç« ç¼ç  */
+  /** 徽章编码 */
   badgeCode?: string;
-  /** å¾æ å°å */
+  /** 图标地址 */
   iconUrl?: string;
-  /** å¯¹åºåæ¬¡ */
+  /** 对应名次 */
   rankNo?: number;
-  /** æç»©å¼ */
+  /** 成绩值 */
   scoreValue?: number;
-  /** æ¯å¦å±ç¤ºå°è£èªå¢ */
+  /** 是否展示到荣誉墙 */
   wallVisible?: boolean;
-  /** åæ¾æ¶é´ */
+  /** 发放时间 */
   grantedAt?: string;
-  /** è¿ææ¶é´ */
+  /** 过期时间 */
   expiredAt?: string;
 }

@@ -1,6 +1,6 @@
 import type { FinancePageResultFinanceLedgerFlow } from './finance-page-result-finance-ledger-flow';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultFinancePageResultFinanceLedgerFlow {
   /** Response data */
   data: FinancePageResultFinanceLedgerFlow;

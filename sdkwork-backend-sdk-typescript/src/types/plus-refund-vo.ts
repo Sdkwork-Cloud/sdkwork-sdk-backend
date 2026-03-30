@@ -1,33 +1,33 @@
-/** éæ¬¾è®°å½VOï¼è®°å½ææéæ¬¾äº¤æä¿¡æ¯ï¼æ¯æå¤ç§éæ¬¾åºæ¯ */
+/** 退款记录VO，记录所有退款交易信息，支持多种退款场景 */
 export interface PlusRefundVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** å³èçè®¢åID */
+  /** 关联的订单ID */
   orderId?: number;
-  /** å³èçæ¯ä»è®°å½IDï¼ç¨äºè¿½æº¯åå§æ¯ä»äº¤æ */
+  /** 关联的支付记录ID，用于追溯原始支付交易 */
   paymentId?: number;
-  /** åæ·éæ¬¾åå·(out_refund_no)ï¼ç³»ç»çæçå¯ä¸éæ¬¾åå·ï¼ç¨äºä¸å¡å±ç¤º */
+  /** 商户退款单号(out_refund_no)，系统生成的唯一退款单号，用于业务展示 */
   outRefundNo?: string;
-  /** åæ·è®¢åå·/æ¯ä»æ¸ éè®¢åå·ï¼éµå¾ªæ¯ä»ééæ åå½å(out_trade_no) */
+  /** 商户订单号/支付渠道订单号，遵循支付通道标准命名(out_trade_no) */
   outTradeNo?: string;
-  /** æ¯ä»æ¸ ééæ¬¾æµæ°´å·ï¼æ¯ä»æ¸ éè¿åçéæ¬¾äº¤æå· */
+  /** 支付渠道退款流水号，支付渠道返回的退款交易号 */
   refundId?: string;
-  /** éæ¬¾éé¢ */
+  /** 退款金额 */
   amount?: number;
-  /** éæ¬¾ç±»åï¼RETURN-éè´§éæ¬¾ï¼CANCEL-è®¢ååæ¶ï¼OVERPAY-å¤ä»æ¬¾é¡¹ï¼OTHER-å¶ä»åå  */
+  /** 退款类型，RETURN-退货退款，CANCEL-订单取消，OVERPAY-多付款项，OTHER-其他原因 */
   type?: 'RETURN' | 'CANCEL' | 'OVERPAY' | 'OTHER';
-  /** éæ¬¾ç¶æï¼PENDING-å¾å¤çï¼PROCESSING-å¤çä¸­ï¼SUCCESS-éæ¬¾æåï¼FAILED-éæ¬¾å¤±è´¥ */
+  /** 退款状态，PENDING-待处理，PROCESSING-处理中，SUCCESS-退款成功，FAILED-退款失败 */
   status?: 'DEFAULT' | 'PENDING' | 'SUCCESS' | 'FAILED' | 'REJECTED' | 'CANCELLED';
-  /** éæ¬¾ç³è¯·æ¶é´ */
+  /** 退款申请时间 */
   applyTime?: string;
-  /** éæ¬¾å®ææ¶é´ */
+  /** 退款完成时间 */
   completeTime?: string;
-  /** éæ¬¾å¤æ³¨ä¿¡æ¯ */
+  /** 退款备注信息 */
   remark?: string;
-  /** å³èåå®¹ç±»åï¼æ è¯éæ¬¾è®°å½å³èçä¸å¡åå®¹ç±»å */
-  contentType?: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM' | 'JOB';
-  /** å³èåå®¹IDï¼æ è¯éæ¬¾è®°å½å³èçå·ä½ä¸å¡åå®¹ */
+  /** 关联内容类型，标识退款记录关联的业务内容类型 */
+  contentType?: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM' | 'JOB' | 'SKILL';
+  /** 关联内容ID，标识退款记录关联的具体业务内容 */
   contentId?: number;
 }

@@ -1,6 +1,6 @@
 import type { PlusTempSessionVO } from './plus-temp-session-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPlusTempSessionVO {
   /** Response data */
   data: PlusTempSessionVO;

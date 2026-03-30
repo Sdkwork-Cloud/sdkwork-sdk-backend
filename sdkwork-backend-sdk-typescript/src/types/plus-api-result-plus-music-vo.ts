@@ -1,6 +1,6 @@
 import type { PlusMusicVO } from './plus-music-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPlusMusicVO {
   /** Response data */
   data: PlusMusicVO;

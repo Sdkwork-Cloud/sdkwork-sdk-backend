@@ -2,8 +2,8 @@ import type { OrderContentItem } from './order-content-item';
 
 /** Create virtual order form */
 export interface CreateVirtualOrderForm {
-  /** è®¢ååå®¹é¡¹åè¡¨ */
+  /** 订单内容项列表 */
   items?: OrderContentItem[];
-  /** èæååæææ */
+  /** 虚拟商品有效期 */
   expireTime?: string;
 }

@@ -9,9 +9,9 @@ export interface PagePlusFileContentVO {
   content?: PlusFileContentVO[];
   number?: number;
   numberOfElements?: number;
-  pageable?: PageableObject;
-  sort?: SortObject;
   first?: boolean;
   last?: boolean;
+  sort?: SortObject;
+  pageable?: PageableObject;
   empty?: boolean;
 }

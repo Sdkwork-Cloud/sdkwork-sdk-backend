@@ -1,6 +1,6 @@
 import type { PagePlusColumnVO } from './page-plus-column-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPagePlusColumnVO {
   /** Response data */
   data: PagePlusColumnVO;

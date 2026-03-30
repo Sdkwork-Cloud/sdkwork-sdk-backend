@@ -9,9 +9,9 @@ export interface PagePlusConversationVO {
   content?: PlusConversationVO[];
   number?: number;
   numberOfElements?: number;
-  pageable?: PageableObject;
-  sort?: SortObject;
   first?: boolean;
   last?: boolean;
+  sort?: SortObject;
+  pageable?: PageableObject;
   empty?: boolean;
 }

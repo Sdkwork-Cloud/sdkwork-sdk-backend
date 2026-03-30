@@ -1,35 +1,35 @@
-/** åååç±»å±æ§VO */
+/** 商品分类属性VO */
 export interface PlusAttributeVO {
-  /** åå»ºæ¶é´ï¼å®ä½é¦æ¬¡æä¹åæ¶è®¾ç½® */
+  /** 创建时间，实体首次持久化时设置 */
   createdAt?: string;
-  /** æåæ´æ°æ¶é´ï¼å®ä½ä¿®æ¹æ¶æ´æ° */
+  /** 最后更新时间，实体修改时更新 */
   updatedAt?: string;
-  /** ä¸»é®IDï¼ç±æ°æ®åºèªå¨çæ */
+  /** 主键ID，由数据库自动生成 */
   id?: number;
-  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
+  /** 通用唯一标识符UUID */
   uuid?: string;
-  /** çæ¬å·ï¼ç¨äºä¹è§éæ§å¶ */
+  /** 版本号，用于乐观锁控制 */
   version?: number;
-  /** å±æ§åç§° */
+  /** 属性名称 */
   name?: string;
-  /** å±æ§ç¼ç  */
+  /** 属性编码 */
   code?: string;
-  /** å±æ§æè¿° */
+  /** 属性描述 */
   description?: string;
-  /** å±æ§ç±»å(1:ååå±æ§,2:SKUå±æ§,3:SKUå±æ§å¼,4:è§æ ¼åæ°) */
+  /** 属性类型(1:商品属性,2:SKU属性,3:SKU属性值,4:规格参数) */
   type?: 'CATEGORY' | 'PRODUCT_ATTRIBUTE' | 'SKU_ATTRIBUTE';
-  /** åå®¹ç±»å(å¦:ååãä¼åãæ°é»ç­) */
-  contentType?: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM' | 'JOB';
-  /** å³èåå®¹ID(å¤é®å³èå¯¹åºå®ä½çID) */
+  /** 内容类型(如:商品、会员、新闻等) */
+  contentType?: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM' | 'JOB' | 'SKILL';
+  /** 关联内容ID(外键关联对应实体的ID) */
   contentId?: number;
-  /** æå±åç±»ID */
+  /** 所属分类ID */
   categoryId?: number;
-  /** å±æ§å¼ */
+  /** 属性值 */
   attributeValue?: string;
-  /** æåºæé */
+  /** 排序权重 */
   sortWeight?: number;
-  /** æ¯å¦å¿å¡«(0:å¦,1:æ¯) */
+  /** 是否必填(0:否,1:是) */
   required?: number;
-  /** å±æ§ç¶æ(1:å¯ç¨,2:ç¦ç¨,3:å é¤) */
+  /** 属性状态(1:启用,2:禁用,3:删除) */
   status?: 'DEFAULT' | 'ACTIVE' | 'INACTIVE' | 'DELETED';
 }

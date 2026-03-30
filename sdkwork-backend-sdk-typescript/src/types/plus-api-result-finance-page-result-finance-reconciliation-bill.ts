@@ -1,6 +1,6 @@
 import type { FinancePageResultFinanceReconciliationBill } from './finance-page-result-finance-reconciliation-bill';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultFinancePageResultFinanceReconciliationBill {
   /** Response data */
   data: FinancePageResultFinanceReconciliationBill;

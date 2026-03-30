@@ -7,7 +7,7 @@ export interface FileContentObject {
   source?: string;
   text?: string;
   contents?: Record<string, string>;
-  metadata?: Record<string, unknown>;
+  metadata?: Record<string, Record<string, unknown>>;
   generation?: GenerationContext;
   segments?: ContentSegment[];
   references?: AssetReference[];

@@ -4,54 +4,54 @@ import type { AppPlatforms } from './app-platforms';
 import type { AssetMediaResourceList } from './asset-media-resource-list';
 import type { ImageMediaResource } from './image-media-resource';
 
-/** åºç¨ä¿¡æ¯è§å¾å¯¹è±¡ */
+/** 应用信息视图对象 */
 export interface AppInfoVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** åºç¨ID */
+  /** 应用ID */
   id?: number;
-  /** åºç¨åç§° */
+  /** 应用名称 */
   name?: string;
-  /** åºç¨çæ¬ */
+  /** 应用版本 */
   version?: string;
-  /** åºç¨æè¿° */
+  /** 应用描述 */
   description?: string;
-  /** é¡¹ç®ID */
+  /** 项目ID */
   projectId?: number;
-  /** åºç¨å¾æ  */
+  /** 应用图标 */
   icon?: ImageMediaResource;
-  /** åºç¨èµæºåè¡¨ */
+  /** 应用资源列表 */
   resourceList?: AssetMediaResourceList;
-  /** åºç¨å¾æ URL */
+  /** 应用图标URL */
   iconUrl?: string;
-  /** åºç¨è®¿é®URL */
+  /** 应用访问URL */
   accessUrl?: string;
-  /** åºç¨ç¶æ */
+  /** 应用状态 */
   status?: string;
-  /** åºç¨ç±»å */
+  /** 应用类型 */
   appType?: 'NONE' | 'SDK' | 'PPT' | 'APP_HTML' | 'APP_VUE' | 'APP_FLUTTER' | 'APP_UNIAPP' | 'APP_REACT' | 'APP_UNITY' | 'VIDEO' | 'POSTER';
-  /** æ¯æçå¹³å° */
+  /** 支持的平台 */
   platforms?: AppPlatforms;
-  /** æ¯æå®è£çå¹³å° */
+  /** 支持安装的平台 */
   installPlatforms?: AppPlatforms;
-  /** åºç¨å®è£æè½ */
+  /** 应用安装技能 */
   installSkill?: AppInstallSkill;
-  /** å®è£éç½® */
+  /** 安装配置 */
   installConfig?: AppInstallConfig;
-  /** åºç¨åå */
+  /** 应用包名 */
   packageName?: string;
-  /** åºç¨Bundle ID */
+  /** 应用Bundle ID */
   bundleId?: string;
-  /** åºç¨ååºURL */
+  /** 应用商店URL */
   storeUrl?: string;
-  /** åºç¨ä¸è½½URL */
+  /** 应用下载URL */
   downloadUrl?: string;
-  /** æå»ºæ¶é´ */
+  /** 构建时间 */
   buildTime?: string;
-  /** å¯å¨æ¶é´ */
+  /** 启动时间 */
   startTime?: string;
-  /** è¿è¡ç¯å¢ */
+  /** 运行环境 */
   environment?: string;
 }

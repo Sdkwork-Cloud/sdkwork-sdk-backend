@@ -1,5 +1,5 @@
-/** IMææ¬æ¶æ¯åå®¹ç±» */
+/** IM文本消息内容类 */
 export interface MsgTextContent {
-  /** æ¶æ¯åå®¹ */
+  /** 消息内容 */
   content?: string;
 }

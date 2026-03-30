@@ -1,61 +1,61 @@
-/** æ£çæ¸¸æç§¯åæµæ°´VO */
+/** 棋牌游戏积分流水VO */
 export interface PlusGameScoreRecordVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** æµæ°´ID */
+  /** 流水ID */
   recordId?: number;
-  /** ç©å®¶ç¨æ·ID */
+  /** 玩家用户ID */
   userId?: number;
-  /** ç©æ³ç±»å */
+  /** 玩法类型 */
   gameType?: 'INTERNATIONAL_CHESS' | 'CHINESE_CHESS' | 'GOMOKU' | 'JUNQI' | 'LANDLORD' | 'SHENG_JI' | 'TUO_LA_JI' | 'TEXAS_HOLDEM' | 'MAHJONG' | 'CUSTOM';
-  /** èµå­£æ è¯ */
+  /** 赛季标识 */
   seasonKey?: string;
-  /** èµäºID */
+  /** 赛事ID */
   tournamentId?: number;
-  /** æ¿é´ID */
+  /** 房间ID */
   roomId?: number;
-  /** å¯¹å±ID */
+  /** 对局ID */
   matchId?: number;
-  /** æ¦åID */
+  /** 榜单ID */
   leaderboardId?: number;
-  /** åæ´ç±»å */
+  /** 变更类型 */
   changeType?: 'MATCH_SETTLEMENT' | 'ROUND_SETTLEMENT' | 'TOURNAMENT_REWARD' | 'RANKING_REWARD' | 'CHALLENGE_STAKE' | 'CHALLENGE_REFUND' | 'CHALLENGE_REWARD' | 'ARENA_STAKE' | 'ARENA_REFUND' | 'ARENA_REWARD' | 'ROOM_REFUND' | 'MANUAL_ADJUST' | 'PENALTY';
-  /** æè¡ç±»å */
+  /** 排行类型 */
   rankingType?: 'SCORE' | 'RATING' | 'WIN_RATE' | 'WIN_COUNT' | 'STREAK' | 'PROFIT';
-  /** æ¦åå¨æç±»å */
+  /** 榜单周期类型 */
   periodType?: 'HOUR' | 'DAY' | 'WEEK' | 'MONTH' | 'QUARTER' | 'YEAR' | 'SEASON';
-  /** æ¦åèå´ç±»å */
+  /** 榜单范围类型 */
   scopeType?: 'GLOBAL' | 'GAME' | 'MODE' | 'FRIEND' | 'CLUB' | 'REGION' | 'TOURNAMENT';
-  /** ä¸å¡æµæ°´å· */
+  /** 业务流水号 */
   bizNo?: string;
-  /** åæ´åå  */
+  /** 变更原因 */
   reason?: string;
-  /** ç§¯ååæ´å */
+  /** 积分变更前 */
   scoreBefore?: number;
-  /** ç§¯ååå */
+  /** 积分变化 */
   scoreDelta?: number;
-  /** ç§¯ååæ´å */
+  /** 积分变更后 */
   scoreAfter?: number;
-  /** ç­çº§ååæ´å */
+  /** 等级分变更前 */
   ratingBefore?: number;
-  /** ç­çº§ååå */
+  /** 等级分变化 */
   ratingDelta?: number;
-  /** ç­çº§ååæ´å */
+  /** 等级分变更后 */
   ratingAfter?: number;
-  /** ç­¹ç åæ´å */
+  /** 筹码变更前 */
   chipsBefore?: number;
-  /** ç­¹ç åå */
+  /** 筹码变化 */
   chipsDelta?: number;
-  /** ç­¹ç åæ´å */
+  /** 筹码变更后 */
   chipsAfter?: number;
-  /** æä½äººç¨æ·ID */
+  /** 操作人用户ID */
   operatorUserId?: number;
-  /** åçæ¶é´ */
+  /** 发生时间 */
   occurredAt?: string;
-  /** ç»ç®éå æ°æ® */
-  settlementData?: Record<string, unknown>;
-  /** æ©å±æ°æ® */
-  extData?: Record<string, unknown>;
+  /** 结算附加数据 */
+  settlementData?: Record<string, Record<string, unknown>>;
+  /** 扩展数据 */
+  extData?: Record<string, Record<string, unknown>>;
 }

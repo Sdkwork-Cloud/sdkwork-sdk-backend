@@ -13,5 +13,5 @@ export interface PlusAiAgentConfig {
   /** Whether to use knowledge base for answering questions */
   useKnowledgeBase?: boolean;
   /** properties as key-value pairs */
-  properties?: Record<string, unknown>;
+  properties?: Record<string, Record<string, unknown>>;
 }

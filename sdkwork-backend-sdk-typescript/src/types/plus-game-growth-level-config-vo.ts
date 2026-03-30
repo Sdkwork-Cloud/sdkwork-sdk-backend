@@ -1,8 +1,8 @@
 /** Growth level configuration view object */
 export interface PlusGameGrowthLevelConfigVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
   /** Configuration ID */
   configId?: number;
@@ -47,9 +47,9 @@ export interface PlusGameGrowthLevelConfigVO {
   /** Level description */
   description?: string;
   /** Reward configuration */
-  rewardConfig?: Record<string, unknown>;
+  rewardConfig?: Record<string, Record<string, unknown>>;
   /** Benefit configuration */
-  benefitConfig?: Record<string, unknown>;
+  benefitConfig?: Record<string, Record<string, unknown>>;
   /** Extension data */
-  extData?: Record<string, unknown>;
+  extData?: Record<string, Record<string, unknown>>;
 }

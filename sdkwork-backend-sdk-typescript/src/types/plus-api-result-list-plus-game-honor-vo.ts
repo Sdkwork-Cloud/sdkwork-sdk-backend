@@ -1,6 +1,6 @@
 import type { PlusGameHonorVO } from './plus-game-honor-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultListPlusGameHonorVO {
   /** Response data */
   data: PlusGameHonorVO[];

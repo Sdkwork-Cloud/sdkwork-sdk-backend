@@ -1,40 +1,40 @@
 import type { PlusTreeParentMetadata } from './plus-tree-parent-metadata';
 import type { TagsContent } from './tags-content';
 
-/** AIåç±»VOï¼ç¨äºç®¡çä¸ååå®¹ç±»å(å¦AgentãToolãPromptç­)çåç±» */
+/** AI分类VO，用于管理不同内容类型(如Agent、Tool、Prompt等)的分类 */
 export interface PlusCategoryVO {
   parentUuid?: string;
   parentMetadata?: PlusTreeParentMetadata;
-  /** ä¸»é®IDï¼ç±æ°æ®åºèªå¨çæ */
+  /** 主键ID，由数据库自动生成 */
   id?: number;
-  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
+  /** 通用唯一标识符UUID */
   uuid?: string;
-  /** åå»ºæ¶é´ï¼å®ä½é¦æ¬¡æä¹åæ¶è®¾ç½® */
+  /** 创建时间，实体首次持久化时设置 */
   createdAt?: string;
-  /** æåæ´æ°æ¶é´ï¼å®ä½ä¿®æ¹æ¶æ´æ° */
+  /** 最后更新时间，实体修改时更新 */
   updatedAt?: string;
-  /** åç±»åç§° */
+  /** 分类名称 */
   name?: string;
-  /** åç±»æè¿° */
+  /** 分类描述 */
   description?: string;
-  /** åç±»ç±»å(1:Agentåç±»,2:Toolåç±»,3:Promptåç±»,4:å¶ä»åç±») */
-  type?: 'DEFAULT' | 'AGENT' | 'TOOL' | 'PROMPT' | 'FEEDS' | 'PRODUCT' | 'COURSE' | 'NEWS' | 'BOOK' | 'VIDEO' | 'AUDIO' | 'MUSIC' | 'SAAS' | 'PPT' | 'EVENTS' | 'NOTARY' | 'SHOP' | 'VOICE_SPEAK' | 'SOUND_EFFECT' | 'SKILLS' | 'SKILLS_COLLECTION' | 'PLUGIN' | 'MCP' | 'KNOWLEDGE_BASE' | 'RECRUIT' | 'OTHER';
-  /** åç±»å¾æ URL/è·¯å¾ */
+  /** 分类类型(1:Agent分类,2:Tool分类,3:Prompt分类,4:其他分类) */
+  type?: 'DEFAULT' | 'AGENT' | 'TOOL' | 'PROMPT' | 'FEEDS' | 'PRODUCT' | 'COURSE' | 'NEWS' | 'BOOK' | 'VIDEO' | 'AUDIO' | 'MUSIC' | 'SAAS' | 'PPT' | 'EVENTS' | 'NOTARY' | 'SHOP' | 'VOICE_SPEAK' | 'SOUND_EFFECT' | 'SKILLS' | 'SKILLS_COLLECTION' | 'PLUGIN' | 'MCP' | 'KNOWLEDGE_BASE' | 'RECRUIT' | 'CLAW' | 'OTHER';
+  /** 分类图标URL/路径 */
   icon?: string;
-  /** æåºæé(å¼è¶å¤§æåºè¶é å) */
+  /** 排序权重(值越大排序越靠前) */
   sortWeight?: number;
-  /** ç¶åç±»ID */
+  /** 父分类ID */
   parentId?: number;
-  /** åç±»è·¯å¾(æ ¼å¼:1,2,3è¡¨ç¤ºä»æ ¹åç±»å°å½ååç±»çIDè·¯å¾) */
+  /** 分类路径(格式:1,2,3表示从根分类到当前分类的ID路径) */
   path?: string[];
-  /** å¯è§æ§æ å¿(0:éè,1:å¯è§) */
+  /** 可见性标志(0:隐藏,1:可见) */
   visible?: number;
-  /** åç±»ç¶æ(1:å¯ç¨,2:ç¦ç¨,3:å é¤) */
+  /** 分类状态(1:启用,2:禁用,3:删除) */
   status?: 'DEFAULT' | 'ACTIVE' | 'INACTIVE' | 'DELETED';
-  /** å­åç±»åè¡¨ */
+  /** 子分类列表 */
   children?: PlusCategoryVO[];
-  /** æ ç­¾ */
+  /** 标签 */
   tags?: TagsContent;
-  /** åç±»å±æ§IDåè¡¨ */
+  /** 分类属性ID列表 */
   attributeIds?: number[];
 }

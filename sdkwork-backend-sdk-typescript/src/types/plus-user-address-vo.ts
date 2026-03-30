@@ -1,33 +1,33 @@
 import type { TagsContent } from './tags-content';
 
-/** ç¨æ·å°åVO */
+/** 用户地址VO */
 export interface PlusUserAddressVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** ä¸»é®ID */
+  /** 主键ID */
   id?: number;
-  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
+  /** 通用唯一标识符UUID */
   uuid?: string;
-  /** æ¶è´§äººå§å */
+  /** 收货人姓名 */
   name?: string;
-  /** æ¶è´§äººææºå· */
+  /** 收货人手机号 */
   phone?: string;
-  /** å½å®¶ä»£ç  */
+  /** 国家代码 */
   countryCode?: string;
-  /** çä»½ä»£ç  */
+  /** 省份代码 */
   provinceCode?: string;
-  /** åå¸ä»£ç  */
+  /** 城市代码 */
   cityCode?: string;
-  /** åºå¿ä»£ç  */
+  /** 区县代码 */
   districtCode?: string;
-  /** è¯¦ç»å°å */
+  /** 详细地址 */
   addressDetail?: string;
-  /** é®æ¿ç¼ç  */
+  /** 邮政编码 */
   postalCode?: string;
-  /** æ¯å¦é»è®¤å°å 0-å¦ 1-æ¯ */
+  /** 是否默认地址 0-否 1-是 */
   isDefault?: boolean;
-  /** å°åæ ç­¾ï¼å¦ï¼å®¶ãå¬å¸ç­ï¼ */
+  /** 地址标签（如：家、公司等） */
   tags?: TagsContent;
 }

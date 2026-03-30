@@ -1,21 +1,21 @@
-/** è®¢åå³é­æä½VO */
+/** 订单关闭操作VO */
 export interface OrderCloseVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** æä½æ¯å¦æå */
+  /** 操作是否成功 */
   success?: boolean;
-  /** æä½ç»ææ¶æ¯ */
+  /** 操作结果消息 */
   message?: string;
-  /** æä½æ¶é´ */
+  /** 操作时间 */
   operationTime?: string;
-  /** å³é­çè®¢åID */
+  /** 关闭的订单ID */
   orderId?: number;
-  /** å³é­åå  */
+  /** 关闭原因 */
   closeReason?: string;
-  /** å³é­æ¶é´ */
+  /** 关闭时间 */
   closeTime?: string;
-  /** æ¯å¦å¯éæ°æå¼ */
+  /** 是否可重新打开 */
   reopenable?: boolean;
 }

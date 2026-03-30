@@ -32,12 +32,12 @@ export class ChatApi {
   }
 
 /** Get chat messages by page */
-  async listByPage(body?: ChatMessageQueryListForm, params?: QueryParams): Promise<PlusApiResultPagePlusChatMessageVO> {
+  async createListByPage(body?: ChatMessageQueryListForm, params?: QueryParams): Promise<PlusApiResultPagePlusChatMessageVO> {
     return this.client.post<PlusApiResultPagePlusChatMessageVO>(backendApiPath(`/chat/message/list`), body, params);
   }
 
 /** Get all chat messages */
-  async listAllEntities(body?: ChatMessageQueryListForm): Promise<PlusApiResultListPlusChatMessageVO> {
+  async createListAllEntities(body?: ChatMessageQueryListForm): Promise<PlusApiResultListPlusChatMessageVO> {
     return this.client.post<PlusApiResultListPlusChatMessageVO>(backendApiPath(`/chat/message/list/all`), body);
   }
 

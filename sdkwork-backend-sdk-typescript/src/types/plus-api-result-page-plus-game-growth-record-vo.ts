@@ -1,6 +1,6 @@
 import type { PagePlusGameGrowthRecordVO } from './page-plus-game-growth-record-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPagePlusGameGrowthRecordVO {
   /** Response data */
   data: PagePlusGameGrowthRecordVO;

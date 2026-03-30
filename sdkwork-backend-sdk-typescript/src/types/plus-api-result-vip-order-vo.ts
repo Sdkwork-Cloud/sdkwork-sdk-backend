@@ -1,6 +1,6 @@
 import type { VipOrderVO } from './vip-order-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultVipOrderVO {
   /** Response data */
   data: VipOrderVO;

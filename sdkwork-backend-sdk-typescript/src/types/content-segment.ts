@@ -5,5 +5,5 @@ export interface ContentSegment {
   text?: string;
   startMs?: number;
   endMs?: number;
-  metadata?: Record<string, unknown>;
+  metadata?: Record<string, Record<string, unknown>>;
 }

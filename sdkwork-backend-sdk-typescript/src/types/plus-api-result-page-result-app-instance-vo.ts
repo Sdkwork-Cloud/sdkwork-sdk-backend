@@ -1,6 +1,6 @@
 import type { PageResultAppInstanceVO } from './page-result-app-instance-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPageResultAppInstanceVO {
   /** Response data */
   data: PageResultAppInstanceVO;

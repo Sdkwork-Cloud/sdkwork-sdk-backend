@@ -1,6 +1,6 @@
 import type { ShopStaffVO } from './shop-staff-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultShopStaffVO {
   /** Response data */
   data: ShopStaffVO;

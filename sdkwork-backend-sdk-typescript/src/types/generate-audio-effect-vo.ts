@@ -1,7 +1,7 @@
 export interface GenerateAudioEffectVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
   /** Request ID */
   requestId?: string;

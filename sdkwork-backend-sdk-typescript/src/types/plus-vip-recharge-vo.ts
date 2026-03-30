@@ -1,29 +1,29 @@
-/** VIPåå¼è®°å½Value Object */
+/** VIP充值记录Value Object */
 export interface PlusVipRechargeVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** ä¼åç­çº§ID */
+  /** 会员等级ID */
   id?: number;
   /** UUID */
   uuid?: string;
-  /** ç¨æ·IDï¼å³èplus_userè¡¨ */
+  /** 用户ID，关联plus_user表 */
   userId?: number;
-  /** VIPç­çº§IDï¼å³èplus_vip_levelè¡¨ */
+  /** VIP等级ID，关联plus_vip_level表 */
   vipLevelId?: number;
-  /** åå¼éé¢(å) */
+  /** 充值金额(元) */
   amount?: number;
-  /** åå¼è·å¾ççµç¹æ°é */
+  /** 充值获得的灵点数量 */
   pointAmount?: number;
-  /** åå¼ç±»å */
+  /** 充值类型 */
   rechargeType?: 'DEFAULT' | 'DIRECT' | 'PACKAGE' | 'PROMOTION' | 'GIFT';
-  /** åå¼æ¶é´ */
+  /** 充值时间 */
   rechargeTime?: string;
-  /** äº¤ææµæ°´å· */
+  /** 交易流水号 */
   transactionNo?: string;
-  /** åå¼ç¶æ(1-æå 2-å¤±è´¥ 3-å¤çä¸­) */
+  /** 充值状态(1-成功 2-失败 3-处理中) */
   status?: number;
-  /** å¤æ³¨ä¿¡æ¯ */
+  /** 备注信息 */
   remark?: string;
 }

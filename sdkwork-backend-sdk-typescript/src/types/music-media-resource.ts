@@ -1,37 +1,37 @@
 import type { TagsContent } from './tags-content';
 
-/** é³ä¹åªä½èµæº */
+/** 音乐媒体资源 */
 export interface MusicMediaResource {
-  /** èµæºID */
+  /** 资源ID */
   id?: number;
-  /** èµæºUUID */
+  /** 资源UUID */
   uuid?: string;
-  /** èµæºURL */
+  /** 资源URL */
   url?: string;
-  /** èµæºå­èæ°æ® */
+  /** 资源字节数据 */
   bytes?: string;
-  /** æ¬å°æä»¶ */
-  localFile?: unknown;
-  /** èµæºBase64ç¼ç  */
+  /** 本地文件 */
+  localFile?: Record<string, unknown>;
+  /** 资源Base64编码 */
   base64?: string;
-  /** èµæºç±»å */
+  /** 资源类型 */
   type?: 'IMAGE' | 'VIDEO' | 'AUDIO' | 'DOCUMENT' | 'FILE' | 'MUSIC' | 'CHARACTER' | 'MODEL_3D' | 'PPT' | 'CODE';
-  /** èµæºMIMEç±»å */
+  /** 资源MIME类型 */
   mimeType?: string;
-  /** èµæºå¤§å°(å­è) */
+  /** 资源大小(字节) */
   size?: number;
-  /** èµæºåç§° */
+  /** 资源名称 */
   name?: string;
-  /** èµæºæ©å±å */
+  /** 资源扩展名 */
   extension?: string;
-  /** èµæºæ ç­¾ */
+  /** 资源标签 */
   tags?: TagsContent;
-  /** èµæºåæ°æ® */
-  metadata?: Record<string, unknown>;
-  /** AIçææç¤ºè¯ */
+  /** 资源元数据 */
+  metadata?: Record<string, Record<string, unknown>>;
+  /** AI生成提示词 */
   prompt?: string;
-  /** é³é¢æ ¼å¼ */
+  /** 音频格式 */
   format?: 'wav' | 'mp3' | 'aac' | 'flac' | 'ogg' | 'pcm' | 'aiff' | 'au' | 'opus';
-  /** é³ä¹æ¶é¿(ç§) */
+  /** 音乐时长(秒) */
   duration?: number;
 }

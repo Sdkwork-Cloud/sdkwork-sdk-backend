@@ -1,5 +1,5 @@
-/** å¦«å¬¬å¢å¨ååç§æ¶ç°¨é¶ã¥æçã¥å´ */
+/** 妫嬬墝娓告垙璧涗簨鎶ュ悕琛ㄥ崟 */
 export interface PlusGameTournamentRegistrationForm {
-  /** éâîé¢ã¦åID */
+  /** 鐜╁鐢ㄦ埛ID */
   userId: number;
 }

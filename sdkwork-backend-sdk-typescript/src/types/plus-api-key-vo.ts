@@ -1,27 +1,27 @@
-/** APIå¯é¥VOç±»ï¼ç¨äºä¼ è¾ç³»ç»ä¸­APIè®¿é®å­è¯ä¿¡æ¯ */
+/** API密钥VO类，用于传输系统中API访问凭证信息 */
 export interface PlusApiKeyVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æåæ´æ°æ¶é´ */
+  /** 最后更新时间 */
   updatedAt?: string;
-  /** ä¸»é®ID */
+  /** 主键ID */
   id?: number;
-  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
+  /** 通用唯一标识符UUID */
   uuid?: string;
-  /** APIå¯é¥åç§° */
+  /** API密钥名称 */
   name?: string;
-  /** APIå¯é¥å¼ */
+  /** API密钥值 */
   keyValue?: string;
-  /** è±æåçAPIå¯é¥å¼ */
+  /** 脱敏后的API密钥值 */
   maskedKeyValue?: string;
-  /** APIå¯é¥ç±»å */
+  /** API密钥类型 */
   type?: 'DEFAULT' | 'SYSTEM' | 'USER' | 'APPLICATION' | 'INTEGRATION';
-  /** APIå¯é¥ç¶æ */
+  /** API密钥状态 */
   status?: 'DEFAULT' | 'ACTIVE' | 'INACTIVE' | 'EXPIRED' | 'REVOKED';
-  /** APIå¯é¥è¿ææ¶é´ */
+  /** API密钥过期时间 */
   expireTime?: string;
-  /** APIå¯é¥æè¿° */
+  /** API密钥描述 */
   description?: string;
-  /** æåä½¿ç¨æ¶é´ */
+  /** 最后使用时间 */
   lastUsedTime?: string;
 }

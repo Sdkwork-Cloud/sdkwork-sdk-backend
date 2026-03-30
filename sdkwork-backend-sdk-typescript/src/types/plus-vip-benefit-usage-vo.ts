@@ -1,23 +1,23 @@
-/** VIPæçä½¿ç¨è®°å½VO */
+/** VIP权益使用记录VO */
 export interface PlusVipBenefitUsageVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** ç¨æ·IDï¼å³èplus_userè¡¨ */
+  /** 用户ID，关联plus_user表 */
   userId?: number;
-  /** æçç±»å */
+  /** 权益类型 */
   benefitType?: 'DEFAULT' | 'MONTHLY_FREE_POINTS' | 'DEDICATED_SUPPORT' | 'PURCHASE_DISCOUNT' | 'EXCLUSIVE_CONTENT' | 'PRIORITY_SERVICE' | 'BIRTHDAY_GIFT';
-  /** ä½¿ç¨æ¶é´ */
+  /** 使用时间 */
   usageTime?: string;
-  /** ä½¿ç¨æ°é */
+  /** 使用数量 */
   usageCount?: number;
-  /** ç¶æ(1-æå 2-å¤±è´¥) */
+  /** 状态(1-成功 2-失败) */
   status?: number;
-  /** ä¸å¡æ¥æºID(å¦è®¢åIDç­) */
+  /** 业务来源ID(如订单ID等) */
   sourceId?: number;
-  /** ä¸å¡æ¥æºç±»å */
+  /** 业务来源类型 */
   sourceType?: string;
-  /** å¤æ³¨ä¿¡æ¯ */
+  /** 备注信息 */
   remark?: string;
 }

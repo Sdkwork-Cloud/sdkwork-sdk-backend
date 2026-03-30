@@ -11,9 +11,9 @@ import type { VideoMediaResource } from './video-media-resource';
 
 /** AI Agent Value Object (Represents an AI model agent with configuration and associations) */
 export interface PlusAiAgentVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
   /** Agent ID */
   id?: number;

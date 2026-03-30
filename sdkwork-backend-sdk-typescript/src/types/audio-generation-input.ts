@@ -1,47 +1,47 @@
 import type { AssetMediaResource } from './asset-media-resource';
 import type { VideoStoryboard } from './video-storyboard';
 
-/** é³é¢çæè¾å¥åæ°(è¯­é³åæTTS) */
+/** 音频生成输入参数(语音合成TTS) */
 export interface AudioGenerationInput {
-  /** ä»»å¡æ é¢ */
+  /** 任务标题 */
   title?: string;
-  /** ä¸»æç¤ºè¯ */
+  /** 主提示词 */
   prompt?: string;
-  /** ååæç¤ºè¯ */
+  /** 反向提示词 */
   negativePrompt?: string;
-  /** åèèµæºåè¡¨(æ¯æå¾ç/è§é¢/é³é¢ç­ä»»æç±»å) */
+  /** 参考资源列表(支持图片/视频/音频等任意类型) */
   referenceAssets?: AssetMediaResource[];
-  /** è§é¢æäºæ¿ */
+  /** 视频故事板 */
   storyboard?: VideoStoryboard;
-  /** çæåæ° */
-  parameters?: Record<string, unknown>;
-  /** çææ°é */
+  /** 生成参数 */
+  parameters?: Record<string, Record<string, unknown>>;
+  /** 生成数量 */
   n?: number;
-  /** éæºç§å­ */
+  /** 随机种子 */
   seed?: number;
-  /** è¾åºæ ¼å¼ */
+  /** 输出格式 */
   format?: string;
-  /** å¾è½¬æ¢ææ¬ */
+  /** 待转换文本 */
   text?: string;
-  /** è¯­é³æ è¯ */
+  /** 语音标识 */
   voice?: string;
-  /** è¯´è¯äººID */
+  /** 说话人ID */
   voiceSpeakerId?: number;
-  /** è¯­è¨ä»£ç  */
+  /** 语言代码 */
   language?: string;
-  /** è¯­é(0.25-4.0) */
+  /** 语速(0.25-4.0) */
   speed?: number;
-  /** é³è°(0.5-2.0) */
+  /** 音调(0.5-2.0) */
   pitch?: number;
-  /** é³é(0-100) */
+  /** 音量(0-100) */
   volume?: number;
-  /** éæ ·ç */
+  /** 采样率 */
   sampleRate?: number;
-  /** æ¯ç¹ç */
+  /** 比特率 */
   bitRate?: number;
-  /** å£°éæ° */
+  /** 声道数 */
   channels?: number;
-  /** ææç±»å(neutral/happy/sad/angryç­) */
+  /** 情感类型(neutral/happy/sad/angry等) */
   emotion?: string;
   referenceAssetCount?: number;
 }

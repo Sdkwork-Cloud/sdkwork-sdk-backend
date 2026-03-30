@@ -1,6 +1,6 @@
 import type { FinancePageResultFinanceExpenseRecord } from './finance-page-result-finance-expense-record';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultFinancePageResultFinanceExpenseRecord {
   /** Response data */
   data: FinancePageResultFinanceExpenseRecord;

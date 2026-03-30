@@ -1,43 +1,43 @@
 import type { TagsContent } from './tags-content';
 
-/** æ°æ®æºä¿¡æ¯VO */
+/** 数据源信息VO */
 export interface PlusDatasourceVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** æ°æ®æºID */
+  /** 数据源ID */
   id?: number;
-  /** æ°æ®æºåç§° */
+  /** 数据源名称 */
   name?: string;
-  /** æ°æ®æºç±»å(å¦MySQL, PostgreSQL, MongoDBç­) */
+  /** 数据源类型(如MySQL, PostgreSQL, MongoDB等) */
   type?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 99;
-  /** æ°æ®æºç¶æ(ACTIVE:æ´»è·,INACTIVE:æªæ¿æ´»,ERROR:éè¯¯) */
+  /** 数据源状态(ACTIVE:活跃,INACTIVE:未激活,ERROR:错误) */
   status?: 1 | 0 | -1 | -2;
-  /** æ°æ®æºæè¿° */
+  /** 数据源描述 */
   description?: string;
-  /** è¿æ¥éç½®ä¿¡æ¯(JSONæ ¼å¼) */
-  connectionConfig?: unknown;
-  /** æ°æ®æºURL */
+  /** 连接配置信息(JSON格式) */
+  connectionConfig?: Record<string, unknown>;
+  /** 数据源URL */
   url?: string;
-  /** æ°æ®æºåå»ºè/ææè */
+  /** 数据源创建者/所有者 */
   owner?: string;
-  /** æåæåè¿æ¥æ¶é´ */
+  /** 最后成功连接时间 */
   lastConnectedAt?: string;
-  /** è¿æ¥è¶æ¶æ¶é´(ç§) */
+  /** 连接超时时间(秒) */
   connectionTimeout?: number;
-  /** æ ç­¾(éå·åé) */
+  /** 标签(逗号分隔) */
   tags?: TagsContent;
-  /** æ°æ®åºçæ¬ */
+  /** 数据库版本 */
   dbVersion?: string;
-  /** å®å¨çº§å«(0-ä½,1-ä¸­,2-é«) */
+  /** 安全级别(0-低,1-中,2-高) */
   securityLevel?: number;
-  /** è®¿é®è®¡æ° */
+  /** 访问计数 */
   accessCount?: number;
-  /** UIæ¾ç¤ºå¾æ  */
+  /** UI显示图标 */
   icon?: string;
-  /** UIæ¾ç¤ºé¢è²(HEX) */
+  /** UI显示颜色(HEX) */
   color?: string;
-  /** å³èSchema IDåè¡¨ */
+  /** 关联Schema ID列表 */
   schemaIds?: number[];
 }

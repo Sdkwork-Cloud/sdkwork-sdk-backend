@@ -1,10 +1,10 @@
 import type { AudioMediaResourceList } from './audio-media-resource-list';
 
-/** è¯­é³è¯´è¯äººçæç»æVO */
+/** 语音说话人生成结果VO */
 export interface GenerateVoiceSpeakerVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
   /** Request ID */
   requestId?: string;
@@ -12,20 +12,20 @@ export interface GenerateVoiceSpeakerVO {
   taskId?: string;
   /** Task status */
   taskStatus?: string;
-  /** çæçè¯­é³èµæºåè¡¨ */
+  /** 生成的语音资源列表 */
   voiceResources?: AudioMediaResourceList;
-  /** è¯­é³è¯´è¯äººID */
+  /** 语音说话人ID */
   voiceSpeakerId?: string;
-  /** è¯­é³è¯´è¯äººåç§° */
+  /** 语音说话人名称 */
   voiceSpeakerName?: string;
-  /** è¯­é³è¯´è¯äººç±»å */
+  /** 语音说话人类型 */
   voiceType?: string;
-  /** è¯­é³è¯´è¯äººé£æ ¼ */
+  /** 语音说话人风格 */
   voiceStyle?: string;
-  /** çæçæ¨¡ååç§° */
+  /** 生成的模型名称 */
   model?: string;
-  /** çæèæ¶ï¼æ¯«ç§ï¼ */
+  /** 生成耗时（毫秒） */
   duration?: number;
-  /** éè¯¯ä¿¡æ¯ */
+  /** 错误信息 */
   errorMessage?: string;
 }

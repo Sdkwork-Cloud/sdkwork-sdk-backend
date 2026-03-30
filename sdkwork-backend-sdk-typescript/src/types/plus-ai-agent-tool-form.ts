@@ -1,11 +1,11 @@
 /** Agent-tool relationship creation form */
 export interface PlusAiAgentToolForm {
-  /** éå® ä»é¨åIéé¸¿åæµ£æD */
+  /** 鍏宠仈鐨凙I鏅鸿兘浣揑D */
   agentId: number;
-  /** éå® ä»é¨åIå®¸ã¥å¿ID */
+  /** 鍏宠仈鐨凙I宸ュ叿ID */
   toolId: number;
-  /** å®¸ã¥å¿é¦ã¦æ«¤é³æç¶æ¶î æ®éºæç°­æ´å¿å½¿ */
+  /** 宸ュ叿鍦ㄦ櫤鑳戒綋涓殑鎺掑簭搴忓彿 */
   sortOrder?: number;
-  /** å®¸ã¥å¿éîææ¦æ¨¿î»éîæ¤(true:éîæ¤,false:ç»ä½ºæ¤) */
+  /** 宸ュ叿鏄惁榛樿鍚敤(true:鍚敤,false:绂佺敤) */
   enabled: boolean;
 }

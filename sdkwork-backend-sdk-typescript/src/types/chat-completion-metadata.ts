@@ -1,11 +1,11 @@
-/** èå¤©å®æåæ°æ® */
+/** 聊天完成元数据 */
 export interface ChatCompletionMetadata {
-  /** å¯ç¨æä½åè¡¨ */
+  /** 可用操作列表 */
   actions?: string[];
-  /** ä»£çç¸å³ä¿¡æ¯ */
-  agent?: Record<string, unknown>;
-  /** ç¶çº§èå¤©ID */
+  /** 代理相关信息 */
+  agent?: Record<string, Record<string, unknown>>;
+  /** 父级聊天ID */
   parent_message_id?: number;
-  /** ç¶çº§èå¤©UUID */
+  /** 父级聊天UUID */
   parent_message_uuid?: string;
 }

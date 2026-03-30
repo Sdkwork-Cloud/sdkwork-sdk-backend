@@ -1,6 +1,6 @@
 import type { PlusOrderWorkerDispatchProfileVO } from './plus-order-worker-dispatch-profile-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultListPlusOrderWorkerDispatchProfileVO {
   /** Response data */
   data: PlusOrderWorkerDispatchProfileVO[];

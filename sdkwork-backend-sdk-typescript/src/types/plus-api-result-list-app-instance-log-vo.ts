@@ -1,6 +1,6 @@
 import type { AppInstanceLogVO } from './app-instance-log-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultListAppInstanceLogVO {
   /** Response data */
   data: AppInstanceLogVO[];

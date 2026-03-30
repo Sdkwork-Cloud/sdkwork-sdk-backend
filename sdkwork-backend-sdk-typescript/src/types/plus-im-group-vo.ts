@@ -1,35 +1,35 @@
 import type { ImageMediaResource } from './image-media-resource';
 
-/** èå¤©ç¾¤ç»VO */
+/** 聊天群组VO */
 export interface PlusImGroupVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** ç¾¤ç»ID */
+  /** 群组ID */
   id?: number;
-  /** ç¾¤ç»UUID */
+  /** 群组UUID */
   uuid?: string;
-  /** ç¾¤ç»åç§° */
+  /** 群组名称 */
   name?: string;
-  /** ç¾¤ç»æè¿° */
+  /** 群组描述 */
   description?: string;
-  /** ç¾¤ç»å¤´å */
+  /** 群组头像 */
   avatar?: ImageMediaResource;
-  /** ç¾¤ç»å¬å */
+  /** 群组公告 */
   announcement?: string;
-  /** ç¾¤ç»æåæ°é */
+  /** 群组成员数量 */
   memberCount?: number;
-  /** æå¤§æåæ°é */
+  /** 最大成员数量 */
   maxMembers?: number;
-  /** ç¾¤ç»åå»ºèID */
+  /** 群组创建者ID */
   creatorId?: number;
-  /** ç¾¤ç»ç±»å */
+  /** 群组类型 */
   type?: 'NORMAL' | 'WORK' | 'INTEREST' | 'SUPPORT';
-  /** ç¾¤ç»ç¶æ */
+  /** 群组状态 */
   status?: 'ACTIVE' | 'INACTIVE' | 'DISABLED' | 'DELETED';
-  /** æ¯å¦åè®¸æåéè¯·æ°æå */
+  /** 是否允许成员邀请新成员 */
   allowMemberInvite?: boolean;
-  /** æ¯å¦éè¦å®¡æ¹æè½å å¥ */
+  /** 是否需要审批才能加入 */
   requireApproval?: boolean;
 }

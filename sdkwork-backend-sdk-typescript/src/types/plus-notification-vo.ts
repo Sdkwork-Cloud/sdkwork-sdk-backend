@@ -2,9 +2,9 @@ import type { Participant } from './participant';
 
 /** Notification VO */
 export interface PlusNotificationVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
   /** ID */
   id?: number;
@@ -33,7 +33,7 @@ export interface PlusNotificationVO {
   /** Template ID */
   templateId?: string;
   /** Template params */
-  templateParams?: Record<string, unknown>;
+  templateParams?: Record<string, Record<string, unknown>>;
   /** Redirect URL */
   redirectUrl?: string;
   /** Mini program path */
@@ -45,7 +45,7 @@ export interface PlusNotificationVO {
   /** Read at */
   readAt?: string;
   /** Extra data */
-  extraData?: Record<string, unknown>;
+  extraData?: Record<string, Record<string, unknown>>;
   /** Retry count */
   retryCount?: number;
   /** Max retry count */

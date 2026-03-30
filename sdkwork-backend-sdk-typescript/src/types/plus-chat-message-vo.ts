@@ -40,7 +40,7 @@ export interface PlusChatMessageVO {
   /** Child messages (replies to this message) */
   children?: PlusChatMessageVO[];
   /** Message metadata (JSON format, can store additional information) */
-  metadata?: Record<string, unknown>;
+  metadata?: Record<string, Record<string, unknown>>;
   /** Token count (for billing/usage tracking) */
   tokenCount?: number;
   /** Message send time */

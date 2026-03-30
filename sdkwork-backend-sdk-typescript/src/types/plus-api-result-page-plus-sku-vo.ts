@@ -1,6 +1,6 @@
 import type { PagePlusSkuVO } from './page-plus-sku-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPagePlusSkuVO {
   /** Response data */
   data: PagePlusSkuVO;

@@ -55,5 +55,5 @@ export interface PlusAiModelPriceForm {
   /** Status */
   status?: 'DEFAULT' | 'ACTIVE' | 'INACTIVE' | 'SUSPENDED' | 'DELETED';
   /** Additional metadata */
-  metadata?: Record<string, unknown>;
+  metadata?: Record<string, Record<string, unknown>>;
 }

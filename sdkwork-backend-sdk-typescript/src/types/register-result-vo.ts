@@ -1,10 +1,10 @@
 import type { UserVO } from './user-vo';
 
-/** æ³¨åç»æ */
+/** 注册结果 */
 export interface RegisterResultVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
   user?: UserVO;
 }

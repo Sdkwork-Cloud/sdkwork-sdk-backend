@@ -1,6 +1,6 @@
 import type { PageUsageRecordVO } from './page-usage-record-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPageUsageRecordVO {
   /** Response data */
   data: PageUsageRecordVO;

@@ -1,25 +1,25 @@
 import type { CartGroupList } from './cart-group-list';
 
-/** è´­ç©è½¦VO */
+/** 购物车VO */
 export interface PlusShoppingCartVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æåæ´æ°æ¶é´ */
+  /** 最后更新时间 */
   updatedAt?: string;
-  /** è´­ç©è½¦ID */
+  /** 购物车ID */
   id?: number;
-  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
+  /** 通用唯一标识符UUID */
   uuid?: string;
-  /** è´­ç©è½¦ææè */
+  /** 购物车所有者 */
   owner?: 'DEFAULT' | 'USER' | 'PROJECT' | 'TENANT' | 'SYSTEM' | 'ORGANIZATION';
-  /** è´­ç©è½¦ææèID */
+  /** 购物车所有者ID */
   ownerId?: number;
-  /** è´­ç©è½¦åç§° */
+  /** 购物车名称 */
   name?: string;
-  /** è´­ç©è½¦æè¿° */
+  /** 购物车描述 */
   description?: string;
-  /** è´­ç©è½¦é¡¹ç®åè¡¨ */
+  /** 购物车项目列表 */
   groupList?: CartGroupList;
-  /** è´­ç©è½¦ç¶æ */
+  /** 购物车状态 */
   status?: 'DEFAULT' | 'ACTIVE' | 'INACTIVE' | 'SUSPENDED' | 'DELETED';
 }

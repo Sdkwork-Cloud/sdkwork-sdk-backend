@@ -3,24 +3,24 @@ import type { ChatCompletionMetadata } from './chat-completion-metadata';
 import type { CompletionUsage } from './completion-usage';
 import type { PlusAgent } from './plus-agent';
 
-/** å¤§æ¨¡åçèå¤©å®æååºç»æ */
+/** 大模型的聊天完成响应结果 */
 export interface ChatCompletion {
-  /** ååºçå¯ä¸æ è¯ç¬¦ */
+  /** 响应的唯一标识符 */
   id: string;
-  /** å¯¹è±¡ç±»åï¼éå¸¸ä¸º"chat.completion" */
+  /** 对象类型，通常为"chat.completion" */
   object: string;
-  /** ååºåå»ºçæ¶é´æ³ï¼Unixæ¶é´ï¼ä»¥ç§ä¸ºåä½ï¼ */
+  /** 响应创建的时间戳（Unix时间，以秒为单位） */
   created: number;
-  /** ç¨äºçæååºçæ¨¡ååç§° */
+  /** 用于生成响应的模型名称 */
   model: string;
-  /** ååºéé¡¹åè¡¨ */
+  /** 响应选项列表 */
   choices: ChatCompletionChoice[];
-  /** ä½¿ç¨ç»è®¡ä¿¡æ¯ */
+  /** 使用统计信息 */
   usage?: CompletionUsage;
   /** metadata */
   metadata?: ChatCompletionMetadata;
   content?: string;
   agent?: PlusAgent;
-  /** ç³»ç»æçº¹ï¼ç¨äºè¯å«æ¨¡åçæ¬åéç½® */
+  /** 系统指纹，用于识别模型版本和配置 */
   system_fingerprint?: string;
 }

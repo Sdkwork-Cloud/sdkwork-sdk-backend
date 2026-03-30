@@ -1,38 +1,38 @@
 import type { AuthorInfo } from './author-info';
 import type { ImageMediaResourceList } from './image-media-resource-list';
 
-/** AIçææç« VOå¯¹è±¡ */
+/** AI生成文章VO对象 */
 export interface PlusArticleVO {
-  /** åå»ºæ¶é´ï¼å®ä½é¦æ¬¡æä¹åæ¶è®¾ç½® */
+  /** 创建时间，实体首次持久化时设置 */
   createdAt?: string;
-  /** æåæ´æ°æ¶é´ï¼å®ä½ä¿®æ¹æ¶æ´æ° */
+  /** 最后更新时间，实体修改时更新 */
   updatedAt?: string;
-  /** ä¸»é®IDï¼ç±æ°æ®åºèªå¨çæ */
+  /** 主键ID，由数据库自动生成 */
   id?: number;
-  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
+  /** 通用唯一标识符UUID */
   uuid?: string;
-  /** æç« æ é¢ */
+  /** 文章标题 */
   title?: string;
-  /** æç« å¯æ é¢ */
+  /** 文章副标题 */
   subtitle?: string;
-  /** æç« æ­£æåå®¹ */
+  /** 文章正文内容 */
   content?: string;
-  /** æç« åç±»ID */
+  /** 文章分类ID */
   categoryId?: number;
-  /** æç« å­æ°ç»è®¡ */
+  /** 文章字数统计 */
   wordCount?: number;
-  /** é¢è®¡éè¯»æ¶é´ */
+  /** 预计阅读时间 */
   readingTime?: number;
-  /** æç« å°é¢å¾URL */
+  /** 文章封面图URL */
   coverImages?: ImageMediaResourceList;
-  /** æç« ä½èä¿¡æ¯ */
+  /** 文章作者信息 */
   author?: AuthorInfo;
-  /** æç« æ¥æº */
+  /** 文章来源 */
   source?: string;
-  /** æç« ç¶æ */
+  /** 文章状态 */
   status?: 'DEFAULT' | 'DRAFT' | 'PUBLISHED' | 'ARCHIVED' | 'DELETED';
-  /** æç« å³é®è¯ */
+  /** 文章关键词 */
   keywords?: string[];
-  /** æç« æè¦ */
+  /** 文章摘要 */
   summary?: string;
 }

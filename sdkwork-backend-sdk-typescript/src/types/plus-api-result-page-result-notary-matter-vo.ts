@@ -1,6 +1,6 @@
 import type { PageResultNotaryMatterVO } from './page-result-notary-matter-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPageResultNotaryMatterVO {
   /** Response data */
   data: PageResultNotaryMatterVO;

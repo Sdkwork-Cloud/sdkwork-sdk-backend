@@ -1,45 +1,45 @@
-/** æè½ååç®¡çVO */
+/** 技能分包管理VO */
 export interface PlusAgentSkillPackageVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** ååID */
+  /** 分包ID */
   id?: number;
-  /** ååUUID */
+  /** 分包UUID */
   uuid?: string;
-  /** ç§æ·ID */
+  /** 租户ID */
   tenantId?: number;
-  /** ç»ç»ID */
+  /** 组织ID */
   organizationId?: number;
-  /** å½å±ç¨æ·ID */
+  /** 归属用户ID */
   userId?: number;
-  /** ååæ è¯ */
+  /** 分包标识 */
   packageKey?: string;
-  /** åååç§° */
+  /** 分包名称 */
   name?: string;
-  /** ååç®ä» */
+  /** 分包简介 */
   summary?: string;
-  /** ååæè¿° */
+  /** 分包描述 */
   description?: string;
-  /** ååå¾æ  */
+  /** 分包图标 */
   icon?: string;
-  /** å°é¢å¾ */
+  /** 封面图 */
   coverImage?: string;
-  /** åç±»ID */
+  /** 分类ID */
   categoryId?: number;
-  /** åç±»åç§° */
+  /** 分类名称 */
   categoryName?: string;
-  /** æ ç­¾ */
+  /** 标签 */
   tags?: string[];
-  /** æ¯å¦å¯ç¨ */
+  /** 是否启用 */
   enabled?: boolean;
-  /** æ¯å¦æ¨è */
+  /** 是否推荐 */
   featured?: boolean;
-  /** æåºæé */
+  /** 排序权重 */
   sortWeight?: number;
-  /** å³èæè½æ°é */
+  /** 关联技能数量 */
   skillCount?: number;
-  /** æè¿åå¸æ¶é´ */
+  /** 最近发布时间 */
   latestPublishedAt?: string;
 }

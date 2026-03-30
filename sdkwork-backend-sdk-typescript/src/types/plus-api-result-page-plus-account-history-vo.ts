@@ -1,6 +1,6 @@
 import type { PagePlusAccountHistoryVO } from './page-plus-account-history-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPagePlusAccountHistoryVO {
   /** Response data */
   data: PagePlusAccountHistoryVO;

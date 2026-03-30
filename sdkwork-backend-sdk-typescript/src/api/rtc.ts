@@ -11,6 +11,16 @@ export class RtcApi {
     this.client = client; 
   }
 
+/** RTC room page */
+  async listRooms(body?: RtcRoomQuery): Promise<PlusApiResultPageResultRtcRoomVO> {
+    return this.client.post<PlusApiResultPageResultRtcRoomVO>(backendApiPath(`/rtc/room/list`), body);
+  }
+
+/** RTC call record page */
+  async listRecords(body?: RtcRecordQuery): Promise<PlusApiResultPageResultRtcCallRecordVO> {
+    return this.client.post<PlusApiResultPageResultRtcCallRecordVO>(backendApiPath(`/rtc/record/list`), body);
+  }
+
 /** Save RTC access rule */
   async saveAccessRule(body: RtcAccessRuleRequest): Promise<PlusApiResultRtcAccessRuleVO> {
     return this.client.post<PlusApiResultRtcAccessRuleVO>(backendApiPath(`/rtc/access-rule`), body);
@@ -24,16 +34,6 @@ export class RtcApi {
 /** Delete RTC access rule */
   async deleteAccessRule(id: string | number): Promise<PlusApiResultBoolean> {
     return this.client.delete<PlusApiResultBoolean>(backendApiPath(`/rtc/access-rule/${id}`));
-  }
-
-/** RTC room page */
-  async listRooms(body?: RtcRoomQuery): Promise<PlusApiResultPageResultRtcRoomVO> {
-    return this.client.post<PlusApiResultPageResultRtcRoomVO>(backendApiPath(`/rtc/room/list`), body);
-  }
-
-/** RTC call record page */
-  async listRecords(body?: RtcRecordQuery): Promise<PlusApiResultPageResultRtcCallRecordVO> {
-    return this.client.post<PlusApiResultPageResultRtcCallRecordVO>(backendApiPath(`/rtc/record/list`), body);
   }
 }
 

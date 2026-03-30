@@ -25,7 +25,7 @@ export interface PlusNotificationForm {
   /** Template ID */
   templateId?: string;
   /** Template params */
-  templateParams?: Record<string, unknown>;
+  templateParams?: Record<string, Record<string, unknown>>;
   /** Redirect URL */
   redirectUrl?: string;
   /** Mini program path */
@@ -37,7 +37,7 @@ export interface PlusNotificationForm {
   /** Read at */
   readAt?: string;
   /** Extra data */
-  extraData?: Record<string, unknown>;
+  extraData?: Record<string, Record<string, unknown>>;
   /** Retry count */
   retryCount?: number;
   /** Max retry count */

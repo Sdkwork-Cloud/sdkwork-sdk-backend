@@ -2,8 +2,8 @@ import type { OrderContentItem } from './order-content-item';
 
 /** Create booking order form */
 export interface CreateBookingOrderForm {
-  /** è®¢ååå®¹é¡¹åè¡¨ */
+  /** 订单内容项列表 */
   items?: OrderContentItem[];
-  /** é¢çº¦æææ */
+  /** 预约有效期 */
   expireTime?: string;
 }

@@ -1,23 +1,25 @@
 import type { PlusVipBenefitVO } from './plus-vip-benefit-vo';
 
-/** VIPç­çº§VOï¼åå«VIPç­çº§çåºæ¬ä¿¡æ¯åæçIDéå */
+/** VIP等级VO，包含VIP等级的基本信息及权益ID集合 */
 export interface PlusVipLevelVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** VIPç­çº§ID */
+  /** VIP等级ID */
   id?: number;
-  /** ç­çº§åç§°, e.g., é»éä¼å, ééä¼å */
+  /** 等级名称, e.g., 黄金会员, 铂金会员 */
   name?: string;
-  /** ç­çº§å¼ï¼ç¨äºæåºååé¨é»è¾å¤æ­, e.g., 1 for Gold, 2 for Platinum */
+  /** 等级值，用于排序和内部逻辑判断, e.g., 1 for Gold, 2 for Platinum */
   levelValue?: number;
-  /** æåå°æ­¤ç­çº§æéçç´¯è®¡çµç¹æ° */
+  /** 晋升到此等级所需的累计灵点数 */
   requiredPoints?: number;
-  /** ç­çº§æè¿° */
+  /** 等级描述 */
   description?: string;
-  /** è¯¥ç­çº§æ¥æçæçIDéå */
+  /** 等级状态 */
+  status?: 'ENABLED' | 'DISABLED';
+  /** 该等级拥有的权益ID集合 */
   benefitIds?: number[];
-  /** è¯¥ç­çº§æ¥æçæçéå */
+  /** 该等级拥有的权益集合 */
   benefits?: PlusVipBenefitVO[];
 }

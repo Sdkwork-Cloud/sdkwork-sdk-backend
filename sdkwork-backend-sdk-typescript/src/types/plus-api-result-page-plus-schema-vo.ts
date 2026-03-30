@@ -1,6 +1,6 @@
 import type { PagePlusSchemaVO } from './page-plus-schema-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPagePlusSchemaVO {
   /** Response data */
   data: PagePlusSchemaVO;

@@ -1,16 +1,16 @@
-/** æè½ååæ¥è¯¢åæ° */
+/** 技能分包查询参数 */
 export interface PlusAgentSkillPackageQueryListForm {
   id?: number;
   createdAtFrom?: string;
   createdAtTo?: string;
-  /** å³é®è¯ï¼å¹é name/packageKey/summary/descriptionï¼ */
+  /** 关键词（匹配 name/packageKey/summary/description） */
   keyword?: string;
-  /** å½å±ç¨æ·ID */
+  /** 归属用户ID */
   userId?: number;
-  /** åç±»ID */
+  /** 分类ID */
   categoryId?: number;
-  /** æ¯å¦å¯ç¨ */
+  /** 是否启用 */
   enabled?: boolean;
-  /** æ¯å¦æ¨è */
+  /** 是否推荐 */
   featured?: boolean;
 }

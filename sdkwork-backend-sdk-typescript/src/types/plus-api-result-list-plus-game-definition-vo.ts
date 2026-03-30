@@ -1,6 +1,6 @@
 import type { PlusGameDefinitionVO } from './plus-game-definition-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultListPlusGameDefinitionVO {
   /** Response data */
   data: PlusGameDefinitionVO[];

@@ -1,25 +1,25 @@
 import type { ContentVoteMetadata } from './content-vote-metadata';
 
-/** åå®¹æç¥¨æ°æ®ä¼ è¾å¯¹è±¡ */
+/** 内容投票数据传输对象 */
 export interface ContentVoteVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æåæ´æ°æ¶é´ */
+  /** 最后更新时间 */
   updatedAt?: string;
-  /** ä¸»é®ID */
+  /** 主键ID */
   id?: number;
-  /** éç¨å¯ä¸æ è¯ç¬¦UUID */
+  /** 通用唯一标识符UUID */
   uuid?: string;
-  /** çæ¬å·ï¼ä¹è§éæ§å¶ï¼ */
+  /** 版本号（乐观锁控制） */
   v?: number;
-  /** ç¨æ·IDï¼å³èplus_user.idï¼ */
+  /** 用户ID（关联plus_user.id） */
   userId?: number;
-  /** åå®¹ç±»åï¼å¦:ååãä¼åãæ°é»ç­ï¼ */
-  contentType?: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM' | 'JOB';
-  /** è¯å(like, dislike, neutral) */
+  /** 内容类型（如:商品、会员、新闻等） */
+  contentType?: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM' | 'JOB' | 'SKILL';
+  /** 评分(like, dislike, neutral) */
   rating?: 'LIKE' | 'DISLIKE' | 'NEUTRAL';
-  /** å³èåå®¹IDï¼å¤é®å³èå¯¹åºå®ä½çIDï¼ */
+  /** 关联内容ID（外键关联对应实体的ID） */
   contentId?: number;
-  /** åæ°æ® */
+  /** 元数据 */
   metadata?: ContentVoteMetadata;
 }

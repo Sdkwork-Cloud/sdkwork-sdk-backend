@@ -1,6 +1,6 @@
 import type { AppInstanceVO } from './app-instance-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultListAppInstanceVO {
   /** Response data */
   data: AppInstanceVO[];

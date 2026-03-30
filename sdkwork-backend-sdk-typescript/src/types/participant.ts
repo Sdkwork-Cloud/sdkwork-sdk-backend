@@ -1,22 +1,22 @@
 import type { ImageMediaResource } from './image-media-resource';
 
-/** æ¶æ¯åä¸èå®ä½ç±» */
+/** 消息参与者实体类 */
 export interface Participant {
-  /** åä¸èID */
+  /** 参与者ID */
   id?: number;
-  /** åä¸èUUID */
+  /** 参与者UUID */
   uuid?: string;
-  /** å¼æ¾å¹³å°OpenID */
+  /** 开放平台OpenID */
   openId?: string;
-  /** å¼æ¾å¹³å°UnionID */
+  /** 开放平台UnionID */
   unionId?: string;
-  /** åä¸èåç§° */
+  /** 参与者名称 */
   name?: string;
-  /** åä¸èå¤´å */
+  /** 参与者头像 */
   face?: ImageMediaResource;
-  /** è®¾å¤ID */
+  /** 设备ID */
   deviceId?: number;
-  /** è®¾å¤UUID */
+  /** 设备UUID */
   deviceUuid?: string;
   device?: boolean;
 }

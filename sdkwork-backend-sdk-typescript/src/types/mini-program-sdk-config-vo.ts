@@ -1,13 +1,13 @@
-/** å¾®ä¿¡å°ç¨åºSDKéç½® */
+/** 微信小程序SDK配置 */
 export interface MiniProgramSdkConfigVO {
-  /** å°ç¨åºçAppID */
+  /** 小程序的AppID */
   appId?: string;
-  /** çæç­¾åçæ¶é´æ³ */
+  /** 生成签名的时间戳 */
   timestamp?: number;
-  /** çæç­¾åçéæºä¸² */
+  /** 生成签名的随机串 */
   nonceStr?: string;
-  /** ç­¾å */
+  /** 签名 */
   signature?: string;
-  /** éè¦ä½¿ç¨çJSæ¥å£åè¡¨ */
+  /** 需要使用的JS接口列表 */
   jsApiList?: string[];
 }

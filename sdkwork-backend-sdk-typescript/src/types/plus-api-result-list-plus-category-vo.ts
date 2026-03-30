@@ -1,6 +1,6 @@
 import type { PlusCategoryVO } from './plus-category-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultListPlusCategoryVO {
   /** Response data */
   data: PlusCategoryVO[];

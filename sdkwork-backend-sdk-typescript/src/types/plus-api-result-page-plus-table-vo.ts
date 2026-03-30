@@ -1,6 +1,6 @@
 import type { PagePlusTableVO } from './page-plus-table-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPagePlusTableVO {
   /** Response data */
   data: PagePlusTableVO;

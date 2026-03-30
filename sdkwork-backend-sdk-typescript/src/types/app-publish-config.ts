@@ -1,7 +1,7 @@
 import type { AppStoreListingConfig } from './app-store-listing-config';
 
-/** åºç¨åå¸éç½® */
+/** 应用发布配置 */
 export interface AppPublishConfig {
-  /** ååºåå¸éç½®åè¡¨ */
+  /** 商店发布配置列表 */
   stores?: AppStoreListingConfig[];
 }

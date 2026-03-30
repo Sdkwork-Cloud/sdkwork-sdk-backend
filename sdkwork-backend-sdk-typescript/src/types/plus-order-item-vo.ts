@@ -1,27 +1,27 @@
-/** è®¢åé¡¹Value Objectï¼æ¯æå¤ç§ååç±»åï¼1.å®ç©åå 2.èæåå(å¦çµå­ä¹¦ãè¯¾ç¨ç­) 3.ä¼åæå¡ */
+/** 订单项Value Object，支持多种商品类型：1.实物商品 2.虚拟商品(如电子书、课程等) 3.会员服务 */
 export interface PlusOrderItemVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** å³èçè®¢åID */
+  /** 关联的订单ID */
   orderId?: number;
-  /** ååç±»åï¼PHYSICAL-å®ç©ååï¼VIRTUAL-èæååï¼MEMBER-ä¼åæå¡ */
+  /** 商品类型：PHYSICAL-实物商品，VIRTUAL-虚拟商品，MEMBER-会员服务 */
   productType?: 'GOODS' | 'VIRTUAL' | 'SERVICE';
-  /** ååID */
+  /** 商品ID */
   productId?: number;
-  /** ååSKU ID */
+  /** 商品SKU ID */
   skuId?: number;
-  /** è´­ä¹°æ°é */
+  /** 购买数量 */
   quantity?: number;
-  /** åååä»· */
+  /** 商品单价 */
   unitPrice?: number;
-  /** ååæ»ä»· */
+  /** 商品总价 */
   totalAmount?: number;
-  /** èæååæææ(ä»å½productType=VIRTUALæ¶ææ)ï¼å¦çµå­ä¹¦ãè¯¾ç¨ç­çä½¿ç¨æé */
+  /** 虚拟商品有效期(仅当productType=VIRTUAL时有效)，如电子书、课程等的使用期限 */
   expireTime?: string;
-  /** å³èåå®¹ç±»åï¼æ è¯è®¢åé¡¹å³èçä¸å¡åå®¹ç±»å */
-  contentType?: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM' | 'JOB';
-  /** å³èåå®¹IDï¼æ è¯è®¢åé¡¹å³èçå·ä½ä¸å¡åå®¹ */
+  /** 关联内容类型，标识订单项关联的业务内容类型 */
+  contentType?: 'DEFAULT' | 'PRODUCT' | 'VIP' | 'VIP_LEVEL' | 'NEWS' | 'FEEDS' | 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'FILE' | 'COLLECTION' | 'KNOWLEDGE_BASE' | 'DATASOURCE' | 'VOICE' | 'APP' | 'AGENT' | 'PROMPT' | 'TOOL' | 'IOT_DEVICE' | 'PROJECT' | 'EVENTS' | 'COMMENTS' | 'LINK' | 'IM_GROUP' | 'SKU' | 'VIP_PACKAGE' | 'NOVEL' | 'SCRIPT' | 'ARTICLE' | 'PROSE' | 'GENERATION_IMAGE' | 'GENERATION_VIDEO' | 'GENERATION_FILM' | 'JOB' | 'SKILL';
+  /** 关联内容ID，标识订单项关联的具体业务内容 */
   contentId?: number;
 }

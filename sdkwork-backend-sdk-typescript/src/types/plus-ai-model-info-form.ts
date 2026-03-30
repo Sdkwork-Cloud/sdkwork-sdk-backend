@@ -76,7 +76,7 @@ export interface PlusAiModelInfoForm {
   /** Metadata */
   metadata?: ModelMetadata;
   /** Product support info */
-  productSupportInfo?: Record<string, unknown>;
+  productSupportInfo?: Record<string, Record<string, unknown>>;
   /** Supported voices */
   supportedVoices?: string;
   /** Default temperature */

@@ -1,4 +1,4 @@
 export interface DiskPermission {
-  permissions?: 'READ' | 'WRITE' | 'MANAGE'[];
-  permissionSet?: 'READ' | 'WRITE' | 'MANAGE'[];
+  permissions?: ('READ' | 'WRITE' | 'MANAGE')[];
+  permissionSet?: ('READ' | 'WRITE' | 'MANAGE')[];
 }

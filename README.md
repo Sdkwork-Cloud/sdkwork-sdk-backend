@@ -6,6 +6,7 @@ This directory contains all generated SDK artifacts for the `backend` API group.
 
 - Local snapshot: `backend-openapi-8080.json`
 - Runtime endpoint: `http://localhost:8080/v3/api-docs/backend`
+- Contract-test snapshot: `OpenApiBackendFullDocsContractTest`
 
 Before regeneration, make sure the endpoint returns a valid OpenAPI 3.x document.
 
@@ -79,6 +80,16 @@ PowerShell with custom domain and port:
 .\spring-ai-plus-backend-api\sdkwork-sdk-backend\bin\generate-sdk.ps1 -Domain localhost -Port 18080 -Languages typescript
 ```
 
+Generate from the backend docs contract test instead of a running service:
+
+```powershell
+.\spring-ai-plus-backend-api\sdkwork-sdk-backend\bin\generate-sdk.ps1 -SnapshotSource test -Languages typescript
+```
+
+```bash
+SNAPSHOT_SOURCE=test ./spring-ai-plus-backend-api/sdkwork-sdk-backend/bin/generate-sdk.sh --languages typescript
+```
+
 Manual single-language generation is still supported:
 
 ```bash
@@ -112,6 +123,12 @@ curl http://localhost:8080/v3/api-docs/backend -o spring-ai-plus-backend-api/sdk
 ```
 
 The wrapper scripts derive the schema endpoint from the same runtime base URL. `BASE_URL` or `-BaseUrl` has the highest priority; otherwise the scripts fall back to `http://localhost:8080`.
+
+For a local, service-free snapshot refresh, run:
+
+```bash
+mvn -pl spring-ai-plus-server-application -am "-Dserver.application.skipTests=false" -DskipTests=false "-Dtest=OpenApiBackendFullDocsContractTest" "-Dsurefire.failIfNoSpecifiedTests=false" "-Dbackend.docs.dump=spring-ai-plus-backend-api/sdkwork-sdk-backend/backend-openapi-8080.json" test
+```
 
 ## Authentication Modes (Mutually Exclusive)
 

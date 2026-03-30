@@ -1,6 +1,6 @@
 import type { PlusArticleVO } from './plus-article-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPlusArticleVO {
   /** Response data */
   data: PlusArticleVO;

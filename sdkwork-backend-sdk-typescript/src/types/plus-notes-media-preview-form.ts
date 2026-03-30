@@ -1,11 +1,11 @@
-/** æ¿¯æç¶é½å¤îæ£°å®îçã¥å´ */
+/** 濯掍綋鑽夌棰勮琛ㄥ崟 */
 export interface PlusNotesMediaPreviewForm {
-  /** éæç«·é¢ã¦åIDéå ¢î¸éåæ³éîå¯ç¹æ°¾ç´ */
+  /** 鍙戝竷鐢ㄦ埛ID锛堢鐞嗗憳鍙寚瀹氾級 */
   userId?: number;
-  /** éæç«·éªå²å½´ */
+  /** 鍙戝竷骞冲彴 */
   platform?: 'DEFAULT' | 'WECHAT_OFFICIAL_ACCOUNT' | 'DOUYIN';
-  /** éªå²å½´æµÑæ§éåªçéå²ç²¯ç?default */
+  /** 骞冲彴浜у搧鏍囪瘑锛岄粯璁?default */
   product?: string;
-  /** é½å¤î mediaId */
+  /** 鑽夌 mediaId */
   draftMediaId: string;
 }

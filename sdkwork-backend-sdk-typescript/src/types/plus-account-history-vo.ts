@@ -1,39 +1,39 @@
-/** è´¦æ·æµæ°´VO(åå«èµéåç§¯å) */
+/** 账户流水VO(包含资金和积分) */
 export interface PlusAccountHistoryVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
-  /** èµäº§ç±»å (BALANCE-èµé, POINT-ç§¯å) */
+  /** 资产类型 (BALANCE-资金, POINT-积分) */
   assetType?: 'DEFAULT' | 'BALANCE' | 'POINT' | 'TOKEN';
-  /** å³èçè´¦æ·ID */
+  /** 关联的账户ID */
   accountId?: number;
-  /** å¤é¨äº¤æå·æä¸å¡å¯ä¸æ è¯ï¼ç¨äºå¹ç­æ§å¶ */
+  /** 外部交易号或业务唯一标识，用于幂等控制 */
   transactionId?: string;
-  /** äº¤æç±»å (1-åå¼, 2-æç°, 3-éæ¬¾, 4-è½¬è´¦, 5-è°è´¦, 6-ç§¯åè·å¾, 7-ç§¯åä½¿ç¨, 8-ç§¯åè¿æ, 9-æ¶ç) */
+  /** 交易类型 (1-充值, 2-提现, 3-退款, 4-转账, 5-调账, 6-积分获得, 7-积分使用, 8-积分过期, 9-收益) */
   transactionType?: 'DEFAULT' | 'DEPOSIT' | 'WITHDRAW' | 'REFUND' | 'TRANSFER' | 'ADJUST' | 'INCOME' | 'FROZEN' | 'UNFROZEN' | 'DEDUCT' | 'RECHARGE' | 'CONSUME' | 'POINT_EARN' | 'POINT_USE' | 'POINT_EXPIRE' | 'POINT_TRANSFER' | 'POINT_ADJUST' | 'POINT_REFUND' | 'POINT_FROZEN' | 'POINT_UNFROZEN' | 'TOKEN_DEPOSIT' | 'TOKEN_USE' | 'TOKEN_REFUND' | 'TOKEN_FROZEN' | 'TOKEN_UNFROZEN' | 'TOKEN_TRANSFER' | 'TOKEN_ADJUST' | 'TOKEN_EXPIRE' | 'SYSTEM_ADJUST' | 'OTHER';
-  /** åå¨éé¢ (èµéä¸ç¨) */
+  /** 变动金额 (资金专用) */
   amount?: number;
-  /** äº¤æåè´¦æ·ä½é¢ (èµéä¸ç¨) */
+  /** 交易前账户余额 (资金专用) */
   balanceBefore?: number;
-  /** äº¤æåè´¦æ·ä½é¢ (èµéä¸ç¨) */
+  /** 交易后账户余额 (资金专用) */
   balanceAfter?: number;
-  /** å³èè´¦æ·ID (å¦è½¬è´¦æ¶çå¯¹æ¹è´¦æ·) */
+  /** 关联账户ID (如转账时的对方账户) */
   relatedAccountId?: number;
-  /** åå¨ç§¯åå¼ (ç§¯åä¸ç¨) */
+  /** 变动积分值 (积分专用) */
   pointsChange?: number;
-  /** åå¨åè´¦æ·ç§¯å (ç§¯åä¸ç¨) */
+  /** 变动前账户积分 (积分专用) */
   pointsBefore?: number;
-  /** åå¨åè´¦æ·ç§¯å (ç§¯åä¸ç¨) */
+  /** 变动后账户积分 (积分专用) */
   pointsAfter?: number;
-  /** æ¥æºç±»å (1-è®¢å, 2-æ´»å¨, 3-ç­¾å°, 4-åäº«, 5-éè¯·, 6-ç³»ç»å¥å±, 99-å¶ä») */
+  /** 来源类型 (1-订单, 2-活动, 3-签到, 4-分享, 5-邀请, 6-系统奖励, 99-其他) */
   sourceType?: 'DEFAULT' | 'ORDER' | 'ACTIVITY' | 'SIGN_IN' | 'SHARE' | 'INVITE' | 'SYSTEM' | 'OTHER';
-  /** æ¥æºä¸å¡ID (å¦è®¢åIDãæ´»å¨ID) */
+  /** 来源业务ID (如订单ID、活动ID) */
   sourceId?: string;
-  /** ç§¯åè¿ææ¶é´ (ç§¯åä¸ç¨) */
+  /** 积分过期时间 (积分专用) */
   expiredAt?: string;
-  /** äº¤æç¶æ (1-å¤çä¸­, 2-æå, 3-å¤±è´¥) */
+  /** 交易状态 (1-处理中, 2-成功, 3-失败) */
   status?: 'DEFAULT' | 'PROCESSING' | 'SUCCESS' | 'FAILED' | 'CANCELLED';
-  /** å¤æ³¨ä¿¡æ¯ï¼å¯å­JSONæå¶ä»ææ¬ */
+  /** 备注信息，可存JSON或其他文本 */
   remarks?: string;
 }

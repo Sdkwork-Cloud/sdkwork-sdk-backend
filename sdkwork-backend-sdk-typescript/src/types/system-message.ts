@@ -1,5 +1,5 @@
 export interface SystemMessage {
   messageType?: 'USER' | 'ASSISTANT' | 'SYSTEM' | 'TOOL';
-  metadata?: Record<string, unknown>;
+  metadata?: Record<string, Record<string, unknown>>;
   text?: string;
 }

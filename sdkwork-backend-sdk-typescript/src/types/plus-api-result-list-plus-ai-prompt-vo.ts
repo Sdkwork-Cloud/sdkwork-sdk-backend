@@ -1,6 +1,6 @@
 import type { PlusAiPromptVO } from './plus-ai-prompt-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultListPlusAiPromptVO {
   /** Response data */
   data: PlusAiPromptVO[];

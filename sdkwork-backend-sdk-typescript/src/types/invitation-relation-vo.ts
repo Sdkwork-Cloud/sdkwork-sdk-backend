@@ -1,27 +1,27 @@
-/** éè¯·å³ç³»VO */
+/** 邀请关系VO */
 export interface InvitationRelationVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æ´æ°æ¶é´ */
+  /** 更新时间 */
   updatedAt?: string;
   /** ID */
   id?: number;
   /** UUID */
   uuid?: string;
-  /** éè¯·äººç¨æ·ID */
+  /** 邀请人用户ID */
   inviterUserId?: number;
-  /** è¢«éè¯·äººç¨æ·ID */
+  /** 被邀请人用户ID */
   inviteeUserId?: number;
-  /** éè¯·ç  */
+  /** 邀请码 */
   inviteCode?: string;
-  /** ä½¿ç¨æ¶é´ */
+  /** 使用时间 */
   usedTime?: string;
-  /** å³ç³»ç­çº§ï¼1=ç´æ¥ï¼2=äºçº§ç­ï¼ */
+  /** 关系等级（1=直接，2=二级等） */
   relationLevel?: number;
-  /** å¥å±ç¶æ */
+  /** 奖励状态 */
   rewardStatus?: 'PENDING' | 'SUCCESS' | 'FAILED' | 'CANCELED';
-  /** å¥å±éé¢ */
+  /** 奖励金额 */
   rewardAmount?: number;
-  /** å¥å±ç±»å */
+  /** 奖励类型 */
   rewardType?: 'POINTS' | 'CASH' | 'COUPON' | 'VIP_DAYS' | 'DISCOUNT' | 'FREE_SHIPPING' | 'UPGRADE' | 'GIFT' | 'LOTTERY_CHANCE' | 'STORAGE' | 'FEATURE_UNLOCK' | 'CREDIT' | 'CONTENT' | 'MIXED';
 }

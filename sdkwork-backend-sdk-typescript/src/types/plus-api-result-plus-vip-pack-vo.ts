@@ -1,6 +1,6 @@
 import type { PlusVipPackVO } from './plus-vip-pack-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPlusVipPackVO {
   /** Response data */
   data: PlusVipPackVO;

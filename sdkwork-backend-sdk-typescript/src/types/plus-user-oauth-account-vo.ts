@@ -1,25 +1,25 @@
-/** ç¨æ·OAuthè´¦æ·å¼å¯¹è±¡ */
+/** 用户OAuth账户值对象 */
 export interface PlusUserOAuthAccountVO {
-  /** åå»ºæ¶é´ */
+  /** 创建时间 */
   createdAt?: string;
-  /** æåæ´æ°æ¶é´ */
+  /** 最后更新时间 */
   updatedAt?: string;
-  /** ä¸»é®ID */
+  /** 主键ID */
   id?: number;
-  /** éç¨å¯ä¸æ è¯ç¬¦ */
+  /** 通用唯一标识符 */
   uuid?: string;
-  /** ç¨æ·ID */
+  /** 用户ID */
   userId?: number;
-  /** OAuthå¹³å°ç±»å */
-  oauthProvider?: 'WECHAT' | 'QQ' | 'WEIBO' | 'GITHUB' | 'GOOGLE' | 'FACEBOOK' | 'TWITTER' | 'LINKEDIN' | 'MICROSOFT' | 'APPLE' | 'ALIPAY' | 'DINGTALK' | 'GITEE';
-  /** å¼æ¾å¹³å°ID */
+  /** OAuth平台类型 */
+  oauthProvider?: 'WECHAT' | 'QQ' | 'WEIBO' | 'GITHUB' | 'GOOGLE' | 'FACEBOOK' | 'TWITTER' | 'LINKEDIN' | 'MICROSOFT' | 'APPLE' | 'ALIPAY' | 'DINGTALK' | 'GITEE' | 'DOUYIN';
+  /** 开放平台ID */
   openId?: string;
-  /** ç»ä¸ID */
+  /** 统一ID */
   unionId?: string;
-  /** åºç¨ID */
+  /** 应用ID */
   appId?: string;
-  /** æ¸ éè´¦æ·ID */
+  /** 渠道账户ID */
   channelAccountId?: number;
-  /** è®¿é®ä»¤çè¿ææ¶é´ */
+  /** 访问令牌过期时间 */
   accessTokenExpiresAt?: string;
 }

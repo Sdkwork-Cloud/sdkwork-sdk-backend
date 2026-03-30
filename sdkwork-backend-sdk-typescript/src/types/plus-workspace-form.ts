@@ -33,7 +33,7 @@ export interface PlusWorkspaceForm {
   /** Used storage in bytes */
   usedStorage?: number;
   /** Workspace settings */
-  settings?: Record<string, unknown>;
+  settings?: Record<string, Record<string, unknown>>;
   /** Whether the workspace is deleted */
   isDeleted?: boolean;
   /** Whether the workspace is public */

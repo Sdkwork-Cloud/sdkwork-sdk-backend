@@ -1,10 +1,10 @@
 import type { AssetMediaResource } from './asset-media-resource';
 import type { VideoMediaResource } from './video-media-resource';
 
-/** è§é¢åªä½èµæºåè¡¨ */
+/** 视频媒体资源列表 */
 export interface VideoMediaResourceList {
-  /** è§é¢èµæºåè¡¨ */
+  /** 视频资源列表 */
   videos?: VideoMediaResource[];
-  /** éç¨èµæºåè¡¨ */
+  /** 通用资源列表 */
   resources?: AssetMediaResource[];
 }

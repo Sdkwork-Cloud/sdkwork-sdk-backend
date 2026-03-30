@@ -1,6 +1,6 @@
 import type { PlusGameStatsVO } from './plus-game-stats-vo';
 
-/** APIè°ç¨ç»æ */
+/** API调用结果 */
 export interface PlusApiResultPlusGameStatsVO {
   /** Response data */
   data: PlusGameStatsVO;
